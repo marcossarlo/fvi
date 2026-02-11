@@ -1,9 +1,18 @@
 ---
 import { SITE } from 'astrowind:config';
+import { Image } from 'astro:assets';
+import logoImage from '~/assets/images/logo_fvi.jpg';
+import { name } from 'astro-eslint-parser';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<div class="self-center ml-2 rtl:ml-0 rtl:mr-2 flex items-center gap-2">
+  <Image
+    src={logoImage}
+    alt={SITE?.name || 'Logo'}
+    title={SITE?.name}   
+    class="object-contain"
+  />
+  <!-- <span class="text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+    {SITE?.name}
+  </span> -->
+</div>

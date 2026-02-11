@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: Fondo Verde Institute
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,26 +9,26 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Fondo Verde Institute
+    template: '%s — Fondo Verde Institute'
+  description: "\U0001F680 Poner Descripción."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Fondo Verde Institute
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@fondoverde'
+    site: '@fondoverde'
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: es
   textDirection: ltr
 
 apps:
