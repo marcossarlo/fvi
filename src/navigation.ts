@@ -1,5 +1,20 @@
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
+// Barra secundaria debajo del navbar principal
+export const secondaryNavData = {
+  leftLinks: [
+    { text: 'Títulos', href: getPermalink('/titulos') },
+    { text: 'Promotores', href: getPermalink('/promotores') },
+    { text: 'Empleo', href: getPermalink('/empleo') },
+    { text: 'FAQs', href: getPermalink('/faqs') },
+    { text: 'Contactos', href: getPermalink('/contactos') },
+  ],
+  rightLinks: [
+    { text: 'Login', href: getPermalink('/login') },
+    { text: 'Registro', href: getPermalink('/registro') },
+  ],
+};
+
 export const headerData = {
   links: [
     {

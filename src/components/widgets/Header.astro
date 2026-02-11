@@ -4,6 +4,7 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
+import SecondaryNav from '~/components/widgets/SecondaryNav.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
@@ -29,6 +30,7 @@ export interface Props {
   isFullWidth?: boolean;
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
+  showSecondaryNav?: boolean;
   position?: string;
 }
 
@@ -41,6 +43,7 @@ const {
   isFullWidth = false,
   showToggleTheme = false,
   showRssFeed = false,
+  showSecondaryNav = true,
   position = 'center',
 } = Astro.props;
 
@@ -109,7 +112,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
                   {/* para el Dropdown */}
-                  <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-gray-100 dark:md:bg-dark md:min-w-[200px] drop-shadow-xl border border-gray-200 dark:border-dark">
+                  <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-gray-100 dark:md:bg-dark md:min-w-[200px] drop-shadow-xl border border-gray-200 dark:border-dark z-50">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
@@ -183,4 +186,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
       </div>
     </div>
   </div>
+  
+  {/* BARRA SECUNDARIA */}
+  {showSecondaryNav && <SecondaryNav isFullWidth={isFullWidth} />}
 </header>

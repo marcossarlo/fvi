@@ -1,0 +1,57 @@
+---
+import { secondaryNavData } from '~/navigation';
+import { trimSlash } from '~/utils/permalinks';
+
+export interface Props {
+  isFullWidth?: boolean;
+}
+
+const { isFullWidth = false } = Astro.props;
+
+const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+---
+
+<div class="relative z-10 bg-accent text-white text-xs border-t border-b border-accent/70">
+  <div
+    class:list={[
+      'flex items-center justify-between py-2 px-3 md:px-6 mx-auto',
+      {
+        'max-w-7xl': !isFullWidth,
+      },
+    ]}
+  >
+    {/* Opciones izquierda */}
+    <div class="flex items-center gap-4">
+      {secondaryNavData.leftLinks.map(({ text, href }) => (
+        <a
+          href={href}
+          class:list={[
+            'hover:text-gray-200 transition-colors whitespace-nowrap',
+            {
+              'font-semibold': href === currentPath,
+            },
+          ]}
+        >
+          {text}
+        </a>
+      ))}
+    </div>
+    
+    {/* Opciones derecha - ocultas en móvil */}
+    <div class="hidden md:flex items-center gap-4">
+      {secondaryNavData.rightLinks.map(({ text, href }) => (
+        <a
+          href={href}
+          class:list={[
+            'hover:text-gray-200 transition-colors whitespace-nowrap',
+            {
+              'font-semibold': href === currentPath,
+            },
+          ]}
+        >
+          {text}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
