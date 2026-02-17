@@ -1,0 +1,116 @@
+---
+import type { ItemGridInfo as Props } from '~/types';
+import { twMerge } from 'tailwind-merge';
+import Button from './Button.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
+
+const { items = [], columns, classes = {} } = Astro.props;
+
+const {
+  container: containerClass = '',
+  panel: panelClass = '',
+  image: imageClass = '',
+  iconLink: iconLinkClass = '',
+  title: titleClass = '',
+  content: contentClass = '',
+  button: buttonClass = '',
+} = classes;
+---
+
+{
+  items && items.length > 0 && (
+    <div
+      class={twMerge(
+        `grid gap-8 ${
+          columns === 4
+            ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+            : columns === 3
+              ? 'lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'
+              : columns === 2
+                ? 'md:grid-cols-2 sm:grid-cols-1'
+                : 'grid-cols-1'
+        }`,
+        containerClass
+      )}
+    >
+      {items.map(({ image, iconLink, title, content, buttonLink, classes: itemClasses = {} }) => (
+        <div
+          class={twMerge(
+            'group relative flex flex-col overflow-hidden p-4 bg-white dark:bg-slate-900 shadow-lg transition-all duration-300 hover:bg-primary hover:shadow-2xl intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+            panelClass,
+            itemClasses?.panel
+          )}
+        >
+          {/* Image Container */}
+          <div class="relative overflow-hidden leading-[0]">
+            {image && (
+              <Image
+                class={twMerge('w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 align-bottom', imageClass, itemClasses?.image)}
+                src={image}
+                alt={title || ''}
+                widths={[400, 768]}
+                sizes="(max-width: 768px) 100vw, 432px"
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+            
+            {/* Icon Link - Bottom Right Corner */}
+            {iconLink && (
+              <a
+                href={iconLink.href || '#'}
+                class={twMerge(
+                  'absolute bottom-0 right-0 flex items-center justify-center w-12 h-12 bg-primary shadow-xl transition-all duration-300 hover:scale-150 group-hover:bg-primary z-20 leading-none',
+                  iconLinkClass,
+                  itemClasses?.iconLink
+                )}
+                aria-label={iconLink.ariaLabel || 'Link'}
+                target={iconLink.target}
+              >
+                <Icon name={iconLink.icon || 'tabler:arrow-right'} class="w-6 h-6 text-white group-hover:text-white hover:scale-105 transition-colors duration-300" />
+              </a>
+            )}
+          </div>
+
+          {/* Content Container */}
+          <div class="flex flex-col flex-grow p-6">
+            {/* Title */}
+            {title && (
+              <h3
+                class={twMerge(
+                  'text-xl font-bold text-default group-hover:text-white transition-colors duration-300 mb-3',
+                  titleClass,
+                  itemClasses?.title
+                )}
+                set:html={title}
+              /> <hr class="pb-3" />
+            )}
+
+            {/* Content */}
+            {content && (
+              <p
+                class={twMerge(
+                  'text-muted group-hover:text-white/90 transition-colors duration-300 flex-grow',
+                  contentClass,
+                  itemClasses?.content
+                )}
+                set:html={content}
+              />
+            )}
+
+            {/* Button Link - Centered */}
+            {buttonLink && (
+              <div class={twMerge('mt-6 flex justify-center', buttonClass, itemClasses?.button)}>
+                <Button
+                  {...buttonLink}
+                  class="group-hover:bg-white group-hover:text-primary transition-all duration-300"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}

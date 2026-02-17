@@ -1,17 +1,21 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import becasImage from '~/assets/images/fvi_Becas-Fondo-Verde-home.jpg';
+import financiamientoImage from '~/assets/images/fvi_Financiamiento-home.jpg';
+import comoAplicarImage from '~/assets/images/fvi_Como-Aplicar-home.jpg';
+
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import FeatureInfo from '~/components/widgets/FeatureInfo.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import InfoCards from '~/components/widgets/InfoCards.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -309,6 +313,66 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
+
+  <!-- FeatureInfo Widget ************** -->
+
+  <FeatureInfo
+    title="Programas Destacados del Instituto"
+    subtitle="Descubre nuestros programas de becas y formación especializada"
+    tagline="Educación"
+    columns={3}
+    items={[
+      {
+        image: becasImage,
+        iconLink: {
+          href: '#',
+          icon: 'tabler:chevron-right',
+          ariaLabel: 'Ver más sobre Becas'
+        },
+        title: 'Becas Fondo Verde',
+        content: 'Fondo Verde, ha establecido un <strong>Programa de Becas</strong> que permitirá que ciudadanos europeos y latinoamericanos puedan acceder en forma especial a cursos impartidos en línea.',
+        buttonLink: {
+          text: 'Leer Más',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: financiamientoImage,
+        iconLink: {
+          href: '#',
+          icon: 'tabler:chevron-right',
+          ariaLabel: 'Ver más sobre Maestrías'
+        },
+        title: 'Maestrías Universitarias',
+        content: 'Ofrecemos <strong>8 Maestrías Universitarias</strong> orientadas a la conservación y manejo sostenible de los recursos naturales y el ambiente.',
+        buttonLink: {
+          text: 'Leer Más',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: comoAplicarImage,
+        iconLink: {
+          href: '#',
+          icon: 'tabler:chevron-right',
+          ariaLabel: 'Ver más sobre Doctorados'
+        },
+        title: 'Doctorados Oficiales',
+        content: 'Accede a <strong>9 Doctorados Oficiales</strong> con las certificaciones de más prestigio en el sector ambiental.',
+        buttonLink: {
+          text: 'Leer Más',
+          href: '#',
+          variant: 'primary'
+        }
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FeatureInfo>
 
   <!-- HighlightedPosts Widget ******* -->
 

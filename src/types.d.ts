@@ -141,6 +141,20 @@ export interface Item {
   image?: Image;
 }
 
+export interface ItemInfo {
+  title?: string;
+  content?: string;
+  image?: string | ImageMetadata;
+  iconLink?: {
+    href?: string;
+    icon?: string;
+    ariaLabel?: string;
+    target?: string;
+  };
+  buttonLink?: CallToAction;
+  classes?: Record<string, string>;
+}
+
 export interface Price {
   title?: string;
   subtitle?: string;
@@ -193,6 +207,12 @@ export interface ItemGrid {
   items?: Array<Item>;
   columns?: number;
   defaultIcon?: string;
+  classes?: Record<string, string>;
+}
+
+export interface ItemGridInfo {
+  items?: Array<ItemInfo>;
+  columns?: number;
   classes?: Record<string, string>;
 }
 
@@ -252,6 +272,11 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isBeforeContent?: boolean;
   isAfterContent?: boolean;
+}
+
+export interface FeatureInfo extends Omit<Headline, 'classes'>, Widget {
+  items?: Array<ItemInfo>;
+  columns?: number;
 }
 
 export interface Faqs extends Omit<Headline, 'classes'>, Widget {
