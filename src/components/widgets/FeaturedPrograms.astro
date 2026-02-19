@@ -1,0 +1,45 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import ItemGridFeaturedPrograms from '~/components/ui/ItemGridFeaturedPrograms.astro';
+import type { FeaturedPrograms as Props } from '~/types';
+
+const {
+  tagline,
+  items = [],
+  columns = 1,
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+  <div class="bg-white/75 dark:bg-slate-900 rounded-lg shadow-lg p-6 md:p-8">
+    {/* Tagline - Rectangle on the left */}
+    {tagline && (
+      <div class="mb-8">
+        <div class="inline-block bg-secondary px-6 py-3 text-white font-bold text-lg">
+          {tagline}
+        </div>
+      </div>
+    )}
+
+    {/* Items Grid */}
+    <ItemGridFeaturedPrograms
+      items={items}
+      columns={columns}
+      classes={{
+        container: 'gap-6',
+        panel: 'rounded-lg',
+        image: 'w-full h-full object-cover',
+        title: 'text-xl md:text-2xl font-bold',
+        date: 'text-sm text-primary dark:text-accent',
+        description: 'text-muted',
+        button: 'mt-auto',
+        ...((classes?.items as Record<string, never>) ?? {}),
+      }}
+    />
+  </div>
+</WidgetWrapper>

@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import becasImage from '~/assets/images/fvi_Becas-Fondo-Verde-home.jpg';
-import financiamientoImage from '~/assets/images/fvi_Financiamiento-home.jpg';
+import comoSeEstudiaImage from '~/assets/images/fvi_Financiamiento-home.jpg';
 import comoAplicarImage from '~/assets/images/fvi_Como-Aplicar-home.jpg';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -10,6 +10,7 @@ import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import FeatureInfo from '~/components/widgets/FeatureInfo.astro';
+import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
@@ -46,14 +47,244 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      El Instituto, ofrece un ecosistema vinculante entre la sociedad civil, mercado, gobierno y ecologistas, con el <strong>mejor contenido de training en medio ambiente</strong> y con una de las certificaciones de más prestigio en el sector ambiental.
-      Sus actividades tanto teóricas como prácticas están orientadas a la conservación y manejo sostenible de los recursos naturales y el ambiente.
+      <strong>Fondo Verde Institute</strong> nace como parte del ecosistema de <a href="https://www.fondoverde.org" class="font-bold text-primary hover:text-secondary" target="_blank" title="ONGD Fondo Verde">FONDO VERDE</a>, una ONGD internacional con más de 16 años de trayectoria en formación ambiental, y miembro activo de la <strong>IUCN</strong> - International Union for Conservation of Nature. Gracias a esta experiencia, el Instituto ha consolidado una oferta educativa innovadora, orientada a generar un impacto positivo y sostenible en el mundo, a través de programas académicos de alto nivel y certificaciones reconocidas en el sector ambiental.
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
+  <Note title="Oferta Académica:" description="Contamos con <a href='#' class='font-bold text-secondary hover:text-primary'>8 Maestrías Universitarias</a>, <a href='#' class='font-bold text-secondary hover:text-primary'>9 Doctorados Oficiales</a>, y <a href='#' class='font-bold text-secondary hover:text-primary'>7 Posdoctorados</a> en distintos ámbitos del medio ambiente." />
 
-  <Note title="Ofrecemos:" description="una amplia oferta de formación, <a href='#' class='font-bold text-primary hover:text-secondary'>8 Maestrías Universitarias</a> y <a href='#' class='font-bold text-primary hover:text-secondary'>9 Doctorados Oficiales</a>, sobre diversos ámbitos del medio ambiente." />
+  <!-- FeatureInfo Widget ************** -->
+  <FeatureInfo
+    title="Oportunidades de Formación"
+    subtitle="Descubre nuestro Programa de Becas, conoce la modalidad flexible de estudio en línea y aprende paso a paso cómo aplicar a nuestros posgrados ambientales."
+    tagline="Impacto sostenible"
+    columns={3}
+    items={[
+      {
+        image: becasImage,
+        iconLink: {
+          href: '#',
+          icon: 'tabler:chevron-right',
+          ariaLabel: 'Ver más sobre Becas'
+        },
+        title: 'Becas Fondo Verde',
+        content: 'Fondo Verde ofrece un Programa de Becas para ciudadanos europeos y latinoamericanos, con acceso especial a sus posgrados en línea. La beca cubre el <strong>50% del costo</strong>.',
+        buttonLink: {
+          text: 'Leer Más',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: comoSeEstudiaImage,
+        iconLink: {
+          href: 'https://www.fondoverdeopen.net',
+          icon: 'tabler:chevron-right',
+          ariaLabel: 'Ver más sobre Maestrías'
+        },
+        title: '¿Cómo se estudia?',
+        content: 'Todos nuestros programas se desarrollan a través del <strong>Campus Virtual de Fondo Verde</strong> (fondoverdeopen.net), que permite la interacción profesor-tutor y de los participantes entre sí.',
+        buttonLink: {
+          text: 'Leer Más',
+          href: 'https://www.fondoverdeopen.net/',
+          variant: 'primary'
+        }
+      },
+      {
+        image: comoAplicarImage,
+        iconLink: {
+          href: '#',
+          icon: 'tabler:chevron-right',
+          ariaLabel: 'Ver más sobre Doctorados'
+        },
+        title: '¿Cómo Aplicar?',
+        content: 'Todo candidato para ser admitido a Fondo Verde, deberá cumplir con los reglamentos, políticas y criterios vigentes de admisión establecidos por la institución.',
+        buttonLink: {
+          text: 'Leer Más',
+          href: '#',
+          variant: 'primary'
+        }
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FeatureInfo>
+
+  <!-- Content Widget: MAESTRÍAS **************** -->
+  <Content
+    isReversed
+    tagline="Formación de Excelencia"
+    title="Maestrías, Doctorados y Posdoctorados para un Futuro Sostenible"
+    items={[
+      {
+        title: 'Formación de referencia en el continente',
+        description:
+          'Las Maestrías preparan profesionales líderes en la protección del medio ambiente, con enfoque en planificación y gestión de los problemas ambientales globales.',
+      },
+      {
+        title: 'Flexibilidad, internacionalización y prestigio',
+        description:
+          'Programas online que permiten equilibrar trabajo y estudio, expandir tu red global y acceder a una formación reconocida por su excelencia académica.',
+      },
+      {
+        title: 'Estructura académica sólida',
+        description:
+          'Con una duración de 2 años (6 trimestres), el plan incluye 9 cursos básicos, un Proyecto Terminal y la opción de titulación, sumando 1,440 horas lectivas (90 créditos).',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">8</span> Maestrías Universitarias</h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div> -->
+       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: DOCTORADOS **************** -->
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'Formación especializada con impacto global',
+        description:
+          'Nuestros Doctorados introducen al investigador en metodologías avanzadas para el estudio del medio ambiente y la planificación del desarrollo, generando un efecto positivo en comunidades y regiones.',
+      },
+      {
+        title: 'Investigación original y cultura interdisciplinaria',
+        description:
+          'El programa fomenta proyectos científicos coherentes y tesis originales, equivalentes al PhD internacional, fortaleciendo competencias y habilidades de investigación con enfoque interdisciplinario.',
+      },
+      {
+        title: 'Estructura académica completa',
+        description:
+          'Con una duración de 24 meses (8 trimestres), el Doctorado combina cursos teóricos, seminarios de investigación, tutoría académica, proyecto de tesis y publicación de un artículo científico, sumando 1,440 horas lectivas (90 créditos).',
+      },
+    ]}
+
+    image={{
+      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">9</span> Doctorados Oficiales</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div> -->
+       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-green-500 opacity-20 blur-[100px]"></div></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget: POSTDOCS **************** -->
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Producción científica en sustentabilidad',
+        description:
+          'El Postdoctorado fortalece la investigación en temas ambientales, dirigido a doctores de Iberoamérica que buscan responder a conflictos locales y regionales con proyectos de relevancia científica.',
+      },
+      {
+        title: 'Nuevas perspectivas y articulación regional',
+        description:
+          'El programa abre caminos para estrategias de desarrollo sustentable en Latinoamérica, vinculando políticas públicas y privadas con propuestas concretas y co-construcción de conocimiento.',
+      },
+      {
+        title: 'Estructura académica flexible',
+        description:
+          'Con duración de 6 a 12 meses, el Postdoctorado consiste en un plan de actividades supervisado por un director y culmina con la publicación de un artículo arbitrado por jurados, uno de ellos internacional.',
+      },
+    ]}
+
+    image={{
+      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">7</span> Posdoctorados</h3>
+    </Fragment>
+    <Fragment slot="bg">
+      <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div> -->
+       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-orange-500 opacity-20 blur-[100px]"></div></div>
+    </Fragment>
+  </Content>
+
+  <!-- FeaturedPrograms Widget ******* -->
+  <FeaturedPrograms
+    tagline="Programas Destacados"
+    columns={2}
+    items={[
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Ciencias de la Sostenibilidad',
+        date: '13 de mayo de 2026',
+        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Rehabilitación Ambiental Terrestre',
+        date: '13 de mayo de 2026',
+        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
+        date: '13 de mayo de 2026',
+        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Gestión Ambiental',
+        date: '13 de mayo de 2026',
+        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
+        date: '13 de mayo de 2026',
+        description: 'El patrimonio cultural y natural constituye uno de los recursos más valiosos de la humanidad. Su conservación y gestión sostenible son fundamentales para el desarrollo de las sociedades...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-repeat opacity-70 dark:opacity-50" style="background-image: url('/images/fvi_grey_background.jpg');"></div>
+    </Fragment>
+  </FeaturedPrograms>
 
   <!-- Features Widget *************** -->
 
@@ -101,119 +332,6 @@ const metadata = {
       },
     ]}
   />
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
 
   <!-- Steps Widget ****************** -->
 
@@ -313,66 +431,6 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
-
-  <!-- FeatureInfo Widget ************** -->
-
-  <FeatureInfo
-    title="Programas Destacados del Instituto"
-    subtitle="Descubre nuestros programas de becas y formación especializada"
-    tagline="Educación"
-    columns={3}
-    items={[
-      {
-        image: becasImage,
-        iconLink: {
-          href: '#',
-          icon: 'tabler:chevron-right',
-          ariaLabel: 'Ver más sobre Becas'
-        },
-        title: 'Becas Fondo Verde',
-        content: 'Fondo Verde, ha establecido un <strong>Programa de Becas</strong> que permitirá que ciudadanos europeos y latinoamericanos puedan acceder en forma especial a cursos impartidos en línea.',
-        buttonLink: {
-          text: 'Leer Más',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: financiamientoImage,
-        iconLink: {
-          href: '#',
-          icon: 'tabler:chevron-right',
-          ariaLabel: 'Ver más sobre Maestrías'
-        },
-        title: 'Maestrías Universitarias',
-        content: 'Ofrecemos <strong>8 Maestrías Universitarias</strong> orientadas a la conservación y manejo sostenible de los recursos naturales y el ambiente.',
-        buttonLink: {
-          text: 'Leer Más',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: comoAplicarImage,
-        iconLink: {
-          href: '#',
-          icon: 'tabler:chevron-right',
-          ariaLabel: 'Ver más sobre Doctorados'
-        },
-        title: 'Doctorados Oficiales',
-        content: 'Accede a <strong>9 Doctorados Oficiales</strong> con las certificaciones de más prestigio en el sector ambiental.',
-        buttonLink: {
-          text: 'Leer Más',
-          href: '#',
-          variant: 'primary'
-        }
-      }
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </FeatureInfo>
 
   <!-- HighlightedPosts Widget ******* -->
 

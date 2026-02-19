@@ -155,6 +155,15 @@ export interface ItemInfo {
   classes?: Record<string, string>;
 }
 
+export interface ItemFeaturedProgram {
+  image?: string | ImageMetadata;
+  title?: string;
+  date?: string;
+  description?: string;
+  button?: CallToAction;
+  classes?: Record<string, string>;
+}
+
 export interface Price {
   title?: string;
   subtitle?: string;
@@ -212,6 +221,12 @@ export interface ItemGrid {
 
 export interface ItemGridInfo {
   items?: Array<ItemInfo>;
+  columns?: number;
+  classes?: Record<string, string>;
+}
+
+export interface ItemGridFeaturedPrograms {
+  items?: Array<ItemFeaturedProgram>;
   columns?: number;
   classes?: Record<string, string>;
 }
@@ -276,6 +291,12 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
 
 export interface FeatureInfo extends Omit<Headline, 'classes'>, Widget {
   items?: Array<ItemInfo>;
+  columns?: number;
+}
+
+export interface FeaturedPrograms extends Widget {
+  tagline?: string;
+  items?: Array<ItemFeaturedProgram>;
   columns?: number;
 }
 
