@@ -5,7 +5,7 @@ import becasImage from '~/assets/images/fvi_Becas-Fondo-Verde-home.jpg';
 import comoSeEstudiaImage from '~/assets/images/fvi_Financiamiento-home.jpg';
 import comoAplicarImage from '~/assets/images/fvi_Como-Aplicar-home.jpg';
 
-import Hero from '~/components/widgets/Hero.astro';
+import HeroFVI from '~/components/widgets/HeroFVI.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -27,29 +27,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Saber más',
-        href: '#',
-        target: '',
-        icon: 'tabler:arrow-narrow-right-dashed',
-      },      
-    ]}      
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div></div>     
-    </Fragment>
-
-    <Fragment slot="title">
-      <span class="text-primary dark:text-accent">Fondo Verde</span> <span class="text-secondary">Institute</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      <strong>Fondo Verde Institute</strong> nace como parte del ecosistema de <a href="https://www.fondoverde.org" class="font-bold text-primary hover:text-secondary" target="_blank" title="ONGD Fondo Verde">FONDO VERDE</a>, una ONGD internacional con más de 16 años de trayectoria en formación ambiental, y miembro activo de la <strong>IUCN</strong> - International Union for Conservation of Nature. Gracias a esta experiencia, el Instituto ha consolidado una oferta educativa innovadora, orientada a generar un impacto positivo y sostenible en el mundo, a través de programas académicos de alto nivel y certificaciones reconocidas en el sector ambiental.
-    </Fragment>
-  </Hero>
+  <HeroFVI />
 
   <!-- Note Widget ******************* -->
   <Note title="Oferta Académica:" description="Contamos con <a href='#' class='font-bold text-secondary hover:text-primary'>8 Maestrías Universitarias</a>, <a href='#' class='font-bold text-secondary hover:text-primary'>9 Doctorados Oficiales</a>, y <a href='#' class='font-bold text-secondary hover:text-primary'>7 Posdoctorados</a> en distintos ámbitos del medio ambiente." />

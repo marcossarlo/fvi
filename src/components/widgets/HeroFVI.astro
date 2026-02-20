@@ -1,0 +1,151 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props;
+---
+
+<section class="relative w-full overflow-hidden bg-white dark:bg-slate-900" {...id ? { id } : {}}>
+  <div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
+    
+    <!-- ========================================
+         COLUMNA IZQUIERDA: IMAGEN DE FONDO CON BADGE
+         ======================================== -->
+    <div class="relative order-1 h-[400px] lg:h-auto">
+      <!-- Imagen de fondo -->
+      <img 
+        src="/images/fvi_hero.webp" 
+        alt="Bosque verde - Fondo Verde Institute" 
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      
+      <!-- Badge flotante "IMPACTO REAL" - Visible en todas las vistas -->
+      <div class="absolute bottom-6 left-6 lg:left-8 lg:bottom-12 z-10 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+        <div class="bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl shadow-xl p-5 max-w-[340px] hover:scale-105 transition-transform duration-300">
+          <div class="flex items-start gap-4">
+            <!-- Icono -->
+            <div class="flex-shrink-0 bg-primary/10 dark:bg-primary/20 rounded-full p-3">
+              <Icon 
+                name="tabler:bulb" 
+                class="w-7 h-7 text-primary dark:text-primary" 
+              />
+            </div>
+            <!-- Contenido del badge -->
+            <div>
+              <h3 class="text-primary dark:text-primary font-bold text-sm uppercase tracking-wide mb-1">
+                Impacto Real
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 text-sm leading-snug">
+                Más de 16 años liderando la formación ambiental internacional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         COLUMNA DERECHA: CONTENIDO PRINCIPAL
+         ======================================== -->
+    <div class="relative order-2 flex items-center bg-gray-50 dark:bg-slate-800/50">
+      <div class="w-full px-6 sm:px-10 lg:px-12 xl:px-16 py-12 lg:py-16">
+        
+        <!-- Tag superior -->
+        <div class="mb-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <span class="inline-flex items-center gap-2 text-primary dark:text-primary font-bold text-xs sm:text-sm uppercase tracking-wider">
+            <span class="w-8 h-px bg-primary dark:bg-primary"></span>
+            Excelencia Académica
+          </span>
+        </div>
+
+        <!-- Título principal -->
+        <h1 class="text-4xl sm:text-5xl xl:text-6xl font-bold leading-tight mb-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <span class="text-primary dark:text-primary">Fondo Verde</span>
+          <br />
+          <span class="text-secondary dark:text-orange-500">Institute</span>
+        </h1>
+
+        <!-- Descripción principal -->
+        <div class="space-y-4 mb-8 text-gray-700 dark:text-gray-300 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <p class="text-base sm:text-lg leading-relaxed">
+            <strong class="text-gray-900 dark:text-white">Fondo Verde Institute</strong> nace como parte del ecosistema de 
+            <a 
+              href="https://www.fondoverde.org" 
+              class="font-bold text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary transition-colors decoration-2 underline-offset-2" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              FONDO VERDE</a>, una ONGD internacional con una trayectoria consolidada en formación ambiental.
+          </p>
+          
+          <p class="text-base sm:text-lg leading-relaxed">
+            Como miembro activo de la <strong class="text-gray-900 dark:text-white">IUCN</strong> (Unión Internacional para la Conservación de la Naturaleza), ofrecemos una oferta educativa innovadora orientada a generar un impacto positivo y sostenible en el mundo.
+          </p>
+        </div>
+
+        <!-- Botones CTA -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-12 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <!-- Botón primario -->
+          <a 
+            href="#" 
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary hover:bg-secondary dark:bg-primary dark:hover:bg-primary/80 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+          >
+            <span>Saber más</span>
+            <Icon 
+              name="tabler:arrow-narrow-right-dashed" 
+              class="w-5 h-5 group-hover:translate-x-1 transition-transform" 
+            />
+          </a>
+          
+          <!-- Botón secundario -->
+          <a 
+            href="#" 
+            class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white hover:bg-gray-50 dark:bg-slate-700 dark:hover:bg-slate-600 text-gray-900 dark:text-white font-semibold rounded-full border-2 border-gray-200 dark:border-slate-600 shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <span>Ver Programas</span>
+          </a>
+        </div>
+
+        <!-- ========================================
+             ESTADÍSTICAS / STATS
+             ======================================== -->
+        <div class="grid grid-cols-3 gap-4 sm:gap-6 pt-8 border-t border-gray-200 dark:border-slate-700 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <!-- Stat 1 -->
+          <div class="text-center sm:text-left">
+            <div class="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-primary mb-1">
+              16+
+            </div>
+            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-tight">
+              Años de<br class="hidden sm:inline" /> Trayectoria
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="text-center sm:text-left">
+            <div class="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-primary mb-1">
+              IUCN
+            </div>
+            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-tight">
+              Miembro<br class="hidden sm:inline" /> Activo
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="text-center sm:text-left">
+            <div class="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-primary mb-1">
+              10k+
+            </div>
+            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-tight">
+              Alumnos<br class="hidden sm:inline" /> Certificados
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
