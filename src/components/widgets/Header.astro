@@ -101,11 +101,11 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                   <button
                     type="button"
                     class:list={[
-                      'px-4 py-2.5 rounded flex items-center whitespace-nowrap transition-colors',
+                      'px-4 py-2 rounded flex items-center whitespace-nowrap transition-colors',
                       // estados del botón Activo/Inactivo
                       {
                         'bg-secondary text-white hover:bg-secondary hover:text-white dark:bg-secondary dark:text-white': isChildActive,
-                        'bg-default text-white hover:bg-secondary dark:bg-transparent dark:text-white dark:hover:bg-secondary': !isChildActive,
+                        'text-default hover:bg-orange-400/20 hover:text-gray-900 dark:bg-transparent dark:text-white dark:hover:bg-orange-400/50': !isChildActive,
                       },
                     ]}
                   >
@@ -113,15 +113,15 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                     <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
                   </button>
                   {/* para el Dropdown */}
-                  <ul class="dropdown-menu md:backdrop-blur-md rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-gray-100 dark:md:bg-dark md:min-w-[200px] drop-shadow-xl border border-gray-200 dark:border-dark z-50">
+                  <ul class="dropdown-menu md:backdrop-blur-md rounded-b-2xl pb-1 md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-gray-100 dark:md:bg-dark md:min-w-[200px] drop-shadow-xl border-t-2 border-secondary z-50 mt-1">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
                           class:list={[
-                            'first:rounded-t last:rounded-b py-2 px-5 block whitespace-no-wrap transition-colors',
+                            'py-2 px-5 block whitespace-no-wrap transition-colors',
                             {
                               'bg-secondary text-white dark:bg-secondary dark:text-white': href2 === currentPath,
-                              'text-gray-700 hover:text-white hover:bg-secondary dark:text-gray-300 dark:hover:text-white dark:hover:bg-secondary': href2 !== currentPath,
+                              'text-gray-700 hover:text-default hover:bg-orange-400/20 dark:text-gray-300 dark:hover:text-white dark:hover:bg-orange-400/50': href2 !== currentPath,
                             },
                           ]}
                           href={href2}

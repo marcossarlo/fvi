@@ -8,18 +8,18 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<section class="relative w-full overflow-hidden bg-white dark:bg-slate-900" {...id ? { id } : {}}>
+<section class="relative w-full overflow-hidden bg-white dark:bg-slate-900 -mt-px z-0" {...id ? { id } : {}}>
   <div class="grid lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
     
     <!-- ========================================
          COLUMNA IZQUIERDA: IMAGEN DE FONDO CON BADGE
          ======================================== -->
-    <div class="relative order-1 h-[400px] lg:h-auto">
+    <div class="relative order-1 h-[400px] lg:h-auto flex">
       <!-- Imagen de fondo -->
       <img 
         src="/images/fvi_hero.webp" 
         alt="Bosque verde - Fondo Verde Institute" 
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover block"
       />
       
       <!-- Badge flotante "IMPACTO REAL" - Visible en todas las vistas -->
