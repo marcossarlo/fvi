@@ -1,0 +1,214 @@
+---
+/**
+ * FondoVerdeNews.astro
+ *
+ * Fetches the latest news from fondoverde.org RSS feed at build time
+ * and renders them in the same grid style as BlogLatestPosts.
+ *
+ * RSS URL: https://www.fondoverde.org/noticias?format=feed&type=rss
+ */
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Button from '~/components/ui/Button.astro';
+import type { Widget } from '~/types';
+
+export interface Props extends Widget {
+  title?: string;
+  information?: string;
+  count?: number;
+  linkText?: string;
+  linkUrl?: string;
+}
+
+const {
+  title = 'Noticias y novedades de Fondo Verde',
+  information,
+  count = 4,
+  linkText = 'Ver más noticias',
+  linkUrl = 'https://www.fondoverde.org/noticias',
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+interface NewsItem {
+  title: string;
+  link: string;
+  image: string;
+  imageAlt: string;
+  description: string;
+  pubDate: string;
+}
+
+// Fallback hardcoded data (used if RSS fetch fails)
+const FALLBACK_NEWS: NewsItem[] = [
+  {
+    title: 'El doctor Braulio Buendía: «Tuve la oportunidad de escalar mi experiencia profesional»',
+    link: 'https://www.fondoverde.org/noticias/braulio-buendia-oportunidad-de-escalar-experiencia-profesional',
+    image:
+      'https://www.fondoverde.org/images/fv/noticias/2026/fv_braulio-buendia-oportunidad-experiencia-profesional.jpg',
+    imageAlt: 'Braulio Buendía tesis doctoral',
+    description:
+      'El doctor Braulio Buendía, delegado de Fondo Verde, presenta su tesis doctoral sobre gobernanza y conservación de bosques.',
+    pubDate: '19 de febrero de 2026',
+  },
+  {
+    title: 'Día Mundial de la Educación Ambiental: El conocimiento como herramienta de cambio',
+    link: 'https://www.fondoverde.org/noticias/dia-mundial-de-la-educacion-ambiental-conocimiento-como-herramienta-de-cambio',
+    image: 'https://www.fondoverde.org/images/fv/noticias/2026/fv_dia-mundial-de-la-educacion-ambiental.jpg',
+    imageAlt: 'Día Mundial de la Educación Ambiental',
+    description:
+      'Celebramos el Día Mundial de la Educación Ambiental. Descubre su importancia y tres formas sencillas de celebrar este día.',
+    pubDate: '26 de enero de 2026',
+  },
+  {
+    title: 'Programa de becas parciales Fondo Verde 2026',
+    link: 'https://www.fondoverde.org/noticias/programa-becas-parciales-2026',
+    image: 'https://www.fondoverde.org/images/fv/noticias/2026/fv_programa-becas-parciales-2026.jpg',
+    imageAlt: 'Programa de Becas Parciales 2026',
+    description:
+      'Fondo Verde anuncia la apertura de su Programa de Becas Parciales 2026, una iniciativa destinada a impulsar la formación ambiental.',
+    pubDate: '13 de enero de 2026',
+  },
+  {
+    title: 'Fondo Verde participa en el Gran Canaria MICE Day y se suma a la Guía de Sostenibilidad MICE',
+    link: 'https://www.fondoverde.org/noticias/fondo-verde-participa-gran-canaria-mice-day',
+    image: 'https://www.fondoverde.org/images/fv/noticias/2025/fv_gran-canaria-mice-day.jpg',
+    imageAlt: 'Gran Canaria MICE Day',
+    description:
+      'Fondo Verde impulsa el turismo responsable en el Gran Canaria MICE Day, integrándose en la nueva guía de sostenibilidad.',
+    pubDate: '23 de diciembre de 2025',
+  },
+];
+
+function parseDate(raw: string): string {
+  try {
+    return new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(raw));
+  } catch {
+    return raw;
+  }
+}
+
+// Module-level cache: fetched once per build/dev-server session
+let _cachedNews: NewsItem[] | null = null;
+
+// Fetch and parse RSS at build time
+let newsItems: NewsItem[] = FALLBACK_NEWS;
+
+if (_cachedNews) {
+  newsItems = _cachedNews;
+} else {
+  try {
+    const res = await fetch('https://www.fondoverde.org/noticias?format=feed&type=rss', {
+      signal: AbortSignal.timeout(3000),
+    });
+
+    if (res.ok) {
+      const rawXml = await res.text();
+      // Normalize: join lines that are split mid-attribute so URL values
+      // don't end up with embedded newlines (Joomla wraps long attribute values).
+      const xml = rawXml.replace(/\r?\n/g, ' ');
+
+      // Extract individual <item> blocks
+      const itemBlocks = xml.match(/<item>([\s\S]*?)<\/item>/g) ?? [];
+
+      const parsed: NewsItem[] = itemBlocks.slice(0, count).map((block) => {
+        const title = (block.match(/<title>([\s\S]*?)<\/title>/) ?? [])[1]?.trim() ?? '';
+        const link = (block.match(/<link>([\s\S]*?)<\/link>/) ?? [])[1]?.trim() ?? '';
+        const pubDateRaw = (block.match(/<pubDate>([\s\S]*?)<\/pubDate>/) ?? [])[1]?.trim() ?? '';
+
+        // CDATA contains the image and description
+        const cdata = (block.match(/<!\[CDATA\[([\s\S]*?)\]\]>/) ?? [])[1] ?? '';
+        // data-src is Joomla's lazy-load attr; trim any residual whitespace from URL
+        const rawImage =
+          (cdata.match(/data-src="([^"]+)"/) ?? [])[1] ??
+          (cdata.match(/(?<![\w-])src="(https?:[^"]+)"/) ?? [])[1] ??
+          '';
+        const image = rawImage.trim();
+        const imageAlt = ((cdata.match(/alt="([^"]*)"/) ?? [])[1] ?? title).trim();
+        // Second <p> after the image paragraph contains the excerpt
+        const description = (cdata.match(/<\/p>\s*<p>([\s\S]*?)<\/p>/) ?? [])[1]?.trim() ?? '';
+
+        return {
+          title,
+          link,
+          image,
+          imageAlt,
+          description,
+          pubDate: parseDate(pubDateRaw),
+        };
+      });
+
+      if (parsed.length > 0) {
+        newsItems = parsed;
+        _cachedNews = parsed;
+      }
+    }
+  } catch {
+    // Network error or timeout — silently use fallback data
+    _cachedNews = FALLBACK_NEWS;
+  }
+}
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container as string} bg={bg}>
+  <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+    {
+      title && (
+        <div class="md:max-w-sm">
+          <h2
+            class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
+            set:html={title}
+          />
+          {linkText && linkUrl && (
+            <Button variant="link" href={linkUrl} target="_blank" rel="noopener noreferrer">
+              {linkText} »
+            </Button>
+          )}
+        </div>
+      )
+    }
+    {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
+  </div>
+
+  <div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6">
+    {
+      newsItems.map((item) => (
+        <article class="mb-6 transition intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <div class="relative aspect-video md:aspect-auto md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6 overflow-hidden">
+            {item.image && (
+              <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label={item.title}>
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  class="absolute inset-0 w-full h-full object-cover rounded shadow-lg"
+                  loading="lazy"
+                  decoding="async"
+                  width="1000"
+                  height="520"
+                  referrerpolicy="no-referrer"
+                />
+              </a>
+            )}
+          </div>
+
+          <p class="text-xs text-muted dark:text-slate-500 mb-1">{item.pubDate}</p>
+
+          <h3 class="text-xl sm:text-2xl font-bold leading-tight mb-2 font-heading dark:text-slate-300">
+            <a
+              class="inline-block hover:text-primary dark:hover:text-blue-700 transition ease-in duration-200"
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {item.title}
+            </a>
+          </h3>
+
+          <p class="text-muted dark:text-slate-400 text-lg">{item.description}</p>
+        </article>
+      ))
+    }
+  </div>
+</WidgetWrapper>

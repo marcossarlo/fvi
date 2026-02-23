@@ -16,7 +16,7 @@ const {
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <div class="bg-white/75 dark:bg-slate-900 rounded-lg shadow-lg p-6 md:p-8">
+  <!-- <div class="bg-white/75 dark:bg-slate-900 rounded-lg shadow-lg p-6 md:p-8"> -->
     {/* Tagline - Rectangle on the left */}
     {tagline && (
       <div class="mb-8">
@@ -41,5 +41,5 @@ const {
         ...((classes?.items as Record<string, never>) ?? {}),
       }}
     />
-  </div>
+  <!-- </div> -->
 </WidgetWrapper>

@@ -8,31 +8,159 @@ import comoAplicarImage from '~/assets/images/fvi_Como-Aplicar-home.jpg';
 import HeroFVI from '~/components/widgets/HeroFVI.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import FeatureInfo from '~/components/widgets/FeatureInfo.astro';
 import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FondoVerdeNews from '~/components/widgets/FondoVerdeNews.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Fondo Verde Institute — Maestrías, Doctorados y Posdoctorados en Medio Ambiente',
   ignoreTitleTemplate: true,
+  description:
+    'Fondo Verde Institute ofrece 8 Maestrías Universitarias, 9 Doctorados Oficiales y 7 Posdoctorados 100% en línea en medio ambiente, sostenibilidad y desarrollo ambiental para profesionales de Iberoamérica.',
+  keywords:
+    'maestría medio ambiente, doctorado sostenibilidad, posgrado ambiental online, maestría sostenibilidad, doctorado medio ambiente, posdoctorado ambiental, Fondo Verde Institute, IIFA, becas medio ambiente, formación ambiental Latinoamérica',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
-
   <HeroFVI />
+  
+  <!-- Stats Widget ****************** -->
+  <Stats
+    stats={[
+      { title: 'Maestrías', amount: '8' },
+      { title: 'Doctorados Oficiales', amount: '9' },
+      { title: 'Posdoctorados', amount: '7' },
+      { title: 'Países de Iberoamérica', amount: '20+' },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#c6e8e6,transparent)]"></div></div>
+    </Fragment>
+  </Stats>
 
-  <!-- Note Widget ******************* -->
-  <Note title="Oferta Académica:" description="Contamos con <a href='#' class='font-bold text-secondary hover:text-primary'>8 Maestrías Universitarias</a>, <a href='#' class='font-bold text-secondary hover:text-primary'>9 Doctorados Oficiales</a>, y <a href='#' class='font-bold text-secondary hover:text-primary'>7 Posdoctorados</a> en distintos ámbitos del medio ambiente." />
+  <!-- Features Widget: ¿Por qué elegir FVI? *************** -->
+  <Features
+    id="por-que-fvi"
+    tagline="Sobre el Instituto"
+    title="¿Por qué elegir Fondo Verde Institute?"
+    subtitle="Un ecosistema académico vinculante entre la sociedad civil, el mercado, el gobierno y los ecologistas, con el mejor contenido de formación ambiental y certificaciones de prestigio internacional."
+    items={[
+      {
+        title: 'Formación 100% en línea',
+        description:
+          'Todos nuestros programas se desarrollan a través del Campus Virtual de Fondo Verde (fondoverdeopen.net), con interacción activa entre profesores-tutores y participantes de todo el mundo.',
+        icon: 'tabler:device-laptop',
+      },
+      {
+        title: 'Certificaciones de prestigio internacional',
+        description:
+          'Nuestros títulos están respaldados por una de las certificaciones más reconocidas en el sector ambiental, con validez y reconocimiento en Europa y Latinoamérica.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Becas disponibles',
+        description:
+          'Fondo Verde ofrece un Programa de Becas para ciudadanos europeos y latinoamericanos, cubriendo hasta el 50% del costo del programa de posgrado.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Comunidad iberoamericana',
+        description:
+          'Conecta con una red global de profesionales y académicos comprometidos con la sostenibilidad ambiental en más de 20 países de Iberoamérica.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Investigación aplicada',
+        description:
+          'Actividades teóricas y prácticas orientadas a la conservación y el manejo sostenible de los recursos naturales, generando proyectos de alto impacto científico y social.',
+        icon: 'tabler:microscope',
+      },
+      {
+        title: 'Compatible con tu vida profesional',
+        description:
+          'La modalidad online permite equilibrar el estudio con la actividad laboral, adaptándose a los ritmos y zonas horarias de estudiantes en todo el continente.',
+        icon: 'tabler:clock',
+      },
+    ]}
+  />
 
-  <!-- FeatureInfo Widget ************** -->
+  <!-- FeaturedPrograms Widget ******* -->
+  <FeaturedPrograms
+    tagline="Programas Destacados"
+    columns={2}
+    items={[
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Ciencias de la Sostenibilidad',
+        date: '13 de mayo de 2026',
+        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Rehabilitación Ambiental Terrestre',
+        date: '13 de mayo de 2026',
+        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
+        date: '13 de mayo de 2026',
+        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Gestión Ambiental',
+        date: '13 de mayo de 2026',
+        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      },
+      {
+        image: '/images/programs/fvi_fondo-hero.jpg',
+        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
+        date: '13 de mayo de 2026',
+        description: 'El patrimonio cultural y natural constituye uno de los recursos más valiosos de la humanidad. Su conservación y gestión sostenible son fundamentales para el desarrollo de las sociedades...',
+        button: {
+          text: 'Ver programa',
+          href: '#',
+          variant: 'primary'
+        }
+      }
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-repeat opacity-70 dark:opacity-50" style="background-image: url('/images/fvi_grey_background.jpg');"></div>
+       <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div> -->
+      <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#c6e8e6,transparent)]"></div></div> -->
+    </Fragment>
+  </FeaturedPrograms>
+
+  <!-- FeatureInfo Widget: Oportunidades de Formación ************** -->
   <FeatureInfo
     title="Oportunidades de Formación"
     subtitle="Descubre nuestro Programa de Becas, conoce la modalidad flexible de estudio en línea y aprende paso a paso cómo aplicar a nuestros posgrados ambientales."
@@ -87,11 +215,47 @@ const metadata = {
     ]}
   >
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-olive-50 dark:bg-transparent"></div>
     </Fragment>
   </FeatureInfo>
 
-  <!-- Content Widget: MAESTRÍAS **************** -->
+  <!-- Testimonials Widget: Alumni ******* -->
+  <Testimonials
+    tagline="Alumni"
+    title="Testimonios de nuestros estudiantes"
+    subtitle="Voces de quienes han transformado su carrera profesional a través de nuestros programas de posgrado en medio ambiente."
+    testimonials={[
+      {
+        name: 'Felix Ortiz',
+        job: 'Master de Proyectos Ambientales · México',
+        testimonial:
+          'Agradezco a todo el equipo del Instituto y Fondo Verde por haberme dado la oportunidad de cerrar exitosamente mi ciclo de aprendizaje. Una mención especial por el excelente trabajo del Dr. Walter Castro Aponte. Hoy he recibido los documentos que acreditan el master.',
+      },
+      {
+        name: 'Germán Onofre',
+        job: 'MBA en Negocios Ambientales · Perú',
+        testimonial:
+          'Quedo agradecido a Fondo Verde e IIFA por haberme otorgado la oportunidad de ser parte de esta formación. Es una experiencia extraordinaria de aprendizaje y formación profesional, sin barreras ni fronteras.',
+      },
+      {
+        name: 'Pedro Fuentes Vásquez',
+        job: 'MBA en Administración Ambiental · Ecuador',
+        testimonial:
+          'Quiero agradecer la oportunidad brindada por IIFA. Este MBA me deja totalmente satisfecho por su seriedad, compromiso y su alto nivel de contenido. Una institución que verdaderamente marca la diferencia en la formación ambiental.',
+      },
+    ]}
+    callToAction={{
+      text: 'Ver más testimonios',
+      href: '/alumni',
+      variant: 'secondary',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 z-[-2] bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+    </Fragment>
+  </Testimonials>
+
+    <!-- Content Widget: MAESTRÍAS **************** -->
   <Content
     isReversed
     tagline="Formación de Excelencia"
@@ -193,305 +357,89 @@ const metadata = {
     </Fragment>
     <Fragment slot="bg">
       <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div> -->
-       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-orange-500 opacity-20 blur-[100px]"></div></div>
+       <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
     </Fragment>
   </Content>
 
-  <!-- FeaturedPrograms Widget ******* -->
-  <FeaturedPrograms
-    tagline="Programas Destacados"
-    columns={2}
-    items={[
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Ciencias de la Sostenibilidad',
-        date: '13 de mayo de 2026',
-        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Rehabilitación Ambiental Terrestre',
-        date: '13 de mayo de 2026',
-        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
-        date: '13 de mayo de 2026',
-        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Gestión Ambiental',
-        date: '13 de mayo de 2026',
-        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
-        date: '13 de mayo de 2026',
-        description: 'El patrimonio cultural y natural constituye uno de los recursos más valiosos de la humanidad. Su conservación y gestión sostenible son fundamentales para el desarrollo de las sociedades...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      }
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-repeat opacity-70 dark:opacity-50" style="background-image: url('/images/fvi_grey_background.jpg');"></div>
-    </Fragment>
-  </FeaturedPrograms>
-
-  <!-- Features Widget *************** -->
-
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
+  <!-- Note Widget ******************* -->
+  <Note
+    icon="tabler:calendar-event"
+    title="Próximos inicios:&nbsp;"
+    description="<strong>Posdoctorados</strong> · 4 mar 2026 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Doctorados y Maestrías</strong> · 13 may 2026 &nbsp;&nbsp;—&nbsp;&nbsp; <a href='/contact' class='font-bold text-secondary hover:text-primary underline underline-offset-2'>Solicitar información</a>"
   />
 
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
+  <!-- FAQs Widget: Preguntas Frecuentes ******************* -->
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    title="Preguntas Frecuentes"
+    subtitle="Encuentra respuestas a las consultas más habituales sobre nuestros programas, admisiones, becas y metodología de estudio."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why AstroWind?',
+        title: '¿Cómo funciona el Programa de Becas Fondo Verde?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'Fondo Verde ha establecido un Programa de Becas que permite a ciudadanos europeos y latinoamericanos acceder en forma especial a los cursos impartidos en línea. La beca cubre el 50% del costo del programa. Puedes consultar los requisitos detallados en la sección de Becas.',
       },
       {
-        title: 'What do I need to start?',
+        title: '¿Cuándo es el próximo inicio de clases?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'El próximo período académico inicia el 13 de mayo de 2026. Las admisiones están abiertas hasta el 25 de abril de 2026. Te recomendamos completar tu solicitud con anticipación para asegurar tu plaza.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: '¿Cómo se desarrollan los programas en línea?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+          'Todos los programas se desarrollan a través del Campus Virtual de Fondo Verde (fondoverdeopen.net). La plataforma permite la interacción constante entre el profesor-tutor y los participantes, con materiales de estudio, foros, evaluaciones y sesiones sincrónicas.',
       },
       {
-        title: "What's something that you don't understand?",
+        title: '¿Qué documentos necesito para aplicar?',
         description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+          'Todo candidato debe cumplir con los reglamentos, políticas y criterios vigentes de admisión establecidos por la institución. El proceso incluye la revisión de documentos académicos previos. Puedes consultar todos los requisitos en la sección ¿Cómo Aplicar?',
       },
       {
-        title: 'What is something that you would like to try again?',
+        title: '¿Los títulos son reconocidos internacionalmente?',
         description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+          'Sí. Fondo Verde Institute cuenta con certificaciones de gran prestigio en el sector ambiental, con reconocimiento tanto en Europa como en Latinoamérica. Nuestros graduados ejercen su actividad profesional en múltiples países de Iberoamérica.',
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        title: '¿Puedo estudiar mientras trabajo?',
         description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          'Absolutamente. La modalidad 100% online está diseñada para que puedas equilibrar tu actividad profesional con los estudios. Los materiales y actividades están disponibles de forma flexible, adaptándose a distintas zonas horarias y ritmos de trabajo.',
       },
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
-
-  <Stats
-    stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
+    <!-- CallToAction Widget: Admisiones *********** -->
   <CallToAction
+    isDark
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: 'Solicitar Información',
+        href: '/contact',
+        icon: 'tabler:mail',
       },
     ]}
   >
     <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+      Admisiones abiertas&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">2026</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+      <strong>Posdoctorados:</strong> inicio 4 de marzo &nbsp;·&nbsp; <strong>Doctorados y Maestrías:</strong> inicio 13 de mayo.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div
+        class="absolute inset-0"
+        style="background-image: url('/images/programs/fvi_fondo-hero.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"
+      ></div>
+      <div class="absolute inset-0 bg-gray-50/10"></div>
     </Fragment>
   </CallToAction>
+
+  <!-- Noticias FVI Widget ******* -->
+  <FondoVerdeNews
+    title="Noticias y novedades de Fondo Verde"
+    information="Fondo Verde publica material producido en nuestra redacción y por colaboradores en el exterior. Presentamos las noticias más relevantes de nuestro accionar en la región, siendo un canal online dedicado a la educación en medio ambiente."
+  />
 </Layout>

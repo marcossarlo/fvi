@@ -22,12 +22,22 @@ export default {
 
       animation: {
         fade: 'fadeInUp 1s both',
+        'fade-down': 'fadeInDown 1s both',
+        'fade-left': 'fadeInLeft 1s both',
       },
 
       keyframes: {
         fadeInUp: {
           '0%': { opacity: 0, transform: 'translateY(2rem)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        fadeInDown: {
+          '0%': { opacity: 0, transform: 'translateY(-2rem)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
+        fadeInLeft: {
+          '0%': { opacity: 0, transform: 'translateX(-2rem)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
         },
       },
     },
