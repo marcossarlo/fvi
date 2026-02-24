@@ -4,6 +4,9 @@ import Layout from '~/layouts/PageLayout.astro';
 import becasImage from '~/assets/images/fvi_Becas-Fondo-Verde-home.jpg';
 import comoSeEstudiaImage from '~/assets/images/fvi_Financiamiento-home.jpg';
 import comoAplicarImage from '~/assets/images/fvi_Como-Aplicar-home.jpg';
+import maestriasImage from '~/assets/images/fvi_maestrias_home.webp';
+import doctoradosImage from '~/assets/images/fvi_doctorados_home.webp';
+import postdocsImage from '~/assets/images/fvi_postdocs_home.webp';
 
 import HeroFVI from '~/components/widgets/HeroFVI.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -278,8 +281,8 @@ const metadata = {
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: maestriasImage,
+      alt: 'Maestrías Universitarias - Fondo Verde Institute',
     }}
   >
     <Fragment slot="content">
@@ -314,8 +317,8 @@ const metadata = {
     ]}
 
     image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
+      src: doctoradosImage,
+      alt: 'Doctorados Oficiales - Fondo Verde Institute',
     }}
   >
     <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">9</span> Doctorados Oficiales</h3>
@@ -349,8 +352,8 @@ const metadata = {
     ]}
 
     image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
+      src: postdocsImage,
+      alt: 'Posdoctorados - Fondo Verde Institute',
     }}
   >
     <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">7</span> Posdoctorados</h3>
@@ -425,15 +428,15 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      <strong>Posdoctorados:</strong> inicio 4 de marzo &nbsp;·&nbsp; <strong>Doctorados y Maestrías:</strong> inicio 13 de mayo.
+      <strong class="text-accent">Posdoctorados:</strong> inicio 4 de marzo &nbsp;·&nbsp; <strong class="text-accent">Doctorado</strong> y <strong class="text-accent">Maestrías</strong>: inicio 13 de mayo.
     </Fragment>
 
     <Fragment slot="bg">
       <div
         class="absolute inset-0"
-        style="background-image: url('/images/programs/fvi_fondo-hero.jpg'); background-size: cover; background-position: center; background-attachment: fixed;"
+        style="background-image: url('/images/fvi_admisiones_home.webp'); background-size: cover; background-position: center; background-attachment: fixed;"
       ></div>
-      <div class="absolute inset-0 bg-gray-50/10"></div>
+      <!-- <div class="absolute inset-0 bg-gray-50/10"></div> -->
     </Fragment>
   </CallToAction>
 

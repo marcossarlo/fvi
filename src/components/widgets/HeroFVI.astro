@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import heroImage from '~/assets/images/fvi_hero.webp';
 
 interface Props {
   id?: string;
@@ -16,10 +18,12 @@ const { id } = Astro.props;
          ======================================== -->
     <div class="relative order-1 h-[400px] lg:h-auto flex">
       <!-- Imagen de fondo -->
-      <img 
-        src="/images/fvi_hero.webp" 
-        alt="Bosque verde - Fondo Verde Institute" 
+      <Image
+        src={heroImage}
+        alt="Bosque verde - Fondo Verde Institute"
         class="absolute inset-0 w-full h-full object-cover block motion-safe:md:animate-fade-left"
+        loading="eager"
+        fetchpriority="high"
       />
       
       <!-- Badge flotante "IMPACTO REAL" - Visible en todas las vistas -->
