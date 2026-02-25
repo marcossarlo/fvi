@@ -1,0 +1,214 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Conócenos',
+  description:
+    'Fondo Verde Institute, una organización líder en formación ambiental con más de 16 años de experiencia, ofreciendo un ecosistema vinculante entre sociedad civil, mercado, gobierno y ecologistas.',
+    keywords: 'Fondo Verde Institute, formación ambiental, conservación, manejo sostenible, innovación, aprendizaje a distancia, equipo sin fronteras, Latinoamérica, Unión Europea',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    tagline="El Instituto"
+    image={{
+      src: '~/assets/images/fvi-conocenos.webp',
+      alt: 'Fondo Verde Institute',
+    }}
+  >
+    <Fragment slot="title">
+      Innovación y Formación Ambiental con
+      <span class="text-primary dark:text-accent"> Impacto Global</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="text-primary font-semibold">Fondo Verde</span> <span class="text-secondary font-semibold">Institute</span>, se funda en el entorno de <a 
+              href="https://www.fondoverde.org" 
+              class="font-bold text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary transition-colors decoration-2 underline-offset-2" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              FONDO VERDE</a>,
+      una <strong>ONGD internacional</strong> miembro de <strong>IUCN International Union for Conservation of Nature</strong>.
+      Fondo Verde es una organización líder en el sector de formación ambiental con más de 16 años de experiencia. Esta experiencia ha permitido apostar por la innovación a través de una oferta educativa que genera un impacto positivo en el mundo.
+    </Fragment>
+  </Hero>
+
+  <!-- El Instituto ofrece *********** -->
+   <Features3
+    title="El Instituto ofrece:"    
+    columns={3}
+    items={[
+      {
+        title: 'Ecosistema vinculante',
+        description:
+          'Un ecosistema vinculante entre la sociedad civil, mercado, gobierno y ecologistas, con el mejor contenido de training en medio ambiente.',
+        icon: 'tabler:network',
+      },
+      {
+        title: 'Certificaciones de prestigio',
+        description:
+          'Contamos con una de las certificaciones de más prestigio en el sector ambiental a nivel internacional.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Actividades teórico-prácticas',
+        description:
+          'Sus actividades tanto teóricas como prácticas están orientadas a la conservación y manejo sostenible de los recursos naturales y el ambiente.',
+        icon: 'tabler:leaf',
+      },
+    ]}
+  />
+
+  <!-- Nuestro ADN ******************* -->
+  <Content
+    items={[
+      {
+        title: 'Innovación continua',
+        description:
+          'La preocupación por el medio ambiente, las tecnologías de información y la innovación son parte de nuestro ADN.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Aprendizaje a distancia',
+        description:
+          'Creemos firmemente en internet como vehículo eficaz para brindar capacitación a distancia sobre variadas temáticas de medio ambiente.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Equipo sin fronteras',
+        description:
+          'La agilidad, flexibilidad y un equipo sin fronteras nos permiten anticipar las necesidades de formación ambiental en todos sus niveles.',
+        icon: 'tabler:users',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/fvi-nuestro-adn.webp',
+      alt: 'ADN Fondo Verde',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Nuestro ADN</h3>
+    </Fragment>
+  </Content>
+
+  <!-- Ámbito de actuación *********** -->
+  <Features3
+    title="Ámbito de actuación"
+    subtitle="El Instituto tiene carácter internacional, desarrollando su actuación directa en Latinoamérica y la Unión Europea, manteniendo alianzas y contactos con entidades similares de todo el mundo."
+    columns={3}
+    items={[
+      {
+        title: 'Latinoamérica',
+        // description:
+          // 'Presencia directa en países latinoamericanos con sedes operativas y alianzas estratégicas para la formación ambiental.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Unión Europea',
+        // description:
+          // 'Actuación directa en la Unión Europea con sede en España, fortaleciendo la formación ambiental en el ámbito europeo.',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Alianzas globales',
+        // description:
+          // 'Mantiene alianzas y contactos con entidades similares de todo el mundo, ampliando el alcance de su impacto ambiental.',
+        icon: 'tabler:globe',
+      },
+    ]}
+  />
+
+  <!-- Sede Central -->
+  <Features2
+    title="Sede Central"
+    tagline="Perú"
+    columns={4}
+    items={[
+      {
+        title: 'Contacto',
+        description: 'Juan Gamarra',
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Teléfonos',
+        description: '+54 9 11 6405 8411',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Correo',
+        description: 'juan.gamarra@fondoverde.org',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Dirección',
+        description: 'Av. Alejandro Bertello N° 830 Piso 5 – N° 510 Edificio Duetto Torre I - Lima, Perú',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- Unión Europea (España) ************** -->
+  <Features2
+    title="Oficina Regional"
+    tagline="Unión Europea (España)"
+    columns={3}
+    items={[
+      {
+        title: 'Sede Principal',
+        description: '<strong>Dirección:</strong> Calle Gravina, 5 piso 3 puerta 33.<br /> 35010 - Las Palmas de Gran Canaria. Las Palmas.<br /> España – Unión Europea<br /> <strong>Móvil</strong>: +34 689 610 144<br /> <strong>Web</strong>: www.fondoverde.org<br /> <strong>EMail</strong>: octavio.perera@fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Delegación Madrid',
+        description: '<strong>Dirección:</strong> Av. Moscú, 30 28822 - Coslada. Madrid España<br /> <strong>Web</strong>: www.fondoverde.org<br /> <strong>EMail</strong>: espana@fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Delegación Castilla y León',
+        description: '<strong>Dirección:</strong> Calle Severo Ochoa, 24 - 1ºA 47195 <br />Arroyo de la Encomienda. <br />Valladolid. España<br /> <strong>Web</strong>: www.fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+  <!-- América del Sur (Perú) ************** -->
+  <Features2
+    title="Oficinas Regionales"
+    columns={3}
+    items={[
+      {
+        title: 'Delegación Amazonía',
+        description: '<strong>Dirección:</strong> Av. Francisco Bolognesi s/n, El Pedregal, San Ramón. Chanchamayo - Perú<br /> <strong>Móvil:</strong> ++ 51 915130408<br /> <strong>Web:</strong> www.fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Fondo Verde Argentina',
+        description: '<strong>Dirección:</strong> Avenida Rivadavia 3466, piso 7, Dpto. 20. Buenos Aires - Argentina<br /> <strong>Móvil:</strong> +54 91164058411<br /> <strong>Web:</strong> www.fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Fondo Verde Bolivia',
+        description: '<strong>Dirección:</strong> Av. Juan de la Rosa # 1154 Cochabamba - Bolivia<br /> <strong>Móvil:</strong> ++591 (4) 4409442<br /> <strong>Web:</strong> www.fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Centroamérica y Caribe (Costa Rica)',
+        description: '<strong>Dirección:</strong> Avenida 1 Calle 78A, San Jose, Costa Rica<br /> <strong>Móvil:</strong> +506 2232-4898<br /> <strong>Web:</strong> www.fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+      {
+        title: 'Norteamérica (Estados Unidos)',
+        description: '<strong>Dirección:</strong> 324 Arnage Drive, Hutto, Zip Code 78634, Texas, USA.<br /> <strong>Móvil:</strong> +1 (510) 640-3607<br /> <strong>Web:</strong> www.fondoverde.org',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+
+</Layout>

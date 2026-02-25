@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import CallToAction from './CallToAction.astro';
 
 interface Link {
   text?: string;
@@ -26,7 +27,36 @@ export interface Props {
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 ---
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
+  <!-- CallToAction Widget: Admisiones *********** -->
+  <CallToAction
+      isDark
+      actions={[
+          {
+          variant: 'primary',
+          text: 'Solicitar Información',
+          href: '/contact',
+          icon: 'tabler:mail',
+          },
+      ]}
+      >
+      <Fragment slot="title">
+          Admisiones abiertas&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">2026</span>
+      </Fragment>
+
+      <Fragment slot="subtitle">
+          <strong class="text-accent">Posdoctorados:</strong> inicio 4 de marzo &nbsp;·&nbsp; <strong class="text-accent">Doctorado</strong> y <strong class="text-accent">Maestrías</strong>: inicio 13 de mayo.
+      </Fragment>
+
+      <Fragment slot="bg">
+          <div
+          class="absolute inset-0"
+          style="background-image: url('/images/fvi_admisiones_home.webp'); background-size: cover; background-position: center; background-attachment: fixed;"
+          ></div>
+          <!-- <div class="absolute inset-0 bg-gray-50/10"></div> -->
+      </Fragment>
+  </CallToAction>
+
+<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-slate-600 dark:border-slate-800 not-prose']}>
   <div class="bg-default dark:bg-dark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <!-- Titulos -->
   <div

@@ -1,3 +1,4 @@
+import test from 'node:test';
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 // Barra secundaria debajo del navbar principal
@@ -17,6 +18,43 @@ export const secondaryNavData = {
 
 export const headerData = {
   links: [
+    {
+      text: 'El Instituto',
+      links: [
+        {
+          text: 'Conócenos',
+          href: getPermalink('/conocenos'),
+        },
+        {
+          text: 'Nuestro Director',
+          href: getPermalink('/director'),
+        },
+        {
+          text: 'Consejo Académico Internacional',
+          href: getPermalink('/consejo-academico-internacional'),
+        },
+        {
+          text: 'Comité de Dirección',
+          href: getPermalink('/comite-direccion'),
+        },
+        {
+          text: 'Profesorado e Investigación',
+          href: getPermalink('/profesorado-investigacion'),
+        },
+        {
+          text: 'Acreditación y Reconocimiento',
+          href: getPermalink('/acreditacion-reconocimiento'),
+        },
+        {
+          text: 'Empleo en el Instituto',
+          href: getPermalink('/empleo-instituto'),
+        },
+        {
+          text: 'Fondo Verde y su acción social',
+          href: getPermalink('/fondo-verde-accion-social'),
+        },
+      ]
+    },
     {
       text: 'Homes',
       links: [
