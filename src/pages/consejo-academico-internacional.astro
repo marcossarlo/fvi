@@ -1,0 +1,294 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Consejo Académico Internacional',
+  description:
+    'El Consejo Académico Internacional de Fondo Verde Institute es un órgano de consulta y asesoría compuesto por destacados académicos e investigadores internacionales en ciencias ambientales.',
+  keywords:
+    'Consejo Académico Internacional, Fondo Verde Institute, académicos, investigadores, medio ambiente, sostenibilidad',
+};
+---
+
+<Layout metadata={metadata}>
+    <!-- Hero Widget ******************* -->
+    <Hero 
+        tagline="El Instituto"
+        image={{
+            src: '~/assets/images/fvi-consejo-academico-internacional.webp',
+            alt: 'Consejo Académico Internacional',
+        }}
+        >
+        <Fragment slot="title">
+            Consejo Académico
+            <span class="text-primary dark:text-accent"> Internacional</span>
+        </Fragment>
+
+        <Fragment slot="subtitle">
+            Un órgano de <span class="font-semibold text-primary">consulta y asesoría</span> integrado por destacados
+            académicos e investigadores de reconocida trayectoria internacional en ciencias ambientales, quienes orientan
+            y enriquecen la visión académica de{' '}
+            <span class="font-semibold text-primary">Fondo Verde</span>{' '}
+            <span class="font-semibold text-secondary">Institute</span>.
+        </Fragment>
+    </Hero>
+
+    <!-- Funciones del Consejo ******************* -->
+    <Features3
+        tagline="Rol institucional"
+        title="Funciones y Atribuciones"
+        subtitle="Los miembros del Consejo aportan una perspectiva y experiencias únicas, adquiridas a lo largo de sus carreras en el ámbito ambiental, en la mayoría de los casos de índole internacional."
+        columns={3}
+        items={[
+            {
+            title: 'Asuntos académicos y disciplinarios',
+            description:
+                'Estudia y decide todos aquellos asuntos de orden académico y disciplinario que someta a su consideración la Dirección.',
+            icon: 'tabler:books',
+            },
+            {
+            title: 'Propuesta de programas',
+            description:
+                'Propone al Comité de Dirección la creación, modificación y terminación de unidades y programas académicos, de investigación y de servicio.',
+            icon: 'tabler:clipboard-list',
+            },
+            {
+            title: 'Orientación académica',
+            description:
+                'Asesora al Director y al Comité de Dirección en la orientación académica del Instituto y recomienda los objetivos y metas para el futuro desarrollo de la Institución.',
+            icon: 'tabler:compass',
+            },
+            {
+            title: 'Distinciones académicas',
+            description:
+                'Otorga, de acuerdo con los reglamentos del Instituto, distinciones académicas y otros reconocimientos.',
+            icon: 'tabler:award',
+            },
+            {
+            title: 'Grados Honoris Causa',
+            description: 'Conceptúa sobre el otorgamiento de grados Honoris Causa.',
+            icon: 'tabler:certificate',
+            },
+            {
+            title: 'Reuniones',
+            description:
+                'El Consejo Académico se reúne ordinariamente al menos una vez al año y extraordinariamente cuantas veces lo convoque el Director.',
+            icon: 'tabler:calendar-event',
+            },
+        ]}
+    />
+
+  <!-- Miembros del Consejo ******************* -->
+
+    <!-- Dr. Gonzalo de la Fuente -->
+    <Content
+        tagline="Trayectorias Ambientales"
+        title="Miembros del Consejo"
+        subtitle="Los miembros del Consejo aportan una perspectiva y experiencias únicas, adquiridas a lo largo de sus carreras en el ámbito ambiental, en la mayoría de los casos de índole internacional."
+        isReversed
+        items={[
+            {
+            title: 'Trayectoria:',
+            description:
+                'Ha desarrollado estudios y proyectos en Paisaje, Turismo Sostenible y TICs, aportando soluciones de análisis, diseño y planificación para mejorar la calidad sensible del entorno, creando lugares atractivos, ecoeficientes y competitivos.',
+            },
+            {
+            title: 'Educación:',
+            description:
+                'Doctor en Ciencias Biológicas de la Universidad Autónoma de Madrid, Máster en Gestión Integrada: Calidad, Medio Ambiente y Seguridad de la Universidad de las Islas Baleares, Diploma de Experto en Gestión Ambiental y Evaluación de Impacto Ambiental de la Universidad Complutense de Madrid, Licenciado en Ciencias y Artes Ambientales de la Universidad Central de Chile.',
+            },
+            {
+            title: 'Experiencia:',
+            description:
+                'Profesional con 18 años de experiencia en empresas tanto públicas como privadas del sector de la consultoría medioambiental, turismo e industrial de Chile, España, Guinea Ecuatorial, Perú e Irlanda del Norte. Forma parte de la International Federation Landscape Architecture (IFLA), European Foundation for Landscape Architecture (EFLA), Asociación Española de Paisajistas (AEP) y Asociación Técnica de Ecología del Paisaje y Seguimiento Ambiental (ECOPAS).',
+            },
+        ]}
+        image={{
+            src: '~/assets/images/users/fvi-gonzalo-fuente.webp',
+            alt: 'Dr. Gonzalo de la Fuente',
+        }}
+    >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-1">Dr. Gonzalo de la Fuente</h3>
+            <!-- <p class="text-primary font-medium mb-4">Especialista en Paisaje, Turismo Sostenible y TICs</p> -->
+        </Fragment>
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Juan Silva, PhD. -->
+    <Content
+        isAfterContent
+        items={[
+            {
+            title: 'Trayectoria:',
+            description:
+                'Profesor e Investigador destacado por sus publicaciones científicas en libros y revistas internacionales, con amplia experiencia en ecosistemas y poblaciones biológicas. En la actualidad se dedica a temas de cambio climático y sus impactos sobre la biodiversidad y a los aspectos ambientales de la sustentabilidad.',
+            },
+            {
+            title: 'Educación:',
+            description:
+                'PhD en Biología de la Universidad de Harvard. Licenciado en Biología de la Universidad Central de Venezuela. Postdoctorados en el Instituto Venezolano de Investigaciones Científicas (IVIC), en el Instituto Oceanográfico de Woods Hole (WHOI), y en el David Rockefeller Center for Latin American Studies.',
+            },
+            {
+            title: 'Experiencia:',
+            description:
+                'Profesor Titular de Ecología en el Instituto de Ciencias Ambientales y Ecológicas (ICAE), Facultad de Ciencias, Universidad de Los Andes (Mérida, Venezuela). Director del Postgrado de Ecología Tropical. Coordinador de la Red de Investigación Cooperativa de Andes y Sabanas (RICAS). Investigador del CENTER FOR INTERNATIONAL DEVELOPMENT (CID), John F. Kennedy School of Government, Universidad de Harvard.',
+            },
+        ]}
+        image={{
+            src: '~/assets/images/users/fvi-juan-silva.webp',
+            alt: 'Juan Silva, PhD.',
+        }}
+        >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-1">Juan Silva, PhD.</h3>
+            <!-- <p class="text-primary font-medium mb-4">Especialista en Cambio Climático y Biodiversidad</p> -->
+        </Fragment>
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Ángel Guillemes Peira, PhD -->
+    <Content
+        isAfterContent
+        isReversed
+        items={[
+            {
+            title: 'Trayectoria:',
+            description:
+                'Sus áreas de conocimiento se centran en las energías renovables, medio ambiente y gestión de proyectos, habiendo impartido numerosas conferencias y cursos en estas temáticas. Ha participado en congresos nacionales e internacionales, proyectos de investigación y es autor de capítulos de libros y artículos científicos en revistas indexadas.',
+            },
+            {
+            title: 'Educación:',
+            description:
+                'Ph.D en Ingeniería Marítima con especialidad en energías renovables por la Universidad de La Laguna, España. Máster en Dirección y Administración de Proyectos por la Universidad de Valencia, España y Licenciado en Biología con mención en medio ambiente por la Universidad SEK, España.',
+            },
+            {
+            title: 'Experiencia:',
+            description:
+                'Ha sido docente titular de la Universidad Del Pacífico, Ecuador, en la Facultad del Mar y Medio Ambiente, desempeñando actividades académicas y de investigación. Anteriormente trabajó en España como consultor de proyectos de I+D, técnico de proyectos e investigador en una consultoría, centro tecnológico y grupo de investigación respectivamente.',
+            },
+        ]}
+        image={{
+            src: 'https://fondoverdeinstitute.com/images/fvi/users/fv_Angel-Guillemes.jpg',
+            alt: 'Ángel Guillemes Peira, PhD',
+        }}
+        >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-1">Ángel Guillemes Peira, PhD</h3>
+            <!-- <p class="text-primary font-medium mb-4">Especialista en Energías Renovables y Gestión de Proyectos</p> -->
+        </Fragment>
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Dra. Loraine Giraud -->
+    <Content
+        isAfterContent
+        items={[
+            {
+            title: 'Trayectoria:',
+            description:
+                'Destacada por su capacidad de integrar la experiencia académica y profesional en los ámbitos del sector público y privado en los campos de sustentabilidad, innovación, ambiente, empresa y ciudad a nivel nacional e internacional.',
+            },
+            {
+            title: 'Educación:',
+            description:
+                'Doctora en Desarrollo Sostenible de la Universidad Simón Bolívar (USB, 2015), Caracas, Venezuela. Magister Scientiarum en Gerencia Ambiental del Instituto Universitario Politécnico de las Fuerzas Armadas Nacionales (IUPFAN, 1998) y Urbanista egresada de la Universidad Simón Bolívar (USB, 1992).',
+            },
+            {
+            title: 'Experiencia:',
+            description:
+                'Profesora del Departamento de Planificación Urbana y Coordinadora del Grupo de Investigación Vida Urbana y Ambiente (VUA) de la Universidad Simón Bolívar. Miembro de la Comisión Técnica de Ambiente de la Academia Nacional de Ingeniería y Hábitat de Venezuela. Más de 25 años de experiencia profesional en gerencia de proyectos de cooperación internacional, Ambiente, Innovación, Ciencia y Tecnología.',
+            },
+        ]}
+        image={{
+            src: 'https://fondoverdeinstitute.com/images/fvi/users/fv_Loraine-Giraud.jpg',
+            alt: 'Dra. Loraine Giraud',
+        }}
+        >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-1">Dra. Loraine Giraud</h3>
+            <!-- <p class="text-primary font-medium mb-4">Especialista en Sustentabilidad, Innovación y Ciudad</p> -->
+        </Fragment>
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Dr. Alberto Jiménez Madrid -->
+    <Content
+        isAfterContent
+        isReversed
+        items={[
+            {
+            title: 'Trayectoria:',
+            description:
+                'En 2011, obtuvo el Premio Internacional "Profesor William R. Dearman QJEGH Young Author of the Year" al mejor artículo científico concedido por la Sociedad Geológica de Londres. En 2014, recibió el Premio Nacional Alfons Bayó, otorgado por la Asociación Internacional de Hidrogeólogos.',
+            },
+            {
+            title: 'Educación:',
+            description:
+                'Doctor en Ciencias del Medio Ambiente por la Universidad de Málaga (UMA) y Licenciatura en Ciencias Ambientales. Perito Judicial especialista en medio ambiente, ordenación del territorio y urbanismo. Especialista en planificación y gestión de los recursos naturales, ordenación del territorio y sistemas de información geográfica.',
+            },
+            {
+            title: 'Experiencia:',
+            description:
+                'Tiene experiencia en dirección de proyectos en Europa, América, Asia y África. Autor de más de 70 publicaciones tanto nacionales como internacionales. Ha impartido ponencias de especialista en más de 10 países de Europa y en Sudamérica. Director General de PROAMB Integrada Consultoría, Asesor internacional del Ministerio de Medio Ambiente de Chile y miembro de la Junta de Gobierno del Colegio Profesional de Ambientólogos de Andalucía.',
+            },
+        ]}
+        image={{
+            src: 'https://fondoverdeinstitute.com/images/fvi/users/fvi_Alberto-Jimenez.jpg',
+            alt: 'Dr. Alberto Jiménez Madrid',
+        }}
+        >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-1">Dr. Alberto Jiménez Madrid</h3>
+            <!-- <p class="text-primary font-medium mb-4">Especialista en Hidrogeología y Recursos Naturales</p> -->
+        </Fragment>
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Dr. Yordanis Puerta de Armas -->
+    <Content
+        isAfterContent
+        items={[
+            {
+            title: 'Trayectoria:',
+            description:
+                'Ha participado en 15 proyectos de investigación científica y ha sido autor principal de 20 resultados científicos, presentados en más de 85 eventos nacionales e internacionales en Brasil, Cuba, Dinamarca, Ecuador, España, Honduras, Kenya, México y Perú. Ha publicado 10 libros como autor principal, coautor o editor científico, así como otros 30 artículos en revistas latinoamericanas y europeas.',
+            },
+            {
+            title: 'Educación:',
+            description:
+                'Doctorante en Filosofía y Letras (Universidad de Alicante, España). Geógrafo y Máster en Medio Ambiente y Desarrollo por la Universidad de La Habana, Cuba.',
+            },
+            {
+            title: 'Experiencia:',
+            description:
+                'Profesor e Investigador Auxiliar. Ha impartido más de 20 cursos de pregrado y 40 de posgrado. Representante para América Latina y el Caribe del Consejo Asesor Juvenil del Programa de las Naciones Unidas para el Medio Ambiente (2001-2003). Coordinador General de la Red Iberoamericana de Medio Ambiente desde su fundación en 1999. Actualmente trabaja como docente e investigador en la Universidad Estatal Amazónica (Ecuador).',
+            },
+        ]}
+        image={{
+            src: 'https://fondoverdeinstitute.com/images/fvi/users/fvi_Yordanis-Puerta.jpg',
+            alt: 'Dr. Yordanis Puerta de Armas',
+        }}
+        >
+        <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-1">Dr. Yordanis Puerta de Armas</h3>
+            <!-- <p class="text-primary font-medium mb-4">Investigador en Geografía y Desarrollo Sostenible</p> -->
+        </Fragment>
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+</Layout>
