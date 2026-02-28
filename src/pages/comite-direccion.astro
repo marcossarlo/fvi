@@ -1,7 +1,6 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import TeamMember from '~/components/widgets/TeamMember.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
@@ -18,8 +17,8 @@ const metadata = {
     <Hero 
         tagline="El Instituto"
         image={{
-            src: '~/assets/images/default.png',
-            alt: 'Comité de Dirección',
+            src: '~/assets/images/fvi-comite-direccion-hero.webp',
+            alt: 'Comité de Dirección - Equipo directivo en reunión estratégica',
         }}
         >
         <Fragment slot="title">
@@ -48,10 +47,11 @@ const metadata = {
     <TeamMember
         name="Gonzalo De La Fuente De Val"
         position="Director Académico de Posgrados | España"
-        education="Doctor en Ciencias Biológicas de la Universidad Autónoma de Madrid, Máster en Gestión Integrada: Calidad, Medio Ambiente y Seguridad de la Universidad de las Islas Baleares, Diploma de Experto en Gestión Ambiental y Evaluación de Impacto Ambiental de la Universidad Complutense de Madrid, Licenciado en Ciencias y Artes Ambientales de la Universidad Central de Chile."
-        experience="Profesional con 18 años de experiencia en empresas tanto públicas como privadas del sector de la consultoría medioambiental, turismo e industrial de Chile, España, Guinea Ecuatorial, Perú e Irlanda del Norte. Forma parte de la International Federation Landscape Architecture (IFLA), European Foundation for Landscape Architecture (EFLA), Asociación Española de Paisajistas (AEP) y Asociación Técnica de Ecología del Paisaje y Seguimiento Ambiental (ECOPAS)."
-        trajectory="Ha desarrollado estudios y proyectos en Paisaje, Turismo Sostenible y TICs, aportando soluciones de análisis, diseño y planificación para mejorar la calidad sensible del entorno, creando lugares atractivos, ecoeficientes y competitivos."
-        role="Como Director Académico de Posgrados en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de identificar y formular horizontes de desarrollo de cualificación y depuración de la oferta académica del Instituto, su pertinencia en consonancia con las capacidades y fortalezas internas y las oportunidades del medio externo nacional e internacional según nivel y campos de conocimiento. Asimismo, identifica nuevas oportunidades y gestiona los trámites para la obtención de acreditaciones y certificaciones nacionales e internacionales que demuestren la excelencia de los programas académicos."
+        education="Doctor en Ciencias Biológicas de la Universidad Autónoma de Madrid, Máster en Gestión Integrada: Calidad, Medio Ambiente y Seguridad de la Universidad de las Islas Baleares, Diploma de Experto en Gestión Ambiental y Evaluación de Impacto Ambiental de la Universidad Complutense de Madrid, Licenciado en Ciencias y Artes Ambientales de la Universidad Central de Chile.<br /><br />
+        Profesional con 18 años de experiencia en empresas tanto públicas como privadas del sector de la consultoría medioambiental, turismo e industrial de Chile, España, Guinea Ecuatorial, Perú e Irlanda del Norte. Forma parte de la International Federation Landscape Architecture (IFLA), European Foundation for Landscape Architecture (EFLA), Asociación Española de Paisajistas (AEP) y Asociación Técnica de Ecología del Paisaje y Seguimiento Ambiental (ECOPAS). Actualmente, colabora con estudioOCA, despacho internacional con oficinas en Barcelona, San Francisco y Tailandia, que se dedica al estudio y desarrollo de proyectos en urbanismo, paisajismo y turismo a escala global.<br /><br />
+        Ha desarrollado estudios y proyectos en Paisaje, Turismo Sostenible y TICs, aportando soluciones de análisis, diseño y planificación para mejorar la calidad sensible del entorno, creando lugares atractivos, ecoeficientes y competitivos."
+        
+        role="Como <strong>Director Académico de Posgrados</strong> en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de identificar y formular horizontes de desarrollo de cualificación y depuración de la oferta académica del Instituto, su pertinencia en consonancia con las capacidades y fortalezas internas y las oportunidades del medio externo nacional e internacional según nivel y campos de conocimiento. Asimismo, identifica nuevas oportunidades y gestiona los trámites para la obtención de acreditaciones y certificaciones nacionales e internacionales que demuestren la excelencia de los programas académicos."
         image={{
             src: '~/assets/images/users/fvi-gonzalo-fuente.webp',
             alt: 'Gonzalo De La Fuente De Val',
@@ -66,10 +66,11 @@ const metadata = {
     <TeamMember
         name="Loraine Giraud"
         position="Directora Académica de Postdoctorados | España"
-        education="Urbanista de la Universidad Simón Bolívar USB - Venezuela. Magister Scientiarum en Gerencia Ambiental del Instituto Universitario Politécnico de las Fuerzas Armadas Nacionales IUPFAN. Doctora en Desarrollo Sostenible de la Universidad Simón Bolívar. Realizando el Postdoctorado en la Facultad de Ciencias Sociales de la Universidad de Buenos Aires UBA - Argentina."
-        experience="Más de 25 años de experiencia profesional en gerencia de proyectos de cooperación internacional, ambiente e innovación, ciencia y tecnología. Ha ejercido cargos gerenciales de programas sociales y ambientales de la banca multilateral y puesta en marcha de negocios de emprendimiento en el sector servicios en España. Consultora de diversos Estudios de Impacto Ambiental y proyectos estratégicos."
-        trajectory="Profesora del Departamento de Planificación Urbana y Coordinadora del Grupo de Investigación Vida Urbana y Ambiente de la Universidad Simón Bolívar. Profesora en el Doctorado en Educación de la Universidad Católica Andrés Bello y en los Postgrados de Gestión Ambiental de la Universidad Metropolitana. Coautora de más de 25 publicaciones y artículos entre revistas indizadas y capítulos de libros."
-        role="Como Directora Académica de Postdoctorados en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de generar ámbitos de docencia e investigación de alto nivel. Planificar y asignar los proyectos de investigación y/o proyectos originales dentro de las líneas de investigación postdoctoral. Búsqueda de oportunidades de financiación de I+D+i a nivel nacional e internacional. Supervisión y evaluación de manuscritos y memorias científicas y entregables. Contribuir a la aplicación o explotación de los resultados de investigación y apoyar experiencias posdoctorales en temas prioritarios a nivel internacional."
+        education="Urbanista de la Universidad Simón Bolívar USB - Venezuela. Magister Scientiarum en Gerencia Ambiental del Instituto Universitario Politécnico de las Fuerzas Armadas Nacionales IUPFAN. Doctora en Desarrollo Sostenible de la Universidad Simón Bolívar. Realizando el Postdoctorado en la Facultad de Ciencias Sociales de la Universidad de Buenos Aires UBA - Argentina.<br /><br />
+        Más de 25 años de experiencia profesional en gerencia de proyectos de cooperación internacional, ambiente e innovación, ciencia y tecnología. Ha ejercido cargos gerenciales de programas sociales y ambientales de la banca multilateral y puesta en marcha de negocios de emprendimiento en el sector servicios en España. Consultora de diversos Estudios de Impacto Ambiental y proyectos estratégicos.<br /><br />
+        Profesora del Departamento de Planificación Urbana y Coordinadora del Grupo de Investigación Vida Urbana y Ambiente de la Universidad Simón Bolívar. Profesora en el Doctorado en Educación de la Universidad Católica Andrés Bello y en los Postgrados de Gestión Ambiental de la Universidad Metropolitana. Coautora de más de 25 publicaciones y artículos entre revistas indizadas y capítulos de libros. Ha dirigido tesis de pregrado, maestría y doctorado en las áreas de urbanismo, ambiente y desarrollo sostenible.<br ><br />
+        Destacada por su capacidad de integrar la experiencia académica y profesional en los ámbitos del sector público y privado en los campos de sustentabilidad, innovación, ambiente, empresa y ciudad a nivel nacional e internacional."
+        role="Como <strong>Directora Académica de Postdoctorados</strong> en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de generar ámbitos de docencia e investigación de alto nivel. Planificar y asignar los proyectos de investigación y/o proyectos originales dentro de las líneas de investigación postdoctoral. Búsqueda de oportunidades de financiación de I+D+i a nivel nacional e internacional. Supervisión y evaluación de manuscritos y memorias científicas y entregables. Contribuir a la aplicación o explotación de los resultados de investigación y apoyar experiencias posdoctorales en temas prioritarios a nivel internacional."
         image={{
             src: '~/assets/images/users/fvi-loraine-giraud.webp',
             alt: 'Loraine Giraud',
@@ -82,9 +83,9 @@ const metadata = {
     <TeamMember
         name="Marcos Sarmiento Loarte"
         position="Director de Tecnologías de Información | Perú"
-        education="Ingeniero Informático de la Universidad Continental de Ciencias e Ingeniería. Su experiencia radica en la gestión de proyectos informáticos, diseño, desarrollo, implementación e implantación de sistemas de información, construcción de sistemas expertos y redes neuronales, soluciones de conectividad, administración de base de datos, administración de sitios web, administración de redes, soporte informático a usuarios, soporte en hardware y software."
-        experience="Experiencia en desarrollo y administración de plataformas de teleformación y de portales web con Sistemas de Administración de Contenidos (Joomla) y Sistema de Gestión de Aprendizaje (Moodle) respectivamente tanto para organizaciones nacionales y extranjeras."
-        role="Como Director de Tecnologías de Información en FONDO VERDE INSTITUTE, es responsable de la administración, operación y mantenimiento de la plataforma tecnológica y de sistemas de información. Gestiona los recursos informáticos y de telecomunicaciones que soportan los procesos académicos y administrativos del Instituto."
+        education="Ingeniero Informático de la Universidad Continental de Ciencias e Ingeniería. Su experiencia radica en la gestión de proyectos informáticos, diseño, desarrollo, implementación e implantación de sistemas de información, construcción de sistemas expertos y redes neuronales, soluciones de conectividad, administración de base de datos, administración de sitios web, administración de redes, soporte informático a usuarios, soporte en hardware y software.<br><br>
+        Experiencia en desarrollo y administración de plataformas de teleformación y de portales web con Sistemas de Administración de Contenidos (Joomla) y Sistema de Gestión de Aprendizaje (Moodle) respectivamente tanto para organizaciones nacionales y extranjeras."        
+        role="Como <strong>Director de Tecnologías de Información</strong> en FONDO VERDE INSTITUTE, es responsable de dirigir la planeación, ejecución y control de las actividades relacionadas tanto a nivel de comunicación, infraestructura, aplicativos y sistemas de información requerido por el Instituto para su operación, desarrollo y crecimiento. Asimismo, establece los procesos de implementación de las Plataformas Virtuales de Aprendizaje, la gestión de contenidos, materiales, recursos educativos, al tiempo que orienta en la selección de herramientas tecnológicas y multimedia, y evalúa la viabilidad y calidad de los proyectos."
         image={{
             src: '~/assets/images/users/fvi-marcos-sarmiento.webp',
             alt: 'Marcos Sarmiento Loarte',
@@ -96,39 +97,57 @@ const metadata = {
         </Fragment>
     </TeamMember>
 
-    <!-- Ángel Guillemes Peira -->
+    <!-- Erick Brenes -->
     <TeamMember
-        name="Ángel Guillemes Peira"
-        position="Director de Calidad, Acreditación y Prospectiva | España"
-        education="Ph.D en Ingeniería Marítima con especialidad en energías renovables por la Universidad de La Laguna, España. Máster en Dirección y Administración de Proyectos por la Universidad de Valencia, España y Licenciado en Biología con mención en medio ambiente por la Universidad SEK, España."
-        experience="Ha sido docente titular de la Universidad Del Pacífico, Ecuador, en la Facultad del Mar y Medio Ambiente, desempeñando actividades académicas y de investigación. Anteriormente trabajó en España como consultor de proyectos de I+D, técnico de proyectos e investigador en una consultoría, centro tecnológico y grupo de investigación respectivamente."
-        trajectory="Sus áreas de conocimiento se centran en las energías renovables, medio ambiente y gestión de proyectos, habiendo impartido numerosas conferencias y cursos en estas temáticas. Ha participado en congresos nacionales e internacionales, proyectos de investigación y es autor de capítulos de libros y artículos científicos en revistas indexadas."
-        role="Como Director de Calidad, Acreditación y Prospectiva, tiene la responsabilidad de implementar el sistema de gestión de calidad académica e institucional y definir los procesos asociados a la evaluación, acreditación y mejora continua. Conduce los procesos de autoevaluación y acreditación nacional e internacional de programas académicos e institucionales."
+        name="Erick Brenes"
+        position="Country Manager Costa Rica"
+        education="IEstudios de Doctorado en Economía Social de la Universidad de la Calabria en el sur de Italia y Máster en Administración de Proyectos de Cooperación Internacional de la Universidad de Otaru en Japón; con más de 10 años de experiencia en la investigación, implementación, ejecución y supervisión técnica de proyectos de desarrollo económico local sostenible elaborados según la estrategia Agenda Siglo XXI que tiene una visión integradora y sistema de la sociedad y la economía dentro de los límites de la biósfera.<br /><br />
+        Además de su experiencia en la ejecución de proyectos, también ha investigado el movimiento anti-sistémico y documentado los principales efectos socio-ambientales del 'desarrollo sostenible' y algunas soluciones locales de éxito en países de la Región Centroamericana, Andina y del Sud Este asiático.<br /><br />
+        Actualmente asesora organizaciones como el Banco de Buda en Tailandia, La Fundación RELACC en Ecuador, El Consejo Regional Indígena del Cauca en Colombia y la Federación de Cooperativas de Autogestión en Costa Rica entre otros y colabora como investigador asociado al Centro Interuniversitario para la Investigación en Desarrollo Sostenible (CIRPS) en Roma."
+        role="Como <strong>Director de Expansión</strong> en FONDO VERDE INSTITUTE, es responsable de diseñar e impulsar las estrategias de internacionalización en todas las áreas de gobierno, en especial, del Plan de Internacionalización del Instituto hacia Asia y África. Asume las funciones relativas al establecimiento y desarrollo de las relaciones con asociaciones profesionales, institutos, universidades y empresas de otros países, la gestión del programa, la promoción y visibilidad internacional, y la coordinación de las oficinas en la Región."
         image={{
-            src: '~/assets/images/users/fvi-angel-guillemes.webp',
-            alt: 'Ángel Guillemes Peira',
+            src: '~/assets/images/users/fvi-erick-brenes.webp',
+            alt: 'Erick Brenes',
         }}
         isReversed={true}
         isAfterContent={true}
     />
 
-    <!-- Kenfort Caja -->
+    <!-- Ángel Guillemes Peira -->
     <TeamMember
-        name="Kenfort Caja"
-        position="Director de Administración y Finanzas | Perú"
-        education="Administrador de Empresas de la Universidad Nacional del Centro del Perú, con Maestría en Marketing y Comercio Internacional de la Universidad Federico Villareal. Tiene estudios adicionales en Auditoría Ambiental por la Universidad de Lima y en Cambio Climático y Políticas Públicas en CEPAL-Chile."
-        experience="Profesional con amplia experiencia en gestión administrativa, finanzas, contabilidad, auditoría, presupuestos, adquisiciones y contrataciones del Estado. Ha trabajado en instituciones públicas y privadas, dirigiendo equipos en áreas de logística, contabilidad, recursos humanos y administración general."
-        role="Como Director de Administración y Finanzas, es responsable de la planificación, organización, dirección y control de los recursos económicos y financieros del Instituto. Supervisa la gestión presupuestaria, contable y administrativa, asegurando la sostenibilidad financiera y el cumplimiento de las normativas vigentes."
+        name="Ángel Guillemes Peira"
+        position="Director de I+D | España"
+        education="PhD. en Ingeniería Marítima con especialidad en energías renovables por la Universidad de La Laguna, España. Máster en Dirección y Administración de Proyectos por la Universidad de Valencia, España y Licenciado en Biología con mención en medio ambiente por la Universidad SEK, España.<br><br>
+        Ha sido docente titular de la Universidad del Pacífico, Ecuador, en la Facultad del Mar y Medio Ambiente, desempeñando actividades académicas y de investigación. Anteriormente trabajo en España como consultor de proyectos de I+D, técnico de proyectos e investigador en una consultoría, centro tecnológico y grupo de investigación respectivamente.<br><br>
+        Sus áreas de conocimiento se centran en las energías renovables, medio ambiente y gestión de proyectos, habiendo impartido numerosas conferencias y cursos en estas temáticas. Ha participado en congresos nacionales e internacionales, proyectos de investigación y es autor de capítulos de libros y artículos científicos en revistas indexadas."
+        role="Como <strong>Director de I+D</strong> en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de promover el desarrollo de la actividad científica dentro del Instituto, así como dirige las acciones que permitan gestionar acuerdos y convenios con organismos de ciencia, tecnología e investigación a nivel nacional e internacional. Asimismo, conduce las actividades de relevamiento de la oferta de becas orientadas a la investigación aplicada en las temáticas de incumbencia del Instituto a nivel nacional e internacional."
         image={{
-            src: '~/assets/images/users/fvi-kenfort-caja.webp',
-            alt: 'Kenfort Caja',
+            src: '~/assets/images/users/fvi-angel-guillemes.webp',
+            alt: 'Ángel Guillemes Peira',
         }}
+        
+        isReversed={true}
         isAfterContent={true}
     >
         <Fragment slot="bg">
             <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
         </Fragment>
     </TeamMember>
+
+    <!-- Kenfort Caja -->
+    <TeamMember
+        name="Kenfort Caja"
+        position="Director de Planeamiento y Proyectos Estratégicos | Perú"
+        education="Ingeniero Civil de la Universidad Continental de Ciencias e Ingenierías y Máster en Hábitat, Urbanismo y Edificación Sostenible del Instituto Internacional de Formación Ambiental – IIFA, España. Egresado de la Maestría Universitaria en Energías Renovables de la Universidad de Barcelona, España.<br><br>
+        Profesional con experiencia e interés en temas de ingeniería de estructuras, sistemas solares y construcción sostenible en general. Ingeniero calificado para diseñar y optimizar sistemas fotovoltaicos, sistemas de montaje y seguimiento y componentes eléctricos. Sus servicios incluyen desarrollo de proyectos de energías renovables, distribución mayorista, diseño, ingeniería, construcción y mantenimiento.<br /><br />
+        Ha dirigido e implementado proyectos de instalación de sistemas de paneles solares de uso doméstico y sistemas de alumbrado público sustentable con luminarias led y alimentación solar fotovoltaica en comunidades rurales de la Amazonía peruana y Cordillera Andina."
+        role="Como <strong>Director de Planeamiento y Proyectos Estratégicos</strong> en FONDO VERDE INSTITUTE, es responsable de planificar el desarrollo institucional, efectuando el control de gestión y de los proyectos. Trabaja para desarrollar planes realizables que aumenten la capacidad del Instituto de ofrecer resultados eficaces y sostenibles de manera constante, aporta la agilidad y los conocimientos técnicos necesarios para implementar proyectos que respeten los costos, los plazos y los requisitos de calidad. Esto incluye la gestión de riesgos, proyectos, programas y portafolios, la planificación de un proyecto para su implementación, la modificación de iniciativas en curso, el desarrollo de la capacidad y la mejora de la gestión de las partes interesadas."
+        image={{
+            src: '~/assets/images/users/fvi-kenfort-caja.webp',
+            alt: 'Kenfort Caja',
+        }}
+        isAfterContent={true}
+    />
 
     <!-- Natalia Jiménez Díaz-Benito -->
     <TeamMember
@@ -207,20 +226,7 @@ const metadata = {
         </Fragment>
     </TeamMember>
 
-    <!-- Erick Brenes -->
-    <TeamMember
-        name="Erick Brenes"
-        position="Country Manager Costa Rica"
-        education="Ingeniero Ambiental de la Universidad de Costa Rica, con Maestría en Gestión Ambiental y Desarrollo Sostenible."
-        experience="Especialista en gestión de proyectos ambientales, educación ambiental y desarrollo sostenible. Ha trabajado con organizaciones gubernamentales y no gubernamentales en proyectos de conservación y manejo de recursos naturales."
-        role="Como Country Manager para Costa Rica, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
-        image={{
-            src: '~/assets/images/users/fvi-erick-brenes.webp',
-            alt: 'Erick Brenes',
-        }}
-        isReversed={true}
-        isAfterContent={true}
-    />
+    
 
     <!-- Teofila Egoavil Benito -->
     <TeamMember
