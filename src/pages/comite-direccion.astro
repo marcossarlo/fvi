@@ -1,0 +1,258 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import TeamMember from '~/components/widgets/TeamMember.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Comité de Dirección',
+  description:
+    'El Comité de Dirección de Fondo Verde Institute es responsable del desarrollo estratégico, las inversiones, la cartera de programas académicos y supervisa las operaciones del Instituto.',
+  keywords:
+    'Comité de Dirección, Fondo Verde Institute, dirección académica, desarrollo estratégico, programas académicos',
+};
+---
+
+<Layout metadata={metadata}>
+    <!-- Hero Widget ******************* -->
+    <Hero 
+        tagline="El Instituto"
+        image={{
+            src: '~/assets/images/default.png',
+            alt: 'Comité de Dirección',
+        }}
+        >
+        <Fragment slot="title">
+            Comité de
+            <span class="text-primary dark:text-accent"> Dirección</span>
+        </Fragment>
+
+        <Fragment slot="subtitle">
+            El Comité de Dirección es responsable del <span class="font-semibold text-primary">desarrollo estratégico</span>, 
+            las inversiones, la cartera de programas académicos, contrata a los profesores, consultores y expertos y supervisa 
+            las operaciones del Instituto en el continente y en grandes zonas geográficas. El Director General del Instituto 
+            preside el Consejo de Dirección y rinde cuentas ante la Asamblea General de{' '}
+            <span class="font-semibold text-primary">Fondo Verde</span> ONGDI.
+        </Fragment>
+    </Hero>
+
+    <!-- Sección: Equipo Directivo -->
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <p class="text-base text-secondary font-semibold tracking-wide uppercase">Liderazgo Académico</p>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading">Equipo Directivo</h2>
+        </div>
+    </div>
+
+    <!-- Gonzalo De La Fuente De Val -->
+    <TeamMember
+        name="Gonzalo De La Fuente De Val"
+        position="Director Académico de Posgrados | España"
+        education="Doctor en Ciencias Biológicas de la Universidad Autónoma de Madrid, Máster en Gestión Integrada: Calidad, Medio Ambiente y Seguridad de la Universidad de las Islas Baleares, Diploma de Experto en Gestión Ambiental y Evaluación de Impacto Ambiental de la Universidad Complutense de Madrid, Licenciado en Ciencias y Artes Ambientales de la Universidad Central de Chile."
+        experience="Profesional con 18 años de experiencia en empresas tanto públicas como privadas del sector de la consultoría medioambiental, turismo e industrial de Chile, España, Guinea Ecuatorial, Perú e Irlanda del Norte. Forma parte de la International Federation Landscape Architecture (IFLA), European Foundation for Landscape Architecture (EFLA), Asociación Española de Paisajistas (AEP) y Asociación Técnica de Ecología del Paisaje y Seguimiento Ambiental (ECOPAS)."
+        trajectory="Ha desarrollado estudios y proyectos en Paisaje, Turismo Sostenible y TICs, aportando soluciones de análisis, diseño y planificación para mejorar la calidad sensible del entorno, creando lugares atractivos, ecoeficientes y competitivos."
+        role="Como Director Académico de Posgrados en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de identificar y formular horizontes de desarrollo de cualificación y depuración de la oferta académica del Instituto, su pertinencia en consonancia con las capacidades y fortalezas internas y las oportunidades del medio externo nacional e internacional según nivel y campos de conocimiento. Asimismo, identifica nuevas oportunidades y gestiona los trámites para la obtención de acreditaciones y certificaciones nacionales e internacionales que demuestren la excelencia de los programas académicos."
+        image={{
+            src: '~/assets/images/users/fvi-gonzalo-fuente.webp',
+            alt: 'Gonzalo De La Fuente De Val',
+        }}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </TeamMember>
+
+    <!-- Loraine Giraud -->
+    <TeamMember
+        name="Loraine Giraud"
+        position="Directora Académica de Postdoctorados | España"
+        education="Urbanista de la Universidad Simón Bolívar USB - Venezuela. Magister Scientiarum en Gerencia Ambiental del Instituto Universitario Politécnico de las Fuerzas Armadas Nacionales IUPFAN. Doctora en Desarrollo Sostenible de la Universidad Simón Bolívar. Realizando el Postdoctorado en la Facultad de Ciencias Sociales de la Universidad de Buenos Aires UBA - Argentina."
+        experience="Más de 25 años de experiencia profesional en gerencia de proyectos de cooperación internacional, ambiente e innovación, ciencia y tecnología. Ha ejercido cargos gerenciales de programas sociales y ambientales de la banca multilateral y puesta en marcha de negocios de emprendimiento en el sector servicios en España. Consultora de diversos Estudios de Impacto Ambiental y proyectos estratégicos."
+        trajectory="Profesora del Departamento de Planificación Urbana y Coordinadora del Grupo de Investigación Vida Urbana y Ambiente de la Universidad Simón Bolívar. Profesora en el Doctorado en Educación de la Universidad Católica Andrés Bello y en los Postgrados de Gestión Ambiental de la Universidad Metropolitana. Coautora de más de 25 publicaciones y artículos entre revistas indizadas y capítulos de libros."
+        role="Como Directora Académica de Postdoctorados en FONDO VERDE INSTITUTE, tiene la responsabilidad primaria de generar ámbitos de docencia e investigación de alto nivel. Planificar y asignar los proyectos de investigación y/o proyectos originales dentro de las líneas de investigación postdoctoral. Búsqueda de oportunidades de financiación de I+D+i a nivel nacional e internacional. Supervisión y evaluación de manuscritos y memorias científicas y entregables. Contribuir a la aplicación o explotación de los resultados de investigación y apoyar experiencias posdoctorales en temas prioritarios a nivel internacional."
+        image={{
+            src: '~/assets/images/users/fvi-loraine-giraud.webp',
+            alt: 'Loraine Giraud',
+        }}
+        isReversed={true}
+        isAfterContent={true}
+    />
+
+    <!-- Marcos Sarmiento Loarte -->
+    <TeamMember
+        name="Marcos Sarmiento Loarte"
+        position="Director de Tecnologías de Información | Perú"
+        education="Ingeniero Informático de la Universidad Continental de Ciencias e Ingeniería. Su experiencia radica en la gestión de proyectos informáticos, diseño, desarrollo, implementación e implantación de sistemas de información, construcción de sistemas expertos y redes neuronales, soluciones de conectividad, administración de base de datos, administración de sitios web, administración de redes, soporte informático a usuarios, soporte en hardware y software."
+        experience="Experiencia en desarrollo y administración de plataformas de teleformación y de portales web con Sistemas de Administración de Contenidos (Joomla) y Sistema de Gestión de Aprendizaje (Moodle) respectivamente tanto para organizaciones nacionales y extranjeras."
+        role="Como Director de Tecnologías de Información en FONDO VERDE INSTITUTE, es responsable de la administración, operación y mantenimiento de la plataforma tecnológica y de sistemas de información. Gestiona los recursos informáticos y de telecomunicaciones que soportan los procesos académicos y administrativos del Instituto."
+        image={{
+            src: '~/assets/images/users/fvi-marcos-sarmiento.webp',
+            alt: 'Marcos Sarmiento Loarte',
+        }}
+        isAfterContent={true}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </TeamMember>
+
+    <!-- Ángel Guillemes Peira -->
+    <TeamMember
+        name="Ángel Guillemes Peira"
+        position="Director de Calidad, Acreditación y Prospectiva | España"
+        education="Ph.D en Ingeniería Marítima con especialidad en energías renovables por la Universidad de La Laguna, España. Máster en Dirección y Administración de Proyectos por la Universidad de Valencia, España y Licenciado en Biología con mención en medio ambiente por la Universidad SEK, España."
+        experience="Ha sido docente titular de la Universidad Del Pacífico, Ecuador, en la Facultad del Mar y Medio Ambiente, desempeñando actividades académicas y de investigación. Anteriormente trabajó en España como consultor de proyectos de I+D, técnico de proyectos e investigador en una consultoría, centro tecnológico y grupo de investigación respectivamente."
+        trajectory="Sus áreas de conocimiento se centran en las energías renovables, medio ambiente y gestión de proyectos, habiendo impartido numerosas conferencias y cursos en estas temáticas. Ha participado en congresos nacionales e internacionales, proyectos de investigación y es autor de capítulos de libros y artículos científicos en revistas indexadas."
+        role="Como Director de Calidad, Acreditación y Prospectiva, tiene la responsabilidad de implementar el sistema de gestión de calidad académica e institucional y definir los procesos asociados a la evaluación, acreditación y mejora continua. Conduce los procesos de autoevaluación y acreditación nacional e internacional de programas académicos e institucionales."
+        image={{
+            src: '~/assets/images/users/fvi-angel-guillemes.webp',
+            alt: 'Ángel Guillemes Peira',
+        }}
+        isReversed={true}
+        isAfterContent={true}
+    />
+
+    <!-- Kenfort Caja -->
+    <TeamMember
+        name="Kenfort Caja"
+        position="Director de Administración y Finanzas | Perú"
+        education="Administrador de Empresas de la Universidad Nacional del Centro del Perú, con Maestría en Marketing y Comercio Internacional de la Universidad Federico Villareal. Tiene estudios adicionales en Auditoría Ambiental por la Universidad de Lima y en Cambio Climático y Políticas Públicas en CEPAL-Chile."
+        experience="Profesional con amplia experiencia en gestión administrativa, finanzas, contabilidad, auditoría, presupuestos, adquisiciones y contrataciones del Estado. Ha trabajado en instituciones públicas y privadas, dirigiendo equipos en áreas de logística, contabilidad, recursos humanos y administración general."
+        role="Como Director de Administración y Finanzas, es responsable de la planificación, organización, dirección y control de los recursos económicos y financieros del Instituto. Supervisa la gestión presupuestaria, contable y administrativa, asegurando la sostenibilidad financiera y el cumplimiento de las normativas vigentes."
+        image={{
+            src: '~/assets/images/users/fvi-kenfort-caja.webp',
+            alt: 'Kenfort Caja',
+        }}
+        isAfterContent={true}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </TeamMember>
+
+    <!-- Natalia Jiménez Díaz-Benito -->
+    <TeamMember
+        name="Natalia Jiménez Díaz-Benito"
+        position="Directora de Marketing y Comunicación | España"
+        education="Graduada en Administración y Dirección de Empresas por la Universidad Complutense de Madrid, con formación especializada en Marketing Digital, Comunicación Corporativa y Gestión de Recursos Humanos."
+        experience="Profesional con experiencia en gestión administrativa, recursos humanos, comunicación corporativa y marketing digital. Ha trabajado en instituciones educativas y empresas privadas, desarrollando estrategias de comunicación interna y externa, gestión de personal y administración de plataformas digitales."
+        role="Como Directora de Marketing y Comunicación, gestiona la imagen institucional y las estrategias de comunicación interna y externa del Instituto. Desarrolla campañas de marketing digital, gestiona redes sociales y coordina las relaciones públicas con medios y stakeholders."
+        image={{
+            src: '~/assets/images/users/fvi-natalia-jimenez.webp',
+            alt: 'Natalia Jiménez Díaz-Benito',
+        }}
+        isReversed={true}
+        isAfterContent={true}
+    />
+
+    <!-- Sección: Country Managers -->
+    <div class="max-w-7xl mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <p class="text-base text-secondary font-semibold tracking-wide uppercase">Country Managers</p>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading">Representación Internacional</h2>
+            <p class="max-w-3xl mx-auto text-xl text-muted dark:text-slate-400">
+                Nuestros Country Managers coordinan e implementan la estrategia del Instituto en diferentes países, así como las relaciones con socios de los sectores públicos y privados.
+            </p>
+        </div>
+    </div>
+
+    <!-- Braulio Buendía Ruíz -->
+    <TeamMember
+        name="Braulio Buendía Ruíz"
+        position="Country Manager Colombia"
+        education="Licenciado en Educación Primaria de la Universidad Nacional del Centro del Perú, con Maestría en Gestión Ambiental y Desarrollo Sostenible de la Universidad Tecnológica de los Andes."
+        experience="Ha ocupado cargos de dirección en instituciones educativas públicas y privadas. Ha desarrollado proyectos de educación ambiental y sostenibilidad en comunidades rurales y urbanas. Consultor en temas de gestión ambiental y educación para el desarrollo sostenible."
+        role="Como Country Manager para Colombia, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
+        image={{
+            src: '~/assets/images/users/fvi-braulio-buendia.webp',
+            alt: 'Braulio Buendía Ruíz',
+        }}
+        isAfterContent={true}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </TeamMember>
+
+    <!-- Mauro Gamarra -->
+    <TeamMember
+        name="Mauro Gamarra"
+        position="Country Manager Bolivia"
+        education="Ingeniero Ambiental de la Universidad Nacional del Centro del Perú, con Maestría en Desarrollo y Medio Ambiente de la Universidad Nacional Agraria La Molina."
+        experience="Especialista en gestión de recursos hídricos, saneamiento ambiental y evaluación de impacto ambiental. Ha trabajado en proyectos de cooperación internacional y consultoría ambiental en el sector público y privado."
+        role="Como Country Manager para Bolivia, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
+        image={{
+            src: '~/assets/images/users/fvi-mauro-gamarra.webp',
+            alt: 'Mauro Gamarra',
+        }}
+        isReversed={true}
+        isAfterContent={true}
+    />
+
+    <!-- David Hinojosa -->
+    <TeamMember
+        name="David Hinojosa"
+        position="Country Manager México"
+        education="Ingeniero Civil de la Universidad Nacional del Centro del Perú, con Maestría en Ingeniería Ambiental de la Universidad Nacional de Ingeniería."
+        experience="Profesional con experiencia en gestión de proyectos de infraestructura, evaluación de impacto ambiental y consultoría en ingeniería civil. Ha trabajado en el sector público y privado en proyectos de desarrollo sostenible."
+        role="Como Country Manager para México, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
+        image={{
+            src: '~/assets/images/users/fvi-david-hinojosa.webp',
+            alt: 'David Hinojosa',
+        }}
+        isAfterContent={true}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </TeamMember>
+
+    <!-- Erick Brenes -->
+    <TeamMember
+        name="Erick Brenes"
+        position="Country Manager Costa Rica"
+        education="Ingeniero Ambiental de la Universidad de Costa Rica, con Maestría en Gestión Ambiental y Desarrollo Sostenible."
+        experience="Especialista en gestión de proyectos ambientales, educación ambiental y desarrollo sostenible. Ha trabajado con organizaciones gubernamentales y no gubernamentales en proyectos de conservación y manejo de recursos naturales."
+        role="Como Country Manager para Costa Rica, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
+        image={{
+            src: '~/assets/images/users/fvi-erick-brenes.webp',
+            alt: 'Erick Brenes',
+        }}
+        isReversed={true}
+        isAfterContent={true}
+    />
+
+    <!-- Teofila Egoavil Benito -->
+    <TeamMember
+        name="Teofila Egoavil Benito"
+        position="Country Manager Perú"
+        education="Licenciada en Pedagogía y Humanidades de la Universidad Nacional del Centro del Perú, cuenta con estudios de Maestría en Gestión y Dirección Educacional de la Universidad Alberto Hurtado de Chile."
+        experience="Ha coordinado proyectos de educación ambiental en escuelas y colegios públicos localizados en áreas urbanas y rurales. Ha organizado cursos y diplomados, congresos, conferencias, jornadas y seminarios nacionales sobre temas ambientales, educación y gestión ambiental y desarrollo sostenible. Ha dirigido múltiples cursos de formación y actualización docente en los diversos ámbitos de educación infantil, lecto-escritura y educación social y ambiental."
+        role="Como Country Manager para Perú, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
+        image={{
+            src: '~/assets/images/users/fvi-teofila-egoavil.webp',
+            alt: 'Teofila Egoavil Benito',
+        }}
+        isAfterContent={true}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </TeamMember>
+
+    <!-- Yordanis Puerta de Armas -->
+    <TeamMember
+        name="Yordanis Puerta de Armas"
+        position="Country Manager Ecuador"
+        education="Doctorante en Filosofía y Letras (Universidad de Alicante, España). Geógrafo y Máster en Medio Ambiente y Desarrollo por la Universidad de La Habana, Cuba."
+        experience="Ha participado en 15 proyectos de investigación científica y ha sido autor principal de 20 resultados científicos, los que ha presentado en más de 85 eventos nacionales e internacionales en Brasil, Cuba, Dinamarca, Ecuador, España, Honduras, Kenya, México y Perú. Ha publicado 10 libros como autor principal, coautor o editor científico, así como otros 30 artículos en revistas latinoamericanas y europeas."
+        trajectory="Representante para América Latina y el Caribe del Consejo Asesor Juvenil del Programa de las Naciones Unidas para el Medio Ambiente (2001-2003). Asistente del Programa de Pequeñas Donaciones del Fondo para el Medio Ambiente Mundial (2012-2014) y Coordinador General de la Red Iberoamericana de Medio Ambiente desde su fundación en 1999. Actualmente trabaja como docente e investigador en la Universidad Estatal Amazónica (Ecuador)."
+        role="Como Country Manager para Ecuador, se encargará de coordinar e implementar la estrategia del Instituto, así como de las relaciones con socios de los sectores públicos y privados."
+        image={{
+            src: '~/assets/images/users/fvi-yordanis-puerta.webp',
+            alt: 'Yordanis Puerta de Armas',
+        }}
+        isReversed={true}
+        isAfterContent={true}
+    />
+</Layout>
