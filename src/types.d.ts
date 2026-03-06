@@ -313,6 +313,8 @@ export interface Steps extends Omit<Headline, 'classes'>, Widget {
   callToAction?: string | CallToAction;
   image?: string | Image;
   isReversed?: boolean;
+  colLeft?: string;
+  colRight?: string;
 }
 
 export interface Content extends Omit<Headline, 'classes'>, Widget {

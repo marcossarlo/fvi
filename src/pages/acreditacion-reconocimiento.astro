@@ -1,0 +1,192 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Acreditación y Reconocimiento',
+  description:
+    'Conoce el respaldo institucional y las acreditaciones oficiales de Fondo Verde Institute: RVOE-SEP México, COMEPO, ISO 21001:2018 y CIEES, garantía de calidad en formación ambiental de posgrado.',
+  keywords:
+    'acreditación, reconocimiento, RVOE, SEP México, UNICEPES, Fondo Verde Institute, COMEPO, ISO 21001, CIEES, posgrado ambiental',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero
+    tagline="El Instituto"
+    image={{
+      src: '~/assets/images/fvi-acreditacion-reconocimiento-hero.webp',
+      alt: 'Acreditación y Reconocimiento - Fondo Verde Institute',
+    }}
+  >
+    <Fragment slot="title">
+      Acreditación y
+      <span class="text-primary dark:text-accent"> Reconocimiento</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="font-semibold text-primary">Fondo Verde</span>{' '}
+      <span class="font-semibold text-secondary">Institute</span> es una entidad conjunta para la educación postgradual en
+      medio ambiente, cofundada por{' '}
+      <a
+        href="https://www.fondoverde.org"
+        class="font-bold text-primary hover:text-secondary transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fondo Verde Internacional
+      </a>{' '}
+      y avalada académicamente por la{' '}
+      <strong>Universidad Centro Panamericano de Estudios Superiores (UNICEPES)</strong> — México, garantizando un
+      centro de excelencia en formación ambiental e investigación reconocido a nivel mundial.
+    </Fragment>
+  </Hero>
+
+  <!-- Respaldo Institucional ************** -->
+  <Content
+    title="Respaldo institucional de primer nivel"
+    subtitle="Dos organismos de referencia internacional garantizan la solidez y validez de cada programa de Fondo Verde Institute."
+    isReversed={false}
+    items={[
+       {
+        title: 'Más de 100 socios en más de 20 países',
+        description:
+          '<strong>Fondo Verde Internacional</strong>, con sede en Perú y delegaciones en España, USA, México, Centro y Suramérica, actúa como catalizador para promover la excelencia en proyectos educativos y de desarrollo ambiental a nivel mundial.',
+        icon: 'tabler:world',
+      },
+      {
+        title: 'Primera Universidad online de posgrado en México',
+        description:
+          'Con más de veinte años, UNICEPES se ha convertido en una entidad académica de rápido crecimiento y expansión continental, siendo la primera universidad de México que implanta metodologías de aprendizaje online en programas de Maestría y Doctorado.',
+        icon: 'tabler:school',
+      },      
+    ]}
+    image={{
+      src: '~/assets/images/fvi-respaldo-institucional.webp',
+      alt: 'Respaldo institucional de primer nivel Fondo Verde Institute - UNICEPES',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="text-lg dark:text-slate-400 mb-4">
+        La educación en México es considerada válida y oficial en el nivel superior vía estrictos estándares de calidad
+        de la <strong>Secretaría de Educación Pública (SEP)</strong>, garantizando dichos estudios a través del{' '}
+        <strong>Reconocimiento de Validez Oficial de Estudios (RVOE)</strong> en todas sus modalidades.
+      </p>
+      <p class="text-lg dark:text-slate-400">
+        UNICEPES ha obtenido los acuerdos de RVOE para todos sus programas de posgrado, incluidos en el{' '}
+        <strong>Sistema Educativo Nacional</strong>. Por tanto, la SEP garantiza el reconocimiento internacional de
+        nuestros títulos.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Hitos de Acreditación — versión Steps2 (comparativa) ************** -->
+  <Steps2
+    title="Hitos de acreditación y calidad"
+    subtitle="A lo largo de los años, <strong>Fondo Verde Institute</strong> ha acumulado reconocimientos que certifican la excelencia de sus programas ante organismos nacionales e internacionales."
+    colLeft="md:w-1/3"
+    colRight="md:w-2/3"
+    items={[
+      {
+        title: 'COMEPO — Miembro desde 2018',
+        description:
+          'En septiembre de 2018, UNICEPES fue aceptado como miembro del Consejo Mexicano de Estudios de Posgrados (COMEPO), el organismo de interlocución de los posgrados con CONACYT y la Subsecretaría de Educación Superior.',
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Certificación ISO 21001:2018 — Primera universidad privada en México',
+        description:
+          'En 2020, UNICEPES se convirtió en la primera universidad privada en México en recibir la certificación ISO 21001:2018, avalada por la Entidad Mexicana de Acreditación (EMA), el Foro Internacional de Acreditación (IAF) y la Organización Internacional de Normalización ISO.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'CIEES — Acreditación del Doctorado en Proyectos (2021)',
+        description:
+          'En junio de 2021, UNICEPES obtuvo la acreditación de los Comités Interinstitucionales para la Evaluación de la Educación Superior (CIEES) para el programa de Doctorado en Proyectos, verificando mediante 5 ejes, 12 categorías y 49 indicadores el cumplimiento de los propósitos formativos.',
+        icon: 'tabler:medal',
+      },
+    ]}
+  />
+
+  <!-- Tabla de programas acreditados (RVOE) ************** -->
+  <WidgetWrapper containerClass="max-w-5xl mx-auto">
+    <Content
+        tagline="Programas con"
+        title="Reconocimiento de Validez Oficial de Estudios (RVOE)"
+        subtitle="Todos los programas de posgrado de <strong>Fondo Verde Institute</strong> cuentan con acuerdo <strong>RVOE</strong> otorgado por la Secretaría de Educación Pública de México."
+    />
+
+    <div class="max-w-3xl mx-auto space-y-10">
+      <!-- Doctorados -->
+      <div>
+        <h3 class="text-xl font-bold text-primary dark:text-accent mb-4 flex items-center gap-2">
+          Doctorados (PhD)
+        </h3>
+        <div class="space-y-2">
+          {[
+            { prefix: 'Doctorado en', suffix: 'Proyectos', href: '#', rvoe: 'DOC111202', rvoeHref: 'https://drive.google.com/file/d/1DpO6ZMxdcenjiXRtUR38BfZ8OVhUMk-4/view' },
+            { prefix: 'Doctorado en', suffix: 'Sostenibilidad', href: '#', rvoe: 'DOC160402', rvoeHref: 'https://drive.google.com/file/d/1aYrYNeZfaQ_eYuWcsx6Lrquty1ZhMHRG/view' },
+            { prefix: 'Doctorado en', suffix: 'Paisaje y Ambiente', href: '#', rvoe: 'DOC201209', rvoeHref: 'https://drive.google.com/file/d/1EbyWgIopbbv3KsSba5z2DE2UbEq9B3b3/view' },
+            { prefix: 'Doctorado en', suffix: 'Educación Ambiental', href: '#', rvoe: 'DOC210102', rvoeHref: 'https://drive.google.com/file/d/169xCYgFR8W7klrXbjUEWoEBAr_qC0BmM/view' },
+            { prefix: 'Doctorado en', suffix: 'Energías Renovables', href: '#', rvoe: 'DOC201106', rvoeHref: 'https://drive.google.com/file/d/1MKTcg2g28JQG7SoJBya7xFatEXcozG9d/view' },
+            { prefix: 'Doctorado en', suffix: 'Ecoturismo y Turismo Sostenible', href: '#', rvoe: 'DOC201210', rvoeHref: 'https://drive.google.com/file/d/1IfXM914_S0U8U_rqQAbizsWk4tp5vNLq/view' },
+            { prefix: 'Doctorado en', suffix: 'Urbanismo y Arquitectura Sostenible', href: '#', rvoe: 'DOC210103', rvoeHref: 'https://drive.google.com/file/d/1AyHx-KKqeBU488F6cQYQmdtoW_ebQ5m_/view' },
+            { prefix: 'Doctorado en', suffix: 'Administración de Negocios Sostenibles', href: '#', rvoe: 'DOC201107', rvoeHref: 'https://drive.google.com/file/d/12S4o_45AYCKZNpws1z8Eh-V8k1sSUHON/view' },
+            { prefix: 'Doctorado en', suffix: 'Conservación y Restauración del Medio Natural', href: '#', rvoe: 'DOC170202', rvoeHref: 'https://drive.google.com/file/d/1P4it7MhY5N-LuLMJimhW605tPOzJt8ta/view' },
+          ].map(({ prefix, suffix, href, rvoe, rvoeHref }) => (
+            <div class="flex items-center justify-between gap-4 py-2.5 border-b border-slate-300 dark:border-slate-700">
+              <span class="text-sm md:text-base">
+                <span class="font-medium text-primary dark:text-accent">{prefix} </span>
+                <a href={href} class="font-semibold text-secondary hover:underline underline-offset-2 transition-opacity hover:opacity-80">{suffix}</a>
+              </span>
+              <a href={rvoeHref} target="_blank" rel="noopener noreferrer" class="flex-shrink-0 text-sm md:text-base font-mono font-bold text-primary dark:text-accent hover:underline underline-offset-2 transition-colors whitespace-nowrap">
+                RVOE N° {rvoe}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Maestrías -->
+      <div>
+        <h3 class="text-xl font-bold text-primary dark:text-accent mb-4 flex items-center gap-2">
+          Maestrías
+        </h3>
+        <div class="space-y-2">
+          {[
+            { prefix: 'Maestría en', suffix: 'Ciencias de la Sostenibilidad', href: '#', rvoe: 'MAES180407', rvoeHref: 'https://drive.google.com/file/d/1reIpc7-u-MCJgPhTuTCgBrR3pToWkkU_/view' },
+            { prefix: 'Maestría en', suffix: 'Rehabilitación Ambiental Terrestre', href: '#', rvoe: 'MAES180409', rvoeHref: 'https://drive.google.com/file/d/1kMPq1EtCGT7jh9W1oKvVEY0Hy_8j4Aym/view' },
+            { prefix: 'Maestría en', suffix: 'Medio Ambiente y Responsabilidad Social', href: '#', rvoe: 'MAES180410', rvoeHref: 'https://drive.google.com/file/d/1lETXQvxM_cVkcQrIuw_vCS5WR9eW81h8/view' },
+            { prefix: 'Maestría en', suffix: 'Paisaje, Patrimonio y Estudios Territoriales', href: '#', rvoe: 'MAES180408', rvoeHref: 'https://drive.google.com/file/d/1lADMx8lHtcaBN3nAF5oLjUk-VJwyKzsO/view' },
+            { prefix: 'Maestría en', suffix: 'Gestión de Proyectos Ambientales', href: '#', rvoe: 'MAES201238', rvoeHref: 'https://drive.google.com/file/d/1CgiKW9D3I2EMvrvzYtRZKLObq6d7bm8E/view' },
+            { prefix: 'Maestría en', suffix: 'Sostenibilidad Turística y Ecoturismo', href: '#', rvoe: 'MAES201008', rvoeHref: 'https://drive.google.com/file/d/1Mo1lN8G3xVeu4RbVNVAk8MhCSprwd8VL/view' },
+            { prefix: 'Maestría en', suffix: 'Eficiencia Energética y Sostenibilidad', href: '#', rvoe: 'MAES201009', rvoeHref: 'https://drive.google.com/file/d/1zgpPqW0ApZ0hgP7_aOaWiN9DZb2_Ts8f/view' },
+            { prefix: 'Maestría en', suffix: 'Hábitat, Urbanismo y Edificación Sostenible', href: '#', rvoe: 'MAES201239', rvoeHref: 'https://drive.google.com/file/d/1O4FTTr0hL-oVd0gUsWOcrPqF_VZmcOSl/view' },
+          ].map(({ prefix, suffix, href, rvoe, rvoeHref }) => (
+            <div class="flex items-center justify-between gap-4 py-2.5 border-b border-slate-200 dark:border-slate-700">
+              <span class="text-sm md:text-base">
+                <span class="font-medium text-primary dark:text-accent">{prefix} </span>
+                <a href={href} class="font-semibold text-secondary hover:underline underline-offset-2 decoration-secondary/60 transition-opacity hover:opacity-80">{suffix}</a>
+              </span>
+              <a href={rvoeHref} target="_blank" rel="noopener noreferrer" class="flex-shrink-0 text-sm md:text-base font-mono font-bold text-primary dark:text-accent hover:underline underline-offset-2 transition-colors whitespace-nowrap">
+                RVOE N° {rvoe}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </WidgetWrapper>
+</Layout>

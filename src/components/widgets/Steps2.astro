@@ -12,6 +12,8 @@ const {
   callToAction = await Astro.slots.render('callToAction'),
   items = [],
   isReversed = false,
+  colLeft = 'lg:w-1/2',
+  colRight = 'lg:w-1/2',
 
   id,
   isDark = false,
@@ -22,7 +24,7 @@ const {
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div class={`flex flex-col gap-8 md:gap-12 md:flex-row ${isReversed ? 'md:flex-row-reverse' : ''}`}>
-    <div class={`w-full lg:w-1/2 gap-8 md:gap-12 ${isReversed ? 'lg:ml-16 md:ml-8 ml-0' : 'lg:mr-16 md:mr-8 mr-0'}`}>
+    <div class={`w-full ${colLeft} gap-8 md:gap-12 ${isReversed ? 'lg:ml-16 md:ml-8 ml-0' : 'lg:mr-16 md:mr-8 mr-0'}`}>
       <Headline
         title={title}
         subtitle={subtitle}
@@ -47,7 +49,7 @@ const {
         }
       </div>
     </div>
-    <div class="w-full lg:w-1/2 px-0">
+    <div class={`w-full ${colRight} px-0`}>
       <ul class="space-y-10">
         {
           items && items.length

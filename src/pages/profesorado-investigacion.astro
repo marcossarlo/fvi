@@ -4,6 +4,7 @@ import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 const metadata = {
   title: 'Profesorado e Investigación',
@@ -82,12 +83,12 @@ const metadata = {
   />
 
   <!-- Encabezado de sección -->
-  <div class="max-w-7xl mx-auto px-4 py-8">
-    <div class="text-center mb-12">
+  <WidgetWrapper containerClass="pb-0 md:pb-0 lg:pb-0">
+    <div class="text-center mb-4">
       <p class="text-base text-secondary font-semibold tracking-wide uppercase">Claustro Docente</p>
       <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading">Nuestros Profesores</h2>
     </div>
-  </div>
+  </WidgetWrapper>
 
   <!-- ── Ángel Guillemes Peira ──────────────────────────────────────── -->
   <FacultyMember

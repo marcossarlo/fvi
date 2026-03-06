@@ -42,6 +42,7 @@ export default {
       },
     },
   },
+  safelist: ['text-sm', 'md:text-base'],
   plugins: [
     typographyPlugin,
     plugin(({ addVariant }) => {
