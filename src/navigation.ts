@@ -45,10 +45,10 @@ export const headerData = {
           text: 'Acreditación y Reconocimiento',
           href: getPermalink('/acreditacion-reconocimiento'),
         },
-        {
-          text: 'Empleo en el Instituto',
-          href: getPermalink('/empleo-instituto'),
-        },
+        // {
+        //   text: 'Empleo en el Instituto',
+        //   href: getPermalink('/empleo-instituto'),
+        // },
         {
           text: 'Fondo Verde y su acción social',
           href: getPermalink('/fondo-verde-accion-social'),
