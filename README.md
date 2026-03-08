@@ -11,7 +11,7 @@ Este es el repositorio oficial de la actualización del sitio web [fondoverdeins
 
 <br>
 
-![Fondo Verde Institute Website](https://fondoverdeinstitute.com/images/logo-fvi.png)
+![Fondo Verde Institute Website](/public/images/fvi-screenshot.webp)
 
 ## 📋 Estado del Proyecto (Menú "El Instituto")
 
@@ -30,10 +30,12 @@ Actualmente nos encontramos migrando las páginas principales:
 <details open>
 <summary>Tabla de Contenidos</summary>
 
-- [Inicio Rápido](#inicio-rápido)
-- [Estructura del Proyecto](#estructura-del-proyecto)
-- [Comandos](#comandos)
-- [Créditos y Template Base](#créditos-y-template-base)
+- [🚀 Fondo Verde Institute (FVI)](#-fondo-verde-institute-fvi)
+  - [📋 Estado del Proyecto (Menú "El Instituto")](#-estado-del-proyecto-menú-el-instituto)
+  - [Inicio Rápido](#inicio-rápido)
+  - [Estructura del Proyecto](#estructura-del-proyecto)
+    - [Comandos principales](#comandos-principales)
+  - [Créditos y Template Base](#créditos-y-template-base)
 
 </details>
 
