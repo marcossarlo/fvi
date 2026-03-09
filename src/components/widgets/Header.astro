@@ -98,20 +98,37 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
               {links?.length ? (
                 <>
                   {/* Botones del navbar */}
-                  <button
-                    type="button"
-                    class:list={[
-                      'px-4 py-2 rounded flex items-center whitespace-nowrap transition-colors',
-                      // estados del botón Activo/Inactivo
-                      {
-                        'bg-secondary text-white hover:bg-secondary hover:text-white dark:bg-secondary dark:text-white': isChildActive,
-                        'text-default hover:bg-orange-400/20 hover:text-gray-900 dark:bg-transparent dark:text-white dark:hover:bg-orange-400/50': !isChildActive,
-                      },
-                    ]}
-                  >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline" />
-                  </button>
+                  {href ? (
+                    <a
+                      href={href}
+                      class:list={[
+                        'px-4 py-2 rounded flex items-center whitespace-nowrap transition-colors group',
+                        // estados del botón Activo/Inactivo
+                        {
+                          'bg-secondary text-white hover:bg-secondary hover:text-white dark:bg-secondary dark:text-white': isChildActive || href === currentPath,
+                          'text-default hover:bg-orange-400/20 hover:text-gray-900 dark:bg-transparent dark:text-white dark:hover:bg-orange-400/50': !isChildActive && href !== currentPath,
+                        },
+                      ]}
+                    >
+                      {text}{' '}
+                      <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline transition-transform duration-500 ease-in-out group-hover:rotate-180" />
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      class:list={[
+                        'px-4 py-2 rounded flex items-center whitespace-nowrap transition-colors group',
+                        // estados del botón Activo/Inactivo
+                        {
+                          'bg-secondary text-white hover:bg-secondary hover:text-white dark:bg-secondary dark:text-white': isChildActive,
+                          'text-default hover:bg-orange-400/20 hover:text-gray-900 dark:bg-transparent dark:text-white dark:hover:bg-orange-400/50': !isChildActive,
+                        },
+                      ]}
+                    >
+                      {text}{' '}
+                      <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden md:inline transition-transform duration-500 ease-in-out group-hover:rotate-180" />
+                    </button>
+                  )}
                   {/* para el Dropdown */}
                   <ul class="dropdown-menu md:backdrop-blur-md rounded-b-2xl pb-1 md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-gray-100 dark:md:bg-dark md:min-w-[200px] drop-shadow-xl border-t-2 border-secondary z-50 mt-1">
                     {links.map(({ text: text2, href: href2 }) => (

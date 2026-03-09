@@ -56,23 +56,36 @@ export const headerData = {
       ]
     },
     {
-      text: 'Homes',
+      text: 'PostDoct',
+      href: getPermalink('/postdoctorado'),
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+          href: getPermalink('/postdoctorado/gestion-gobernanza-proyectos-ambientales'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: 'Postdoctorado en Ciencias Aplicadas al Medio Ambiente',
+          href: getPermalink('/postdoctorado/ciencias-aplicadas-medio-ambiente'),
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
+          text: 'Postdoctorado en Sistemas de Gestión Medioambiental',
+          href: getPermalink('/postdoctorado/sistemas-gestion-medioambiental'),
         },
         {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'Postdoctorado en Peritaje Judicial en materia de delitos ambientales',
+          href: getPermalink('/postdoctorado/peritaje-judicial-delitos-ambientales'),
+        },
+        {
+          text: 'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+          href: getPermalink('/postdoctorado/sistemas-gestion-seguridad-salud-trabajo'),
+        },
+        {
+          text: 'Postdoctorado en Ciencias de la Sostenibilidad',
+          href: getPermalink('/postdoctorado/ciencias-sostenibilidad'),
+        },
+        {
+          text: 'Postdoctorado en Ciencias de la Educación Ambiental',
+          href: getPermalink('/postdoctorado/ciencias-educacion-ambiental'),
         },
       ],
     },
