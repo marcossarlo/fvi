@@ -7,6 +7,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
     title: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
@@ -92,7 +93,7 @@ const tabs = [
         </nav>
     </WidgetWrapper>
 
-    <!-- 1. Presentación *********************************** -->
+    <!-- 1. PRESENTACIÓN *********************************** -->
     <Content
         id="presentacion"
         tagline="Presentación"
@@ -121,7 +122,7 @@ const tabs = [
                 title: 'Programa en extenso',
                 icon: 'tabler:download',
                 callToAction: {
-                    text: 'Accede al Programa en Extenso',
+                    text: 'Descargar el Programa en Extenso',
                     href: 'https://drive.google.com/uc?export=download&id=12gbTyeRWL_XASSyWahhuL2qptXskqyzL',
                     variant: 'primary',
                 },
@@ -141,31 +142,32 @@ const tabs = [
         </Fragment>
     </Content>
 
-  <!-- 2. El Postdoctorado ******************************* -->
-  <Features3
+  <!-- 2. EL POSTDOCTORADO ******************************* -->
+  <Features2
     id="el-postdoctorado"
-    tagline="2. El Postdoctorado"
-    title="El Postdoctorado"
-    subtitle="Formación orientada a la investigación, la gobernanza ambiental y la formulación de propuestas concretas para el desarrollo sustentable."
-    columns={3}
-    items={[
+    tagline="El Postdoctorado"
+    title="¿Por qué hacer el postdoctorado?"
+    subtitle="El <strong>Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales</strong> está dirigido a doctores de toda Iberoamérica y busca fortalecer la producción científica en torno a la sustentabilidad. Con una duración de <strong>6 meses</strong> a <strong>1 año</strong>, el programa exige la realización de un plan de actividades cuyo resultado sea la publicación de un artículo arbitrado por jurados —uno de ellos internacional— y la presentación de un informe final, consolidando así la formación en la gestión de proyectos ambientales complejos."
+    columns={2}
+    items={[      
       {
-        title: 'Producción científica en sustentabilidad',
+        title: 'Objetivos del Programa',
         description:
-          'Fortalece la investigación en temas ambientales para responder a conflictos locales y regionales con resultados de relevancia científica.',
-        icon: 'tabler:microscope',
+          'El Programa se orientará de modo particular a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Promover una instancia de reflexión crítica en el nuevo paradigma ambiental que permita estimular el compromiso y la acción propiamente dicha, para multiplicar la cantidad y calidad de los proyectos, mediante la concepción, formulación y gestión de proyectos sustentables concretos.</li><li>Introducir al postdoc en el campo de la gestión y gobernanza de proyectos ambientales con una metodología innovadora y transdiciplinaria de alto impacto y nivel de éxito en toda Latinoamérica.</li><li>Abrir nuevas perspectivas para abordar estrategias de articulación y actuación en México y Latinoamérica, en materia de desarrollo sustentable de alcance en las políticas públicas y privadas.</li><li>Generar un clima de reflexión, de co-construcción de conocimiento y de formulación de propuestas concretas vinculadas al ambiente y al desarrollo sustentable en Latinoamérica.</li></ul>',
+        icon: 'tabler:circle-plus',
       },
       {
-        title: 'Articulación regional',
+        title: 'Perfil del destinatario',
         description:
-          'Impulsa estrategias de desarrollo sustentable en Latinoamérica, conectando academia, territorio e institucionalidad.',
-        icon: 'tabler:network',
-      },
-      {
-        title: 'Valor académico y profesional',
-        description:
-          'Combina reflexión, co-construcción de conocimiento y aplicación práctica para consolidar liderazgo especializado.',
-        icon: 'tabler:award',
+          'El Programa está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"> \
+            <li>Doctores de universidades extranjeras y nacionales graduados en ecología global, biodiversidad, ciencias de la tierra o una disciplina relacionada, que persigan desarrollar un proyecto de investigación novedoso en el campo de la gestión y gobernanza de proyectos ambientales.</li> \
+            <li>Doctores de toda Iberoamérica y de cualquier disciplina, que posean especial interés en temas de sustentabilidad ambiental y que busquen desarrollar un proyecto de investigación en relación a dichos temas o se desempeñen laboralmente en áreas vinculadas.</li> \
+            <li>Docentes, profesionales, asesores e investigadores locales, nacionales e internacionales con título doctoral, que muestren interés por la temática del ambiente y el desarrollo sustentable.</li> \
+            <li>Profesionales recién doctorados especialmente motivados en formarse y/o profundizar en el paradigma ambiental como nueva forma de abordar la realidad y en el desarrollo sustentable como desafío a alcanzar.</li> \
+            <li>Funcionarios y/o responsables de las políticas públicas a nivel local, regional o nacional en esta área o afines, que hayan obtenido su doctorado en alguna institución de reconocido prestigio.</li> \
+            <li>Doctores que ejerzan la docencia y/o educadores en general interesados en la formación transdisciplinaria, el enfoque holístico y la mirada integral que el ambiente requiere.</li> \
+          </ul>',
+        icon: 'tabler:users',
       }
     ]}
   />
