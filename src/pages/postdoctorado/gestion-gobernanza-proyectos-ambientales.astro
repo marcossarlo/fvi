@@ -1,0 +1,363 @@
+---
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+  description:
+    'Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales de Fondo Verde Institute. Duración de 6 a 12 meses, modalidad online, dirigido a Doctores de toda Iberoamérica comprometidos con el desarrollo sostenible.',
+  keywords:
+    'posdoctorado, gestión ambiental, gobernanza, proyectos ambientales, Fondo Verde Institute, online, investigación, sostenibilidad, Iberoamérica',
+};
+---
+
+<Layout metadata={metadata}>
+    <!-- Hero ********************************************** -->
+    <Hero
+        tagline="PostDoc"
+        image={{
+            src: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop',
+            alt: 'Gestión y Gobernanza de Proyectos Ambientales — Fondo Verde Institute',
+        }}
+        >
+        <Fragment slot="title">
+            Posdoctorado en <span class="text-primary dark:text-accent">Gestión y Gobernanza de Proyectos Ambientales</span>
+        </Fragment>
+
+        <Fragment slot="subtitle">
+            La cuestión del ambiente y la sustentabilidad se ha transformado en un verdadero <strong>cambio de paradigma</strong> en
+            las actividades de desarrollo y organización. Este programa forma investigadores capaces de <strong>gestionar y
+            gobernar proyectos ambientales</strong> con impacto real en políticas públicas y privadas de Iberoamérica.
+        </Fragment>
+    </Hero>
+
+    <!-- Datos clave **************************************** -->
+    <Stats
+        stats={[
+            { amount: '6–12', title: 'Meses de duración', icon: 'tabler:calendar' },
+            { amount: '100%', title: 'Modalidad online', icon: 'tabler:device-laptop' },
+            { amount: '3 Jun 2026', title: 'Próximo inicio', icon: 'tabler:calendar-event' },
+            { amount: 'PhD', title: 'Requisito de acceso', icon: 'tabler:certificate' },
+        ]}
+        >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Stats>
+
+    <!-- Presentación *************************************** -->
+    <Content
+        tagline="Presentación"
+        title="Un nuevo paradigma en la gestión ambiental"
+        subtitle='sss'
+        isReversed={false}
+        items={[
+            {
+            title: 'Dirigido a Doctores de toda Iberoamérica',
+            description:
+                'El programa está orientado a profesionales con grado de Doctor, de cualquier disciplina, que busquen desarrollar un proyecto de investigación para dar respuesta a los conflictos ambientales de la realidad local y/o regional.',
+            icon: 'tabler:users',
+            },
+            {
+            title: 'Producción científica de relevancia',
+            description:
+                'El objetivo es divulgar y fortalecer la producción de trabajos de relevancia científica en temas de sustentabilidad ambiental, contribuyendo a la creación de un nuevo paradigma del ambiente.',
+            icon: 'tabler:microscope',
+            },
+            {
+            title: 'Impacto en políticas públicas y privadas',
+            description:
+                'El posdoctorado abre nuevas perspectivas para abordar estrategias de articulación y actuación en Latinoamérica en materia de desarrollo sustentable, con alcance en las políticas públicas y privadas.',
+            icon: 'tabler:scale',
+            },
+        ]}
+        image={{
+            src: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Investigación en gestión de proyectos ambientales',
+        }}
+        >
+        <Fragment slot="content">
+            <p class="text-lg dark:text-slate-400 mb-4">
+            El <strong>Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales</strong> tiene por objetivo
+            divulgar y fortalecer la producción de trabajos de relevancia científica en temas de sustentabilidad ambiental.
+            </p>
+            <p class="text-lg dark:text-slate-400">
+            Genera un clima de reflexión, co-construcción de conocimiento y formulación de propuestas concretas,
+            complementando la formación de los alumnos en cuestiones ambientales actuales y que han aparecido recientemente
+            en el escenario científico.
+            </p>
+        </Fragment>
+
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Competencias del programa ************************** -->
+    <Features3
+    tagline="Competencias"
+    title="¿Qué desarrollarás en este programa?"
+    subtitle="El programa combina rigor científico, visión estratégica y sensibilidad hacia los desafíos ambientales del siglo XXI para formar investigadores de alto impacto."
+    columns={3}
+    items={[
+        {
+        title: 'Análisis y diagnóstico ambiental',
+        description:
+            'Capacidad para identificar, analizar y diagnosticar conflictos ambientales en contextos locales, regionales e internacionales.',
+        icon: 'tabler:chart-bar',
+        },
+        {
+        title: 'Diseño de proyectos sostenibles',
+        description:
+            'Habilidades para diseñar, gestionar y evaluar proyectos ambientales con criterios de sostenibilidad, viabilidad y gobernanza.',
+        icon: 'tabler:hierarchy',
+        },
+        {
+        title: 'Gobernanza ambiental',
+        description:
+            'Comprensión de los marcos institucionales, legales y de participación ciudadana que condicionan la gobernanza de proyectos ambientales.',
+        icon: 'tabler:building-community',
+        },
+        {
+        title: 'Investigación científica',
+        description:
+            'Dominio de metodologías de investigación avanzada para producir trabajos arbitrados de relevancia científica en sustentabilidad.',
+        icon: 'tabler:flask',
+        },
+        {
+        title: 'Formulación de políticas',
+        description:
+            'Capacidad para formular recomendaciones e incidir en políticas públicas y privadas orientadas al desarrollo sustentable.',
+        icon: 'tabler:file-certificate',
+        },
+        {
+        title: 'Redes de cooperación',
+        description:
+            'Integración en redes académicas y de cooperación internacional para el intercambio de conocimiento y la articulación de proyectos.',
+        icon: 'tabler:network',
+        },
+    ]}
+    />
+
+    <!-- Estructura del Programa **************************** -->
+    <Steps
+        tagline="Estructura"
+        title="Cómo se organiza el programa"
+        subtitle="El Programa de Posdoctorado tiene una duración mínima de <strong>6 meses</strong> y máxima de <strong>1 año</strong>, y consiste en la realización de un plan de actividades cuyo resultado debe ser la publicación de un artículo arbitrado por dos jurados, uno de ellos internacional."
+        items={[
+            {
+            title: 'Plan de Trabajo Postdoctoral',
+            description:
+                'Diseño del plan de trabajo individual bajo la supervisión de un director designado por el Instituto. El plan establece los objetivos, metodología, cronograma y resultados esperados de la investigación postdoctoral.',
+            icon: 'tabler:clipboard-list',
+            },
+            {
+            title: 'Asignaturas de la programación',
+            description:
+                'Cursado de las asignaturas específicas del programa, orientadas a profundizar en los fundamentos teóricos y metodológicos de la gestión y gobernanza de proyectos ambientales.',
+            icon: 'tabler:books',
+            },
+            {
+            title: 'Trabajo Final de Investigación (TFI)',
+            description:
+                'Desarrollo del proyecto de investigación postdoctoral, que debe dar respuesta a un conflicto ambiental real de alcance local y/o regional, con contribución original al campo científico.',
+            icon: 'tabler:writing',
+            },
+            {
+            title: 'Informe Final Avalado',
+            description:
+                'Redacción del informe final de actividades, evaluado por el director de investigación y un jurado académico designado, incluyendo la revisión del artículo científico a publicar.',
+            icon: 'tabler:file-check',
+            },
+            {
+            title: 'Defensa del TFI',
+            description:
+                'Presentación y defensa pública del Trabajo Final de Investigación ante un tribunal académico. Superada esta etapa, se expide el Diploma de Posdoctorado.',
+            icon: 'tabler:presentation',
+            },
+        ]}
+    />
+
+    <!-- Campus Virtual / ¿Cómo se estudia? **************** -->
+    <Content
+        tagline="Metodología"
+        title="Estudia desde cualquier parte del mundo"
+        isReversed
+        items={[
+            {
+            title: 'Campus Virtual de Fondo Verde',
+            description:
+                'Todos los programas se desarrollan a través del Campus Virtual de Fondo Verde (<a href="https://www.fondoverdeopen.net/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2 transition-colors">fondoverdeopen.net</a>), que permite la interacción profesor-tutor y de los participantes entre sí.',
+            icon: 'tabler:device-laptop',
+            },
+            {
+            title: 'Formatos multimedia y flexibles',
+            description:
+                'Contenidos disponibles en todo momento a través del campus virtual en formato de libro electrónico, casos prácticos, vídeos y otros recursos didácticos actualizados.',
+            icon: 'tabler:video',
+            },
+            {
+            title: 'Comunicación permanente',
+            description:
+                'A través de los diferentes canales de chat, foros y servicios de mensajería podrás contactar con otros alumnos y realizar tantas consultas a tu tutor como estimes necesario.',
+            icon: 'tabler:messages',
+            },
+        ]}
+        image={{
+            src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Campus Virtual Fondo Verde',
+        }}
+        >
+        <Fragment slot="content">
+            <p class="text-lg dark:text-slate-400">
+            Una plataforma multimedia que, gracias a tecnologías de última generación, permite participar desde ubicaciones
+            remotas y brindar acceso instantáneo al mejor contenido ambiental.
+            </p>
+        </Fragment>
+
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Content>
+
+    <!-- Modelo Educativo *********************************** -->
+    <Content
+        tagline="Modelo Educativo"
+        title="Un enfoque diferenciador e integral"
+        items={[
+            {
+            title: 'Cursos teóricos y seminarios de investigación',
+            description:
+                'Formación rigurosa en los fundamentos epistemológicos y metodológicos de la investigación ambiental de posgrado, con seminarios de actualización científica.',
+            icon: 'tabler:school',
+            },
+            {
+            title: 'Actividades auxiliares y tutoría personalizada',
+            description:
+                'Acompañamiento continuo por parte de un director de investigación asignado, complementado con actividades prácticas y de aplicación directa al proyecto postdoctoral.',
+            icon: 'tabler:user-check',
+            },
+            {
+            title: 'Proyecto postdoctoral como eje integrador',
+            description:
+                'El proyecto es el núcleo del programa: integra saberes teóricos y prácticos para producir conocimiento científico original con impacto en la gestión y gobernanza ambiental.',
+            icon: 'tabler:target-arrow',
+            },
+        ]}
+        image={{
+            src: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop',
+            alt: 'Modelo Educativo PostDoc Fondo Verde Institute',
+        }}
+        >
+        <Fragment slot="content">
+            <p class="text-lg dark:text-slate-400">
+            El Posdoctorado combina cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el
+            proyecto postdoctoral. Esta especial conjunción de elementos, orientada a lograr el <strong>máximo
+            aprovechamiento académico y personal</strong> del postdoctorando, constituye el verdadero elemento diferenciador
+            de Fondo Verde Institute.
+            </p>
+        </Fragment>
+    </Content>
+
+    <!-- Evaluación y Certificación ************************* -->
+    <Features3
+        tagline="Certificación"
+        title="Evaluación y Diploma de Posdoctorado"
+        subtitle="Una vez cumplido y evaluado el Informe del Plan de Actividades y superado el Trabajo Final de Investigación, se expedirá el Diploma que acredita haber cursado el Programa de Posdoctorado."
+        columns={3}
+        items={[
+            {
+            title: 'Artículo científico arbitrado',
+            description:
+                'El resultado principal del programa es la publicación de un artículo arbitrado por dos jurados académicos, uno de ellos de carácter internacional.',
+            icon: 'tabler:article',
+            },
+            {
+            title: 'Diploma de Posdoctorado',
+            description:
+                'El Diploma es expedido por Fondo Verde, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), con número 11001.',
+            icon: 'tabler:certificate',
+            },
+            {
+            title: 'Reconocimiento internacional',
+            description:
+                'Fondo Verde Institute y UNICEPES garantizan el reconocimiento académico internacional del Diploma, avalado por el RVOE de la Secretaría de Educación Pública de México.',
+            icon: 'tabler:world-check',
+            },
+        ]}
+        >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+        </Fragment>
+    </Features3>
+
+    <!-- FAQs de ingreso ************************************ -->
+    <FAQs
+    tagline="Admisión"
+    title="Preguntas frecuentes sobre el programa"
+    subtitle="Resolvemos las dudas más habituales de los candidatos al Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales."
+    columns={1}
+    items={[
+        {
+        title: '¿Cuál es el requisito de acceso al programa?',
+        description:
+            'El programa está dirigido exclusivamente a personas con grado de Doctor (PhD o equivalente), de cualquier disciplina, que deseen desarrollar un proyecto de investigación en el ámbito de la gestión y gobernanza ambiental.',
+        icon: 'tabler:help-circle',
+        },
+        {
+        title: '¿Cuánto dura el programa y cuándo inicia?',
+        description:
+            'El Programa de Posdoctorado tiene una duración mínima de 6 meses y máxima de 1 año. El próximo inicio de cohorte está previsto para el <strong>3 de junio de 2026</strong>.',
+        icon: 'tabler:clock',
+        },
+        {
+        title: '¿En qué modalidad se imparte?',
+        description:
+            'El programa es 100% online (a distancia) y se desarrolla a través del Campus Virtual de Fondo Verde (<a href="https://www.fondoverdeopen.net/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">fondoverdeopen.net</a>), lo que permite participar desde cualquier país del mundo.',
+        icon: 'tabler:device-laptop',
+        },
+        {
+        title: '¿Cómo se desarrollan las actividades postdoctorales?',
+        description:
+            'Las actividades se realizan bajo la supervisión de un director designado por el Instituto y giran en torno a cinco aspectos: el Plan de Trabajo Postdoctoral, las Asignaturas de la programación, el Trabajo Final de Investigación (TFI), el Informe Final Avalado y la Defensa del TFI.',
+        icon: 'tabler:list-check',
+        },
+        {
+        title: '¿Qué documento se obtiene al finalizar?',
+        description:
+            'Al superar el programa se expide un <strong>Diploma de Posdoctorado</strong> emitido por Fondo Verde, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), con número de registro 11001.',
+        icon: 'tabler:certificate',
+        },
+    ]}
+    />
+
+    <!-- Call to Action ************************************* -->
+    <CallToAction
+    title="¿Listo para dar el siguiente paso en tu carrera investigadora?"
+    subtitle="Solicita información sobre el Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales y únete a una comunidad de investigadores comprometidos con el futuro del planeta."
+    actions={[
+        {
+        variant: 'primary',
+        text: 'Solicitar información',
+        href: '/contactos',
+        icon: 'tabler:mail',
+        },
+        {
+        variant: 'secondary',
+        text: 'Ver todos los PostDocs',
+        href: '/postdoctorado',
+        icon: 'tabler:arrow-right',
+        },
+    ]}
+    >
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-green-900/80 dark:bg-green-950/80"></div>
+    </Fragment>
+    </CallToAction>
+</Layout>
