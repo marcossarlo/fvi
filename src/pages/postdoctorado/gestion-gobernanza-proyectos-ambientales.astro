@@ -35,112 +35,112 @@ const tabs = [
 ---
 
 <Layout metadata={metadata}>
-    <!-- Hero ********************************************** -->
-    <Hero
-        tagline="PostDoc"
-        image={{
-            src: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop',
-            alt: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-        }}
-    >
-        <Fragment slot="title">
-            Posdoctorado en
-            <span class="text-primary dark:text-accent"> Gestión y Gobernanza de Proyectos Ambientales</span>
-        </Fragment>
+  <!-- Hero ********************************************** -->
+  <Hero
+      tagline="PostDoc"
+      image={{
+          src: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop',
+          alt: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+      }}
+  >
+      <Fragment slot="title">
+          Posdoctorado en
+          <span class="text-primary dark:text-accent"> Gestión y Gobernanza de Proyectos Ambientales</span>
+      </Fragment>
 
-        <Fragment slot="subtitle">
-            La cuestión del ambiente y la sustentabilidad se ha transformado en un verdadero <strong>cambio de paradigma</strong> en
-            las actividades de desarrollo y organización.
-        </Fragment>
-    </Hero>
+      <Fragment slot="subtitle">
+          La cuestión del ambiente y la sustentabilidad se ha transformado en un verdadero <strong>cambio de paradigma</strong> en
+          las actividades de desarrollo y organización.
+      </Fragment>
+  </Hero>
 
-    <!-- Datos clave *************************************** -->
-    <Stats
-    stats={[
-        { amount: '6–12', title: 'Meses de duración', icon: 'tabler:calendar' },
-        { amount: '100%', title: 'Modalidad online', icon: 'tabler:device-laptop' },
-        { amount: '3 Jun 2026', title: 'Próximo inicio', icon: 'tabler:calendar-event' },
-        { amount: 'PhD', title: 'Requisito de acceso', icon: 'tabler:certificate' },
-    ]}
-    >
-    <Fragment slot="bg">
-        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-    </Stats>
+  <!-- Datos clave *************************************** -->
+  <Stats
+  stats={[
+      { amount: '6–12', title: 'Meses de duración', icon: 'tabler:calendar' },
+      { amount: '100%', title: 'Modalidad online', icon: 'tabler:device-laptop' },
+      { amount: '3 Jun 2026', title: 'Próximo inicio', icon: 'tabler:calendar-event' },
+      { amount: 'PhD', title: 'Requisito de acceso', icon: 'tabler:certificate' },
+  ]}
+  >
+  <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+  </Stats>
 
-    <!-- Índice de secciones ******************************* -->
-    <WidgetWrapper containerClass="max-w-6xl mx-auto" id="indice-secciones">
-        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-primary dark:text-accent">Secciones del programa</h2>
-        <p class="mt-3 text-slate-700 dark:text-slate-300">
-            Explora las secciones clave del Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales para conocer su estructura, contenido y oportunidades.
-        </p>
-        <nav aria-label="Secciones del posdoctorado" class="mt-6">
-            <ul class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {
-                tabs.map((tab) => (
-                <li>
-                    <a
-                    href={`#${tab.id}`}
-                    class="group flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm md:text-base text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
-                    >
-                    <span>{tab.label}</span>
-                    <span class="text-primary" aria-hidden="true">→</span>
-                    </a>
-                </li>
-                ))
-            }
-            </ul>
-        </nav>
-    </WidgetWrapper>
+  <!-- Índice de secciones ******************************* -->
+  <WidgetWrapper containerClass="max-w-6xl mx-auto" id="indice-secciones">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-primary dark:text-accent">Secciones del programa</h2>
+      <p class="mt-3 text-slate-700 dark:text-slate-300">
+          Explora las secciones clave del Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales para conocer su estructura, contenido y oportunidades.
+      </p>
+      <nav aria-label="Secciones del posdoctorado" class="mt-6">
+          <ul class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+          {
+              tabs.map((tab) => (
+              <li>
+                  <a
+                  href={`#${tab.id}`}
+                  class="group flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm md:text-base text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
+                  >
+                  <span>{tab.label}</span>
+                  <span class="text-primary" aria-hidden="true">→</span>
+                  </a>
+              </li>
+              ))
+          }
+          </ul>
+      </nav>
+  </WidgetWrapper>
 
-    <!-- 1. PRESENTACIÓN *********************************** -->
-    <Content
-        id="presentacion"
-        tagline="Presentación"
-        title="Ángel Guillemes Peira, PhD"
-        subtitle="Director del Postdoctorado"
-        items={[
-            {
-            title: 'Cambio de paradigma ambiental ',
-            description:
-                'La sustentabilidad se ha convertido en un eje transversal e intersectorial, imprescindible para el desarrollo y la organización de proyectos complejos.',
-            icon: 'tabler:refresh',
-            },
-            {
-            title: 'Evaluación y formación en el posdoctorado',
-            description:
-                'Se implementa un nuevo procedimiento de evaluación para identificar talentos capaces de gerenciar proyectos ambientales sustentables, complementado con asignaturas obligatorias de la programación vigente.',
-            icon: 'tabler:checklist',
-            },
-            {
-            title: 'Respaldo institucional pionero',
-            description:
-                'La formación cuenta con la asistencia técnica de la Fundación CEPA y FLACAM / Cátedra UNESCO para el Desarrollo Sustentable, instituciones con trayectoria desde 1974 en la capacitación de proyectistas ambientales en Latinoamérica.',
-            icon: 'tabler:building-bank',
-            },
-            {
-                title: 'Programa en extenso',
-                icon: 'tabler:download',
-                callToAction: {
-                    text: 'Descargar el Programa en Extenso',
-                    href: 'https://drive.google.com/uc?export=download&id=12gbTyeRWL_XASSyWahhuL2qptXskqyzL',
-                    variant: 'primary',
-                },
-            }
-        ]}
-        image={{
-            src: '~/assets/images/users/fvi-angel-guillemes.webp',
-            alt: 'Ángel Guillemes Peira, PhD - Director del Postdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-        }}
-        >
-        <Fragment slot="content">
-            <h3 class="text-xl font-medium tracking-tight dark:text-white mb-2">La realidad actual requiere el desarrollo de proyectos ambientales multipropósitos</h3>
-        </Fragment>
+  <!-- 1. PRESENTACIÓN *********************************** -->
+  <Content
+      id="presentacion"
+      tagline="Presentación"
+      title="Ángel Guillemes Peira, PhD"
+      subtitle="Director del Postdoctorado"
+      items={[
+          {
+          title: 'Cambio de paradigma ambiental ',
+          description:
+              'La sustentabilidad se ha convertido en un eje transversal e intersectorial, imprescindible para el desarrollo y la organización de proyectos complejos.',
+          icon: 'tabler:refresh',
+          },
+          {
+          title: 'Evaluación y formación en el posdoctorado',
+          description:
+              'Se implementa un nuevo procedimiento de evaluación para identificar talentos capaces de gerenciar proyectos ambientales sustentables, complementado con asignaturas obligatorias de la programación vigente.',
+          icon: 'tabler:checklist',
+          },
+          {
+          title: 'Respaldo institucional pionero',
+          description:
+              'La formación cuenta con la asistencia técnica de la Fundación CEPA y FLACAM / Cátedra UNESCO para el Desarrollo Sustentable, instituciones con trayectoria desde 1974 en la capacitación de proyectistas ambientales en Latinoamérica.',
+          icon: 'tabler:building-bank',
+          },
+          {
+              title: 'Programa en extenso',
+              icon: 'tabler:download',
+              callToAction: {
+                  text: 'Descargar el Programa en Extenso',
+                  href: 'https://drive.google.com/uc?export=download&id=12gbTyeRWL_XASSyWahhuL2qptXskqyzL',
+                  variant: 'primary',
+              },
+          }
+      ]}
+      image={{
+          src: '~/assets/images/users/fvi-angel-guillemes.webp',
+          alt: 'Ángel Guillemes Peira, PhD - Director del Postdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+      }}
+      >
+      <Fragment slot="content">
+          <h3 class="text-xl font-medium tracking-tight dark:text-white mb-2">La realidad actual requiere el desarrollo de proyectos ambientales multipropósitos</h3>
+      </Fragment>
 
-        <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-        </Fragment>
-    </Content>
+      <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      </Fragment>
+  </Content>
 
   <!-- 2. EL POSTDOCTORADO ******************************* -->
   <Features2
@@ -172,37 +172,86 @@ const tabs = [
     ]}
   />
 
-  <!-- 3. Modalidades ************************************ -->
-  <Features3
-    id="modalidades"
-    tagline="3. Modalidades"
-    title="Modalidades de estudio"
-    subtitle="Desde el contenido disponible, el programa se desarrolla en modalidad a distancia mediante Campus Virtual, con acompañamiento tutorial."
-    columns={3}
+  <!-- 3. MODALIDADES ************************************ -->
+  <Features2
+      id="modalidades"
+      tagline="Modalidades"
+      title="Modalidades y Condiciones del Postdoctorado"
+      subtitle="El programa ofrece dos tipos de instancias posdoctorales:"
+  >
+    <Fragment slot="bg">            
+        <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Modalidad Intensivo -->
+  <Steps      
+    title='Intensivo <span class="text-xl font-light">(6 meses)</span>'
+    tagline='Modalidad'
+    subtitle="<strong>Para redacción de publicaciones (6 meses).</strong> <br />
+    El objetivo de esta modalidad es apoyar a los/las postdoc a que puedan terminar publicaciones vinculadas al ambiente y al desarrollo sustentable. <br />La/el postdoc debe cumplir con las siguientes condiciones:"
+    bg='<div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>'   
     items={[
       {
-        title: 'Modalidad online',
-        description: 'Desarrollo completo del programa a través del Campus Virtual de Fondo Verde.',
-        icon: 'tabler:device-laptop',
+        title: 'Duración',
+        description:
+          'Seis (06) meses de actividades planificadas.',
+        icon: 'tabler:clock',
       },
       {
-        title: 'Tutoría académica',
+        title: 'Producto Final',
         description:
-          'Seguimiento del plan de trabajo e investigación por un director designado por el Instituto.',
-        icon: 'tabler:user-check',
+          'El producto final debe ser un artículo publicable en una revista indexada (en inglés o en castellano).',
+        icon: 'tabler:article',
       },
       {
-        title: 'Ritmo flexible',
+        title: 'Resultados de una Investigación Original',
         description:
-          'Acceso a contenidos y actividades desde cualquier lugar, adaptado a la realidad profesional del postdoctorando.',
-        icon: 'tabler:clock-hour-4',
+          'El artículo debe incluir resultados de una investigación original que avance en la definición de un nuevo paradigma de sociedad, que aborde dicha problemática desde la perspectiva integral e integradora del desarrollo sustentable.',
+        icon: 'tabler:bulb',
       },
+      {
+        title: 'Resultados',
+        description:
+          'Presentar avances y resultados de su investigación.',
+        icon: 'tabler:check',
+      }
     ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features3>
+  />
+  <!-- Modalidad Flexible -->
+  <Steps
+    title='Flexible <span class="text-xl font-light">(12 meses)</span>'
+    tagline='Modalidad'
+    subtitle='<strong>Para desarrollar algún aspecto que le resulte de interés (12 meses)</strong> <br />
+    La/ el postdoc debe cumplir con las siguientes condiciones:'
+    bg='<div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>'
+    items={[
+      {
+        title: 'Duración',
+        description:
+        '<strong>Máximo 6 meses</strong> de investigación de campo. La/ el postdoc deberá escoger una de las <strong>asignaturas de la programación</strong> y desarrollar algún aspecto que le resulte de interés.<br /> <strong>Mínimo 6 meses</strong> de actividades planificadas (después del trabajo de campo).',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Producto final',
+        description:
+          'El producto final debe ser un artículo enviado a una revista de investigación indexada.',
+        icon: 'tabler:article',
+      },
+      {
+        title: 'Participación',
+        description:
+          'Participar de las distintas actividades de docencia e iniciativas académicas.',
+        icon: 'tabler:books',
+      },
+      {
+        title: 'Resultados',
+        description:
+          'Presentar avances y resultados de su investigación.',
+        icon: 'tabler:check',
+      }
+    ]}
+  />
 
   <!-- 4. Estructura ************************************* -->
   <Steps
