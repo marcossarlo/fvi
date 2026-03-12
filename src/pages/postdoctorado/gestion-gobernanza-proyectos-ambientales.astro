@@ -3,6 +3,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
@@ -253,38 +254,73 @@ const tabs = [
     ]}
   />
 
-  <!-- 4. Estructura ************************************* -->
-  <Steps
+  <!-- 4. ESTRUCTURA ************************************* -->
+  <Features2
     id="estructura"
-    tagline="4. Estructura"
-    title="Estructura del programa"
-    subtitle="Duración mínima de <strong>6 meses</strong> y máxima de <strong>1 año</strong>. El resultado esperado incluye la publicación de un artículo arbitrado por dos jurados, uno de ellos internacional."
+    tagline="Estructura"
+    title="Estructura del Programa"
+    subtitle='El Programa de Postdoctorado tiene una duración mínima de <strong>6 meses en su versión intensiva</strong> y máxima de <strong>1 año en su formato flexible</strong>, ampliable hasta 1 trimestre.'
+  />
+
+  <Steps2
+    title='Actividades'
+    subtitle='Las actividades del/la postDoc, giran alrededor de los siguientes <strong>cinco</strong> aspectos fundamentales:'
+    colLeft="md:w-1/5"
+    colRight="md:w-4/5"
     items={[
       {
-        title: 'Plan de Trabajo Postdoctoral',
-        description: 'Diseño del plan de actividades y hoja de ruta de investigación.',
-        icon: 'tabler:clipboard-list',
+        title: 'Plan de Trabajo Postdoctoral.',
+        description:
+          'Consiste en la realización de un plan de actividades asignadas a los doctores dentro del programa y/o proyecto de investigación propuesto. Las tareas programadas se realizan bajo la supervisión de un director designado a tal efecto.',
+        icon: 'tabler:number-1',
       },
       {
-        title: 'Asignaturas de la programación',
-        description: 'Desarrollo formativo conforme a la programación académica del programa.',
-        icon: 'tabler:books',
+        title: 'Asignaturas de la programación.',
+        description:
+          'Son asignaturas obligatorias propuestas en la programación vigente y se compone de varias áreas temáticas que fomentan la colaboración transnacional en muy diferentes campos de estudio, con enfoque en el avance de la ciencia y la investigación.',
+        icon: 'tabler:number-2',
       },
       {
-        title: 'Trabajo Final de Investigación (TFI)',
-        description: 'Desarrollo de un proyecto de investigación con aportación científica.',
-        icon: 'tabler:writing',
+        title: 'Trabajo Final de Investigación – TFI.',
+        description:
+          'En lo referente al TFI, los alumnos identifican una de las asignaturas de la programación y desarrollan algún aspecto que le resulte de interés y cuyo resultado debe ser la publicación de un artículo en una revista de nivel académico acorde a los requisitos exigidos en publicaciones de nivel internacional.',
+        icon: 'tabler:number-3',
       },
       {
-        title: 'Informe final avalado',
-        description: 'Presentación del informe de actividades validado por la dirección académica.',
-        icon: 'tabler:file-check',
+        title: 'Informe final avalado.',
+        description:
+          'Consiste en la presentación de un informe del cumplimiento de las tareas previstas en el plan de trabajo propuesto y avalado por su Director.',
+        icon: 'tabler:number-4',
       },
       {
-        title: 'Defensa del TFI',
-        description: 'Defensa académica final del trabajo de investigación.',
-        icon: 'tabler:presentation',
+        title: 'Defensa del TFI.',
+        description:
+          'La defensa de la investigación es un acto público y consistirá en la exposición y defensa del trabajo ante un jurado seleccionado por el Comité de Posdoctorado. Los doctores presentes pueden formular cuestiones.',
+        icon: 'tabler:number-5',
+      }
+    ]}
+  />
+  <Steps
+    subtitle="La/ el postdoc deberá cumplir, durante su estancia, con algunas de las tareas que se detallan:"
+    items={[
+      {
+        title: '<span class="text-primary">POSTDOC INTENSIVO</span>',
+        description: '<ol><li><strong>1.</strong> Cursar una serie de asignaturas de la programación.</li><li><strong>2.</strong> Exposición sobre el tema de investigación propuesto.</li><li><strong>3.</strong> Colaboración del doctor como jurado de tesis</li></ol>',
+        icon: 'tabler:school',
       },
+      {
+        title: '<span class="text-muted">POSTDOC FLEXIBLE</span>',
+        description: 'Además de <strong>1</strong>, <strong>2</strong> y <strong>3</strong>: <ol><li><strong>4.</strong> Realizar actividades de investigación de campo.</li><li><strong>5.</strong> Impartir conferencias en las materias de su interés.</li><li><strong>6.</strong> Participación en pasantías, seminarios o congresos.</li></ol>',
+        icon: 'tabler:school',
+      },
+      {
+        title: '<span class="text-secondary">TRABAJO FINAL</span>',
+        description: 'Defensa del Trabajo Final de Investigación - TFI.',
+        icon: 'tabler:school',
+      },
+      {
+        description: '<span class="font-semibold text-accent">La/ el postdoc también será responsable de fomentar la investigación ecológica global dentro de nuestro instituto, por ejemplo, a través del desarrollo de actividades conjuntas e interinstitucionales.</span>',
+      }
     ]}
   />
 
