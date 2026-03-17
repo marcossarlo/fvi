@@ -378,35 +378,35 @@ const tabs = [
     }}
   />
   <Content
-  title="Modelo Educativo"
-  content='El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones.'
-  isAfterContent
-  items={[
-      {
-        title: 'Cursos Teóricos',
-        icon: 'tabler:book',
-      },
-      {
-        title: 'Seminarios de Investigación',
-        icon: 'tabler:certificate-2',
-      },
-      {
-        title: 'Tareas Postdoctorales',
-        icon: 'tabler:checklist',
-      },
-      {
-        title: 'Tutoría',
-        icon: 'tabler:user-check',
-      },
-      {
-        title: 'Proyecto Postdoctoral',
-        icon: 'tabler:briefcase',
-      },
-    ]}
-  image={{
-    src: '~/assets/images/postdocs/fvi-modelo-educativo-PostDoc.webp',
-    alt: 'Modelo educativo del programa de Posdoctorado de Fondo Verde',
-  }}
+    title="Modelo Educativo"
+    content='El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones.'
+    isAfterContent
+    items={[
+        {
+          title: 'Cursos Teóricos',
+          icon: 'tabler:book',
+        },
+        {
+          title: 'Seminarios de Investigación',
+          icon: 'tabler:certificate-2',
+        },
+        {
+          title: 'Tareas Postdoctorales',
+          icon: 'tabler:checklist',
+        },
+        {
+          title: 'Tutoría',
+          icon: 'tabler:user-check',
+        },
+        {
+          title: 'Proyecto Postdoctoral',
+          icon: 'tabler:briefcase',
+        },
+      ]}
+    image={{
+      src: '~/assets/images/postdocs/fvi-modelo-educativo-PostDoc.webp',
+      alt: 'Modelo educativo del programa de Posdoctorado de Fondo Verde',
+    }}
   />
 
   <!-- 7. Claustro *************************************** -->
@@ -455,33 +455,46 @@ const tabs = [
   }
 
   <!-- 8. Certificación ********************************** -->
-  <Features3
+  <Steps   
     id="certificacion"
-    tagline="8. Certificación"
+    tagline="Certificación"
     title="Evaluación y certificación"
-    subtitle="Una vez cumplido y evaluado el Informe del Plan de Actividades y superado el Trabajo Final de Investigación, se expide el Diploma del Programa de Postdoctorado."
-    columns={3}
+    subtitle="Una vez cumplido y evaluado el Informe del Plan de Actividades y superado el Trabajo Final de Investigación, se expedirá un <strong>Diploma que acredite haber cursado el Programa de Postdoctorado</strong>."
     items={[
       {
-        title: 'Artículo científico arbitrado',
-        description:
-          'El proceso considera publicación arbitrada por dos jurados académicos, uno de carácter internacional.',
-        icon: 'tabler:article',
-      },
-      {
-        title: 'Diploma de Postdoctorado',
-        description:
-          'Diploma expedido por Fondo Verde, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), número 11001.',
+        title: 'Diploma Oficial <br /> <span class="font-normal">y Reconocimiento Institucional</span>',
+        description: 'El Diploma de Postdoctorado es expedido por <strong>Fondo Verde</strong>, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), en materia de Formación Profesional Ocupacional, con número <strong>11001</strong>.',
         icon: 'tabler:certificate',
       },
       {
-        title: 'Respaldo institucional',
-        description:
-          'Alineado con el esquema académico y de reconocimiento internacional del Instituto.',
-        icon: 'tabler:building-bank',
+        title: 'Apostillado <br /> <span class="font-normal">y Validez Internacional del Diploma</span>',
+        description: 'Desde España se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar el Diploma en un país fuera de España.',
+        icon: 'tabler:certificate',
       },
     ]}
+    classes={{ container: 'max-w-4xl' }}
+/>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: 'Requisitos para la Certificación PMPA™',
+      description:
+        'Los participantes que pretendan obtener la Certificación <strong>PMPA™</strong> - <strong>Profesional Mánager en Proyectos Ambientales</strong>, categorías <strong>PMPA™ Especialista</strong>, <strong>PMPA™ Experto</strong> y/o <strong>PMPA™ Eminencia</strong>, en función de su nivel de experiencia tienen que acreditar los requisitos de certificación relacionados con la credencial seleccionada.',
+      icon: 'tabler:certificate-2',
+    },
+    {
+      title: 'Licencia como Instructor PMPA™',
+      description:
+        'Con la obtención del certificado PMPA™ excepcionalmente podrán acreditarse como <strong>PMPA™ Instructor Network</strong> con licencia local y/o licencia internacional, superando etapas adicionales y sufragando los derechos de licencia.',
+      icon: 'tabler:certificate-2',
+    },
+  ]}
+  classes={{ container: 'max-w-4xl' }}
   />
+
+
+
 
   <!-- 9. Becas ****************************************** -->
   <Features3
