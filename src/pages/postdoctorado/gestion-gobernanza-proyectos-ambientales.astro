@@ -1,6 +1,7 @@
 ---
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
@@ -9,6 +10,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
 
 const metadata = {
     title: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
@@ -325,109 +327,216 @@ const tabs = [
   />
 
   <!-- 5. Asignaturas ************************************ -->
-  <Content
+  <HeroSection
     id="asignaturas"
-    tagline="5. Asignaturas"
-    title="Asignaturas"
-    items={[
-      {
-        title: 'Seminarios de investigación',
-        description: 'Espacios orientados al análisis crítico y actualización científica en sostenibilidad ambiental.',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Módulos de gestión y gobernanza',
-        description: 'Componentes académicos enfocados en diseño, gestión y evaluación de proyectos ambientales.',
-        icon: 'tabler:hierarchy',
-      },
-      {
-        title: 'Contenido detallado en migración',
-        description:
-          'La malla de asignaturas específica de esta ficha está en proceso de consolidación desde el Joomla original para publicar el detalle final.',
-        icon: 'tabler:info-circle',
-      },
-    ]}
+    tagline="Asignaturas"
+    title="Asignaturas de la Programación"
     image={{
-      src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop',
-      alt: 'Plan de asignaturas del programa',
+      src: '~/assets/images/postdocs/fvi-postDoc-GGPA-Asignaturas.webp',
+      alt: 'Asignaturas del programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
     }}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+    <Fragment slot="subtitle">
+          Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <strong>Trabajo Final de Investigación</strong> - <strong>TFI</strong>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y desarrollar algún aspecto que le resulte de interés.
+      </Fragment>
+  </HeroSection>
 
   <!-- 6. ¿Cómo se estudia? ****************************** -->
   <Content
     id="como-se-estudia"
-    tagline="6. ¿Cómo se estudia?"
-    title="¿Cómo se estudia?"
+    tagline="¿Cómo se estudia?"
+    title="Nuestro Campus Virtual"
+    content='Todos nuestros programas se desarrollan a través del <strong>Campus Virtual</strong> de <strong>Fondo Verde</strong> (<a href="https://www.fondoverdeopen.net/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">fondoverdeopen.net</a>), que permite la interacción profesor-tutor y de los participantes entre sí.'
     isReversed
     items={[
       {
-        title: 'Campus Virtual de Fondo Verde',
+        title: 'Plataforma multimedia',
         description:
-          'Todos los programas se desarrollan a través del Campus Virtual de Fondo Verde (<a href="https://www.fondoverdeopen.net/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">fondoverdeopen.net</a>).',
+          'Una plataforma multimedia que gracias a tecnologías de última generación permite participar desde ubicaciones remotas y brindar acceso instantáneo al mejor contenido.',
         icon: 'tabler:device-laptop',
       },
       {
-        title: 'Recursos didácticos multimedia',
+        title: 'Recursos didácticos',
         description:
-          'Acceso permanente a contenidos en formato digital, casos prácticos, videos y materiales de apoyo.',
+          'Contenidos del programa formativo, disponibles en todo momento a través del campus virtual en formato de libro electrónico, casos prácticos, vídeos y otros recursos didácticos.',
         icon: 'tabler:video',
       },
       {
         title: 'Interacción y acompañamiento',
         description:
-          'Canales de chat, foros y mensajería para consultas con tutor y comunicación con otros participantes.',
+          'A través de los diferentes canales de chat, foros y servicios de mensajería podrá contactar con otros alumnos y realizar tantas consultas a su tutor como estime necesario.',
         icon: 'tabler:messages',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
-      alt: 'Estudio online en campus virtual',
+      src: '~/assets/images/fvi-nuestro-campus-FV.webp',
+      alt: 'Estudio online en campus virtual de Fondo Verde',
     }}
+  />
+  <Content
+  title="Modelo Educativo"
+  content='El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones.'
+  isAfterContent
+  items={[
+      {
+        title: 'Cursos Teóricos',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Seminarios de Investigación',
+        icon: 'tabler:certificate-2',
+      },
+      {
+        title: 'Tareas Postdoctorales',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'Tutoría',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Proyecto Postdoctoral',
+        icon: 'tabler:briefcase',
+      },
+    ]}
+  image={{
+    src: '~/assets/images/postdocs/fvi-modelo-educativo-PostDoc.webp',
+    alt: 'Modelo educativo del programa de Posdoctorado de Fondo Verde',
+  }}
   />
 
   <!-- 7. Claustro *************************************** -->
   <Content
     id="claustro"
-    tagline="7. Claustro"
-    title="Claustro docente"
-    subtitle="Equipo académico con experiencia en investigación, dirección y evaluación de proyectos ambientales."
+    tagline="Claustro"
+    title="Claustro Académico"
     items={[
       {
-        title: 'Docentes e investigadores especialistas',
+        title: 'Staff académico especializado',
         description:
-          'La ficha de claustro específica para este postdoctorado se está homologando para mostrar perfiles completos durante la migración.',
+          'El programa cuenta con un equipo de alto nivel, conformado por docentes universitarios e investigadores expertos en cada materia de conocimiento.',
         icon: 'tabler:users-group',
       },
       {
-        title: 'Dirección académica',
+        title: 'Profesionales en activo',
         description:
-          'Las actividades postdoctorales se realizan bajo la supervisión de un director designado para el seguimiento del plan de investigación.',
-        icon: 'tabler:user-check',
+          'Participan especialistas provenientes de la administración pública y de la empresa privada, aportando experiencia práctica en la gestión de proyectos.',
+        icon: 'tabler:briefcase',
       },
       {
-        title: 'Consulta temporal del profesorado',
+        title: 'Colaboración institucional',
         description:
-          'Mientras se integra el detalle final del claustro, puedes revisar el equipo académico institucional en la sección correspondiente.',
-        icon: 'tabler:external-link',
-        callToAction: {
-          text: 'Ver Profesorado e Investigación',
-          href: '/profesorado-investigacion',
-        },
+          'Se suman profesionales de primer nivel de empresas, organismos oficiales e instituciones, directamente implicados en las áreas de conocimiento que abarca el posdoctorado.',
+        icon: 'tabler:building',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop',
-      alt: 'Claustro académico',
+      src: '~/assets/images/fvi-claustro-academico.webp',
+      alt: 'Claustro académico de Fondo Verde',
     }}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+    <!-- ── Ángel Guillemes Peira ──────────────────────────────────────── -->
+  <FacultyMember
+    name="Ángel Guillemes Peira, Ph.D. (España)"
+    specialty="Ph.D en Ingeniería Marítima"
+    bio={`
+      <p>El Sr. Guillemes es Ph.D en Ingeniería Marítima con especialidad en energías renovables por la Universidad de La Laguna, España. Máster en Dirección y Administración de Proyectos por la Universidad de Valencia, España y Licenciado en Biología con mención en medio ambiente por la Universidad SEK, España.</p>
+      <p>Ha sido docente titular de la Universidad Del Pacífico, Ecuador, en la Facultad del Mar y Medio Ambiente, desempeñando actividades académicas y de investigación. Anteriormente trabajo en España como consultor de proyectos de I+D, técnico de proyectos e investigador en una consultoría, centro tecnológico y grupo de investigación respectivamente.</p>
+      <p>Sus áreas de conocimiento se centran en las energías renovables, medio ambiente y gestión de proyectos, habiendo impartido numerosas conferencias y cursos en estas temáticas. Ha participado en congresos nacionales e internacionales, proyectos de investigación y es autor de capítulos de libros y artículos científicos en revistas indexadas.</p>
+    `}
+    awards={[
+      'Investigador y consultor en proyectos de I+D',
+      'Autor de libros y artículos científicos indexados',
+      'Ponente en congresos nacionales e internacionales',
+      'Experto formador en gestión de proyectos ambientales'
+    ]}
+    image={{
+      src: '~/assets/images/users/fvi-angel-guillemes.webp',
+      alt: 'Ángel Guillemes Peira, Ph.D.',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FacultyMember>
+  <!-- ── Gonzalo De La Fuente De Val ──────────────────────────────────────── -->
+  <FacultyMember
+    name="Gonzalo De La Fuente De Val (España)"
+    specialty="Doctor en Ciencias Biológicas"
+    bio={`
+      <p>Doctor en Ciencias Biológicas de la Universidad Autónoma de Madrid, Máster en Gestión Integrada: Calidad, Medio Ambiente y Seguridad de la Universidad de las Islas Baleares, Diploma de Experto en Gestión Ambiental y Evaluación de Impacto Ambiental de la Universidad Complutense de Madrid, Licenciado en Ciencias y Artes Ambientales de la Universidad Central de Chile.</p>
+      <p>Profesional con 18 años de experiencia en empresas tanto públicas como privadas del sector de la consultoría medioambiental, turismo e industrial de Chile, España, Guinea Ecuatorial, Perú e Irlanda del Norte. Forma parte de la International Federation Landscape Architecture (IFLA), European Foundation for Landscape Architecture (EFLA), Asociación Española de Paisajistas (AEP) y Asociación Técnica de Ecología del Paisaje y Seguimiento Ambiental (ECOPAS). Actualmente, colabora con estudioOCA, despacho internacional con oficinas en Barcelona, San Francisco y Tailandia, que se dedica al estudio y desarrollo de proyectos en urbanismo, paisajismo y turismo a escala global.</p>
+      <p>Ha desarrollado estudios y proyectos en Paisaje, Turismo Sostenible y TICs, aportando soluciones de análisis, diseño y planificación para mejorar la calidad sensible del entorno, creando lugares atractivos, ecoeficientes y competitivos.</p>
+    `}
+    awards={[
+      '+18 años de trayectoria internacional',
+      'Colaborador de estudioOCA (proyectos globales)',
+      'Miembro de IFLA, EFLA y AEP',
+      'Especialista en Paisajismo y Turismo Sostenible'
+    ]}
+    image={{
+      src: '~/assets/images/users/fvi-gonzalo-fuente.webp',
+      alt: 'Gonzalo De La Fuente De Val (España)',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FacultyMember>
+    <!-- ── Alberto Jiménez Madrid ─────────────────────────────────────── -->
+  <FacultyMember
+    name="Alberto Jiménez Madrid, PhD. (España)"
+    specialty="Doctor en Ciencias del Medio Ambiente"
+    bio={`
+      <p>Doctor en Ciencias del Medio Ambiente por la Universidad de Málaga (UMA) y Licenciatura en Ciencias Ambientales. Perito Judicial especialista en medio ambiente, ordenación del territorio y urbanismo. Especialista en planificación y gestión de los recursos naturales, ordenación del territorio y sistemas de información geográfica.</p>
+      <p>Tiene experiencia en dirección de proyectos en Europa, América, Asia y África e imparte docencia de pregrado y posgrado relacionada con la gestión del agua y los recursos naturales.</p>
+      <p>Autor de más de 70 publicaciones tanto nacionales como internacionales y ha realizado diversas estancias de investigación en varios países de la UE. Ha impartido ponencias de especialista en más de 10 países de Europa y en Sudamérica.</p>
+      <p>En la actualidad es el Director General de PROAMB Integrada Consultoría (Protección Ambiental Integrada), Asesor internacional del Ministerio de Medio Ambiente y del Centro de Investigación y Desarrollo de Recursos Hídricos de Chile, miembro de la Junta de Gobierno del Colegio Profesional de Ambientólogos de Andalucía y del Comité Consultor de la Cátedra de Planificación Estratégica Territorial y Gobernanza Local de Málaga.</p>
+    `}
+    awards={[
+      'Premio Internacional <strong>«Profesor William R. Dearman QJEGH Young Author of the Year»</strong> al mejor artículo científico — Sociedad Geológica de Londres (2011)',
+      'Premio Nacional <strong>Alfons Bayó</strong> — Asociación Internacional de Hidrogeólogos (2014)',
+    ]}
+    image={{
+      src: '~/assets/images/users/fvi-alberto-jimenez.webp',
+      alt: 'Alberto Jiménez Madrid, PhD.',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FacultyMember>
+  <!-- ── Erik Brenes Mata, Dr. (Costa Rica) ──────────────────────────────────────── -->
+  <FacultyMember
+    name="Erick Brenes Mata, Dr. (Costa Rica)"
+    specialty="PhD. en Economía Social"
+    bio={`
+      <p>PhD. en Economía Social de la Universidad de la Calabria en el sur de Italia y Máster en Administración de Proyectos de Cooperación Internacional de la Universidad de Otaru en Japón; con más de 10 años de experiencia en la investigación, implementación, ejecución y supervisión técnica de proyectos de desarrollo económico local sostenible elaborados según la estrategia Agenda Siglo XXI que tiene una visión integradora y sistema de la sociedad y la economía dentro de los límites de la biósfera.</p>
+      <p>Además de su experiencia en la ejecución de proyectos, también ha investigado el movimiento anti-sistémico y documentado los principales efectos socio-ambientales de llamado "desarrollo sostenible" y algunas soluciones locales de éxito en países de la Región Centroamericana, Andina y del Sud Este Asiático.</p>
+      <p>Actualmente asesora organizaciones como el Banco de Buda en Tailandia, La Fundación RELACC en Ecuador, El Consejo Regional Indígena del Cauca en Colombia y la Federación de Cooperativas de Autogestión en Costa Rica entre otros y colabora como investigador asociado al Centro Interuniversitario para la Investigación en Desarrollo Sostenible (CIRPS) en Roma.</p>
+    `}
+    awards={[
+      '10+ años en proyectos de desarrollo local sostenible',
+      'Asesor de organizaciones en Tailandia, Ecuador, Colombia y Costa Rica',
+      'Especialista en estrategia Agenda Siglo XXI',
+      'Documentador de soluciones locales exitosas (Asia y América)'
+    ]}
+    image={{
+      src: '~/assets/images/users/fvi-erick-brenes.webp',
+      alt: 'Erik Brenes Mata, Dr.',
+    }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </FacultyMember>
 
   <!-- 8. Certificación ********************************** -->
   <Features3
