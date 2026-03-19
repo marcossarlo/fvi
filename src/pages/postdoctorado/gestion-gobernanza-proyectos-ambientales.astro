@@ -592,33 +592,46 @@ const tabs = [
     </Fragment>
   </HeroSection>
 
-  <!-- 11. Inscripción *********************************** -->
+  <!-- 11. Inscripción y Tasas Académicas *********************************** -->
   <Content
     id="inscripcion"
-    tagline="11. Inscripción"
+    tagline="Inscripción y Tasas Académicas"
     title="Inscripción"
+    subtitle='Para ser admitido al programa el aspirante deberá presentar:'
     items={[
       {
-        title: 'Apertura de inscripciones',
+        title: 'Solicitud',
         description:
-          'Las inscripciones se gestionan por convocatoria. El inicio referencial de esta edición es el 3 de junio de 2026.',
-        icon: 'tabler:calendar-event',
+          ' <a href="https://fondoverdeinstitute.com/docs/PostDoc-Solicitud-Inscripcion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">Solicitud de inscripción</a>.',
+        icon: 'tabler:file-text',
       },
       {
-        title: 'Validación documental',
+        title: 'Título doctoral',
         description:
-          'La institución revisa antecedentes académicos y cumplimiento de requisitos antes de formalizar vacante.',
-        icon: 'tabler:file-certificate',
+          'Copia del título doctoral (doctorado de nivel internacional, PhD o similar).',
+        icon: 'tabler:certificate',
       },
       {
-        title: 'Detalle operativo en migración',
+        title: 'Carta de intención',
         description:
-          'Se está integrando la información operativa exacta de inscripción desde la ficha Joomla para publicar el proceso final paso a paso.',
-        icon: 'tabler:info-circle',
+          'Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Intencion.doc" class="text-primary hover:text-secondary underline underline-offset-2">carta de intención</a> que incluye motivación de postular al postdoc (400 palabras).',
+        icon: 'tabler:file-description',
       },
+      {
+        title: 'Carta de recomendación',
+        description:
+          'Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Recomendacion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">carta de recomendación</a> de profesor y/o investigador del área científica nacional o internacional.',
+        icon: 'tabler:file-description',
+      },
+      {
+        title: 'CV',
+        description:
+          'Un breve CV resaltando su producción académica.',
+        icon: 'tabler:file-description',
+      }
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop',
+      src: '~/assets/images/postdocs/fvi-inscripcion.webp',
       alt: 'Proceso de inscripción académica',
     }}
   >
@@ -626,6 +639,43 @@ const tabs = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+  <Features2
+    subtitle="Adicionalmente deberá integrar a su postulación, según corresponda:"
+    columns={2}
+    items={[
+      {
+        title: 'Modalidad Intensivo (6 meses)',
+        description:
+          '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Resumen del artículo propuesto (máx. 300 palabras). Si es posible, inclusive, enviar el borrador del artículo. Indique en qué revista busca publicar (máximo 3 nombres).</li><li>Muestra de trabajo (artículo ya publicado, tesis doctoral, etc.).</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Plan-Trabajo-Postdoctoral.docx" class="text-primary hover:text-secondary underline underline-offset-2">Plan de trabajo</a>.</li></ul>',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Modalidad Flexible (12 meses)',
+        description:
+          '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Un proyecto de investigación enmarcado en las asignaturas de la programación del postdoctorado. Extensión máxima: 5000 palabras (excluyendo bibliografía).</li><li>Productos esperados (publicaciones, actividades, etc.).</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Plan-Trabajo-Postdoctoral.docx" class="text-primary hover:text-secondary underline underline-offset-2">Plan de trabajo</a>.</li></ul>',
+        icon: 'tabler:school',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+  <!-- Tasas Académicas *********************************** -->
+  <HeroSection
+    title="Tasas Académicas"
+    image={{
+      src: '~/assets/images/fvi_Financiamiento-home.jpg',
+      alt: 'Tasas académicas y financiamiento',
+    }}
+  >
+    <Fragment slot="content">
+      texto
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </HeroSection>
 
   <!-- 12. Pagos ***************************************** -->
   <Features3
