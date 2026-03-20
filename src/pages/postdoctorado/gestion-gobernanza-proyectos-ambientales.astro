@@ -661,7 +661,7 @@ const tabs = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Features2>
-  <!-- Tasas Académicas *********************************** -->
+  <!-- Tasas Académicas ******** -->
   <HeroSection
     title="Tasas Académicas"
     image={{
@@ -670,7 +670,90 @@ const tabs = [
     }}
   >
     <Fragment slot="content">
-      texto
+      <div class="overflow-x-auto mt-6 w-full max-w-4xl mx-auto shadow-md rounded-lg">
+        <!-- Tasas Académicas -->
+        <table class="w-full border-collapse bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs md:text-sm">
+          <thead>
+            <tr>
+              <th class="p-3 md:p-4 align-bottom text-base md:text-xl font-bold text-primary w-[40%] bg-transparent border-b-4 border-primary">
+                Postdoctorado
+              </th>
+              <th class="p-0 text-center w-[30%] align-bottom">
+                <div class="bg-secondary dark:bg-secondary text-white font-bold text-sm md:text-base p-2">Intensivo</div>
+                <div class="bg-primary dark:bg-primary text-white text-[10px] md:text-xs font-medium p-1 border-t border-white/20">(6 meses)</div>
+              </th>
+              <th class="p-0 text-center w-[30%] align-bottom">
+                <div class="bg-secondary dark:bg-secondary text-white font-bold text-sm md:text-base p-2 opacity-90">Flexible</div>
+                <div class="bg-primary dark:bg-primary text-white text-[10px] md:text-xs font-medium p-1 border-t border-white/20 opacity-90">(12 meses)</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 dark:border-slate-700">
+              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-[10px] md:text-sm border-r border-white/20">Derechos de inscripción</td>
+              <td class="p-3 md:p-4 text-center text-[10px] md:text-sm text-gray-800 dark:text-gray-200 border-x border-b border-gray-200 dark:border-slate-700">US$ 298</td>
+              <td class="p-3 md:p-4 text-center text-[10px] md:text-sm text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-slate-700">US$ 596</td>
+            </tr>
+            <tr>
+              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-[10px] md:text-sm border-r border-white/20">Costo del Programa Postdoctoral</td>
+              <td class="p-3 md:p-4 text-center text-[10px] md:text-sm text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-slate-800 border-x border-gray-200 dark:border-slate-700">US$ 3198</td>
+              <td class="p-3 md:p-4 text-center text-[10px] md:text-sm text-gray-800 dark:text-gray-200 bg-gray-50 dark:bg-slate-800">US$ 3798</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pt-12 text-md md:text-base">Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del Postdoctorado en 6 cuotas sin intereses de la siguiente forma:</p>
+      
+      <div class="overflow-x-auto mt-6 w-full max-w-5xl mx-auto shadow-md rounded-lg">
+        <!-- Alternativas de Pago -->
+        <table class="w-full border-collapse bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs md:text-sm">
+          <thead>
+            <tr>
+              <th rowspan="2" class="p-3 md:p-4 align-middle text-primary font-bold text-center w-[20%] border-b-4 border-primary text-sm md:text-base">
+                Modalidad del Postdoctorado
+              </th>
+              <th colspan="2" class="p-0 text-center w-[30%]">
+                <div class="bg-primary text-white font-bold p-2 text-sm md:text-base border-r border-white/20">Costos del programa</div>
+                <div class="grid grid-cols-2 bg-primary opacity-90 border-t border-white/20 border-r">
+                  <div class="p-1 border-r border-white/10 text-[10px] md:text-xs text-white tracking-wider flex items-center justify-center min-h-[40px]">Precio Normal</div>
+                  <div class="p-1 text-[10px] md:text-xs text-white tracking-wider flex items-center justify-center min-h-[40px]">Precio con Beca 50%</div>
+                </div>
+              </th>
+              <th class="p-0 text-center w-[25%]">
+                <div class="bg-secondary text-white font-bold p-2 text-sm md:text-base border-r border-white/20">Alternativa 1: Al Contado</div>
+                <div class="bg-primary opacity-80 text-[10px] md:text-xs p-1 border-t border-white/10 border-r text-white flex items-center justify-center min-h-[40px] leading-tight">
+                  (Descuento del 5%)
+                </div>
+              </th>
+              <th colspan="2" class="p-0 text-center w-[25%]">
+                <div class="bg-secondary text-white font-bold p-2 text-sm md:text-base opacity-90">Alternativa 2: Financiado</div>
+                <div class="grid grid-cols-2 bg-primary opacity-90 border-t border-white/20">
+                  <div class="p-1 border-r border-white/10 text-[10px] md:text-xs text-white tracking-wider flex items-center justify-center min-h-[40px] leading-tight text-center">Número de cuotas</div>
+                  <div class="p-1 text-[10px] md:text-xs text-white tracking-wider flex items-center justify-center min-h-[40px] leading-tight text-center">Cuota mensual</div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-gray-200 dark:border-slate-700">
+              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-center border-r border-white/20 text-[10px] md:text-sm">Intensivo</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%] text-[10px] md:text-sm">US$ 3,198</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%] text-[10px] md:text-sm">US$ 1,599</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%] text-[10px] md:text-sm">US$ 1,519</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%] text-[10px] md:text-sm">6</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 w-[12.5%] text-[10px] md:text-sm">US$ 267</td>
+            </tr>
+            <tr>
+              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-center border-r border-white/20 text-[10px] md:text-sm">Flexible</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%] text-[10px] md:text-sm">US$ 3,798</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%] text-[10px] md:text-sm">US$ 1,899</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%] text-[10px] md:text-sm">US$ 1,804</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%] text-[10px] md:text-sm">6</td>
+              <td class="p-2 text-center text-gray-700 dark:text-gray-300 w-[12.5%] text-[10px] md:text-sm">US$ 317</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
