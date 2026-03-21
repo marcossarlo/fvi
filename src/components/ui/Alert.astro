@@ -46,8 +46,8 @@ const selectedIcon = icon || defaultIcons[variant];
   )}
   <span class="sr-only">{variant}</span>
   <div>
-    {title && <span class="text-lg md:text-xl font-bold block mb-2">{title}</span>}
-    <div class="text-base md:text-lg leading-relaxed">
+    {title && <span class="text-base md:text-lg font-bold block mb-1">{title}</span>}
+    <div class="text-sm md:text-base leading-relaxed">
       <slot />
     </div>
   </div>

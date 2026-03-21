@@ -2,7 +2,6 @@
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -10,6 +9,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
 import Alert from '~/components/ui/Alert.astro';
@@ -749,9 +749,8 @@ const tabs = [
         </table>
       </div>
       <!-- Información adicional sobre costos -->
-      <WidgetWrapper containerClass="max-w-5xl ml-0 mr-auto mt-10 py-0 md:py-0 pb-12 md:pb-10 text-left items-start">
-        <Alert variant="danger" title="Importante">           
-          
+      <WidgetWrapper containerClass="max-w-5xl ml-0 mr-auto mt-6 p-0 text-left items-start">
+        <Alert variant="warning" title="Importante">           
           <p>Existen cargos adicionales por derechos de examen (<strong>199 US$</strong>), este arancel incluye:</p>
           <ul class="list-disc ml-6 mt-2 space-y-1">
             <li>Revisión del Informe Final por parte del Director.</li>
@@ -767,7 +766,6 @@ const tabs = [
           </ul>
         </Alert>
       </WidgetWrapper>
-
     </Fragment>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
@@ -777,29 +775,94 @@ const tabs = [
         
 
   <!-- 12. Pagos ***************************************** -->
-  <Features3
+  <Features2
     id="pagos"
-    tagline="12. Pagos"
-    title="Pagos"
-    subtitle="La estructura de pagos y cronograma específico de esta ficha se está consolidando desde el contenido original para mantener exactitud institucional."
-    columns={3}
+    tagline="Pagos"
+    title="Medios de Pago"
+    subtitle="Los Medios de Pago de la matrícula son las siguientes:"
+    columns={2}
     items={[
       {
-        title: 'Beca y costo final',
-        description: 'El valor final depende de la beca o esquema de financiamiento aplicable a la convocatoria vigente.',
-        icon: 'tabler:receipt-2',
+        title: '(1) Vía Transferencia a nuestra cuenta bancaria',
+        description: `
+          <div class="space-y-4">           
+              <p class="font-bold border-b border-primary/20 pb-1 mb-2 text-primary uppercase tracking-wider">Datos de la cuenta en soles</p>
+              <ul class="space-y-1">
+                <li><strong>Titular de la cuenta:</strong> Fondo Verde</li>
+                <li><strong>Nombre del Banco:</strong> Interbank</li>
+                <li><strong>Localidad:</strong> La Merced, Chanchamayo, Junín</li>
+                <li><strong>Nº de Cuenta Corriente S/:</strong> 546-300158759-0</li>
+                <li><strong>Código SWIFT:</strong> BINPPEPL</li>
+                <li><strong>CCI (Código Cuenta Interbancaria):</strong> 003-546-003001587590-96</li>
+              </ul>            
+              <p class="font-bold border-b border-primary/20 pb-1 mb-2 text-primary uppercase tracking-wider">Datos de la cuenta en dólares</p>
+              <ul class="space-y-1">
+                <li><strong>Titular de la cuenta:</strong> Fondo Verde</li>
+                <li><strong>Nombre del Banco:</strong> Interbank</li>
+                <li><strong>Localidad:</strong> La Merced, Chanchamayo, Junín</li>
+                <li><strong>Nº de Cuenta Corriente US$:</strong> 546-3001611473</li>
+                <li><strong>Código SWIFT:</strong> BINPPEPL</li>
+                <li><strong>CCI (Código Cuenta Interbancaria):</strong> 003-546-003001611473-95</li>
+              </ul>            
+          </div>
+        `,
+        icon: 'tabler:cash-banknote-plus',
       },
       {
-        title: 'Canales de pago',
-        description: 'Los canales oficiales se comunican al candidato durante el proceso de admisión e inscripción.',
-        icon: 'tabler:credit-card',
-      },
-      {
-        title: 'Soporte administrativo',
-        description: 'Para confirmación de pagos y facturación, el equipo de admisiones brinda asistencia directa.',
-        icon: 'tabler:headset',
+        title: '(2) Vía Giro Postal',
+        description: 'Por medio de un envío a través de <strong>WESTERN UNION / MONEY GRAM</strong>. Por favor consulte esta opción a través del correo <strong>postdoc@fondoverde.org</strong>, y le facilitaremos los datos para efectuar el pago.',
+        icon: 'tabler:cash-banknote-plus',
       },
     ]}
+  />
+
+  <Features2
+    columns={1}
+    items={[
+      {
+        title: '(3) Vía PayPal',
+        description: `
+          <div class="space-y-6 text-left">
+            <p class="text-base text-muted mb-6">Elija el monto de inscripción y haga click en el botón "Pagar con PayPal" y serás redirigido directamente al sitio web de PayPal para finalizar tu compra.</p>
+            
+            <!-- Alert variant="info" (Nota) -->
+            <div class="flex p-4 md:p-5 mb-6 text-base border-l-[6px] rounded-lg shadow-sm bg-blue-50 border-blue-400 text-blue-800 dark:bg-blue-900/30 dark:border-blue-700 dark:text-blue-300" role="alert">
+              <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg>
+              <div>
+                <span class="text-base md:text-lg font-bold block mb-1">Nota</span>
+                <div class="text-sm md:text-base leading-relaxed">
+                  Los montos incluyen las comisiones de pago con las que se queda PayPal.
+                </div>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 my-8">
+              <div class="bg-white dark:bg-slate-900 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+                <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-primary/10 pb-2">Precio Versión Intensivo:</p>
+                <p class="text-sm text-muted italic">Codigo de botón PayPal:</p>
+              </div>
+              <div class="bg-white dark:bg-slate-900 p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+                <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-primary/10 pb-2">Precio Versión Flexible:</p>
+                <p class="text-sm text-muted italic">Codigo de botón PayPal:</p>
+              </div>
+            </div>
+
+            <!-- Alert variant="warning" (Atención) -->
+            <div class="flex p-4 md:p-5 mb-4 text-base border-l-[6px] rounded-lg shadow-sm bg-yellow-50 border-yellow-400 text-yellow-800 dark:bg-yellow-900/30 dark:border-yellow-700 dark:text-yellow-300" role="alert">
+              <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"></path><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"></path><path d="M12 16h.01"></path></svg>
+              <div>
+                <span class="text-base md:text-lg font-bold block mb-1">Atención</span>
+                <div class="text-sm md:text-base leading-relaxed">
+                  El medio de pago será seleccionado por el participante luego de recibir por correo electrónico la notificación de "Formalización de matrícula y ficha de pago".
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        icon: 'tabler:brand-paypal',
+      },
+    ]}
+    
   />
 
   <!-- 13. Solicitudes *********************************** -->
