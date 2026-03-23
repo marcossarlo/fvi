@@ -30,16 +30,7 @@ const {
     <ItemGridFeaturedPrograms
       items={items}
       columns={columns}
-      classes={{
-        container: 'gap-6',
-        panel: 'rounded-lg',
-        image: 'w-full h-full object-cover',
-        title: 'text-xl md:text-2xl font-bold',
-        date: 'text-sm text-primary dark:text-accent',
-        description: 'text-muted',
-        button: 'mt-auto',
-        ...((classes?.items as Record<string, never>) ?? {}),
-      }}
+      classes={classes?.items as any}
     />
   <!-- </div> -->
 </WidgetWrapper>

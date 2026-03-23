@@ -1,48 +1,106 @@
 ---
-import { Icon } from 'astro-icon/components';
+import type { ItemGridFeaturedPrograms as Props } from '~/types';
 import { twMerge } from 'tailwind-merge';
-import type { ItemGrid as Props } from '~/types';
-import Button from '~/components/ui/Button.astro';
+import Button from './Button.astro';
+import Image from '~/components/common/Image.astro';
+import { Icon } from 'astro-icon/components';
 
-const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
+const { items = [], columns, classes = {} } = Astro.props;
 
 const {
   container: containerClass = '',
   panel: panelClass = '',
+  image: imageClass = '',
   title: titleClass = '',
+  date: dateClass = '',
   description: descriptionClass = '',
-  icon: iconClass = '',
-  action: actionClass = '',
+  button: buttonClass = '',
 } = classes;
 ---
 
 {
-  items && (
+  items && items.length > 0 && (
     <div
       class={twMerge(
-        `grid gap-8 gap-x-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-${
-          columns || (items.length > 3 ? 3 : items.length)
+        `grid gap-6 ${
+          columns === 2
+            ? 'lg:grid-cols-2 sm:grid-cols-1'
+            : 'grid-cols-1'
         }`,
         containerClass
       )}
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div class={twMerge('relative flex flex-col', panelClass, itemClasses?.panel)}>
-          {(icon || defaultIcon) && (
-            <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10 link', iconClass, itemClasses?.icon)} />
+      {items.map(({ image, title, date, description, button, classes: itemClasses = {} }) => (
+        <div
+          class={twMerge(
+            'group flex flex-col sm:flex-row bg-white dark:bg-slate-900 shadow-lg hover:shadow-2xl border border-transparent hover:border-primary transition-all duration-300 overflow-hidden intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+            panelClass,
+            itemClasses?.panel
           )}
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p
-              class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)}
-              set:html={description}
-            />
-          )}
-          {callToAction && (
-            <div class={twMerge('mt-4', actionClass, itemClasses?.action)}>
-              <Button variant="link" {...callToAction} />
+        >
+          {/* Image Container - 30% */}
+          {image && (
+            <div class="sm:w-[30%] w-full h-52 sm:h-auto overflow-hidden">
+              <Image
+                class={twMerge('w-full h-full object-cover transition-transform duration-300 group-hover:scale-110', imageClass, itemClasses?.image)}
+                src={image}
+                alt={title || ''}
+                widths={[300, 400]}
+                sizes="(max-width: 640px) 100vw, 30vw"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           )}
+
+          {/* Content Container - 70% */}
+          <div class={twMerge('flex flex-col flex-grow p-6 sm:w-[70%] w-full', itemClasses?.content)}>
+            {/* Title */}
+            {title && (
+              <h3
+                class={twMerge(
+                  'text-xl md:text-2xl font-bold text-default mb-3',
+                  titleClass,
+                  itemClasses?.title
+                )}
+                set:html={title}
+              />
+            )}
+
+            {/* Date with Icon */}
+            {date && (
+              <div
+                class={twMerge(
+                  'flex items-center gap-2 text-sm mb-4',
+                  dateClass,
+                  itemClasses?.date
+                )}
+              >
+                <Icon name="tabler:calendar" class="w-5 h-5 text-default" />
+                <span class="text-default font-semibold">INICIO:</span>
+                <span class="text-secondary font-medium" set:html={date.replace(/^Inicio:\s*/i, '')} />
+              </div>
+            )}
+
+            {/* Description */}
+            {description && (
+              <p
+                class={twMerge(
+                  'text-muted mb-6 flex-grow',
+                  descriptionClass,
+                  itemClasses?.description
+                )}
+                set:html={description}
+              />
+            )}
+
+            {/* Button */}
+            {button && (
+              <div class={twMerge('mt-auto', buttonClass, itemClasses?.button)}>
+                <Button {...button} icon="tabler:arrow-narrow-right-dashed" class="hover:bg-secondary rounded-2xl hover:text-white transition-all duration-300" />
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>
