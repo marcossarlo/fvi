@@ -824,12 +824,12 @@ const tabs = [
         description: `
           <div class="space-y-6 text-left">
             <p class="text-base text-muted mb-6">Elija el monto de inscripción y haga click en el botón "Pagar con PayPal" y serás redirigido directamente al sitio web de PayPal para finalizar tu compra.</p>
-            
-            <!-- Alert variant="info" (Nota) -->
-            <div class="flex p-4 md:p-5 mb-6 text-base border-l-[6px] rounded-lg shadow-sm bg-blue-50 border-blue-400 text-blue-800 dark:bg-blue-900/30 dark:border-blue-700 dark:text-blue-300" role="alert">
-              <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg>
+
+            <!-- Alert variant="warning" (Atención) -->
+            <div class="flex p-4 md:p-5 mb-4 text-base border-l-[6px] rounded-lg shadow-sm bg-yellow-50 border-yellow-400 text-yellow-800 dark:bg-yellow-900/30 dark:border-yellow-700 dark:text-yellow-300" role="alert">
+              <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"></path><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"></path><path d="M12 16h.01"></path></svg>
               <div>
-                <span class="text-base md:text-lg font-bold block mb-1">Nota</span>
+                <span class="text-base md:text-lg font-bold block mb-1">Atención</span>
                 <div class="text-sm md:text-base leading-relaxed">
                   Los montos incluyen las comisiones de pago con las que se queda PayPal.
                 </div>
@@ -845,15 +845,15 @@ const tabs = [
                 <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-primary/10 pb-2">Precio Versión Flexible:</p>
                 <p class="text-sm text-muted italic">Codigo de botón PayPal:</p>
               </div>
-            </div>
-
-            <!-- Alert variant="warning" (Atención) -->
-            <div class="flex p-4 md:p-5 mb-4 text-base border-l-[6px] rounded-lg shadow-sm bg-yellow-50 border-yellow-400 text-yellow-800 dark:bg-yellow-900/30 dark:border-yellow-700 dark:text-yellow-300" role="alert">
-              <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"></path><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"></path><path d="M12 16h.01"></path></svg>
+            </div>   
+            
+            <!-- Alert variant="info" (Nota) -->
+            <div class="flex p-4 md:p-5 mb-6 text-base border-l-[6px] rounded-lg shadow-sm bg-blue-50 border-blue-400 text-blue-800 dark:bg-blue-900/30 dark:border-blue-700 dark:text-blue-300" role="alert">
+              <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg>
               <div>
-                <span class="text-base md:text-lg font-bold block mb-1">Atención</span>
+                <span class="text-base md:text-lg font-bold block mb-1">Nota</span>
                 <div class="text-sm md:text-base leading-relaxed">
-                  El medio de pago será seleccionado por el participante luego de recibir por correo electrónico la notificación de "Formalización de matrícula y ficha de pago".
+                  El medio de pago será seleccionado por el participante luego de recibir por correo electrónico la notificación de "<strong>Formalización de matrícula y ficha de pago</strong>"
                 </div>
               </div>
             </div>
