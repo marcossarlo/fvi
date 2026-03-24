@@ -33,7 +33,7 @@ const {
       {items.map(({ image, title, date, description, button, classes: itemClasses = {} }) => (
         <div
           class={twMerge(
-            'group flex flex-col sm:flex-row bg-white dark:bg-slate-900 shadow-lg hover:shadow-2xl border border-transparent hover:border-primary transition-all duration-300 overflow-hidden intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+            'group flex flex-col sm:flex-row bg-white dark:bg-pageDark shadow-lg hover:shadow-2xl border border-transparent hover:border-primary transition-all duration-300 overflow-hidden intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
             panelClass,
             itemClasses?.panel
           )}

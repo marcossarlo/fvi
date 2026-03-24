@@ -42,7 +42,11 @@ El menú **"El Instituto"** incluye las siguientes páginas (en orden de desarro
 ### Colores y estilo:
 - Color primario: verde (`text-primary`, `text-accent`)
 - Color secundario: anaranjado (`text-secondary`) usado en el nombre "Institute" del logo y subtítulos
-- Fondos alternos en secciones: `bg-blue-50 dark:bg-transparent`
+- **Modo Oscuro (Dark Mode):**
+  - Fondo base: `bg-page` (Midnight Blue original: `rgb(3 6 32)`).
+  - Fondo elevado (cajas, secciones): `bg-pageDark` (Slate-900: `rgb(15 23 42)`).
+  - **REGLA CRÍTICA:** Nunca definir colores como números sueltos en `CustomStyles.astro`. Usar siempre el formato completo `rgb(...)` para evitar errores de renderizado (fondo blanco).
+- Fondos alternos en secciones: `bg-blue-50 dark:bg-pageDark`.
 
 ## Estructura del proyecto
 ```

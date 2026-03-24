@@ -44,7 +44,7 @@
 
 .dark #header[data-aw-sticky-header] > div:first-child,
 #header[data-aw-sticky-header].dark > div:first-child {
-  @apply backdrop-blur-xl bg-[#030621e6];
+  @apply backdrop-blur-xl bg-[#030620cc];
 }
 
 #header.scroll > div:first-child {
@@ -53,7 +53,7 @@
 }
 .dark #header.scroll > div:first-child,
 #header.scroll.dark > div:first-child {
-  @apply backdrop-blur-xl bg-[#030621e6] border-b border-gray-500/20;
+  @apply backdrop-blur-xl bg-[#030620cc] border-b border-gray-500/20;
   box-shadow: none;
 }
 
