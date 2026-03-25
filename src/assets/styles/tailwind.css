@@ -128,3 +128,55 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* ProgramTOC Styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: theme('colors.white');
+  opacity: 0.3;
+  border-radius: 10px;
+}
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: theme('colors.white');
+}
+
+.custom-scrollbar-mobile::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar-mobile::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: theme('colors.white');
+  border-radius: 10px;
+}
+.dark .custom-scrollbar-mobile::-webkit-scrollbar-thumb {
+  background: theme('colors.white');
+}
+
+.toc-link.active-desktop {
+  color: theme('colors.white') !important;
+  font-weight: 600;
+}
+
+.toc-link.active-desktop .toc-indicator {
+  background-color: theme('colors.white') !important;
+  border-color: theme('colors.white') !important;
+  transform: scale(1.2);
+}
+
+.toc-link.active-mobile {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: theme('colors.white') !important;
+  font-weight: 600;
+}
+
+.toc-link.active-mobile .mobile-check {
+  opacity: 1;
+  transform: scale(1);
+}
