@@ -10,9 +10,10 @@ import type { MetaData } from '~/types';
 
 export interface Props {
   metadata?: MetaData;
+  showSecondaryNav?: boolean;
 }
 
-const { metadata } = Astro.props;
+const { metadata, showSecondaryNav = true } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
@@ -20,7 +21,7 @@ const { metadata } = Astro.props;
     <!-- <Announcement /> -->
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme showSecondaryNav />
+    <Header {...headerData} isSticky showRssFeed showToggleTheme showSecondaryNav={showSecondaryNav} />
   </slot>
   <main>
     <slot />
