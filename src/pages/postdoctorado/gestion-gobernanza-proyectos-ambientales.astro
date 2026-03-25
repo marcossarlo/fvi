@@ -16,136 +16,142 @@ import { faculty } from '~/data/faculty';
 import Alert from '~/components/ui/Alert.astro';
 
 const metadata = {
-    title: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-    description:
+  title: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+  description:
     'Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales de Fondo Verde Institute: presentación, modalidades, estructura, asignaturas, claustro, certificación, becas, aplicación, inscripción, pagos y solicitudes.',
-    keywords:
+  keywords:
     'posdoctorado, gestión y gobernanza de proyectos ambientales, Fondo Verde Institute, modalidades, estructura, asignaturas, claustro, certificación, becas, inscripción, pagos, solicitudes',
 };
 
 const tabs = [
-    { label: '1. Presentación', id: 'presentacion' },
-    { label: '2. El Postdoctorado', id: 'el-postdoctorado' },
-    { label: '3. Modalidades', id: 'modalidades' },
-    { label: '4. Estructura', id: 'estructura' },
-    { label: '5. Asignaturas', id: 'asignaturas' },
-    { label: '6. ¿Cómo se estudia?', id: 'como-se-estudia' },
-    { label: '7. Claustro', id: 'claustro' },
-    { label: '8. Certificación', id: 'certificacion' },
-    { label: '9. Becas', id: 'becas' },
-    { label: '10. ¿Cómo aplicar?', id: 'como-aplicar' },
-    { label: '11. Inscripción', id: 'inscripcion' },
-    { label: '12. Pagos', id: 'pagos' },
-    { label: '13. Solicitudes', id: 'solicitudes' },
+  { label: '1. Presentación', id: 'presentacion' },
+  { label: '2. El Postdoctorado', id: 'el-postdoctorado' },
+  { label: '3. Modalidades', id: 'modalidades' },
+  { label: '4. Estructura', id: 'estructura' },
+  { label: '5. Asignaturas', id: 'asignaturas' },
+  { label: '6. ¿Cómo se estudia?', id: 'como-se-estudia' },
+  { label: '7. Claustro', id: 'claustro' },
+  { label: '8. Certificación', id: 'certificacion' },
+  { label: '9. Becas', id: 'becas' },
+  { label: '10. ¿Cómo aplicar?', id: 'como-aplicar' },
+  { label: '11. Inscripción', id: 'inscripcion' },
+  { label: '12. Pagos', id: 'pagos' },
+  { label: '13. Solicitudes', id: 'solicitudes' },
 ];
 ---
 
 <Layout metadata={metadata}>
   <!-- Hero ********************************************** -->
   <Hero
-      tagline="PostDoc"
-      image={{
-          src: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop',
-          alt: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-      }}
+    tagline="PostDoc"
+    image={{
+      src: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=1600&auto=format&fit=crop',
+      alt: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+    }}
   >
-      <Fragment slot="title">
-          Posdoctorado en
-          <span class="text-primary dark:text-accent"> Gestión y Gobernanza de Proyectos Ambientales</span>
-      </Fragment>
+    <Fragment slot="title">
+      Posdoctorado en
+      <span class="text-primary dark:text-accent"> Gestión y Gobernanza de Proyectos Ambientales</span>
+    </Fragment>
 
-      <Fragment slot="subtitle">
-          La cuestión del ambiente y la sustentabilidad se ha transformado en un verdadero <strong>cambio de paradigma</strong> en
-          las actividades de desarrollo y organización.
-      </Fragment>
+    <Fragment slot="subtitle">
+      La cuestión del ambiente y la sustentabilidad se ha transformado en un verdadero <strong
+        >cambio de paradigma</strong
+      > en las actividades de desarrollo y organización.
+    </Fragment>
   </Hero>
 
-  <!-- Datos clave *************************************** -->
+  <!-- Datos clave: estadísticas ************************** -->
   <Stats
-  stats={[
+    stats={[
       { amount: '6–12', title: 'Meses de duración', icon: 'tabler:calendar' },
       { amount: '100%', title: 'Modalidad online', icon: 'tabler:device-laptop' },
       { amount: '3 Jun 2026', title: 'Próximo inicio', icon: 'tabler:calendar-event' },
       { amount: 'PhD', title: 'Requisito de acceso', icon: 'tabler:certificate' },
-  ]}
+    ]}
   >
-  <Fragment slot="bg">
+    <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-  </Fragment>
+    </Fragment>
   </Stats>
 
   <!-- Índice de secciones ******************************* -->
   <WidgetWrapper containerClass="max-w-6xl mx-auto" id="indice-secciones">
-      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-primary dark:text-accent">Secciones del programa</h2>
-      <p class="mt-3 text-slate-700 dark:text-slate-300">
-          Explora las secciones clave del Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales para conocer su estructura, contenido y oportunidades.
-      </p>
-      <nav aria-label="Secciones del posdoctorado" class="mt-6">
-          <ul class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-          {
-              tabs.map((tab) => (
-              <li>
-                  <a
-                  href={`#${tab.id}`}
-                  class="group flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm md:text-base text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
-                  >
-                  <span>{tab.label}</span>
-                  <span class="text-primary" aria-hidden="true">→</span>
-                  </a>
-              </li>
-              ))
-          }
-          </ul>
-      </nav>
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-primary dark:text-accent">Secciones del programa</h2>
+    <p class="mt-3 text-slate-700 dark:text-slate-300">
+      Explora las secciones clave del Programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales para
+      conocer su estructura, contenido y oportunidades.
+    </p>
+    <nav aria-label="Secciones del posdoctorado" class="mt-6">
+      <ul class="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        {
+          tabs.map((tab) => (
+            <li>
+              <a
+                href={`#${tab.id}`}
+                class="group flex items-center justify-between rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-3 text-sm md:text-base text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors"
+              >
+                <span>{tab.label}</span>
+                <span class="text-primary" aria-hidden="true">
+                  →
+                </span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </WidgetWrapper>
 
   <!-- 1. PRESENTACIÓN *********************************** -->
   <Content
-      id="presentacion"
-      tagline="Presentación"
-      title="Ángel Guillemes Peira, PhD"
-      subtitle="Director del Postdoctorado"
-      items={[
-          {
-          title: 'Cambio de paradigma ambiental ',
-          description:
-              'La sustentabilidad se ha convertido en un eje transversal e intersectorial, imprescindible para el desarrollo y la organización de proyectos complejos.',
-          icon: 'tabler:refresh',
-          },
-          {
-          title: 'Evaluación y formación en el posdoctorado',
-          description:
-              'Se implementa un nuevo procedimiento de evaluación para identificar talentos capaces de gerenciar proyectos ambientales sustentables, complementado con asignaturas obligatorias de la programación vigente.',
-          icon: 'tabler:checklist',
-          },
-          {
-          title: 'Respaldo institucional pionero',
-          description:
-              'La formación cuenta con la asistencia técnica de la Fundación CEPA y FLACAM / Cátedra UNESCO para el Desarrollo Sustentable, instituciones con trayectoria desde 1974 en la capacitación de proyectistas ambientales en Latinoamérica.',
-          icon: 'tabler:building-bank',
-          },
-          {
-              title: 'Programa en extenso',
-              icon: 'tabler:download',
-              callToAction: {
-                  text: 'Descargar el Programa en Extenso',
-                  href: 'https://drive.google.com/uc?export=download&id=12gbTyeRWL_XASSyWahhuL2qptXskqyzL',
-                  variant: 'primary',
-              },
-          }
-      ]}
-      image={{
-          src: '~/assets/images/users/fvi-angel-guillemes.webp',
-          alt: 'Ángel Guillemes Peira, PhD - Director del Postdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-      }}
-      >
-      <Fragment slot="content">
-          <h3 class="text-xl font-medium tracking-tight dark:text-white mb-2">La realidad actual requiere el desarrollo de proyectos ambientales multipropósitos</h3>
-      </Fragment>
+    id="presentacion"
+    tagline="Presentación"
+    title="Ángel Guillemes Peira, PhD"
+    subtitle="Director del Postdoctorado"
+    items={[
+      {
+        title: 'Cambio de paradigma ambiental ',
+        description:
+          'La sustentabilidad se ha convertido en un eje transversal e intersectorial, imprescindible para el desarrollo y la organización de proyectos complejos.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Evaluación y formación en el posdoctorado',
+        description:
+          'Se implementa un nuevo procedimiento de evaluación para identificar talentos capaces de gerenciar proyectos ambientales sustentables, complementado con asignaturas obligatorias de la programación vigente.',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'Respaldo institucional pionero',
+        description:
+          'La formación cuenta con la asistencia técnica de la Fundación CEPA y FLACAM / Cátedra UNESCO para el Desarrollo Sustentable, instituciones con trayectoria desde 1974 en la capacitación de proyectistas ambientales en Latinoamérica.',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Programa en extenso',
+        icon: 'tabler:download',
+        callToAction: {
+          text: 'Descargar el Programa en Extenso',
+          href: 'https://drive.google.com/uc?export=download&id=12gbTyeRWL_XASSyWahhuL2qptXskqyzL',
+          variant: 'primary',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/users/fvi-angel-guillemes.webp',
+      alt: 'Ángel Guillemes Peira, PhD - Director del Postdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-xl font-medium tracking-tight dark:text-white mb-2">
+        La realidad actual requiere el desarrollo de proyectos ambientales multipropósitos
+      </h3>
+    </Fragment>
 
-      <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-      </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
   </Content>
 
   <!-- 2. EL POSTDOCTORADO ******************************* -->
@@ -155,7 +161,7 @@ const tabs = [
     title="¿Por qué hacer el postdoctorado?"
     subtitle="El <strong>Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales</strong> está dirigido a doctores de toda Iberoamérica y busca fortalecer la producción científica en torno a la sustentabilidad. Con una duración de <strong>6 meses</strong> a <strong>1 año</strong>, el programa exige la realización de un plan de actividades cuyo resultado sea la publicación de un artículo arbitrado por jurados —uno de ellos internacional— y la presentación de un informe final, consolidando así la formación en la gestión de proyectos ambientales complejos."
     columns={2}
-    items={[      
+    items={[
       {
         title: 'Objetivos del Programa',
         description:
@@ -174,34 +180,32 @@ const tabs = [
             <li>Doctores que ejerzan la docencia y/o educadores en general interesados en la formación transdisciplinaria, el enfoque holístico y la mirada integral que el ambiente requiere.</li> \
           </ul>',
         icon: 'tabler:users',
-      }
+      },
     ]}
   />
 
   <!-- 3. MODALIDADES ************************************ -->
   <Features2
-      id="modalidades"
-      tagline="Modalidades"
-      title="Modalidades y Condiciones del Postdoctorado"
-      subtitle="El programa ofrece dos tipos de instancias posdoctorales:"
+    id="modalidades"
+    tagline="Modalidades"
+    title="Modalidades y Condiciones del Postdoctorado"
+    subtitle="El programa ofrece dos tipos de instancias posdoctorales:"
   >
-    <Fragment slot="bg">            
-        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
   </Features2>
-
   <!-- Modalidad Intensivo -->
-  <Steps      
-    title='Intensivo <span class="text-xl font-light">(6 meses)</span>'
-    tagline='Modalidad'
+  <Steps
+    title="Flexible <span class='text-xl font-light'>(6 meses)</span>"
+    tagline="Modalidad"
     subtitle="<strong>Para redacción de publicaciones (6 meses).</strong> <br />
     El objetivo de esta modalidad es apoyar a los/las postdoc a que puedan terminar publicaciones vinculadas al ambiente y al desarrollo sustentable. <br />La/el postdoc debe cumplir con las siguientes condiciones:"
-    bg='<div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>'   
+    bg='<div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>'
     items={[
       {
         title: 'Duración',
-        description:
-          'Seis (06) meses de actividades planificadas.',
+        description: 'Seis (06) meses de actividades planificadas.',
         icon: 'tabler:clock',
       },
       {
@@ -218,44 +222,38 @@ const tabs = [
       },
       {
         title: 'Resultados',
-        description:
-          'Presentar avances y resultados de su investigación.',
+        description: 'Presentar avances y resultados de su investigación.',
         icon: 'tabler:check',
-      }
+      },
     ]}
   />
   <!-- Modalidad Flexible -->
   <Steps
-    title='Flexible <span class="text-xl font-light">(12 meses)</span>'
-    tagline='Modalidad'
-    subtitle='<strong>Para desarrollar algún aspecto que le resulte de interés (12 meses)</strong> <br />
-    La/ el postdoc debe cumplir con las siguientes condiciones:'
-    bg='<div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>'
+    title="Flexible <span class='text-xl font-light'>(12 meses)</span>"
+    tagline="Modalidad"
+    subtitle="<strong>Para desarrollar algún aspecto que le resulte de interés (12 meses)</strong> <br /> La/ el postdoc debe cumplir con las siguientes condiciones:"
+    bg="<div class='absolute inset-0 bg-blue-50 dark:bg-pageDark'></div>"
     items={[
       {
-        title: 'Duración',
-        description:
-        '<strong>Máximo 6 meses</strong> de investigación de campo. La/ el postdoc deberá escoger una de las <strong>asignaturas de la programación</strong> y desarrollar algún aspecto que le resulte de interés.<br /> <strong>Mínimo 6 meses</strong> de actividades planificadas (después del trabajo de campo).',
-        icon: 'tabler:clock',
+        title: "Duración",
+        description: "<strong>Máximo 6 meses</strong> de investigación de campo. La/ el postdoc deberá escoger una de las <strong>asignaturas de la programación</strong> y desarrollar algún aspecto que le resulte de interés. <strong><br >Mínimo 6 meses</strong> de actividades planificadas (después del trabajo de campo).",
+        icon: "tabler:clock",
       },
       {
-        title: 'Producto final',
-        description:
-          'El producto final debe ser un artículo enviado a una revista de investigación indexada.',
-        icon: 'tabler:article',
+        title: "Producto final",
+        description: "El producto final debe ser un artículo enviado a una revista de investigación indexada.",
+        icon: "tabler:article",
       },
       {
-        title: 'Participación',
-        description:
-          'Participar de las distintas actividades de docencia e iniciativas académicas.',
-        icon: 'tabler:books',
+        title: "Participación",
+        description: "Participar de las distintas actividades de docencia e iniciativas académicas.",
+        icon: "tabler:books",
       },
       {
-        title: 'Resultados',
-        description:
-          'Presentar avances y resultados de su investigación.',
-        icon: 'tabler:check',
-      }
+        title: "Resultados",
+        description: "Presentar avances y resultados de su investigación.",
+        icon: "tabler:check",
+      },
     ]}
   />
 
@@ -264,12 +262,12 @@ const tabs = [
     id="estructura"
     tagline="Estructura"
     title="Estructura del Programa"
-    subtitle='El Programa de Postdoctorado tiene una duración mínima de <strong>6 meses en su versión intensiva</strong> y máxima de <strong>1 año en su formato flexible</strong>, ampliable hasta 1 trimestre.'
+    subtitle="El Programa de Postdoctorado tiene una duración mínima de <strong>6 meses en su versión intensiva</strong> y máxima de <strong>1 año en su formato flexible</strong>, ampliable hasta 1 trimestre."
   />
-
+  <!-- Actividades -->
   <Steps2
-    title='Actividades'
-    subtitle='Las actividades del/la postDoc, giran alrededor de los siguientes <strong>cinco</strong> aspectos fundamentales:'
+    title="Actividades"
+    subtitle="Las actividades del/la postDoc, giran alrededor de los siguientes <strong>cinco</strong> aspectos fundamentales:"
     colLeft="md:w-1/5"
     colRight="md:w-4/5"
     items={[
@@ -302,7 +300,7 @@ const tabs = [
         description:
           'La defensa de la investigación es un acto público y consistirá en la exposición y defensa del trabajo ante un jurado seleccionado por el Comité de Posdoctorado. Los doctores presentes pueden formular cuestiones.',
         icon: 'tabler:number-5',
-      }
+      },
     ]}
   />
   <Steps
@@ -310,12 +308,14 @@ const tabs = [
     items={[
       {
         title: '<span class="text-primary">POSTDOC INTENSIVO</span>',
-        description: '<ol><li><strong>1.</strong> Cursar una serie de asignaturas de la programación.</li><li><strong>2.</strong> Exposición sobre el tema de investigación propuesto.</li><li><strong>3.</strong> Colaboración del doctor como jurado de tesis</li></ol>',
+        description:
+          '<ol><li><strong>1.</strong> Cursar una serie de asignaturas de la programación.</li><li><strong>2.</strong> Exposición sobre el tema de investigación propuesto.</li><li><strong>3.</strong> Colaboración del doctor como jurado de tesis</li></ol>',
         icon: 'tabler:school',
       },
       {
         title: '<span class="text-muted">POSTDOC FLEXIBLE</span>',
-        description: 'Además de <strong>1</strong>, <strong>2</strong> y <strong>3</strong>: <ol><li><strong>4.</strong> Realizar actividades de investigación de campo.</li><li><strong>5.</strong> Impartir conferencias en las materias de su interés.</li><li><strong>6.</strong> Participación en pasantías, seminarios o congresos.</li></ol>',
+        description:
+          'Además de <strong>1</strong>, <strong>2</strong> y <strong>3</strong>: <ol><li><strong>4.</strong> Realizar actividades de investigación de campo.</li><li><strong>5.</strong> Impartir conferencias en las materias de su interés.</li><li><strong>6.</strong> Participación en pasantías, seminarios o congresos.</li></ol>',
         icon: 'tabler:school',
       },
       {
@@ -324,8 +324,9 @@ const tabs = [
         icon: 'tabler:school',
       },
       {
-        description: '<span class="font-semibold text-accent">La/ el postdoc también será responsable de fomentar la investigación ecológica global dentro de nuestro instituto, por ejemplo, a través del desarrollo de actividades conjuntas e interinstitucionales.</span>',
-      }
+        description:
+          '<span class="font-semibold text-accent">La/ el postdoc también será responsable de fomentar la investigación ecológica global dentro de nuestro instituto, por ejemplo, a través del desarrollo de actividades conjuntas e interinstitucionales.</span>',
+      },
     ]}
   />
 
@@ -343,11 +344,15 @@ const tabs = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
     <Fragment slot="subtitle">
-          Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <strong>Trabajo Final de Investigación</strong> - <strong>TFI</strong>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y desarrollar algún aspecto que le resulte de interés.
-      </Fragment>
+      Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <strong
+        >Trabajo Final de Investigación</strong
+      > - <strong>TFI</strong>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
+      desarrollar algún aspecto que le resulte de interés.
+    </Fragment>
   </HeroSection>
 
   <!-- 6. ¿Cómo se estudia? ****************************** -->
+  <!-- Nuestro Campus Virtual -->
   <Content
     id="como-se-estudia"
     tagline="¿Cómo se estudia?"
@@ -379,32 +384,33 @@ const tabs = [
       alt: 'Estudio online en campus virtual de Fondo Verde',
     }}
   />
+  <!-- Modelo Educativo -->
   <Content
     title="Modelo Educativo"
-    content='El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones.'
+    content="El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones."
     isAfterContent
     items={[
-        {
-          title: 'Cursos Teóricos',
-          icon: 'tabler:book',
-        },
-        {
-          title: 'Seminarios de Investigación',
-          icon: 'tabler:certificate-2',
-        },
-        {
-          title: 'Tareas Postdoctorales',
-          icon: 'tabler:checklist',
-        },
-        {
-          title: 'Tutoría',
-          icon: 'tabler:user-check',
-        },
-        {
-          title: 'Proyecto Postdoctoral',
-          icon: 'tabler:briefcase',
-        },
-      ]}
+      {
+        title: 'Cursos Teóricos',
+        icon: 'tabler:book',
+      },
+      {
+        title: 'Seminarios de Investigación',
+        icon: 'tabler:certificate-2',
+      },
+      {
+        title: 'Tareas Postdoctorales',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'Tutoría',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Proyecto Postdoctoral',
+        icon: 'tabler:briefcase',
+      },
+    ]}
     image={{
       src: '~/assets/images/postdocs/fvi-modelo-educativo-PostDoc.webp',
       alt: 'Modelo educativo del programa de Posdoctorado de Fondo Verde',
@@ -457,42 +463,44 @@ const tabs = [
   }
 
   <!-- 8. Certificación ********************************** -->
-  <Steps   
+  <Steps
     id="certificacion"
     tagline="Certificación"
     title="Evaluación y certificación"
     subtitle="Una vez cumplido y evaluado el Informe del Plan de Actividades y superado el Trabajo Final de Investigación, se expedirá un <strong>Diploma que acredite haber cursado el Programa de Postdoctorado</strong>."
     items={[
       {
-        title: 'Diploma Oficial <br /> <span class="font-normal">y Reconocimiento Institucional</span>',
+        title: 'Diploma Oficial <br> <span class="font-normal">y Reconocimiento Institucional</span>',
         description: `El Diploma de Postdoctorado es expedido por <strong>Fondo Verde</strong>, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), en materia de Formación Profesional Ocupacional, con número <strong>11001</strong>.`,
         icon: 'tabler:certificate',
       },
       {
-        title: 'Apostillado <br /> <span class="font-normal">y Validez Internacional del Diploma</span>',
-        description: 'Desde España se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar el Diploma en un país fuera de España.',
+        title: 'Apostillado <br> <span class="font-normal">y Validez Internacional del Diploma</span>',
+        description:
+          'Desde España se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar el Diploma en un país fuera de España.',
         icon: 'tabler:certificate',
       },
     ]}
     classes={{ container: 'max-w-4xl' }}
   />
+  <!-- Requisito y Licencia -->
   <Features2
-  columns={2}
-  items={[
-    {
-      title: 'Requisitos para la Certificación PMPA™',
-      description:
-        'Los participantes que pretendan obtener la Certificación <strong>PMPA™</strong> - <strong>Profesional Mánager en Proyectos Ambientales</strong>, categorías <strong>PMPA™ Especialista</strong>, <strong>PMPA™ Experto</strong> y/o <strong>PMPA™ Eminencia</strong>, en función de su nivel de experiencia tienen que acreditar los requisitos de certificación relacionados con la credencial seleccionada.',
-      icon: 'tabler:certificate-2',
-    },
-    {
-      title: 'Licencia como Instructor PMPA™',
-      description:
-        'Con la obtención del certificado PMPA™ excepcionalmente podrán acreditarse como <strong>PMPA™ Instructor Network</strong> con licencia local y/o licencia internacional, superando etapas adicionales y sufragando los derechos de licencia.',
-      icon: 'tabler:certificate-2',
-    },
-  ]}
-  classes={{ container: 'max-w-4xl' }}
+    columns={2}
+    items={[
+      {
+        title: 'Requisitos para la Certificación PMPA™',
+        description:
+          'Los participantes que pretendan obtener la Certificación <strong>PMPA™</strong> - <strong>Profesional Mánager en Proyectos Ambientales</strong>, categorías <strong>PMPA™ Especialista</strong>, <strong>PMPA™ Experto</strong> y/o <strong>PMPA™ Eminencia</strong>, en función de su nivel de experiencia tienen que acreditar los requisitos de certificación relacionados con la credencial seleccionada.',
+        icon: 'tabler:certificate-2',
+      },
+      {
+        title: 'Licencia como Instructor PMPA™',
+        description:
+          'Con la obtención del certificado PMPA™ excepcionalmente podrán acreditarse como <strong>PMPA™ Instructor Network</strong> con licencia local y/o licencia internacional, superando etapas adicionales y sufragando los derechos de licencia.',
+        icon: 'tabler:certificate-2',
+      },
+    ]}
+    classes={{ container: 'max-w-4xl' }}
   />
 
   <!-- 9. Becas ****************************************** -->
@@ -505,12 +513,14 @@ const tabs = [
     items={[
       {
         title: 'Investigación sobre Sistemas Naturales y Sociales  ',
-        description: 'Analizar temas ambientales internacionales actuales para comprender mejor la interacción entre los sistemas naturales y sociales, generando conocimiento sobre ecosistemas, salud y cambio climático.',
+        description:
+          'Analizar temas ambientales internacionales actuales para comprender mejor la interacción entre los sistemas naturales y sociales, generando conocimiento sobre ecosistemas, salud y cambio climático.',
         icon: 'tabler:home-eco',
       },
       {
         title: 'Sostenibilidad Global y ODS',
-        description: 'Profundizar en la sostenibilidad global mediante la discusión de los Objetivos de Desarrollo Sostenible (ODS), explorando sus posibles tensiones y alcances en el contexto ambiental internacional.',
+        description:
+          'Profundizar en la sostenibilidad global mediante la discusión de los Objetivos de Desarrollo Sostenible (ODS), explorando sus posibles tensiones y alcances en el contexto ambiental internacional.',
         icon: 'tabler:michelin-star-green',
       },
       {
@@ -524,9 +534,10 @@ const tabs = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
   </Features3>
+  <!-- Procedimiento para Solicitar la Beca -->
   <Steps
-    title='Procedimiento para Solicitar la Beca'
-    subtitle='Para tener acceso a la beca, usted deberá dirigir su petición al Comité de Becas, anexando la documentación solicitada y en concreto cumplir con los siguientes 3 pasos:'
+    title="Procedimiento para Solicitar la Beca"
+    subtitle="Para tener acceso a la beca, usted deberá dirigir su petición al Comité de Becas, anexando la documentación solicitada y en concreto cumplir con los siguientes 3 pasos:"
     items={[
       {
         title: 'Enviar los siguientes documentos a: scholarships@fondoverde.org',
@@ -542,18 +553,23 @@ const tabs = [
       },
       {
         title: 'Dar a conocer el Postdoctorado y la posibilidad de becas',
-        description: 'A por lo menos 5 contactos de tus redes que podrían estar interesados en postular al programa postdoctoral. Envíales un correo electrónico con copia a: postdoc@fondoverde.org',
+        description:
+          'A por lo menos 5 contactos de tus redes que podrían estar interesados en postular al programa postdoctoral. Envíales un correo electrónico con copia a: postdoc@fondoverde.org',
         icon: 'tabler:share',
       },
-    ]}  
+    ]}
   >
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-  </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
   </Steps>
   <WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10">
     <Alert variant="warning" title="Importante">
-      El Comité de Becas se reúne regularmente a efectos de valorar las solicitudes y seleccionar, a los/as beneficiarios/as, y el importe de beca asignado a cada uno de ellos. Se comunicará por correo electrónico dicha determinación. El candidato puede constatar la resolución determinada por el Comité de Becas vía e-mail a <strong>scholarships@fondoverde.org</strong>.
+      El Comité de Becas se reúne regularmente a efectos de valorar las solicitudes y seleccionar, a los/as
+      beneficiarios/as, y el importe de beca asignado a cada uno de ellos. Se comunicará por correo electrónico dicha
+      determinación. El candidato puede constatar la resolución determinada por el Comité de Becas vía e-mail a <strong
+        >scholarships@fondoverde.org</strong
+      >.
     </Alert>
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
@@ -562,25 +578,27 @@ const tabs = [
 
   <!-- 10. ¿Cómo aplicar? ******************************** -->
   <Features3
-  id="como-aplicar"
-  tagline="¿Cómo aplicar?"
-  title="Proceso de Admisión"
-  subtitle="Todo candidato para ser admitido a Fondo Verde, deberá cumplir con los reglamentos, políticas y criterios vigentes de admisión establecidos por la institución."
-  columns={2}
-  items={[
-  {
-    title: 'Determinación de Elegibilidad',
-    description: 'El Departamento de Admisiones, o en su caso el Comité de Admisiones, determinará a discreción la elegibilidad de los candidatos.',
-    icon: 'tabler:user-check',
-  },
-  {
-    title: 'Reserva de Criterios de Elegibilidad',
-    description: 'El Instituto, se reserva el derecho de revelar los criterios de elegibilidad de los candidatos.',
-    icon: 'tabler:lock',
-  },
-  ]}
-  classes={{ container: 'max-w-4xl' }}
+    id="como-aplicar"
+    tagline="¿Cómo aplicar?"
+    title="Proceso de Admisión"
+    subtitle="Todo candidato para ser admitido a Fondo Verde, deberá cumplir con los reglamentos, políticas y criterios vigentes de admisión establecidos por la institución."
+    columns={2}
+    items={[
+      {
+        title: 'Determinación de Elegibilidad',
+        description:
+          'El Departamento de Admisiones, o en su caso el Comité de Admisiones, determinará a discreción la elegibilidad de los candidatos.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Reserva de Criterios de Elegibilidad',
+        description: 'El Instituto, se reserva el derecho de revelar los criterios de elegibilidad de los candidatos.',
+        icon: 'tabler:lock',
+      },
+    ]}
+    classes={{ container: 'max-w-4xl' }}
   />
+  <!-- fases del proceso de admisión -->
   <HeroSection
     title="Las fases del proceso de admisión"
     image={{
@@ -588,9 +606,7 @@ const tabs = [
       alt: 'Las fases del proceso de admisión al posdoctorado',
     }}
   >
-    <Fragment slot="subtitle">
-      El proceso para la inscripción al programa de postdoctorado es el siguiente:
-    </Fragment>
+    <Fragment slot="subtitle"> El proceso para la inscripción al programa de postdoctorado es el siguiente: </Fragment>
   </HeroSection>
 
   <!-- 11. Inscripción y Tasas Académicas *********************************** -->
@@ -598,7 +614,7 @@ const tabs = [
     id="inscripcion"
     tagline="Inscripción y Tasas Académicas"
     title="Inscripción"
-    subtitle='Para ser admitido al programa el aspirante deberá presentar:'
+    subtitle="Para ser admitido al programa el aspirante deberá presentar:"
     items={[
       {
         title: 'Solicitud',
@@ -608,8 +624,7 @@ const tabs = [
       },
       {
         title: 'Título doctoral',
-        description:
-          'Copia del título doctoral (doctorado de nivel internacional, PhD o similar).',
+        description: 'Copia del título doctoral (doctorado de nivel internacional, PhD o similar).',
         icon: 'tabler:certificate',
       },
       {
@@ -626,10 +641,9 @@ const tabs = [
       },
       {
         title: 'CV',
-        description:
-          'Un breve CV resaltando su producción académica.',
+        description: 'Un breve CV resaltando su producción académica.',
         icon: 'tabler:file-description',
-      }
+      },
     ]}
     image={{
       src: '~/assets/images/postdocs/fvi-inscripcion.webp',
@@ -663,22 +677,29 @@ const tabs = [
     </Fragment>
   </Features2>
   <!-- Tasas Académicas ******** -->
-  <HeroSection
-    title="Tasas Académicas"
-  >
+  <HeroSection title="Tasas Académicas">
     <Fragment slot="content">
       <div class="overflow-x-auto mt-6 w-full max-w-4xl mx-auto shadow-md rounded-lg">
         <!-- Tasas Académicas -->
-        <table class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm">
+        <table
+          class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
+        >
           <thead class="border-none">
             <tr class="border-none">
-              <th rowspan="2" class="p-3 md:p-4 align-middle text-base md:text-xl font-bold text-primary w-[40%] bg-transparent border-b-4 border-primary border-t-0 border-l-0 border-r-0">
+              <th
+                rowspan="2"
+                class="p-3 md:p-4 align-middle text-base md:text-xl font-bold text-primary w-[40%] bg-transparent border-b-4 border-primary border-t-0 border-l-0 border-r-0"
+              >
                 Postdoctorado
               </th>
-              <th class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0">
+              <th
+                class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
+              >
                 Intensivo
               </th>
-              <th class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base opacity-90 border-l border-black/20 border-t-0 border-r-0 border-b-0">
+              <th
+                class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base opacity-90 border-l border-black/20 border-t-0 border-r-0 border-b-0"
+              >
                 Flexible
               </th>
             </tr>
@@ -689,61 +710,134 @@ const tabs = [
           </thead>
           <tbody>
             <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
-              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 border-r border-black/10">Derechos de inscripción</td>
-              <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-x border-b border-gray-200 dark:border-slate-700">US$ 298</td>
-              <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-b border-gray-200 dark:border-slate-700">US$ 596</td>
+              <td
+                class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 border-r border-black/10"
+                >Derechos de inscripción</td
+              >
+              <td
+                class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-x border-b border-gray-200 dark:border-slate-700"
+                >US$ 298</td
+              >
+              <td
+                class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-b border-gray-200 dark:border-slate-700"
+                >US$ 596</td
+              >
             </tr>
             <tr class="text-sm md:text-base">
-              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 border-r border-black/10">Costo del Programa</td>
-              <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800 border-x border-gray-200 dark:border-slate-700">US$ 3198</td>
-              <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800">US$ 3798</td>
+              <td
+                class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 border-r border-black/10"
+                >Costo del Programa</td
+              >
+              <td
+                class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800 border-x border-gray-200 dark:border-slate-700"
+                >US$ 3198</td
+              >
+              <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800">US$ 3798</td
+              >
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="pt-12 text-base md:text-xl">Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del Postdoctorado en 6 cuotas sin intereses de la siguiente forma:</p>
-      
+      <p class="pt-12 text-base md:text-xl">
+        Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del
+        Postdoctorado en 6 cuotas sin intereses de la siguiente forma:
+      </p>
+
       <!-- Alternativas de Pago -->
       <div class="overflow-x-auto mt-6 w-full max-w-5xl mx-auto shadow-md rounded-lg">
-        <table class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm">
+        <table
+          class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
+        >
           <thead class="border-none">
             <tr class="border-none">
-              <th rowspan="2" class="p-3 md:p-4 align-middle text-primary font-bold text-center w-[20%] border-b-4 border-primary text-sm md:text-base border-t-0 border-l-0 border-r-0">
+              <th
+                rowspan="2"
+                class="p-3 md:p-4 align-middle text-primary font-bold text-center w-[20%] border-b-4 border-primary text-sm md:text-base border-t-0 border-l-0 border-r-0"
+              >
                 Modalidad del Postdoctorado
               </th>
-              <th colspan="2" class="p-2 text-center text-white bg-primary font-bold text-sm md:text-base border-r border-slate-600">
+              <th
+                colspan="2"
+                class="p-2 text-center text-white bg-primary font-bold text-sm md:text-base border-r border-slate-600"
+              >
                 Costos del programa
               </th>
-              <th class="p-2 text-center text-white bg-secondary font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0">
+              <th
+                class="p-2 text-center text-white bg-secondary font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
+              >
                 Alternativa 1: Al Contado
               </th>
-              <th colspan="2" class="p-2 text-center text-white bg-secondary opacity-90 font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0">
+              <th
+                colspan="2"
+                class="p-2 text-center text-white bg-secondary opacity-90 font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
+              >
                 Alternativa 2: Financiado
               </th>
             </tr>
             <tr class="bg-primary opacity-90 text-white border-t border-slate-600 font-medium">
-              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]">Precio Normal</th>
-              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]">Precio con Beca 50%</th>
-              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] bg-primary/80 leaders-tight">(Descuento del 5%)</th>
-              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight">Número de cuotas</th>
-              <th class="p-1 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight border-none">Cuota mensual</th>
+              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
+                >Precio Normal</th
+              >
+              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
+                >Precio con Beca 50%</th
+              >
+              <th
+                class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] bg-primary/80 leaders-tight"
+                >(Descuento del 5%)</th
+              >
+              <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight"
+                >Número de cuotas</th
+              >
+              <th class="p-1 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight border-none"
+                >Cuota mensual</th
+              >
             </tr>
           </thead>
           <tbody>
             <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
-              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-center border-r border-black/10">Intensivo</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]">US$ 3,198</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]">US$ 1,599</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]">US$ 1,519</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]">6</td>
+              <td
+                class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-center border-r border-black/10"
+                >Intensivo</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+                >US$ 3,198</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+                >US$ 1,599</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
+                >US$ 1,519</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
+                >6</td
+              >
               <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 267</td>
             </tr>
             <tr class="text-sm md:text-base">
-              <td class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-center border-r border-black/10">Flexible</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]">US$ 3,798</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]">US$ 1,899</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]">US$ 1,804</td>
-              <td class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]">6</td>
+              <td
+                class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-center border-r border-black/10"
+                >Flexible</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+                >US$ 3,798</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+                >US$ 1,899</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
+                >US$ 1,804</td
+              >
+              <td
+                class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
+                >6</td
+              >
               <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 317</td>
             </tr>
           </tbody>
@@ -751,15 +845,18 @@ const tabs = [
       </div>
       <!-- Información adicional sobre costos -->
       <WidgetWrapper containerClass="max-w-5xl ml-0 mr-auto mt-6 p-0 text-left items-start">
-        <Alert variant="warning" title="Importante">           
+        <Alert variant="warning" title="Importante">
           <p>Existen cargos adicionales por derechos de examen (<strong>199 US$</strong>), este arancel incluye:</p>
           <ul class="list-disc ml-6 mt-2 space-y-1">
             <li>Revisión del Informe Final por parte del Director.</li>
             <li>Defensa del Trabajo Final de Investigación.</li>
           </ul>
-          
-          <p>Una vez defendido y aprobado el TFI, el Diploma de Postdoctorado y el Certificado de Estudios se envían únicamente en formato electrónico.</p>
-          
+
+          <p>
+            Una vez defendido y aprobado el TFI, el Diploma de Postdoctorado y el Certificado de Estudios se envían
+            únicamente en formato electrónico.
+          </p>
+
           <p>Este importe no incluye:</p>
           <ul class="list-disc ml-6 mt-2 space-y-1">
             <li>Precios por el trámite de legalización única o “Apostilla de La Haya”.</li>
@@ -771,11 +868,10 @@ const tabs = [
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
-    
   </HeroSection>
-        
 
   <!-- 12. Pagos ***************************************** -->
+   <!-- Transferencia & Giro -->
   <Features2
     id="pagos"
     tagline="Pagos"
@@ -811,11 +907,13 @@ const tabs = [
       },
       {
         title: '(2) Vía Giro Postal',
-        description: 'Por medio de un envío a través de <strong>WESTERN UNION / MONEY GRAM</strong>. Por favor consulte esta opción a través del correo <strong>postdoc@fondoverde.org</strong>, y le facilitaremos los datos para efectuar el pago.',
+        description:
+          'Por medio de un envío a través de <strong>WESTERN UNION / MONEY GRAM</strong>. Por favor consulte esta opción a través del correo <strong>postdoc@fondoverde.org</strong>, y le facilitaremos los datos para efectuar el pago.',
         icon: 'tabler:cash-banknote-plus',
       },
     ]}
   />
+  <!-- PayPal -->
   <Features2
     columns={1}
     items={[
@@ -862,7 +960,6 @@ const tabs = [
         icon: 'tabler:brand-paypal',
       },
     ]}
-    
   />
 
   <!-- 13. Solicitudes *********************************** -->
@@ -894,7 +991,8 @@ const tabs = [
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Solicitudes e Información</h3>
       <p class="mb-6">
-        Si desea inscribirse en alguno de los programas online de Fondo Verde o simplemente obtener más información sobre nuestros programas y procesos de admisión, puede contactar al área de Posgrado:
+        Si desea inscribirse en alguno de los programas online de Fondo Verde o simplemente obtener más información
+        sobre nuestros programas y procesos de admisión, puede contactar al área de Posgrado:
       </p>
       <h4 class="text-xl sm:text-2xl font-bold tracking-tight dark:text-white mb-2">Yessenia Quispe Aquino</h4>
       <p class="font-semibold text-secondary">Responsable de Admisiones y Matrícula</p>
@@ -903,7 +1001,7 @@ const tabs = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
   </Content>
-
+  <!-- Formulario y Mensajes -->
   <WidgetWrapper containerClass="max-w-7xl mx-auto py-12 md:py-16 lg:py-20">
     <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
       <!-- Columna 1: Formulario (3/5 - 60%) -->
@@ -946,6 +1044,4 @@ const tabs = [
       <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
   </WidgetWrapper>
-
-
 </Layout>
