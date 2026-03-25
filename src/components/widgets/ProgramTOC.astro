@@ -1,0 +1,352 @@
+---
+export interface Props {
+  tabs: Array<{ id: string; label: string }>;
+}
+
+const { tabs = [] } = Astro.props;
+---
+
+<!-- ProgramTOC: Navigation Component for Postdoc Pages -->
+<div class="w-full h-full relative" id="program-toc">
+  
+  <!-- DESKTOP: Sticky Sidebar -->
+  <!-- Note: We use fixed positioning to act as a true sidebar, pinned to the left edge -->
+  <aside 
+    id="desktop-sidebar"
+    class="opacity-0 -translate-x-full transition-all duration-700 ease-out hidden lg:flex flex-col fixed top-[72px] left-0 h-[calc(100vh-72px)] w-64 2xl:w-72 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-r border-slate-200 dark:border-slate-800 z-40 overflow-y-auto custom-scrollbar"
+  >
+    <div class="p-6 flex flex-col h-full">
+      <div class="mb-6 flex items-center gap-2 text-primary dark:text-accent">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M4 6l16 0"></path>
+          <path d="M4 12l16 0"></path>
+          <path d="M4 18l16 0"></path>
+        </svg>
+        <span class="font-bold tracking-tight text-sm uppercase">Navegación</span>
+      </div>
+
+      <nav aria-label="Secciones del programa" class="flex-grow">
+        <ul class="space-y-1 relative" id="desktop-toc-list">
+          <!-- The progressive line -->
+          <div class="absolute left-[11px] top-4 bottom-4 w-px bg-slate-200 dark:bg-slate-800 pointer-events-none"></div>
+          
+          {tabs.map((tab, index) => (
+            <li class="relative z-10 group">
+              <a
+                href={`#${tab.id}`}
+                class="toc-link flex items-start py-2.5 text-sm text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-accent transition-colors duration-300"
+                data-target={tab.id}
+              >
+                <div class="mt-1 mr-3 flex items-center justify-center w-6">
+                  <div class="toc-indicator w-3 h-3 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 transition-all duration-300 group-hover:border-primary dark:group-hover:border-accent"></div>
+                </div>
+                <!-- Clean up numbering from label if it exists for a sleeker look, or just use it -->
+                <span class="font-medium leading-tight group-hover:-translate-y-px transition-transform duration-300">
+                  {tab.label.replace(/^\d+\.\s*/, '')}
+                </span>
+                <span class="absolute left-0 -top-2 text-[0.65rem] text-slate-300 dark:text-slate-600 font-mono opacity-0 group-hover:opacity-100 transition-opacity">
+                  {(index + 1).toString().padStart(2, '0')}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      
+      <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+        <a href="#inscripcion" class="w-full flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-white bg-primary hover:bg-primary-600 shadow-md shadow-primary/20 transition-all active:scale-95">
+          Inscribirse ahora
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MOBILE: Floating Bottom Sheet approach -->
+  <div 
+    id="mobile-bottom-sheet"
+    class="opacity-0 translate-y-full lg:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-sm sm:max-w-md transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
+  >
+    <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl shadow-2xl shadow-primary/10 rounded-2xl border border-slate-200/50 dark:border-slate-800/50 overflow-hidden flex flex-col">
+      
+      <!-- Pill Header (Always visible) -->
+      <button 
+        id="mobile-toc-toggle" 
+        class="w-full px-5 py-3.5 flex items-center justify-between text-slate-800 dark:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-t-2xl group"
+      >
+        <div class="flex items-center space-x-3 overflow-hidden">
+          <div class="w-8 h-8 rounded-full bg-primary/10 dark:bg-accent/10 flex items-center justify-center text-primary dark:text-accent shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 6l16 0"></path>
+              <path d="M4 12l16 0"></path>
+              <path d="M4 18l16 0"></path>
+            </svg>
+          </div>
+          <div class="flex flex-col items-start truncate">
+            <span class="text-[0.65rem] uppercase tracking-wider font-semibold text-slate-400">Estás en</span>
+            <span class="font-bold text-sm truncate" id="mobile-toc-current">Presentación</span>
+          </div>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-slate-200 dark:group-hover:bg-slate-700 transition-colors">
+          <svg id="mobile-toc-chevron" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-300" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M6 9l6 6l6 -6"></path>
+          </svg>
+        </div>
+      </button>
+
+      <!-- Expandable List -->
+      <div 
+        id="mobile-toc-menu" 
+        class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out"
+      >
+        <div class="overflow-hidden">
+          <div class="max-h-[50vh] overflow-y-auto overscroll-contain pb-3 px-3 custom-scrollbar border-t border-slate-100 dark:border-slate-800 pt-2">
+            <ul class="space-y-1">
+              {tabs.map((tab, index) => (
+                <li>
+                  <a
+                    href={`#${tab.id}`}
+                    class="toc-link flex items-center px-4 py-3 text-sm rounded-xl text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-accent hover:bg-slate-50 dark:hover:bg-slate-800/80 transition-all active:scale-[0.98]"
+                    data-target={tab.id}
+                  >
+                    <span class="text-xs font-mono text-slate-400 w-6 opacity-60">{(index + 1).toString().padStart(2, '0')}</span>
+                    <span class="font-medium truncate">{tab.label.replace(/^\d+\.\s*/, '')}</span>
+                    <span class="mobile-check ml-auto text-primary dark:text-accent opacity-0 scale-50 transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12l5 5l10 -10"></path>
+                      </svg>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom scrollbar for seamless look */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: theme('colors.slate.300');
+    border-radius: 10px;
+  }
+  :global(.dark) .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: theme('colors.slate.700');
+  }
+  
+  /* Desktop Active States via Vanilla JS */
+  .toc-link.active-desktop {
+    color: var(--aw-color-primary);
+  }
+  :global(.dark) .toc-link.active-desktop {
+    color: var(--aw-color-accent);
+  }
+  
+  .toc-link.active-desktop .toc-indicator {
+    background-color: var(--aw-color-primary);
+    border-color: var(--aw-color-primary);
+    transform: scale(1.2);
+  }
+  :global(.dark) .toc-link.active-desktop .toc-indicator {
+    background-color: var(--aw-color-accent);
+    border-color: var(--aw-color-accent);
+  }
+
+  /* Mobile Active States */
+  .toc-link.active-mobile {
+    background-color: theme('colors.slate.100');
+    color: var(--aw-color-primary);
+  }
+  :global(.dark) .toc-link.active-mobile {
+    background-color: theme('colors.slate.800');
+    color: var(--aw-color-accent);
+  }
+
+  .toc-link.active-mobile .mobile-check {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+
+<script>
+  function initTOC() {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    if (!tocLinks.length) return;
+
+    const sections = Array.from(tocLinks).map(link => {
+      const targetId = link.getAttribute('data-target');
+      if (!targetId) return null;
+      return document.getElementById(targetId);
+    }).filter(Boolean) as HTMLElement[];
+
+    const mobileToggle = document.getElementById('mobile-toc-toggle');
+    const mobileMenu = document.getElementById('mobile-toc-menu');
+    const mobileChevron = document.getElementById('mobile-toc-chevron');
+    const mobileCurrent = document.getElementById('mobile-toc-current');
+    const desktopSidebar = document.getElementById('desktop-sidebar');
+    const mobileBottomSheet = document.getElementById('mobile-bottom-sheet');
+    
+    // Toggle mobile menu logic
+    let isMenuOpen = false;
+    
+    if (mobileToggle && mobileMenu && mobileChevron) {
+      mobileToggle.addEventListener('click', (e) => {
+        // Prevent default to avoid jumping if within a form/button
+        e.preventDefault(); 
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          mobileMenu.classList.remove('grid-rows-[0fr]');
+          mobileMenu.classList.add('grid-rows-[1fr]');
+          mobileChevron.classList.add('rotate-180');
+        } else {
+          mobileMenu.classList.add('grid-rows-[0fr]');
+          mobileMenu.classList.remove('grid-rows-[1fr]');
+          mobileChevron.classList.remove('rotate-180');
+        }
+      });
+      
+      // Close menu when clicking a link
+      tocLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isMenuOpen && window.innerWidth < 1024) {
+            isMenuOpen = false;
+            mobileMenu.classList.add('grid-rows-[0fr]');
+            mobileMenu.classList.remove('grid-rows-[1fr]');
+            mobileChevron.classList.remove('rotate-180');
+          }
+        });
+      });
+    }
+
+    // Intersection Observer for scroll spy
+    const observerOptions = {
+      root: null,
+      rootMargin: '-15% 0px -75% 0px', // Triggers when section passes top 15%
+      threshold: 0
+    };
+
+    let hasScrolledToFirstSection = false;
+
+    const revealTOC = () => {
+      if (hasScrolledToFirstSection) return;
+      hasScrolledToFirstSection = true;
+      
+      if (desktopSidebar) {
+        desktopSidebar.classList.remove('opacity-0', '-translate-x-full');
+      }
+      if (mobileBottomSheet) {
+        mobileBottomSheet.classList.remove('opacity-0', 'translate-y-full');
+      }
+    };
+
+    const hideTOC = () => {
+      if (!hasScrolledToFirstSection) return;
+      hasScrolledToFirstSection = false;
+      
+      if (desktopSidebar) {
+        desktopSidebar.classList.add('opacity-0', '-translate-x-full');
+      }
+      if (mobileBottomSheet) {
+        mobileBottomSheet.classList.add('opacity-0', 'translate-y-full');
+      }
+    };
+
+    // Global scroll listener to reveal TOC only when scrolled past Hero
+    const checkScrollPosition = () => {
+      const firstSection = sections[0];
+      if (!firstSection) return;
+      
+      // If we've scrolled down enough that the first section or hero is passed
+      const rect = firstSection.getBoundingClientRect();
+      // When the top of the first section gets within 80% of window height (meaning user scrolled down to it)
+      if (rect.top < window.innerHeight * 0.8) {
+        revealTOC();
+      } else {
+        hideTOC();
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollPosition, { passive: true });
+    // Check initial position
+    setTimeout(checkScrollPosition, 100);
+
+    const updateActiveState = (activeId: string) => {
+      tocLinks.forEach(link => {
+        const isMatch = link.getAttribute('data-target') === activeId;
+        
+        if (isMatch) {
+          link.classList.add('active-desktop', 'active-mobile');
+          
+          // Smooth scroll the sidebar list to keep active item in view if needed
+          if (window.innerWidth >= 1024) {
+             const parentNav = link.closest('nav');
+             if (parentNav) {
+                // simple calc to ensure visibility
+                const linkRect = link.getBoundingClientRect();
+                const navRect = parentNav.getBoundingClientRect();
+                if (linkRect.top < navRect.top || linkRect.bottom > navRect.bottom) {
+                   link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+             }
+          }
+
+          // Update mobile header text strictly to the text after any numbers
+          if (mobileCurrent) {
+             const rawText = link.textContent || '';
+             // Clean linebreaks and spaces
+             const cleanText = rawText.replace(/\n/g, '').replace(/[0-9]{2}/g, '').trim();
+             mobileCurrent.textContent = cleanText;
+          }
+        } else {
+          link.classList.remove('active-desktop', 'active-mobile');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      // Find the most recent intersecting one. 
+      // Because sections might be tall, we track the last one that triggered an intersection.
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateActiveState(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Check initial state on load
+    setTimeout(() => {
+      let currentActiveId = sections[0]?.id; // default to first
+      let minTop = Infinity;
+      
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top >= 0 && rect.top < minTop) {
+           minTop = rect.top;
+           currentActiveId = sec.id;
+        }
+      });
+      if(currentActiveId) updateActiveState(currentActiveId);
+    }, 100);
+  }
+
+  // Initialize on Astro view transitions and standard load
+  initTOC();
+  document.addEventListener('astro:after-swap', initTOC);
+</script>
