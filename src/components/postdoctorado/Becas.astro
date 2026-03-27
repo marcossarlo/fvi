@@ -1,0 +1,80 @@
+---
+import Steps from '~/components/widgets/Steps.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Alert from '~/components/ui/Alert.astro';
+---
+
+<!-- 9. Becas ****************************************** -->
+      <Features3
+        id="becas"
+        tagline="Becas"
+        title="Becas Fondo Verde"
+        subtitle="Fondo Verde ha establecido un Programa de Becas. La beca cubre el <strong>50% del coste del programa</strong>, y se ofrecen a todos aquellos alumnos que soliciten, se les conceda y adquieran el compromiso de elaborar el proyecto postdoctoral con las siguientes características:"
+        columns={3}
+        items={[
+          {
+            title: 'Investigación sobre Sistemas Naturales y Sociales  ',
+            description:
+              'Analizar temas ambientales internacionales actuales para comprender mejor la interacción entre los sistemas naturales y sociales, generando conocimiento sobre ecosistemas, salud y cambio climático.',
+            icon: 'tabler:home-eco',
+          },
+          {
+            title: 'Sostenibilidad Global y ODS',
+            description:
+              'Profundizar en la sostenibilidad global mediante la discusión de los Objetivos de Desarrollo Sostenible (ODS), explorando sus posibles tensiones y alcances en el contexto ambiental internacional.',
+            icon: 'tabler:michelin-star-green',
+          },
+          {
+            title: 'Autorización para Difusión del Proyecto',
+            description: 'Entregar copia del proyecto, autorizando a ambas instituciones a promoverlo y difundirlo.',
+            icon: 'tabler:share',
+          },
+        ]}
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Features3>
+      <!-- Procedimiento para Solicitar la Beca -->
+      <Steps
+        title="Procedimiento para Solicitar la Beca"
+        subtitle="Para tener acceso a la beca, usted deberá dirigir su petición al Comité de Becas, anexando la documentación solicitada y en concreto cumplir con los siguientes 3 pasos:"
+        items={[
+          {
+            title: 'Enviar los siguientes documentos a: scholarships@fondoverde.org',
+            description:
+              '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Solicitud-Inscripcion.pdf" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">Solicitud de inscripción</a>.</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Solicitud-Beca.docx" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">Solicitud de beca</a>.</li><li>Copia del título doctoral (doctorado de nivel internacional, PhD o similar).</li><li>Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Intencion.doc" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">carta de intención</a> que incluye motivación de postular al postdoc (400 palabras).</li><li>Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Recomendacion.pdf" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">carta de recomendación</a> de profesor y/o investigador del área científica nacional o internacional.</li><li>Un breve CV resaltando su producción académica.</li></ul>',
+            icon: 'tabler:mail',
+          },
+          {
+            title: 'Seguir a Fondo Verde en Facebook y X (Twitter):',
+            description:
+              '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><a href="https://www.facebook.com/fondoverde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 mr-4"> facebook.com/fondoverde </a></li> <li> <a href="https://x.com/fondoverde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2"> x.com/fondoverde </a></li></ul>',
+            icon: 'tabler:social',
+          },
+          {
+            title: 'Dar a conocer el Postdoctorado y la posibilidad de becas',
+            description:
+              'A por lo menos 5 contactos de tus redes que podrían estar interesados en postular al programa postdoctoral. Envíales un correo electrónico con copia a: postdoc@fondoverde.org',
+            icon: 'tabler:share',
+          },
+        ]}
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Steps>
+      <WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10">
+        <Alert variant="warning" title="Importante">
+          El Comité de Becas se reúne regularmente a efectos de valorar las solicitudes y seleccionar, a los/as
+          beneficiarios/as, y el importe de beca asignado a cada uno de ellos. Se comunicará por correo electrónico dicha
+          determinación. El candidato puede constatar la resolución determinada por el Comité de Becas vía e-mail a <strong
+            >scholarships@fondoverde.org</strong
+          >.
+        </Alert>
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </WidgetWrapper>
+      <!-- Fin BECAS ************************************ -->

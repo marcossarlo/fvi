@@ -1,0 +1,70 @@
+---
+import Content from '~/components/widgets/Content.astro';
+---
+
+<!-- 6. ¿Cómo se estudia? ****************************** -->
+      <!-- Nuestro Campus Virtual -->
+      <Content
+        id="como-se-estudia"
+        tagline="¿Cómo se estudia?"
+        title="Nuestro Campus Virtual"
+        content='Todos nuestros programas se desarrollan a través del <strong>Campus Virtual</strong> de <strong>Fondo Verde</strong> (<a href="https://www.fondoverdeopen.net/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2">fondoverdeopen.net</a>), que permite la interacción profesor-tutor y de los participantes entre sí.'
+        isReversed
+        items={[
+          {
+            title: 'Plataforma multimedia',
+            description:
+              'Una plataforma multimedia que gracias a tecnologías de última generación permite participar desde ubicaciones remotas y brindar acceso instantáneo al mejor contenido.',
+            icon: 'tabler:device-laptop',
+          },
+          {
+            title: 'Recursos didácticos',
+            description:
+              'Contenidos del programa formativo, disponibles en todo momento a través del campus virtual en formato de libro electrónico, casos prácticos, vídeos y otros recursos didácticos.',
+            icon: 'tabler:video',
+          },
+          {
+            title: 'Interacción y acompañamiento',
+            description:
+              'A través de los diferentes canales de chat, foros y servicios de mensajería podrá contactar con otros alumnos y realizar tantas consultas a su tutor como estime necesario.',
+            icon: 'tabler:messages',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/fvi-nuestro-campus-FV.webp',
+          alt: 'Estudio online en campus virtual de Fondo Verde',
+        }}
+      />
+      <!-- Modelo Educativo -->
+      <Content
+        title="Modelo Educativo"
+        content="El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones."
+        isAfterContent
+        items={[
+          {
+            title: 'Cursos Teóricos',
+            icon: 'tabler:book',
+          },
+          {
+            title: 'Seminarios de Investigación',
+            icon: 'tabler:certificate-2',
+          },
+          {
+            title: 'Tareas Postdoctorales',
+            icon: 'tabler:checklist',
+          },
+          {
+            title: 'Tutoría',
+            icon: 'tabler:user-check',
+          },
+          {
+            title: 'Proyecto Postdoctoral',
+            icon: 'tabler:briefcase',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/postdocs/fvi-modelo-educativo-PostDoc.webp',
+          alt: 'Modelo educativo del programa de Posdoctorado de Fondo Verde',
+        }}
+      />
+      <!-- Fin ¿CÓMO SE ESTUDIA? ************************************ -->

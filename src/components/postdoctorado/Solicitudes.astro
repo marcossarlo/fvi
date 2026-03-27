@@ -1,0 +1,91 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Content from '~/components/widgets/Content.astro';
+import Form from '~/components/ui/Form.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Alert from '~/components/ui/Alert.astro';
+---
+
+<!-- 13. Solicitudes *********************************** -->
+      <Content
+        id="solicitudes"
+        tagline="Únete al programa"
+        title="Solicitudes"
+        columns={1}
+        subtitle="Comienza tu proceso de admisión o solicita más información."
+        items={[
+          {
+            icon: 'tabler:phone-call',
+            title: '+51 935 544 232',
+          },
+          {
+            icon: 'tabler:mail',
+            title: 'yessenia.quispe@fondoverde.org',
+          },
+          {
+            icon: 'tabler:mail',
+            title: 'postdoc@fondoverde.org',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/users/fvi-yessenia-quispe.webp',
+          alt: 'Yessenia Quispe Aquino - Responsable de Admisiones',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Solicitudes e Información</h3>
+          <p class="mb-6">
+            Si desea inscribirse en alguno de los programas online de Fondo Verde o simplemente obtener más información
+            sobre nuestros programas y procesos de admisión, puede contactar al área de Posgrado:
+          </p>
+          <h4 class="text-xl sm:text-2xl font-bold tracking-tight dark:text-white mb-2">Yessenia Quispe Aquino</h4>
+          <p class="font-semibold text-secondary">Responsable de Admisiones y Matrícula</p>
+        </Fragment>
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Content>
+      <!-- Formulario y Mensajes -->
+      <WidgetWrapper containerClass="max-w-7xl mx-auto py-12 md:py-16 lg:py-20">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          <!-- Columna 1: Formulario (3/5 - 60%) -->
+          <div class="lg:w-3/5">
+            <div
+              class="flex flex-col max-w-full mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-pageDark shadow p-4 sm:p-6 lg:p-8 w-full h-full"
+            >
+              <Headline
+                title="Formulario de Contacto"
+                subtitle="Déjanos un mensaje y te responderemos a la brevedad."
+                classes={{ container: 'text-left mb-6', title: 'text-2xl font-bold', subtitle: 'text-muted' }}
+              />
+              <Form
+                inputs={[
+                  { type: 'text', name: 'name', label: 'Nombre' },
+                  { type: 'email', name: 'email', label: 'Correo electrónico' },
+                ]}
+                textarea={{ label: 'Mensaje' }}
+                disclaimer={{ label: 'Al enviarnos este formulario, aceptas nuestra política de privacidad.' }}
+                button="Enviar mensaje"
+              />
+            </div>
+          </div>
+
+          <!-- Columna 2: Alertas (2/5 - 40%) -->
+          <div class="lg:w-2/5 flex flex-col gap-6">
+            <Alert variant="info" title="Acuerdo de Asociación" icon="tabler:heart-handshake">
+              Si su organización está interesada en nuestros programas de capacitación ambiental y desea implementarlo en su
+              compañía a través de un Acuerdo de Asociación (Partnership Agreement) con Fondo Verde. Si deseas información
+              diríjase a: info@fondoverde.org
+            </Alert>
+
+            <Alert variant="success" title="Licencias de cursos" icon="tabler:certificate">
+              Consulta las condiciones para la compra y la venta de derechos de licencias de cursos para clientes
+              institucionales. Puede comunicarse a: info@fondoverde.org
+            </Alert>
+          </div>
+        </div>
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </WidgetWrapper>
+      <!-- Fin SOLICITUDES ************************************ -->

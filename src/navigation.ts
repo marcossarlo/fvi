@@ -56,7 +56,7 @@ export const headerData = {
       ]
     },
     {
-      text: 'PostDoct',
+      text: 'PostDoc',
       href: getPermalink('/postdoctorado'),
       links: [
         {

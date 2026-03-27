@@ -1,0 +1,78 @@
+---
+import Steps from '~/components/widgets/Steps.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+---
+
+<!-- 3. MODALIDADES ************************************ -->
+      <Features2
+        id="modalidades"
+        tagline="Modalidades"
+        title="Modalidades y Condiciones del Postdoctorado"
+        subtitle="El programa ofrece dos tipos de instancias posdoctorales:"
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Features2>
+      <!-- Modalidad Intensivo -->
+      <Steps
+        title="Flexible <span class='text-xl font-light'>(6 meses)</span>"
+        tagline="Modalidad"
+        subtitle="<strong>Para redacción de publicaciones (6 meses).</strong> <br />
+        El objetivo de esta modalidad es apoyar a los/las postdoc a que puedan terminar publicaciones vinculadas al ambiente y al desarrollo sustentable. <br />La/el postdoc debe cumplir con las siguientes condiciones:"
+        bg='<div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>'
+        items={[
+          {
+            title: 'Duración',
+            description: 'Seis (06) meses de actividades planificadas.',
+            icon: 'tabler:clock',
+          },
+          {
+            title: 'Producto Final',
+            description:
+              'El producto final debe ser un artículo publicable en una revista indexada (en inglés o en castellano).',
+            icon: 'tabler:article',
+          },
+          {
+            title: 'Resultados de una Investigación Original',
+            description:
+              'El artículo debe incluir resultados de una investigación original que avance en la definición de un nuevo paradigma de sociedad, que aborde dicha problemática desde la perspectiva integral e integradora del desarrollo sustentable.',
+            icon: 'tabler:bulb',
+          },
+          {
+            title: 'Resultados',
+            description: 'Presentar avances y resultados de su investigación.',
+            icon: 'tabler:check',
+          },
+        ]}
+      />
+      <!-- Modalidad Flexible -->
+      <Steps
+        title="Flexible <span class='text-xl font-light'>(12 meses)</span>"
+        tagline="Modalidad"
+        subtitle="<strong>Para desarrollar algún aspecto que le resulte de interés (12 meses)</strong> <br /> La/ el postdoc debe cumplir con las siguientes condiciones:"
+        bg="<div class='absolute inset-0 bg-blue-50 dark:bg-pageDark'></div>"
+        items={[
+          {
+            title: "Duración",
+            description: "<strong>Máximo 6 meses</strong> de investigación de campo. La/ el postdoc deberá escoger una de las <strong>asignaturas de la programación</strong> y desarrollar algún aspecto que le resulte de interés. <strong><br >Mínimo 6 meses</strong> de actividades planificadas (después del trabajo de campo).",
+            icon: "tabler:clock",
+          },
+          {
+            title: "Producto final",
+            description: "El producto final debe ser un artículo enviado a una revista de investigación indexada.",
+            icon: "tabler:article",
+          },
+          {
+            title: "Participación",
+            description: "Participar de las distintas actividades de docencia e iniciativas académicas.",
+            icon: "tabler:books",
+          },
+          {
+            title: "Resultados",
+            description: "Presentar avances y resultados de su investigación.",
+            icon: "tabler:check",
+          },
+        ]}
+      />
+      <!-- Fin MODALIDADES ************************************ -->
