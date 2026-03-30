@@ -163,4 +163,23 @@ export const faculty: Record<string, FacultyMemberData> = {
       alt: 'Alberto Jiménez Madrid, PhD.',
     },
   },
+  'angela-martin': {
+    name: 'Ángela Martín Méndez, Lic. (España)',
+    specialty: 'Máster en Recursos Humanos y Veterinaria',
+    bio: `
+      <p>Licenciada en Veterinaria por la Universitat Autònoma de Barcelona, Master of Business Administration (MBA) en Hult International Business School y Máster en Recursos Humanos por EAE Business School en Barcelona.</p>
+      <p>Más de diez años de experiencia docente en universidades y centros educativos, y más de cinco años desarrollando e impartiendo cursos sobre dinámica de sistemas, salud humana y animal, sostenibilidad, cuidado del medio ambiente, con amplia trayectoria como consultora especializada en resolución de problemas mediante modelos de simulación.</p>
+      <p>Actualmente Coordinadora de Postgrado en Veterinaria en la Universidad Europea de Madrid tras haber sido Directora del Departamento de Veterinaria de la misma institución. Es Directora de ATC empresa consultora en gestión estratégica que colabora con empresas y organismos públicos en proyectos de investigación y planificación.</p>
+    `,
+    awards: [
+      'Consultora especializada en dinámica de sistemas',
+      'Coordinadora de Postgrado (Universidad Europea de Madrid)',
+      'Autora/investigadora en conservación (Journal for Nature Conservation)',
+      'Directora de ATC consultora estratégica',
+    ],
+    image: {
+      src: '~/assets/images/users/fvi-angela-martin.webp',
+      alt: 'Ángela Martín Méndez, Lic.',
+    },
+  },  
 };
