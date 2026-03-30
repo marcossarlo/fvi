@@ -7,263 +7,265 @@ import Alert from '~/components/ui/Alert.astro';
 ---
 
 <!-- 11. INSCRIPCION Y TASAS ACADÉMICAS *********************************** -->
-      <Content
-        id="inscripcion"
-        tagline="Inscripción y Tasas Académicas"
-        title="Inscripción"
-        subtitle="Para ser admitido al programa el aspirante deberá presentar:"
-        items={[
-          {
-            title: 'Solicitud',
-            description:
-              ' <a href="https://fondoverdeinstitute.com/docs/PostDoc-Solicitud-Inscripcion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">Solicitud de inscripción</a>.',
-            icon: 'tabler:file-text',
-          },
-          {
-            title: 'Título doctoral',
-            description: 'Copia del título doctoral (doctorado de nivel internacional, PhD o similar).',
-            icon: 'tabler:certificate',
-          },
-          {
-            title: 'Carta de intención',
-            description:
-              'Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Intencion.doc" class="text-primary hover:text-secondary underline underline-offset-2">carta de intención</a> que incluye motivación de postular al postdoc (400 palabras).',
-            icon: 'tabler:file-description',
-          },
-          {
-            title: 'Carta de recomendación',
-            description:
-              'Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Recomendacion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">carta de recomendación</a> de profesor y/o investigador del área científica nacional o internacional.',
-            icon: 'tabler:file-description',
-          },
-          {
-            title: 'CV',
-            description: 'Un breve CV resaltando su producción académica.',
-            icon: 'tabler:file-description',
-          },
-        ]}
-        image={{
-          src: '~/assets/images/postdocs/fvi-inscripcion.webp',
-          alt: 'Proceso de inscripción académica',
-        }}
+<Content
+  id="inscripcion"
+  tagline="Inscripción y Tasas Académicas"
+  title="Inscripción"
+  subtitle="Para ser admitido al programa el aspirante deberá presentar:"
+  items={[
+    {
+      title: 'Solicitud',
+      description:
+        ' <a href="https://fondoverdeinstitute.com/docs/PostDoc-Solicitud-Inscripcion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">Solicitud de inscripción</a>.',
+      icon: 'tabler:file-text',
+    },
+    {
+      title: 'Título doctoral',
+      description: 'Copia del título doctoral (doctorado de nivel internacional, PhD o similar).',
+      icon: 'tabler:certificate',
+    },
+    {
+      title: 'Carta de intención',
+      description:
+        'Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Intencion.doc" class="text-primary hover:text-secondary underline underline-offset-2">carta de intención</a> que incluye motivación de postular al postdoc (400 palabras).',
+      icon: 'tabler:file-description',
+    },
+    {
+      title: 'Carta de recomendación',
+      description:
+        'Una <a href="https://fondoverdeinstitute.com/docs/PostDoc-Carta-Recomendacion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">carta de recomendación</a> de profesor y/o investigador del área científica nacional o internacional.',
+      icon: 'tabler:file-description',
+    },
+    {
+      title: 'CV',
+      description: 'Un breve CV resaltando su producción académica.',
+      icon: 'tabler:file-description',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/postdocs/fvi-inscripcion.webp',
+    alt: 'Proceso de inscripción académica',
+  }}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+  </Fragment>
+</Content>
+<Features2
+  subtitle="Adicionalmente deberá integrar a su postulación, según corresponda:"
+  columns={2}
+  items={[
+    {
+      title: 'Modalidad Intensivo (6 meses)',
+      description:
+        '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Resumen del artículo propuesto (máx. 300 palabras). Si es posible, inclusive, enviar el borrador del artículo. Indique en qué revista busca publicar (máximo 3 nombres).</li><li>Muestra de trabajo (artículo ya publicado, tesis doctoral, etc.).</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Plan-Trabajo-Postdoctoral.docx" class="text-primary hover:text-secondary underline underline-offset-2">Plan de trabajo</a>.</li></ul>',
+      icon: 'tabler:box-model-2',
+      classes: { panel: 'bg-teal-100/20 dark:bg-slate-800' },
+    },
+    {
+      title: 'Modalidad Flexible (12 meses)',
+      description:
+        '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Un proyecto de investigación enmarcado en las asignaturas de la programación del postdoctorado. Extensión máxima: 5000 palabras (excluyendo bibliografía).</li><li>Productos esperados (publicaciones, actividades, etc.).</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Plan-Trabajo-Postdoctoral.docx" class="text-primary hover:text-secondary underline underline-offset-2">Plan de trabajo</a>.</li></ul>',
+      icon: 'tabler:box-model',
+      classes: { panel: 'bg-teal-100/20 dark:bg-slate-800' },
+    },
+  ]}
+>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+  </Fragment>
+</Features2>
+<!-- Tasas Académicas ******** -->
+<HeroSection title="Tasas Académicas">
+  <Fragment slot="content">
+    <div class="overflow-x-auto mt-6 w-full max-w-4xl mx-auto shadow-md rounded-lg">
+      <!-- Tasas Académicas -->
+      <table
+        class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
       >
-        <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-      </Content>
-      <Features2
-        subtitle="Adicionalmente deberá integrar a su postulación, según corresponda:"
-        columns={2}
-        items={[
-          {
-            title: 'Modalidad Intensivo (6 meses)',
-            description:
-              '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Resumen del artículo propuesto (máx. 300 palabras). Si es posible, inclusive, enviar el borrador del artículo. Indique en qué revista busca publicar (máximo 3 nombres).</li><li>Muestra de trabajo (artículo ya publicado, tesis doctoral, etc.).</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Plan-Trabajo-Postdoctoral.docx" class="text-primary hover:text-secondary underline underline-offset-2">Plan de trabajo</a>.</li></ul>',
-            icon: 'tabler:school',
-          },
-          {
-            title: 'Modalidad Flexible (12 meses)',
-            description:
-              '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Un proyecto de investigación enmarcado en las asignaturas de la programación del postdoctorado. Extensión máxima: 5000 palabras (excluyendo bibliografía).</li><li>Productos esperados (publicaciones, actividades, etc.).</li><li><a href="https://fondoverdeinstitute.com/docs/PostDoc-Plan-Trabajo-Postdoctoral.docx" class="text-primary hover:text-secondary underline underline-offset-2">Plan de trabajo</a>.</li></ul>',
-            icon: 'tabler:school',
-          },
-        ]}
+        <thead class="border-none">
+          <tr class="border-none">
+            <th
+              rowspan="2"
+              class="p-3 md:p-4 align-middle text-base md:text-xl font-bold text-primary w-[40%] bg-transparent border-b-4 border-primary border-t-0 border-l-0 border-r-0"
+            >
+              Postdoctorado
+            </th>
+            <th
+              class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
+            >
+              Intensivo
+            </th>
+            <th
+              class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base opacity-90 border-l border-black/20 border-t-0 border-r-0 border-b-0"
+            >
+              Flexible
+            </th>
+          </tr>
+          <tr class="bg-primary text-white text-[10px] md:text-xs font-medium border-t border-slate-600">
+            <th class="p-1 border-r border-slate-600">(6 meses)</th>
+            <th class="p-1">(12 meses)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
+            <td
+              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 border-r border-black/10"
+              >Derechos de inscripción</td
+            >
+            <td
+              class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-x border-b border-gray-200 dark:border-slate-700"
+              >US$ 298</td
+            >
+            <td
+              class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-b border-gray-200 dark:border-slate-700"
+              >US$ 596</td
+            >
+          </tr>
+          <tr class="text-sm md:text-base">
+            <td
+              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 border-r border-black/10"
+              >Costo del Programa</td
+            >
+            <td
+              class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800 border-x border-gray-200 dark:border-slate-700"
+              >US$ 3198</td
+            >
+            <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800">US$ 3798</td
+            >
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pt-12 text-base md:text-xl">
+      Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del
+      Postdoctorado en 6 cuotas sin intereses de la siguiente forma:
+    </p>
+
+    <!-- Alternativas de Pago -->
+    <div class="overflow-x-auto mt-6 w-full max-w-5xl mx-auto shadow-md rounded-lg">
+      <table
+        class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
       >
-        <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-      </Features2>
-      <!-- Tasas Académicas ******** -->
-      <HeroSection title="Tasas Académicas">
-        <Fragment slot="content">
-          <div class="overflow-x-auto mt-6 w-full max-w-4xl mx-auto shadow-md rounded-lg">
-            <!-- Tasas Académicas -->
-            <table
-              class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
+        <thead class="border-none">
+          <tr class="border-none">
+            <th
+              rowspan="2"
+              class="p-3 md:p-4 align-middle text-primary font-bold text-center w-[20%] border-b-4 border-primary text-sm md:text-base border-t-0 border-l-0 border-r-0"
             >
-              <thead class="border-none">
-                <tr class="border-none">
-                  <th
-                    rowspan="2"
-                    class="p-3 md:p-4 align-middle text-base md:text-xl font-bold text-primary w-[40%] bg-transparent border-b-4 border-primary border-t-0 border-l-0 border-r-0"
-                  >
-                    Postdoctorado
-                  </th>
-                  <th
-                    class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
-                  >
-                    Intensivo
-                  </th>
-                  <th
-                    class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base opacity-90 border-l border-black/20 border-t-0 border-r-0 border-b-0"
-                  >
-                    Flexible
-                  </th>
-                </tr>
-                <tr class="bg-primary text-white text-[10px] md:text-xs font-medium border-t border-slate-600">
-                  <th class="p-1 border-r border-slate-600">(6 meses)</th>
-                  <th class="p-1">(12 meses)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
-                  <td
-                    class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 border-r border-black/10"
-                    >Derechos de inscripción</td
-                  >
-                  <td
-                    class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-x border-b border-gray-200 dark:border-slate-700"
-                    >US$ 298</td
-                  >
-                  <td
-                    class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-b border-gray-200 dark:border-slate-700"
-                    >US$ 596</td
-                  >
-                </tr>
-                <tr class="text-sm md:text-base">
-                  <td
-                    class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 border-r border-black/10"
-                    >Costo del Programa</td
-                  >
-                  <td
-                    class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800 border-x border-gray-200 dark:border-slate-700"
-                    >US$ 3198</td
-                  >
-                  <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800">US$ 3798</td
-                  >
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="pt-12 text-base md:text-xl">
-            Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del
-            Postdoctorado en 6 cuotas sin intereses de la siguiente forma:
-          </p>
-
-          <!-- Alternativas de Pago -->
-          <div class="overflow-x-auto mt-6 w-full max-w-5xl mx-auto shadow-md rounded-lg">
-            <table
-              class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
+              Modalidad del Postdoctorado
+            </th>
+            <th
+              colspan="2"
+              class="p-2 text-center text-white bg-primary font-bold text-sm md:text-base border-r border-slate-600"
             >
-              <thead class="border-none">
-                <tr class="border-none">
-                  <th
-                    rowspan="2"
-                    class="p-3 md:p-4 align-middle text-primary font-bold text-center w-[20%] border-b-4 border-primary text-sm md:text-base border-t-0 border-l-0 border-r-0"
-                  >
-                    Modalidad del Postdoctorado
-                  </th>
-                  <th
-                    colspan="2"
-                    class="p-2 text-center text-white bg-primary font-bold text-sm md:text-base border-r border-slate-600"
-                  >
-                    Costos del programa
-                  </th>
-                  <th
-                    class="p-2 text-center text-white bg-secondary font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
-                  >
-                    Alternativa 1: Al Contado
-                  </th>
-                  <th
-                    colspan="2"
-                    class="p-2 text-center text-white bg-secondary opacity-90 font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
-                  >
-                    Alternativa 2: Financiado
-                  </th>
-                </tr>
-                <tr class="bg-primary opacity-90 text-white border-t border-slate-600 font-medium">
-                  <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
-                    >Precio Normal</th
-                  >
-                  <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
-                    >Precio con Beca 50%</th
-                  >
-                  <th
-                    class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] bg-primary/80 leaders-tight"
-                    >(Descuento del 5%)</th
-                  >
-                  <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight"
-                    >Número de cuotas</th
-                  >
-                  <th class="p-1 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight border-none"
-                    >Cuota mensual</th
-                  >
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
-                  <td
-                    class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-center border-r border-black/10"
-                    >Intensivo</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-                    >US$ 3,198</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-                    >US$ 1,599</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
-                    >US$ 1,519</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
-                    >6</td
-                  >
-                  <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 267</td>
-                </tr>
-                <tr class="text-sm md:text-base">
-                  <td
-                    class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-center border-r border-black/10"
-                    >Flexible</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-                    >US$ 3,798</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-                    >US$ 1,899</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
-                    >US$ 1,804</td
-                  >
-                  <td
-                    class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
-                    >6</td
-                  >
-                  <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 317</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- Información adicional sobre costos -->
-          <WidgetWrapper containerClass="max-w-5xl ml-0 mr-auto mt-6 p-0 text-left items-start">
-            <Alert variant="warning" title="Importante">
-              <p>Existen cargos adicionales por derechos de examen (<strong>199 US$</strong>), este arancel incluye:</p>
-              <ul class="list-disc ml-6 mt-2 space-y-1">
-                <li>Revisión del Informe Final por parte del Director.</li>
-                <li>Defensa del Trabajo Final de Investigación.</li>
-              </ul>
+              Costos del programa
+            </th>
+            <th
+              class="p-2 text-center text-white bg-secondary font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
+            >
+              Alternativa 1: Al Contado
+            </th>
+            <th
+              colspan="2"
+              class="p-2 text-center text-white bg-secondary opacity-90 font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
+            >
+              Alternativa 2: Financiado
+            </th>
+          </tr>
+          <tr class="bg-primary opacity-90 text-white border-t border-slate-600 font-medium">
+            <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
+              >Precio Normal</th
+            >
+            <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
+              >Precio con Beca 50%</th
+            >
+            <th
+              class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] bg-primary/80 leaders-tight"
+              >(Descuento del 5%)</th
+            >
+            <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight"
+              >Número de cuotas</th
+            >
+            <th class="p-1 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight border-none"
+              >Cuota mensual</th
+            >
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
+            <td
+              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-center border-r border-black/10"
+              >Intensivo</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+              >US$ 3,198</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+              >US$ 1,599</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
+              >US$ 1,519</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
+              >6</td
+            >
+            <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 267</td>
+          </tr>
+          <tr class="text-sm md:text-base">
+            <td
+              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-center border-r border-black/10"
+              >Flexible</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+              >US$ 3,798</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
+              >US$ 1,899</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
+              >US$ 1,804</td
+            >
+            <td
+              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
+              >6</td
+            >
+            <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 317</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Información adicional sobre costos -->
+    <WidgetWrapper containerClass="max-w-5xl ml-0 mr-auto mt-6 p-0 text-left items-start">
+      <Alert variant="warning" title="Importante">
+        <p>Existen cargos adicionales por derechos de examen (<strong>199 US$</strong>), este arancel incluye:</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Revisión del Informe Final por parte del Director.</li>
+          <li>Defensa del Trabajo Final de Investigación.</li>
+        </ul>
 
-              <p>
-                Una vez defendido y aprobado el TFI, el Diploma de Postdoctorado y el Certificado de Estudios se envían
-                únicamente en formato electrónico.
-              </p>
+        <p>
+          Una vez defendido y aprobado el TFI, el Diploma de Postdoctorado y el Certificado de Estudios se envían
+          únicamente en formato electrónico.
+        </p>
 
-              <p>Este importe no incluye:</p>
-              <ul class="list-disc ml-6 mt-2 space-y-1">
-                <li>Precios por el trámite de legalización única o “Apostilla de La Haya”.</li>
-                <li>Gastos de envío a su país de residencia.</li>
-              </ul>
-            </Alert>
-          </WidgetWrapper>
-        </Fragment>
-        <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-      </HeroSection>
+        <p>Este importe no incluye:</p>
+        <ul class="list-disc ml-6 mt-2 space-y-1">
+          <li>Precios por el trámite de legalización única o “Apostilla de La Haya”.</li>
+          <li>Gastos de envío a su país de residencia.</li>
+        </ul>
+      </Alert>
+    </WidgetWrapper>
+  </Fragment>
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+  </Fragment>
+</HeroSection>
       <!-- Fin INSCRIPCION Y TASAS ACADÉMICAS ************************************ -->
