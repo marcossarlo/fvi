@@ -1,5 +1,5 @@
 ---
-import Hero from '~/components/widgets/Hero.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
 import Content from '~/components/widgets/Content.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -44,21 +44,39 @@ const tabs = [
 ---
 
 <Layout metadata={metadata} showSecondaryNav={false}>
-  <!-- Hero ********************************************** -->
-  <Hero
-    tagline="PostDoc"
+  <!-- HeroPrograms ********************************************** -->
+  <HeroPrograms
+    tagline="Convocatoria Abierta 2026"
+    subtitle="Los problemas ambientales requieren soluciones eficaces e innovadoras en los distintos ámbitos del medio ambiente."
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solicita información',
+        href: '#',
+        icon: 'tabler:mail-forward',
+        class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+      },
+      {
+        variant: 'secondary',
+        text: 'Ver Folleto Académico',
+        href: 'https://drive.usercontent.google.com/download?id=1BvjHpeuctXB0sxdbLSwWepcPrnV5GwrM&export=download',
+        icon: 'tabler:download',
+        class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+      },
+    ]}
     image={{
       src: '~/assets/images/postdocs/fvi-postdoc-ciencias-aplicadas-medio-ambiente.webp',
       alt: 'Posdoctorado en Ciencias Aplicadas al Medio Ambiente - Fondo Verde Institute',
     }}
   >
     <Fragment slot="title">
-      Posdoctorado en
+      Posdoctorado en <br />
       <span class="text-primary dark:text-accent"> Ciencias Aplicadas al Medio Ambiente</span>
     </Fragment>
-  </Hero>
+  </HeroPrograms>
 
   <!-- DatosEstadisticas -->
+
   <DatosEstadisticas />  
 
   <div class="relative max-w-[100vw] overflow-x-hidden">
