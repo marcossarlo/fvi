@@ -1,0 +1,277 @@
+---
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Content from '~/components/widgets/Content.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import DatosEstadisticas from '~/components/postdoctorado/DatosEstadisticas.astro';
+import Modalidades from '~/components/postdoctorado/Modalidades.astro';
+import Estructura from '~/components/postdoctorado/Estructura.astro';
+import ComoSeEstudia from '~/components/postdoctorado/ComoSeEstudia.astro';
+import Becas from '~/components/postdoctorado/Becas.astro';
+import ComoAplicar from '~/components/postdoctorado/ComoAplicar.astro';
+import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro';
+import Pagos from '~/components/postdoctorado/Pagos.astro';
+import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+
+const metadata = {
+  title: 'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+  description:
+    'Programa de Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el Trabajo. Investiga sobre prevención de riesgos, salud ocupacional y auditoría bajo la norma ISO 45001.',
+  keywords:
+    'postdoctorado seguridad y salud en el trabajo, sistemas de gestion SST, prevencion de riesgos laborales, salud ocupacional, auditoria SST, norma ISO 45001, investigacion postdoctoral, Fondo Verde Institute',
+};
+
+const tabs = [
+  { label: '1. Presentación', id: 'presentacion' },
+  { label: '2. El Postdoctorado', id: 'el-postdoctorado' },
+  { label: '3. Modalidades', id: 'modalidades' },
+  { label: '4. Estructura', id: 'estructura' },
+  { label: '5. Asignaturas', id: 'asignaturas' },
+  { label: '6. ¿Cómo se estudia?', id: 'como-se-estudia' },
+  { label: '7. Claustro', id: 'claustro' },
+  { label: '8. Certificación', id: 'certificacion' },
+  { label: '9. Becas', id: 'becas' },
+  { label: '10. ¿Cómo aplicar?', id: 'como-aplicar' },
+  { label: '11. Inscripción', id: 'inscripcion' },
+  { label: '12. Pagos', id: 'pagos' },
+  { label: '13. Solicitudes', id: 'solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+  <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+    tagline="Convocatoria Abierta 2026"
+    subtitle="Los nuevos desafíos de salud y seguridad requieren la <strong>gestión de los perfiles de riesgo</strong> a través de un proceso sistemático"
+    actions={[
+        {
+        variant: 'primary',
+        text: 'Solicita información',
+        href: '#solicitudes',
+        icon: 'tabler:mail-forward',
+        class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+        variant: 'secondary',
+        text: 'Ver Folleto Académico',
+        href: 'https://drive.google.com/uc?export=download&id=1xuTMKBo6RJPlCIoZAwt0VKJxKJGp6TQO',
+        icon: 'tabler:download',
+        class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+    ]}
+    image={{
+        src: '~/assets/images/postdocs/fvi-postdoc-sistemas-gestion-seguridad-salud-trabajo.webp',
+        alt: 'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+    }}
+    >
+    <Fragment slot="title">
+        Posdoctorado en <br />
+        <span class="text-primary dark:text-accent"> Sistemas de Gestión de la <br />Seguridad y Salud en el trabajo</span>
+    </Fragment>
+    </HeroPrograms>
+
+  <!-- DatosEstadisticas -->
+
+  <DatosEstadisticas />  
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+
+        <!-- 1. PRESENTACIÓN *********************************** -->
+        <Content
+        id="presentacion"
+        tagline="Presentación"
+        title="Erick Brenes Mata, PhD"
+        subtitle="Director del Postdoctorado"
+        items={[
+            {
+            title: 'Programa en extenso',
+            icon: 'tabler:download',
+            callToAction: {
+                text: 'Descargar el Programa en Extenso',
+                href: 'https://drive.google.com/uc?export=download&id=1xuTMKBo6RJPlCIoZAwt0VKJxKJGp6TQO',
+                variant: 'primary',
+            },
+            },
+        ]}
+        image={{
+            src: '~/assets/images/users/fvi-erick-brenes.webp',
+            alt: 'Erick Brenes Mata, PhD',
+        }}
+        >
+        <Fragment slot="content">
+            <h3 class="text-xl font-semibold tracking-tight dark:text-white mb-2">
+            Los nuevos desafíos de salud y seguridad requieren la <span class="text-primary">gestión de los perfiles de riesgo</span> a través de un proceso sistemático.
+            </h3>
+            <p class="pb-1">La aplicación de las exigencias impuestas en materia de seguridad, salud y medio ambiente de trabajo, a nivel nacional e internacional, han supuesto un considerable esfuerzo, tanto desde la administración como desde las diversas instituciones públicas y privadas, con el objeto elemental de lograr un mayor nivel de protección frente a los riesgos derivados del trabajo y alcanzar una correcta implantación de sistemas de gestión de seguridad y salud en las organizaciones. En ese contexto, el programa tiene como objetivo fomentar en los postdoctorados la capacidad de funcionar en un entorno internacional al equiparlos con amplios conocimientos y habilidades para fijar y promulgar las políticas y los procedimientos operativos necesarios para mitigar el riesgo y mejorar el rendimiento empresarial a través de un entorno de trabajo más seguro y una plantilla más sana.</p>
+            <p class="pb-1">El postdoctorado ofrece a los candidatos la oportunidad de investigar en las áreas de la seguridad y salud en el trabajo (SST) dentro de un entorno estimulante de colegas investigadores y una amplia red de socios regionales e internacionales, con el objetivo de proporcionar un marco de referencia para gestionar los riesgos y oportunidades para la SST en organizaciones de todos los tamaños, sectores y regiones.</p>
+        </Fragment>
+
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+        </Content>
+
+        <!-- 2. EL POSTDOCTORADO ******************************* -->
+        <Features2
+        id="el-postdoctorado"
+        tagline="El Postdoctorado"
+        title="¿Por qué hacer el postdoctorado?"
+        subtitle='La prevención de accidentes laborales y enfermedades ocupacionales, junto con el cumplimiento de la normativa en seguridad, salud y medio ambiente, han convertido estos aspectos en prioridades para el ámbito empresarial. En este contexto, el Programa de <span class="text-primary font-semibold">Posdoctorado en</span> <span class="text-secondary font-semibold">Sistemas de Gestión de la Seguridad y Salud en el trabajo</span> ofrece un espacio de investigación y diálogo científico sobre prácticas preventivas y auditorías de alto valor, alineadas con los principios del desarrollo sostenible. Dirigido a doctores de toda Iberoamérica y abierto a diversas disciplinas, el programa —<strong>con una duración de seis meses a un año</strong>— se desarrolla mediante un plan de actividades cuyo resultado esperado es la publicación de un artículo arbitrado por dos jurados, uno de ellos internacional, y la presentación de un informe que evidencie el cumplimiento de las tareas previstas.'
+        columns={2}
+        items={[
+            {
+            title: 'Objetivos del Programa',
+            description:
+                'El Programa de <span class="text-primary font-semibold">Posdoctorado en</span> <span class="text-secondary font-semibold">Sistemas de Gestión de la Seguridad y Salud en el trabajo</span>, se orientará de modo particular a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Favorecer nuevos desarrollos académicos para doctores de todo el continente, creando un ámbito estimulante para la investigación y el intercambio científico sobre las mejores prácticas preventivas y la auditoría de seguridad y salud ocupacional de alto valor agregado alineado con los principios del Desarrollo Sostenible.</li><li>Promover investigación que contribuya al fortalecimiento de comunidades académicas a nivel nacional e internacional, que permitirán diseñar, dirigir, desarrollar y evaluar investigaciones en seguridad y salud en el trabajo de tipos operativos y aplicados.</li><li>Desarrollar investigación exhaustiva en las áreas de la seguridad y salud en el trabajo como elemento clave para la generación de conocimiento sobre las condiciones de trabajo y la afectación a la salud.</li><li>Proporcionar a través de la enseñanza y la investigación, los elementos conceptuales y prácticos para planificar, ejecutar, e implantar un Sistema de Gestión de SST en base a la Norma ISO 45001:2018.</li></ul>',
+            icon: 'tabler:circle-plus',
+            },
+            {
+            title: 'Perfil del destinatario',
+            description:
+                'El programa está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Doctores de toda Iberoamérica que están a la vanguardia de los desafíos de la investigación global, la administración del espectro de interacciones salud-medioambiente-sociedad-economía, la teoría de los Sistemas de Gestión de Seguridad y Salud en el Trabajo e introducir un sistema de este tipo en diferentes tipos de organizaciones.</li><li>Doctores con un alto nivel de formación, dada la complejidad y responsabilidad que se asume con el ejercicio profesional en un entorno como el de la salud y seguridad en el trabajo.</li><li>Estudiantes nacionales e internacionales con grado doctoral (PhD) o equivalente en ciencias médicas, ingeniería industrial, civil, química aplicada, ciencias ambientales o carreras afines u otras áreas.</li><li>Profesionales nacionales e internacionales con título doctoral, que desarrollen tareas académicas y/o se dediquen a la medicina ocupacional o actividades profesionales relacionadas a la gestión de la seguridad y salud en el trabajo, tanto a nivel de administraciones públicas como en el sector privado.</li><li>Gerentes, directores y funcionarios con Título Doctoral tanto del sector público y privado que participan en labores de planeamiento, monitoreo, asistencia técnica y control de sistemas de seguridad y salud en el trabajo.</li></ul>',
+            icon: 'tabler:users',
+            },
+        ]}
+        />
+
+        <!-- 3. MODALIDADES -->
+        <Modalidades />
+
+        <!-- 4. ESTRUCTURA -->
+        <Estructura />
+
+        <!-- 5. ASIGNATURAS ************************************ -->
+        <HeroSection
+            id="asignaturas"
+            tagline="Asignaturas"
+            title="Asignaturas de la Programación"
+            image={{
+                src: '~/assets/images/postdocs/fvi-postdoc-SGSST-Asignaturas.webp',
+                alt: 'Asignaturas del programa de Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+            }}
+            >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+            <Fragment slot="subtitle">
+                Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
+                desarrollar algún aspecto que le resulte de interés.
+            </Fragment>
+        </HeroSection>
+
+        <!-- 6. CÓMO SE ESTUDIA? -->
+        <ComoSeEstudia />
+
+        <!-- 7. CALUSTRO *************************************** -->
+        <Content
+            id="claustro"
+            tagline="Claustro"
+            title="Claustro Académico"
+            items={[
+                {
+                title: 'Staff académico especializado',
+                description:
+                    'El programa cuenta con un equipo de alto nivel, conformado por docentes universitarios e investigadores expertos en cada materia de conocimiento.',
+                icon: 'tabler:users-group',
+                },
+                {
+                title: 'Profesionales en activo',
+                description:
+                    'Participan especialistas provenientes de la administración pública y de la empresa privada, aportando experiencia práctica en la gestión de proyectos.',
+                icon: 'tabler:briefcase',
+                },
+                {
+                title: 'Colaboración institucional',
+                description:
+                    'Se suman profesionales de primer nivel de empresas, organismos oficiales e instituciones, directamente implicados en las áreas de conocimiento que abarca el posdoctorado.',
+                icon: 'tabler:building',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/fvi-claustro-academico.webp',
+                alt: 'Claustro académico de Fondo Verde',
+            }}
+            >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </Content>
+        <!-- Miembros del claustro -->
+        {
+        ['erick-brenes','loraine-giraud','gonzalo-fuente','angel-guillemes','alberto-jimenez'].map((id) => (
+            <FacultyMember {...faculty[id]}>
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+            </Fragment>
+            </FacultyMember>
+        ))
+        }
+
+        <!-- 8. CERTIFICACIÓN ********************************** -->
+        <Steps
+        id="certificacion"
+        tagline="Certificación"
+        title="Evaluación y certificación"
+        subtitle="Una vez cumplido y evaluado el Informe del Plan de Actividades y superado el Trabajo Final de Investigación, se expedirá un <strong>Diploma que acredite haber cursado el Programa de Postdoctorado</strong>."
+        items={[
+            {
+            title: 'Diploma Oficial <br> <span class="font-normal">y Reconocimiento Institucional</span>',
+            description: `El Diploma de Postdoctorado es expedido por <strong>Fondo Verde</strong>, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), en materia de Formación Profesional Ocupacional, con número <strong>11001</strong>.`,
+            icon: 'tabler:certificate',
+            },
+            {
+            title: 'Apostillado <br> <span class="font-normal">y Validez Internacional del Diploma</span>',
+            description:
+                'Desde España se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar el Diploma en un país fuera de España.',
+            icon: 'tabler:certificate',
+            },
+        ]}
+        classes={{ container: 'max-w-4xl' }}
+        />
+        <Features2
+            columns={2}
+            items={[
+            {
+            title: 'Requisitos para la Certificación PMPA™',
+            description:
+                'Los participantes que pretendan obtener la licencia <span class="font-bold text-primary">PMA™ Auditor Certificado en Sistemas de Gestión de la Salud y Seguridad en el Trabajo</span>, tienen que acreditar los requisitos de certificación relacionados con la credencial seleccionada.',
+            icon: 'tabler:certificate-2',
+            },
+            {
+            title: 'Licencia como Instructor PMPA™',
+            description:
+                'Los solicitantes que no cumplen los requisitos de experiencia pueden ser elegibles para una licencia <span class="font-bold text-primary">PMA™ Auditor Júnior</span>.',
+            icon: 'tabler:certificate-2',
+            },
+            ]}
+            classes={{ container: 'max-w-4xl' }}
+        />
+
+        <!-- 9. BECAS -->
+        <Becas />
+
+        <!-- 10. CÓMO APLICAR? -->
+        <ComoAplicar />
+
+        <!-- 11. INSCRIPCIÓN Y TASAS -->
+        <InscripcionTasas />
+
+        <!-- 12. PAGOS -->
+        <Pagos />
+
+        <!-- 13. SOLICITUDES -->
+        <Solicitudes />
+
+    </div>
+    </div>
+</Layout>
