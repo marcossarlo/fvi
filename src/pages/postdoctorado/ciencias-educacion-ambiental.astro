@@ -1,0 +1,277 @@
+---
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Content from '~/components/widgets/Content.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import DatosEstadisticas from '~/components/postdoctorado/DatosEstadisticas.astro';
+import Modalidades from '~/components/postdoctorado/Modalidades.astro';
+import Estructura from '~/components/postdoctorado/Estructura.astro';
+import ComoSeEstudia from '~/components/postdoctorado/ComoSeEstudia.astro';
+import Becas from '~/components/postdoctorado/Becas.astro';
+import ComoAplicar from '~/components/postdoctorado/ComoAplicar.astro';
+import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro';
+import Pagos from '~/components/postdoctorado/Pagos.astro';
+import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+
+const metadata = {
+    title: 'Posdoctorado en Ciencias de la Educación Ambiental',
+    description:
+        'Programa de Posdoctorado en Ciencias de la Educación Ambiental dirigido a doctores de Iberoamérica. Especialízate en sostenibilidad, investigación y educación científica.',
+    keywords:
+        'Posdoctorado, Educación Ambiental, Desarrollo Sostenible, Ciencias Ambientales, Investigación Ambiental, Sostenibilidad, Pedagogía Ambiental',
+};
+
+const tabs = [
+    { label: '1. Presentación', id: 'presentacion' },
+    { label: '2. El Postdoctorado', id: 'el-postdoctorado' },
+    { label: '3. Modalidades', id: 'modalidades' },
+    { label: '4. Estructura', id: 'estructura' },
+    { label: '5. Asignaturas', id: 'asignaturas' },
+    { label: '6. ¿Cómo se estudia?', id: 'como-se-estudia' },
+    { label: '7. Claustro', id: 'claustro' },
+    { label: '8. Certificación', id: 'certificacion' },
+    { label: '9. Becas', id: 'becas' },
+    { label: '10. ¿Cómo aplicar?', id: 'como-aplicar' },
+    { label: '11. Inscripción', id: 'inscripcion' },
+    { label: '12. Pagos', id: 'pagos' },
+    { label: '13. Solicitudes', id: 'solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+<!-- HeroPrograms ********************************************** -->
+<HeroPrograms
+    tagline="Convocatoria Abierta 2026"
+    subtitle="Proyectos interdisciplinarios de medio ambiente y la naturaleza requiere <strong>especialistas en educación científica</strong> para abordar desafíos ambientales clave"
+    actions={[
+    {
+        variant: 'primary',
+        text: 'Solicita información',
+        href: '#solicitudes',
+        icon: 'tabler:mail-forward',
+        class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+    },
+    {
+        variant: 'secondary',
+        text: 'Ver Folleto Académico',
+        href: 'https://drive.google.com/uc?export=download&id=1m0f07XwmtOVF6yCNX3yxZADUbMkIMIPk',
+        icon: 'tabler:download',
+        class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+    },
+    ]}
+    image={{
+    src: '~/assets/images/postdocs/fvi-postdoc-ciencias-educacion-ambiental.webp',
+    alt: 'Posdoctorado en Ciencias de la Educación Ambiental',
+    }}
+>
+    <Fragment slot="title">
+    Posdoctorado en <br />
+    <span class="text-primary dark:text-accent"> Ciencias de la <br />Educación Ambiental</span>
+    </Fragment>
+</HeroPrograms>
+
+<!-- DatosEstadisticas -->
+
+<DatosEstadisticas />  
+
+<div class="relative max-w-[100vw] overflow-x-hidden">
+    <!-- Desktop Sidebar & Mobile Floating Pill -->
+    <ProgramTOC tabs={tabs} />
+    
+    <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+    <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+
+    <!-- 1. PRESENTACIÓN *********************************** -->
+    <Content
+        id="presentacion"
+        tagline="Presentación"
+        title="Yordanis Puerta, PhD"
+        subtitle="Director del Postdoctorado"
+        items={[
+        {
+            title: 'Programa en extenso',
+            icon: 'tabler:download',
+            callToAction: {
+            text: 'Descargar el Programa en Extenso',
+            href: 'https://drive.google.com/uc?export=download&id=1m0f07XwmtOVF6yCNX3yxZADUbMkIMIPk',
+            variant: 'primary',
+            },
+        },
+        ]}
+        image={{
+        src: '~/assets/images/users/fvi-yordanis-puerta.webp',
+        alt: 'Yordanis Puerta, Director del Postdoctorado en Ciencias de la Educación Ambiental',
+        }}
+    >
+        <Fragment slot="content">
+        <h3 class="text-xl font-semibold tracking-tight dark:text-white mb-2">
+            Proyectos interdisciplinarios de medio ambiente y la naturaleza requiere <span class="text-primary">especialistas en educación científica para abordar desafíos ambientales clave</span>.
+        </h3>
+        <p class="pb-1">La Educación Ambiental para la Sostenibilidad es un proceso innovador e interdisciplinario que requiere enfoques participativos y holísticos, contempla una agenda transformadora que requiere, y a menudo conduce a, un currículum profesional, así como a un cambio estructural. En ese contexto, el programa tiene como objetivo proporcionar una comprensión profunda de cómo un enfoque educativo, que no solo considera la mejora ambiental inmediata como un objetivo real, sino que también aborda la educación para la "sostenibilidad" a largo plazo, pueden aplicarse a la investigación y abordar desafíos ambientales clave.</p>
+        <p class="pb-1">Trabajarás con un equipo dinámico de investigadores que exploran varias facetas de la educación ambiental. Los estudios incluyen investigación en ciencias y educación ambiental sobre temas actuales en pedagogía científica, formación docente, currículo e integración de tecnología educativa, el rendimiento académico y la cultura escolar, y los métodos innovadores para llegar a audiencias diversas.</p>
+        </Fragment>
+
+        <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+    </Content>
+
+    <!-- 2. EL POSTDOCTORADO ******************************* -->
+    <Features2
+        id="el-postdoctorado"
+        tagline="El Postdoctorado"
+        title="¿Por qué hacer el postdoctorado?"
+        subtitle='Dada la creciente preocupación por los problemas ambientales, se han realizado esfuerzos a nivel global, para aumentar la atención prestada a la sostenibilidad ambiental. El <span class="text-primary font-semibold">Posdoctorado en</span> <span class="text-secondary font-semibold">Ciencias de la Educación Ambiental</span>, creará un ámbito estimulante para la investigación y el intercambio científico en ciencias y educación ambiental sobre metodologías de enseñanza y diseños educativos efectivos y la educación científica en ciencias ambientales alineada con los principios del Desarrollo Sostenible. El Programa está dirigido a Doctores de toda Iberoamérica y de cualquier disciplina, con una <strong>duración mínima de 6 meses y máxima de 1 año</strong> y consiste en la realización de un plan de actividades, cuyo resultado debe ser la publicación de un artículo arbitrado por dos jurados, uno de ellos internacional y la presentación de un informe del cumplimiento de las tareas previstas en el plan.'
+        columns={2}
+        items={[
+        {
+            title: 'Objetivos del Programa',
+            description:
+            'El Programa de <span class="text-primary font-semibold">Posdoctorado en</span> <span class="text-secondary font-semibold">Ciencias de la Educación Ambiental</span>, se orientará de modo particular a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Favorecer nuevos desarrollos académicos para doctores de todo el continente, creando un ámbito estimulante para la investigación y el intercambio científico sobre metodologías de enseñanza y diseños educativos efectivos y la educación científica en ciencias ambientales alineada con los principios del Desarrollo Sostenible.</li><li>Proporcionar una comprensión profunda de cómo un enfoque educativo, que no solo considera la mejora ambiental inmediata como un objetivo real, sino que también aborda la educación para la "sostenibilidad" a largo plazo, pueden aplicarse a la investigación y abordar desafíos ambientales clave.</li><li>Diseñar y analizar estudios de investigación en ciencias y educación ambiental sobre pedagogía científica, formación docente, currículo e integración de tecnología educativa.</li><li>Realizar investigaciones en ciencias y educación ambiental en los niveles primario, secundario y postsecundario en estrecha colaboración con el profesorado en todos los aspectos del proceso de investigación.</li></ul>',
+            icon: 'tabler:circle-plus',
+        },
+        {
+            title: 'Perfil del destinatario',
+            description:
+            'El programa está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Doctores de toda Iberoamérica que están a la vanguardia de los desafíos de la investigación global, la administración del espectro de interacción social con los sistemas ecológicos, la teoría y la práctica en el campo de la educación ambiental y de sostenibilidad.</li><li>Doctores con un alto nivel de formación y capacidad para ver la investigación y la práctica para interactuar con la teoría y los modos de práctica en la educación para la sostenibilidad.</li><li>Estudiantes nacionales e internacionales con un doctorado (PhD) o equivalente, preferentemente en el campo de las ciencias naturales (Biología, Ciencias Ambientales, Ingeniería Forestal), o en el campo de las ciencias sociales y de la educación (Pedagogía, Psicopedagogía, Psicología, Sociología).</li><li>Educadores en activo nacionales e internacionales, que poseen certificación doctoral y deseen un programa de estudio orientado a la educación ambiental experimental en la sociedad global, el desarrollo sostenible en la sociedad del riesgo y el papel de la educación ambiental como factor de cambio.</li><li>Administradores de recursos naturales con título doctoral que trabajan para integrar efectivamente la educación ambiental y los saberes necesarios para educar en la complejidad</li></ul>',
+            icon: 'tabler:users',
+        },
+        ]}
+    />
+
+    <!-- 3. MODALIDADES -->
+    <Modalidades />
+
+    <!-- 4. ESTRUCTURA -->
+    <Estructura />
+
+    <!-- 5. ASIGNATURAS ************************************ -->
+    <HeroSection
+        id="asignaturas"
+        tagline="Asignaturas"
+        title="Asignaturas de la Programación"
+        image={{
+        src: '~/assets/images/postdocs/fvi-postdoc-CEA-Asignaturas.webp',
+        alt: 'Asignaturas del programa de Posdoctorado en Ciencias de la Educación Ambiental',
+        }}
+    >
+        <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+        <Fragment slot="subtitle">
+        Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
+        desarrollar algún aspecto que le resulte de interés.
+        </Fragment>
+    </HeroSection>
+
+    <!-- 6. CÓMO SE ESTUDIA? -->
+    <ComoSeEstudia />
+
+    <!-- 7. CALUSTRO *************************************** -->
+    <Content
+        id="claustro"
+        tagline="Claustro"
+        title="Claustro Académico"
+        items={[
+        {
+            title: 'Staff académico especializado',
+            description:
+            'El programa cuenta con un equipo de alto nivel, conformado por docentes universitarios e investigadores expertos en cada materia de conocimiento.',
+            icon: 'tabler:users-group',
+        },
+        {
+            title: 'Profesionales en activo',
+            description:
+            'Participan especialistas provenientes de la administración pública y de la empresa privada, aportando experiencia práctica en la gestión de proyectos.',
+            icon: 'tabler:briefcase',
+        },
+        {
+            title: 'Colaboración institucional',
+            description:
+            'Se suman profesionales de primer nivel de empresas, organismos oficiales e instituciones, directamente implicados en las áreas de conocimiento que abarca el posdoctorado.',
+            icon: 'tabler:building',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/fvi-claustro-academico.webp',
+        alt: 'Claustro académico de Fondo Verde',
+        }}
+    >
+        <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+    </Content>
+    <!-- Miembros del claustro -->
+    {
+        ['yordanis-puerta', 'loraine-giraud', 'alberto-jimenez', 'angel-guillemes', 'erick-brenes'].map((id) => (
+        <FacultyMember {...faculty[id]}>
+            <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+            </Fragment>
+        </FacultyMember>
+        ))
+    }
+
+    <!-- 8. CERTIFICACIÓN ********************************** -->
+    <Steps
+        id="certificacion"
+        tagline="Certificación"
+        title="Evaluación y certificación"
+        subtitle="Una vez cumplido y evaluado el Informe del Plan de Actividades y superado el Trabajo Final de Investigación, se expedirá un <strong>Diploma que acredite haber cursado el Programa de Postdoctorado</strong>."
+        items={[
+        {
+            title: 'Diploma Oficial <br> <span class="font-normal">y Reconocimiento Institucional</span>',
+            description: `El Diploma de Postdoctorado es expedido por <strong>Fondo Verde</strong>, inscrito en el Registro de Entidades Colaboradoras de la Junta de Castilla y León (España), en materia de Formación Profesional Ocupacional, con número <strong>11001</strong>.`,
+            icon: 'tabler:certificate',
+        },
+        {
+            title: 'Apostillado <br> <span class="font-normal">y Validez Internacional del Diploma</span>',
+            description:
+            'Desde España se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar el Diploma en un país fuera de España.',
+            icon: 'tabler:certificate',
+        },
+        ]}
+        classes={{ container: 'max-w-4xl' }}
+    />
+    <Features2
+        columns={2}
+        items={[
+        {
+            title: 'Requisitos para la Certificación PMPA™',
+            description:
+            'Los participantes que pretendan obtener la licencia <strong>PMA™ Educador Ambiental Certificado</strong>, tienen que acreditar los requisitos de certificación relacionados con la credencial seleccionada.',
+            icon: 'tabler:certificate-2',
+        },
+        {
+            title: 'Licencia como Instructor PMPA™',
+            description:
+            'Los solicitantes que no cumplen los requisitos de experiencia pueden ser elegibles para una licencia <strong>PMA™ Asistente de Educador Autorizado</strong>.',
+            icon: 'tabler:certificate-2',
+        },
+        ]}
+        classes={{ container: 'max-w-4xl' }}
+    />
+
+    <!-- 9. BECAS -->
+    <Becas />
+
+    <!-- 10. CÓMO APLICAR? -->
+    <ComoAplicar />
+
+    <!-- 11. INSCRIPCIÓN Y TASAS -->
+    <InscripcionTasas />
+
+    <!-- 12. PAGOS -->
+    <Pagos />
+
+    <!-- 13. SOLICITUDES -->
+    <Solicitudes />
+
+    </div>
+</div>
+</Layout>
