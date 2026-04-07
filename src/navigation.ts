@@ -1,4 +1,3 @@
-import test from 'node:test';
 import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
 
 // Barra secundaria debajo del navbar principal
@@ -90,35 +89,44 @@ export const headerData = {
       ],
     },
     {
-      text: 'Pages',
+      text: 'PhD',
+      href: getPermalink('/phd'),
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          text: 'Doctorado en Sostenibilidad',
+          href: getPermalink('/phd/sostenibilidad'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'Doctorado en Conservación y Restauración del Medio Natural',
+          href: getPermalink('/phd/conservacion-restauracion-medio-natural'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: 'Doctorado en Proyectos: Línea de Investigación en Medio Ambiente',
+          href: getPermalink('/phd/proyectos-investigacion-medio-ambiente'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
+          text: 'Doctorado en Administración de Negocios Sostenibles',
+          href: getPermalink('/phd/administracion-negocios-sostenibles'),
         },
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
+          text: 'Doctorado en Educación Ambiental',
+          href: getPermalink('/phd/educacion-ambiental'),
         },
         {
-          text: 'Terms',
-          href: getPermalink('/terms'),
+          text: 'Doctorado en Paisaje y Ambiente',
+          href: getPermalink('/phd/paisaje-ambiente'),
         },
         {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'Doctorado en Ecoturismo y Turismo Sostenible',
+          href: getPermalink('/phd/ecoturismo-turismo-sostenible'),
+        },
+        {
+          text: 'Doctorado en Urbanismo y Arquitectura Sostenible',
+          href: getPermalink('/phd/urbanismo-arquitectura-sostenible'),
+        },
+        {
+          text: 'Doctorado en Energías Renovables',
+          href: getPermalink('/phd/energias-renovables'),
         },
       ],
     },
