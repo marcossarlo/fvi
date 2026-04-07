@@ -1,0 +1,68 @@
+---
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+
+const metadata = {
+    title: 'TITLE',
+    description:
+        'DESCRIPTION.',
+    keywords:
+        'KEYWOARDS',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'destinatarios', label: '2. Destinatarios' },
+    { id: 'objetivos', label: '3. Objetivos' },
+    { id: 'investigacion', label: '4. Investigación' },
+    { id: 'asignaturas', label: '5. Asignaturas' },
+    { id: 'proyecto', label: '6. Proyecto' },
+    { id: 'contenidos', label: '7. Contenidos' },
+    { id: 'metodologia', label: '8. Metodología' },
+    { id: 'profesorado', label: '9. Profesorado' },
+    { id: 'beneficios', label: '10. Beneficios' },
+    { id: 'campos-de-accion', label: '11. Campos de Acción' },
+    { id: 'titulacion', label: '12. Titulación' },
+    { id: 'becas', label: '13. Becas' },
+    { id: 'inscripcion', label: '14. Inscripción' },
+    { id: 'medios-de-pago', label: '15. Medios de Pago' },
+    { id: 'solicitudes', label: '16. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="SUBTITLE <strong>CONTENT</strong>"
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'URL_FOLLETO',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/postdocs/fvi-postdoc-ciencias-educacion-ambiental.webp',
+        alt: 'ALT',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Sostenibilidad</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+</Layout>
