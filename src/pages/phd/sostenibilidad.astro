@@ -1,7 +1,10 @@
 ---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
 
 const metadata = {
     title: 'TITLE',
@@ -13,21 +16,20 @@ const metadata = {
 
 const tabs = [
     { id: 'presentacion', label: '1. Presentación' },
-    { id: 'destinatarios', label: '2. Destinatarios' },
-    { id: 'objetivos', label: '3. Objetivos' },
-    { id: 'investigacion', label: '4. Investigación' },
-    { id: 'asignaturas', label: '5. Asignaturas' },
-    { id: 'proyecto', label: '6. Proyecto' },
-    { id: 'contenidos', label: '7. Contenidos' },
-    { id: 'metodologia', label: '8. Metodología' },
-    { id: 'profesorado', label: '9. Profesorado' },
-    { id: 'beneficios', label: '10. Beneficios' },
-    { id: 'campos-de-accion', label: '11. Campos de Acción' },
-    { id: 'titulacion', label: '12. Titulación' },
-    { id: 'becas', label: '13. Becas' },
-    { id: 'inscripcion', label: '14. Inscripción' },
-    { id: 'medios-de-pago', label: '15. Medios de Pago' },
-    { id: 'solicitudes', label: '16. Solicitudes' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'contenidos', label: '6. Contenidos' },
+    { id: 'metodologia', label: '7. Metodología' },
+    { id: 'profesorado', label: '8. Profesorado' },
+    { id: 'beneficios', label: '9. Beneficios' },
+    { id: 'campos-de-accion', label: '10. Campos de Acción' },
+    { id: 'titulacion', label: '11. Titulación' },
+    { id: 'becas', label: '12. Becas' },
+    { id: 'inscripcion', label: '13. Inscripción' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
 ];
 ---
 
@@ -65,4 +67,74 @@ const tabs = [
 
     <!-- DatosEstadisticas -->
     <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title="DIRECTOR, PhD"
+                subtitle="Director del Postdoctorado"
+                items={[
+                {
+                    title: 'Programa en extenso',
+                    icon: 'tabler:download',
+                    callToAction: {
+                    text: 'Descargar el Programa en Extenso',
+                    href: 'URL_FOLLETO',
+                    variant: 'primary',
+                    },
+                },
+                ]}
+                image={{
+                src: '~/assets/images/users/fvi-yordanis-puerta.webp',
+                alt: 'Yordanis Puerta, Director del Postdoctorado en Ciencias de la Educación Ambiental',
+                }}
+            >
+                <Fragment slot="content">
+                    <h3 class="text-xl font-semibold tracking-tight dark:text-white mb-2">
+                        TEXT_1 <span class="text-primary">TEXT_2</span>.
+                    </h3>
+                    <p class="pb-1">PARRAFO_1</p>
+                    <p class="pb-1">PARRAFO_2</p>
+                    <p class="pb-1">PARRAFO_3</p>
+                </Fragment>
+
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='TEXT. El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">DOCTORADO</span>, TEXT.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Los objetivos específicos del Doctorado son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>VIÑETA.</li></ul>',
+                    icon: 'tabler:circle-plus',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>VIÑETA</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+        </div>
+
+    </div>
+
 </Layout>
