@@ -1,0 +1,55 @@
+---
+import HeroSection from '~/components/widgets/HeroSection.astro';
+---
+
+<!-- 5. PROYECTO DE TESIS DOCTORAL -->
+<!-- Año 0 -->
+<HeroSection
+    id="proyecto"
+    tagline="Proyecto"
+    title='Proyecto de Tesis Doctoral <br /><span class="text-primary">Año 0</span>'
+    subtitle='El doctorando al momento de inscribirse debe entregar una <strong>Carta de Motivación Académica</strong>, que exprese entre otras cosas ¿cuál es el área de investigación (o conocimiento) que desarrollará su tesis?. La carta, tendrá un mínimo de 150 palabras y sirve de pauta a los tutores asignados para conocer el perfil de los doctorandos.'
+    image={{
+        src: '~/assets/images/doctorados/fvi-PTD-Anio-0.webp',
+        alt: 'Imagen del proceso de elaboración del proyecto de tesis doctoral durante el año 0',
+    }}
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+</HeroSection>
+
+<!-- Año 1 -->
+<HeroSection
+    title='<span class="text-primary">Año 1</span>'
+    subtitle='<strong>Durante el primer año de doctorado</strong>, el estudiante deberá presentar su proyecto de tesis doctoral, según la siguiente programación'
+    image={{
+        src: '~/assets/images/doctorados/fvi-PTD-Anio-1.webp',
+        alt: 'Imagen del proceso de elaboración del proyecto de tesis doctoral durante el año 1',
+    }}
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+    <Fragment slot="content">
+        <div class="text-lg text-left space-y-4 px-4 md:px-8 text-muted dark:text-slate-400">
+            <p>En el <strong>plazo máximo de tres meses</strong>, la Comisión Académica del Doctorado asignará a cada doctorando un <strong>director de tesis</strong>, que podrá coincidir con el tutor.</p>
+            <p>Durante un <strong>periodo de 9 meses</strong>, el doctorando elaborará un <strong>Trabajo de Investigación</strong> (sujeto a revisiones de avance cada 3 meses), enfocado al <strong>análisis del estado del arte</strong> (o cuestión) del área de conocimiento que desea desarrollar la tesis. El temario puede incluir: Descripción del área de conocimiento, principales líneas de investigación, postulados teóricos, problemas de investigación, identificación de los principales autores/investigadores, etc.</p>
+            <p><strong>Antes de finalizar el primer año</strong> y en un <strong>plazo máximo de 3 meses</strong>, el doctorando -a partir del trabajo de investigación- elaborará el <strong>Anteproyecto</strong> o <strong>Propuesta de Tesis Doctoral</strong> (sujeto a revisiones de avance cada mes), que incluirá, al menos, el problema de investigación, la justificación, hipótesis, objetivos, materiales y métodos y el plan de trabajo, el cual deberá estar <strong>avalado por el tutor y el director de la tesis</strong>.</p>
+        </div>
+    </Fragment>
+</HeroSection>
+
+<!-- Año 2 -->
+<HeroSection
+    title='<span class="text-primary">Año 2</span>'
+    subtitle='Durante el <strong>segundo año</strong>, el alumno se dedica a <strong>desarrollar</strong> y <strong>escribir</strong> (<strong>o redactar</strong>) su <strong>tesis doctoral</strong>'
+    image={{
+        src: '~/assets/images/doctorados/fvi-PTD-Anio-2.webp',
+        alt: 'Imagen del proceso de elaboración del proyecto de tesis doctoral durante el año 2',
+    }}
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>                
+</HeroSection>

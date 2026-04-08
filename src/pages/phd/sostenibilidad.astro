@@ -8,6 +8,7 @@ import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
 import Features from '~/components/widgets/Features.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
 import { sostenibilidadCurriculum } from '~/data/phd/sostenibilidad';
 
 const metadata = {
@@ -212,7 +213,7 @@ const tabs = [
             </Features>
 
             <!-- 4. ASIGNATURAS  ******************************* -->
-             <!-- Carga horaria -->
+              <!-- Carga horaria -->
             <Features2
                 id="asignaturas"
                 tagline="Asignaturas"
@@ -242,22 +243,26 @@ const tabs = [
                 },
                 ]}
             />
-            <!-- Periodo de Investigación -->
+              <!-- 4.1. Periodo de Formación -->
             <HeroSection
                 tagline="Periodo de Formación"
                 title="Carga Horaria y Asignaturas del Curso"
                 subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Sostenibilidad</span>, propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de la <strong>interacción entre los sistemas naturales y sociales</strong>. Todas las asignaturas están directamente conectadas con la realidad en el ámbito medioambiental desde una <strong>visión global de los problemas ecológicos, la economía, los recursos naturales, el medio ambiente y la sostenibilidad</strong>, y son impartidas por profesores PhD expertos en cada materia.'
             >
             <Fragment slot="content">
+                <p class="text-base">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
                 <ProgramCurriculum courses={sostenibilidadCurriculum.courses} />
             </Fragment>
-            </HeroSection>
-            
-            <!-- Periodo de Investigación -->
+            </HeroSection>            
+              <!-- 4.2. Periodo de Investigación -->
             <Features2
                 tagline="Periodo de Investigación"
-                title="Carga Horaria y Asignaturas del Curso"                
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='{FALTA IMPLEMENTAR TABLA}'             
             />
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
 
         </div>
 

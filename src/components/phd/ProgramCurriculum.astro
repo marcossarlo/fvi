@@ -1,19 +1,19 @@
 ---
 export interface CourseModule {
-  title: string;
-  hours: number;
-  credits: number;
+    title: string;
+    hours: number;
+    credits: number;
 }
 
 export interface Course {
-  title: string;
-  totalHours: number;
-  totalCredits: number;
-  modules: CourseModule[];
+    title: string;
+    totalHours: number;
+    totalCredits: number;
+    modules: CourseModule[];
 }
 
 export interface Props {
-  courses: Course[];
+    courses: Course[];
 }
 
 const { courses } = Astro.props;
