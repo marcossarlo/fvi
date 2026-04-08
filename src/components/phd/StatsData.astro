@@ -11,9 +11,6 @@ const { duration = '24', nextStart = '13 May 2026' } = Astro.props;
 
 <!-- Datos clave: estadísticas ************************** -->
 <Stats
-    classes={{
-        container: '[&_svg]:text-secondary [&_div.text-primary]:text-secondary dark:[&_svg]:text-orange-500 dark:[&_div.text-primary]:text-white [&_div]:border-none [&_div]:!border-transparent [&_div.font-heading]:leading-normal [&_div.font-heading]:mb-2 [&_div.text-\\[0\\.7rem\\]]:!mt-4',
-    }}
     stats={[
         { amount: duration, title: 'Meses de duración', icon: 'tabler:calendar' },
         { amount: '100%', title: 'Modalidad online', icon: 'tabler:device-laptop' },
@@ -24,11 +21,11 @@ const { duration = '24', nextStart = '13 May 2026' } = Astro.props;
     <Fragment slot="bg">
         <!-- Fondo modo claro -->
         <div class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#fff7ed,transparent)]"></div>
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#c6e8e6,transparent)]"></div>
         </div>
         <!-- Fondo modo oscuro -->
-        <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#2d1a10_1px,transparent_1px),linear-gradient(to_bottom,#2d1a10_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3a1b0e,transparent)]"></div>
+        <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#1e3535_1px,transparent_1px),linear-gradient(to_bottom,#1e3535_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#042f2e,transparent)]"></div>
         </div>
     </Fragment>
 </Stats>

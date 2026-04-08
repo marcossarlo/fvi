@@ -5,6 +5,7 @@ import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import StatsData from '~/components/phd/StatsData.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
     title: 'TITLE',
@@ -49,7 +50,8 @@ const tabs = [
         {
             variant: 'secondary',
             text: 'Ver Folleto Académico',
-            href: 'URL_FOLLETO',
+            href: 'https://drive.google.com/file/d/1TmkTjrh6wrZRg7XCuaRLO-9lSowBm3Q9/view',
+            target: '_blank',
             icon: 'tabler:download',
             class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
         },
@@ -78,33 +80,42 @@ const tabs = [
             <Content
                 id="presentacion"
                 tagline="Presentación"
-                title="DIRECTOR, PhD"
-                subtitle="Director del Postdoctorado"
+                title="Doctorado en Sostenibilidad"
+                subtitle="Generando conocimiento para un futuro sostenible"
                 items={[
-                {
-                    title: 'Programa en extenso',
-                    icon: 'tabler:download',
-                    callToAction: {
-                    text: 'Descargar el Programa en Extenso',
-                    href: 'URL_FOLLETO',
-                    variant: 'primary',
+                    {
+                        title: 'Enfoque Integral del Desarrollo Sustentable',
+                        description:
+                        'El programa se fundamenta en una visión holística del desarrollo, que articula las dimensiones económicas, sociales y ambientales. Este enfoque busca superar prácticas espontáneas y desordenadas en la gestión del espacio urbano y rural, promoviendo la planificación estratégica y la cooperación interdisciplinaria.',
+                        icon: 'tabler:world',
                     },
-                },
+                    {
+                        title: 'Análisis de la Relación Sociedad–Territorio',
+                        description:
+                        'Se reconoce la necesidad de estudiar las interacciones entre sociedad y territorio a partir de sus componentes biofísicos, socioeconómicos, culturales y políticos. Este análisis constituye la base para formular propuestas adaptadas a las especificidades locales y regionales.',
+                        icon: 'tabler:map-pin-search',
+                    },
+                    {
+                        title: 'Contribución Académica y Científica del Doctorado',
+                        description:
+                        'El programa está orientado a la formación de investigadores de alto nivel capaces de generar conocimiento innovador en sostenibilidad, aportando respuestas a los desafíos ambientales y fortaleciendo el acervo universal en materia de desarrollo sostenible.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        icon: 'tabler:download',
+                        callToAction: {
+                        text: 'Descargar el Programa en Extenso',
+                        href: 'https://drive.google.com/file/d/1TmkTjrh6wrZRg7XCuaRLO-9lSowBm3Q9/view',
+                        target: '_blank',
+                        variant: 'primary',
+                        },
+                    },
                 ]}
                 image={{
-                src: '~/assets/images/users/fvi-yordanis-puerta.webp',
-                alt: 'Yordanis Puerta, Director del Postdoctorado en Ciencias de la Educación Ambiental',
+                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                alt: 'Imagen de presentación del Doctorado en Sostenibilidad',
                 }}
             >
-                <Fragment slot="content">
-                    <h3 class="text-xl font-semibold tracking-tight dark:text-white mb-2">
-                        TEXT_1 <span class="text-primary">TEXT_2</span>.
-                    </h3>
-                    <p class="pb-1">PARRAFO_1</p>
-                    <p class="pb-1">PARRAFO_2</p>
-                    <p class="pb-1">PARRAFO_3</p>
-                </Fragment>
-
                 <Fragment slot="bg">
                     <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
                 </Fragment>
@@ -132,6 +143,70 @@ const tabs = [
                 },
                 ]}
             />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="A continuación se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
+                items={[
+                    {
+                        title: 'Cambio Climático',
+                        description: 'Análisis de las causas, impactos y estrategias de adaptación y mitigación frente al calentamiento global.',
+                        icon: 'tabler:cloud-snow',
+                    },
+                    {
+                        title: 'Conservación y Restauración de Ecosistemas',
+                        description: 'Estudio de técnicas para preservar la biodiversidad y recuperar hábitats degradados por la actividad humana.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Educación Ambiental',
+                        description: 'Desarrollo de procesos pedagógicos para fomentar la conciencia ecológica y la participación ciudadana sostenible.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Economía del Medio Ambiente y Desarrollo',
+                        description: 'Integración de variables ambientales en modelos económicos para promover un crecimiento equitativo y circular.',
+                        icon: 'tabler:chart-arrows-vertical',
+                    },
+                    {
+                        title: 'Gestión Sostenible de los Recursos Naturales y Ambientales',
+                        description: 'Administración responsable de los recursos renovables y no renovables para garantizar su disponibilidad futura.',
+                        icon: 'tabler:recycle',
+                    },
+                    {
+                        title: 'Mercados y Emprendimientos Socio-Ambientales',
+                        description: 'Fomento de modelos de negocio que generan impacto social positivo y respetan los límites del planeta.',
+                        icon: 'tabler:building-store',
+                    },
+                    {
+                        title: 'Modelización de Ecosistemas',
+                        description: 'Uso de herramientas computacionales para simular el comportamiento de sistemas biológicos ante diferentes escenarios.',
+                        icon: 'tabler:database-cog',
+                    },
+                    {
+                        title: 'Políticas Ambientales y de Sostenibilidad',
+                        description: 'Análisis y diseño de marcos normativos y gobernanza para la protección del entorno a nivel local y global.',
+                        icon: 'tabler:gavel',
+                    },
+                    {
+                        title: 'Recursos Hídricos',
+                        description: 'Gestión integral del ciclo del agua, abordando su escasez, calidad y distribución equitativa.',
+                        icon: 'tabler:droplet',
+                    },
+                    {
+                        title: 'Sostenibilidad Ambiental',
+                        description: 'Enfoque transversal para armonizar el bienestar humano con la integridad de los sistemas naturales.',
+                        icon: 'tabler:leaf',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
 
         </div>
 
