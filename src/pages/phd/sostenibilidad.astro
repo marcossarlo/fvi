@@ -6,6 +6,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import StatsData from '~/components/phd/StatsData.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
 import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
 
 const metadata = {
     title: 'TITLE',
@@ -207,6 +208,83 @@ const tabs = [
                     <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
                 </Fragment>
             </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+             <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Sostenibilidad</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,440 horas lectivas</strong> (<strong>90 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>doce cursos teóricos</strong> de acuerdo a la temática central de la mención doctoral y del trabajo de investigación del estudiante.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un <strong>Tutor</strong>, para el seguimiento de la formación como investigador del doctorando, en el momento de resolver la admisión, el cual orientará al estudiante en cuanto a la estructuración del plan de estudios de este periodo.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios prácticos de seguimiento a su investigación relacionados a la problemática ambiental elegida.</li><li><strong>Tesis Doctoral</strong>; un trabajo final escrito sobre un tema de interés ambiental.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- Periodo de Investigación -->
+             <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Sostenibilidad</span>, propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de la <strong>interacción entre los sistemas naturales y sociales</strong>. Todas las asignaturas están directamente conectadas con la realidad en el ámbito medioambiental desde una <strong>visión global de los problemas ecológicos, la economía, los recursos naturales, el medio ambiente y la sostenibilidad</strong>, y son impartidas por profesores PhD expertos en cada materia.'
+            >
+                <Fragment slot="content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 text-left items-stretch">
+                        <!-- CURSO 1 -->
+                        <div class="bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col h-full">
+                            <div class="bg-primary text-white px-4 py-3 flex justify-between items-center font-bold min-h-[5.5rem] lg:min-h-[5rem]">
+                                <h3 class="text-sm md:text-base mr-2 items-center flex">CURSO 1: Introducción a los Problemas Ambientales Globales</h3>
+                                <div class="text-xs md:text-sm flex space-x-3 shrink-0 tabular-nums">
+                                    <span>64 horas</span>
+                                    <span>4 C</span>
+                                </div>
+                            </div>
+                            <div class="divide-y divide-gray-200 dark:divide-gray-700 text-base text-gray-700 dark:text-gray-300 tabular-nums flex-grow">
+                                <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                    <span class="mr-4"><span class="font-bold text-primary">Módulo 1:</span> Crisis ambiental planetaria. Diagnóstico y perspectivas</span>
+                                    <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]"><span>16 horas</span><span>1 C</span></div>
+                                </div>
+                                <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                    <span class="mr-4"><span class="font-bold text-primary">Módulo 2:</span> Los problemas ambientales y sus perspectivas de solución</span>
+                                    <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]"><span>16 horas</span><span>1 C</span></div>
+                                </div>
+                                <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                    <span class="mr-4"><span class="font-bold text-primary">Módulo 3:</span> Problemas ambientales: el inicio de los proyectos solidarios</span>
+                                    <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]"><span>16 horas</span><span>1 C</span></div>
+                                </div>
+                                <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                    <span class="mr-4"><span class="font-bold text-primary">Módulo 4:</span> Contaminación ambiental</span>
+                                    <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]"><span>16 horas</span><span>1 C</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </Fragment>                
+            </HeroSection>
+            <!-- Periodo de Investigación -->
+             <Features2
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Curso"                
+            />
 
         </div>
 
