@@ -9,6 +9,7 @@ import Features from '~/components/widgets/Features.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
 import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
 import PhdProject from '~/components/phd/PhdProject.astro';
 import { sostenibilidadCurriculum, sostenibilidadResearch } from '~/data/phd/sostenibilidad';
 
@@ -26,16 +27,15 @@ const tabs = [
     { id: 'investigacion', label: '3. Investigación' },
     { id: 'asignaturas', label: '4. Asignaturas' },
     { id: 'proyecto', label: '5. Proyecto' },
-    { id: 'contenidos', label: '6. Contenidos' },
-    { id: 'metodologia', label: '7. Metodología' },
-    { id: 'profesorado', label: '8. Profesorado' },
-    { id: 'beneficios', label: '9. Beneficios' },
-    { id: 'campos-de-accion', label: '10. Campos de Acción' },
-    { id: 'titulacion', label: '11. Titulación' },
-    { id: 'becas', label: '12. Becas' },
-    { id: 'inscripcion', label: '13. Inscripción' },
-    { id: 'medios-de-pago', label: '14. Medios de Pago' },
-    { id: 'solicitudes', label: '15. Solicitudes' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'medios-de-pago', label: '13. Medios de Pago' },
+    { id: 'solicitudes', label: '14. Solicitudes' },
 ];
 ---
 
@@ -267,6 +267,9 @@ const tabs = [
 
             <!-- 5. PROYECTO DE TESIS DOCTORAL -->
             <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
 
         </div>
 
