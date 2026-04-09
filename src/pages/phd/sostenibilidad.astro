@@ -12,6 +12,8 @@ import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
 import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
 import PhdProject from '~/components/phd/PhdProject.astro';
 import { sostenibilidadCurriculum, sostenibilidadResearch } from '~/data/phd/sostenibilidad';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
 
 const metadata = {
     title: 'TITLE',
@@ -270,6 +272,125 @@ const tabs = [
 
             <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
             <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            <!-- Miembros del Profesorado -->
+            {
+                ['diana-duran', 'juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
+                <FacultyMember {...faculty[id]}>
+                    <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                    </Fragment>
+                </FacultyMember>
+                ))
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle="Formación interdisciplinaria para liderar proyectos, políticas y asesoría en desarrollo sostenible y conservación ambiental a nivel local y global. <br> El egresado sabrá:"
+                items={[
+                    {
+                        title: 'Planificación Territorial Sustentable',
+                        description: 'Planificar su comuna y/o región, dentro de los parámetros de un desarrollo sustentable.',
+                        icon: 'tabler:map-2',
+                    },
+                    {
+                        title: 'Investigación Avanzada en Sostenibilidad',
+                        description: 'Realizar investigaciones originales e independientes en materia de desarrollo sostenible.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Gestión de Conflictos y Negociación Ambiental',
+                        description: 'Planear y gestar negociaciones amplias y dinámicas con todos los actores sociales, en la solución de problemas que enfrenta el desarrollo y la conservación del ambiente.',
+                        icon: 'tabler:users-group',
+                    },
+                    {
+                        title: 'Liderazgo Ético en Políticas Globales',
+                        description: 'Emprender políticas, programas, planes y proyectos novedosos, con una formación académica que le permitirá desenvolverse en los ámbitos nacionales e internacionales, con un alto sentido ético.',
+                        icon: 'tabler:gavel',
+                    },
+                    {
+                        title: 'Consultoría y Asesoría Gubernamental',
+                        description: 'Asesorar adecuadamente a las entidades municipales y provinciales para resolver las necesidades de la población, del entorno natural y del patrimonio cultural, mediante la realización de proyectos de desarrollo urbano financieramente viables.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {                        
+                        title: 'Diseño de Urbanismo Sostenible',
+                        description: 'Desarrollar planes y proyectos urbanos sustentables.',
+                        icon: 'tabler:building-community',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="El egresado, tendrá la capacidad para desempeñarse en los niveles máximos de dirección en organizaciones relacionadas con la conservación ambiental y el manejo de recursos naturales, tanto privadas como públicas; en organismos nacionales e internacionales de planeación y diseño de políticas públicas."
+                items={[
+                    {
+                        title: 'Gestión Operativa de Proyectos Sustentables',
+                        description: 'Colabora con entidades locales en los aspectos ejecutores y operativos de programas y proyectos de investigación bajo el enfoque del desarrollo sustentable.',
+                        icon: 'tabler:settings-automation',
+                    },
+                    {
+                        title: 'Diagnóstico Territorial Local y Regional',
+                        description: 'Colabora en la elaboración de diagnósticos a escala local y regional.',
+                        icon: 'tabler:analyze',
+                    },
+                    {
+                        title: 'Docencia e Investigación Académica Superior',
+                        description: 'Participa en instituciones académicas de nivel superior con programas de docencia, investigación, vinculación y gestión en el campo del desarrollo sostenible con la capacidad de producir investigaciones desde una perspectiva local, regional, nacional o mundial.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Consultoría Estratégica Corporativa',
+                        description: 'Trabaja para empresas que requieran de la realización y asesoría de planes estratégicos y estudios del desarrollo sustentable.',
+                        icon: 'tabler:businessplan',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
 
         </div>
 
