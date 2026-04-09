@@ -16,6 +16,18 @@ export interface ProgramCurriculum {
     courses: Course[];
 }
 
+export interface ResearchSeminar {
+    title: string;
+    hours: number;
+    credits: number;
+}
+
+export interface ResearchCurriculum {
+    seminars: ResearchSeminar[];
+    phdProject: ResearchSeminar;
+    totalFormation: { hours: number; credits: number };
+}
+
 export const sostenibilidadCurriculum: ProgramCurriculum = {
     id: 'sostenibilidad',
     courses: [
@@ -216,4 +228,15 @@ export const sostenibilidadCurriculum: ProgramCurriculum = {
             ],
         },
     ],
+};
+
+export const sostenibilidadResearch: ResearchCurriculum = {
+    seminars: [
+        { title: 'Seminario de Investigación I: Análisis del Estado del Arte.', hours: 70, credits: 4 },
+        { title: 'Seminario de Investigación II: El Problema de Investigación.', hours: 70, credits: 4 },
+        { title: 'Seminario de Investigación III: Diseño Metodológico.', hours: 280, credits: 18 },
+        { title: 'Seminario de Investigación IV: Propuesta de Investigación Doctoral.', hours: 140, credits: 9 },
+    ],
+    phdProject: { title: 'Proyecto de Tesis Doctoral (PTD)', hours: 112, credits: 7 },
+    totalFormation: { hours: 768, credits: 48 },
 };
