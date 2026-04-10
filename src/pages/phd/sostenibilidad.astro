@@ -14,6 +14,7 @@ import PhdProject from '~/components/phd/PhdProject.astro';
 import { sostenibilidadCurriculum, sostenibilidadResearch } from '~/data/phd/sostenibilidad';
 import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
 
 const metadata = {
     title: 'TITLE',
@@ -391,6 +392,35 @@ const tabs = [
                     <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
                 </Fragment>
             </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Sostenibilidad</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC160402</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+            
 
         </div>
 
