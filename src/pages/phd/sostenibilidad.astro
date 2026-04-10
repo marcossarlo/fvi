@@ -16,6 +16,7 @@ import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
 import Image from '~/components/common/Image.astro';
 import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
 
 const metadata = {
     title: 'TITLE',
@@ -218,7 +219,7 @@ const tabs = [
             </Features>
 
             <!-- 4. ASIGNATURAS  ******************************* -->
-              <!-- Carga horaria -->
+            <!-- Carga horaria -->
             <Features2
                 id="asignaturas"
                 tagline="Asignaturas"
@@ -248,7 +249,7 @@ const tabs = [
                 },
                 ]}
             />
-              <!-- 4.1. Periodo de Formación -->
+            <!-- 4.1. Periodo de Formación -->
             <HeroSection
                 tagline="Periodo de Formación"
                 title="Carga Horaria y Asignaturas del Curso"
@@ -259,7 +260,7 @@ const tabs = [
                     <ProgramCurriculum courses={sostenibilidadCurriculum.courses} />
                 </Fragment>
             </HeroSection>            
-              <!-- 4.2. Periodo de Investigación -->
+            <!-- 4.2. Periodo de Investigación -->
             <HeroSection
                 tagline="Periodo de Investigación"
                 title="Carga Horaria y Asignaturas del Seminario"                
@@ -425,8 +426,13 @@ const tabs = [
             <!-- 11. BECAS -->
             <Scholarship />
 
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
         </div>
+        <!-- END Main Content -->
 
     </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
 
 </Layout>
