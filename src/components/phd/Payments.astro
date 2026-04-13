@@ -2,7 +2,6 @@
 import Content from '~/components/widgets/Content.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Alert from '~/components/ui/Alert.astro';
-import Pricing from '~/components/widgets/Pricing.astro';
 ---
 
 <Content
@@ -33,6 +32,9 @@ import Pricing from '~/components/widgets/Pricing.astro';
         alt: 'Inversión y Pagos Doctorado',
     }}
 >
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
 </Content>
 
 <!-- TABLAS DE PRECIOS -->
@@ -48,7 +50,7 @@ import Pricing from '~/components/widgets/Pricing.astro';
                     <div class="text-center pb-4 border-b border-gray-200 dark:border-slate-700">
                         <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
                         <div class="mt-2">
-                             <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">13,500</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                            <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">13,500</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
                         </div>
                     </div>
                 </div>
@@ -90,7 +92,7 @@ import Pricing from '~/components/widgets/Pricing.astro';
                     <div class="text-center pb-4 border-b border-orange-200 dark:border-slate-700">
                         <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
                         <div class="mt-2">
-                             <span class="font-bold text-3xl text-secondary">5,063</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                            <span class="font-bold text-3xl text-secondary">5,063</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
                         </div>
                     </div>
                 </div>
@@ -127,11 +129,11 @@ import Pricing from '~/components/widgets/Pricing.astro';
                 <h3 class="text-xl font-bold text-primary uppercase leading-tight">Precio con<br/>Beca Fondo Verde</h3>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
-                 <div>
+                <div>
                     <div class="text-center pb-4 border-b border-green-300 dark:border-slate-700">
                         <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
                         <div class="mt-2">
-                             <span class="font-bold text-2xl text-primary dark:text-slate-200">6,750</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                            <span class="font-bold text-2xl text-primary dark:text-slate-200">6,750</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
                         </div>
                     </div>
                 </div>
@@ -161,6 +163,9 @@ import Pricing from '~/components/widgets/Pricing.astro';
             </div>
         </div>
     </div>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
 </WidgetWrapper>
 
 <WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10">  
@@ -175,5 +180,8 @@ import Pricing from '~/components/widgets/Pricing.astro';
     </Alert>
     <Alert variant="warning" title="Gastos de Envío de Títulos">
         Los gastos de envío de los títulos al país de residencia, deben ser cubiertos en su totalidad por el estudiante.
-    </Alert>    
+    </Alert>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
 </WidgetWrapper>

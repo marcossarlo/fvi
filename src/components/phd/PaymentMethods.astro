@@ -1,0 +1,99 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+---
+
+<!-- 12. Pagos ***************************************** -->
+<!-- Transferencia & Giro -->
+<Features2
+    id="medios-de-pago"
+    tagline="Pagos"
+    title="Medios de Pago"
+    subtitle="Los Medios de Pago de la matrícula son las siguientes:"
+    columns={2}
+    items={[
+        {
+        title: '(1) Vía Transferencia a nuestra cuenta bancaria',
+        description: `
+            <div class="space-y-4">           
+                <p class="font-bold border-b border-primary/20 pb-1 mb-2 text-primary uppercase tracking-wider">Datos de la cuenta en soles</p>
+                <ul class="space-y-1">
+                <li><strong>Titular de la cuenta:</strong> Fondo Verde</li>
+                <li><strong>Nombre del Banco:</strong> Interbank</li>
+                <li><strong>Localidad:</strong> La Merced, Chanchamayo, Junín</li>
+                <li><strong>Nº de Cuenta Corriente S/:</strong> 546-300158759-0</li>
+                <li><strong>Código SWIFT:</strong> BINPPEPL</li>
+                <li><strong>CCI (Código Cuenta Interbancaria):</strong> 003-546-003001587590-96</li>
+                </ul>            
+                <p class="font-bold border-b border-primary/20 pb-1 mb-2 text-primary uppercase tracking-wider">Datos de la cuenta en dólares</p>
+                <ul class="space-y-1">
+                <li><strong>Titular de la cuenta:</strong> Fondo Verde</li>
+                <li><strong>Nombre del Banco:</strong> Interbank</li>
+                <li><strong>Localidad:</strong> La Merced, Chanchamayo, Junín</li>
+                <li><strong>Nº de Cuenta Corriente US$:</strong> 546-3001611473</li>
+                <li><strong>Código SWIFT:</strong> BINPPEPL</li>
+                <li><strong>CCI (Código Cuenta Interbancaria):</strong> 003-546-003001611473-95</li>
+                </ul>            
+            </div>
+        `,
+        icon: 'tabler:cash-banknote-plus',
+        },
+        {
+        title: '(2) Vía Giro Postal',
+        description:
+            'Por medio de un envío a través de <strong>WESTERN UNION / MONEY GRAM</strong>. Por favor consulte esta opción a través del correo <strong class="text-primary">info@fondoverde.org</strong>, y le facilitaremos los datos para efectuar el pago.',
+        icon: 'tabler:cash-banknote-plus',
+        },
+    ]}
+/>
+<!-- PayPal -->
+<Features2
+    columns={1}
+    items={[
+        {
+        title: '(3) Vía PayPal',
+        description: `
+            <div class="space-y-6 text-left">
+            <p class="text-base text-muted mb-6">Elija el monto de inscripción y haga click en el botón "Pagar con PayPal" y serás redirigido directamente al sitio web de PayPal para finalizar tu compra.</p>
+
+            <!-- Alert variant="warning" (Atención) -->
+            <div class="flex p-4 md:p-5 mb-4 text-base border-l-[6px] rounded-lg shadow-sm bg-yellow-50 border-yellow-400 text-yellow-800 dark:bg-yellow-900/30 dark:border-yellow-700 dark:text-yellow-300" role="alert">
+                <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"></path><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z"></path><path d="M12 16h.01"></path></svg>
+                <div>
+                <span class="text-base md:text-lg font-bold block mb-1">Atención</span>
+                <div class="text-sm md:text-base leading-relaxed">
+                    Los montos incluyen las comisiones de pago con las que se queda PayPal.
+                </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 my-8">
+                <div class="bg-white dark:bg-pageDark p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+                <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-primary/10 pb-2">Precio Normal:</p>
+                <p class="text-sm text-muted italic">Codigo de botón PayPal:</p>
+                </div>
+                <div class="bg-white dark:bg-pageDark p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+                <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-primary/10 pb-2">Precio con Beca Fondo Verde:</p>
+                <p class="text-sm text-muted italic">Codigo de botón PayPal:</p>
+                </div>
+                <div class="bg-white dark:bg-pageDark p-5 rounded-lg border border-gray-200 dark:border-slate-700 shadow-sm">
+                <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-primary/10 pb-2">Precio con ambas becas:</p>
+                <p class="text-sm text-muted italic">Codigo de botón PayPal:</p>
+                </div>
+            </div>   
+            
+            <!-- Alert variant="info" (Nota) -->
+            <div class="flex p-4 md:p-5 mb-6 text-base border-l-[6px] rounded-lg shadow-sm bg-blue-50 border-blue-400 text-blue-800 dark:bg-blue-900/30 dark:border-blue-700 dark:text-blue-300" role="alert">
+                <svg class="flex-shrink-0 inline w-5 h-5 md:w-6 md:h-6 me-3 mt-[2px]" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg>
+                <div>
+                <span class="text-base md:text-lg font-bold block mb-1">Nota</span>
+                <div class="text-sm md:text-base leading-relaxed">
+                    El medio de pago será seleccionado por el participante luego de recibir por correo electrónico la notificación de "<strong>Formalización de matrícula y ficha de pago</strong>"
+                </div>
+                </div>
+            </div>
+            </div>
+        `,
+        icon: 'tabler:brand-paypal',
+        },
+    ]}
+/>
