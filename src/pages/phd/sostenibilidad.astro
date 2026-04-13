@@ -17,6 +17,7 @@ import { faculty } from '~/data/faculty';
 import Image from '~/components/common/Image.astro';
 import Scholarship from '~/components/phd/Scholarship.astro';
 import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
 
 const metadata = {
     title: 'TITLE',
@@ -39,8 +40,9 @@ const tabs = [
     { id: 'titulacion', label: '10. Titulación' },
     { id: 'becas', label: '11. Becas' },
     { id: 'inscripcion', label: '12. Inscripción' },
-    { id: 'medios-de-pago', label: '13. Medios de Pago' },
-    { id: 'solicitudes', label: '14. Solicitudes' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
 ];
 ---
 
@@ -428,6 +430,9 @@ const tabs = [
 
             <!-- 12. INSCRIPCIÓN -->
             <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
 
         </div>
         <!-- END Main Content -->

@@ -1,0 +1,237 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Alert from '~/components/ui/Alert.astro';
+import Pricing from '~/components/widgets/Pricing.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Content
+    id="pagos"
+    tagline="Pagos"
+    title="Inversión y Matrícula"
+    subtitle="La estructura de costos del programa de Doctorado está diseñada para facilitar el acceso a una formación de alto nivel bajo la modalidad online."
+    isReversed
+    items={[
+        {
+            title: 'Derechos de Inscripción',
+            description: 'Los derechos de inscripción para el programa son de <strong>1,000 dólares</strong>.',
+            icon: 'tabler:check',
+        },
+        {
+            title: 'Costo Total del Programa',
+            description: 'La inversión en tu formación doctoral es de <strong>13,500 dólares</strong>.',
+            icon: 'tabler:coin',
+        },
+        {
+            title: 'Facilidades de Pago',
+            description: 'El importe del programa puede abonarse en <strong>6 cuotas sin intereses</strong>.',
+            icon: 'tabler:calendar-event',
+        },
+    ]}
+    image={{
+        src: '~/assets/images/phd/fvi-phd-pagos.webp',
+        alt: 'Inversión y Pagos Doctorado',
+    }}
+>
+</Content>
+
+<!-- TABLAS DE PRECIOS -->
+<WidgetWrapper containerClass="max-w-6xl mx-auto py-8 md:py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+        
+        {/* Card 1: Beca Fondo Verde */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-primary relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-20 uppercase tracking-wider shadow-sm">Beca 50%</div>
+            <div class="bg-primary/5 dark:bg-primary/10 p-4 text-center border-b border-primary/20">
+                <h3 class="text-xl font-bold text-primary uppercase leading-tight">Precio con<br/>Beca Fondo Verde</h3>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                 <div>
+                    <div class="text-center pb-4 border-b border-primary/20 dark:border-primary/20">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
+                        <div class="mt-2">
+                             <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">6,750</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-primary/5 p-4 rounded-lg border border-primary/20 text-center">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-[10px] text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-xl text-slate-800 dark:text-slate-200">6,413</span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-primary/5 p-4 rounded-lg border border-primary/20">
+                        <div class="text-center border-b border-primary/20 pb-2 mb-3">
+                            <span class="text-xs font-bold text-primary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted dark:text-slate-400">Cuotas:</span>
+                            <span class="font-bold bg-white dark:bg-slate-800 px-2 py-0.5 rounded border border-primary/20 text-primary">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-lg text-primary">1,125 <span class="text-xs font-normal text-slate-600">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Card 2 (Centro): Ambas Becas (DESTACADA) */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-xl border border-secondary relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 transform md:scale-105 z-10">
+            <div class="absolute top-0 right-0 bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-20 uppercase tracking-wider shadow-sm">Beca 50% + 25%</div>
+            <div class="bg-secondary/5 dark:bg-secondary/10 p-5 text-center border-b border-secondary/20">
+                <h3 class="text-xl font-bold text-secondary uppercase leading-tight">Precio con<br/>Ambas becas</h3>
+                <p class="text-[10px] text-muted mt-1 uppercase tracking-wider">(Fondo Verde + FUMED)</p>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-secondary/20">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
+                        <div class="mt-2">
+                             <span class="font-bold text-3xl text-secondary">5,063</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-secondary/5 p-4 rounded-lg border border-secondary/20 text-center">
+                        <span class="text-xs font-bold text-secondary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-[10px] text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">4,810</span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-secondary/5 p-4 rounded-lg border border-secondary/20">
+                        <div class="text-center border-b border-secondary/20 pb-2 mb-3">
+                            <span class="text-xs font-bold text-secondary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted dark:text-slate-400">Cuotas:</span>
+                            <span class="font-bold bg-white dark:bg-slate-800 px-2 py-0.5 rounded border border-secondary/20 text-secondary">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-xl text-secondary">844 <span class="text-xs font-normal text-slate-600">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Card 3: Precio Normal */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-gray-200 dark:border-slate-800 overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+            <div class="bg-gray-100 dark:bg-slate-800 p-4 text-center border-b border-gray-200 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white uppercase">Precio Normal</h3>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-gray-200 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
+                        <div class="mt-2">
+                             <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">13,500</span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-[10px] text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-xl text-slate-800 dark:text-slate-200">12,825</span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <div class="text-center border-b border-slate-200 dark:border-slate-700 pb-2 mb-3">
+                            <span class="text-xs font-bold text-primary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted dark:text-slate-400">Cuotas:</span>
+                            <span class="font-bold bg-white dark:bg-slate-700 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-600">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-lg text-slate-800 dark:text-slate-200">2,250 <span class="text-xs font-normal">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</WidgetWrapper>
+
+<WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10">  
+    <Alert variant="info" title="Costo de Titulación">
+        El costo de titulación es independiente al valor del doctorado, UNICEPES tramita y reconoce el grado respectivo por un pago <strong>aproximado de 1,500 dólares</strong>. Este cargo incluye:<br>
+        <strong>→ Derechos de grado</strong> (1,200 US$); Revisión del PTD por parte de los sinodales, Examen de Grado, Protocolización interna de título y Certificación de acta de examen.<br>
+        <strong>→ Trámites de titulación</strong> (300 US$); Expedición de Título y Certificado Total de Estudios (ambos con el sello de Apostilla de la Haya).
+    </Alert>
+    <Alert variant="warning" title="Gastos de Envío de Títulos">
+        Los gastos de envío de los títulos al país de residencia, deben ser cubiertos en su totalidad por el estudiante.
+    </Alert>
+
+<!-- COMPARATIVA CON COMPONENTE PRICING ESTÁNDAR -->
+<div class="mt-20 border-t-4 border-gray-200 dark:border-slate-800 pt-10 opacity-80">
+    <p class="text-center font-bold text-gray-500 uppercase tracking-widest mb-10 italic">Versión con componente Pricing estándar del template</p>
+    
+    <Pricing
+        title="Opciones de Inversión"
+        subtitle="Visualización usando el componente Pricing nativo de AstroWind"
+        prices={[
+            {
+                title: 'Beca Fondo Verde',
+                subtitle: '50% de cobertura',
+                price: '6,750',
+                period: '6 cuotas de 1,125 USD',
+                items: [
+                    { description: 'Derechos de Inscripción: 1,000 USD', icon: 'tabler:check' },
+                    { description: 'Pago al contado: 6,413 USD (5% desc.)', icon: 'tabler:discount-2' },
+                    { description: 'Modalidad 100% Online', icon: 'tabler:device-laptop' },
+                ],
+                callToAction: {
+                    text: 'Solicitar Beca',
+                    href: '#',
+                },
+            },
+            {
+                title: 'Ambas Becas',
+                subtitle: 'Fondo Verde + FUMED (50% + 25%)',
+                price: '5,063',
+                period: '6 cuotas de 844 USD',
+                items: [
+                    { description: 'Derechos de Inscripción: 1,000 USD', icon: 'tabler:check' },
+                    { description: 'Pago al contado: 4,810 USD (5% desc.)', icon: 'tabler:discount-2' },
+                    { description: 'Compromiso de Tesis Doctoral PTD', icon: 'tabler:file-certificate' },
+                ],
+                callToAction: {
+                    text: 'Obtener máximo beneficio',
+                    href: '#',
+                },
+                hasRibbon: true,
+                ribbonTitle: 'Mejor Opción',
+            },
+            {
+                title: 'Precio Normal',
+                subtitle: 'Sin aplicación de becas',
+                price: '13,500',
+                period: '6 cuotas de 2,250 USD',
+                items: [
+                    { description: 'Derechos de Inscripción: 1,000 USD', icon: 'tabler:check' },
+                    { description: 'Pago al contado: 12,825 USD (5% desc.)', icon: 'tabler:discount-2' },
+                    { description: 'Acceso inmediato', icon: 'tabler:rocket' },
+                ],
+                callToAction: {
+                    text: 'Inscribirse',
+                    href: '#',
+                },
+            },
+        ]}
+    />
+</div>
+</WidgetWrapper>
