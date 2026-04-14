@@ -1,0 +1,31 @@
+---
+import Stats from '~/components/widgets/Stats.astro';
+
+interface Props {
+    duration?: string;
+    nextStart?: string;
+}
+
+const { duration = '24', nextStart = '13 May 2026' } = Astro.props;
+---
+
+<!-- Datos clave: estadísticas ************************** -->
+<Stats
+    stats={[
+        { amount: duration, title: 'Meses de duración', icon: 'tabler:calendar' },
+        { amount: '100%', title: 'Modalidad online', icon: 'tabler:device-laptop' },
+        { amount: nextStart, title: 'Próximo inicio', icon: 'tabler:calendar-event' },
+        { amount: 'MSc', title: 'Requisito de acceso', icon: 'tabler:certificate' },
+    ]}
+    >
+    <Fragment slot="bg">
+        <!-- Fondo modo claro -->
+        <div class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#c6e8e6,transparent)]"></div>
+        </div>
+        <!-- Fondo modo oscuro -->
+        <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#1e3535_1px,transparent_1px),linear-gradient(to_bottom,#1e3535_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#042f2e,transparent)]"></div>
+        </div>
+    </Fragment>
+</Stats>

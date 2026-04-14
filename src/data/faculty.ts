@@ -181,5 +181,25 @@ export const faculty: Record<string, FacultyMemberData> = {
       src: '~/assets/images/users/fvi-angela-martin.webp',
       alt: 'Ángela Martín Méndez, Lic.',
     },
-  },  
+  },
+  'diana-duran': {
+    name: 'Diana Durán, Dra. (Argentina)',
+    specialty: 'Doctora en Geografía',
+    bio: `
+      <p>Dra. en Geografía de la Universidad del Salvador (Buenos Aires, Argentina) y Licenciada en Geografía de la Universidad del Salvador. Postítulo en Política, Derecho, Economía, Administración e Instituciones Ambientales del Centro Latinoamericano de Capacitación Institucional en Desarrollo Sostenible - PNUMA. Especialista Docente de Nivel Superior en Educación y TIC del Instituto de Formación Docente N° 3, Argentina.</p>
+      <p>Directora del Centro de Estudios Geográficos "Florentino Ameghino" (Punta Alta, Argentina). Presidenta de la Comisión de Desarrollo Distrital, Recursos Naturales y Conservación del Ambiente Humano del Concejo Deliberante de Coronel Rosales (Buenos Aires, Argentina). Es miembro del Directorio del Geoforo Iberoamericano sobre Educación, Geografía y Sociedad.</p>
+      <p>Ha sido Investigadora Científica del Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET) de la Argentina, Coordinadora de Ciencias Sociales del Ministerio de Cultura y Educación de la Nación y capacitadora de la Dirección de Cultura y Educación de la provincia de Buenos Aires. Ha sido profesora invitada en diversas universidades como la Universidad Nacional de San Juan, Instituto Superior del Profesorado "Antonio Ruiz de Montoya" y la Universidad Nacional de La Plata.</p>
+      <p>Profesora e investigadora destacada con más de treinta libros de su autoría, conferencista y capacitadora con amplia experiencia en educación ambiental, proyectos ambientales sustentables, política ambiental y educación geográfica. Ha dictado más de cien cursos, seminarios y conferencias en Argentina, Uruguay, Chile y Brasil. Actualmente se dedica a temas de educación ambiental, ordenamiento territorial y formulación de políticas ambientales.</p>
+    `,
+    awards: [
+      'Directora del Centro de Estudios Geográficos "Florentino Ameghino"',
+      'Ex-Investigadora Científica del CONICET',
+      'Presidenta de Comisión de Desarrollo Distrital y Ambiente',
+      'Autora de más de 30 libros sobre geografía y educación ambiental',
+    ],
+    image: {
+      src: '~/assets/images/users/fvi-diana-duran.webp',
+      alt: 'Diana Durán, Dra.',
+    },
+  },
 };

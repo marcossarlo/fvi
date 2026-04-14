@@ -1,0 +1,114 @@
+---
+export interface ResearchSeminar {
+    title: string;
+    hours: number;
+    credits: number;
+}
+
+export interface Props {
+    seminars: ResearchSeminar[];
+    phdProject: ResearchSeminar;
+    totalFormation: { hours: number; credits: number };
+}
+
+const { seminars, phdProject, totalFormation } = Astro.props;
+
+// Calculamos totales de investigación
+const researchHours = seminars.reduce((acc, s) => acc + s.hours, 0);
+const researchCredits = seminars.reduce((acc, s) => acc + s.credits, 0);
+
+// Totales de doctorado (Investigación + Proyecto) 
+// Nota: El Seminario de Doctorado es el TFG/PTD en el esquema original
+const seminarDoctoradoHours = phdProject.hours;
+const seminarDoctoradoCredits = phdProject.credits;
+
+// Total General
+const totalHours = totalFormation.hours + researchHours + seminarDoctoradoHours;
+const totalCredits = totalFormation.credits + researchCredits + seminarDoctoradoCredits;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 text-left items-stretch">
+    <!-- Seminarios de Investigación -->
+    <div class="bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col h-full group w-full lg:col-span-2">
+        <div class="bg-slate-800 dark:bg-slate-700 text-white px-4 py-3 flex justify-between items-center font-bold min-h-[5.5rem] lg:min-h-[5rem] group-hover:bg-primary transition-colors duration-300">
+            <h3 class="text-sm md:text-base mr-2 items-center flex uppercase">
+                SEMINARIOS DE INVESTIGACIÓN
+            </h3>
+            <div class="text-xs md:text-sm flex space-x-3 shrink-0 tabular-nums">
+                <span>{researchHours} horas</span>
+                <span>{researchCredits} C</span>
+            </div>
+        </div>
+        <div class="divide-y divide-gray-200 dark:divide-gray-700 text-base text-gray-700 dark:text-gray-300 tabular-nums flex-grow">
+            {seminars.map((seminar, index) => (
+                <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <span class="mr-4">
+                        <span class="font-bold text-primary">Seminario {index + 1}:</span> {seminar.title.split(':').slice(1).join(':') || seminar.title}
+                    </span>
+                    <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]">
+                        <span>{seminar.hours} horas</span>
+                        <span>{seminar.credits} C</span>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+
+    <!-- Seminario de Doctorado / Proyecto -->
+    <div class="bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col h-full group w-full lg:col-span-2">
+        <div class="bg-slate-800 dark:bg-slate-700 text-white px-4 py-3 flex justify-between items-center font-bold min-h-[5.5rem] lg:min-h-[5rem] group-hover:bg-primary transition-colors duration-300">
+            <h3 class="text-sm md:text-base mr-2 items-center flex uppercase">
+                SEMINARIO DE DOCTORADO
+            </h3>
+            <div class="text-xs md:text-sm flex space-x-3 shrink-0 tabular-nums">
+                <span>{seminarDoctoradoHours} horas</span>
+                <span>{seminarDoctoradoCredits} C</span>
+            </div>
+        </div>
+        <div class="divide-y divide-gray-200 dark:divide-gray-700 text-base text-gray-700 dark:text-gray-300 tabular-nums flex-grow">
+            <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <span class="mr-4 font-bold text-primary">
+                    {phdProject.title}
+                </span>
+                <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]">
+                    <span>{phdProject.hours} horas</span>
+                    <span>{phdProject.credits} C</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resumen Total -->
+    <div class="bg-primary/10 dark:bg-primary/20 rounded-lg overflow-hidden border border-primary/20 flex flex-col h-full group w-full lg:col-span-2 mt-4">
+        <div class="px-6 py-5 text-base text-gray-800 dark:text-gray-200 w-full space-y-2">
+            <div class="flex justify-between w-full md:w-2/3 lg:w-1/2">
+                <span class="font-bold">Periodo de Formación</span>
+                <div class="flex justify-between w-64">
+                    <span class="w-32 text-right">{totalFormation.hours} horas</span>
+                    <span class="w-32 text-right">{totalFormation.credits} Créditos</span>
+                </div>
+            </div>
+            <div class="flex justify-between w-full md:w-2/3 lg:w-1/2">
+                <span class="font-bold">Periodo de investigación</span>
+                <div class="flex justify-between w-64">
+                    <span class="w-32 text-right">{researchHours} horas</span>
+                    <span class="w-32 text-right">{researchCredits} Créditos</span>
+                </div>
+            </div>
+            <div class="flex justify-between w-full md:w-2/3 lg:w-1/2">
+                <span class="font-bold">Seminario de Doctorado</span>
+                <div class="flex justify-between w-64">
+                    <span class="w-32 text-right">{seminarDoctoradoHours} horas</span>
+                    <span class="w-32 text-right">{seminarDoctoradoCredits} Créditos</span>
+                </div>
+            </div>
+            <div class="flex justify-between w-full md:w-2/3 lg:w-1/2 font-bold text-primary pt-2 border-t border-primary/30 mt-2">
+                <span>Total</span>
+                <div class="flex justify-between w-64">
+                    <span class="w-32 text-right">{totalHours} horas</span>
+                    <span class="w-32 text-right">{totalCredits} Créditos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

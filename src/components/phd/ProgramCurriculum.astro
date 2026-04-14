@@ -1,0 +1,51 @@
+---
+export interface CourseModule {
+    title: string;
+    hours: number;
+    credits: number;
+}
+
+export interface Course {
+    title: string;
+    totalHours: number;
+    totalCredits: number;
+    modules: CourseModule[];
+}
+
+export interface Props {
+    courses: Course[];
+}
+
+const { courses } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 text-left items-stretch">
+    {
+        courses.map((course) => (
+        <div class="bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col h-full group">
+            <div class="bg-slate-800 dark:bg-slate-700 text-white px-4 py-3 flex justify-between items-center font-bold min-h-[5.5rem] lg:min-h-[5rem] group-hover:bg-primary transition-colors duration-300">
+            <h3 class="text-sm md:text-base mr-2 items-center flex">
+                {course.title}
+            </h3>
+            <div class="text-xs md:text-sm flex space-x-3 shrink-0 tabular-nums">
+                <span>{course.totalHours} horas</span>
+                <span>{course.totalCredits} C</span>
+            </div>
+            </div>
+            <div class="divide-y divide-gray-200 dark:divide-gray-700 text-base text-gray-700 dark:text-gray-300 tabular-nums flex-grow">
+            {course.modules.map((module, index) => (
+                <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <span class="mr-4">
+                    <span class="font-bold text-primary">Módulo {index + 1}:</span> {module.title}
+                </span>
+                <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]">
+                    <span>{module.hours} horas</span>
+                    <span>{module.credits} C</span>
+                </div>
+                </div>
+            ))}
+            </div>
+        </div>
+        ))
+    }
+</div>

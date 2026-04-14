@@ -1,0 +1,62 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Alert from '~/components/ui/Alert.astro';
+---
+
+<!-- 12. INSCRIPCIÓN *********************************** -->
+<Content
+    id="inscripcion"
+    tagline="Inscripción"
+    title="Proceso de Admisión y Requisitos"
+    subtitle="Para ser admitido al programa de Doctorado, el aspirante deberá completar el proceso de inscripción y presentar la documentación requerida."
+    items={[
+        {
+            title: 'Título de Maestría (✓)',
+            icon: 'tabler:certificate',
+        },
+        {
+            title: 'Certificado de estudios de Maestría (✓)',
+            icon: 'tabler:file-description',
+        },
+        {
+            title: 'Acta de nacimiento',
+            icon: 'tabler:baby-carriage',
+        },
+        {
+            title: 'Identificación oficial, cédula de ciudadanía o DNI',
+            icon: 'tabler:id-badge-2',
+        },
+        {
+            title: 'Curriculum Vitae',
+            icon: 'tabler:user-check',
+        },        
+        {
+            title: '6 fotografías tamaño infantil',
+            icon: 'tabler:camera',
+        },
+        {
+            title: 'Carta de Motivación Académica',
+            description:
+                'Completar la <a href="https://fondoverdeinstitute.com/docs/Carta-de-Motivacion-PhD.doc" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2 font-bold">Carta de Motivación</a> oficial del programa.',
+            icon: 'tabler:writing',
+        },
+        {
+            title: 'Solicitud de Inscripción',
+            description:
+                'Completar la <a href="https://fondoverdeinstitute.com/docs/Solicitud-de-Inscripcion-PHD.doc" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-secondary underline underline-offset-2 font-bold">Solicitud de Inscripción</a> oficial del programa.',
+            icon: 'tabler:file-pencil',
+        },
+    ]}
+    image={{
+        src: '~/assets/images/doctorados/fvi-inscripcion.webp',
+        alt: 'Proceso de Inscripción al Doctorado',
+    }}
+>
+</Content>
+
+<WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10">
+    <Alert variant="info" title="Requisitos de Apostilla y Legalización de Documentos">
+        Los <strong>requisitos marcados</strong> con (<strong>✓</strong>), deben contar con el sello de <strong>Apostilla de la Haya</strong>, colocado por el Ministerio de Relaciones Exteriores o entidad encargada de este trámite en el país de origen, o en su defecto para los países que no pertenecen al <strong>Convenio de la Haya</strong>, autenticados o sellados por el Cónsul de México en el país de origen.
+    </Alert>
+</WidgetWrapper>

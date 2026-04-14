@@ -1,0 +1,451 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { sostenibilidadCurriculum, sostenibilidadResearch } from '~/data/phd/sostenibilidad';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Sostenibilidad | Título Oficial UNICEPES | Fondo Verde',
+    description:
+        'Potencia tu carrera con el Doctorado en Sostenibilidad. Programa online oficial con RVOE, centrado en investigación ambiental, cambio climático y desarrollo sustentable.',
+    keywords:
+        'doctorado en sostenibilidad, doctorado en desarrollo sostenible, investigación ambiental, posgrado medio ambiente, sostenibilidad oficial, rvoe méxico, fondo verde, cambio climático, gestión de recursos naturales',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Generando conocimiento para un futuro sostenible"
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'https://drive.google.com/file/d/1TmkTjrh6wrZRg7XCuaRLO-9lSowBm3Q9/view',
+            target: '_blank',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        alt: 'Imagen del Doctorado en Sostenibilidad de Fondo Verde',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Sostenibilidad</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title="Doctorado en Sostenibilidad"
+                subtitle="Formación doctoral para liderar investigación innovadora que impulse soluciones reales en desarrollo sostenible."
+                items={[
+                    {
+                        title: 'Enfoque Integral del Desarrollo Sustentable',
+                        description:
+                        'El programa se fundamenta en una visión holística del desarrollo, que articula las dimensiones económicas, sociales y ambientales. Este enfoque busca superar prácticas espontáneas y desordenadas en la gestión del espacio urbano y rural, promoviendo la planificación estratégica y la cooperación interdisciplinaria.',
+                        icon: 'tabler:world',
+                    },
+                    {
+                        title: 'Análisis de la Relación Sociedad–Territorio',
+                        description:
+                        'Se reconoce la necesidad de estudiar las interacciones entre sociedad y territorio a partir de sus componentes biofísicos, socioeconómicos, culturales y políticos. Este análisis constituye la base para formular propuestas adaptadas a las especificidades locales y regionales.',
+                        icon: 'tabler:map-pin-search',
+                    },
+                    {
+                        title: 'Contribución Académica y Científica del Doctorado',
+                        description:
+                        'El programa está orientado a la formación de investigadores de alto nivel capaces de generar conocimiento innovador en sostenibilidad, aportando respuestas a los desafíos ambientales y fortaleciendo el acervo universal en materia de desarrollo sostenible.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        icon: 'tabler:download',
+                        callToAction: {
+                        text: 'Descargar el Programa en Extenso',
+                        href: 'https://drive.google.com/file/d/1TmkTjrh6wrZRg7XCuaRLO-9lSowBm3Q9/view',
+                        target: '_blank',
+                        variant: 'primary',
+                        },
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                alt: 'Imagen de presentación del Doctorado en Sostenibilidad',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Sostenibilidad</span> forma investigadores de alto nivel capaces de generar conocimientos innovadores que contribuyan a la solución de problemas ambientales y de desarrollo, tanto en contextos nacionales como internacionales. El programa prepara a sus egresados para producir aportes significativos al acervo del conocimiento en Desarrollo Sostenible, dotándolos de herramientas metodológicas y conceptuales para investigar, diseñar y evaluar políticas, modelos y prácticas que promuevan un desarrollo equitativo y ambientalmente responsable.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Los objetivos específicos del Doctorado son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Estudiar la relación entre sociedad y territorio, basados en un análisis de sus componentes biofísicos, socioeconómicos, culturales y políticos con el fin de poder entregar propuestas y soluciones que se adapten a las especificidades locales y regionales.</li><li>Proporcionar herramientas teóricas, metodológicas e instrumentales para elaborar, implementar, sistematizar y evaluar proyectos sustentables, así como la gestión de este proceso.</li><li>Proponer soluciones a los problemas del desarrollo sustentable (humano, social, ambiental, de infraestructura, institucional), a través del análisis y evaluación con proyección internacional.</li><li>Incorporar la visión y acción de los diferentes actores del desarrollo en el proceso de planeación y gestión y promover la colaboración de las diferentes disciplinas en la solución de problemas que enfrenta el desarrollo y la conservación del ambiente.</li></ul>',
+                    icon: 'tabler:circle-plus',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>El doctorado está dirigido a todo profesional con perspectiva interdisciplinaria de lo ambiental, que acredite competencias y experiencia en el campo relacionado con la gestión ambiental y el desarrollo. También podrán aspirar profesionales de otras disciplinas que expresen su interés en el objeto de formación del doctorado.</li><li>El doctorado también va dirigido a personas que deseen completar su formación con un postgrado de especialización en medio ambiente que les capacite para ejercer como profesionales en la gestión de actividades relacionadas.</li><li>Igualmente a personas que desarrollen su labor en sectores relacionados con el territorio (urbanismo, turismo, etc.) y deseen recibir una formación especializada en medio ambiente y el desarrollo sostenible.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="A continuación se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
+                items={[
+                    {
+                        title: 'Cambio Climático',
+                        description: 'Análisis de las causas, impactos y estrategias de adaptación y mitigación frente al calentamiento global.',
+                        icon: 'tabler:cloud-snow',
+                    },
+                    {
+                        title: 'Conservación y Restauración de Ecosistemas',
+                        description: 'Estudio de técnicas para preservar la biodiversidad y recuperar hábitats degradados por la actividad humana.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Educación Ambiental',
+                        description: 'Desarrollo de procesos pedagógicos para fomentar la conciencia ecológica y la participación ciudadana sostenible.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Economía del Medio Ambiente y Desarrollo',
+                        description: 'Integración de variables ambientales en modelos económicos para promover un crecimiento equitativo y circular.',
+                        icon: 'tabler:chart-arrows-vertical',
+                    },
+                    {
+                        title: 'Gestión Sostenible de los Recursos Naturales y Ambientales',
+                        description: 'Administración responsable de los recursos renovables y no renovables para garantizar su disponibilidad futura.',
+                        icon: 'tabler:recycle',
+                    },
+                    {
+                        title: 'Mercados y Emprendimientos Socio-Ambientales',
+                        description: 'Fomento de modelos de negocio que generan impacto social positivo y respetan los límites del planeta.',
+                        icon: 'tabler:building-store',
+                    },
+                    {
+                        title: 'Modelización de Ecosistemas',
+                        description: 'Uso de herramientas computacionales para simular el comportamiento de sistemas biológicos ante diferentes escenarios.',
+                        icon: 'tabler:database-cog',
+                    },
+                    {
+                        title: 'Políticas Ambientales y de Sostenibilidad',
+                        description: 'Análisis y diseño de marcos normativos y gobernanza para la protección del entorno a nivel local y global.',
+                        icon: 'tabler:gavel',
+                    },
+                    {
+                        title: 'Recursos Hídricos',
+                        description: 'Gestión integral del ciclo del agua, abordando su escasez, calidad y distribución equitativa.',
+                        icon: 'tabler:droplet',
+                    },
+                    {
+                        title: 'Sostenibilidad Ambiental',
+                        description: 'Enfoque transversal para armonizar el bienestar humano con la integridad de los sistemas naturales.',
+                        icon: 'tabler:leaf',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Sostenibilidad</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,440 horas lectivas</strong> (<strong>90 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>doce cursos teóricos</strong> de acuerdo a la temática central de la mención doctoral y del trabajo de investigación del estudiante.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un <strong>Tutor</strong>, para el seguimiento de la formación como investigador del doctorando, en el momento de resolver la admisión, el cual orientará al estudiante en cuanto a la estructuración del plan de estudios de este periodo.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios prácticos de seguimiento a su investigación relacionados a la problemática ambiental elegida.</li><li><strong>Tesis Doctoral</strong>; un trabajo final escrito sobre un tema de interés ambiental.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Sostenibilidad</span>, propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de la <strong>interacción entre los sistemas naturales y sociales</strong>. Todas las asignaturas están directamente conectadas con la realidad en el ámbito medioambiental desde una <strong>visión global de los problemas ecológicos, la economía, los recursos naturales, el medio ambiente y la sostenibilidad</strong>, y son impartidas por profesores PhD expertos en cada materia.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={sostenibilidadCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...sostenibilidadResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            <!-- Miembros del Profesorado -->
+            {
+                ['diana-duran', 'juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
+                <FacultyMember {...faculty[id]}>
+                    <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                    </Fragment>
+                </FacultyMember>
+                ))
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle="Formación interdisciplinaria para liderar proyectos, políticas y asesoría en desarrollo sostenible y conservación ambiental a nivel local y global. <br> El egresado sabrá:"
+                items={[
+                    {
+                        title: 'Planificación Territorial Sustentable',
+                        description: 'Planificar su comuna y/o región, dentro de los parámetros de un desarrollo sustentable.',
+                        icon: 'tabler:map-2',
+                    },
+                    {
+                        title: 'Investigación Avanzada en Sostenibilidad',
+                        description: 'Realizar investigaciones originales e independientes en materia de desarrollo sostenible.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Gestión de Conflictos y Negociación Ambiental',
+                        description: 'Planear y gestar negociaciones amplias y dinámicas con todos los actores sociales, en la solución de problemas que enfrenta el desarrollo y la conservación del ambiente.',
+                        icon: 'tabler:users-group',
+                    },
+                    {
+                        title: 'Liderazgo Ético en Políticas Globales',
+                        description: 'Emprender políticas, programas, planes y proyectos novedosos, con una formación académica que le permitirá desenvolverse en los ámbitos nacionales e internacionales, con un alto sentido ético.',
+                        icon: 'tabler:gavel',
+                    },
+                    {
+                        title: 'Consultoría y Asesoría Gubernamental',
+                        description: 'Asesorar adecuadamente a las entidades municipales y provinciales para resolver las necesidades de la población, del entorno natural y del patrimonio cultural, mediante la realización de proyectos de desarrollo urbano financieramente viables.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {                        
+                        title: 'Diseño de Urbanismo Sostenible',
+                        description: 'Desarrollar planes y proyectos urbanos sustentables.',
+                        icon: 'tabler:building-community',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="El egresado, tendrá la capacidad para desempeñarse en los niveles máximos de dirección en organizaciones relacionadas con la conservación ambiental y el manejo de recursos naturales, tanto privadas como públicas; en organismos nacionales e internacionales de planeación y diseño de políticas públicas."
+                items={[
+                    {
+                        title: 'Gestión Operativa de Proyectos Sustentables',
+                        description: 'Colabora con entidades locales en los aspectos ejecutores y operativos de programas y proyectos de investigación bajo el enfoque del desarrollo sustentable.',
+                        icon: 'tabler:settings-automation',
+                    },
+                    {
+                        title: 'Diagnóstico Territorial Local y Regional',
+                        description: 'Colabora en la elaboración de diagnósticos a escala local y regional.',
+                        icon: 'tabler:analyze',
+                    },
+                    {
+                        title: 'Docencia e Investigación Académica Superior',
+                        description: 'Participa en instituciones académicas de nivel superior con programas de docencia, investigación, vinculación y gestión en el campo del desarrollo sostenible con la capacidad de producir investigaciones desde una perspectiva local, regional, nacional o mundial.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Consultoría Estratégica Corporativa',
+                        description: 'Trabaja para empresas que requieran de la realización y asesoría de planes estratégicos y estudios del desarrollo sustentable.',
+                        icon: 'tabler:businessplan',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Sostenibilidad</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC160402</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>
