@@ -1,0 +1,384 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { proyectosInvestigacionCurriculum, proyectosInvestigacionResearch } from '~/data/phd/proyectos-investigacion-medio-ambiente';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Proyectos: Línea de Investigación en Medio Ambiente | Fondo Verde',
+    description:
+        'Potencia tu carrera con el Doctorado en Proyectos. Programa online oficial con RVOE, centrado en investigación y gestión de proyectos ambientales sostenibles.',
+    keywords:
+        'doctorado en proyectos, línea de investigación en medio ambiente, proyectos ambientales, sostenibilidad oficial, rvoe méxico, fondo verde, ecología, ecosistemas, PMI',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Generando conocimiento para un futuro sostenible"
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        alt: 'Imagen del Doctorado en Proyectos Medio Ambientales',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Proyectos: Línea de Investigación en Medio Ambiente</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title="Doctorado en Proyectos: Línea de Investigación en Medio Ambiente"
+                subtitle="Formación doctoral para liderar proyectos con impacto ambiental y social."
+                items={[
+                    {
+                        title: 'Gestor del Medio Ambiente',
+                        description: 'Los proyectos en medio ambiente son instrumentos básicos en las políticas de planificación y protección medioambiental. Su objetivo principal es proponer el mantenimiento de la diversidad biológica y la protección del entorno físico.',
+                        icon: 'tabler:book',
+                    },
+                    {
+                        title: 'Desarrollo Equilibrado del Territorio',
+                        description: 'El Doctorado en Proyectos busca potenciar de manera equitativa la conservación del medio ambiente con las demandas sociales promoviendo un mejor desarrollo de las habilidades de gestión de proyectos vinculados al uso sostenible de los recursos.',
+                        icon: 'tabler:map-pin',
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Proyectos',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Proyectos: Línea de Investigación en Medio Ambiente</span> forma profesionales orientados a la evaluación y control ambiental en el marco de la formulación y preparación de proyectos de desarrollo.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Este programa formará profesionales para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Concebir, formular y gerenciar proyectos de desarrollo sostenible desde la óptica del marco lógico internacional.</li><li>Diseñar de forma general y específica proyectos ambientales a pequeña y gran escala analizando viabilidad socio-ambiental y económica.</li></ul>',
+                    icon: 'tabler:circle-plus',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Profesionales e investigadores involucrados en proyectos de gestión y conservación ambiental.</li><li>Egresados de ingeniería, arquitectura, agronomía u otras áreas similares en diseño y formulación de proyectos.</li><li>Funcionarios públicos de toma de decisión en planificación territorial e infraestructura.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="El programa doctoral promueve áreas de investigación enfocadas al diseño medioambiental y sus soluciones."
+                items={[
+                    {
+                        title: 'Planeación de Proyectos Sostenibles',
+                        description: 'Gestión y diseño de proyectos adaptados al marco de metodologías de Project Management Institute (PMI) para el ámbito ambiental.',
+                        icon: 'tabler:ruler',
+                    },
+                    {
+                        title: 'Gestión e Impacto Ambiental',
+                        description: 'Evaluación y estudio de impacto ambiental de actuaciones en el desarrollo territorial.',
+                        icon: 'tabler:leaf',
+                    },
+                    {
+                        title: 'Emprendimientos y Responsabilidad Social',
+                        description: 'Políticas empresariales, reputación corporativa y finanzas éticas enfocadas a soluciones socio-ambientales.',
+                        icon: 'tabler:businessplan',
+                    },
+                    {
+                        title: 'Simulación y Dinámica de Sistemas',
+                        description: 'Modelación del comportamiento de recursos naturales mediante el uso de herramientas metodológicas computacionales.',
+                        icon: 'tabler:device-desktop-analytics',
+                    },
+                    {
+                        title: 'Educación Ambiental',
+                        description: 'Formulación y gestión de proyectos de éxito e innovación para la concientización ambiental de los usuarios.',
+                        icon: 'tabler:school',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Proyectos</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,200 horas lectivas</strong> (<strong>75 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>doce cursos teóricos</strong> de acuerdo a la temática de dirección de proyectos.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un <strong>Tutor</strong> para orientar al estudiante.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios metodológicos y de evaluación cualitativa/cuantitativa.</li><li><strong>Tesis Doctoral</strong>; un trabajo de investigación final enfocado en proyectos sostenibles.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación propone un recorrido analítico en la <strong>planeación, formulación y gestión de proyectos sostenibles</strong> tanto en áreas urbanas como rurales mediante una aproximación metodológica global.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={proyectosInvestigacionCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...proyectosInvestigacionResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas.',
+                        icon: 'tabler:world-latitude',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            {
+                ['diana-duran', 'juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
+                <FacultyMember {...faculty[id]}>
+                    <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                    </Fragment>
+                </FacultyMember>
+                ))
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle="El Doctorado en Proyectos, es un investigador y proyectista del ambiente con capacidad de hacer aportes originales en la gestión de proyectos ambientales."
+                items={[
+                    {
+                        title: 'Identificación de Problemas',
+                        description: 'Definirá un proyecto antes de comenzarlo a través de la identificación de un problema que se pretende solucionar.',
+                        icon: 'tabler:bulb',
+                    },
+                    {
+                        title: 'Instrumentos de Evaluación',
+                        description: 'Contará con herramientas para proponer proyectos de alto impacto estratégico para el desarrollo sostenible.',
+                        icon: 'tabler:report-analytics',
+                    },
+                    {
+                        title: 'Ejecución de Proyectos Sostenibles',
+                        description: 'Formula, diseña, ejecuta y evalúa proyectos en los ámbitos territoriales tendientes a incrementar su valor.',
+                        icon: 'tabler:chart-bar',
+                    },
+                    {
+                        title: 'Liderazgo Corporativo',
+                        description: 'Lidera proyectos que generen valor económico y social a largo plazo.',
+                        icon: 'tabler:users',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="Capacidad para desempeñarse en los niveles máximos de dirección en planeación y diseño de proyectos sostenibles de alto impacto."
+                items={[
+                    {
+                        title: 'Consultoría en Proyectos Territoriales',
+                        description: 'Consultor en programas, ambientales y emprendimientos de pequeños productores comunidades indígenas o campesinas.',
+                        icon: 'tabler:map-pin',
+                    },
+                    {
+                        title: 'Gestión en Entidades Locales',
+                        description: 'Colabora con entidades locales en los aspectos ejecutores y operativos de investigación y desarrollo.',
+                        icon: 'tabler:building-community',
+                    },
+                    {
+                        title: 'Planeación Estratégica Empresarial',
+                        description: 'Trabaja para empresas que requieran de la realización de planes estratégicos en el entorno socio-ambiental.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Diagnósticos Locales y Docencia',
+                        description: 'Participa en instituciones académicas superiores, así como en la estructuración de diagnósticos territoriales.',
+                        icon: 'tabler:school',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Proyectos: Línea de Investigación en Medio Ambiente</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC111202</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>
