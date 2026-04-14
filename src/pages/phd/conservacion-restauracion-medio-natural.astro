@@ -1,0 +1,408 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { conservacionRestauracionCurriculum, conservacionRestauracionResearch } from '~/data/phd/conservacion-restauracion-medio-natural';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Conservación y Restauración del Medio Natural | Fondo Verde',
+    description:
+        'Potencia tu carrera con el Doctorado en Conservación y Restauración del Medio Natural. Programa online oficial con RVOE, centrado en investigación en Medicina de la Conservación, restauración ecológica y medio ambiente.',
+    keywords:
+        'doctorado en conservación, doctorado en restauración del medio natural, investigación ambiental, posgrado medio ambiente, sostenibilidad oficial, rvoe méxico, fondo verde, ecología, ecosistemas',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Generando conocimiento para un futuro sostenible"
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'https://drive.google.com/file/d/0B0HLluZifC0PM0RzODhwOU5LN2M/view',
+            target: '_blank',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        alt: 'Imagen del Doctorado en Conservación y Restauración del Medio Natural',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Conservación y Restauración del Medio Natural</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title="Doctorado en Conservación y Restauración del Medio Natural"
+                subtitle="Formación doctoral para liderar investigación en la Medicina de la Conservación y la restauración ecológica."
+                items={[
+                    {
+                        title: 'Enfoque Integral de la Medicina de la Conservación',
+                        description: 'Será fundamental comprender a través de este programa el carácter central que tiene la Medicina de la Conservación como un conjunto de interacciones entre los seres humanos y los cambios inducidos en el clima, el hábitat, la biodiversidad y la ecología.',
+                        icon: 'tabler:heartbeat',
+                    },
+                    {
+                        title: 'Restauración y Rehabilitación de Sistemas',
+                        description: 'El programa incide en el proceso de asistir la recuperación de un ecosistema que ha sido degradado, dañado, o destruido. Se tratará tanto la restauración ecológica en sentido estricto como la rehabilitación ambiental de sistemas.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        icon: 'tabler:download',
+                        callToAction: {
+                        text: 'Descargar el Programa en Extenso',
+                        href: 'https://drive.google.com/file/d/0B0HLluZifC0PM0RzODhwOU5LN2M/view',
+                        target: '_blank',
+                        variant: 'primary',
+                        },
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Conservación',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Conservación y Restauración del Medio Natural</span> forma investigadores de alto nivel capaces de generar conocimientos innovadores que contribuyan a la solución de problemas ambientales y de conservación de la biodiversidad.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Los objetivos específicos son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Formar investigadores del más alto nivel académico, con madurez para proponer, dirigir y realizar investigación en el amplio campo de la Medicina de la Conservación.</li><li>Dominar el conjunto de instrumentos y herramientas de rehabilitación y restauración ecológica a ser aplicados a diferentes niveles.</li><li>Generar conocimiento en la rehabilitación y conservación de recursos ecológicos.</li></ul>',
+                    icon: 'tabler:circle-plus',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Profesionales en Biología, Ecología, agronomía o forestal, medicina veterinaria, geografía, turismo u otras ciencias aplicadas.</li><li>Egresados de las carreras de arquitectura o ingeniería interesados en el análisis y ejecución de planes y proyectos de restauración.</li><li>Tomadores de decisión, diseñadores de políticas públicas e investigadores del desarrollo territorial.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="A continuación se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
+                items={[
+                    {
+                        title: 'Gestión Forestal y Ambiental',
+                        description: 'Generar conocimiento relacionado con las Ciencias Forestales desde el punto de vista ecológico, técnico y socio-económico.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Medicina de la Conservación y Salud Ecológica',
+                        description: 'Profundizar en la relación entre fauna silvestre y doméstica, el ecosistema y el ser humano.',
+                        icon: 'tabler:heartbeat',
+                    },
+                    {
+                        title: 'Ecología y Biodiversidad',
+                        description: 'Sistemas ecológicos al nivel de ecosistema, paisaje, bioma o biosfera enfocados a la comprensión del funcionamiento ecológico global.',
+                        icon: 'tabler:leaf',
+                    },
+                    {
+                        title: 'Rehabilitación y Restauración del Paisaje',
+                        description: 'Métodos para restituir procesos ecológicos y las dinámicas del ecosistema a lo largo del tiempo.',
+                        icon: 'tabler:map-pin',
+                    },
+                    {
+                        title: 'Tecnologías y Métodos para el Manejo de la Biodiversidad',
+                        description: 'Uso de sistemas de información geográfica, marcadores genéticos y tecnologías para la conservación.',
+                        icon: 'tabler:device-desktop-analytics',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Conservación y Restauración del Medio Natural</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,440 horas lectivas</strong> (<strong>90 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>doce cursos teóricos</strong> de acuerdo a la temática central de la mención doctoral y del trabajo de investigación del estudiante.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un <strong>Tutor</strong>, para el seguimiento de la formación como investigador del doctorando, en el momento de resolver la admisión, el cual orientará al estudiante en cuanto a la estructuración del plan de estudios de este periodo.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios prácticos de seguimiento a su investigación relacionados a la problemática ambiental elegida.</li><li><strong>Tesis Doctoral</strong>; un trabajo final escrito sobre un tema de interés ambiental.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Conservación y Restauración del Medio Natural</span> propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión del <strong>conjunto de interacciones entre los seres humanos y los cambios inducidos en el clima, el hábitat, la biodiversidad y la ecología</strong>.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={conservacionRestauracionCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...conservacionRestauracionResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            <!-- Miembros del Profesorado (Using same general faculty mapped usually) -->
+            {
+                ['diana-duran', 'juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
+                <FacultyMember {...faculty[id]}>
+                    <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                    </Fragment>
+                </FacultyMember>
+                ))
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle="Los graduados de este programa adquirirán conocimientos sobre las principales enfermedades emergentes, prevalentes y zoonóticas que afectan la salud de la fauna silvestre, los ecosistemas y la salud pública en el mundo."
+                items={[
+                    {
+                        title: 'Diseño de Proyectos de Investigación',
+                        description: 'Capacidad de diseñar y ejecutar programas y proyectos destinados a generar nuevo conocimiento, aplicando metodologías avanzadas de experimentación.',
+                        icon: 'tabler:flask',
+                    },
+                    {
+                        title: 'Manejo de Técnicas de Restauración',
+                        description: 'Manejará las técnicas y metodologías de restauración que se aplican a distintos niveles de organización desde el organismo al ecosistema.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Conservación y Uso Sostenible',
+                        description: 'Diseñará proyectos de conservación de recursos naturales de los ecosistemas estratégicos, con base en los principios de la Medicina de la Conservación.',
+                        icon: 'tabler:heartbeat',
+                    },
+                    {
+                        title: 'Tecnologías Aplicadas al Medio Ambiente',
+                        description: 'Introducirá tecnologías modernas y de punta orientadas a proteger el medio ambiente.',
+                        icon: 'tabler:cpu',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="Los profesionales de la Medicina de la Conservación utilizan sus conocimientos y habilidades para trabajar con científicos, profesionales, responsables políticos y comunidades locales."
+                items={[
+                    {
+                        title: 'Asesor Científico y Gestión Ambiental',
+                        description: 'Asesor en la toma de decisiones, en el diseño y mejoramiento de procesos regulatorios y de gestión ambiental, a nivel público o privado.',
+                        icon: 'tabler:gavel',
+                    },
+                    {
+                        title: 'Investigación en Biodiversidad',
+                        description: 'Como investigador postdoctoral y profesional en el estudio y evaluación de la Biodiversidad.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Consultoría Ambiental',
+                        description: 'Preparado para el ámbito privado de las consultorías ambientales como en el público de las administraciones encargadas de gestionar el territorio.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Docencia e Investigación Universitaria',
+                        description: 'Investigador o profesor en organismos públicos de investigación y universidades.',
+                        icon: 'tabler:school',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Conservación y Restauración del Medio Natural</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC160402</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>
