@@ -32,6 +32,7 @@ El menú **"El Instituto"** incluye las siguientes páginas (en orden de desarro
 8. `/fondo-verde-accion-social` — pendiente
 
 ### Convenciones de código:
+- **Regla de Migración Masiva:** Para migrar Maestrías y otros programas futuros, seguir estrictamente el flujo documentado en `docs/MIGRACION_PROGRAMAS.md` (Scraping -> Tipado TS -> Astro -> Build/Clean).
 - **Tagline** del Hero siempre: `"El Instituto"` para las páginas del menú "El Instituto".
 - **Metadatos:** siempre incluir `title`, `description` y `keywords` en el frontmatter.
 - **Imágenes locales:** guardar en `src/assets/images/` con formato `.webp` y referenciar con `~/assets/images/`.
