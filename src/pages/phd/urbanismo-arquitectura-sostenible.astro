@@ -1,0 +1,388 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { urbanismoCurriculum, urbanismoResearch } from '~/data/phd/urbanismo-arquitectura-sostenible';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Urbanismo y Arquitectura Sostenible | Fondo Verde',
+    description:
+        'Elige el Doctorado en Urbanismo y Arquitectura Sostenible. Programa oficial con RVOE. Desarrolla ciudades, eco-materiales, eficiencia energética y calidad ambiental para un futuro sostenible.',
+    keywords:
+        'doctorado arquitectura sostenible, urbanismo sustentable, eficiencia energética, eco materiales, diseño ecosustentable, doctorado rvoe, fondo verde, ecología urbana',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Construcción e ingeniería sostenible, eficiencia energética y resiliencia urbana"
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        alt: 'Imagen del Doctorado en Urbanismo y Arquitectura Sostenible',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Urbanismo y Arquitectura Sostenible</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title="Sostenibilidad en el Diseño Ambiental"
+                subtitle="El cambio de actitud en el diseño y construcción de edificios para fomentar la eficiencia de los materiales y energéticos garantizando el impacto mínimo al entorno."
+                items={[
+                    {
+                        title: 'Estrategias constructivas pasivas',
+                        description: 'Planteamiento, evaluación y diseño de modelos urbanos mediante estrategias para el control ambiental de emisiones y contaminación acústica espacial.',
+                        icon: 'tabler:building',
+                    },
+                    {
+                        title: 'Tecnologías y Eco-materiales',
+                        description: 'Aprovechar recursos directos del entorno aplicando materiales alternativos e investigaciones propias con cobertura regional e internacional sin interrumpir el funcionamiento del bienestar urbano.',
+                        icon: 'tabler:recycle',
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Urbanismo y Arquitectura Sostenible',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué cursar el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Urbanismo y Arquitectura</span> integra conocimiento tecnológico y diseño transversal evaluando los problemas de una manera crítica y objetiva en la habitabilidad.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Este programa formará investigadores para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Aportar planeamientos a escala integral resolviendo inconvenientes territoriales estructurales.</li><li>Comprender de forma aplicada la sostenibilidad a través de sistemas de modelado y experimentación de variables de bajo impacto ecológico y térmico.</li></ul>',
+                    icon: 'tabler:school',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Arquitectos, profesionales en medio ambiente, ingenieros civiles orientados a la producción y construcción social.</li><li>Urbanistas gubernamentales, administradores públicos y directivos que implementan normativas habitacionales y territoriales a gran escala.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="El componente de investigación vincula un paradigma contemporáneo orientando la protección ambiental desde el diseño de base."
+                items={[
+                    {
+                        title: 'Gestión Urbana e Innovación',
+                        description: 'Mejoras en modelos de planificación y gestión de grandes metrópolis promoviendo alternativas a baja huella corporativa de carbono.',
+                        icon: 'tabler:bulb',
+                    },
+                    {
+                        title: 'Tecnologías y Energías',
+                        description: 'Aplicación, diseño y uso medible experimental de infraestructura moderna e integración de tecnologías de eficiencia renovable pasivas o limpias.',
+                        icon: 'tabler:tool',
+                    },
+                    {
+                        title: 'Vulnerabilidad y Habitabilidad',
+                        description: 'Análisis de respuestas técnicas constructivas antes factores críticos por desplazamientos a causa del cambio climático global.',
+                        icon: 'tabler:temperature',
+                    },
+                    {
+                        title: 'Políticas y Planificación',
+                        description: 'Estudios cualitativos en la normatividad estructural urbanística regional y propositiva al paisaje y conservación pública del sistema de transporte y movilidad.',
+                        icon: 'tabler:route',
+                    },
+                    {
+                        title: 'Sostenibilidad Edilicia',
+                        description: 'Reciclado de estructuras abandonadas, revalorización y diseño para conservación natural de patrimonio histórico.',
+                        icon: 'tabler:box-model',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='Es un programa multidisciplinario con una duración de <strong>36 meses</strong> (<strong>3 años</strong>), estructurado en periodos de formación, investigación, un <strong>Proyecto de Tesis Doctoral</strong> y artículo científico, totalizando <strong>1,600 horas lectivas</strong> (<strong>100 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de <strong>cuatro trimestres</strong> intensivos donde se dictan <strong>doce cursos teóricos</strong>.</li><li>Garantiza el correcto enfoque del participante a través del acompañamiento de un Tutor nombrado por la <strong>Comisión Académica</strong>.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios técnicos en planificación, diseño habitacional y análisis territorial.</li><li><strong>Tesis Doctoral</strong>; investigación y prototipado original evaluando métodos o estructuras alternativas en problemas actuales de infraestructura frente al medio natural.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='Aproximación completa por materias que recorren desde la sostenibilidad y el control ambiental urbano hasta ecosistemas e infraestructura ciudadana.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={urbanismoCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...urbanismoResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Arquitectos y Doctores Ejecutivos',
+                        description:
+                            'Las clases son impartidas por ingenieros y académicos del urbanismo con experiencia palpable en procesos corporativos y civiles reales a gran escala.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Planificadores Internacionales',
+                        description:
+                            'Las sesiones se complementan con experiencias y tutorías en directivos de ordenamiento ambiental e impacto territorial en toda América Latina.',
+                        icon: 'tabler:world',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            {
+                ['diana-duran', 'gonzalo-fuente', 'alberto-jimenez', 'eduardo-marquez', 'loraine-giraud', 'alberto-enrique-garcia', 'maria-teresa-perez', 'eduardo-salinas', 'ricardo-remond', 'susan-smith'].map((id) => {
+                    const prof = faculty[id];
+                    if(!prof) return null;
+                    return (
+                    <FacultyMember {...prof}>
+                        <Fragment slot="bg">
+                        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                        </Fragment>
+                    </FacultyMember>
+                    )
+                })
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle="Respuestas arquitectónicas de élite y diseño avanzado con visión directa integral sobre el entorno."
+                items={[
+                    {
+                        title: 'Acreditación Directiva Integral',
+                        description: 'Las nuevas tecnologías constructivas demandan perfiles a nivel de jefaturas con visión de ahorro energético transversal.',
+                        icon: 'tabler:certificate',
+                    },
+                    {
+                        title: 'Competitividad Estructural',
+                        description: 'Proyectistas egresados incorporan una ventaja absoluta ante proyectos y licitaciones del sector privado para corporaciones certificadas ecológicas.',
+                        icon: 'tabler:star',
+                    },
+                    {
+                        title: 'Proyectos a Bajo Coste y Pasivos',
+                        description: 'Integrar alternativas e investigaciones de vanguardia para la producción social minimizando residuos estructurales corporativos.',
+                        icon: 'tabler:chart-bar',
+                    },
+                    {
+                        title: 'Visibilidad Global Medioambiental',
+                        description: 'Participación abierta y consultoría validada para liderar mesas redondas internacionales, paneles de investigación y ponencias académicas sectorizadas.',
+                        icon: 'tabler:messages',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="El doctor en arquitectura y urbanismo sustentable de Fondo Verde adquiere funciones únicas en diseño territorial a macro escala."
+                items={[
+                    {
+                        title: 'Especialista en Evaluación Bioclimática',
+                        description: 'Generación de certificaciones u optimizaciones directas a infraestructuras asegurando estándares y calidad de habitabilidad energética.',
+                        icon: 'tabler:sun',
+                    },
+                    {
+                        title: 'Consultor Internacional y Gestor',
+                        description: 'Supervisión en proyectos constructivos transnacionales proponiendo adaptabilidad real con el medio natural, ecosistemas y biodiversidad local mitigando el cambio climático de impacto masivo.',
+                        icon: 'tabler:map',
+                    },
+                    {
+                        title: 'Investigación y Desarrollo Universitario',
+                        description: 'Dirección sobre cátedras de innovación territorial como docente permanente para casas estudios en grado, maestrías y formaciones postuniversitarias.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Director Urbanista Gubernamental',
+                        description: 'Planificador principal de ciudades inteligentes en ministerios de vivienda garantizando servicios ecológicos eficientes en sistemas de alta densidad ciudadana.',
+                        icon: 'tabler:building',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Urbanismo y Arquitectura Sostenible</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC210102</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>
