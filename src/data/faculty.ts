@@ -202,4 +202,42 @@ export const faculty: Record<string, FacultyMemberData> = {
       alt: 'Diana Durán, Dra.',
     },
   },
+  'susan-smith': {
+    name: 'Susan Smith, Dra. (Chile)',
+    specialty: 'Dra. en Ecología Tropical',
+    bio: `
+      <p>Susan Smith es Ingeniero Forestal, con Maestría y Doctorado en Ecología Tropical por la Universidad de Los Andes. Ha desarrollado una extensa carrera docente en ecología y silvicultura en diversas instituciones universitarias, destacando su labor en la conservación de bosques nativos y la dinámica de poblaciones de <i>Nothofagus</i> y <i>Araucaria</i> en Chile.</p>
+      <p>Su trayectoria investigativa incluye estudios sobre la dinámica hídrica y fisonomía de comunidades leñosas en las sabanas de Venezuela, así como el análisis del estatus hídrico del sustrato en el Cerrado de Brasil. Estos trabajos han resultado en numerosas tesis de posgrado, presentaciones en congresos internacionales y publicaciones en revistas científicas especializadas.</p>
+      <p>En el ámbito de la investigación aplicada, ha liderado equipos multidisciplinarios en proyectos de inventarios energéticos, sistematizaciones para el GEF, viabilidad de proyectos con la AECID y estudios de impacto ambiental y ordenación del territorio. Además, ha contribuido a evaluaciones ambientales integrales como el Informe GEO del PNUMA y coordina estudios sobre manejo integral de la biodiversidad en el Delta del Orinoco. Actualmente es Coordinadora de Proyectos del Instituto Forestal Latinoamericano (IFLA) en Mérida, Venezuela.</p>
+    `,
+    awards: [
+      'Coordinadora de Proyectos del Instituto Forestal Latinoamericano (IFLA)',
+      'Experta en Ecología Tropical y Conservación de Bosques Nativos',
+      'Líder de equipos multidisciplinarios en proyectos GEF y AECID',
+      'Colaboradora en el Informe GEO del PNUMA',
+    ],
+    image: {
+      src: '~/assets/images/users/fvi-susan-smith.webp',
+      alt: 'Susan Smith, Dra.',
+    },
+  },
+  'yandy-rodriguez': {
+    name: 'Yandy Rodríguez, PhD. (Cuba)',
+    specialty: 'PhD. en Ingeniería y Oceanografía Física',
+    bio: `
+      <p>Yandy Rodríguez es Doctor en Ingeniería y Maestro en Oceanografía Física por la Universidad Nacional Autónoma de México (UNAM), así como Licenciado en Geografía por la Universidad de La Habana. Realizó su estancia postdoctoral en el Centro Mexicano de Innovación en Energía del Océano (CEMIE-Océano), especializándose en el análisis avanzado de sistemas costeros y marinos.</p>
+      <p>Con trece años de experiencia profesional, ha trabajado en instituciones de prestigio como el Centro de Investigaciones de Ecosistemas Costeros de Cuba y diversos proyectos independientes en México. Sus temas de investigación abarcan la gestión costera, la oceanografía, el análisis del paisaje y el medio ambiente, así como el uso de percepción remota y programación aplicada a sistemas de información geográfica (SIG).</p>
+      <p>Es un autor prolífico con 20 publicaciones que incluyen libros y capítulos especializados sobre cambio de uso de suelo, energías renovables, diseño de rutas de conectividad ecológica y el empleo de tecnologías informáticas en el análisis espacial. Actualmente es profesor-asesor de maestría en la Universidad Centro Panamericano de Estudios Superiores e investigador asociado de la Academia Nacional de Investigación y Desarrollo (ANIDE A.C.) de México.</p>
+    `,
+    awards: [
+      'Investigador Asociado de la Academia Nacional de Investigación y Desarrollo (ANIDE A.C.)',
+      'Especialista en Oceanografía Física y CEMIE-Océano',
+      'Autor de 20 publicaciones científicas en análisis espacial y SIG',
+      'Miembro de la Red Iberoamericana de Medio Ambiente',
+    ],
+    image: {
+      src: '~/assets/images/users/fvi-yandy-rodriguez.webp',
+      alt: 'Yandy Rodríguez, PhD.',
+    },
+  },
 };
