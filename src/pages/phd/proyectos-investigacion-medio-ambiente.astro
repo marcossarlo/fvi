@@ -22,11 +22,11 @@ import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 
 const metadata = {
-    title: 'Doctorado en Proyectos: Línea de Investigación en Medio Ambiente | Fondo Verde',
+    title: 'Doctorado en Proyectos: Línea de Investigación en Medio Ambiente',
     description:
-        'Potencia tu carrera con el Doctorado en Proyectos. Programa online oficial con RVOE, centrado en investigación y gestión de proyectos ambientales sostenibles.',
+        'Formación doctoral de alto nivel en gestión ambiental y sostenibilidad. Investiga modelos de planificación, cambio climático y dirección de proyectos sostenibles.',
     keywords:
-        'doctorado en proyectos, línea de investigación en medio ambiente, proyectos ambientales, sostenibilidad oficial, rvoe méxico, fondo verde, ecología, ecosistemas, PMI',
+        'doctorado en proyectos ambientales, gestión ambiental, desarrollo sostenible, investigación en medio ambiente, sostenibilidad, proyectos sostenibles, doctorado medio ambiente',
 };
 
 const tabs = [
@@ -52,18 +52,27 @@ const tabs = [
     <!-- HeroPrograms ********************************************** -->
     <HeroPrograms
         tagline="Convocatoria Abierta 2026"
-        subtitle="Generando conocimiento para un futuro sostenible"
+        subtitle="Investigación avanzada en gestión de proyectos ambientales"
         actions={[
-        {
-            variant: 'primary',
-            text: 'Solicita información',
-            href: '#solicitudes',
-            icon: 'tabler:mail-forward',
-            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
-        },
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                variant: 'secondary',
+                text: 'Ver Folleto Académico',
+                href: 'https://drive.google.com/file/d/1O7Catswtga26i6NbbVi0MPOCYDhlH_wy/view',
+                target: '_blank',
+                icon: 'tabler:download',
+                class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            },
+
         ]}
         image={{
-        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        src: '~/assets/images/doctorados/fvi-phd-proyectos-investigacion-medio-ambiente.webp',
         alt: 'Imagen del Doctorado en Proyectos Medio Ambientales',
         }}
     >
@@ -86,22 +95,27 @@ const tabs = [
             <Content
                 id="presentacion"
                 tagline="Presentación"
-                title="Doctorado en Proyectos: Línea de Investigación en Medio Ambiente"
-                subtitle="Formación doctoral para liderar proyectos con impacto ambiental y social."
+                title='Doctorado en Proyectos: <span class="text-primary">Línea de Investigación en Medio Ambiente</span>'
+                subtitle="Formación avanzada para diseñar y gestionar proyectos sostenibles con impacto local, regional y global."
                 items={[
                     {
-                        title: 'Gestor del Medio Ambiente',
-                        description: 'Los proyectos en medio ambiente son instrumentos básicos en las políticas de planificación y protección medioambiental. Su objetivo principal es proponer el mantenimiento de la diversidad biológica y la protección del entorno físico.',
-                        icon: 'tabler:book',
+                        title: 'Gestión de proyectos ambientales',
+                        description: 'Implica un conjunto complejo de acciones y medidas orientadas al diseño de un futuro sustentable, considerando los distintos contextos sociohistóricos y geográficos, y enfrentando retos propios de la gestión ambiental.',
+                        icon: 'tabler:briefcase',
                     },
                     {
-                        title: 'Desarrollo Equilibrado del Territorio',
-                        description: 'El Doctorado en Proyectos busca potenciar de manera equitativa la conservación del medio ambiente con las demandas sociales promoviendo un mejor desarrollo de las habilidades de gestión de proyectos vinculados al uso sostenible de los recursos.',
-                        icon: 'tabler:map-pin',
+                        title: 'Particularidades de la gestión ambiental',
+                        description: 'A diferencia de otros sectores, los estándares ambientales son recientes y la cultura de gestión aún enfrenta debates y dudas, lo que exige una mayor profundización en técnicas de contextualización, implementación y aseguramiento de logros.',
+                        icon: 'tabler:settings-automation',
+                    },
+                    {
+                        title: 'Formación de investigadores en sostenibilidad',
+                        description: 'El programa busca preparar profesionales de alto nivel capaces de generar conocimientos innovadores en planeación, formulación y gestión de proyectos sostenibles, tanto en ambientes urbanos como rurales, y en diferentes escalas de intervención.',
+                        icon: 'tabler:microscope',
                     },
                 ]}
                 image={{
-                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                src: '~/assets/images/doctorados/fvi-phd-proyectos-investigacion-medio-ambiente-portada.webp',
                 alt: 'Imagen de presentación del Doctorado de Proyectos',
                 }}
             >
@@ -115,19 +129,19 @@ const tabs = [
                 id="el-doctorado"
                 tagline="El Doctorado"
                 title="¿Por qué hacer el Doctorado?"
-                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Proyectos: Línea de Investigación en Medio Ambiente</span> forma profesionales orientados a la evaluación y control ambiental en el marco de la formulación y preparación de proyectos de desarrollo.'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en Proyectos:</span> <span class="text-secondary font-semibold"> Línea de Investigación en Medio Ambiente</span> forma investigadores de alto nivel capaces de generar conocimientos innovadores en la planeación, formulación y gestión de proyectos sostenibles, aplicables tanto al ambiente urbano como rural y en micro y macro escala. El programa amplía el saber de profesionales interesados en temas prioritarios del desarrollo sostenible y en la gestión de proyectos ambientales, con especial pertinencia para contextos de países en vías de desarrollo, donde se requieren enfoques adaptados a realidades socioambientales específicas.'
                 columns={2}
                 items={[
                 {
                     title: 'Objetivos del Doctorado',
                     description:
-                    'Este programa formará profesionales para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Concebir, formular y gerenciar proyectos de desarrollo sostenible desde la óptica del marco lógico internacional.</li><li>Diseñar de forma general y específica proyectos ambientales a pequeña y gran escala analizando viabilidad socio-ambiental y económica.</li></ul>',
+                    'Los objetivos específicos del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Estudiar la relación entre sociedad y territorio, basados en un análisis de sus componentes biofísicos, socioeconómicos, culturales y políticos con el fin de poder entregar propuestas y soluciones que se adapten a las especificidades locales y regionales.</li><li>Proporcionar herramientas teóricas, metodológicas e instrumentales para elaborar, implementar, sistematizar y evaluar proyectos sustentables, así como la gestión de este proceso.</li><li>Formar proyectistas idóneos en la nueva cultura ambiental, competentes para gerenciar los procesos de cambio y diseñar las estrategias futuras, con base en una visión sistémica de la sustentabilidad y el desarrollo humano.</li><li>Identificar un problema que se pretende solucionar a través de una acción de desarrollo, para distinguir y aplicar conceptos básicos de planificación de proyectos y finalmente establecer un sistema de monitoreo para verificar el rumbo del mismo.</li></ul>',
                     icon: 'tabler:circle-plus',
                 },
                 {
                     title: 'Perfil del destinatario',
                     description:
-                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Profesionales e investigadores involucrados en proyectos de gestión y conservación ambiental.</li><li>Egresados de ingeniería, arquitectura, agronomía u otras áreas similares en diseño y formulación de proyectos.</li><li>Funcionarios públicos de toma de decisión en planificación territorial e infraestructura.</li></ul>',
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Todo profesional con perspectiva interdisciplinaria de lo ambiental, que acredite competencias y experiencia en el campo relacionado con la gestión ambiental y el desarrollo y que requieran participar como auspiciadores, generadores, directores, planificadores, ejecutores o supervisores de proyectos sostenibles.</li><li>Titulados universitarios de las distintas disciplinas (Ciencias Ambientales, Ciencias Económico Administrativas, Ingeniería, Arquitectura, Abogados, Geógrafos y similares) interesados en el área de la sustentabilidad ambiental.</li><li>Docentes, proyectistas y funcionarios del sector público y privado con desempeño profesional en desarrollo urbano y la sustentabilidad o en equipos de proyectos.</li></ul>',
                     icon: 'tabler:users',
                 },
                 ]}
@@ -138,32 +152,57 @@ const tabs = [
                 id="investigacion"
                 tagline="Investigación"
                 title="Líneas de Investigación"
-                subtitle="El programa doctoral promueve áreas de investigación enfocadas al diseño medioambiental y sus soluciones."
+                subtitle="A continuación se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
                 items={[
                     {
-                        title: 'Planeación de Proyectos Sostenibles',
-                        description: 'Gestión y diseño de proyectos adaptados al marco de metodologías de Project Management Institute (PMI) para el ámbito ambiental.',
-                        icon: 'tabler:ruler',
+                        title: 'Modelos de planificación y gestión de proyectos y programas de desarrollo sostenible',
+                        description: 'Estudio y aplicación de modelos avanzados para la estructuración de programas que promuevan la sostenibilidad a largo plazo en diversos contextos.',
+                        icon: 'tabler:layout-grid',
                     },
                     {
-                        title: 'Gestión e Impacto Ambiental',
-                        description: 'Evaluación y estudio de impacto ambiental de actuaciones en el desarrollo territorial.',
+                        title: 'Dirección y gestión de proyectos ambientales',
+                        description: 'Liderazgo técnico y administrativo en la ejecución de iniciativas orientadas a la protección y mejora del entorno natural.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Diseño de metodologías, enfoques y herramientas participativas de evaluación',
+                        description: 'Creación de instrumentos evaluativos que integren la participación social para medir el impacto y éxito de los proyectos ambientales.',
+                        icon: 'tabler:users-group',
+                    },
+                    {
+                        title: 'Tecnologías y métodos para la gestión sostenible',
+                        description: 'Implementación de soluciones tecnológicas y metodológicas modernas para optimizar el uso de recursos y minimizar impactos negativos.',
+                        icon: 'tabler:device-laptop',
+                    },
+                    {
+                        title: 'Desarrollo y aplicación de metodologías para el desarrollo de sistemas de toma de decisiones',
+                        description: 'Sistemas rigurosos basados en datos para fundamentar decisiones estratégicas en la planeación y gestión territorial.',
+                        icon: 'tabler:chart-arrows-vertical',
+                    },
+                    {
+                        title: 'Cambio Climático',
+                        description: 'Investigación sobre medidas de mitigación y adaptación ante los desafíos globales del calentamiento planetario.',
+                        icon: 'tabler:temperature-plus',
+                    },
+                    {
+                        title: 'Economía del Medio Ambiente y Desarrollo',
+                        description: 'Análisis de la viabilidad económica y financiera de proyectos bajo criterios de responsabilidad ambiental y social.',
+                        icon: 'tabler:coin',
+                    },
+                    {
+                        title: 'Gestión Sostenible de los Recursos Naturales y Ambientales',
+                        description: 'Estrategias para la explotación equilibrada y el mantenimiento de los servicios ecosistémicos esenciales.',
+                        icon: 'tabler:seeding',
+                    },
+                    {
+                        title: 'Conservación y Restauración de Ecosistemas',
+                        description: 'Proyectos enfocados en la recuperación de la biodiversidad y la regeneración de espacios degradados.',
                         icon: 'tabler:leaf',
                     },
                     {
-                        title: 'Emprendimientos y Responsabilidad Social',
-                        description: 'Políticas empresariales, reputación corporativa y finanzas éticas enfocadas a soluciones socio-ambientales.',
-                        icon: 'tabler:businessplan',
-                    },
-                    {
-                        title: 'Simulación y Dinámica de Sistemas',
-                        description: 'Modelación del comportamiento de recursos naturales mediante el uso de herramientas metodológicas computacionales.',
-                        icon: 'tabler:device-desktop-analytics',
-                    },
-                    {
-                        title: 'Educación Ambiental',
-                        description: 'Formulación y gestión de proyectos de éxito e innovación para la concientización ambiental de los usuarios.',
-                        icon: 'tabler:school',
+                        title: 'Sostenibilidad Ambiental',
+                        description: 'Visión integral de la sustentabilidad para garantizar que las acciones del presente no comprometan el futuro del planeta.',
+                        icon: 'tabler:world',
                     },
                 ]}
             >
@@ -178,13 +217,13 @@ const tabs = [
                 id="asignaturas"
                 tagline="Asignaturas"
                 title="Estructura del programa"
-                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Proyectos</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,200 horas lectivas</strong> (<strong>75 créditos</strong>).'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en Proyectos:</span> <span class="text-secondary font-semibold"> Línea de Investigación en Medio Ambiente</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,200 horas lectivas</strong> (<strong>75 créditos</strong>).'
                 columns={2}
                 items={[
                 {
                     title: 'Periodo de Formación',
                     description:
-                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>doce cursos teóricos</strong> de acuerdo a la temática de dirección de proyectos.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un <strong>Tutor</strong> para orientar al estudiante.</li></ul>',
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>doce cursos teóricos</strong> de acuerdo a la temática central de la mención doctoral y del trabajo de investigación del estudiante.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un Tutor, para el seguimiento de la formación como investigador del doctorando, en el momento de resolver la admisión, el cual orientará al estudiante en cuanto a la estructuración del plan de estudios de este periodo.</li></ul>',
                     icon: 'tabler:book',
                     classes: { 
                         panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
@@ -207,7 +246,7 @@ const tabs = [
             <HeroSection
                 tagline="Periodo de Formación"
                 title="Carga Horaria y Asignaturas del Curso"
-                subtitle='El plan de formación propone un recorrido analítico en la <strong>planeación, formulación y gestión de proyectos sostenibles</strong> tanto en áreas urbanas como rurales mediante una aproximación metodológica global.'
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en Proyectos:</span> <span class="text-secondary font-semibold"> Línea de Investigación en Medio Ambiente</span> propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de la <strong>planeación, formulación y gestión de proyectos sostenibles</strong> tanto en el ambiente urbano como rural, en la micro y en la macro escala. Todas las asignaturas están directamente conectadas con un conjunto complejo de acciones y medidas que conducirán al diseño de un futuro sustentable desde una <strong>visión global</strong> que te permitirá asumir el liderazgo para la conducción de un proyecto o estrategia ecológica para disminuir el impacto ambiental, y son impartidas por profesores PhD expertos en cada materia.'
             >
                 <Fragment slot="content">
                     <p class="text-base">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
@@ -245,8 +284,14 @@ const tabs = [
                     {
                         title: 'Equipo central y habilidades complementarias',
                         description:
-                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas.',
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
                         icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
                     },
                 ]}
                 image={{
@@ -259,7 +304,7 @@ const tabs = [
                 </Fragment>
             </Content>
             {
-                ['diana-duran', 'juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
+                ['juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'maria-teresa-perez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
                 <FacultyMember {...faculty[id]}>
                     <Fragment slot="bg">
                     <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
@@ -273,7 +318,7 @@ const tabs = [
                 id="beneficios"
                 tagline="Beneficios"
                 title="Beneficios anticipados e impacto profesional"
-                subtitle="El Doctorado en Proyectos, es un investigador y proyectista del ambiente con capacidad de hacer aportes originales en la gestión de proyectos ambientales."
+                subtitle='El <span class="text-primary font-semibold">Doctorado en Proyectos:</span> <span class="text-secondary font-semibold"> Línea de Investigación en Medio Ambiente</span>, es un investigador y proyectista del ambiente -social y natural- con capacidad de hacer aportes originales y significativos en el campo de las teorías de la sustentabilidad, el paradigma ambiental, y la gestión de proyectos ambientales. Un profesional que se constituya en un verdadero agente de cambio social y que posea profundos y sólidos conocimientos en las áreas objeto del doctorado. Para ello, cuenta con las siguientes competencias.'
                 items={[
                     {
                         title: 'Identificación de Problemas',
@@ -303,27 +348,32 @@ const tabs = [
                 id="campos-de-accion"
                 tagline="Campos de Acción"
                 title="Campos de Acción Profesionales"
-                subtitle="Capacidad para desempeñarse en los niveles máximos de dirección en planeación y diseño de proyectos sostenibles de alto impacto."
+                subtitle='Con el <span class="text-primary font-semibold">Doctorado en Proyectos:</span> <span class="text-secondary font-semibold"> Línea de Investigación en Medio Ambiente</span>, tendrá la capacidad para desempeñarse en los niveles máximos de dirección en organizaciones relacionadas con la conservación ambiental y el manejo de recursos naturales, tanto privadas como públicas; en organismos nacionales e internacionales de planeación y diseño de proyectos sostenibles de alto impacto.'
                 items={[
                     {
-                        title: 'Consultoría en Proyectos Territoriales',
-                        description: 'Consultor en programas, ambientales y emprendimientos de pequeños productores comunidades indígenas o campesinas.',
-                        icon: 'tabler:map-pin',
-                    },
-                    {
                         title: 'Gestión en Entidades Locales',
-                        description: 'Colabora con entidades locales en los aspectos ejecutores y operativos de investigación y desarrollo.',
+                        description: 'Colabora con entidades locales en los aspectos ejecutores y operativos de programas y proyectos de desarrollo ambiental e investigación bajo el enfoque del desarrollo sustentable.',
                         icon: 'tabler:building-community',
                     },
                     {
-                        title: 'Planeación Estratégica Empresarial',
-                        description: 'Trabaja para empresas que requieran de la realización de planes estratégicos en el entorno socio-ambiental.',
+                        title: 'Diagnósticos Locales y Regionales',
+                        description: 'Colabora en la elaboración de diagnósticos a escala local y regional y en programas de desarrollo sostenible en un área geográfica determinada.',
+                        icon: 'tabler:map-search',
+                    },
+                    {
+                        title: 'Docencia e Investigación Superior',
+                        description: 'Participa en instituciones académicas de nivel superior con programas de docencia, investigación, vinculación y gestión en el campo del desarrollo sostenible y la gestión de proyectos ambientales.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Asesoría Estratégica Empresarial',
+                        description: 'Trabaja para empresas que requieran de la realización y asesoría de planes estratégicos y estudios del desarrollo sustentable.',
                         icon: 'tabler:briefcase',
                     },
                     {
-                        title: 'Diagnósticos Locales y Docencia',
-                        description: 'Participa en instituciones académicas superiores, así como en la estructuración de diagnósticos territoriales.',
-                        icon: 'tabler:school',
+                        title: 'Consultoría en Proyectos Territoriales',
+                        description: 'Consultor en el desarrollo y puesta en marcha de proyectos territoriales, programas, y emprendimientos de pequeños productores, de comunidades indígenas o campesinas.',
+                        icon: 'tabler:users-group',
                     },
                 ]}
             >
