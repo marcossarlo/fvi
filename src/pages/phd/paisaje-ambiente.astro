@@ -22,9 +22,9 @@ import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 
 const metadata = {
-    title: 'Doctorado en Paisaje y Ambiente | Fondo Verde',
+    title: 'Doctorado en Paisaje y Ambiente',
     description:
-        'Fórmate con el Doctorado en Paisaje y Ambiente online con RVOE. Especialízate en el análisis, ordenación y gestión del paisaje, ecología urbana y desarrollo territorial.',
+        'Fórmate con el Doctorado en Paisaje y Ambiente online. Especialízate en el análisis, ordenación y gestión del paisaje, ecología urbana y desarrollo territorial.',
     keywords:
         'doctorado en paisaje y ambiente, ordenación del paisaje, rvoe méxico, ecología del paisaje, gestión del territorio, fondo verde, patrimonio cultural, educación online',
 };
@@ -54,16 +54,24 @@ const tabs = [
         tagline="Convocatoria Abierta 2026"
         subtitle="Soluciones sostenibles para la gestión, planeamiento y recuperación de los territorios"
         actions={[
-        {
-            variant: 'primary',
-            text: 'Solicita información',
-            href: '#solicitudes',
-            icon: 'tabler:mail-forward',
-            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
-        },
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                variant: 'secondary',
+                text: 'Ver Folleto Académico',
+                href: 'https://drive.google.com/file/d/1OXo1Go_WGiDZFb8jW8IiZSZ5latwjZVQ/view',
+                target: '_blank',
+                icon: 'tabler:download',
+                class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            },
         ]}
         image={{
-        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        src: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp',
         alt: 'Imagen del Doctorado en Paisaje y Ambiente',
         }}
     >
@@ -74,7 +82,7 @@ const tabs = [
     </HeroPrograms>
 
     <!-- DatosEstadisticas -->
-    <StatsData /> 
+    <StatsData duration="36" /> 
 
     <div class="relative max-w-[100vw] overflow-x-hidden">
         <!-- Desktop Sidebar & Mobile Floating Pill -->
@@ -86,22 +94,27 @@ const tabs = [
             <Content
                 id="presentacion"
                 tagline="Presentación"
-                title="Doctorado en Paisaje y Ambiente"
+                title='Doctorado en <span class="text-primary">Paisaje y Ambiente</span>'
                 subtitle="El espacio libre como elemento que estructura y contribuye a la mejora ambiental en la ciudad contemporánea y el territorio."
                 items={[
                     {
-                        title: 'Interdisciplinariedad Total',
-                        description: 'Abarca métodos para la evaluación, y planificación tanto de la ciudad contemporánea como del patrimonio natural y cultural.',
+                        title: 'Métodos y aproximaciones al estudio del paisaje',
+                        description: 'Se centra en la valoración del paisaje como recurso para la conservación de áreas naturales, la planificación de usos del territorio y la restauración de zonas alteradas, respondiendo a problemas prácticos de gestión territorial.',
                         icon: 'tabler:map',
                     },
                     {
-                        title: 'Gestión Práctica',
-                        description: 'Dar respuesta a problemas prácticos de gestión desarrollando conocimiento sobre procesos del paisaje a diferentes escalas.',
+                        title: 'Formación avanzada en gestión del espacio libre',
+                        description: 'Prepara a los estudiantes para resolver con rigor científico los problemas que inciden directamente en la planificación y gestión de paisajes, contribuyendo a la mejora ambiental en la ciudad contemporánea y en diversos contextos territoriales.',
                         icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Enfoque interdisciplinario y transdisciplinario del paisaje',
+                        description: 'Integra teorías, métodos y datos de múltiples disciplinas en narrativas coherentes sobre patrones y procesos del paisaje, abarcando diferentes escalas de análisis: regional, nacional e internacional.',
+                        icon: 'tabler:route',
                     },
                 ]}
                 image={{
-                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                src: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente-portada.webp',
                 alt: 'Imagen de presentación del Doctorado de Paisaje y Ambiente',
                 }}
             >
@@ -115,19 +128,19 @@ const tabs = [
                 id="el-doctorado"
                 tagline="El Doctorado"
                 title="¿Por qué hacer el Doctorado?"
-                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Paisaje y Ambiente</span> propone un recorrido 360º de todas las materias ligadas a la ordenación del paisaje evaluando recursos, problemas sistémicos e instrumentos para una gestión resiliente.'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Paisaje y Ambiente</span> forma investigadores de alto nivel capaces de abordar, con rigor científico, los problemas que afectan al espacio libre como elemento estructurador del entorno y su contribución a la mejora ambiental de la ciudad contemporánea. El programa desarrolla competencias para evaluar, planificar e intervenir en paisajes, aportando soluciones aplicadas a la gestión territorial, la conservación y la restauración, y fortaleciendo la capacidad técnica y conceptual necesaria para influir en procesos de planificación y políticas públicas relacionadas con el paisaje.'
                 columns={2}
                 items={[
                 {
                     title: 'Objetivos del Doctorado',
                     description:
-                    'Este programa formará profesionales para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Generar conocimiento de frontera sobre reparación paisajística.</li><li>Evaluar y planificar métodos de conservación y protección.</li><li>Analizar de fondo el impacto sistémico del desarrollo urbano frente a áreas emergentes.</li></ul>',
+                    'Los objetivos específicos del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Generar conocimiento de frontera sobre los procesos de formación y de degradación, así como la forma de prevenir, corregir y curar las degradaciones paisajísticas, así como de crear nuevos paisajes.</li><li>Profundizar en el conocimiento de la creación de la noción de paisaje en América Latina, sus influencias externas y sus condicionantes internas, los instrumentos y principios internacionales de ordenación y protección del paisaje en su aplicación actual.</li><li>Estudiar los métodos de análisis, interpretación, valoración y protección del paisaje y el patrimonio.</li><li>Establecer claves de interpretación del patrimonio natural considerando aspectos del paradigma de la complejidad.</li><li>Formar investigadores con una sólida base científica en aspectos relacionados con el medio ambiente.</li></ul>',
                     icon: 'tabler:school',
                 },
                 {
                     title: 'Perfil del destinatario',
                     description:
-                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Arquitectos, urbanistas, agrónomos, forestales e ingenieros.</li><li>Profesionales interesados en los campos de patrimonio y gestión.</li><li>Académicos e Investigadores en ciencias naturales urbanas.</li></ul>',
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><strong>Profesionales:</strong> Arquitectos, urbanistas, biólogos, ecólogos, agrónomos, forestales, geógrafos e ingenieros que aspiran a intervenir positivamente en el territorio.</li><li><strong>Académicos e Investigadores:</strong> Profesionales motivados por la valoración del paisaje y su relación con la gestión del territorio.</li><li><strong>Especialistas:</strong> Interesados en investigación científica, gestión de la naturaleza, patrimonio y planificación espacial.</li></ul>',
                     icon: 'tabler:users',
                 },
                 ]}
@@ -138,32 +151,57 @@ const tabs = [
                 id="investigacion"
                 tagline="Investigación"
                 title="Líneas de Investigación"
-                subtitle="El programa doctoral se centra fuertemente en el análisis y ejecución del territorio como ecosistema."
+                subtitle="A continuación, se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
                 items={[
                     {
-                        title: 'Arquitectura y Urbanismo',
-                        description: 'Procesos de ordenación del territorio: análisis, diagnóstico y su posterior intervención para la planificación de áreas urbanas sostenibles.',
+                        title: 'Arquitectura del paisaje',
+                        description: 'Diseño e integración de espacios abiertos, considerando la estética y la funcionalidad ecológica.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Urbanismo y ordenación del territorio',
+                        description: 'Análisis, diagnóstico e intervención para la planificación de áreas urbanas y rurales sostenibles.',
                         icon: 'tabler:building-arch',
                     },
                     {
-                        title: 'Gestión del Patrimonio',
-                        description: 'Evolución de territorios históricos, ecológicos que conforman los paisajes culturales sostenibles orientados a proyectos territoriales comunitarios.',
+                        title: 'Gestión del patrimonio y el paisaje',
+                        description: 'Puesta en valor y manejo de los recursos paisajísticos y culturales heredados.',
                         icon: 'tabler:building-castle',
                     },
                     {
-                        title: 'Ecología Evolutiva',
-                        description: 'Generación de medidas de conservación a través de la interpretación del impacto ambiental y el borde urbano sobre áreas protegidas.',
+                        title: 'Ecología evolutiva y conservación',
+                        description: 'Estudio de los sistemas biológicos y creación de medidas para preservar la biodiversidad.',
                         icon: 'tabler:plant-2',
                     },
                     {
-                        title: 'Geografía y Simulación',
-                        description: 'Proyectos basados en metodologías como Teledetección y Sistemas de Información Geográfica (SIG).',
+                        title: 'Paisajes culturales sostenibles',
+                        description: 'Vinculación de patrimonio, proyectos territoriales y desarrollo local bajo modelos sustentables.',
+                        icon: 'tabler:map',
+                    },
+                    {
+                        title: 'Cartografía y SIG',
+                        description: 'Uso de Teledetección y Sistemas de Información Geográfica para el mapeo territorial.',
                         icon: 'tabler:world-latitude',
                     },
                     {
+                        title: 'Impacto ambiental sobre el paisaje',
+                        description: 'Evaluación de las transformaciones y riesgos que afectan la calidad visual y ecológica del entorno.',
+                        icon: 'tabler:alert-triangle',
+                    },
+                    {
                         title: 'Metodologías no invasivas',
-                        description: 'Uso de tecnologías y simulaciones ambientales aplicadas íntegramente al patrimonio y entorno paisajístico.',
-                        icon: 'tabler:cube',
+                        description: 'Procedimientos técnicos aplicados al patrimonio y paisaje sin alterar su integridad física.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Estudios del borde urbano',
+                        description: 'Análisis morfológico de las zonas de transición entre la ciudad y el medio natural.',
+                        icon: 'tabler:geometry',
+                    },
+                    {
+                        title: 'Recreación y Simulación Ambiental',
+                        description: 'Proyectos de recreación comunitaria respaldados por modelos de simulación ambiental avanzados.',
+                        icon: 'tabler:device-laptop',
                     },
                 ]}
             >
@@ -178,7 +216,7 @@ const tabs = [
                 id="asignaturas"
                 tagline="Asignaturas"
                 title="Estructura del programa"
-                subtitle='Es un programa multidisciplinario con una duración de <strong>36 meses</strong> (<strong>3 años</strong>), estructurado en periodos de formación, investigación, un <strong>Proyecto de Tesis Doctoral</strong> y artículo científico, totalizando <strong>1,600 horas lectivas</strong> (<strong>100 créditos</strong>).'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Paisaje y Ambiente</span>, es un programa multidisciplinario que tiene una duración de <strong>36 meses (3 años)</strong>, estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis doctoral</strong> y un artículo científico con un total de <strong>1,600 horas lectivas (100 créditos)</strong>.'
                 columns={2}
                 items={[
                 {
@@ -207,7 +245,7 @@ const tabs = [
             <HeroSection
                 tagline="Periodo de Formación"
                 title="Carga Horaria y Asignaturas del Curso"
-                subtitle='Aproximación completa por las materias fundamentales que analizan sistemas geográficos, normativas de proyectos, sucesión de ecosistemas y gestión en patrimonio.'
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Paisaje y Ambiente</span> propone un recorrido 360º por las materias fundamentales vinculadas al análisis, ordenación y gestión del paisaje, explorando las relaciones e implicaciones del paisaje con diversos aspectos como el medio urbano, el patrimonio cultural, el turismo y los espacios naturales protegidos. También se abordan temas de conservación de la naturaleza a nivel de paisaje, con énfasis en el uso inicial de Sistemas de Información Geográfica (SIG). Todos los cursos son impartidos por profesores con doctorado y experiencia en cada materia.'
             >
                 <Fragment slot="content">
                     <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
@@ -237,16 +275,22 @@ const tabs = [
                 title="Profesorado y Tutoría"
                 items={[
                     {
-                        title: 'Profesionales Universitarios y Doctores',
+                        title: 'Composición del profesorado',
                         description:
-                            'Las clases son impartidas por académicos de alto nivel que dominan el entorno territorial científico y social trabajando activamente en procesos de evaluación ambiental e ingeniería de la conservación.',
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
                         icon: 'tabler:school',
                     },
                     {
-                        title: 'Red internacional de Arquitectura y Urbanismo',
+                        title: 'Equipo central y habilidades complementarias',
                         description:
-                            'El claustro está integrado por autoridades regionales del área, urbanistas de Iberoamérica y docentes en gestión del turismo sostenible.',
-                        icon: 'tabler:world',
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
                     },
                 ]}
                 image={{
@@ -259,7 +303,7 @@ const tabs = [
                 </Fragment>
             </Content>
             {
-                ['diana-duran', 'gonzalo-fuente', 'alberto-jimenez', 'eduardo-marquez', 'loraine-giraud', 'alberto-enrique-garcia', 'maria-teresa-perez', 'eduardo-salinas', 'ricardo-remond', 'susan-smith'].map((id) => {
+                ['gonzalo-fuente', 'diana-duran', 'alberto-jimenez', 'loraine-giraud', 'maria-teresa-perez', 'susan-smith'].map((id) => {
                     const prof = faculty[id];
                     if(!prof) return null;
                     return (
@@ -277,27 +321,32 @@ const tabs = [
                 id="beneficios"
                 tagline="Beneficios"
                 title="Beneficios anticipados e impacto profesional"
-                subtitle="El dominio exhaustivo del territorio es fundamental frente a nuevas exigencias en conservación y arquitectura global."
+                subtitle='Las características fundamentales del egresado del programa de <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Paisaje y Ambiente</span>, son:'
                 items={[
                     {
-                        title: 'Metodologías SIG Avanzadas',
-                        description: 'Uso de Sistemas de Información Geográfica en procesos de inventario aplicados al urbanismo y gestión del paisaje.',
-                        icon: 'tabler:map-pin',
+                        title: 'Investigación de impacto',
+                        description: 'Desarrollar investigaciones en las áreas de patrimonio cultural y natural, paisajes culturales y conservación para incidir positivamente en localidades urbanas y rurales.',
+                        icon: 'tabler:microscope',
                     },
                     {
-                        title: 'Diseño Resiliente',
-                        description: 'Proponer e implementar proyectos con dinámicas verdes orientadas a amortiguar factores de estrés ecológico y degradación humana.',
-                        icon: 'tabler:affiliate',
+                        title: 'Análisis y caracterización',
+                        description: 'Aplicar herramientas y metodologías avanzadas para el estudio detallado y la caracterización técnica del paisaje.',
+                        icon: 'tabler:chart-line',
                     },
                     {
-                        title: 'Gestión Patrimonio e Identidad',
-                        description: 'Aplicación de métodos que no comprometen la memoria arqueológica o cultural asegurando intervenciones sin disrupciones.',
-                        icon: 'tabler:shield-check',
+                        title: 'Gestión Sostenible',
+                        description: 'Identificar elementos relevantes en el territorio y el paisaje imprescindibles para comprender y gestionar nuestro mundo de forma sostenible.',
+                        icon: 'tabler:leaf',
                     },
                     {
-                        title: 'Cualificación Ejecutiva',
-                        description: 'Acredita y da el soporte técnico exigido en los mayores despachos consultores, organizaciones internacionales e institutos ambientales.',
-                        icon: 'tabler:briefcase-2',
+                        title: 'Diagnóstico y Prospectiva',
+                        description: 'Analizar información crítica sobre el paisaje, patrimonio y ciudad para realizar diagnósticos precisos y estudios de escenarios futuros.',
+                        icon: 'tabler:search',
+                    },
+                    {
+                        title: 'Validación Multidisciplinar',
+                        description: 'Validar proyectos e intervenciones analizando sus consecuencias desde una perspectiva multidisciplinar e integradora.',
+                        icon: 'tabler:checkup-list',
                     },
                 ]}
             />    
@@ -310,24 +359,39 @@ const tabs = [
                 subtitle="Líder en ordenación de proyectos e investigación de primer impacto frente a entornos ecológicos y artificiales."
                 items={[
                     {
-                        title: 'Agencias y Organismos de Protección',
-                        description: 'Dirección o asesoría en instancias gubernamentales formulando estrategias de urbanismo y conservación para áreas nacionales e internacionales.',
+                        title: 'Asesoría Científica',
+                        description: 'Asesor en proyectos de protección y gestión del paisaje, integrando y liderando equipos pluridisciplinares.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Investigación del Patrimonio',
+                        description: 'Desarrollo de investigaciones para la puesta en valor y difusión del patrimonio natural y cultural.',
+                        icon: 'tabler:building-castle',
+                    },
+                    {
+                        title: 'Colaboración Académica',
+                        description: 'Investigador activo en su área de conocimiento, participando en redes de colaboración académica y científica internacional.',
+                        icon: 'tabler:network',
+                    },
+                    {
+                        title: 'Consultoría Especializada',
+                        description: 'Consultor en despachos de arquitectura, urbanismo, ingeniería, infraestructuras y paisajismo.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Políticas Públicas',
+                        description: 'Diseño e ejecución de políticas públicas y proyectos de desarrollo en gestión cultural, patrimonial y turística.',
+                        icon: 'tabler:building-community',
+                    },
+                    {
+                        title: 'Gestión Ambiental y Paisajística',
+                        description: 'Gestor en análisis, diagnosis y propuestas territoriales y ambientales de alto impacto.',
                         icon: 'tabler:leaf',
                     },
                     {
-                        title: 'Diseñador en Arquitectura Sostenible',
-                        description: 'Planificación independiente de infraestructuras vinculadas al entorno natural integrando soluciones de tecnología amigable.',
-                        icon: 'tabler:building-bridge-2',
-                    },
-                    {
-                        title: 'Evaluador y Auditor Turístico',
-                        description: 'Consultoría especializada en garantizar normativas globales para la operación turística bajo modelos sustentables frente al paisaje geográfico.',
-                        icon: 'tabler:route-square',
-                    },
-                    {
-                        title: 'Investigación y Desarrollo Universitario',
-                        description: 'Línea académica en centros de altos estudios, diseñando laboratorios y modelamiento de dinámica de ecosistemas.',
-                        icon: 'tabler:school',
+                        title: 'Análisis Técnico Administrativo',
+                        description: 'Analista y gestor en áreas técnicas de la administración pública para políticas de intervención en el territorio.',
+                        icon: 'tabler:map-search',
                     },
                 ]}
             >
@@ -349,7 +413,7 @@ const tabs = [
              >
                 <Fragment slot="content">                    
                     <p class="text-xl text-muted mb-2 dark:text-slate-300">
-                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Paisaje y Ambiente</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC210102</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Paisaje y Ambiente</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC201209</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
                     </p>      
                     <div class="flex justify-center">
                         <div class="max-w-xs md:max-w-[400px]">
