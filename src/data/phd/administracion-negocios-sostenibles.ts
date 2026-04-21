@@ -252,22 +252,22 @@ export const administracionNegociosSosteniblesCurriculum: ProgramCurriculum = {
 export const administracionNegociosSosteniblesResearch: ResearchCurriculum = {
     seminars: [
         {
-            title: 'Seminario de Investigación I: Cómo identificar el problema para una investigación. Estado de la Cuestión',
+            title: 'Seminario de Investigación I: Análisis del Estado del Arte',
             hours: 80,
             credits: 5,
         },
         {
-            title: 'Seminario de Investigación II: Diseño Metodológico',
+            title: 'Seminario de Investigación II: El Problema de Investigación',
             hours: 80,
             credits: 5,
         },
         {
-            title: 'Seminario de Investigación III: Técnicas de investigación, recolección y análisis de datos',
+            title: 'Seminario de Investigación III: Diseño Metodológico',
             hours: 80,
             credits: 5,
         },
         {
-            title: 'Seminario de Investigación IV: Pautas para Estructurar y Redactar la Tesis Doctoral, y el Artículo Científico',
+            title: 'Seminario de Investigación IV: Propuesta de Investigación Doctoral',
             hours: 160,
             credits: 10,
         },
