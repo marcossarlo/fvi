@@ -22,11 +22,11 @@ import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 
 const metadata = {
-    title: 'Doctorado en Urbanismo y Arquitectura Sostenible | Fondo Verde',
+    title: 'Doctorado en Urbanismo y Arquitectura Sostenible',
     description:
-        'Elige el Doctorado en Urbanismo y Arquitectura Sostenible. Programa oficial con RVOE. Desarrolla ciudades, eco-materiales, eficiencia energética y calidad ambiental para un futuro sostenible.',
+        'Doctorado en diseño arquitectónico y urbanismo sostenible. Investiga eficiencia energética, materiales ecológicos y planificación territorial con rigor científico.',
     keywords:
-        'doctorado arquitectura sostenible, urbanismo sustentable, eficiencia energética, eco materiales, diseño ecosustentable, doctorado rvoe, fondo verde, ecología urbana',
+        'doctorado en arquitectura sostenible, urbanismo sostenible, eficiencia energética, diseño constructivo, planificación territorial, hábitat sostenible, rehabilitación sostenible, materiales ecológicos',
 };
 
 const tabs = [
@@ -54,16 +54,24 @@ const tabs = [
         tagline="Convocatoria Abierta 2026"
         subtitle="Construcción e ingeniería sostenible, eficiencia energética y resiliencia urbana"
         actions={[
-        {
-            variant: 'primary',
-            text: 'Solicita información',
-            href: '#solicitudes',
-            icon: 'tabler:mail-forward',
-            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
-        },
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                variant: 'secondary',
+                text: 'Ver Folleto Académico',
+                href: 'https://drive.google.com/file/d/1E4bVW1rez8i16HMztMaGLeAJOyl3BQrG/view',
+                target: '_blank',
+                icon: 'tabler:download',
+                class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            },
         ]}
         image={{
-        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
+        src: '~/assets/images/doctorados/fvi-phd-urbanismo-arquitectura-sostenible.webp',
         alt: 'Imagen del Doctorado en Urbanismo y Arquitectura Sostenible',
         }}
     >
@@ -74,7 +82,7 @@ const tabs = [
     </HeroPrograms>
 
     <!-- DatosEstadisticas -->
-    <StatsData /> 
+    <StatsData duration='36' /> 
 
     <div class="relative max-w-[100vw] overflow-x-hidden">
         <!-- Desktop Sidebar & Mobile Floating Pill -->
@@ -86,22 +94,27 @@ const tabs = [
             <Content
                 id="presentacion"
                 tagline="Presentación"
-                title="Sostenibilidad en el Diseño Ambiental"
-                subtitle="El cambio de actitud en el diseño y construcción de edificios para fomentar la eficiencia de los materiales y energéticos garantizando el impacto mínimo al entorno."
+                title='Doctorado en <span class="text-primary dark:text-accent">Urbanismo y Arquitectura Sostenible</span>'
+                subtitle="Formación doctoral para diseñar y evaluar soluciones arquitectónicas y urbanas sostenibles con impacto científico y social."
                 items={[
                     {
-                        title: 'Estrategias constructivas pasivas',
-                        description: 'Planteamiento, evaluación y diseño de modelos urbanos mediante estrategias para el control ambiental de emisiones y contaminación acústica espacial.',
-                        icon: 'tabler:building',
+                        title: 'Arquitectura sostenible y eficiencia ambiental',
+                        description: 'Promueve un cambio de actitud en el diseño y construcción de edificios, valorando la eficiencia de materiales, fomentando el uso racional de la energía y aprovechando los recursos del entorno para minimizar el impacto ambiental.',
+                        icon: 'tabler:home-eco',
                     },
                     {
-                        title: 'Tecnologías y Eco-materiales',
-                        description: 'Aprovechar recursos directos del entorno aplicando materiales alternativos e investigaciones propias con cobertura regional e internacional sin interrumpir el funcionamiento del bienestar urbano.',
-                        icon: 'tabler:recycle',
+                        title: 'Urbanismo contemporáneo y planificación territorial',
+                        description: 'Aborda el estudio y la intervención en la escala urbana y territorial, integrando estrategias que contribuyan a la mejora ambiental y a la organización del espacio libre como elemento estructurador de la ciudad contemporánea.',
+                        icon: 'tabler:map-pin-bolt',
+                    },
+                    {
+                        title: 'Formación avanzada e investigación internacional',
+                        description: 'Prepara a los estudiantes para resolver con rigor científico los problemas arquitectónicos y urbanísticos, desarrollando tesis originales de alta calidad con alcance nacional e internacional, comprometidas con el bienestar común del planeta.',
+                        icon: 'tabler:world-search',
                     },
                 ]}
                 image={{
-                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                src: '~/assets/images/doctorados/fvi-phd-urbanismo-arquitectura-sostenible-portada.webp',
                 alt: 'Imagen de presentación del Doctorado de Urbanismo y Arquitectura Sostenible',
                 }}
             >
@@ -115,19 +128,19 @@ const tabs = [
                 id="el-doctorado"
                 tagline="El Doctorado"
                 title="¿Por qué cursar el Doctorado?"
-                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Urbanismo y Arquitectura</span> integra conocimiento tecnológico y diseño transversal evaluando los problemas de una manera crítica y objetiva en la habitabilidad.'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Urbanismo y Arquitectura Sostenible</span> forma investigadores de alto nivel capaces de abordar, con rigor científico, los desafíos que afectan a la arquitectura y al planeamiento urbano. El programa desarrolla competencias para evaluar y proponer estrategias constructivas y de diseño medioambiental, optimizar la eficiencia energética y de materiales, y articular soluciones de planificación a escala urbana y territorial. Mediante la realización de investigaciones originales y de alta calidad con alcance nacional e internacional, los egresados estarán preparados para contribuir al bienestar común mediante una arquitectura comprometida con la sostenibilidad.'
                 columns={2}
                 items={[
                 {
                     title: 'Objetivos del Doctorado',
                     description:
-                    'Este programa formará investigadores para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Aportar planeamientos a escala integral resolviendo inconvenientes territoriales estructurales.</li><li>Comprender de forma aplicada la sostenibilidad a través de sistemas de modelado y experimentación de variables de bajo impacto ecológico y térmico.</li></ul>',
+                    'Los objetivos generales del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><strong>Estudiar</strong> la urbanística contemporánea mediante el análisis y la intervención crítica a escala territorial y urbana.</li><li><strong>Generar</strong> conocimiento de frontera sobre la permanencia y habitabilidad de espacios arquitectónicos en relación directa con su contexto.</li><li><strong>Conocer</strong> alternativas constructivas y de paisaje para minimizar el impacto ecológico de procesos inadecuados de gestión y planificación.</li><li><strong>Exponer</strong> tecnologías de construcción e infraestructuras de bajo coste, diseñadas para ser apropiadas y sostenibles para su entorno y población.</li></ul>',
                     icon: 'tabler:school',
                 },
                 {
                     title: 'Perfil del destinatario',
                     description:
-                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Arquitectos, profesionales en medio ambiente, ingenieros civiles orientados a la producción y construcción social.</li><li>Urbanistas gubernamentales, administradores públicos y directivos que implementan normativas habitacionales y territoriales a gran escala.</li></ul>',
+                    'El programa está diseñado para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><strong>Profesionales</strong> de la arquitectura, ingeniería, medio ambiente y construcción interesados en el diseño sostenible y la gestión eficiente de recursos.</li><li><strong>Magísteres</strong> con visión crítica sobre el hábitat, capaces de proponer transformaciones urbanas, territoriales y ambientales con impacto social.</li><li><strong>Agentes del sector público y privado</strong>, técnicos de ONGs y voluntarios involucrados en la cooperación al desarrollo y la producción social del hábitat.</li></ul>',
                     icon: 'tabler:users',
                 },
                 ]}
@@ -138,32 +151,52 @@ const tabs = [
                 id="investigacion"
                 tagline="Investigación"
                 title="Líneas de Investigación"
-                subtitle="El componente de investigación vincula un paradigma contemporáneo orientando la protección ambiental desde el diseño de base."
+                subtitle="A continuación, se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
                 items={[
                     {
-                        title: 'Gestión Urbana e Innovación',
-                        description: 'Mejoras en modelos de planificación y gestión de grandes metrópolis promoviendo alternativas a baja huella corporativa de carbono.',
-                        icon: 'tabler:bulb',
+                        title: 'Urbanismo y hábitat sostenible',
+                        description: 'Análisis de modelos urbanos que promuevan la cohesión social y el equilibrio ecológico en el desarrollo del hábitat humano.',
+                        icon: 'tabler:home-bolt',
                     },
                     {
-                        title: 'Tecnologías y Energías',
-                        description: 'Aplicación, diseño y uso medible experimental de infraestructura moderna e integración de tecnologías de eficiencia renovable pasivas o limpias.',
+                        title: 'Estrategias de diseño constructivo',
+                        description: 'Desarrollo de métodos innovadores para integrar soluciones técnicas sostenibles desde la fase de diseño arquitectónico.',
+                        icon: 'tabler:ruler-measure',
+                    },
+                    {
+                        title: 'Ciudad y modelos arquitectónicos',
+                        description: 'Estudio de tipologías arquitectónicas y configuraciones urbanas orientadas a la máxima eficiencia y resiliencia.',
+                        icon: 'tabler:building-community',
+                    },
+                    {
+                        title: 'Eficiencia energética en edificación',
+                        description: 'Investigación sobre sistemas pasivos, energías renovables y optimización del consumo energético en construcciones.',
+                        icon: 'tabler:battery-automotive',
+                    },
+                    {
+                        title: 'Caracterización y durabilidad de materiales',
+                        description: 'Estudios científicos sobre las propiedades biofísicas y la vida útil de materiales de construcción ecológicos.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Sostenibilidad de los recursos materiales',
+                        description: 'Gestión del ciclo de vida de los materiales y aprovechamiento de recursos locales para minimizar la huella de carbono.',
+                        icon: 'tabler:recycle',
+                    },
+                    {
+                        title: 'Rehabilitación sostenible',
+                        description: 'Intervención y modernización de edificios existentes bajo criterios de eficiencia energética y respeto al patrimonio.',
                         icon: 'tabler:tool',
                     },
                     {
-                        title: 'Vulnerabilidad y Habitabilidad',
-                        description: 'Análisis de respuestas técnicas constructivas antes factores críticos por desplazamientos a causa del cambio climático global.',
-                        icon: 'tabler:temperature',
+                        title: 'Arquitectura del paisaje',
+                        description: 'Diseño de espacios abiertos y entornos naturales integrados que mejoren la calidad ambiental y el bienestar urbano.',
+                        icon: 'tabler:leaf',
                     },
                     {
-                        title: 'Políticas y Planificación',
-                        description: 'Estudios cualitativos en la normatividad estructural urbanística regional y propositiva al paisaje y conservación pública del sistema de transporte y movilidad.',
-                        icon: 'tabler:route',
-                    },
-                    {
-                        title: 'Sostenibilidad Edilicia',
-                        description: 'Reciclado de estructuras abandonadas, revalorización y diseño para conservación natural de patrimonio histórico.',
-                        icon: 'tabler:box-model',
+                        title: 'Ordenación del territorio',
+                        description: 'Análisis, diagnóstico y propuestas de intervención para una planificación territorial equilibrada y sostenible.',
+                        icon: 'tabler:map-2',
                     },
                 ]}
             >
@@ -178,7 +211,7 @@ const tabs = [
                 id="asignaturas"
                 tagline="Asignaturas"
                 title="Estructura del programa"
-                subtitle='Es un programa multidisciplinario con una duración de <strong>36 meses</strong> (<strong>3 años</strong>), estructurado en periodos de formación, investigación, un <strong>Proyecto de Tesis Doctoral</strong> y artículo científico, totalizando <strong>1,600 horas lectivas</strong> (<strong>100 créditos</strong>).'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Urbanismo y Arquitectura Sostenible</span>, es un programa multidisciplinario que tiene una duración de <strong>36 meses (3 años)</strong>, estructurados en un periodo de formación, un periodo de investigación, el Proyecto de Tesis doctoral y un artículo científico con un total de <strong>1,600 horas lectivas (100 créditos)</strong>.'
                 columns={2}
                 items={[
                 {
@@ -207,7 +240,7 @@ const tabs = [
             <HeroSection
                 tagline="Periodo de Formación"
                 title="Carga Horaria y Asignaturas del Curso"
-                subtitle='Aproximación completa por materias que recorren desde la sostenibilidad y el control ambiental urbano hasta ecosistemas e infraestructura ciudadana.'
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Urbanismo y Arquitectura Sostenible</span> propone un recorrido 360º por las materias fundamentales vinculadas al medio natural, el urbanismo, los materiales constructivos y el diseño, todas ellas <strong>bajo la óptica y el objetivo fundamental de la arquitectura</strong>. Todas las asignaturas están directamente conectadas a soluciones de bajo o nulo consumo energético, no contaminantes, realizadas con materiales sanos e integradas en el medio natural desde un <strong>enfoque proyectual y actuaciones arquitectónicas, constructivas y urbanísticas de alta calidad medioambiental</strong>.'
             >
                 <Fragment slot="content">
                     <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
@@ -237,16 +270,22 @@ const tabs = [
                 title="Profesorado y Tutoría"
                 items={[
                     {
-                        title: 'Arquitectos y Doctores Ejecutivos',
+                        title: 'Composición del profesorado',
                         description:
-                            'Las clases son impartidas por ingenieros y académicos del urbanismo con experiencia palpable en procesos corporativos y civiles reales a gran escala.',
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
                         icon: 'tabler:school',
                     },
                     {
-                        title: 'Planificadores Internacionales',
+                        title: 'Equipo central y habilidades complementarias',
                         description:
-                            'Las sesiones se complementan con experiencias y tutorías en directivos de ordenamiento ambiental e impacto territorial en toda América Latina.',
-                        icon: 'tabler:world',
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
                     },
                 ]}
                 image={{
@@ -259,7 +298,7 @@ const tabs = [
                 </Fragment>
             </Content>
             {
-                ['diana-duran', 'gonzalo-fuente', 'alberto-jimenez', 'eduardo-marquez', 'loraine-giraud', 'alberto-enrique-garcia', 'maria-teresa-perez', 'eduardo-salinas', 'ricardo-remond', 'susan-smith'].map((id) => {
+                ['gonzalo-fuente', 'diana-duran', 'alberto-jimenez', 'loraine-giraud', 'maria-teresa-perez', 'susan-smith', 'erick-brenes'].map((id) => {
                     const prof = faculty[id];
                     if(!prof) return null;
                     return (
@@ -277,27 +316,32 @@ const tabs = [
                 id="beneficios"
                 tagline="Beneficios"
                 title="Beneficios anticipados e impacto profesional"
-                subtitle="Respuestas arquitectónicas de élite y diseño avanzado con visión directa integral sobre el entorno."
+                subtitle='Las características fundamentales del egresado del programa de <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Urbanismo y Arquitectura Sostenible</span>, son:'
                 items={[
                     {
-                        title: 'Acreditación Directiva Integral',
-                        description: 'Las nuevas tecnologías constructivas demandan perfiles a nivel de jefaturas con visión de ahorro energético transversal.',
-                        icon: 'tabler:certificate',
+                        title: 'Gestión Crítica e Innovadora',
+                        description: 'Aplica fundamentos teóricos y metodológicos para resolver problemas urbanos y territoriales mediante prácticas constructivas humanas y en armonía con la naturaleza.',
+                        icon: 'tabler:bulb',
                     },
                     {
-                        title: 'Competitividad Estructural',
-                        description: 'Proyectistas egresados incorporan una ventaja absoluta ante proyectos y licitaciones del sector privado para corporaciones certificadas ecológicas.',
-                        icon: 'tabler:star',
+                        title: 'Investigación en Tecnologías Alternativas',
+                        description: 'Desarrolla investigaciones avanzadas en diseño y construcción bajo el concepto de sostenibilidad y el uso de tecnologías alternativas.',
+                        icon: 'tabler:microscope',
                     },
                     {
-                        title: 'Proyectos a Bajo Coste y Pasivos',
-                        description: 'Integrar alternativas e investigaciones de vanguardia para la producción social minimizando residuos estructurales corporativos.',
-                        icon: 'tabler:chart-bar',
+                        title: 'Proyección de Modelos Sustentables',
+                        description: 'Identifica las particularidades del modelo urbano sustentable para liderar la proyección de desarrollos futuros resilientes.',
+                        icon: 'tabler:chart-arrows',
                     },
                     {
-                        title: 'Visibilidad Global Medioambiental',
-                        description: 'Participación abierta y consultoría validada para liderar mesas redondas internacionales, paneles de investigación y ponencias académicas sectorizadas.',
-                        icon: 'tabler:messages',
+                        title: 'Dominio de Metodologías de Diseño',
+                        description: 'Domina técnicas especializadas para sustentar alternativas de diseño en arquitectura sostenible y su impacto en el entorno.',
+                        icon: 'tabler:layout-dashboard',
+                    },
+                    {
+                        title: 'Capacidad en Diseño Bioclimático',
+                        description: 'Resuelve problemas particulares de diseño ambiental a escala urbana mediante estrategias bioclimáticas avanzadas.',
+                        icon: 'tabler:sun-high',
                     },
                 ]}
             />    
@@ -307,27 +351,37 @@ const tabs = [
                 id="campos-de-accion"
                 tagline="Campos de Acción"
                 title="Campos de Acción Profesionales"
-                subtitle="El doctor en arquitectura y urbanismo sustentable de Fondo Verde adquiere funciones únicas en diseño territorial a macro escala."
+                subtitle='Los doctores egresados adquieren competencias para liderar procesos de transformación urbana y arquitectónica, desempeñándose como consultores, investigadores y evaluadores de alto nivel bajo estándares internacionales de sostenibilidad.'
                 items={[
                     {
-                        title: 'Especialista en Evaluación Bioclimática',
-                        description: 'Generación de certificaciones u optimizaciones directas a infraestructuras asegurando estándares y calidad de habitabilidad energética.',
-                        icon: 'tabler:sun',
-                    },
-                    {
-                        title: 'Consultor Internacional y Gestor',
-                        description: 'Supervisión en proyectos constructivos transnacionales proponiendo adaptabilidad real con el medio natural, ecosistemas y biodiversidad local mitigando el cambio climático de impacto masivo.',
-                        icon: 'tabler:map',
-                    },
-                    {
-                        title: 'Investigación y Desarrollo Universitario',
-                        description: 'Dirección sobre cátedras de innovación territorial como docente permanente para casas estudios en grado, maestrías y formaciones postuniversitarias.',
+                        title: 'Asesor Científico Estratégico',
+                        description: 'Lidera la toma de decisiones en el diseño, análisis y evaluación de estrategias de sostenibilidad ambiental aplicadas al desarrollo del hábitat.',
                         icon: 'tabler:microscope',
                     },
                     {
-                        title: 'Director Urbanista Gubernamental',
-                        description: 'Planificador principal de ciudades inteligentes en ministerios de vivienda garantizando servicios ecológicos eficientes en sistemas de alta densidad ciudadana.',
-                        icon: 'tabler:building',
+                        title: 'Investigador en Arquitectura Sostenible',
+                        description: 'Desarrolla investigaciones científicas avanzadas centradas en el diseño arquitectónico sostenible y la innovación en el área.',
+                        icon: 'tabler:certificate',
+                    },
+                    {
+                        title: 'Colaborador Académico Internacional',
+                        description: 'Participa activamente en redes científicas de colaboración académica y cuerpos docentes especializados en sostenibilidad.',
+                        icon: 'tabler:world-share',
+                    },
+                    {
+                        title: 'Consultor en Eficiencia Energética',
+                        description: 'Integra soluciones de ahorro energético y nuevos materiales en grandes constructoras y proyectos de edificación nueva o rehabilitación.',
+                        icon: 'tabler:building-factory-2',
+                    },
+                    {
+                        title: 'Evaluador de Certificación Sostenible',
+                        description: 'Califica la sostenibilidad global de proyectos de edificación basándose en criterios técnicos y marcas de calidad internacionales.',
+                        icon: 'tabler:checkbox',
+                    },
+                    {
+                        title: 'Desarrollador de Proyectos Urbanos',
+                        description: 'Diseña y ejecuta intervenciones sostenibles en ámbitos urbanos enfocadas en infraestructuras y diseño urbano de alto impacto.',
+                        icon: 'tabler:map-pin',
                     },
                 ]}
             >
@@ -349,7 +403,7 @@ const tabs = [
              >
                 <Fragment slot="content">                    
                     <p class="text-xl text-muted mb-2 dark:text-slate-300">
-                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Urbanismo y Arquitectura Sostenible</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC210102</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Urbanismo y Arquitectura Sostenible</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC210103</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
                     </p>      
                     <div class="flex justify-center">
                         <div class="max-w-xs md:max-w-[400px]">
