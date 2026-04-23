@@ -22,11 +22,11 @@ import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 
 const metadata = {
-    title: 'Doctorado en Conservación y Restauración del Medio Natural | Fondo Verde',
+    title: 'Doctorado en Conservación y Restauración del Medio Natural',
     description:
-        'Potencia tu carrera con el Doctorado en Conservación y Restauración del Medio Natural. Programa online oficial con RVOE, centrado en investigación en Medicina de la Conservación, restauración ecológica y medio ambiente.',
+        'Impulsa tu carrera con nuestro Doctorado en Conservación. Especialízate en Medicina de la Conservación, restauración de ecosistemas y salud ambiental global.',
     keywords:
-        'doctorado en conservación, doctorado en restauración del medio natural, investigación ambiental, posgrado medio ambiente, sostenibilidad oficial, rvoe méxico, fondo verde, ecología, ecosistemas',
+        'doctorado en conservación, restauración del medio natural, medicina de la conservación, restauración ecológica, gestión de ecosistemas, biodiversidad, salud ambiental, investigación avanzada',
 };
 
 const tabs = [
@@ -52,7 +52,7 @@ const tabs = [
     <!-- HeroPrograms ********************************************** -->
     <HeroPrograms
         tagline="Convocatoria Abierta 2026"
-        subtitle="Generando conocimiento para un futuro sostenible"
+        subtitle="Investigación avanzada en conservación y restauración del medio natural"
         actions={[
         {
             variant: 'primary',
@@ -64,15 +64,15 @@ const tabs = [
         {
             variant: 'secondary',
             text: 'Ver Folleto Académico',
-            href: 'https://drive.google.com/file/d/0B0HLluZifC0PM0RzODhwOU5LN2M/view',
+            href: 'https://drive.google.com/open?id=0B0HLluZifC0PM0RzODhwOU5LN2M',
             target: '_blank',
             icon: 'tabler:download',
             class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
         },
         ]}
         image={{
-        src: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
-        alt: 'Imagen del Doctorado en Conservación y Restauración del Medio Natural',
+        src: '~/assets/images/doctorados/fvi-phd-conservacion-restauracion-medio-natural.webp',
+        alt: 'Imagen del Doctorado en Conservación y Restauración del Medio Natural de Fondo Verde',
         }}
     >
         <Fragment slot="title">
@@ -94,31 +94,36 @@ const tabs = [
             <Content
                 id="presentacion"
                 tagline="Presentación"
-                title="Doctorado en Conservación y Restauración del Medio Natural"
-                subtitle="Formación doctoral para liderar investigación en la Medicina de la Conservación y la restauración ecológica."
+                title='Doctorado en <span class="text-primary">Conservación y Restauración del Medio Natural</span>'
+                subtitle="Un programa interdisciplinario que conecta la salud de los ecosistemas, la fauna y los seres humanos mediante la Medicina de la Conservación y la restauración activa del entorno natural."
                 items={[
                     {
-                        title: 'Enfoque Integral de la Medicina de la Conservación',
-                        description: 'Será fundamental comprender a través de este programa el carácter central que tiene la Medicina de la Conservación como un conjunto de interacciones entre los seres humanos y los cambios inducidos en el clima, el hábitat, la biodiversidad y la ecología.',
+                        title: 'Medicina de la Conservación como eje central',
+                        description: 'Aborda la interacción entre seres humanos, fauna silvestre y doméstica, ecosistemas y patógenos, destacando el papel de la Medicina de la Conservación en la comprensión de los impactos antropogénicos sobre la salud y el ambiente.',
                         icon: 'tabler:heartbeat',
                     },
                     {
-                        title: 'Restauración y Rehabilitación de Sistemas',
-                        description: 'El programa incide en el proceso de asistir la recuperación de un ecosistema que ha sido degradado, dañado, o destruido. Se tratará tanto la restauración ecológica en sentido estricto como la rehabilitación ambiental de sistemas.',
+                        title: 'Gestión integral de ecosistemas y salud ambiental',
+                        description: 'Analiza los cambios en clima, hábitat, biodiversidad y ecología, así como la emergencia de contaminantes y enfermedades zoonóticas, con el fin de proponer soluciones interdisciplinarias que vinculen la salud humana, animal y vegetal.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Restauración y rehabilitación del medio natural',
+                        description: 'Promueve la recuperación de ecosistemas degradados mediante enfoques de restauración ecológica y ambiental, integrando técnicas de manejo de fauna silvestre y estrategias de rehabilitación que contribuyan a revertir el daño ecológico global.',
                         icon: 'tabler:trees',
                     },
                     {
                         icon: 'tabler:download',
                         callToAction: {
                         text: 'Descargar el Programa en Extenso',
-                        href: 'https://drive.google.com/file/d/0B0HLluZifC0PM0RzODhwOU5LN2M/view',
+                        href: 'https://drive.google.com/open?id=0B0HLluZifC0PM0RzODhwOU5LN2M',
                         target: '_blank',
                         variant: 'primary',
                         },
                     },
                 ]}
                 image={{
-                src: '~/assets/images/doctorados/fvi-phd-sostenibilidad-portada.webp',
+                src: '~/assets/images/doctorados/fvi-phd-conservacion-restauracion-medio-natural-portada.webp',
                 alt: 'Imagen de presentación del Doctorado de Conservación',
                 }}
             >
@@ -132,19 +137,19 @@ const tabs = [
                 id="el-doctorado"
                 tagline="El Doctorado"
                 title="¿Por qué hacer el Doctorado?"
-                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Conservación y Restauración del Medio Natural</span> forma investigadores de alto nivel capaces de generar conocimientos innovadores que contribuyan a la solución de problemas ambientales y de conservación de la biodiversidad.'
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Conservación y Restauración del Medio Natural</span> responde a la necesidad de generar y aplicar conocimiento innovador para el uso y conservación de la biodiversidad y la salud de los ecosistemas. El programa prepara a los participantes para comprender la complejidad de las interacciones biológicas y ecológicas, sensibilizarlos frente a los desafíos de la conservación y dotarlos de herramientas científicas y metodológicas que permitan mantener la salud de individuos, especies y comunidades ecológicas. Asimismo, ofrece una formación avanzada orientada a la investigación aplicada, capacitando a los graduados para liderar procesos de recuperación, manejo y conservación con rigor académico y relevancia práctica.'
                 columns={2}
                 items={[
                 {
                     title: 'Objetivos del Doctorado',
                     description:
-                    'Los objetivos específicos son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Formar investigadores del más alto nivel académico, con madurez para proponer, dirigir y realizar investigación en el amplio campo de la Medicina de la Conservación.</li><li>Dominar el conjunto de instrumentos y herramientas de rehabilitación y restauración ecológica a ser aplicados a diferentes niveles.</li><li>Generar conocimiento en la rehabilitación y conservación de recursos ecológicos.</li></ul>',
+                    'El programa incide en el campo de la restauración de ecosistemas, ello le permitirá alcanzar tres objetivos concretos: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Entender cómo un enfoque de medicina de la conservación se puede aplicar en una serie de situaciones prácticas.</li><li>Entender las opciones y el potencial de las soluciones de rehabilitación ambiental en entornos naturales y construidos.</li><li>Ser capaces de integrar teorías y métodos que les permitirán plantear, analizar y proponer proyectos de restauración ecológica de manera exitosa.</li></ul>',
                     icon: 'tabler:circle-plus',
                 },
                 {
                     title: 'Perfil del destinatario',
                     description:
-                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Profesionales en Biología, Ecología, agronomía o forestal, medicina veterinaria, geografía, turismo u otras ciencias aplicadas.</li><li>Egresados de las carreras de arquitectura o ingeniería interesados en el análisis y ejecución de planes y proyectos de restauración.</li><li>Tomadores de decisión, diseñadores de políticas públicas e investigadores del desarrollo territorial.</li></ul>',
+                    'El Doctorado está dirigido específicamente a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Tomadores de decisiones sobre conservación, manejo y restauración de recursos naturales, que les proporcione las habilidades y conocimientos necesarios para ser profesionales eficaces de medicina de la conservación, y para que puedan asistir en el desarrollo de soluciones a los problemas de salud ecológica.</li><li>Profesionales y técnicos vinculados a la sustentabilidad de los ecosistemas naturales, ingenieros agrónomos, biólogos, ingenieros de minas, ecólogos, climatólogos, ingenieros ambientales, forestales, oceanógrafos, médicos veterinarios, zootecnistas, geólogos y geógrafos, interesados en realizar una Tesis Doctoral en el ámbito de la Medicina de la Conservación con énfasis en restauración y rehabilitación ambiental.</li><li>Aunque la orientación del programa va más por la restauración y rehabilitación ambiental, también ve pertinente como parte del perfil de quien solicita ingresar al Doctorado, el concurso de profesionales tales como virólogos, primatólogos, mastozoólogos, ornitólogos, ecólogos, epidemiólogos, microbiólogos, veterinarios entre algunas otras disciplinas, por cuanto el estudio de la Ecología de las Enfermedades Infecciosas Emergentes y Reemergentes (EIER) y su relación con la conservación de especies y biodiversidad, exige de la participación multidisciplinaria de profesionales.</li></ul>',
                     icon: 'tabler:users',
                 },
                 ]}
@@ -158,29 +163,74 @@ const tabs = [
                 subtitle="A continuación se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
                 items={[
                     {
-                        title: 'Gestión Forestal y Ambiental',
-                        description: 'Generar conocimiento relacionado con las Ciencias Forestales desde el punto de vista ecológico, técnico y socio-económico.',
-                        icon: 'tabler:trees',
+                        title: 'Enfermedades Emergentes y Reemergentes en ambientes terrestres',
+                        description: 'Estudio de la aparición, reaparición y dinámica de enfermedades que afectan a la fauna, flora y seres humanos en ecosistemas terrestres.',
+                        icon: 'tabler:virus',
                     },
                     {
-                        title: 'Medicina de la Conservación y Salud Ecológica',
-                        description: 'Profundizar en la relación entre fauna silvestre y doméstica, el ecosistema y el ser humano.',
+                        title: 'Conservación y gestión de especies amenazadas y de hábitats',
+                        description: 'Desarrollo de estrategias para la protección y recuperación de especies en peligro y sus hábitats.',
+                        icon: 'tabler:shield-check',
+                    },
+                    {
+                        title: 'Salud Ecosistémica',
+                        description: 'Evaluación y monitoreo de la salud integral de los ecosistemas y su resiliencia ante perturbaciones.',
                         icon: 'tabler:heartbeat',
                     },
                     {
-                        title: 'Ecología y Biodiversidad',
-                        description: 'Sistemas ecológicos al nivel de ecosistema, paisaje, bioma o biosfera enfocados a la comprensión del funcionamiento ecológico global.',
-                        icon: 'tabler:leaf',
+                        title: 'Invasiones biológicas',
+                        description: 'Análisis del impacto de especies exóticas invasoras sobre la biodiversidad y los procesos ecológicos.',
+                        icon: 'tabler:alert-triangle',
                     },
                     {
-                        title: 'Rehabilitación y Restauración del Paisaje',
-                        description: 'Métodos para restituir procesos ecológicos y las dinámicas del ecosistema a lo largo del tiempo.',
-                        icon: 'tabler:map-pin',
+                        title: 'Ecología funcional y cambio global',
+                        description: 'Investigación sobre las funciones ecológicas y su respuesta ante el cambio climático y global.',
+                        icon: 'tabler:world',
                     },
                     {
-                        title: 'Tecnologías y Métodos para el Manejo de la Biodiversidad',
-                        description: 'Uso de sistemas de información geográfica, marcadores genéticos y tecnologías para la conservación.',
-                        icon: 'tabler:device-desktop-analytics',
+                        title: 'Interacciones entre la atmósfera y los sistemas naturales terrestres',
+                        description: 'Estudio de los flujos de energía, agua y contaminantes entre la atmósfera y los ecosistemas terrestres.',
+                        icon: 'tabler:cloud',
+                    },
+                    {
+                        title: 'Reservas y flujos de carbono y nutrientes en los ecosistemas terrestres',
+                        description: 'Cuantificación y modelado de los ciclos de carbono y nutrientes en suelos y vegetación.',
+                        icon: 'tabler:recycle',
+                    },
+                    {
+                        title: 'Biogeografía y macroecología',
+                        description: 'Patrones espaciales y temporales de la biodiversidad y los procesos ecológicos a gran escala.',
+                        icon: 'tabler:map',
+                    },
+                    {
+                        title: 'Procesos de degradación del suelo y restauración de medios terrestres',
+                        description: 'Diagnóstico y recuperación de suelos degradados para restaurar la funcionalidad ecológica.',
+                        icon: 'tabler:plant-2',
+                    },
+                    {
+                        title: 'Ecología, gestión y restauración de paisajes rurales y ecosistemas agrarios',
+                        description: 'Manejo sostenible y restauración de paisajes agrícolas y rurales.',
+                        icon: 'tabler:tractor',
+                    },
+                    {
+                        title: 'Destrucción y fragmentación de hábitats. Conectividad ecológica',
+                        description: 'Estudio de los efectos de la fragmentación y propuestas para mejorar la conectividad ecológica.',
+                        icon: 'tabler:link',
+                    },
+                    {
+                        title: 'Desarrollo de técnicas de revegetación',
+                        description: 'Innovación en métodos para la recuperación de la cobertura vegetal en áreas degradadas.',
+                        icon: 'tabler:tree',
+                    },
+                    {
+                        title: 'Declive y regeneración de los bosques',
+                        description: 'Análisis de las causas del declive forestal y estrategias para su regeneración.',
+                        icon: 'tabler:trees',
+                    },
+                    {
+                        title: 'Recursos hídricos en los ecosistemas terrestres',
+                        description: 'Gestión y conservación del agua en ambientes terrestres y su relación con la biodiversidad.',
+                        icon: 'tabler:droplet',
                     },
                 ]}
             >
@@ -283,7 +333,7 @@ const tabs = [
             </Content>
             <!-- Miembros del Profesorado (Using same general faculty mapped usually) -->
             {
-                ['diana-duran', 'juan-silva', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
+                ['juan-silva', 'susan-smith', 'yandy-rodriguez', 'diana-duran', 'gonzalo-fuente', 'alberto-jimenez', 'angel-guillemes', 'loraine-giraud', 'erick-brenes'].map((id) => (
                 <FacultyMember {...faculty[id]}>
                     <Fragment slot="bg">
                     <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
@@ -349,6 +399,16 @@ const tabs = [
                         description: 'Investigador o profesor en organismos públicos de investigación y universidades.',
                         icon: 'tabler:school',
                     },
+                    {
+                        title: 'Gestión en el Sector Privado',
+                        description: 'Personal en empresas privadas que trabajan en los ámbitos de la gestión de los recursos naturales, de la conservación y la restauración de ecosistemas, o en control biológico.',
+                        icon: 'tabler:building-factory-2',
+                    },
+                    {
+                        title: 'Evaluador de Impacto y Estrategias',
+                        description: 'Evaluador calificado de estrategias, programas, proyectos y acciones públicas o privadas, identificando y monitoreando sus consecuencias sobre el ecosistema.',
+                        icon: 'tabler:checklist',
+                    },
                 ]}
             >
                 <Fragment slot="bg">
@@ -369,7 +429,7 @@ const tabs = [
              >
                 <Fragment slot="content">                    
                     <p class="text-xl text-muted mb-2 dark:text-slate-300">
-                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Conservación y Restauración del Medio Natural</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC160402</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Conservación y Restauración del Medio Natural</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC170202</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
                     </p>      
                     <div class="flex justify-center">
                         <div class="max-w-xs md:max-w-[400px]">

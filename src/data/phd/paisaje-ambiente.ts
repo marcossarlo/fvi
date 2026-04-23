@@ -1,7 +1,7 @@
 import type { ProgramCurriculum, ResearchCurriculum } from './sostenibilidad';
 
-export const conservacionRestauracionCurriculum: ProgramCurriculum = {
-    id: 'conservacion-restauracion-medio-natural',
+export const paisajeAmbienteCurriculum: ProgramCurriculum = {
+    id: 'paisaje-ambiente',
     courses: [
     {
         "title": "CURSO 1: Aproximación al Paisaje",
@@ -85,7 +85,169 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
         ]
     },
     {
-        "title": "CURSO 4: Análisis de biodiversidad para biología de la conservación",
+        "title": "CURSO 4: Paisaje Urbano",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Conceptos, perspectivas y encrucijadas del paisaje urbano",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Diseño y planificación de espacios verdes urbanos sostenibles",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Estructura Verde Urbana",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Arbolado urbano y otras acciones de fomento de la vegetación en la ciudad",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 5: Urbanismo y Paisaje",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Plazas",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Parques y Jardines",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Articulaciones",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Otros Paisajes",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 6: Patrimonio Cultural y Paisaje",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Conceptos, tipología de patrimonio cultural y natural y patrimonios emergentes",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Claves interpretativas del patrimonio cultural",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Claves interpretativas del patrimonio natural",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Espacios con memoria. Enfoques y métodos en historia y arqueología del paisaje",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 7: Los Paisajes como fundamento de la Planificación aplicada al turismo",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Turismo y Territorio",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "El Paisaje y destinos turísticos",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Los Paisajes y el Turismo",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Planificación y Gestión Territorial del turismo",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 8: Sistemas de Información Geográfica y Nuevas Tecnologías aplicadas al paisaje",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Los SIG y su aplicación al estudio de los paisajes: Conceptos, análisis y ejemplos",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Los insumos cartográficos de los mapas de paisajes y su representación en los SIG",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "El inventario y cartografía de los paisajes mediante la utilización de los SIG: Ejemplos de aplicación",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "El análisis de los cambios en el paisaje su diagnóstico a través de los SIG",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 9: Los Paisajes como fundamento de la Planificación y Gestión de las Áreas Protegidas Terrestres",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Los paisajes y las áreas protegidas",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Métodos de evaluación de los paisajes para los estudios en áreas protegidas",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "El Modelo de Ordenamiento y la Zonificación de las Áreas Protegidas",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Gestión del Paisaje y Áreas Protegidas",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 10: Análisis de biodiversidad para biología de la conservación",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
@@ -112,88 +274,7 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
         ]
     },
     {
-        "title": "CURSO 5: Medicina de la Conservación: Salud ecológica en práctica",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "El enfoque de la Medicina de la Conservación",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Síndrome de distrés ecológico: pérdida de hábitat e intoxicación global",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Salud de ecosistemas, investigación biomédica y conservación",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Alteración y destrucción de hábitat a gran escala",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 6: Enfermedades Emergentes y Reemergentes",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "Ecología de enfermedades y su relación con la conservación de especies",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Zoonosis y salud pública",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Herramientas para el monitoreo, predicción y control de enfermedades emergentes y reemergentes",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Ecología de enfermedades emergentes infecciosas, aplicaciones para la conservación y manejo de fauna silvestre",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 7: Principios de rehabilitación ambiental",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "Introducción al concepto de rehabilitación terrestre",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Fundamentos en ecología e importancia de la diversidad",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Propiedades del suelo",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Efectos físicos de las plantas en sitios degradados",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 8: Sucesión Ecológica y rehabilitación del ecosistema",
+        "title": "CURSO 11: Sucesión Ecológica y rehabilitación del ecosistema",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
@@ -220,108 +301,27 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
         ]
     },
     {
-        "title": "CURSO 9: Métodos de Rehabilitación y Casos de estudio a distintas escalas",
+        "title": "CURSO 12: Salud ecológica en práctica",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Metodologías de la rehabilitación ambiental terrestre",
+                "title": "El enfoque de la Medicina de la Conservación",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Enfrentando condiciones adversas",
+                "title": "Síndrome de distrés ecológico: pérdida de hábitat e intoxicación global",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Monitoreo y mantenimiento de sitios rehabilitados",
+                "title": "Salud de ecosistemas, investigación biomédica y conservación",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de Caso sobre Rehabilitación Ambiental Terrestre",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 10: Restauración de los componentes del ecosistema",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "La Restauración ecológica y la Restauración ambiental",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración del suelo",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de la cubierta vegetal",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de hábitats para fauna",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 11: Restauración de ecosistemas naturales",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "Restauración de sistemas agrarios",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de sistemas forestales",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de zonas áridas",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de sistemas fluviales y humedales",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 12: Rehabilitación de áreas degradadas por el hombre",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "La Rehabilitación de espacios urbanos",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de infraestructuras de comunicación",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de zonas mineras",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de vertederos",
+                "title": "Alteración y destrucción de hábitat a gran escala",
                 "hours": 16,
                 "credits": 1
             }
@@ -330,33 +330,33 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
 ]
 };
 
-export const conservacionRestauracionResearch: ResearchCurriculum = {
+export const paisajeAmbienteResearch: ResearchCurriculum = {
     seminars: [
         {
-            title: 'Seminario de Investigación I: Análisis del Estado del Arte',
+            title: 'Análisis del Estado del Arte',
             hours: 70,
             credits: 4,
         },
         {
-            title: 'Seminario de Investigación II: El Problema de Investigación',
+            title: 'El Problema de Investigación',
             hours: 70,
             credits: 4,
         },
         {
-            title: 'Seminario de Investigación III: Diseño Metodológico',
+            title: 'Diseño Metodológico',
             hours: 280,
             credits: 18,
         },
         {
-            title: 'Seminario de Investigación IV: Propuesta de Investigación Doctoral',
+            title: 'Propuesta de Investigación Doctoral',
             hours: 140,
             credits: 9,
         },
     ],
     phdProject: {
         title: 'Proyecto de Tesis Doctoral y Artículo Científico',
-        hours: 112,
-        credits: 7,
+        hours: 272,
+        credits: 17,
     },
     totalFormation: {
         hours: 768,

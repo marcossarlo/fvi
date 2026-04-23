@@ -1,10 +1,91 @@
 import type { ProgramCurriculum, ResearchCurriculum } from './sostenibilidad';
 
-export const conservacionRestauracionCurriculum: ProgramCurriculum = {
-    id: 'conservacion-restauracion-medio-natural',
+export const urbanismoCurriculum: ProgramCurriculum = {
+    id: 'urbanismo-arquitectura-sostenible',
     courses: [
     {
-        "title": "CURSO 1: Aproximación al Paisaje",
+        "title": "CURSO 1: Energía, calidad del ambiente interno y la sostenibilidad",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Uso de la energía a través de la historia",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Contaminación ambiental",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Calidad del ambiente interno",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Eco-materiales",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 2: Asentamientos humanos sostenibles",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Asentamientos humanos ambientalmente sostenibles",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Sostenibilidad Urbana",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Manejo de Residuos Sólidos",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Movilidad Urbana",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 3: Medio ambiente y clima",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Atmósfera y clima",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Arquitectura vernácula",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Confort y bienestar térmico",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Estrategias pasivas para el control ambiental",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 4: Aproximación al Paisaje",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
@@ -31,297 +112,216 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
         ]
     },
     {
-        "title": "CURSO 2: Instrumentos de Ordenación, Planificación y Proyectos en el Paisaje",
+        "title": "CURSO 5: Paisaje Urbano",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Instrumentos de ordenación del paisaje",
+                "title": "Conceptos, perspectivas y encrucijadas del paisaje urbano",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Instrumentos de gestión del paisaje",
+                "title": "Diseño y planificación de espacios verdes urbanos sostenibles",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Información y participación ciudadana",
+                "title": "Estructura Verde Urbana",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Proyectos y actuaciones en el paisaje",
+                "title": "Arbolado urbano y otras acciones de fomento de la vegetación en la ciudad",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 3: Modelos en Ecología y Gestión de Recursos Naturales",
+        "title": "CURSO 6: Urbanismo y Paisaje",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "La Dinámica de Sistemas",
+                "title": "Plazas",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Construcción de un Modelo de Simulación",
+                "title": "Parques y Jardines",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Creación de Modelos de Simulación Ambiental",
+                "title": "Articulaciones",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Creación de Modelos de Simulación Social",
+                "title": "Otros Paisajes",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 4: Análisis de biodiversidad para biología de la conservación",
+        "title": "CURSO 7: Planificación y Evaluación Ambiental",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Biodiversidad y biología de la conservación",
+                "title": "La Planificación Ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Valoración y medición de la diversidad biológica",
+                "title": "La Ordenación del Territorio",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Composición de especies",
+                "title": "El Diagnóstico Ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Herramientas aplicadas a la conservación de la biodiversidad",
+                "title": "Evaluación del Impacto Ambiental",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 5: Medicina de la Conservación: Salud ecológica en práctica",
+        "title": "CURSO 8: Bienestar térmico en la edificación",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "El enfoque de la Medicina de la Conservación",
+                "title": "Transmisión del calor en los edificios",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Síndrome de distrés ecológico: pérdida de hábitat e intoxicación global",
+                "title": "Ventilación natural",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Salud de ecosistemas, investigación biomédica y conservación",
+                "title": "Iluminación natural",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Alteración y destrucción de hábitat a gran escala",
+                "title": "Elementos de protección y captación solar",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 6: Enfermedades Emergentes y Reemergentes",
+        "title": "CURSO 9: Construcción mediante tecnologías a bajo coste para la mejora del hábitat",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Ecología de enfermedades y su relación con la conservación de especies",
+                "title": "La importancia de la habitabilidad básica para el ser humano. La participación en el diseño urbano y arquitectónico",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Zoonosis y salud pública",
+                "title": "Tecnologías de construcción a bajo coste y adaptadas al entorno: ferrocemento, mortero y hormigón",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Herramientas para el monitoreo, predicción y control de enfermedades emergentes y reemergentes",
+                "title": "Tecnologías de construcción a bajo coste y adaptadas al entorno: cerámica armada y madera",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Ecología de enfermedades emergentes infecciosas, aplicaciones para la conservación y manejo de fauna silvestre",
+                "title": "Soluciones y casos prácticos de infraestructura física a bajo coste y adaptadas al entorno",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 7: Principios de rehabilitación ambiental",
+        "title": "CURSO 10: Arquitectura Emergente: Cargotectura y su aporte a la Sostenibilidad 3R",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Introducción al concepto de rehabilitación terrestre",
+                "title": "Arquitectura modular industrializada",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Fundamentos en ecología e importancia de la diversidad",
+                "title": "Origen y evolución de la Cargotectura",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Propiedades del suelo",
+                "title": "Organización de una vivienda de 25 m2",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Efectos físicos de las plantas en sitios degradados",
+                "title": "Aportación a la sostenibilidad 3R",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 8: Sucesión Ecológica y rehabilitación del ecosistema",
+        "title": "CURSO 11: Arquitectura con contenedores de transporte: Cargotectura",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Sucesiones ecológicas",
+                "title": "El contenedor como elemento constructivo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Tipo de perturbaciones",
+                "title": "Compra y transporte de contenedores",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de impacto ambiental como herramienta preventiva",
+                "title": "Concepción y Planificación de una vivienda hecha con contenedores",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Planeamiento de la rehabilitación",
+                "title": "Ejecución y Construcción de una vivienda de contenedores",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 9: Métodos de Rehabilitación y Casos de estudio a distintas escalas",
+        "title": "CURSO 12: Proyectos ecológicos a mayor escala",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Metodologías de la rehabilitación ambiental terrestre",
+                "title": "Rascacielos ecológicos",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Enfrentando condiciones adversas",
+                "title": "Cubiertas ajardinadas y paisajismo ecológico",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Monitoreo y mantenimiento de sitios rehabilitados",
+                "title": "Métodos de certificación medioambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de Caso sobre Rehabilitación Ambiental Terrestre",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 10: Restauración de los componentes del ecosistema",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "La Restauración ecológica y la Restauración ambiental",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración del suelo",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de la cubierta vegetal",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de hábitats para fauna",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 11: Restauración de ecosistemas naturales",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "Restauración de sistemas agrarios",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de sistemas forestales",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de zonas áridas",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de sistemas fluviales y humedales",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 12: Rehabilitación de áreas degradadas por el hombre",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "La Rehabilitación de espacios urbanos",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de infraestructuras de comunicación",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de zonas mineras",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de vertederos",
+                "title": "Proyectos de Vivienda Social Sostenible",
                 "hours": 16,
                 "credits": 1
             }
@@ -330,33 +330,33 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
 ]
 };
 
-export const conservacionRestauracionResearch: ResearchCurriculum = {
+export const urbanismoResearch: ResearchCurriculum = {
     seminars: [
         {
-            title: 'Seminario de Investigación I: Análisis del Estado del Arte',
+            title: 'Análisis del Estado del Arte',
             hours: 70,
             credits: 4,
         },
         {
-            title: 'Seminario de Investigación II: El Problema de Investigación',
+            title: 'El Problema de Investigación',
             hours: 70,
             credits: 4,
         },
         {
-            title: 'Seminario de Investigación III: Diseño Metodológico',
+            title: 'Diseño Metodológico',
             hours: 280,
             credits: 18,
         },
         {
-            title: 'Seminario de Investigación IV: Propuesta de Investigación Doctoral',
+            title: 'Propuesta de Investigación Doctoral',
             hours: 140,
             credits: 9,
         },
     ],
     phdProject: {
         title: 'Proyecto de Tesis Doctoral y Artículo Científico',
-        hours: 112,
-        credits: 7,
+        hours: 272,
+        credits: 17,
     },
     totalFormation: {
         hours: 768,

@@ -1,327 +1,327 @@
 import type { ProgramCurriculum, ResearchCurriculum } from './sostenibilidad';
 
-export const conservacionRestauracionCurriculum: ProgramCurriculum = {
-    id: 'conservacion-restauracion-medio-natural',
+export const ecoturismoCurriculum: ProgramCurriculum = {
+    id: 'ecoturismo-turismo-sostenible',
     courses: [
     {
-        "title": "CURSO 1: Aproximación al Paisaje",
+        "title": "CURSO 1: Turismo Sostenible",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Aproximación al paisaje: conceptos, valores y problemática",
+                "title": "Turismo, conceptualización y enfoque de sistema",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Normativa e instrumentos legales aplicados al paisaje",
+                "title": "Desarrollo Sostenible y Turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Métodos de análisis y evaluación visual del paisaje",
+                "title": "Ecología, Biodiversidad e Impacto Ambiental de las actividades turísticas",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Ecología del paisaje perspectivas de evaluación",
+                "title": "Tipología del turismo, modalidades de ocio relacionadas con la sostenibilidad",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 2: Instrumentos de Ordenación, Planificación y Proyectos en el Paisaje",
+        "title": "CURSO 2: Productos turísticos sostenibles y alternativos",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Instrumentos de ordenación del paisaje",
+                "title": "Tendencias de mercado, Turismo Responsable, Consumo responsable y Responsabilidad Social",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Instrumentos de gestión del paisaje",
+                "title": "Generación de cadenas de valor para el turismo sostenible y buenas prácticas",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Información y participación ciudadana",
+                "title": "Productos turísticos sostenibles y alternativos",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Proyectos y actuaciones en el paisaje",
+                "title": "Proyectos de desarrollo turístico local",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 3: Modelos en Ecología y Gestión de Recursos Naturales",
+        "title": "CURSO 3: Negocios turísticos con énfasis en sostenibilidad",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "La Dinámica de Sistemas",
+                "title": "Gestión ambiental de empresas turísticas",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Construcción de un Modelo de Simulación",
+                "title": "Calidad en el servicio y Certificaciones en Turismo Sostenible",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Creación de Modelos de Simulación Ambiental",
+                "title": "Marketing para empresas y destinos turísticos sostenibles",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Creación de Modelos de Simulación Social",
+                "title": "Planes de negocios turísticos con énfasis en sostenibilidad",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 4: Análisis de biodiversidad para biología de la conservación",
+        "title": "CURSO 4: Ecoturismo",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Biodiversidad y biología de la conservación",
+                "title": "Introducción al Ecoturismo y su relación con el Turismo Especializado",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Valoración y medición de la diversidad biológica",
+                "title": "Gestión Sostenible de Recursos y Territorios",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Composición de especies",
+                "title": "Gestión Turística Sostenible  del Patrimonio Cultural y Natural",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Herramientas aplicadas a la conservación de la biodiversidad",
+                "title": "Rutas temáticas y productos de Turismo de Intereses Especiales",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 5: Medicina de la Conservación: Salud ecológica en práctica",
+        "title": "CURSO 5: Desarrollo de productos de ecoturismo y marcas locales en turismo",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "El enfoque de la Medicina de la Conservación",
+                "title": "Planificación del Turismo de Intereses Especiales en el ámbito local",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Síndrome de distrés ecológico: pérdida de hábitat e intoxicación global",
+                "title": "Desarrollo de productos de ecoturismo y marcas locales en turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Salud de ecosistemas, investigación biomédica y conservación",
+                "title": "Asociatividad Empresarial y Negocios inclusivos para el Turismo Especializado",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Alteración y destrucción de hábitat a gran escala",
+                "title": "Turismo Justo, Solidario y Responsable",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 6: Enfermedades Emergentes y Reemergentes",
+        "title": "CURSO 6: Administración Estratégica del Ecoturismo",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Ecología de enfermedades y su relación con la conservación de especies",
+                "title": "Marketing aplicado al Turismo de Intereses Especiales",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Zoonosis y salud pública",
+                "title": "Administración Estratégica del Ecoturismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Herramientas para el monitoreo, predicción y control de enfermedades emergentes y reemergentes",
+                "title": "Calidad y Competitividad de los Productos de Turismo Especializado con énfasis en Ecoturismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Ecología de enfermedades emergentes infecciosas, aplicaciones para la conservación y manejo de fauna silvestre",
+                "title": "Experiencias exitosas en Latinoamérica",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 7: Principios de rehabilitación ambiental",
+        "title": "CURSO 7: Responsabilidad social empresarial en el sector turístico",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Introducción al concepto de rehabilitación terrestre",
+                "title": "Introducción a la Responsabilidad Social Empresarial",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Fundamentos en ecología e importancia de la diversidad",
+                "title": "Marco teórico sobre Responsabilidad Social Empresarial en Turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Propiedades del suelo",
+                "title": "Retos y Responsabilidades Público – Privadas en Turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Efectos físicos de las plantas en sitios degradados",
+                "title": "Herramientas e Indicadores de RSE - Global Reporting Initiative (GRI)",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 8: Sucesión Ecológica y rehabilitación del ecosistema",
+        "title": "CURSO 8: Turismo Socialmente Responsable en destino",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Sucesiones ecológicas",
+                "title": "Buenas prácticas para la gestión de impactos del turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Tipo de perturbaciones",
+                "title": "Gestión de relaciones comunitarias",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de impacto ambiental como herramienta preventiva",
+                "title": "Gestión de proveedores y de los clientes",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Planeamiento de la rehabilitación",
+                "title": "Gestión de Recursos Humanos (Responsabilidad Social Interna)",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 9: Métodos de Rehabilitación y Casos de estudio a distintas escalas",
+        "title": "CURSO 9: Responsabilidad Social de las empresas turísticas",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Metodologías de la rehabilitación ambiental terrestre",
+                "title": "Incorporación del enfoque de género en la planificación y gestión del turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Enfrentando condiciones adversas",
+                "title": "Marketing social y organizacional (Comunicaciones externas)",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Monitoreo y mantenimiento de sitios rehabilitados",
+                "title": "Erradicación de la explotación sexual comercial de niños, niñas y adolescentes en Turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de Caso sobre Rehabilitación Ambiental Terrestre",
+                "title": "Empresas que aplican la RSE en Turismo",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 10: Restauración de los componentes del ecosistema",
+        "title": "CURSO 10: Turismo y Sostenibilidad",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "La Restauración ecológica y la Restauración ambiental",
+                "title": "Turismo y desarrollo sostenible",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Restauración del suelo",
+                "title": "Destinos turísticos, marca y productos",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Restauración de la cubierta vegetal",
+                "title": "Calidad y certificaciones en turismo sostenible",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Restauración de hábitats para fauna",
+                "title": "Planificación e Innovación turística",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 11: Restauración de ecosistemas naturales",
+        "title": "CURSO 11: Patrimonio Cultural y Paisaje",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Restauración de sistemas agrarios",
+                "title": "Conceptos, tipología de patrimonio cultural y natural y patrimonios emergentes",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Restauración de sistemas forestales",
+                "title": "Claves interpretativas del patrimonio cultural",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Restauración de zonas áridas",
+                "title": "Claves interpretativas del patrimonio natural",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Restauración de sistemas fluviales y humedales",
+                "title": "Espacios con memoria. Enfoques y métodos en historia y arqueología del paisaje",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 12: Rehabilitación de áreas degradadas por el hombre",
+        "title": "CURSO 12: Los Paisajes como fundamento de la  Planificación aplicada al turismo",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "La Rehabilitación de espacios urbanos",
+                "title": "Turismo y Territorio",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Rehabilitación de infraestructuras de comunicación",
+                "title": "El Paisaje y destinos turísticos",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Rehabilitación de zonas mineras",
+                "title": "Los Paisajes y el Turismo",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Rehabilitación de vertederos",
+                "title": "Planificación y Gestión Territorial del turismo",
                 "hours": 16,
                 "credits": 1
             }
@@ -330,7 +330,7 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
 ]
 };
 
-export const conservacionRestauracionResearch: ResearchCurriculum = {
+export const ecoturismoResearch: ResearchCurriculum = {
     seminars: [
         {
             title: 'Seminario de Investigación I: Análisis del Estado del Arte',
@@ -355,8 +355,8 @@ export const conservacionRestauracionResearch: ResearchCurriculum = {
     ],
     phdProject: {
         title: 'Proyecto de Tesis Doctoral y Artículo Científico',
-        hours: 112,
-        credits: 7,
+        hours: 272,
+        credits: 17,
     },
     totalFormation: {
         hours: 768,

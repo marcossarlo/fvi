@@ -1,64 +1,145 @@
 import type { ProgramCurriculum, ResearchCurriculum } from './sostenibilidad';
 
-export const conservacionRestauracionCurriculum: ProgramCurriculum = {
-    id: 'conservacion-restauracion-medio-natural',
+export const proyectosInvestigacionCurriculum: ProgramCurriculum = {
+    id: 'proyectos-investigacion-medio-ambiente',
     courses: [
     {
-        "title": "CURSO 1: Aproximación al Paisaje",
+        "title": "CURSO 1: Introducción a los Problemas Ambientales Globales",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Aproximación al paisaje: conceptos, valores y problemática",
+                "title": "Crisis ambiental planetaria. Diagnóstico y perspectivas",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Normativa e instrumentos legales aplicados al paisaje",
+                "title": "Los problemas ambientales y sus perspectivas de solución",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Métodos de análisis y evaluación visual del paisaje",
+                "title": "Problemas ambientales: el inicio de los proyectos solidarios",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Ecología del paisaje perspectivas de evaluación",
+                "title": "Contaminación ambiental",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 2: Instrumentos de Ordenación, Planificación y Proyectos en el Paisaje",
+        "title": "CURSO 2: Sostenibilidad, Economía y Política Ambiental",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Instrumentos de ordenación del paisaje",
+                "title": "Marco teórico de la sustentabilidad ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Instrumentos de gestión del paisaje",
+                "title": "Desarrollo sustentable; evolución de la conceptualización",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Información y participación ciudadana",
+                "title": "Economía Ambiental y de los Recursos Naturales",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Proyectos y actuaciones en el paisaje",
+                "title": "Política Ambiental y Productiva",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 3: Modelos en Ecología y Gestión de Recursos Naturales",
+        "title": "CURSO 3: Responsabilidad Social",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Responsabilidad social: dimensión interna y externa",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Gobierno y Reputación corporativa",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Gestión del diálogo con los grupos de interés",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Inversión Socialmente Responsable y Finanzas Éticas",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 4: Ciencias Ambientales para la Toma de Decisiones",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Liderazgo Ambiental",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Ciencias Ambientales",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Finanzas Ambientales",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Mercados y emprendimientos Socio-ambientales",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 5: Gestión y Administración de Proyectos Ambientales",
+        "totalHours": 64,
+        "totalCredits": 4,
+        "modules": [
+            {
+                "title": "Introducción a la Administración de Proyectos",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Gestión de proyectos ambientales",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Evaluación de proyectos ambientales",
+                "hours": 16,
+                "credits": 1
+            },
+            {
+                "title": "Estudios de caso y desarrollo de un proyecto ambiental",
+                "hours": 16,
+                "credits": 1
+            }
+        ]
+    },
+    {
+        "title": "CURSO 6: Modelos en Ecología y Gestión de Recursos Naturales",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
@@ -85,243 +166,162 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
         ]
     },
     {
-        "title": "CURSO 4: Análisis de biodiversidad para biología de la conservación",
+        "title": "CURSO 7: Planificación y Evaluación Ambiental",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Biodiversidad y biología de la conservación",
+                "title": "La Planificación Ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Valoración y medición de la diversidad biológica",
+                "title": "La Ordenación del Territorio",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Composición de especies",
+                "title": "El Diagnóstico Ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Herramientas aplicadas a la conservación de la biodiversidad",
+                "title": "Evaluación del Impacto Ambiental",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 5: Medicina de la Conservación: Salud ecológica en práctica",
+        "title": "CURSO 8: Gestión Ambiental",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "El enfoque de la Medicina de la Conservación",
+                "title": "Sistemas de Gestión Ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Síndrome de distrés ecológico: pérdida de hábitat e intoxicación global",
+                "title": "Gestión de la Producción limpia",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Salud de ecosistemas, investigación biomédica y conservación",
+                "title": "Gerencia Ambiental Estratégica",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Alteración y destrucción de hábitat a gran escala",
+                "title": "Sistemas de Información Gerencial y Ambiental",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 6: Enfermedades Emergentes y Reemergentes",
+        "title": "CURSO 9: Gerencia de Proyectos Ambientales, aplicando metodología PMI",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Ecología de enfermedades y su relación con la conservación de especies",
+                "title": "Contexto del proyecto",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Zoonosis y salud pública",
+                "title": "Definición del proyecto",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Herramientas para el monitoreo, predicción y control de enfermedades emergentes y reemergentes",
+                "title": "Puesta en marcha y operación del proyecto",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Ecología de enfermedades emergentes infecciosas, aplicaciones para la conservación y manejo de fauna silvestre",
+                "title": "Monitoreo, control y cierre del proyecto",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 7: Principios de rehabilitación ambiental",
+        "title": "CURSO 10: Diseño de Proyectos de Educación Ambiental",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Introducción al concepto de rehabilitación terrestre",
+                "title": "Etapas para la realización de un proyecto de educación ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Fundamentos en ecología e importancia de la diversidad",
+                "title": "Estudios de caso sobre proyectos exitosos en educación ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Propiedades del suelo",
+                "title": "Herramientas para la elaboración de proyectos educación ambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Efectos físicos de las plantas en sitios degradados",
+                "title": "Evaluación de los proyectos",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 8: Sucesión Ecológica y rehabilitación del ecosistema",
+        "title": "CURSO 11: Proyectos Sostenibles",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Sucesiones ecológicas",
+                "title": "El Proyecto sostenible",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Tipo de perturbaciones",
+                "title": "Proyectos y actuaciones en el paisaje",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de impacto ambiental como herramienta preventiva",
+                "title": "Proyectos de desarrollo turístico local",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Planeamiento de la rehabilitación",
+                "title": "Proyectos de Responsabilidad Social",
                 "hours": 16,
                 "credits": 1
             }
         ]
     },
     {
-        "title": "CURSO 9: Métodos de Rehabilitación y Casos de estudio a distintas escalas",
+        "title": "CURSO 12: Proyectos ecológicos a mayor escala",
         "totalHours": 64,
         "totalCredits": 4,
         "modules": [
             {
-                "title": "Metodologías de la rehabilitación ambiental terrestre",
+                "title": "Rascacielos ecológicos",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Enfrentando condiciones adversas",
+                "title": "Cubiertas ajardinadas y paisajismo ecológico",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Monitoreo y mantenimiento de sitios rehabilitados",
+                "title": "Métodos de certificación medioambiental",
                 "hours": 16,
                 "credits": 1
             },
             {
-                "title": "Estudios de Caso sobre Rehabilitación Ambiental Terrestre",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 10: Restauración de los componentes del ecosistema",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "La Restauración ecológica y la Restauración ambiental",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración del suelo",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de la cubierta vegetal",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de hábitats para fauna",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 11: Restauración de ecosistemas naturales",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "Restauración de sistemas agrarios",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de sistemas forestales",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de zonas áridas",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Restauración de sistemas fluviales y humedales",
-                "hours": 16,
-                "credits": 1
-            }
-        ]
-    },
-    {
-        "title": "CURSO 12: Rehabilitación de áreas degradadas por el hombre",
-        "totalHours": 64,
-        "totalCredits": 4,
-        "modules": [
-            {
-                "title": "La Rehabilitación de espacios urbanos",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de infraestructuras de comunicación",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de zonas mineras",
-                "hours": 16,
-                "credits": 1
-            },
-            {
-                "title": "Rehabilitación de vertederos",
+                "title": "Proyectos de Vivienda Social Sostenible",
                 "hours": 16,
                 "credits": 1
             }
@@ -330,7 +330,7 @@ export const conservacionRestauracionCurriculum: ProgramCurriculum = {
 ]
 };
 
-export const conservacionRestauracionResearch: ResearchCurriculum = {
+export const proyectosInvestigacionResearch: ResearchCurriculum = {
     seminars: [
         {
             title: 'Seminario de Investigación I: Análisis del Estado del Arte',
@@ -355,11 +355,11 @@ export const conservacionRestauracionResearch: ResearchCurriculum = {
     ],
     phdProject: {
         title: 'Proyecto de Tesis Doctoral y Artículo Científico',
-        hours: 112,
-        credits: 7,
+        hours: 256,
+        credits: 16,
     },
     totalFormation: {
-        hours: 768,
-        credits: 48,
+        hours: 384,
+        credits: 24,
     },
 };

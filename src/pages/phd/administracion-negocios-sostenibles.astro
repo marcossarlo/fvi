@@ -1,0 +1,432 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { administracionNegociosSosteniblesCurriculum, administracionNegociosSosteniblesResearch } from '~/data/phd/administracion-negocios-sostenibles';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Administración de Negocios Sostenibles',
+    description:
+        'Doctorado para investigar y diseñar modelos de negocio sostenibles. Especialízate en economía circular, finanzas verdes y liderazgo ético con impacto global.',
+    keywords:
+        'administración de negocios sostenibles, doctorado en sostenibilidad empresarial, economía circular, finanzas verdes, liderazgo sostenible, investigación en negocios, responsabilidad social corporativa',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Formación de líderes para la economía sostenible global"
+        actions={[
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                variant: 'secondary',
+                text: 'Ver Folleto Académico',
+                href: 'https://drive.google.com/file/d/1D9XI79ctpHOHpzRoahLEZq50z2kYDdLF/view',
+                target: '_blank',
+                icon: 'tabler:download',
+                class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            }
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-administracion-negocios-sostenibles.webp',
+        alt: 'Imagen del Doctorado en Administración de Negocios Sostenibles',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Administración de Negocios Sostenibles</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title='Doctorado en <span class="text-primary">Administración de Negocios Sostenibles</span>'
+                subtitle="Formación doctoral para liderar investigación y diseñar modelos de negocio sostenibles con impacto académico y práctico."
+                items={[
+                    {
+                        title: 'Innovación en modelos de negocios sostenibles',
+                        description: 'Forma profesionales capaces de interpretar modelos, romper paradigmas y crear nuevas formas de desempeño, integrando lo global con lo endógeno en un contexto marcado por la conciencia ambiental.',
+                        icon: 'tabler:bulb',
+                    },
+                    {
+                        title: 'Investigación aplicada en la intersección negocios–sostenibilidad',
+                        description: 'Prepara investigadores de alto nivel para diseñar, desarrollar y aplicar procesos originales que unan teoría, ciencia y práctica, centrados en la relación entre desarrollo económico y sostenibilidad.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Creación de conocimiento y articulación economía–ambiente',
+                        description: 'Contribuye al desarrollo de métodos, sistemas y herramientas para la gestión sostenible, facilitando la inserción de los graduados en el mercado laboral, centros tecnológicos y organismos públicos de investigación.',
+                        icon: 'tabler:chart-arrows-vertical',
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-administracion-negocios-sostenibles-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Negocios Sostenibles',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Administración de Negocios Sostenibles</span> forma investigadores de alto nivel capaces de diseñar y ejecutar procesos de investigación original que integren negocios, ciencia, teoría y práctica en la intersección del desarrollo y la sostenibilidad. El programa prepara a sus graduados para crear, implementar y evaluar modelos empresariales innovadores y endógenos que respondan a los desafíos ambientales contemporáneos, dotándolos de herramientas metodológicas y conceptuales para articular la economía con la protección del ambiente y generar aportes relevantes a la investigación y a la práctica profesional.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Los objetivos específicos del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Abordar temas relevantes para las organizaciones y la gestión, con énfasis en la sostenibilidad.</li><li>Proporcionar un enfoque integrado e interdisciplinario de investigación que incluye la transición organizacional, la economía circular y la bioeconomía.</li><li>Generar investigadores y profesores que puedan establecer conceptos, especialmente en relación con el consumo sostenible y el marketing responsable.</li><li>Explorar los negocios ambientales y justificar su implementación como nuevo paradigma del desarrollo sostenible.</li><li>Dotar al estudiante de herramientas que les permitan identificar y desarrollar negocios amigables con el ambiente.</li></ul>',
+                    icon: 'tabler:target-arrow',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Profesionales de la administración y las ciencias ambientales con experiencia gerencial.</li><li>Egresados de administración, economía, ingeniería ambiental, ecología o biología interesados en investigación original e independiente.</li><li>Gerentes y directivos que deseen implementar acciones coherentes con el medio ambiente y generar valor agregado.</li><li>Inversionistas seniors que deseen promover negocios amigables con el ambiente.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="El programa doctoral profundiza aspectos clave de la sostenibilidad aplicada a la administración empresarial."
+                items={[
+                    {
+                        title: 'Finanzas verdes y de carbono, economía verde y política verde',
+                        description: 'Estudio de los mecanismos financieros y marcos regulatorios que impulsan la transición hacia una economía descarbonizada y sostenible.',
+                        icon: 'tabler:coin',
+                    },
+                    {
+                        title: 'Liderazgo ético y sostenible',
+                        description: 'Desarrollo de competencias directivas basadas en la ética, la transparencia y la creación de valor social y ambiental a largo plazo.',
+                        icon: 'tabler:user-check',
+                    },
+                    {
+                        title: 'Negocios basados en la biodiversidad y la tecnología verde',
+                        description: 'Exploración de oportunidades comerciales que aprovechan y protegen el capital natural apoyadas en soluciones tecnológicas ecoeficientes.',
+                        icon: 'tabler:leaf',
+                    },
+                    {
+                        title: 'Economía Circular, Sostenibilidad y Eficiencia de Recursos',
+                        description: 'Modelos de producción y consumo que minimizan el residuo y optimizan el ciclo de vida de los materiales y la energía.',
+                        icon: 'tabler:recycle',
+                    },
+                    {
+                        title: 'Responsabilidad Social Corporativa',
+                        description: 'Integración voluntaria de las preocupaciones sociales y medioambientales en las operaciones comerciales y relaciones con grupos de interés.',
+                        icon: 'tabler:building-community',
+                    },
+                    {
+                        title: 'Gerencia de Proyectos Sostenibles',
+                        description: 'Aplicación de metodologías de gestión de proyectos que garantizan la viabilidad económica bajo criterios de sostenibilidad rigorosa.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Ecodiseño y Análisis del Ciclo de Vida',
+                        description: 'Diseño de productos y procesos considerando su impacto ambiental desde la extracción de materia prima hasta su disposición final.',
+                        icon: 'tabler:settings-automation',
+                    },
+                    {
+                        title: 'Ecoeficiencia y Sustentabilidad Ambiental',
+                        description: 'Estrategias organizacionales para producir más con menos recursos, reduciendo sistemáticamente el impacto ecológico.',
+                        icon: 'tabler:chart-line',
+                    },
+                    {
+                        title: 'Sostenibilidad en las cadenas de suministro',
+                        description: 'Gestión responsable de proveedores y logística (Green Supply Chain) para asegurar la integridad ambiental de toda la cadena de valor.',
+                        icon: 'tabler:truck-loading',
+                    },
+                    {
+                        title: 'Sostenibilidad y Prevención de Riesgos Laborales',
+                        description: 'Vinculación de la seguridad y salud en el trabajo con la cultura de sostenibilidad y el bienestar del capital humano.',
+                        icon: 'tabler:shield-check',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Administración de Negocios Sostenibles</span>, es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,600 horas lectivas</strong> (<strong>100 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de una secuencia básica de <strong>cuatro trimestres</strong> donde se concentran los <strong>nueve cursos teóricos</strong> y sus módulos de negocios y finanzas.</li><li>La <strong>Comisión Académica del Doctorado</strong> designará un Tutor, para el seguimiento de la formación como investigador del doctorando, en el momento de resolver la admisión, el cual orientará al estudiante en cuanto a la estructuración del plan de estudios de este periodo.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios prácticos de seguimiento relacionados al área de negocio elegida.</li><li><strong>Tesis Doctoral</strong>; un trabajo final escrito sobre un tema de interés empresarial e impacto ambiental.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Administración de Negocios Sostenibles</span> propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de la <strong>sostenibilidad desde la perspectiva empresarial</strong>. Todas las asignaturas están directamente conectadas con la realidad en el ámbito de la administración de empresas y las teorías del crecimiento verde desde un <strong>enfoque en los negocios al repensar las disciplinas comerciales centrales para enfocarse en la sostenibilidad</strong>, y son impartidas por profesores PhD expertos en cada materia.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={administracionNegociosSosteniblesCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...administracionNegociosSosteniblesResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            {
+                ['juan-silva', 'diana-duran', 'gonzalo-fuente', 'angela-martin', 'alberto-jimenez', 'eduardo-marquez', 'erick-brenes', 'walter-castro', 'loraine-giraud', 'alberto-enrique-garcia', 'maria-teresa-perez', 'eduardo-salinas', 'ricardo-remond', 'susan-smith', 'angel-guillemes'].map((id) => {
+                    const prof = faculty[id];
+                    if(!prof) return null;
+                    return (
+                    <FacultyMember {...prof}>
+                        <Fragment slot="bg">
+                        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                        </Fragment>
+                    </FacultyMember>
+                    )
+                })
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle='Los graduados del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Administración de Negocios Sostenibles</span>, estarán preparados para puestos de alto nivel, dentro y fuera de la academia enfocados a promover el crecimiento sostenible del entorno empresarial.'
+                items={[
+                    {
+                        title: 'Aplicación de Principios RSC',
+                        description: 'Las habilidades necesarias para guiar a las empresas en la responsabilidad social y prácticas medioambientales rentables.',
+                        icon: 'tabler:award',
+                    },
+                    {
+                        title: 'Adaptabilidad a Políticas Verdes',
+                        description: 'Un profundo conocimiento de las tendencias de regulación global para anticiparse a los requerimientos de la economía de bajo carbono.',
+                        icon: 'tabler:chart-bar',
+                    },
+                    {
+                        title: 'Estrategia e Innovación',
+                        description: 'Desarrollo de innovaciones y soluciones sostenibles para implementar y dirigir negocios ecológicos de forma exitosa.',
+                        icon: 'tabler:bulb',
+                    },
+                    {
+                        title: 'Competitividad Corporativa',
+                        description: 'Crecimiento integral bajo herramientas para posicionar a las organizaciones al frente del liderazgo ambiental en el mercado.',
+                        icon: 'tabler:trending-up',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="Destreza analítica y empírica para la alta gerencia corporativa enfocado en responsabilidad global."
+                items={[
+                    {
+                        title: 'Organismos de Finanzas Verdes',
+                        description: 'Trabajar en fondos de inversión, como el Fondo Verde para el Clima y asesorar sobre proyectos o iniciativas financieras sustentables.',
+                        icon: 'tabler:cash',
+                    },
+                    {
+                        title: 'Análisis de Inversiones',
+                        description: 'Asesorar a inversionistas para priorizar su flujo de recursos económicos en ecosistemas y mercados ventajosos para el planeta.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Modelamiento de Negocio Eco-amigable',
+                        description: 'Estructuración de estrategias que faciliten la transformación de las industrias, orientadas a que el negocio sea certificado bajo criterios verdes.',
+                        icon: 'tabler:device-analytics',
+                    },
+                    {
+                        title: 'Investigación Docente C-Level',
+                        description: 'Establecimiento de soluciones de investigación aplicadas a la resolución de problemas en el entorno práctico intersectorial.',
+                        icon: 'tabler:books',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Administración de Negocios Sostenibles</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC201107</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>

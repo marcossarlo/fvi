@@ -1,0 +1,427 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { educacionAmbientalCurriculum, educacionAmbientalResearch } from '~/data/phd/educacion-ambiental';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Educación Ambiental',
+    description:
+        'Formación doctoral en Educación Ambiental. Investiga modelos pedagógicos, sostenibilidad curricular y estrategias de sensibilización para un cambio global.',
+    keywords:
+        'doctorado en educación ambiental, investigación educativa ambiental, pedagogía sostenible, alfabetización ambiental, sostenibilidad curricular, formación docente ambiental',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Interdisciplinariedad y participación para resolver desafíos ambientales"
+        actions={[
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                variant: 'secondary',
+                text: 'Ver Folleto Académico',
+                href: 'https://drive.google.com/file/d/1c7R0O12vqeCm_cl7kat4y6JU6KPLy38q/view',
+                target: '_blank',
+                icon: 'tabler:download',
+                class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            }
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-educacion-ambiental.webp',
+        alt: 'Imagen del Doctorado en Educación Ambiental',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Educación Ambiental</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title='Doctorado en <span class="text-primary">Educación Ambiental</span>'
+                subtitle="El paradigma educativo para la comprensión de los efectos de la actividad humana en el planeta."
+                items={[
+                    {
+                        title: 'Principios y competencias en educación ambiental',
+                        description: 'El programa promueve el desarrollo de proyectos vinculados con la solidaridad y la participación ciudadana, integrando principios generales que orientan la concepción de experiencias educativas ambientales.',
+                        icon: 'tabler:users-group',
+                    },
+                    {
+                        title: 'Investigación interdisciplinaria y práctica aplicada',
+                        description: 'Ofrece capacitación de alta calidad para diseñar y ejecutar procesos de investigación original, integrando ciencias naturales y sociales con educación y trabajo de campo.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Perspectivas y modelos de educación ambiental',
+                        description: 'Explora enfoques históricos y filosóficos, analiza modelos nacionales y locales y estudia casos en múltiples contextos con el objetivo de fortalecer la alfabetización ambiental.',
+                        icon: 'tabler:school',
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-educacion-ambiental-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Educación Ambiental',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Educación Ambiental</span> forma doctores capaces de producir conocimiento riguroso y relevante que potencie la calidad de la investigación en educación ambiental y su impacto en contextos académicos y profesionales. El programa prepara a sus egresados para diseñar y ejecutar investigaciones originales que integren enfoques interdisciplinarios —ciencias naturales, ciencias sociales y educación— y que aporten soluciones aplicables en universidades, centros de referencia, organismos públicos, ONG, agencias de cooperación y establecimientos educativos. Al completar el doctorado, los graduados estarán habilitados para incidir en políticas, prácticas educativas y procesos de I+D, fortaleciendo la alfabetización ambiental y la capacidad institucional para enfrentar desafíos socioambientales complejos.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Los objetivos específicos del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Proporcionar capacitación de alta calidad para diseñar e implementar investigaciones originales con un enfoque interdisciplinario que integre ciencias naturales, sociales y educación.</li><li>Producir un portafolio de proyectos de investigación de "naturaleza híbrida" inherente a la Educación Ambiental (EA).</li><li>Elevar la calidad de la educación en todos los niveles a través de la promoción de la educación ambiental de acuerdo al estado del arte de este principio educativo.</li></ul>',
+                    icon: 'tabler:school',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El Doctorado está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Docentes y directivos de entidades educacionales que realicen actividades de educación ambiental.</li><li>Profesionales de la educación que deseen incorporar conceptos ambientales en su plan de estudios o especializarse en enseñanza.</li><li>Vinculados con ONGs y funcionarios públicos relacionados a la gestión ambiental, educación y solidaridad.</li><li>Docentes e interesados que ejecutan programas en centros de interpretación, parques u organizaciones sin fines de lucro.</li><li>Quienes acrediten formación de posgrado en ciencias ambientales, ingeniería o gestión ambiental.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="A continuación, se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
+                items={[
+                    {
+                        title: 'Educación para la conservación de la biodiversidad',
+                        description: 'Desarrollo de proyectos educativos enfocados en la protección de especies y la restauración de equilibrios ecológicos fundamentales.',
+                        icon: 'tabler:leaf',
+                    },
+                    {
+                        title: 'Educación ambiental para un desarrollo sostenible',
+                        description: 'Implementación de marcos pedagógicos que promueven la equidad social, el crecimiento económico y la integridad ambiental.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Contribución al ODS 12: Educación para el consumo y producción sostenible',
+                        description: 'Estrategias de sensibilización sobre la huella ecológica y el fomento de hábitos de consumo responsable y circular.',
+                        icon: 'tabler:recycle',
+                    },
+                    {
+                        title: 'Estilos de vida y educación sostenible',
+                        description: 'Transformación de las conductas cotidianas y fomento de una nueva cultura basada en la sustentabilidad del hogar y el entorno.',
+                        icon: 'tabler:home-eco',
+                    },
+                    {
+                        title: 'Comunicación y educación ambiental para la sustentabilidad',
+                        description: 'Optimización de recursos comunicativos y diseminación de contenidos críticos para públicos diversos en múltiples plataformas.',
+                        icon: 'tabler:broadcast',
+                    },
+                    {
+                        title: 'Cambio Global y sostenibilidad de los sistemas socio-ecológicos',
+                        description: 'Análisis de la interacción humana frente a los fenómenos de transformación sistémica a nivel planetario.',
+                        icon: 'tabler:world',
+                    },
+                    {
+                        title: 'Sostenibilidad curricular',
+                        description: 'Integración transversal del desarrollo sostenible en los planes de estudios de todos los niveles educativos.',
+                        icon: 'tabler:notebook',
+                    },
+                    {
+                        title: 'Sistemas, complejidad y el nuevo paradigma ambiental',
+                        description: 'Abordaje de la crisis planetaria desde el pensamiento complejo y la reestructuración de paradigmas científicos y sociales.',
+                        icon: 'tabler:topology-star-3',
+                    },
+                    {
+                        title: 'Ciencia, arte y medio ambiente',
+                        description: 'Vínculos creativos y científicos que exploran la relación estética y técnica del ser humano con la naturaleza.',
+                        icon: 'tabler:palette',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Educación Ambiental</span>, es un programa multidisciplinario con una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurado en periodo de formación, investigación, un <strong>Proyecto de Tesis Doctoral</strong> y artículo científico, totalizando <strong>1,600 horas lectivas</strong> (<strong>100 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de <strong>cuatro trimestres</strong> intensivos donde se dictan <strong>nueve cursos teóricos</strong>.</li><li>Garantiza el correcto enfoque del participante a través del acompañamiento de un Tutor nombrado por la <strong>Comisión Académica</strong>.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios de prácticas y evaluación relacionados al área elegida.</li><li><strong>Tesis Doctoral</strong>; desarrollo de una temática o experimento de concientización social medible.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Educación Ambiental</span> propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de la <strong>educación ambiental y las implicaciones para la reforma escolar</strong>. Todas las asignaturas están directamente conectadas con la concientización y promoción social para la resolución de problemas ambientales en pos de la sustentabilidad desde un <strong>enfoque en la investigación e implementación de proyectos proactivos</strong>, a nivel de campo y basados en la comunidad, y son impartidas por profesores PhD expertos en cada materia.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={educacionAmbientalCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...educacionAmbientalResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            {
+                ['diana-duran', 'gonzalo-fuente', 'juan-silva', 'angela-martin', 'alberto-jimenez', 'eduardo-marquez', 'erick-brenes', 'loraine-giraud', 'maria-teresa-perez', 'susan-smith', 'angel-guillemes'].map((id) => {
+                    const prof = faculty[id];
+                    if(!prof) return null;
+                    return (
+                    <FacultyMember {...prof}>
+                        <Fragment slot="bg">
+                        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                        </Fragment>
+                    </FacultyMember>
+                    )
+                })
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle='Los graduados del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Educación Ambiental</span>, estarán preparados para precisar y profundizar conceptos, difundir procedimientos, proponer recomendaciones pedagógico-didácticas y promover innovaciones que permitan a los docentes y otros destinatarios del programa, fortalecer las experiencias de educación ambiental (EA) a través de múltiples propuestas, entre ellas las relacionadas con el aprendizaje-servicio.'
+                items={[
+                    {
+                        title: 'Experiencias de ApS Integrales',
+                        description: 'Precisión para proponer e implementar instrumentos y currículos sobre enfoques didácticos del Aprendizaje-Servicio para la mejora de la comunidad.',
+                        icon: 'tabler:bulb',
+                    },
+                    {
+                        title: 'Desarrollo Curricular',
+                        description: 'Implementación de políticas proactivas y recursos eficientes que aumentan la calidad formativa de áreas en enseñanza formal y no formal.',
+                        icon: 'tabler:notebook',
+                    },
+                    {
+                        title: 'Pensamiento Ambiental Crítico',
+                        description: 'Concepción real sobre la evaluación y pensamiento ecológico frente a problemáticas urgentes a nivel iberoamericano.',
+                        icon: 'tabler:messages',
+                    },
+                    {
+                        title: 'Acreditaciones Docentes',
+                        description: 'Eleva el peso y cualificación del profesional para posiciones en centros educativos nacionales e internacionales.',
+                        icon: 'tabler:rosette',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="Realizar investigaciones en el área de Ciencias Naturales y Educación Ambiental tanto en el campo pedagógico como en el científico."
+                items={[
+                    {
+                        title: 'Evaluador y Asesor Pedagógico',
+                        description: 'Prestar asesorías a ONG, centros universitarios e instituciones formativas de educación básica sobre lineamientos de acción verde.',
+                        icon: 'tabler:check',
+                    },
+                    {
+                        title: 'Investigación en Ciencias',
+                        description: 'En el diseño de métodos empíricos aplicados al desarrollo sistemático de ciencias naturales en el plano científico o pedagógico.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Dirección de Políticas Estratégicas',
+                        description: 'Formulación y gestión de iniciativas en sectores de políticas gubernamentales como implementador de la EA a múltiples niveles institucionales.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Liderazgo en Sostenibilidad',
+                        description: 'Cabeza de grupos de investigación sobre las metas del milenio para el abordaje desde escuelas hasta entornos globales.',
+                        icon: 'tabler:topology-star-3',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Educación Ambiental</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC210102</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>

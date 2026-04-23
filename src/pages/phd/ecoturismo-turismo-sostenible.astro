@@ -1,0 +1,447 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { ecoturismoCurriculum, ecoturismoResearch } from '~/data/phd/ecoturismo-turismo-sostenible';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Ecoturismo y Turismo Sostenible',
+    description:
+        'Formación doctoral en gestión de destinos sostenibles. Investiga marketing turístico, ecoturismo, patrimonio cultural y sistemas de calidad con impacto global.',
+    keywords:
+        'doctorado en turismo sostenible, investigación en ecoturismo, gestión de destinos, marketing turístico, turismo y desarrollo, sostenibilidad turística, patrimonio cultural',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Liderazgo en el desarrollo de destinos turísticos con criterios de sustentabilidad"
+        actions={[
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                    variant: 'secondary',
+                    text: 'Ver Folleto Académico',
+                    href: 'https://drive.google.com/file/d/1HfpmBnSUPobFxYMdMzrwKhsHnKvNUaEl/view',
+                    target: '_blank',
+                    icon: 'tabler:download',
+                    class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            }
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-ecoturismo-turismo-sostenible.webp',
+        alt: 'Imagen del Doctorado en Ecoturismo y Turismo Sostenible',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Ecoturismo y Turismo Sostenible</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData duration='36' /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title='Doctorado en <span class="text-primary dark:text-accent">Ecoturismo y Turismo Sostenible</span>'
+                subtitle="Formación doctoral para generar investigación aplicada que impulse destinos sostenibles y una industria turística responsable."
+                items={[
+                    {
+                        title: 'Gestión integral del turismo sostenible',
+                        description: 'Se enfoca en la articulación de competencias a nivel local, nacional e internacional, promoviendo descentralización, redistribución de la renta, generación de empleo, negocios inclusivos y cooperación entre organismos públicos y privados.',
+                        icon: 'tabler:settings',
+                    },
+                    {
+                        title: 'Formación avanzada para la calidad turística',
+                        description: 'Prepara a los estudiantes para resolver con rigor científico los problemas relacionados con la baja calidad de los servicios y la explotación deficiente de los atractivos, fortaleciendo la identidad país en torno al turismo sustentable.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Investigación y planificación con enfoque global',
+                        description: 'El programa impulsa el diseño y planificación de productos y destinos turísticos sostenibles, mediante investigación original de alta calidad, orientada al aprovechamiento equitativo de recursos naturales, históricos y culturales, con impacto nacional e internacional.',
+                        icon: 'tabler:world-search',
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-ecoturismo-turismo-sostenible-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Turismo Sostenible',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué hacer el Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Ecoturismo y Turismo Sostenible</span> forma investigadores de alto nivel capaces de abordar, con rigor científico, los problemas que limitan la calidad de los servicios turísticos y la explotación adecuada de los atractivos naturales y culturales. El programa capacita para desarrollar investigaciones originales y de alta calidad con alcance nacional e internacional, orientadas a promover el aprovechamiento equitativo y sustentable de recursos naturales, históricos y culturales, y a fomentar la participación de todos los agentes del Sistema Integral de Turismo en la gestión de sus impactos sobre las sociedades y el entorno.'
+                columns={2}
+                items={[
+                    {
+                        title: 'Objetivos del Doctorado',
+                        description:
+                        'Los objetivos generales del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><strong>Contribuir</strong> a la formación de doctores e investigadores en Turismo Sostenible para potenciar el crecimiento del entorno social y económico.</li><li><strong>Generar</strong> conocimiento de frontera sobre el uso turístico sostenible, puesta en marcha y desarrollo del sistema turístico, la planificación y formulación de proyectos de desarrollo turístico.</li><li><strong>Fomentar</strong> la investigación para poder diseñar y planificar el producto/destino turístico sobre la base de la sostenibilidad y dinamización económica, con enfoque inclusivo y de cadenas de valor.</li></ul>',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Perfil del destinatario',
+                        description:
+                        'El programa está diseñado para: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><strong>Profesionales de México y Latinoamérica</strong> con formación previa en Artes y Humanidades o Ciencias Sociales y Jurídicas, que posean conocimientos directos o indirectos del sector turístico, preferiblemente a nivel de maestría.</li><li><strong>Titulados en disciplinas afines</strong> a la gestión turística, tales como arquitectura, derecho, museología, comunicación social, antropología, arqueología, economía, biología e historia del arte, entre otras.</li><li><strong>Magísteres interesados</strong> en una visión multidisciplinar de la gestión ambiental, el desarrollo humano y la protección del entorno dentro del ámbito turístico.</li><li><strong>Expertos con trayectoria</strong> que acrediten una sólida experiencia profesional en la gestión sostenible de empresas y destinos turísticos.</li></ul>',
+                        icon: 'tabler:users',
+                    },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="A continuación, se relacionan las líneas de investigación de las que consta el programa de doctorado en su período de investigación."
+                items={[
+                    {
+                        title: 'Gestión y marketing de destinos turísticos',
+                        description: 'Estrategias de posicionamiento y administración integral para elevar la competitividad de los destinos en el mercado global.',
+                        icon: 'tabler:map-pin',
+                    },
+                    {
+                        title: 'Impactos del turismo y sostenibilidad',
+                        description: 'Evaluación de las consecuencias sociales, económicas y ambientales para garantizar un desarrollo equilibrado a largo plazo.',
+                        icon: 'tabler:leaf',
+                    },
+                    {
+                        title: 'Innovación, gestión y creación de productos turísticos',
+                        description: 'Desarrollo de experiencias turísticas creativas y diferenciadas adaptadas a las nuevas demandas del sector.',
+                        icon: 'tabler:bulb',
+                    },
+                    {
+                        title: 'Valorización turística del patrimonio cultural',
+                        description: 'Aprovechamiento responsable y puesta en valor de recursos históricos y culturales como activos turísticos sostenibles.',
+                        icon: 'tabler:building-monument',
+                    },
+                    {
+                        title: 'Turismo, desarrollo y cooperación',
+                        description: 'Fomento del crecimiento local a través de la colaboración entre organismos públicos, privados y comunidades.',
+                        icon: 'tabler:users-group',
+                    },
+                    {
+                        title: 'Internacionalización de empresas turísticas',
+                        description: 'Estrategias para la expansión y competitividad de las entidades turísticas en mercados y estándares internacionales.',
+                        icon: 'tabler:world',
+                    },
+                    {
+                        title: 'Sistemas de calidad y medioambiente en empresas turísticas',
+                        description: 'Implementación de certificaciones y protocolos que aseguren la excelencia operativa y el respeto al ecosistema.',
+                        icon: 'tabler:certificate',
+                    },
+                    {
+                        title: 'Ecoturismo y Turismo de intereses especiales',
+                        description: 'Investigación y desarrollo de nichos específicos centrados en el contacto con la naturaleza y motivaciones temáticas.',
+                        icon: 'tabler:mask',
+                    },
+                    {
+                        title: 'Gestión y planificación de recursos naturales y turismo',
+                        description: 'Planificación técnica del uso turístico en áreas protegidas y entornos naturales para prevenir su degradación.',
+                        icon: 'tabler:mountain',
+                    },
+                    {
+                        title: 'Sistemas de Inteligencia en el ámbito turístico (TICs y análisis de datos)',
+                        description: 'Uso de tecnologías de información y análisis de datos para una toma de decisiones inteligente y basada en evidencias.',
+                        icon: 'tabler:database-search',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Ecoturismo y Turismo Sostenible</span>, es un programa multidisciplinario que tiene una duración de <strong>36 meses (3 años)</strong>, estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis doctoral</strong> y un artículo científico con un total de <strong>1,600 horas lectivas (100 créditos)</strong>.'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de <strong>cuatro trimestres</strong> intensivos donde se dictan <strong>doce cursos teóricos</strong>.</li><li>Garantiza el correcto enfoque del participante a través del acompañamiento de un Tutor nombrado por la <strong>Comisión Académica</strong>.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios de prácticas y evaluación de impactos vinculados al turismo.</li><li><strong>Tesis Doctoral</strong>; disertación original enfocada en casos teóricos y prácticos locales del estudiante.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Ecoturismo y Turismo Sostenible</span> propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión de un <strong>sector estratégico y creciente en la economía, la sociedad y el territorio</strong>. Todas las asignaturas están directamente conectadas a la adopción de nuevos modelos turísticos basados en la sostenibilidad social, ambiental y económica desde un <strong>enfoque dinámico y evolutivo del turismo y de la nueva sociedad del ocio</strong>.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={ecoturismoCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...ecoturismoResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            {
+                ['diana-duran', 'gonzalo-fuente', 'alberto-jimenez', 'loraine-giraud', 'maria-teresa-perez', 'erick-brenes', 'susan-smith', 'angel-guillemes'].map((id) => {
+                    const prof = faculty[id];
+                    if(!prof) return null;
+                    return (
+                    <FacultyMember {...prof}>
+                        <Fragment slot="bg">
+                        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                        </Fragment>
+                    </FacultyMember>
+                    )
+                })
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Beneficios anticipados e impacto profesional"
+                subtitle="Las características fundamentales del egresado del programa de Doctorado en Ecoturismo y Turismo Sostenible, son:"
+                items={[
+                    {
+                        title: 'Investigación en planificación de destinos',
+                        description: 'Desarrolla investigaciones de alto nivel sobre la planificación de espacios de destino y áreas receptoras, con especial énfasis en el contexto de México y Latinoamérica.',
+                        icon: 'tabler:map-search',
+                    },
+                    {
+                        title: 'Avance científico en patrimonio y paisaje',
+                        description: 'Fomenta el progreso científico en la gestión de patrimonios culturales, naturales y paisajes, con el fin de aportar soluciones a las problemáticas actuales de zonas urbanas y rurales.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Gestión de impactos y conservación',
+                        description: 'Analiza las implicaciones socioculturales y ambientales del turismo, asumiendo un compromiso técnico con la protección del entorno y la planificación turística responsable.',
+                        icon: 'tabler:shield-check',
+                    },
+                    {
+                        title: 'Estrategias para la sostenibilidad sectorial',
+                        description: 'Domina métodos y herramientas técnicas avanzadas para optimizar la prestación de servicios turísticos en los sectores público y privado, potenciando la sostenibilidad global.',
+                        icon: 'tabler:chart-arrows',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="El egresado estará capacitado para liderar procesos de investigación, consultoría especializada y gestión de políticas públicas en el ámbito del turismo sostenible."
+                items={[
+                    {
+                        title: 'Asesor científico en proyectos turísticos',
+                        description: 'Liderazgo en la elaboración de proyectos de destinos sostenibles y actividades de bajo impacto, integrando equipos pluridisciplinares de alto nivel.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Especialista en puesta en valor del patrimonio',
+                        description: 'Desarrollo de investigaciones aplicadas a la difusión y valorización responsable del patrimonio natural y cultural.',
+                        icon: 'tabler:building-monument',
+                    },
+                    {
+                        title: 'Investigador y colaborador académico',
+                        description: 'Participación activa en redes de colaboración académica y científica para el avance del conocimiento en el sector.',
+                        icon: 'tabler:network',
+                    },
+                    {
+                        title: 'Docente e investigador universitario',
+                        description: 'Capacidad para integrarse en cuerpos académicos dedicados a la innovación docente e investigativa en turismo sostenible.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Consultor en turismo especializado',
+                        description: 'Asesoría técnica para organizaciones de turismo alternativo, incluyendo agroturismo, turismo rural, de aventura y etnoturismo.',
+                        icon: 'tabler:briefcase',
+                    },
+                    {
+                        title: 'Gestor de políticas públicas y desarrollo',
+                        description: 'Diseño y ejecución de políticas o proyectos de desarrollo vinculados con la gestión cultural, patrimonial y turística.',
+                        icon: 'tabler:building-bank',
+                    },
+                    {
+                        title: 'Responsable de producto en áreas protegidas',
+                        description: 'Dirección del desarrollo de productos turísticos y recreativos en parques naturales y espacios protegidos.',
+                        icon: 'tabler:mountain',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Ecoturismo y Turismo Sostenible</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC201210</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>

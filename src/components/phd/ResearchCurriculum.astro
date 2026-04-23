@@ -43,7 +43,7 @@ const totalCredits = totalFormation.credits + researchCredits + seminarDoctorado
             {seminars.map((seminar, index) => (
                 <div class="flex justify-between px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     <span class="mr-4">
-                        <span class="font-bold text-primary">Seminario {index + 1}:</span> {seminar.title.split(':').slice(1).join(':') || seminar.title}
+                        <span class="font-bold text-primary">Seminario de Investigación {index + 1}:</span> {seminar.title.split(':').slice(1).join(':') || seminar.title}
                     </span>
                     <div class="flex justify-end space-x-4 shrink-0 min-w-[100px]">
                         <span>{seminar.hours} horas</span>

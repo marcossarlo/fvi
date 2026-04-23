@@ -1,0 +1,447 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Features from '~/components/widgets/Features.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import ResearchCurriculum from '~/components/phd/ResearchCurriculum.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+import { energiasCurriculum, energiasResearch } from '~/data/phd/energias-renovables';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Image from '~/components/common/Image.astro';
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+
+const metadata = {
+    title: 'Doctorado en Energías Renovables',
+    description:
+        'Especialízate en energía solar, eólica, biomasa e hidrógeno. Lidera la transición energética con investigación avanzada en eficiencia y sistemas híbridos.',
+    keywords:
+        'doctorado en energías renovables, investigación energética, energía solar fotovoltaica, eficiencia energética, bioenergía, transición energética, sistemas híbridos de energía',
+};
+
+const tabs = [
+    { id: 'presentacion', label: '1. Presentación' },
+    { id: 'el-doctorado', label: '2. El Doctorado' },
+    { id: 'investigacion', label: '3. Investigación' },
+    { id: 'asignaturas', label: '4. Asignaturas' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'metodologia', label: '6. Metodología' },
+    { id: 'profesorado', label: '7. Profesorado' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'campos-de-accion', label: '9. Campos de Acción' },
+    { id: 'titulacion', label: '10. Titulación' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'inscripcion', label: '12. Inscripción' },
+    { id: 'pagos', label: '13. Pagos' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    <!-- HeroPrograms ********************************************** -->
+    <HeroPrograms
+        tagline="Convocatoria Abierta 2026"
+        subtitle="Ingeniería y desarrollo aplicado a la transición energética global"
+        actions={[
+            {
+                variant: 'primary',
+                text: 'Solicita información',
+                href: '#solicitudes',
+                icon: 'tabler:mail-forward',
+                class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+            },
+            {
+                variant: 'secondary',
+                text: 'Ver Folleto Académico',
+                href: 'https://drive.google.com/file/d/1OIiLFzy8y_9tY7U4hXWSYlQv7_gwXYDw/view',
+                target: '_blank',
+                icon: 'tabler:download',
+                class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+            },
+        ]}
+        image={{
+        src: '~/assets/images/doctorados/fvi-phd-energias-renovables.webp',
+        alt: 'Imagen del Doctorado en Energías Renovables',
+        }}
+    >
+        <Fragment slot="title">
+            Doctorado en <br />
+            <span class="text-secondary dark:text-accent"> Energías Renovables</span>
+        </Fragment>
+    </HeroPrograms>
+
+    <!-- DatosEstadisticas -->
+    <StatsData /> 
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+            <!-- 1. PRESENTACIÓN *********************************** -->
+            <Content
+                id="presentacion"
+                tagline="Presentación"
+                title='Doctorado en <span class="text-primary">Energías Renovables</span>'
+                subtitle="Formación doctoral para liderar investigación y desarrollo de soluciones energéticas sostenibles con impacto técnico y ambiental."
+                items={[
+                    {
+                        title: 'Formación avanzada en energías renovables',
+                        description: 'Proporciona a los estudiantes herramientas científicas y tecnológicas para resolver problemas ambientales y energéticos en sectores industriales, de servicios y domésticos, consolidando un referente académico en este campo.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Diversidad de fuentes energéticas sostenibles',
+                        description: 'Aborda la energía eólica, solar, biomasa y biocombustibles, geotérmica, renovables marinas y el hidrógeno como vector energético, vinculando la investigación con la Política Energética Nacional y el desarrollo sustentable regional y nacional.',
+                        icon: 'tabler:windmill',
+                    },
+                    {
+                        title: 'Inserción profesional y científica',
+                        description: 'Facilita la incorporación de los doctores en el mercado laboral, centros tecnológicos y organismos públicos de investigación, mediante un sólido ejercicio profesional, la docencia y actividades de investigación orientadas a la sostenibilidad energética.',
+                        icon: 'tabler:briefcase',
+                    },
+                ]}
+                image={{
+                src: '~/assets/images/doctorados/fvi-phd-energias-renovables-portada.webp',
+                alt: 'Imagen de presentación del Doctorado de Energías Renovables',
+                }}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+
+            <!-- 2. EL DOCTORADO  ******************************* -->
+            <Features2
+                id="el-doctorado"
+                tagline="El Doctorado"
+                title="¿Por qué cursar este Doctorado?"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Energías Renovables</span> ofrece una formación avanzada para abordar problemas ambientales y energéticos en los sectores industrial, de servicios y doméstico, mediante el uso de herramientas científicas y tecnológicas propias de la investigación y el desarrollo. El programa prepara a profesionales e investigadores para diseñar soluciones innovadoras en el campo de las energías renovables y consolidarse como referentes en la formación especializada en este ámbito.'
+                columns={2}
+                items={[
+                {
+                    title: 'Objetivos del Doctorado',
+                    description:
+                    'Los objetivos específicos del programa son: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Formar investigadores de alto nivel capaces de aplicar soluciones científico-tecnológicas en energías renovables que integren la resolución de problemas ambientales complejos.</li><li>Fortalecer las competencias técnicas de investigadores en el uso eficiente y sostenible de recursos energéticos aplicados a la edificación, industria, procesos de fabricación y transporte.</li><li>Desarrollar un portafolio de investigación competitiva que facilite la inserción laboral de los egresados en sectores académicos, industriales y gubernamentales a nivel global.</li></ul>',
+                    icon: 'tabler:school',
+                },
+                {
+                    title: 'Perfil del destinatario',
+                    description:
+                    'El programa está dirigido a: <ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li>Egresados de Ciencias Ambientales, Químicas, Agrícolas, Ingenierías y áreas afines, con especial interés en mecánica de fluidos y termodinámica.</li><li>Profesionales con posgrado o especialización en energías renovables y sostenibilidad, comprometidos con la investigación científica avanzada.</li><li>Tomadores de decisiones en empresas públicas o privadas enfocados en la evaluación de tecnologías y el aprovechamiento de recursos renovables.</li><li>Académicos e investigadores cuyas líneas prioritarias se centren en la energía, el medio ambiente y su impacto en el entorno.</li><li>Funcionarios y profesionales del sector energético interesados en liderar la transición y la gestión sostenible de recursos.</li></ul>',
+                    icon: 'tabler:users',
+                },
+                ]}
+            />
+
+            <!-- 3. INVESTIGACIÓN  ******************************* -->
+            <Features
+                id="investigacion"
+                tagline="Investigación"
+                title="Líneas de Investigación"
+                subtitle="El programa de doctorado desarrolla su actividad investigadora a través de las siguientes líneas especializadas:"
+                items={[
+                    {
+                        title: 'Conversión y Tecnologías Renovables',
+                        description: 'Investigación avanzada en sistemas de transformación y aprovechamiento de fuentes de energía limpia.',
+                        icon: 'tabler:refresh',
+                    },
+                    {
+                        title: 'Eficiencia y Sostenibilidad Energética',
+                        description: 'Análisis técnico-económico de usos finales en edificación y procesos industriales a escala regional.',
+                        icon: 'tabler:leaf',
+                    },
+                    {
+                        title: 'Bioenergía y Biocombustibles',
+                        description: 'Estudio de la biomasa y sus procesos de conversión para la generación de energía sostenible.',
+                        icon: 'tabler:plant',
+                    },
+                    {
+                        title: 'Sistemas Híbridos de Energía',
+                        description: 'Integración y optimización de múltiples fuentes renovables para garantizar el suministro estable.',
+                        icon: 'tabler:layers-intersect',
+                    },
+                    {
+                        title: 'Planeación Energética Estratégica',
+                        description: 'Modelado y diseño de políticas y escenarios para la transición hacia una matriz descarbonizada.',
+                        icon: 'tabler:map-2',
+                    },
+                    {
+                        title: 'Energía Solar Fotovoltaica',
+                        description: 'Desarrollo de sistemas fotovoltaicos avanzados y su integración eficiente en redes eléctricas.',
+                        icon: 'tabler:sun',
+                    },
+                    {
+                        title: 'Sistemas Termosolares y Almacenamiento',
+                        description: 'Tecnologías de concentración solar y soluciones para la gestión térmica y el almacenamiento energético.',
+                        icon: 'tabler:temperature-plus',
+                    },
+                    {
+                        title: 'Modelación y Optimización de Sistemas',
+                        description: 'Simulación avanzada de materiales, procesos y sistemas energéticos para maximizar su rendimiento.',
+                        icon: 'tabler:chart-dots',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features>
+
+            <!-- 4. ASIGNATURAS  ******************************* -->
+            <!-- Carga horaria -->
+            <Features2
+                id="asignaturas"
+                tagline="Asignaturas"
+                title="Estructura del programa"
+                subtitle='El <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Energías Renovables</span> es un programa multidisciplinario que tiene una duración de <strong>24 meses</strong> (<strong>8 trimestres</strong>), estructurados en un periodo de formación, un periodo de investigación, el <strong>Proyecto de Tesis Doctoral</strong> y un artículo científico con un total de <strong>1,600 horas lectivas</strong> (<strong>100 créditos</strong>).'
+                columns={2}
+                items={[
+                {
+                    title: 'Periodo de Formación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li>El plan de estudios está compuesto de <strong>cuatro trimestres</strong> intensivos donde se dictan <strong>nueve cursos teóricos</strong> en sistemas renovables.</li><li>Garantiza el correcto enfoque del participante a través del acompañamiento de un Tutor nombrado por la <strong>Comisión Académica</strong>.</li></ul>',
+                    icon: 'tabler:book',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                {
+                    title: 'Periodo de Investigación',
+                    description:
+                    '<ul class="list-disc ml-6 mt-2 space-y-1 text-white"><li><strong>Componente de Investigación</strong>; seminarios prácticos de seguimiento relacionados a la problemática ambiental elegida por el doctorando.</li><li><strong>Tesis Doctoral</strong>; elaboración de un trabajo de investigación original y escrito sobre un tema de relevancia ambiental y energética.</li><li><strong>Publicación de artículo científico</strong>.</li></ul>',
+                    icon: 'tabler:microscope',
+                    classes: { 
+                        panel: 'text-white bg-teal-700 dark:bg-teal-500/30',
+                        icon: 'text-green-500'
+                    },
+                },
+                ]}
+            />
+            <!-- 4.1. Periodo de Formación -->
+            <HeroSection
+                tagline="Periodo de Formación"
+                title="Carga Horaria y Asignaturas del Curso"
+                subtitle='El plan de formación del <span class="text-primary font-semibold">Doctorado en</span> <span class="text-secondary font-semibold">Energías Renovables</span> propone un recorrido 360º por las materias fundamentales para mejorar nuestra comprensión en el ámbito de las <strong>energías renovables y la sostenibilidad</strong>. Todas las asignaturas están directamente conectadas para dominar temas fundamentales en ingeniería energética y aplicarlos a problemas de investigación con trascendencia práctica desde un <strong>enfoque en el diseño, la conducción y la gestión de un proyecto de investigación energético independiente o relacionado con la energía</strong>.'
+            >
+                <Fragment slot="content">
+                    <p class="text-base text-left mb-6">El <strong>currículo del programa de doctorado</strong> se precisa a continuación:</p>
+                    <ProgramCurriculum courses={energiasCurriculum.courses} />
+                </Fragment>
+            </HeroSection>            
+            <!-- 4.2. Periodo de Investigación -->
+            <HeroSection
+                tagline="Periodo de Investigación"
+                title="Carga Horaria y Asignaturas del Seminario"                
+            >
+                <Fragment slot="content">
+                    <ResearchCurriculum {...energiasResearch} />
+                </Fragment>
+            </HeroSection>
+
+            <!-- 5. PROYECTO DE TESIS DOCTORAL -->
+            <PhdProject />
+
+            <!-- 6. METODOLOGÍA DE ENSEÑANZA -->
+            <ProgramMethodology />
+
+            <!-- 7. PROFESORADO -->
+            <Content
+                id="profesorado"
+                tagline="Profesorado"
+                title="Profesorado y Tutoría"
+                items={[
+                    {
+                        title: 'Composición del profesorado',
+                        description:
+                            'El profesorado está formado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada, con residencia en varios países.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Equipo central y habilidades complementarias',
+                        description:
+                            'Cuentan con un equipo central en Perú y habilidades complementarias que incluyen dominio de varios idiomas, experiencia con una amplia gama de culturas y la capacidad de trabajar de manera eficiente desde oficinas virtuales.',
+                        icon: 'tabler:world-latitude',
+                    },
+                    {
+                        title: 'Participación de profesionales externos',
+                        description:
+                            'Participan profesionales de primer nivel de otras empresas, organismos oficiales e instituciones, todos ellos directamente implicados en las diferentes áreas de conocimiento del programa.',
+                        icon: 'tabler:users-group',
+                    },
+                ]}
+                image={{
+                    src: '~/assets/images/fvi-profesorado-tutoria.webp',
+                    alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
+                }}
+                >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Content>
+            {
+                ['angel-guillemes', 'juan-silva', 'angela-martin', 'alberto-jimenez', 'erick-brenes'].map((id) => {
+                    const prof = faculty[id];
+                    if(!prof) return null;
+                    return (
+                    <FacultyMember {...prof}>
+                        <Fragment slot="bg">
+                        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                        </Fragment>
+                    </FacultyMember>
+                    )
+                })
+            }
+
+            <!-- 8. BENEFICIOS -->
+            <Features
+                id="beneficios"
+                tagline="Beneficios"
+                title="Impacto Profesional y Competencias Adquiridas"
+                subtitle='Los graduados adquieren capacidades científicas avanzadas para liderar la investigación y el diseño de soluciones adaptativas en sistemas energéticos globales complejos.'
+                items={[
+                    {
+                        title: 'Liderazgo en Sistemas Energéticos',
+                        description: 'Comprensión avanzada de la dinámica y complejidad de los sistemas energéticos globales para liderar investigaciones con soluciones adaptativas.',
+                        icon: 'tabler:award',
+                    },
+                    {
+                        title: 'Dominio de Ingeniería Energética',
+                        description: 'Capacidad para aplicar fundamentos de ingeniería renovable en problemas de investigación con trascendencia técnica y práctica.',
+                        icon: 'tabler:settings',
+                    },
+                    {
+                        title: 'Análisis Transdisciplinario',
+                        description: 'Uso de conocimientos analíticos y teóricos para contextualizar y resolver cuestiones complejas que rodean la energía y el entorno.',
+                        icon: 'tabler:brain',
+                    },
+                    {
+                        title: 'Gestión de Investigación Independiente',
+                        description: 'Competencia integral en el diseño, ejecución y gestión de proyectos de investigación originales relacionados con la energía.',
+                        icon: 'tabler:clipboard-check',
+                    },
+                    {
+                        title: 'Contribución al Conocimiento Científico',
+                        description: 'Aporte significativo al cuerpo de conocimiento de los sistemas energéticos complejos mediante investigación transdisciplinaria de vanguardia.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Posicionamiento en el Mercado Global',
+                        description: 'Creación de una cartera de logros de investigación que garantiza competitividad en la academia, la industria y el sector gubernamental.',
+                        icon: 'tabler:briefcase',
+                    },
+                ]}
+            />    
+            
+            <!-- 9. CAMPOS DE ACCIÓN -->
+            <Features
+                id="campos-de-accion"
+                tagline="Campos de Acción"
+                title="Campos de Acción Profesionales"
+                subtitle="El doctor en energías renovables está capacitado para integrarse en sectores de alta responsabilidad, liderando la investigación y la docencia en ámbitos industriales, académicos y gubernamentales."
+                items={[
+                    {
+                        title: 'Responsabilidad Industrial y Académica',
+                        description: 'Desempeño en puestos de responsabilidad en una variedad de industrias relacionadas con la energía o en el mundo académico.',
+                        icon: 'tabler:building-factory-2',
+                    },
+                    {
+                        title: 'Dirección de Investigación',
+                        description: 'Gerenciar y/o dirigir la actividad de investigación científica en el ámbito universitario, empresarial o en centros de investigación.',
+                        icon: 'tabler:microscope',
+                    },
+                    {
+                        title: 'Investigador en Energías Renovables',
+                        description: 'Identificar, plantear y resolver problemas sobre sistemas energéticos globales cuya solución requiera de la generación de nuevos conocimientos.',
+                        icon: 'tabler:search',
+                    },
+                    {
+                        title: 'Liderazgo en Tecnología Solar',
+                        description: 'Formular y dirigir proyectos de investigación y/o adaptar soluciones en el ámbito tecnológico de la energía solar.',
+                        icon: 'tabler:sun',
+                    },
+                    {
+                        title: 'Conformación de Grupos de Investigación',
+                        description: 'Líder en la conformación de grupos de investigación aplicada en energías renovables a nivel local, regional, nacional e internacional.',
+                        icon: 'tabler:users-group',
+                    },
+                    {
+                        title: 'Docencia de Alto Nivel',
+                        description: 'Impartir docencia, al más alto nivel, en los campos del conocimiento asociados a las áreas del Doctorado.',
+                        icon: 'tabler:school',
+                    },
+                    {
+                        title: 'Innovación y Eficiencia Empresarial',
+                        description: 'Gerente de empresas y proyectos capaces de crear, adaptar e innovar para obtener procesos cada vez más eficientes técnica, económica y ambientalmente.',
+                        icon: 'tabler:topology-star-ring-3',
+                    },
+                ]}
+            >
+                <Fragment slot="bg">
+                    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+                </Fragment>
+            </Features> 
+
+            <!-- 10. TITULACIÓN -->            
+            <Content
+                id='titulacion'
+                title='Título Oficial'
+                tagline="Titulación"
+                isReversed
+                image={{
+                    src: '~/assets/images/fvi-titulacion.webp',
+                    alt: 'Imagen de titulación del Doctorado de Fondo Verde',
+                }}
+             >
+                <Fragment slot="content">                    
+                    <p class="text-xl text-muted mb-2 dark:text-slate-300">
+                        La <strong>Universidad Centro Panamericano de Estudios Superiores</strong> - <strong>UNICEPES</strong>, otorga el Grado de <span class="text-primary font-semibold">Doctor (a) en Energías Renovables</span> con <strong>Reconocimiento de Validez Oficial de Estudios</strong> (<strong>RVOE</strong>) otorgado por la Secretaría de Educación del Gobierno del Estado de Michoacán (<span class="text-secondary font-semibold">RVOE No. DOC201106</span> | <span class="text-primary font-semibold">Clave D.G.P. Dirección General de Profesiones N° 620604</span>) y con Reconocimiento en todos los países en los que México haya suscrito convenio a través del Convenio de la Haya (1961).
+                    </p>      
+                    <div class="flex justify-center">
+                        <div class="max-w-xs md:max-w-[400px]">
+                            <Image 
+                                src="~/assets/images/fvi-rvoe-logo.webp" 
+                                alt="Logo RVOE" 
+                                width={400}
+                                class="h-auto dark:brightness-110"
+                            />
+                        </div>
+                    </div>
+                </Fragment>
+            </Content>
+
+            <!-- 11. BECAS -->
+            <Scholarship />
+
+            <!-- 12. INSCRIPCIÓN -->
+            <Admission />
+
+            <!-- 13. PAGOS -->
+            <Payments />
+
+            <!-- 14. MEDIOS DE PAGO -->
+            <PaymentMethods />
+
+            <!-- 15. SOLICITUDES -->
+            <Requests />
+
+        </div>
+        <!-- END Main Content -->
+
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+
+</Layout>
