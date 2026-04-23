@@ -237,22 +237,22 @@ export const energiasCurriculum: ProgramCurriculum = {
 export const energiasResearch: ResearchCurriculum = {
   seminars: [
     {
-      title: 'Seminario de Investigación I Cómo identificar el problema para una investigación. Estado de la Cuestión',
+      title: 'Análisis del Estado del Arte',
       hours: 80.0,
       credits: 5.0,
     },
     {
-      title: 'Seminario de Investigación II Diseño Metodológico',
+      title: 'El Problema de Investigación',
       hours: 80.0,
       credits: 5.0,
     },
     {
-      title: 'Seminario de Investigación III Técnicas de investigación, recolección y análisis de datos',
+      title: 'Diseño Metodológico',
       hours: 80.0,
       credits: 5.0,
     },
     {
-      title: 'Seminario de Investigación IV Pautas para Estructurar y Redactar la Tesis Doctoral, y el Artículo Científico',
+      title: 'Propuesta de Investigación Doctoral',
       hours: 160.0,
       credits: 10.0,
     },

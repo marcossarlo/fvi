@@ -348,7 +348,7 @@ export const ecoturismoResearch: ResearchCurriculum = {
             credits: 18,
         },
         {
-            title: 'Seminario de Investigación IV: Propuesta de Investigación Doctora',
+            title: 'Seminario de Investigación IV: Propuesta de Investigación Doctoral',
             hours: 140,
             credits: 9,
         },

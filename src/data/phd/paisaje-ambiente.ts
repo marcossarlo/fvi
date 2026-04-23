@@ -333,22 +333,22 @@ export const paisajeAmbienteCurriculum: ProgramCurriculum = {
 export const paisajeAmbienteResearch: ResearchCurriculum = {
     seminars: [
         {
-            title: 'Seminario de Investigación I: Análisis del Estado del Arte.',
+            title: 'Análisis del Estado del Arte',
             hours: 70,
             credits: 4,
         },
         {
-            title: 'Seminario de Investigación II: El Problema de Investigación.',
+            title: 'El Problema de Investigación',
             hours: 70,
             credits: 4,
         },
         {
-            title: 'Seminario de Investigación III: Diseño Metodológico',
+            title: 'Diseño Metodológico',
             hours: 280,
             credits: 18,
         },
         {
-            title: 'Seminario de Investigación IV: Propuesta de Investigación Doctora',
+            title: 'Propuesta de Investigación Doctoral',
             hours: 140,
             credits: 9,
         },
