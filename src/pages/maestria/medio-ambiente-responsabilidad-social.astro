@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
-import StatsData from '~/components/phd/StatsData.astro';
+import StatsData from '~/components/maestria/StatsData.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -18,7 +18,7 @@ import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
 import PhdProject from '~/components/phd/PhdProject.astro';
 
 import { faculty } from '~/data/faculty';
-import { stats, facultyIds, curriculum } from '~/data/maestria/medio-ambiente';
+import { facultyIds, curriculum } from '~/data/maestria/medio-ambiente';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
@@ -29,70 +29,90 @@ const metadata = {
 const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
 
 const tabs = [
-  { id: 'presentacion', label: 'Presentación', icon: 'tabler:info-circle' },
-  { id: 'maestria', label: 'La Maestría', icon: 'tabler:book' },
-  { id: 'colaboran', label: 'Colaboran', icon: 'tabler:building' },
-  { id: 'estructura', label: 'Estructura', icon: 'tabler:layout-list' },
-  { id: 'proyecto', label: 'Proyecto', icon: 'tabler:file-text' },
-  { id: 'estudio', label: '¿Cómo se estudia?', icon: 'tabler:device-laptop' },
-  { id: 'claustro', label: 'Claustro', icon: 'tabler:users' },
-  { id: 'beneficios', label: 'Beneficios', icon: 'tabler:star' },
-  { id: 'titulacion', label: 'Titulación', icon: 'tabler:certificate' },
-  { id: 'postmaster', label: 'Post Máster', icon: 'tabler:school' },
-  { id: 'becas', label: 'Becas', icon: 'tabler:cash' },
-  { id: 'aplicar', label: '¿Cómo aplicar?', icon: 'tabler:checklist' },
-  { id: 'inscripcion', label: 'Inscripción', icon: 'tabler:edit' },
-  { id: 'pagos', label: 'Medios de Pago', icon: 'tabler:credit-card' },
-  { id: 'solicitudes', label: 'Solicitudes', icon: 'tabler:mail' },
+  { id: 'presentacion', label: '1. Presentación' },
+  { id: 'maestria', label: '2. La Maestría' },
+  { id: 'colaboran', label: '3. Colaboran' },
+  { id: 'estructura', label: '4. Estructura' },
+  { id: 'proyecto', label: '5. Proyecto' },
+  { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+  { id: 'claustro', label: '7. Claustro' },
+  { id: 'beneficios', label: '8. Beneficios' },
+  { id: 'titulacion', label: '9. Titulación' },
+  { id: 'postmaster', label: '10. Post Máster' },
+  { id: 'becas', label: '11. Becas' },
+  { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+  { id: 'inscripcion', label: '13. Inscripción' },
+  { id: 'pagos', label: '14. Medios de Pago' },
+  { id: 'solicitudes', label: '15. Solicitudes' },
 ];
 ---
 
-<Layout metadata={metadata}>
+<Layout metadata={metadata} showSecondaryNav={false}>
+  {/* HeroPrograms ********************************************** */}
   <HeroPrograms
-    tagline="Maestrías"
-    title="Maestría en Medio Ambiente y Responsabilidad Social"
-    subtitle="Las empresas con futuro necesitan líderes sociales ambientalmente responsables."
-    image={{ src: '~/assets/images/doctorados/proyectos.webp', alt: 'Medio Ambiente y Responsabilidad Social' }}
+    tagline='Convocatoria Abierta 2026'
+    title='Maestría en<br /> <span class="text-primary">Medio Ambiente y Responsabilidad Social</span>'
+    subtitle='Las empresas con futuro necesitan líderes sociales ambientalmente responsables.'
     actions={[
-      { variant: 'primary', text: 'Matricúlate', href: '#inscripcion', icon: 'tabler:arrow-right' },
-      { variant: 'secondary', text: 'Becas', href: '#becas', icon: 'tabler:cash' },
+      {
+          variant: 'primary',
+          text: 'Solicita información',
+          href: '#solicitudes',
+          icon: 'tabler:mail-forward',
+          class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+      },
+      {
+          variant: 'secondary',
+          text: 'Ver Folleto Académico',
+          href: 'https://drive.google.com/file/d/0B0HLluZifC0PaVk4alRYMFM2N3M/view',
+          target: '_blank',
+          icon: 'tabler:download',
+          class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+      },
     ]}
+    image={{
+      src: '~/assets/images/maestrias/fvi-phd-paisaje-ambiente.webp',
+      alt: 'Imagen de la Maestría en Medio Ambiente y Responsabilidad Social',
+    }}
   />
 
-  <StatsData
-    duration="24"
-    nextStart="2026"
-  />
+  {/* DatosEstadisticas */}
+  <StatsData />
 
-  <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="relative max-w-[100vw] overflow-x-hidden">
+    <!-- Desktop Sidebar & Mobile Floating Pill -->
     <ProgramTOC tabs={tabs} />
 
-    <div class="lg:ml-64 2xl:ml-[18rem] space-y-16 lg:space-y-24">
+    {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+    <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+      
       {/* 1. PRESENTACIÓN */}
-      <div id="presentacion" class="scroll-mt-24">
-        <Content
-          isReversed
-          title="Bienvenida del Director"
-          image={{ src: '~/assets/images/users/director.webp', alt: 'Director de la maestría' }}
+      <Content
+          id="presentacion"
+          tagline="Presentación"
+          title="Erick Brenes, PhD"
+          subtitle="Director de la Maestría"
+          items={[
+            {
+              title: 'Gestión Sostenible',
+              description: 'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales de los multi-stakeholders.',
+              icon: 'tabler:leaf',
+            },
+            {
+              title: 'Formación Integral',
+              description: 'El objetivo esencial de este programa es formar profesionales en la planificación y gestión de empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
+              icon: 'tabler:school',
+            }
+          ]}
+          image={{
+            src: '~/assets/images/users/fvi-erick-brenes.webp',
+            alt: 'Erick Brenes, PhD - Director de la Maestría en Medio Ambiente y Responsabilidad Social',
+          }}
         >
-          <Fragment slot="content">
-            <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">
-              Las empresas con futuro necesitan líderes sociales ambientalmente responsables
-            </h3>
-            <p class="mb-4">
-              La empresa del siglo XXI exige políticas ambientales sostenibles, adaptando el tradicional esquema de producción orientada a la economía por un desarrollo capaz de satisfacer las necesidades del presente sin comprometer las posibilidades de las futuras generaciones.
-            </p>
-            <p class="mb-4">
-              En este sentido, las empresas precisan de expertos con una visión integral, que contemplando los aspectos económicos, sociales y ambientales, diseñen planes de sustentabilidad eficaces, evalúen los riesgos climáticos, comuniquen su compromiso y faciliten la toma de decisiones ambientales, logrando transformar las operaciones a mediano y largo plazo tanto de entidades públicas como de empresas privadas.
-            </p>
-            <p>
-              Nuestra Maestría está estructurada para proporcionarle las competencias que le permitan diseñar modelos sostenibles y estrategias de liderazgo medioambientalmente responsable adaptables a las particularidades de cualquier negocio.
-            </p>
+          <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
           </Fragment>
-        </Content>
-      </div>
-
-      {/* ... [Rest of sections mapping directly from extracted text without "Contenidos"] ... */}
+      </Content>
       
       {/* 2. LA MAESTRÍA */}
       <div id="maestria" class="scroll-mt-24">
@@ -231,4 +251,5 @@ const tabs = [
 
     </div>
   </div>
+  <!-- END Desktop Sidebar & Mobile Floating Pill -->
 </Layout>
