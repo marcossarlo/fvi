@@ -1,0 +1,234 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import StatsData from '~/components/phd/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/phd/ProgramCurriculum.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+
+import Scholarship from '~/components/phd/Scholarship.astro';
+import Admission from '~/components/phd/Admission.astro';
+import Payments from '~/components/phd/Payments.astro';
+import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import Requests from '~/components/phd/Requests.astro';
+import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
+import PhdProject from '~/components/phd/PhdProject.astro';
+
+import { faculty } from '~/data/faculty';
+import { stats, facultyIds, curriculum } from '~/data/maestria/medio-ambiente';
+
+const metadata = {
+  title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
+  description: 'Desarrolla habilidades en sostenibilidad, economía circular y gestión de proyectos ambientales.',
+  keywords: 'maestría medio ambiente, responsabilidad social, sostenibilidad corporativa, economía circular',
+};
+
+const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+
+const tabs = [
+  { id: 'presentacion', label: 'Presentación', icon: 'tabler:info-circle' },
+  { id: 'maestria', label: 'La Maestría', icon: 'tabler:book' },
+  { id: 'colaboran', label: 'Colaboran', icon: 'tabler:building' },
+  { id: 'estructura', label: 'Estructura', icon: 'tabler:layout-list' },
+  { id: 'proyecto', label: 'Proyecto', icon: 'tabler:file-text' },
+  { id: 'estudio', label: '¿Cómo se estudia?', icon: 'tabler:device-laptop' },
+  { id: 'claustro', label: 'Claustro', icon: 'tabler:users' },
+  { id: 'beneficios', label: 'Beneficios', icon: 'tabler:star' },
+  { id: 'titulacion', label: 'Titulación', icon: 'tabler:certificate' },
+  { id: 'postmaster', label: 'Post Máster', icon: 'tabler:school' },
+  { id: 'becas', label: 'Becas', icon: 'tabler:cash' },
+  { id: 'aplicar', label: '¿Cómo aplicar?', icon: 'tabler:checklist' },
+  { id: 'inscripcion', label: 'Inscripción', icon: 'tabler:edit' },
+  { id: 'pagos', label: 'Medios de Pago', icon: 'tabler:credit-card' },
+  { id: 'solicitudes', label: 'Solicitudes', icon: 'tabler:mail' },
+];
+---
+
+<Layout metadata={metadata}>
+  <HeroPrograms
+    tagline="Maestrías"
+    title="Maestría en Medio Ambiente y Responsabilidad Social"
+    subtitle="Las empresas con futuro necesitan líderes sociales ambientalmente responsables."
+    image={{ src: '~/assets/images/doctorados/proyectos.webp', alt: 'Medio Ambiente y Responsabilidad Social' }}
+    actions={[
+      { variant: 'primary', text: 'Matricúlate', href: '#inscripcion', icon: 'tabler:arrow-right' },
+      { variant: 'secondary', text: 'Becas', href: '#becas', icon: 'tabler:cash' },
+    ]}
+  />
+
+  <StatsData
+    duration="24"
+    nextStart="2026"
+  />
+
+  <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <ProgramTOC tabs={tabs} />
+
+    <div class="lg:ml-64 2xl:ml-[18rem] space-y-16 lg:space-y-24">
+      {/* 1. PRESENTACIÓN */}
+      <div id="presentacion" class="scroll-mt-24">
+        <Content
+          isReversed
+          title="Bienvenida del Director"
+          image={{ src: '~/assets/images/users/director.webp', alt: 'Director de la maestría' }}
+        >
+          <Fragment slot="content">
+            <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">
+              Las empresas con futuro necesitan líderes sociales ambientalmente responsables
+            </h3>
+            <p class="mb-4">
+              La empresa del siglo XXI exige políticas ambientales sostenibles, adaptando el tradicional esquema de producción orientada a la economía por un desarrollo capaz de satisfacer las necesidades del presente sin comprometer las posibilidades de las futuras generaciones.
+            </p>
+            <p class="mb-4">
+              En este sentido, las empresas precisan de expertos con una visión integral, que contemplando los aspectos económicos, sociales y ambientales, diseñen planes de sustentabilidad eficaces, evalúen los riesgos climáticos, comuniquen su compromiso y faciliten la toma de decisiones ambientales, logrando transformar las operaciones a mediano y largo plazo tanto de entidades públicas como de empresas privadas.
+            </p>
+            <p>
+              Nuestra Maestría está estructurada para proporcionarle las competencias que le permitan diseñar modelos sostenibles y estrategias de liderazgo medioambientalmente responsable adaptables a las particularidades de cualquier negocio.
+            </p>
+          </Fragment>
+        </Content>
+      </div>
+
+      {/* ... [Rest of sections mapping directly from extracted text without "Contenidos"] ... */}
+      
+      {/* 2. LA MAESTRÍA */}
+      <div id="maestria" class="scroll-mt-24">
+        <Features2
+          title="¿Por qué hacer esta maestría?"
+          subtitle="Nuestra civilización enfrenta una crisis económica, social y ambiental como nunca antes y las soluciones además de integrales y sistémicas nos presentan un nuevo paradigma."
+          columns={2}
+          items={[
+            {
+              title: 'Visión Integral',
+              description: 'Aborda los problemas ambientales para plantear posibles soluciones, en un marco de desarrollo sostenible.',
+              icon: 'tabler:eye',
+            },
+            {
+              title: 'Gestión Sostenible',
+              description: 'Establece herramientas para evaluar el estado medioambiental del sitio y el entorno ecológico en la empresa u organización.',
+              icon: 'tabler:leaf',
+            }
+          ]}
+        >
+           <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+          </Fragment>
+        </Features2>
+      </div>
+
+      {/* 3. COLABORAN */}
+      <div id="colaboran" class="scroll-mt-24">
+        <Content title="Entidades Colaboradoras">
+           <Fragment slot="content">
+            <p class="mb-4">El programa es dictado en alianza y bajo la acreditación de diversas instituciones de prestigio internacional.</p>
+          </Fragment>
+        </Content>
+      </div>
+
+      {/* 4. ESTRUCTURA */}
+      <div id="estructura" class="scroll-mt-24">
+         <HeroSection
+          tagline="Estructura"
+          title="Estructura del Programa y total de créditos"
+         >
+          <Fragment slot="content">
+            <div class="text-muted dark:text-slate-400 mb-8 text-center max-w-4xl mx-auto">
+              La Maestría en Medio Ambiente y Responsabilidad Social tiene una duración de seis trimestres (2 años) con un total de 1,440 horas lectivas (90 créditos), configurada por nueve Cursos y un Proyecto Terminal de Maestría.
+            </div>
+            <ProgramCurriculum courses={curriculum} />
+          </Fragment>
+        </HeroSection>
+      </div>
+
+      {/* 5. PROYECTO (Común) */}
+      <div id="proyecto" class="scroll-mt-24">
+        <PhdProject />
+      </div>
+
+      {/* 6. COMO SE ESTUDIA (Común) */}
+      <div id="estudio" class="scroll-mt-24">
+        <ProgramMethodology />
+      </div>
+
+      {/* 7. CLAUSTRO */}
+      <div id="claustro" class="scroll-mt-24">
+        <div class="px-4 py-8 md:py-12 md:px-6 lg:px-8 mx-auto max-w-7xl">
+          <div class="mb-8 md:mx-auto text-center max-w-3xl">
+            <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+              Claustro Académico
+            </h2>
+            <p class="text-muted dark:text-slate-400 text-lg">
+              El programa cuenta con un staff de alto nivel académico, especializado en cada una de las materias de conocimiento y configurado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {facultyList.map((member) => (
+              <FacultyMember {...member} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 8. BENEFICIOS */}
+      <div id="beneficios" class="scroll-mt-24">
+        <Features2
+          title="Beneficios"
+          columns={2}
+          items={[
+            { title: 'Adquirir una visión integral', description: 'De los problemas ambientales para plantear posibles soluciones.', icon: 'tabler:world' },
+            { title: 'Elaborar un diagnóstico ambiental', description: 'Orientado a realizar propuestas de mejora en empresas e instituciones.', icon: 'tabler:chart-bar' },
+            { title: 'Evaluar tecnología y procesos', description: 'En las propuestas de un desarrollo limpio.', icon: 'tabler:cpu' },
+            { title: 'Manejar instrumental técnico-legal', description: 'Involucradas en las prácticas y políticas de la RSC.', icon: 'tabler:gavel' },
+          ]}
+        >
+          <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+          </Fragment>
+        </Features2>
+      </div>
+
+      {/* 9. TITULACIÓN */}
+      <div id="titulacion" class="scroll-mt-24">
+        <Features2
+          title="Evaluación y Titulación"
+          items={[
+             { title: 'Evaluación Múltiple', description: 'Se tienen en cuenta, la participación en los foros de debate, calidad académica de los trabajos de cada asignatura (casos, cuestionarios, ejercicios) y las evaluaciones de opción múltiple.', icon: 'tabler:checks' },
+             { title: 'Proyecto Terminal de Maestría', description: 'Deberá presentarse un Proyecto Terminal de Maestría, en una de las temáticas relativas a la parte académica.', icon: 'tabler:book-2' },
+          ]}
+        />
+        <Content isReversed>
+          <Fragment slot="content">
+            <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Títulos</h3>
+            <p>Alumnos con titulación universitaria o equivalente: Superada la parte académica, presentarán el proyecto para obtener el Grado de: <strong>Maestro en Medio Ambiente y Responsabilidad Social</strong>.</p>
+            <p class="mt-4"><i>El programa es objeto de expedición, si se requiere por parte del alumno, de certificación de la Apostilla de la Haya, y/o las legalizaciones diplomáticas que correspondan como título propio.</i></p>
+          </Fragment>
+        </Content>
+      </div>
+
+      {/* 10. POST MASTER (Común) */}
+      <div id="postmaster" class="scroll-mt-24">
+        <Content
+          title="Post Máster"
+          image={{ src: '~/assets/images/doctorados/postmaster.jpg', alt: 'Doctorado' }}
+        >
+          <Fragment slot="content">
+             <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Continúa hacia el Doctorado online</h3>
+             <p>Al acceder con título de pregrado a un posgrado con nosotros de nivel de Máster Universitario, Master o Maestría, cumples con el <strong>primer ciclo necesario</strong> para seguir profundizando estudios.</p>
+             <p>Para Maestros MSc. graduados que deseen continuar su desarrollo profesional. Ahora tienen la oportunidad de estudiar un doctorado online en medio ambiente.</p>
+          </Fragment>
+        </Content>
+      </div>
+
+      {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
+      <div id="becas" class="scroll-mt-24"><Scholarship /></div>
+      <div id="aplicar" class="scroll-mt-24"><Admission /></div>
+      <div id="inscripcion" class="scroll-mt-24"><Requests /></div>
+      <div id="pagos" class="scroll-mt-24"><PaymentMethods /></div>
+      <div id="solicitudes" class="scroll-mt-24"><Payments /></div>
+
+    </div>
+  </div>
+</Layout>
