@@ -15,7 +15,6 @@ import Payments from '~/components/phd/Payments.astro';
 import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
-import PhdProject from '~/components/phd/PhdProject.astro';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
@@ -253,9 +252,20 @@ const tabs = [
       </HeroSection>
 
       {/* 5. PROYECTO (Común) */}
-      <div id="proyecto" class="scroll-mt-24">
-        <PhdProject />
-      </div>
+      <HeroSection
+        id="proyecto"
+        tagline="Proyecto"
+        title='Proyecto Terminal de Maestría - <span class="text-primary">PTM</span>'
+        subtitle='Durante el segundo año del programa tendrás que trabajar en un proyecto terminal que es parte obligatoria para obtener el grado de maestría. En el <strong>PTM</strong> aplicarás los conocimientos y las competencias adquiridas en las asignaturas del programa, en el contexto de la conservación, el uso sostenible del territorio y de los recursos naturales.'
+      >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+        <Fragment slot="content">
+          <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Hay 4 alternativas diferentes de proyecto terminal</h3>
+        </Fragment>
+
+      </HeroSection>
 
       {/* 6. COMO SE ESTUDIA (Común) */}
       <div id="estudio" class="scroll-mt-24">
