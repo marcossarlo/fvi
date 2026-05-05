@@ -7,6 +7,9 @@ import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
+import ProjectAlternatives from '~/components/maestria/ProjectAlternatives.astro';
+import ProjectTimeline from '~/components/maestria/ProjectTimeline.astro';
+import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
 import Scholarship from '~/components/phd/Scholarship.astro';
@@ -14,7 +17,6 @@ import Admission from '~/components/phd/Admission.astro';
 import Payments from '~/components/phd/Payments.astro';
 import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
-import ProgramMethodology from '~/components/phd/ProgramMethodology.astro';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
@@ -262,32 +264,23 @@ const tabs = [
             <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
         </Fragment>
         <Fragment slot="content">
-          <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Hay 4 alternativas diferentes de proyecto terminal</h3>
+          <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-8">Hay 4 alternativas diferentes de proyecto terminal</h3>
+          <ProjectAlternatives />   
+          
+          <p class="text-gray-700 dark:text-gray-300">
+            El proyecto será identificado y presentado durante el tercer trimestre. Sea cual sea la tipología de trabajo por la que se opte, cada participante cuenta con el seguimiento del Director del PTM que le guía y le brinda apoyo para asegurar el desarrollo completo del proyecto durante el segundo año. El director orienta al participante, no hace el trabajo en su lugar. Su papel es guiarle en el enfoque de las preguntas de fondo y en los aspectos metodológicos.
+          </p>
+          <ProjectTimeline />
+
+          <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-8 mt-16">Hay 4 modalidades en las que se pueden presentar el proyecto terminal de maestría</h3>
+          <ProjectModalities />
+
+          <p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-12 w-full">
+            *La redacción del Proyecto Terminal de Maestría, sean cuales sean sus finalidades y formas, debe ser clara y sintética. A lo largo del texto se debe perfilar un hilo conductor que dé sentido a la lectura y que vaya construyendo el conocimiento que se ofrece.
+          </p>
+
         </Fragment>
-
       </HeroSection>
-
-      {/* 6. COMO SE ESTUDIA (Común) */}
-      <div id="estudio" class="scroll-mt-24">
-        <ProgramMethodology />
-      </div>
-
-      {/* 7. CLAUSTRO */}
-      <div id="claustro" class="scroll-mt-24">
-        <div class="px-4 py-8 md:py-12 md:px-6 lg:px-8 mx-auto max-w-7xl">
-          <div class="mb-8 md:mx-auto text-center max-w-3xl">
-            <h2 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
-              Claustro Académico
-            </h2>
-            <p class="text-muted dark:text-slate-400 text-lg">
-              El programa cuenta con un staff de alto nivel académico, especializado en cada una de las materias de conocimiento y configurado por personal universitario docente e investigador y por profesionales en activo en la administración pública y en la empresa privada.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-     
-          </div>
-        </div>
-      </div>
 
       {/* 8. BENEFICIOS */}
       <div id="beneficios" class="scroll-mt-24">

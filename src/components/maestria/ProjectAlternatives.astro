@@ -1,0 +1,119 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const steps = [
+{
+    id: 1,
+    title: 'Proyecto de Investigación Ambiental',
+    description: 'Su propósito es aportar información útil y aplicable al desarrollo de un proyecto de investigación ambiental novedoso. Éstos abarcan aspectos de las ciencias naturales, económicas, sociales y de la ingeniería. Se prestará especial atención a los proyectos relacionados con el cambio climático.',
+    // Colors matching the original image as close as possible using FVI brand + Tailwind utilities
+    theme: {
+    text: 'text-primary',
+    bgSolid: 'bg-primary',
+    fromSolid: 'from-primary/80',
+    },
+    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+},
+{
+    id: 2,
+    title: 'Proyectos Verdes',
+    description: 'Los alumnos identifican y diseñan proyectos para soluciones innovadoras a problemas urgentes del medio ambiente. Recoge una serie de proyectos que integran técnicas y prácticas de diseño sostenible.',
+    theme: {
+    text: 'text-secondary',
+    bgSolid: 'bg-secondary',
+    fromSolid: 'from-secondary/80',
+    },
+    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+},
+{
+    id: 3,
+    title: 'Buenas prácticas',
+    description: 'Los estudiantes plantean experiencias concretas o "casos de éxito", que sirvan como ejemplo de buenas prácticas e impulso para la creación de otras iniciativas en otros territorios.',
+    theme: {
+    text: 'text-slate-500',
+    bgSolid: 'bg-slate-500',
+    fromSolid: 'from-slate-500/80',
+    },
+    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+},
+{
+    id: 4,
+    title: 'Asesoría para emprendedores con riesgo social.',
+    description: 'Los participantes aplican en un mercado real de capital social lo que han aprendido. Se espera que a través del trabajo de asesoría el alumno sea más receptivo a las necesidades de las comunidades locales, los pequeños productores y las personas de bajos ingresos.',
+    theme: {
+    text: 'text-accent',
+    bgSolid: 'bg-accent',
+    fromSolid: 'from-accent/80',
+    },
+    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+}
+];
+---
+
+<div class="w-full grid grid-cols-1 min-[520px]:grid-cols-2 lg:grid-cols-4 gap-8 min-[520px]:gap-6 lg:gap-4 xl:gap-8 mt-12 relative z-10">
+{steps.map((step, index) => (
+    <div class="flex flex-col relative group h-full">
+    
+    {/* 1. Header (Number & Title) */}
+    <div class="flex flex-col items-center text-center space-y-4 mb-6">
+        <div class={`w-20 h-20 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center p-1 transition-transform group-hover:scale-105 duration-300`}>
+        <div class={`w-full h-full rounded-full ${step.theme.bgSolid} text-white flex items-center justify-center text-3xl font-bold`}>
+            {step.id}
+        </div>
+        </div>
+        <h4 class={`text-lg font-bold leading-snug flex items-center justify-center min-[520px]:h-20 lg:h-16 w-full ${step.theme.text} dark:brightness-125`}>
+        {step.title}
+        </h4>
+    </div>
+
+    {/* Combined Box and Image */}
+    <div class="relative flex-grow flex flex-col border-2 border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-pageDark rounded-xl p-2 pb-2 shadow-sm transition-all duration-300 group-hover:shadow-md">
+        {/* Desktop Arrow to the right */}
+        {index < steps.length - 1 && (
+        <div class="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-5 xl:-right-7 w-6 h-6 items-center justify-center text-gray-400 dark:text-gray-600 z-20">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="translate-x-1"><path d="M5 12h14"></path><path d="m13 18 6-6"></path><path d="m13 6 6 6"></path></svg>
+        </div>
+        )}
+
+        {/* 2. Text Box */}
+        <div class="relative p-2 flex-grow text-sm text-gray-700 dark:text-gray-300 z-10">
+        {/* Diagonal stripes pattern overlay for extra texture (optional, subtle) */}
+        <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)', backgroundSize: '10px 10px' }}></div>
+        <p class="relative z-10 leading-relaxed">
+            {step.description}
+        </p>
+        </div>
+
+        {/* 3. Bottom Image */}
+        <div class="relative w-full aspect-[4/3] sm:aspect-square rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800 mt-auto shadow-sm bg-gray-50 dark:bg-slate-800">
+        <Image
+            src={step.image}
+            alt={step.title}
+            class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+            width={400}
+            height={400}
+        />
+        {/* Overlay MAESTRÍA INTERNACIONAL text to simulate the image style */}
+        <div class={`absolute inset-0 bg-gradient-to-t ${step.theme.fromSolid} via-black/40 to-transparent flex flex-col justify-end p-4 lg:p-6`}>
+            <div class="font-heading font-bold text-white text-xl lg:text-2xl tracking-wide uppercase leading-none drop-shadow-md">
+            Maestría
+            </div>
+            <div class="font-heading font-medium text-white/90 text-sm lg:text-base tracking-widest uppercase mt-1 drop-shadow-md">
+            Internacional
+            </div>
+            {/* A small colored bottom bar for consistency with the design */}
+            <div class={`absolute bottom-0 left-0 w-full h-2 ${step.theme.bgSolid}`}></div>
+        </div>
+        </div>
+    </div>
+
+    {/* Mobile Arrow down */}
+    {index < steps.length - 1 && (
+        <div class="min-[520px]:hidden flex items-center justify-center w-full h-8 mt-6 text-gray-400 dark:text-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m18 13-6 6"></path><path d="m6 13 6 6"></path></svg>
+        </div>
+    )}
+
+    </div>
+))}
+</div>
