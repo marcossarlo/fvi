@@ -12,18 +12,20 @@ const steps = [
     bgSolid: 'bg-primary',
     fromSolid: 'from-primary/80',
     },
-    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+    image: '~/assets/images/maestrias/fvi-ptm-proyecto-investigacion.webp',
+    alt: 'Imagen representativa de la modalidad de proyecto de investigación ambiental del proyecto terminal de maestría.'
 },
 {
     id: 2,
     title: 'Proyectos Verdes',
-    description: 'Los alumnos identifican y diseñan proyectos para soluciones innovadoras a problemas urgentes del medio ambiente. Recoge una serie de proyectos que integran técnicas y prácticas de diseño sostenible.',
+    description: 'Los alumnos identifican y diseñan proyectos para soluciones innovadoras a problemas urgentes del medio ambiente.\n\nRecoge una serie de proyectos que integran técnicas y prácticas de diseño sostenible.',
     theme: {
     text: 'text-secondary',
     bgSolid: 'bg-secondary',
     fromSolid: 'from-secondary/80',
     },
-    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+    image: '~/assets/images/maestrias/fvi-ptm-proyectos-verdes.webp',
+    alt: 'Imagen representativa de la modalidad de proyectos verdes del proyecto terminal de maestría.'
 },
 {
     id: 3,
@@ -34,7 +36,8 @@ const steps = [
     bgSolid: 'bg-slate-500',
     fromSolid: 'from-slate-500/80',
     },
-    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+    image: '~/assets/images/maestrias/fvi-ptm-buenas-practicas.webp',
+    alt: 'Imagen representativa de la modalidad de buenas prácticas del proyecto terminal de maestría.'
 },
 {
     id: 4,
@@ -45,12 +48,13 @@ const steps = [
     bgSolid: 'bg-accent',
     fromSolid: 'from-accent/80',
     },
-    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp'
+    image: '~/assets/images/maestrias/fvi-ptm-asesoria-emprendedores.webp',
+    alt: 'Imagen representativa de la modalidad de asesoría para emprendedores con riesgo social del proyecto terminal de maestría.'
 }
 ];
 ---
 
-<div class="w-full grid grid-cols-1 min-[520px]:grid-cols-2 lg:grid-cols-4 gap-8 min-[520px]:gap-6 lg:gap-4 xl:gap-8 mt-12 relative z-10">
+<div class="w-full grid grid-cols-1 min-[520px]:grid-cols-2 lg:grid-cols-4 gap-8 min-[520px]:gap-6 lg:gap-4 xl:gap-8 mt-12 mb-16 relative z-10">
 {steps.map((step, index) => (
     <div class="flex flex-col relative group h-full">
     
@@ -79,31 +83,22 @@ const steps = [
         <div class="relative p-2 flex-grow text-sm text-gray-700 dark:text-gray-300 z-10">
         {/* Diagonal stripes pattern overlay for extra texture (optional, subtle) */}
         <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)', backgroundSize: '10px 10px' }}></div>
-        <p class="relative z-10 leading-relaxed">
+        <p class="relative z-10 leading-relaxed text-left">
             {step.description}
         </p>
         </div>
 
         {/* 3. Bottom Image */}
         <div class="relative w-full aspect-[4/3] sm:aspect-square rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800 mt-auto shadow-sm bg-gray-50 dark:bg-slate-800">
-        <Image
-            src={step.image}
-            alt={step.title}
-            class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
-            width={400}
-            height={400}
-        />
-        {/* Overlay MAESTRÍA INTERNACIONAL text to simulate the image style */}
-        <div class={`absolute inset-0 bg-gradient-to-t ${step.theme.fromSolid} via-black/40 to-transparent flex flex-col justify-end p-4 lg:p-6`}>
-            <div class="font-heading font-bold text-white text-xl lg:text-2xl tracking-wide uppercase leading-none drop-shadow-md">
-            Maestría
-            </div>
-            <div class="font-heading font-medium text-white/90 text-sm lg:text-base tracking-widest uppercase mt-1 drop-shadow-md">
-            Internacional
-            </div>
+            <Image
+                src={step.image}
+                alt={step.title}
+                class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                width={400}
+                height={400}
+            />
             {/* A small colored bottom bar for consistency with the design */}
             <div class={`absolute bottom-0 left-0 w-full h-2 ${step.theme.bgSolid}`}></div>
-        </div>
         </div>
     </div>
 
