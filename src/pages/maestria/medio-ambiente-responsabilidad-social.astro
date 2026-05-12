@@ -18,6 +18,7 @@ import Payments from '~/components/phd/Payments.astro';
 import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 import HowToStudy from '~/components/maestria/HowToStudy.astro';
+import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
 import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
 
@@ -293,33 +294,7 @@ const tabs = [
       <HowToStudy />
 
       {/* 7. CLAUSTRO */}
-      <Content
-        id="claustro"
-        tagline="Claustro"
-        title="Claustro Académico"
-        items={[
-          {
-            title: 'Excelencia Académica y Profesional',
-            description:
-              'Nuestro staff está integrado por docentes universitarios, investigadores y profesionales en activo de la administración pública y la empresa privada, garantizando una formación rigurosa y aplicada a la realidad del sector.',
-            icon: 'tabler:school',
-          },
-          {
-            title: 'Expertos Multidisciplinares',
-            description:
-              'Colaboramos con especialistas de primer nivel provenientes de diversos organismos e instituciones internacionales, profundamente involucrados en las áreas clave de sostenibilidad y responsabilidad social.',
-            icon: 'tabler:users-group',
-          },
-        ]}
-        image={{
-            src: '~/assets/images/fvi-profesorado-tutoria.webp',
-            alt: 'Imagen del profesorado del Doctorado de Fondo Verde',
-        }}
-        >
-        <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-      </Content>
+      <ClaustroInfo />
       {
         facultyList.map((prof) => (
           <FacultyMember {...prof}>
