@@ -21,6 +21,7 @@ import HowToStudy from '~/components/maestria/HowToStudy.astro';
 import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
 import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
@@ -306,22 +307,51 @@ const tabs = [
       }
 
       {/* 8. BENEFICIOS */}
-      <div id="beneficios" class="scroll-mt-24">
-        <Features2
-          title="Beneficios"
-          columns={2}
-          items={[
-            { title: 'Adquirir una visión integral', description: 'De los problemas ambientales para plantear posibles soluciones.', icon: 'tabler:world' },
-            { title: 'Elaborar un diagnóstico ambiental', description: 'Orientado a realizar propuestas de mejora en empresas e instituciones.', icon: 'tabler:chart-bar' },
-            { title: 'Evaluar tecnología y procesos', description: 'En las propuestas de un desarrollo limpio.', icon: 'tabler:cpu' },
-            { title: 'Manejar instrumental técnico-legal', description: 'Involucradas en las prácticas y políticas de la RSC.', icon: 'tabler:gavel' },
-          ]}
-        >
-          <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-          </Fragment>
-        </Features2>
-      </div>
+      <Features
+        id="beneficios"
+        tagline='Beneficios'
+        title="¿Cómo te beneficiará este programa?"
+        subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, será capaz de:'
+        columns={2}
+        items={[
+          {
+            title: 'Visión Integral',
+            description: 'Adquirir una visión integral de los problemas ambientales para desarrollar proyectos con herramientas de sostenibilidad.',
+            icon: 'tabler:world',
+          },
+          {
+            title: 'Normativa y Auditoría',
+            description: 'Conocer la normativa pertinente y las herramientas de Gestión, Reporting, y Auditoría de la RSC: ISO 9001, ISO 14001, OHSAS 18001, SA 8000, SGE 21.',
+            icon: 'tabler:gavel',
+          },
+          {
+            title: 'Fundamentos Socio-económicos',
+            description: 'Comprender los fundamentos socio-económicos y científicos de los problemas relacionados con la biosfera y ofrecer una solución con perspectiva interdisciplinaria, integradora y sistémica.',
+            icon: 'tabler:brain',
+          },
+          {
+            title: 'Desarrollo Sostenible',
+            description: 'Obtener los conocimientos y habilidades necesarias para contribuir a la construcción de una sociedad socio-económica y ambientalmente sostenible.',
+            icon: 'tabler:building-community',
+          },
+          {
+            title: 'Gestión Organizacional',
+            description: 'Identificar y responder a los desafíos que enfrenta una gestión ambiental integral y sistémica de organizaciones públicas, privadas o del tercer sector ya sea como parte de un proceso de desarrollo o de transformación con responsabilidad socio-ambiental.',
+            icon: 'tabler:chart-arrows-vertical',
+          },
+          {
+            title: 'Resolución de Conflictos',
+            description: 'Tomar conciencia de los conflictos socio-ambientales subyacentes a la actividad económica y proponer soluciones sistémicas e integradoras.',
+            icon: 'tabler:puzzle',
+          },
+          {
+            title: 'Responsabilidad Social (RSC)',
+            description: 'Ser conocedor de la función de la responsabilidad social corporativa en la empresa moderna, su desempeño social y ambiental, y la aplicación del ISO 26,000.',
+            icon: 'tabler:briefcase',
+          },
+        ]}
+      />
+      
 
       {/* 9. TITULACIÓN */}
       <div id="titulacion" class="scroll-mt-24">
