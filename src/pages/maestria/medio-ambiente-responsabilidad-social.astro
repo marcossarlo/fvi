@@ -10,6 +10,7 @@ import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
 import ProjectAlternatives from '~/components/maestria/ProjectAlternatives.astro';
 import ProjectTimeline from '~/components/maestria/ProjectTimeline.astro';
 import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
+import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
 import Scholarship from '~/components/phd/Scholarship.astro';
@@ -22,6 +23,7 @@ import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
 import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
 import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
@@ -351,6 +353,73 @@ const tabs = [
           },
         ]}
       />
+      {/* Potencia tus salidas */}
+      <Features3
+        title="Potencia tus Salidas Profesionales"
+        subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, prepara al alumno/a para trabajar en organizaciones tanto públicas como privadas, son profesionales que cultivan la ética en los negocios, la buena praxis y la responsabilidad corporativa. Las salidas profesionales, se centran claramente en:'
+        columns={3}
+        defaultIcon="tabler:point-filled"
+        items={[
+          {
+            title: 'Organizaciones ambientales',
+            description: 'En posiciones operativas y estratégicas en organizaciones que se dedican específicamente a la investigación y conservación de los recursos naturales.',
+          },
+          {
+            title: 'Unidades de negocios',
+            description: 'En unidades de negocios ambientales de organizaciones públicas y privadas de grandes dimensiones.',
+          },
+          {
+            title: 'Comunicación de impacto',
+            description: 'Organizaciones o unidades de negocios que comunican impactos socio/ambientales a la comunidad en general.',
+          },
+          {
+            title: 'Equipos de investigación',
+            description: 'Como parte de un equipo interdisciplinario de investigación socio-económico y ambiental.',
+          },
+          {
+            title: 'Dirección o Gestión',
+            description: 'Director o Gestor del área de Medio Ambiente de empresas.',
+          },
+          {
+            title: 'Líder en Sostenibilidad',
+            description: 'Profesional Líder en la planificación, desarrollo, gestión e implementación de diferentes estrategias de Sostenibilidad, Medio Ambiente y RSC.',
+          },
+          {
+            title: 'Responsable de sistemas',
+            description: 'Responsable del sistema de gestión medioambiental en empresa.',
+          },
+          {
+            title: 'Técnico y consultoría',
+            description: 'Técnico de outsourcing ambiental y consultoría de proyectos.',
+          },
+          {
+            title: 'Implantación de sistemas',
+            description: 'Consultor en implantación de sistemas de gestión medioambiental.',
+          },
+          {
+            title: 'Educación ambiental',
+            description: 'Coordinador de equipos de educación ambiental/Director de centro de educación ambiental.',
+          },
+          {
+            title: 'Gestor ambiental',
+            description: 'Gestor ambiental de industrias y/o empresas públicas y privadas que enfrentan grandes retos socio/ambientales en su gestión.',
+          },
+        ]}
+      />
+      {/* Más allá del Programa*/}
+      <HeroSection
+        tagline="Inmersión de capacitación intensiva en programas de apoyo al desarrollo sostenible"
+        title="Pasantía Técnica Internacional"
+        subtitle='La <strong>Pasantía Técnica Internacional</strong><span class="text-secondary">*</span>, es un viaje de estudios opcional, de una semana de duración, a un destino internacional. Se elabora un Plan Individual de Capacitación, acorde a los temas de interés y tiempo de permanencia. La pasantía es esencialmente teórica-práctica, los pasantes participan de los proyectos de las entidades anfitrionas y de todas las actividades de capacitación programadas por el equipo técnico local. Visitan iniciativas de proyectos e interactúan con los beneficiarios.'
+      >
+        <Fragment slot="content">
+          <ProjectLocations />
+          <p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-6 w-full">
+            * Este servicio no está incluido en el coste de la maestría.
+          </p>
+        </Fragment>
+      </HeroSection>
+      
       
 
       {/* 9. TITULACIÓN */}
