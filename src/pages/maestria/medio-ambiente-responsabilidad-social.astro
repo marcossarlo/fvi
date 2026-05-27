@@ -419,26 +419,35 @@ const tabs = [
           </p>
         </Fragment>
       </HeroSection>
-      
-      
 
       {/* 9. TITULACIÓN */}
-      <div id="titulacion" class="scroll-mt-24">
-        <Features2
-          title="Evaluación y Titulación"
-          items={[
-             { title: 'Evaluación Múltiple', description: 'Se tienen en cuenta, la participación en los foros de debate, calidad académica de los trabajos de cada asignatura (casos, cuestionarios, ejercicios) y las evaluaciones de opción múltiple.', icon: 'tabler:checks' },
-             { title: 'Proyecto Terminal de Maestría', description: 'Deberá presentarse un Proyecto Terminal de Maestría, en una de las temáticas relativas a la parte académica.', icon: 'tabler:book-2' },
-          ]}
-        />
-        <Content isReversed>
-          <Fragment slot="content">
-            <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Títulos</h3>
-            <p>Alumnos con titulación universitaria o equivalente: Superada la parte académica, presentarán el proyecto para obtener el Grado de: <strong>Maestro en Medio Ambiente y Responsabilidad Social</strong>.</p>
-            <p class="mt-4"><i>El programa es objeto de expedición, si se requiere por parte del alumno, de certificación de la Apostilla de la Haya, y/o las legalizaciones diplomáticas que correspondan como título propio.</i></p>
-          </Fragment>
-        </Content>
-      </div>
+      <Content
+        id="titulacion"
+        tagline="Titulación"
+        title="Evaluación y Titulación"
+        items={[
+          {
+            title: 'Evaluación',
+            description:
+              'La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.',
+            icon: 'tabler:clipboard-check',
+          },
+          {
+            title: 'Titulación',
+            description:
+              'Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180410</span>, Dirección de Educación Superior - Secretaría de Educación Pública.<br><br><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.',
+            icon: 'tabler:certificate',
+          },
+        ]}
+        image={{
+            src: '~/assets/images/maestrias/fvi-maestria-MARS-Titulo.webp',
+            alt: 'Titulación de la Maestría en Medio Ambiente y Responsabilidad Social',
+        }}
+        >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Content>
 
       {/* 10. POST MASTER (Común) */}
       <div id="postmaster" class="scroll-mt-24">
