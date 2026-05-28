@@ -20,6 +20,7 @@ import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 import HowToStudy from '~/components/maestria/HowToStudy.astro';
 import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
+import PostMaestria from '~/components/maestria/PostMaestria.astro';
 import FacultyMember from '~/components/widgets/FacultyMember.astro';
 import { faculty } from '~/data/faculty';
 import Features from '~/components/widgets/Features.astro';
@@ -450,32 +451,7 @@ const tabs = [
       </Content>
 
       {/* 10. POST MAESTRÍA (Común) */}
-      <Features3
-        id="postmaestria"
-        tagline="Post Maestría"
-        title="Para Maestros MSc. graduados que deseen continuar su desarrollo profesional"
-        subtitle='El <span class="text-primary font-bold">Doctorado</span>, es un programa multidisciplinario que tiene una duración de <strong>2 a 3 años</strong>, estructurados en un periodo de formación, un periodo de investigación, el Proyecto de Tesis Doctoral y un artículo científico. Nuestra oferta doctoral, es altamente especializada provocando un efecto global en el desarrollo y crecimiento de la comunidad, o región de desempeño del investigador, a través de introducir al alumno en las diversas metodologías para el estudio del medio ambiente y la planeación del desarrollo. Ahora tiene la oportunidad de estudiar un doctorado online en medio ambiente desde cualquier lugar del mundo.<br><br> Si estás valorando la posibilidad de estudiar un Doctorado, consulta la sección <a href="/phd" class="text-primary hover:text-secondary transition ease-in duration-200">Doctorados</a> y elige el programa que mejor se adapte a tu perfil profesional.'
-        columns={3}
-        defaultIcon="tabler:point-filled"
-        items={[
-          {
-            title: 'Duración de estudios:',
-            description: '2 a 3 años',
-          },
-          {
-            title: 'N° de créditos',
-            description: 'Variable según programa',
-          },
-          {
-            title: 'Modalidad:',
-            description: '100% Online',
-          },
-        ]}
-        image={{
-          src: '~/assets/images/maestrias/fvi-post-maestria.webp',
-          alt: 'Para Maestros MSc. graduados que deseen continuar su desarrollo profesional',
-        }}
-      />
+      <PostMaestria />
 
       {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
       <div id="becas" class="scroll-mt-24"><Scholarship /></div>
