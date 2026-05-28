@@ -50,7 +50,7 @@ const tabs = [
   { id: 'claustro', label: '7. Claustro' },
   { id: 'beneficios', label: '8. Beneficios' },
   { id: 'titulacion', label: '9. Titulación' },
-  { id: 'postmaster', label: '10. Post Máster' },
+  { id: 'postmaestria', label: '10. Post Maestría' },
   { id: 'becas', label: '11. Becas' },
   { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
   { id: 'inscripcion', label: '13. Inscripción' },
@@ -449,19 +449,33 @@ const tabs = [
         </Fragment>
       </Content>
 
-      {/* 10. POST MASTER (Común) */}
-      <div id="postmaster" class="scroll-mt-24">
-        <Content
-          title="Post Máster"
-          image={{ src: '~/assets/images/doctorados/postmaster.jpg', alt: 'Doctorado' }}
-        >
-          <Fragment slot="content">
-             <h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-2xl mb-4">Continúa hacia el Doctorado online</h3>
-             <p>Al acceder con título de pregrado a un posgrado con nosotros de nivel de Máster Universitario, Master o Maestría, cumples con el <strong>primer ciclo necesario</strong> para seguir profundizando estudios.</p>
-             <p>Para Maestros MSc. graduados que deseen continuar su desarrollo profesional. Ahora tienen la oportunidad de estudiar un doctorado online en medio ambiente.</p>
-          </Fragment>
-        </Content>
-      </div>
+      {/* 10. POST MAESTRÍA (Común) */}
+      <Features3
+        id="postmaestria"
+        tagline="Post Maestría"
+        title="Para Maestros MSc. graduados que deseen continuar su desarrollo profesional"
+        subtitle='El <span class="text-primary font-bold">Doctorado</span>, es un programa multidisciplinario que tiene una duración de <strong>2 a 3 años</strong>, estructurados en un periodo de formación, un periodo de investigación, el Proyecto de Tesis Doctoral y un artículo científico. Nuestra oferta doctoral, es altamente especializada provocando un efecto global en el desarrollo y crecimiento de la comunidad, o región de desempeño del investigador, a través de introducir al alumno en las diversas metodologías para el estudio del medio ambiente y la planeación del desarrollo. Ahora tiene la oportunidad de estudiar un doctorado online en medio ambiente desde cualquier lugar del mundo.<br><br> Si estás valorando la posibilidad de estudiar un Doctorado, consulta la sección <a href="/phd" class="text-primary hover:text-secondary transition ease-in duration-200">Doctorados</a> y elige el programa que mejor se adapte a tu perfil profesional.'
+        columns={3}
+        defaultIcon="tabler:point-filled"
+        items={[
+          {
+            title: 'Duración de estudios:',
+            description: '2 a 3 años',
+          },
+          {
+            title: 'N° de créditos',
+            description: 'Variable según programa',
+          },
+          {
+            title: 'Modalidad:',
+            description: '100% Online',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/maestrias/fvi-post-maestria.webp',
+          alt: 'Para Maestros MSc. graduados que deseen continuar su desarrollo profesional',
+        }}
+      />
 
       {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
       <div id="becas" class="scroll-mt-24"><Scholarship /></div>
