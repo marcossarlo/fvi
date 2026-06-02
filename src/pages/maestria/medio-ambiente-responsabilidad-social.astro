@@ -11,10 +11,10 @@ import ProjectAlternatives from '~/components/maestria/ProjectAlternatives.astro
 import ProjectTimeline from '~/components/maestria/ProjectTimeline.astro';
 import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
 import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
+import AdmissionTimeline from '~/components/maestria/AdmissionTimeline.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
-import Admission from '~/components/phd/Admission.astro';
 import Payments from '~/components/phd/Payments.astro';
 import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
@@ -456,9 +456,21 @@ const tabs = [
       {/* 11. BECAS (Común) */}
       <Scholarship />
 
+      {/* COMO APLICAR */}
+      <HeroSection
+        id="aplicar"
+        tagline="¿Cómo aplicar?"
+        title="Las fases del proceso de admisión"
+        subtitle='El proceso para la inscripción al programa de maestría es el siguiente:'
+      >
+        <Fragment slot="content">
+          <AdmissionTimeline />
+        </Fragment>
+      </HeroSection>
+
 
       {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
-      <div id="aplicar" class="scroll-mt-24"><Admission /></div>
+
       <div id="inscripcion" class="scroll-mt-24"><Requests /></div>
       <div id="pagos" class="scroll-mt-24"><PaymentMethods /></div>
       <div id="solicitudes" class="scroll-mt-24"><Payments /></div>
