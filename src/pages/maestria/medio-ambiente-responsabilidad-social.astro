@@ -13,7 +13,7 @@ import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
 import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
-import Scholarship from '~/components/phd/Scholarship.astro';
+import Scholarship from '~/components/maestria/Scholarship.astro';
 import Admission from '~/components/phd/Admission.astro';
 import Payments from '~/components/phd/Payments.astro';
 import PaymentMethods from '~/components/phd/PaymentMethods.astro';
@@ -453,8 +453,11 @@ const tabs = [
       {/* 10. POST MAESTRÍA (Común) */}
       <PostMaestria />
 
+      {/* 11. BECAS (Común) */}
+      <Scholarship />
+
+
       {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
-      <div id="becas" class="scroll-mt-24"><Scholarship /></div>
       <div id="aplicar" class="scroll-mt-24"><Admission /></div>
       <div id="inscripcion" class="scroll-mt-24"><Requests /></div>
       <div id="pagos" class="scroll-mt-24"><PaymentMethods /></div>
