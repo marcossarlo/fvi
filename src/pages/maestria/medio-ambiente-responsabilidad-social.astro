@@ -15,7 +15,7 @@ import AdmissionTimeline from '~/components/maestria/AdmissionTimeline.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
-import Payments from '~/components/phd/Payments.astro';
+import Registration from '~/components/maestria/Registration.astro';
 import PaymentMethods from '~/components/phd/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 import HowToStudy from '~/components/maestria/HowToStudy.astro';
@@ -456,7 +456,7 @@ const tabs = [
       {/* 11. BECAS (Común) */}
       <Scholarship />
 
-      {/* COMO APLICAR */}
+      {/* 12. COMO APLICAR */}
       <HeroSection
         id="aplicar"
         tagline="¿Cómo aplicar?"
@@ -468,12 +468,14 @@ const tabs = [
         </Fragment>
       </HeroSection>
 
+      {/* 13. INSCRIPCIÓN */}
+      <Registration />
+
 
       {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
 
-      <div id="inscripcion" class="scroll-mt-24"><Requests /></div>
       <div id="pagos" class="scroll-mt-24"><PaymentMethods /></div>
-      <div id="solicitudes" class="scroll-mt-24"><Payments /></div>
+      <div id="solicitudes" class="scroll-mt-24"><Requests /></div>
 
     </div>
   </div>
