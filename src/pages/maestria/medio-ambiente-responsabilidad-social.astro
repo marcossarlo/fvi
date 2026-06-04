@@ -16,7 +16,7 @@ import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/me
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
 import Registration from '~/components/maestria/Registration.astro';
-import PaymentMethods from '~/components/phd/PaymentMethods.astro';
+import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
 import Requests from '~/components/phd/Requests.astro';
 import HowToStudy from '~/components/maestria/HowToStudy.astro';
 import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
@@ -55,7 +55,7 @@ const tabs = [
   { id: 'becas', label: '11. Becas' },
   { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
   { id: 'inscripcion', label: '13. Inscripción' },
-  { id: 'pagos', label: '14. Medios de Pago' },
+  { id: 'medios-de-pago', label: '14. Medios de Pago' },
   { id: 'solicitudes', label: '15. Solicitudes' },
 ];
 ---
@@ -471,10 +471,12 @@ const tabs = [
       {/* 13. INSCRIPCIÓN */}
       <Registration />
 
+      {/* 14. MEDIOS DE PAGO */}
+      <PaymentMethods />
 
-      {/* 11 TO 15 (COMUNES REUTILIZANDO LOS COMPONENTES DE PHD HASTA HACERLOS GENERALES) */}
+      {/* 15. SOLICITUDES */}
 
-      <div id="pagos" class="scroll-mt-24"><PaymentMethods /></div>
+
       <div id="solicitudes" class="scroll-mt-24"><Requests /></div>
 
     </div>
