@@ -17,7 +17,7 @@ import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/me
 import Scholarship from '~/components/maestria/Scholarship.astro';
 import Registration from '~/components/maestria/Registration.astro';
 import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
-import Requests from '~/components/phd/Requests.astro';
+import Requests from '~/components/maestria/Requests.astro';
 import HowToStudy from '~/components/maestria/HowToStudy.astro';
 import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
 import PostMaestria from '~/components/maestria/PostMaestria.astro';
@@ -475,9 +475,7 @@ const tabs = [
       <PaymentMethods />
 
       {/* 15. SOLICITUDES */}
-
-
-      <div id="solicitudes" class="scroll-mt-24"><Requests /></div>
+      <Requests />
 
     </div>
   </div>
