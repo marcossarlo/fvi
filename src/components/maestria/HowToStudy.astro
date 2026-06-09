@@ -1,6 +1,7 @@
 ---
 import Content from '~/components/widgets/Content.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
+import ModeloEducativoDiagram from '~/components/common/ModeloEducativoDiagram.astro';
 
 export interface Props {
     id?: string;
@@ -45,14 +46,14 @@ const { id = "estudio" } = Astro.props;
 <HeroSection
     title='Modelo Educativo'
     subtitle='La <strong>Maestría</strong> combina los cursos modulares, casos prácticos, evaluaciones continuas, tutoría académica, y proyecto. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento, tanto académico como personal del alumno, constituye el verdadero elemento diferenciador y de valor añadido de <span class="text-primary font-semibold">Fondo Verde</span>, con respecto a otras instituciones.'
-    image={{
-        src: '~/assets/images/maestrias/fvi-modelo-educativo.webp',
-        alt: 'Metodología de enseñanza de las Maestrías en Fondo Verde',
-    }}
 >
     <Fragment slot="content">
         <p class="text-base">Los recursos metodológicos de los que el Instituto dispone para la impartición de sus programas fundamentalmente son:</p>
+        
+            <ModeloEducativoDiagram />
+       
     </Fragment>
+
 </HeroSection>
 
 <HeroSection

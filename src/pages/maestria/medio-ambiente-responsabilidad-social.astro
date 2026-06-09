@@ -193,39 +193,51 @@ const tabs = [
       <Content
         items={[
           {
-            title: 'Investigación e Innovación',
+            // title: 'Investigación e Innovación',
             description:
-              'Conocer técnicas y herramientas prácticas necesarias para la investigación científica y la aportación de soluciones innovadoras que contribuyan a la protección del medio ambiente.',
+              '<strong>Conocer</strong> técnicas y herramientas prácticas necesarias para la investigación científica y la aportación de soluciones innovadoras que contribuyan a la protección del medio ambiente.',
             icon: 'tabler:flask',
           },
           {
-            title: 'Sistemas de Gestión',
+            // title: 'Sistemas de Gestión',
             description:
-              'Identificar un sistema de gestión del medio ambiente e interpretar sus especificaciones, reglas y directrices.',
+              '<strong>Identificar</strong> un sistema de gestión del medio ambiente e interpretar sus especificaciones, reglas y directrices.',
             icon: 'tabler:settings-automation',
           },
           {
-            title: 'Estrategias Ambientales',
+            // title: 'Estrategias Ambientales',
             description:
-              'Conocerás modernas estrategias ambientales, a partir de las visiones empresariales en la industria y servicios.',
+              '<strong>Conocer</strong> modernas estrategias ambientales, a partir de las visiones empresariales en la industria y servicios.',
             icon: 'tabler:chart-treemap',
           },
           {
-            title: 'Gestión Responsable',
+            // title: 'Gestión Responsable',
             description:
-              'Gestionar empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
+              '<strong>Gestionar</strong> empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
             icon: 'tabler:building-factory-2',
           },
           {
-            title: 'Gestión de Organizaciones',
+            // title: 'Gestión de Organizaciones',
             description:
-              'Gestionar organizaciones específicamente dedicadas a la gestión ambiental así como unidades de gestión ambiental de organizaciones y/o industrias mucho más grandes.',
+              '<strong>Gestionar</strong> organizaciones específicamente dedicadas a la gestión ambiental así como unidades de gestión ambiental de organizaciones y/o industrias mucho más grandes.',
             icon: 'tabler:hierarchy-2',
           },
           {
-            title: 'Dimensión Ambiental y RSC',
+            // title: 'Dimensión Ambiental y RSC',
             description:
-              'Promover la incorporación de la dimensión ambiental y la RSC dentro de la estrategia de cualquier organización e industria.',
+              '<strong>Promover</strong> la incorporación de la dimensión ambiental y la RSC dentro de la estrategia de cualquier organización e industria.',
+            icon: 'tabler:target-arrow',
+          },
+          {
+            // title: 'Dimensión Ambiental y RSC',
+            description:
+              '<strong>Conocer</strong> las herramientas de gestión imprescindibles para la puesta en marcha de una estrategia de Responsabilidad Social y los sistemas de medición, gestión y evaluación más apropiados..',
+            icon: 'tabler:building-factory-2',
+          },
+          {
+            // title: 'Dimensión Ambiental y RSC',
+            description:
+              '<strong>Explorar</strong> las principales variables que afectan las estrategias de responsabilidad social en Europa y América Latina.',
             icon: 'tabler:target-arrow',
           },
         ]}
@@ -271,7 +283,7 @@ const tabs = [
       {/* 5. PROYECTO (Común) */}
       <HeroSection
         id="proyecto"
-        tagline="Proyecto"
+        tagline="PTM"
         title='Proyecto Terminal de Maestría - <span class="text-primary">PTM</span>'
         subtitle='Durante el segundo año del programa tendrás que trabajar en un proyecto terminal que es parte obligatoria para obtener el grado de maestría. En el <strong>PTM</strong> aplicarás los conocimientos y las competencias adquiridas en las asignaturas del programa, en el contexto de la conservación, el uso sostenible del territorio y de los recursos naturales.'
       >
@@ -280,6 +292,7 @@ const tabs = [
         </Fragment>
         <Fragment slot="content">
           <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 alternativas diferentes de proyecto terminal</h3>
+          
           <ProjectAlternatives />   
           
           <p class="text-base text-muted dark:text-slate-400 mt-4 mb-8 text-left">
@@ -289,6 +302,7 @@ const tabs = [
           <ProjectTimeline />
 
           <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 modalidades en las que se pueden presentar el proyecto terminal de maestría</h3>
+
           <ProjectModalities />
 
         </Fragment>
