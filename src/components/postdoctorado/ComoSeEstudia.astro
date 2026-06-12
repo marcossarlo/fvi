@@ -1,9 +1,11 @@
 ---
 import Content from '~/components/widgets/Content.astro';
+import HeroSection from '../widgets/HeroSection.astro';
+import ModeloEducativoDiagram from '../common/ModeloEducativoDiagram.astro';
 ---
 
 <!-- 6. ¿Cómo se estudia? ****************************** -->
-      <!-- Nuestro Campus Virtual -->
+       {/* ¿Cómo se estudia? */}
       <Content
         id="como-se-estudia"
         tagline="¿Cómo se estudia?"
@@ -35,36 +37,26 @@ import Content from '~/components/widgets/Content.astro';
           alt: 'Estudio online en campus virtual de Fondo Verde',
         }}
       />
-      <!-- Modelo Educativo -->
-      <Content
-        title="Modelo Educativo"
-        content="El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones."
-        isAfterContent
-        items={[
-          {
-            title: 'Cursos Teóricos',
-            icon: 'tabler:book',
-          },
-          {
-            title: 'Seminarios de Investigación',
-            icon: 'tabler:certificate-2',
-          },
-          {
-            title: 'Tareas Postdoctorales',
-            icon: 'tabler:checklist',
-          },
-          {
-            title: 'Tutoría',
-            icon: 'tabler:user-check',
-          },
-          {
-            title: 'Proyecto Postdoctoral',
-            icon: 'tabler:briefcase',
-          },
-        ]}
-        image={{
-          src: '~/assets/images/postdocs/fvi-modelo-educativo-PostDoc.webp',
-          alt: 'Modelo educativo del programa de Posdoctorado de Fondo Verde',
-        }}
-      />
+      {/* Modelo Educativo */}
+      <HeroSection
+          title='Modelo Educativo'
+          subtitle='El <strong>Postdoctorado</strong> combina los cursos teóricos, seminarios de investigación, actividades auxiliares, tutoría y el proyecto postdoctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento tanto académico como personal del postdoctorando constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde con respecto a otras instituciones.'
+      >
+          <Fragment slot="content">
+              <p class="text-base">Los recursos metodológicos de los que el Instituto dispone para la impartición de sus programas fundamentalmente son:</p>
+              
+              <ModeloEducativoDiagram
+                centerLabel="PostDOC"
+                    nodes={[
+                        { title: "Cursos teóricos", description: "Fomentan la colaboración transnacional en muy diferentes campos de estudio e impartidos por personal docente e investigador y por expertos con un perfil internacional." , titleClass: 'text-primary',},
+                        { title: "Seminarios de Investigación", description: "Seminarios prácticos de seguimiento a su investigación relacionados a la problemática ambiental elegida.", titleClass: 'text-primary', },
+                        { title: "Tareas Postdoctorales", description: "Realización de actividades auxiliares con el objeto de contribuir en las investigaciones de los postdoctorandos.", titleClass: 'text-primary', },
+                        { title: "Tutoría académica", description: "El tutor tendrá como función facilitar la integración del postdoctorando durante su formación académica, orientarle en su investigación y coordinar su participación en actividades auxiliares.", titleClass: 'text-primary', },
+                        { title: "Proyecto Postdoctoral", description: "La temática del proyecto de investigación debe representar un avance en el conocimiento del área elegida, procurando alcanzar el más alto nivel internacional.", titleClass: 'text-primary', }
+                    ]}
+                />
+
+          </Fragment>
+
+      </HeroSection>
       <!-- Fin ¿CÓMO SE ESTUDIA? ************************************ -->

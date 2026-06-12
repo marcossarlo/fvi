@@ -1,6 +1,7 @@
 ---
 import Content from '~/components/widgets/Content.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
+import ModeloEducativoDiagram from '../common/ModeloEducativoDiagram.astro';
 
 export interface Props {
     id?: string;
@@ -42,15 +43,30 @@ const { id = "metodologia" } = Astro.props;
     }}
 />
 
+{/* Modelo Educativo */}
 <HeroSection
     title='Modelo Educativo'
     subtitle='El <strong>Doctorado</strong> combina los cursos teóricos, seminarios de investigación, evaluaciones continuas, tutoría académica, y proyecto de tesis doctoral. La especial conjunción de estos elementos, orientada a lograr el máximo aprovechamiento, tanto académico como personal del alumno, constituye el verdadero elemento diferenciador y de valor añadido de Fondo Verde, con respecto a otras instituciones.'
-    image={{
-        src: '~/assets/images/doctorados/fvi-metodologia-PhD.webp',
-        alt: 'Metodología de enseñanza de los Doctorado en Fondo Verde',
-    }}
 >
     <Fragment slot="content">
         <p class="text-base">Los recursos metodológicos de los que el Instituto dispone para la impartición de sus programas fundamentalmente son:</p>
+
+        <ModeloEducativoDiagram
+            centerLabel="PhD"
+            nodes={[
+                { title: "Cursos teóricos", description: "De acuerdo a la temática central de la mención doctoral y del trabajo de investigación del estudiante e impartidos por personal docente e investigador y por expertos con un perfil internacional." ,
+                titleClass: 'text-primary',
+                },
+                { title: "Seminarios de Investigación", description: "Seminarios prácticos de seguimiento a su investigación relacionados a la problemática ambiental elegida." , titleClass: 'text-primary',
+                },
+                { title: "Evaluación continua", description: "Los doctorandos son evaluados a lo largo de todo el período lectivo de forma continua, para lo cual se tienen en cuenta, la participación en los foros y seminarios y las actividades académicas." , titleClass: 'text-primary',
+                },
+                { title: "Tutoría académica", description: "Contactos con los docentes, para la resolución directa de dudas sobre las materias docentes y/o para atender las distintas necesidades de los alumnos." , titleClass: 'text-primary',
+                },
+                { title: "Tesis Doctoral", description: "Realización, presentación y defensa de una tesis de grado sobre un tema de interés ambiental es obligatoria. Elaboración de un artículo científico aceptado para su publicación en una revista." , titleClass: 'text-primary',
+                }
+                ]}
+        />
+        
     </Fragment>
 </HeroSection>
