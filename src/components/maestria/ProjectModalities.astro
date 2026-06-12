@@ -1,0 +1,118 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const modalities = [
+{
+    id: 1,
+    title: 'Artículo de revista',
+    icon: 'tabler:presentation',
+    mainText:
+    'Esta forma de trabajo consiste en la elaboración de un artículo científico, aceptado para su publicación en alguna revista de reconocido prestigio, especializada y arbitrada.',
+    subText:
+    'Debe ceñirse a las pautas de presentación y evaluación de un artículo científico, hecho que implica considerar cada una de sus partes según cuál sea la modalidad del artículo, es decir, de carácter empírico o teórico. Requiere un importante ejercicio de síntesis.\n\nDeberá culminar con conclusiones y/o propuestas de solución del problema debidamente fundamentadas.',
+    theme: {
+    text: 'text-primary',
+    bgSolid: 'bg-primary',
+    fill: 'fill-primary',
+    },
+},
+{
+    id: 2,
+    title: 'Tesis',
+    icon: 'tabler:certificate',
+    mainText:
+    'Este modo de presentar el trabajo tiene como objetivo la proposición razonada sobre un tema concreto fundamentado en un área del conocimiento.',
+    subText:
+    'Debe reflejar la capacidad de razonamiento del estudiante en relación a un problema o realidad específica, que con base en determinados fundamentos teóricos y metodológicos, permita establecer las interpretaciones y premisas pertinentes a fin de llegar a una conclusión; ello implica principalmente, el conocimiento detallado de las diferentes formas en que esta cuestión ha sido concebida.',
+    theme: {
+    text: 'text-secondary',
+    bgSolid: 'bg-secondary',
+    fill: 'fill-secondary',
+    },
+},
+{
+    id: 3,
+    title: 'Avance Académico + Diseño de proyecto',
+    icon: 'tabler:ladder',
+    mainText:
+    'Esta opción contempla la presentación de un avance sustancial (80%) de la investigación de tesis de maestría y de un proyecto de investigación doctoral.',
+    subText:
+    'Dicho avance deberá ser estructurante y catalítico del proyecto de investigación doctoral, formulado como una propuesta de investigación original, con rigurosidad metodológica, y apreciable aporte creativo sobre un tema de especial relevancia, que cuente con un alto nivel académico, resultado de un desarrollo significativo de la investigación realizada y avalado por el tutor de la tesis de maestría.',
+    theme: {
+    text: 'text-slate-500',
+    bgSolid: 'bg-slate-500',
+    fill: 'fill-slate-500',
+    },
+},
+{
+    id: 4,
+    title: 'Estudio de Caso',
+    icon: 'tabler:box-padding',
+    mainText:
+    'Este tipo de estudio, constituye una herramienta de base para el proceso de toma de decisiones basadas en evidencia sobre lo que funciona y lo que no.',
+    subText:
+    'Se trata de un instrumento de análisis y reflexión para la identificación, documentación y diseminación de lecciones aprendidas que resulten de distintas actividades (ej.: proyecto, iniciativa, programa, proceso, etc.) con el objetivo de facilitar y mejorar el flujo y uso del conocimiento proveniente de estas actividades.',
+    theme: {
+    text: 'text-accent',
+    bgSolid: 'bg-accent',
+    fill: 'fill-accent',
+    },
+},
+];
+---
+
+<div
+class="w-full grid grid-cols-1 min-[520px]:grid-cols-2 lg:grid-cols-4 gap-6 min-[520px]:gap-4 lg:gap-2 xl:gap-3 mt-12 relative z-10"
+>
+{
+    modalities.map((mod) => (
+    <div class="flex flex-col relative group h-full">
+        {/* Header: Icon, Number, Title */}
+        <div class="flex flex-col items-center text-center space-y-3 mb-4">
+        <div
+            class={`w-16 h-16 md:w-20 md:h-20 flex items-center justify-center transition-transform group-hover:scale-105 duration-300 ${mod.theme.text} opacity-90`}
+        >
+            <Icon name={mod.icon} class="w-full h-full" />
+        </div>
+
+        <div class="flex items-center justify-center gap-2 mt-2 h-16">
+            <span class={`text-3xl md:text-4xl font-bold ${mod.theme.text}`}>{mod.id}</span>
+            <h4 class="text-sm md:text-base font-semibold leading-tight text-gray-700 dark:text-gray-200 text-left w-full">
+            {mod.title}
+            </h4>
+        </div>
+        </div>
+
+        {/* Wrapper para el contenido */}
+        <div class="flex flex-col flex-grow space-y-1.5">
+            {/* Main Text Box (Colored) */}
+            <div
+            class={`relative text-white ${mod.theme.bgSolid} rounded-t-xl rounded-b-none p-5 shadow-sm text-sm md:text-[0.95rem] text-left leading-relaxed transition-all duration-300 group-hover:shadow-md h-auto min-[520px]:h-[11rem] md:h-[9.5rem] lg:h-[18rem] xl:h-[13rem] 2xl:h-[11rem] flex items-center`}
+            >
+            <p class="w-full">{mod.mainText}</p>
+            </div>
+
+            {/* Sub Text Box (Pattern) */}
+            <div class="relative flex-grow flex flex-col border-2 border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-pageDark rounded-b-xl rounded-t-none p-4 md:p-5 shadow-sm transition-all duration-300 group-hover:shadow-md text-left">
+            {/* Diagonal stripes pattern overlay */}
+            <div
+                class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none rounded-b-xl"
+                style={{
+                backgroundImage:
+                    'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)',
+                backgroundSize: '10px 10px',
+                }}
+            />
+
+                <div class="relative z-10 text-sm text-gray-600 dark:text-gray-400 leading-relaxed whitespace-pre-wrap text-left">
+                    {mod.subText}
+                </div>
+            </div>
+        </div>
+    </div>
+    ))
+}
+</div>
+<p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-12 w-full">
+            *La redacción del Proyecto Terminal de Maestría, sean cuales sean sus finalidades y formas, debe ser clara y sintética. A lo largo del texto se debe perfilar un hilo conductor que dé sentido a la lectura y que vaya construyendo el conocimiento que se ofrece.
+</p>

@@ -19,9 +19,11 @@ export interface Props {
 const { courses } = Astro.props;
 ---
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 text-left items-stretch">
-    {
-        courses.map((course) => (
+<div class="mt-8">
+    <p class="text-base text-left mb-6">El <strong>plan de estudios</strong> del programa de doctorado se precisa a continuación:</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left items-stretch">
+        {
+            courses.map((course) => (
         <div class="bg-white dark:bg-slate-900 shadow-md rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col h-full group">
             <div class="bg-slate-800 dark:bg-slate-700 text-white px-4 py-3 flex justify-between items-center font-bold min-h-[5.5rem] lg:min-h-[5rem] group-hover:bg-primary transition-colors duration-300">
             <h3 class="text-sm md:text-base mr-2 items-center flex">
@@ -47,5 +49,5 @@ const { courses } = Astro.props;
             </div>
         </div>
         ))
-    }
+    } 
 </div>

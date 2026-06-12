@@ -1,0 +1,497 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import StatsData from '~/components/maestria/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
+import ProjectAlternatives from '~/components/maestria/ProjectAlternatives.astro';
+import ProjectTimeline from '~/components/maestria/ProjectTimeline.astro';
+import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
+import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
+import AdmissionTimeline from '~/components/maestria/AdmissionTimeline.astro';
+import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
+
+import Scholarship from '~/components/maestria/Scholarship.astro';
+import Registration from '~/components/maestria/Registration.astro';
+import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
+import Requests from '~/components/maestria/Requests.astro';
+import HowToStudy from '~/components/maestria/HowToStudy.astro';
+import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
+import PostMaestria from '~/components/maestria/PostMaestria.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: 'Maestría en Medio Ambiente y Responsabilidad Social | Fondo Verde',
+  description: 'Desarrolla habilidades en sostenibilidad, economía circular y gestión de proyectos ambientales.',
+  keywords: 'maestría medio ambiente, responsabilidad social, sostenibilidad corporativa, economía circular',
+};
+
+const facultyIds = [
+  'angel-guillemes',
+  'alberto-jimenez',
+  'erick-brenes',
+  'maria-teresa-perez',
+  'yordanis-puerta'
+];
+const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+
+const tabs = [
+  { id: 'bienvenida', label: '1. Bienvenida' },
+  { id: 'maestria', label: '2. La Maestría' },
+  { id: 'colaboran', label: '3. Colaboran' },
+  { id: 'estructura', label: '4. Estructura' },
+  { id: 'proyecto', label: '5. Proyecto' },
+  { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+  { id: 'claustro', label: '7. Claustro' },
+  { id: 'beneficios', label: '8. Beneficios' },
+  { id: 'titulacion', label: '9. Titulación' },
+  { id: 'postmaestria', label: '10. Post Maestría' },
+  { id: 'becas', label: '11. Becas' },
+  { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+  { id: 'inscripcion', label: '13. Inscripción' },
+  { id: 'medios-de-pago', label: '14. Medios de Pago' },
+  { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+  {/* HeroPrograms ********************************************** */}
+  <HeroPrograms
+    tagline='Convocatoria Abierta 2026'
+    title='Maestría en<br /> <span class="text-primary">Medio Ambiente y Responsabilidad Social</span>'
+    subtitle='Las empresas con futuro necesitan <strong>líderes sociales ambientalmente responsables</strong>.'
+    actions={[
+      {
+          variant: 'primary',
+          text: 'Solicita información',
+          href: '#solicitudes',
+          icon: 'tabler:mail-forward',
+          class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+      },
+      {
+          variant: 'secondary',
+          text: 'Ver Folleto Académico',
+          href: 'https://drive.google.com/file/d/0B0HLluZifC0PaVk4alRYMFM2N3M/view',
+          target: '_blank',
+          icon: 'tabler:download',
+          class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/maestrias/fvi-phd-paisaje-ambiente.webp',
+      alt: 'Imagen de la Maestría en Medio Ambiente y Responsabilidad Social',
+    }}
+  />
+
+  {/* DatosEstadisticas */}
+  <StatsData />
+
+  <div class="relative max-w-[100vw] overflow-x-hidden">
+    <!-- Desktop Sidebar & Mobile Floating Pill -->
+    <ProgramTOC tabs={tabs} />
+
+    {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+    <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+      
+      {/* 1. BIENVENIDA */}
+      <Content
+          id="bienvenida"
+          tagline="Bienvenida"
+          title="Erick Brenes, PhD"
+          subtitle="Director de la Maestría"
+          items={[
+            {
+              title: 'Gestión Sostenible',
+              description: 'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales de los multi-stakeholders.',
+              icon: 'tabler:leaf',
+            },
+            {
+              title: 'Formación Integral',
+              description: 'El objetivo esencial de este programa es formar profesionales en la planificación y gestión de empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
+              icon: 'tabler:school',
+            }
+          ]}
+          image={{
+            src: '~/assets/images/users/fvi-erick-brenes.webp',
+            alt: 'Erick Brenes, PhD - Director de la Maestría en Medio Ambiente y Responsabilidad Social',
+          }}
+        >
+          <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+          </Fragment>
+      </Content>
+      
+      {/* 2. LA MAESTRÍA */}
+      <Features2
+        id="maestria"
+        tagline="La Maestría"
+        title="¿Por qué hacer esta maestría?"
+        subtitle="Nuestra civilización enfrenta una crisis económica, social y ambiental como nunca antes y las soluciones además de integrales y sistémicas nos presentan un nuevo paradigma en el que las organizaciones privadas, públicas o del tercer sector deben trabajar más para estimular el crecimiento incluyente, a fin de hacer compatible el crecimiento económico con la inclusión social y la protección del medio ambiente."
+        columns={2}
+        items={[
+          {
+            title: 'Economía Sostenible',
+            description: 'La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span> constituye una oportunidad excelente para todos aquellos profesionales que estén interesados en ampliar su formación en el campo de la economía sostenible, gestión medioambiental, y responsabilidad corporativa.',
+            icon: 'tabler:chart-arrows-vertical',
+          },
+          {
+            title: 'Liderazgo Estratégico',
+            description: 'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales de los multi-stakeholders. En ese sentido, la formación del máster, te permitirá posicionarte como figura clave en la estrategia de una empresa y puede convertirse en sinónimo de oferta laboral.',
+            icon: 'tabler:briefcase',
+          }
+        ]}
+      >
+      </Features2>
+      
+      {/* ¿Quiénes deben asistir? */}
+      <Content
+        isReversed
+        items={[
+          {
+            title: 'Licenciados',
+            description:
+              'Licenciados en administración de empresas, ingenieros, investigadores, técnicos y profesionales de las ciencias sociales y económicas que deseen ampliar su visión profesional de forma integral y sistémica así como a ejecutivos y lideres con experiencia profesional en temas medio ambientales que se encuentren laborando en la empresa privada, organizaciones gubernamentales y no gubernamentales que deben enfrentar el reto de una gestión ambiental con visión integral, interdisciplinaria y sistémica.',
+            icon: 'tabler:school',
+          },
+          {
+            title: 'Titulados universitarios',
+            description:
+              'Titulados universitarios que deseen adquirir los conocimientos, técnicas y modelos de gestión del Medio Ambiente, incluyendo aspectos relacionados con la RSC.',
+            icon: 'tabler:certificate',
+          },
+          {
+            title: 'Ejecutivos',
+            description:
+              'Ejecutivos del sector privado, público u organismo no gubernamental, que enfrentan un nuevo rol como gestores de la sustentabilidad ambiental.',
+            icon: 'tabler:briefcase',
+          },
+          {
+            title: 'Profesional con perspectiva interdisciplinaria',
+            description:
+              'El programa igualmente está dirigido a todo profesional con perspectiva interdisciplinaria de lo ambiental, que acredite competencias y experiencia en el campo relacionado con la temática ambiental.',
+            icon: 'tabler:microscope',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-mars.webp',
+          alt: '¿Quiénes deben asistir a la Maestría en Medio Ambiente y Responsabilidad Social?',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+            ¿Quiénes deben asistir?
+          </h3>
+        </Fragment>
+      </Content>
+      {/* ¿Qué vas a aprender? */}
+      <Content
+        items={[
+          {
+            // title: 'Investigación e Innovación',
+            description:
+              '<strong>Conocer</strong> técnicas y herramientas prácticas necesarias para la investigación científica y la aportación de soluciones innovadoras que contribuyan a la protección del medio ambiente.',
+            icon: 'tabler:flask',
+          },
+          {
+            // title: 'Sistemas de Gestión',
+            description:
+              '<strong>Identificar</strong> un sistema de gestión del medio ambiente e interpretar sus especificaciones, reglas y directrices.',
+            icon: 'tabler:settings-automation',
+          },
+          {
+            // title: 'Estrategias Ambientales',
+            description:
+              '<strong>Conocer</strong> modernas estrategias ambientales, a partir de las visiones empresariales en la industria y servicios.',
+            icon: 'tabler:chart-treemap',
+          },
+          {
+            // title: 'Gestión Responsable',
+            description:
+              '<strong>Gestionar</strong> empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
+            icon: 'tabler:building-factory-2',
+          },
+          {
+            // title: 'Gestión de Organizaciones',
+            description:
+              '<strong>Gestionar</strong> organizaciones específicamente dedicadas a la gestión ambiental así como unidades de gestión ambiental de organizaciones y/o industrias mucho más grandes.',
+            icon: 'tabler:hierarchy-2',
+          },
+          {
+            // title: 'Dimensión Ambiental y RSC',
+            description:
+              '<strong>Promover</strong> la incorporación de la dimensión ambiental y la RSC dentro de la estrategia de cualquier organización e industria.',
+            icon: 'tabler:target-arrow',
+          },
+          {
+            // title: 'Dimensión Ambiental y RSC',
+            description:
+              '<strong>Conocer</strong> las herramientas de gestión imprescindibles para la puesta en marcha de una estrategia de Responsabilidad Social y los sistemas de medición, gestión y evaluación más apropiados..',
+            icon: 'tabler:building-factory-2',
+          },
+          {
+            // title: 'Dimensión Ambiental y RSC',
+            description:
+              '<strong>Explorar</strong> las principales variables que afectan las estrategias de responsabilidad social en Europa y América Latina.',
+            icon: 'tabler:target-arrow',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
+          alt: '¿Qué vas a aprender en la Maestría en Medio Ambiente y Responsabilidad Social?',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+            ¿Qué vas a aprender?
+          </h3>
+        </Fragment>
+      </Content>
+
+      {/* 3. COLABORAN */}
+      <HeroSection
+        id="colaboran"
+        tagline="Colaboran"
+        title='Entidades Colaboradoras'
+        image={{
+            src: '~/assets/images/maestrias/fvi-colaboran-msc-mars.webp',
+            alt: 'Entidades colaboradoras de la Maestría en Medio Ambiente y Responsabilidad Social',
+        }}
+      >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </HeroSection>
+
+      {/* 4. ESTRUCTURA */}
+      <HeroSection
+        id="estructura"
+        tagline="Estructura"
+        title='Estructura del Programa y total de créditos'
+        subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span> tiene una duración de <strong>seis trimestres (2 años)</strong> con un total de <strong>1,440 horas lectivas (90 créditos)</strong>. Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría</strong> - <strong>PTM</strong>; posteriormente en el sexto trimestre, el alumno deberá acreditar la opción terminal de titulación y realizar sus trámites de graduación de acuerdo a la modalidad que haya elegido.'
+      >
+        <Fragment slot="content">
+          <ProgramCurriculum courses={medioAmbienteResponsabilidadSocialCurriculum.courses} />
+        </Fragment>
+      </HeroSection>
+
+      {/* 5. PROYECTO (Común) */}
+      <HeroSection
+        id="proyecto"
+        tagline="PTM"
+        title='Proyecto Terminal de Maestría - <span class="text-primary">PTM</span>'
+        subtitle='Durante el segundo año del programa tendrás que trabajar en un proyecto terminal que es parte obligatoria para obtener el grado de maestría. En el <strong>PTM</strong> aplicarás los conocimientos y las competencias adquiridas en las asignaturas del programa, en el contexto de la conservación, el uso sostenible del territorio y de los recursos naturales.'
+      >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+        <Fragment slot="content">
+          <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 alternativas diferentes de proyecto terminal</h3>
+          
+          <ProjectAlternatives />   
+          
+          <p class="text-base text-muted dark:text-slate-400 mt-4 mb-8 text-left">
+            El proyecto será identificado y presentado durante el tercer trimestre. Sea cual sea la tipología de trabajo por la que se opte, cada participante cuenta con el seguimiento del Director del PTM que le guía y le brinda apoyo para asegurar el desarrollo completo del proyecto durante el segundo año. El director orienta al participante, no hace el trabajo en su lugar. Su papel es guiarle en el enfoque de las preguntas de fondo y en los aspectos metodológicos.
+          </p>
+
+          <ProjectTimeline />
+
+          <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 modalidades en las que se pueden presentar el proyecto terminal de maestría</h3>
+
+          <ProjectModalities />
+
+        </Fragment>
+      </HeroSection>
+
+      {/* 6. COMO SE ESTUDIA (Común) */}
+      <HowToStudy />
+
+      {/* 7. CLAUSTRO */}
+      <ClaustroInfo />
+      {
+        facultyList.map((prof) => (
+          <FacultyMember {...prof}>
+            <Fragment slot="bg">
+              <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+            </Fragment>
+          </FacultyMember>
+        ))
+      }
+
+      {/* 8. BENEFICIOS */}
+      <Features
+        id="beneficios"
+        tagline='Beneficios'
+        title="¿Cómo te beneficiará este programa?"
+        subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, será capaz de:'
+        columns={2}
+        items={[
+          {
+            title: 'Visión Integral',
+            description: 'Adquirir una visión integral de los problemas ambientales para desarrollar proyectos con herramientas de sostenibilidad.',
+            icon: 'tabler:world',
+          },
+          {
+            title: 'Normativa y Auditoría',
+            description: 'Conocer la normativa pertinente y las herramientas de Gestión, Reporting, y Auditoría de la RSC: ISO 9001, ISO 14001, OHSAS 18001, SA 8000, SGE 21.',
+            icon: 'tabler:gavel',
+          },
+          {
+            title: 'Fundamentos Socio-económicos',
+            description: 'Comprender los fundamentos socio-económicos y científicos de los problemas relacionados con la biosfera y ofrecer una solución con perspectiva interdisciplinaria, integradora y sistémica.',
+            icon: 'tabler:brain',
+          },
+          {
+            title: 'Desarrollo Sostenible',
+            description: 'Obtener los conocimientos y habilidades necesarias para contribuir a la construcción de una sociedad socio-económica y ambientalmente sostenible.',
+            icon: 'tabler:building-community',
+          },
+          {
+            title: 'Gestión Organizacional',
+            description: 'Identificar y responder a los desafíos que enfrenta una gestión ambiental integral y sistémica de organizaciones públicas, privadas o del tercer sector ya sea como parte de un proceso de desarrollo o de transformación con responsabilidad socio-ambiental.',
+            icon: 'tabler:chart-arrows-vertical',
+          },
+          {
+            title: 'Resolución de Conflictos',
+            description: 'Tomar conciencia de los conflictos socio-ambientales subyacentes a la actividad económica y proponer soluciones sistémicas e integradoras.',
+            icon: 'tabler:puzzle',
+          },
+          {
+            title: 'Responsabilidad Social (RSC)',
+            description: 'Ser conocedor de la función de la responsabilidad social corporativa en la empresa moderna, su desempeño social y ambiental, y la aplicación del ISO 26,000.',
+            icon: 'tabler:briefcase',
+          },
+        ]}
+      />
+      {/* Potencia tus salidas */}
+      <Features3
+        title="Potencia tus Salidas Profesionales"
+        subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, prepara al alumno/a para trabajar en organizaciones tanto públicas como privadas, son profesionales que cultivan la ética en los negocios, la buena praxis y la responsabilidad corporativa. Las salidas profesionales, se centran claramente en:'
+        columns={3}
+        defaultIcon="tabler:point-filled"
+        items={[
+          {
+            title: 'Organizaciones ambientales',
+            description: 'En posiciones operativas y estratégicas en organizaciones que se dedican específicamente a la investigación y conservación de los recursos naturales.',
+          },
+          {
+            title: 'Unidades de negocios',
+            description: 'En unidades de negocios ambientales de organizaciones públicas y privadas de grandes dimensiones.',
+          },
+          {
+            title: 'Comunicación de impacto',
+            description: 'Organizaciones o unidades de negocios que comunican impactos socio/ambientales a la comunidad en general.',
+          },
+          {
+            title: 'Equipos de investigación',
+            description: 'Como parte de un equipo interdisciplinario de investigación socio-económico y ambiental.',
+          },
+          {
+            title: 'Dirección o Gestión',
+            description: 'Director o Gestor del área de Medio Ambiente de empresas.',
+          },
+          {
+            title: 'Líder en Sostenibilidad',
+            description: 'Profesional Líder en la planificación, desarrollo, gestión e implementación de diferentes estrategias de Sostenibilidad, Medio Ambiente y RSC.',
+          },
+          {
+            title: 'Responsable de sistemas',
+            description: 'Responsable del sistema de gestión medioambiental en empresa.',
+          },
+          {
+            title: 'Técnico y consultoría',
+            description: 'Técnico de outsourcing ambiental y consultoría de proyectos.',
+          },
+          {
+            title: 'Implantación de sistemas',
+            description: 'Consultor en implantación de sistemas de gestión medioambiental.',
+          },
+          {
+            title: 'Educación ambiental',
+            description: 'Coordinador de equipos de educación ambiental/Director de centro de educación ambiental.',
+          },
+          {
+            title: 'Gestor ambiental',
+            description: 'Gestor ambiental de industrias y/o empresas públicas y privadas que enfrentan grandes retos socio/ambientales en su gestión.',
+          },
+        ]}
+      />
+      {/* Más allá del Programa*/}
+      <HeroSection
+        tagline="Inmersión de capacitación intensiva en programas de apoyo al desarrollo sostenible"
+        title="Pasantía Técnica Internacional"
+        subtitle='La <strong>Pasantía Técnica Internacional</strong><span class="text-secondary">*</span>, es un viaje de estudios opcional, de una semana de duración, a un destino internacional. Se elabora un Plan Individual de Capacitación, acorde a los temas de interés y tiempo de permanencia. La pasantía es esencialmente teórica-práctica, los pasantes participan de los proyectos de las entidades anfitrionas y de todas las actividades de capacitación programadas por el equipo técnico local. Visitan iniciativas de proyectos e interactúan con los beneficiarios.'
+      >
+        <Fragment slot="content">
+          <ProjectLocations />
+          <p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-6 w-full">
+            * Este servicio no está incluido en el coste de la maestría.
+          </p>
+        </Fragment>
+      </HeroSection>
+
+      {/* 9. TITULACIÓN */}
+      <Content
+        id="titulacion"
+        tagline="Titulación"
+        title="Evaluación y Titulación"
+        items={[
+          {
+            title: 'Evaluación',
+            description:
+              'La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.',
+            icon: 'tabler:clipboard-check',
+          },
+          {
+            title: 'Titulación',
+            description:
+              'Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180410</span>, Dirección de Educación Superior - Secretaría de Educación Pública.<br><br><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.',
+            icon: 'tabler:certificate',
+          },
+        ]}
+        image={{
+            src: '~/assets/images/maestrias/fvi-maestria-MARS-Titulo.webp',
+            alt: 'Titulación de la Maestría en Medio Ambiente y Responsabilidad Social',
+        }}
+        >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Content>
+
+      {/* 10. POST MAESTRÍA (Común) */}
+      <PostMaestria />
+
+      {/* 11. BECAS (Común) */}
+      <Scholarship />
+
+      {/* 12. COMO APLICAR */}
+      <HeroSection
+        id="aplicar"
+        tagline="¿Cómo aplicar?"
+        title="Las fases del proceso de admisión"
+        subtitle='El proceso para la inscripción al programa de maestría es el siguiente:'
+      >
+        <Fragment slot="content">
+          <AdmissionTimeline />
+        </Fragment>
+      </HeroSection>
+
+      {/* 13. INSCRIPCIÓN */}
+      <Registration />
+
+      {/* 14. MEDIOS DE PAGO */}
+      <PaymentMethods />
+
+      {/* 15. SOLICITUDES */}
+      <Requests />
+
+    </div>
+  </div>
+  <!-- END Desktop Sidebar & Mobile Floating Pill -->
+</Layout>

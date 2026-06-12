@@ -131,31 +131,39 @@ export const headerData = {
       ],
     },
     {
-      text: 'Landing',
+      text: 'Maestrías',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: 'Maestría en Medio Ambiente y Responsabilidad Social',
+          href: getPermalink('/maestria/medio-ambiente-responsabilidad-social'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
+          text: 'Maestría en Paisaje, Patrimonio y Estudios Territoriales',
+          href: getPermalink('/maestria/paisaje-patrimonio-estudios-territoriales'),
         },
         {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
+          text: 'Maestría en Rehabilitación Ambiental Terrestre',
+          href: getPermalink('/maestria/rehabilitacion-ambiental-terrestre'),
         },
         {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
+          text: 'Maestría en Ciencias de la Sostenibilidad',
+          href: getPermalink('/maestria/ciencias-sostenibilidad'),
         },
         {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
+          text: 'Maestría en Hábitat, Urbanismo y Edificación Sostenible',
+          href: getPermalink('/maestria/habitat-urbanismo-edificacion-sostenible'),
         },
         {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: 'Maestría en Sostenibilidad Turística y Ecoturismo',
+          href: getPermalink('/maestria/sostenibilidad-turistica-ecoturismo'),
+        },
+        {
+          text: 'Maestría en Gestión de Proyectos Ambientales',
+          href: getPermalink('/maestria/gestion-proyectos-ambientales'),
+        },
+        {
+          text: 'Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad',
+          href: getPermalink('/maestria/eficiencia-energetica-cambio-climatico-sostenibilidad'),
         },
       ],
     },

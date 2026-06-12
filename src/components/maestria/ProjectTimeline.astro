@@ -1,0 +1,107 @@
+---
+const steps = [
+{
+    id: '1',
+    periodMain: '3º',
+    periodSub: 'TRIMESTRE',
+    items: ['Presentación de Tema', 'Aprobación y Asignación del Director del PTM'],
+    theme: {
+    bg: 'bg-primary',
+    text: 'text-primary',
+    },
+},
+{
+    id: '2',
+    periodMain: '4º y 5º',
+    periodSub: 'TRIMESTRE',
+    items: ['Desarrollo del Proyecto Terminal de Maestría (PTM)', 'Entrega de documento final'],
+    theme: {
+    bg: 'bg-slate-500',
+    text: 'text-slate-500',
+    },
+},
+{
+    id: '3',
+    periodMain: 'FIN',
+    periodSub: '2o AÑO',
+    items: ['Presentación del examen oral de grado de la maestría'],
+    theme: {
+    bg: 'bg-secondary',
+    text: 'text-secondary',
+    },
+},
+];
+---
+
+<div class="mt-12 mb-20 w-full max-w-4xl mx-auto flex flex-col relative z-10 space-y-2">
+{
+    steps.map((step, index) => (
+    <div class="flex flex-col relative group w-full">
+        <div class="flex flex-row items-center md:items-stretch gap-4 md:gap-6 lg:gap-10">
+        {/* Timeline Circle Node */}
+        <div
+            class={`flex-shrink-0 w-24 h-24 sm:w-28 sm:h-28 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center p-1 sm:p-1.5 transition-transform group-hover:scale-105 duration-300 z-10 bg-page dark:bg-pageDark`}
+        >
+            <div
+            class={`w-full h-full rounded-full ${step.theme.bg} text-white flex flex-col items-center justify-center shadow-md p-2 text-center overflow-hidden`}
+            >
+            <span class="text-lg sm:text-xl md:text-2xl font-bold leading-none tracking-tight whitespace-nowrap">{step.periodMain}</span>
+            <span class="text-[0.45rem] sm:text-[0.55rem] md:text-[0.65rem] lg:text-xs font-bold uppercase tracking-widest mt-0.5 sm:mt-1 opacity-90 leading-tight">
+                {step.periodSub}
+            </span>
+            </div>
+        </div>
+
+        {/* Content Box with ProjectAlternatives Style */}
+        <div class="flex flex-col justify-center flex-grow bg-white dark:bg-pageDark p-3 sm:p-5 lg:p-6 rounded-xl sm:rounded-2xl shadow-sm transition-shadow duration-300 group-hover:shadow-md relative overflow-hidden border-2 border-dashed border-gray-300 dark:border-gray-600 w-full text-left">
+            
+            {/* Diagonal stripes pattern mirror from ProjectAlternatives */}
+            <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)', backgroundSize: '10px 10px' }}></div>
+
+            {/* Subtle background glow/glass effect tied to the step's theme */}
+            <div
+            class={`absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 blur-2xl opacity-10 ${step.theme.bg} pointer-events-none`}
+            />
+
+            <ul class="space-y-2 relative z-10 w-full text-left">
+            {step.items.map((item) => (
+                <li class="flex items-start gap-3 sm:gap-4">
+                <span
+                    class={`mt-1.5 sm:mt-2 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${step.theme.bg} flex-shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-125`}
+                />
+                <span
+                    class={`text-[0.8rem] sm:text-sm md:text-base lg:text-lg font-medium leading-tight sm:leading-relaxed ${step.theme.text} transition-colors duration-300 text-left`}
+                >
+                    {item}
+                </span>
+                </li>
+            ))}
+            </ul>
+        </div>
+        </div>
+
+        {/* Arrow between nodes (except for the last one) */}
+        {index < steps.length - 1 && (
+        <div class="flex items-center justify-start w-24 sm:w-28 md:w-28 lg:w-32 h-8 sm:h-12 mt-1 mb-1 text-gray-400 dark:text-gray-600 z-0">
+            <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="translate-y-1 mx-auto scale-90 sm:scale-100"
+            >
+            <path d="M12 5v14" />
+            <path d="m18 13-6 6" />
+            <path d="m6 13 6 6" />
+            </svg>
+        </div>
+        )}
+    </div>
+    ))
+}
+</div>

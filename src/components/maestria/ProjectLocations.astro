@@ -1,0 +1,73 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const locations = [
+  {
+    id: 1,
+    location: 'Selva Central - Perú',
+    coverImage: '~/assets/images/maestrias/fvi-pasantia-selva-peru.webp',
+    coverAlt: 'Granos de café en Selva Central',
+    logoImage: '~/assets/images/maestrias/fvi-pasantia-logo-itma.webp',
+    logoAlt: 'Logo ITMA',
+    bgColor: 'bg-primary',
+    borderColor: 'border-primary',
+  },
+  {
+    id: 2,
+    location: 'San José - Costa Rica',
+    coverImage: '~/assets/images/maestrias/fvi-pasantia-costa-rica.webp',
+    coverAlt: 'Tucán en San José, Costa Rica',
+    logoImage: '~/assets/images/maestrias/fvi-pasantia-logo-fvi.webp',
+    logoAlt: 'Logo Fondo Verde',
+    bgColor: 'bg-secondary',
+    borderColor: 'border-secondary',
+  },
+  {
+    id: 3,
+    location: 'La Plata - Argentina',
+    coverImage: '~/assets/images/maestrias/fvi-pasantia-argentina.webp',
+    coverAlt: 'Catedral de La Plata, Argentina',
+    logoImage: '~/assets/images/maestrias/fvi-pasantia-logo-cepa.webp',
+    logoAlt: 'Logo Fundación CEPA',
+    bgColor: 'bg-accent',
+    borderColor: 'border-accent',
+  },
+];
+---
+
+<div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 relative z-10 px-4 md:px-0">
+{
+    locations.map((loc) => (
+    <div class={`flex flex-col border ${loc.borderColor} shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1`}>
+    {/* Superior: Imagen */}
+    <div class="h-48 md:h-56 lg:h-64 w-full relative overflow-hidden">
+        <Image 
+        src={loc.coverImage} 
+        alt={loc.coverAlt} 
+        width={800}
+        height={600}
+        class="object-cover w-full h-full transition-transform duration-500 hover:scale-110" 
+        />
+    </div>
+    
+    {/* Medio: Banner de texto */}
+    <div class={`${loc.bgColor} py-3 text-center`}>
+        <h4 class="text-white font-bold text-lg md:text-xl tracking-wide">
+        {loc.location}
+        </h4>
+    </div>
+
+    {/* Inferior: Logo */}
+    <div class="bg-white flex items-center justify-center p-6 h-36 border-t-4 border-gray-100 dark:border-gray-800">
+        <Image 
+        src={loc.logoImage} 
+        alt={loc.logoAlt} 
+        width={300}
+        height={120}
+        class="max-h-full max-w-full object-contain mix-blend-multiply" 
+        />
+    </div>
+    </div>
+    ))
+}
+</div>

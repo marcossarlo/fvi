@@ -1,0 +1,226 @@
+---
+import Content from '~/components/widgets/Content.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Alert from '~/components/ui/Alert.astro';
+import Steps from '../widgets/Steps.astro';
+---
+{/* Inscripción */}
+<Content
+    id="inscripcion"
+    tagline="Inscripción y Tasas Académicas"
+    title="Inscripción"
+    subtitle="Para realizar la inscripción es necesario aportar la siguiente documentación:"
+    isReversed
+    items={[
+        {
+            title: 'Título de Licenciatura (☑)',
+            icon: 'tabler:certificate',
+        },
+        {
+            title: 'Certificado de estudios de Licenciatura (☑)',
+            icon: 'tabler:file-text',
+        },
+        {
+            title: 'Acta de nacimiento',
+            icon: 'tabler:badge',
+        },
+        {
+            title: 'Identificación oficial, cédula de ciudadanía o DNI',
+            icon: 'tabler:id',
+        },
+        {
+            title: 'Curriculum Vitae',
+            icon: 'tabler:briefcase',
+        },
+        {
+            title: 'Fotografía tamaño infantil',
+            icon: 'tabler:photo',
+        },
+        {
+            title: 'Carta de Motivación',
+            description: 'Descargar <a href="https://fondoverdeinstitute.com/docs/Carta-de-Motivacion-MSc.doc" class="text-primary hover:text-secondary underline underline-offset-2">Carta de Motivación Académica</a>.',
+            icon: 'tabler:mail',
+        },        
+        {
+            title: 'Solicitud de Inscripción',
+            description: 'Descargar <a href="https://fondoverdeinstitute.com/docs/Solicitud_de_inscripcion.pdf" class="text-primary hover:text-secondary underline underline-offset-2">Solicitud de Inscripción</a>.',
+            icon: 'tabler:clipboard-check',
+        },
+    ]}
+    image={{
+        src: '~/assets/images/maestrias/fvi-inscripcion-maestria.webp',
+        alt: 'Documentación para inscripción a la Maestría',
+    }}
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+</Content>
+
+<WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10 inset-0 bg-blue-50 dark:bg-pageDark">  
+    <Alert variant="success" title="Requisitos">
+        Los <strong>requisitos</strong> marcados con (<strong>☑</strong>), deben contar con el sello de <strong>Apostilla de la Haya</strong>, colocado por el Ministerio de Relaciones Exteriores o entidad ✓ encargada de éste trámite en el país de origen, o en su defecto para los países que no pertenecen al <strong>Convenio de la Haya</strong>, autenticados o sellados por el Cónsul de México en el país de origen
+    </Alert>
+</WidgetWrapper>
+
+{/* Tasas Académicas */}
+<Steps
+    title="Tasas Académicas"
+    subtitle='◉ Los derechos de inscripción para el programa que comienza en el presente periodo académico (formato on-line) son: <span class="font-bold text-primary">950 dólares</span>.<br>◉ El costo del programa tiene una cuantía de <span class="font-bold text-primary">8,000 dólares</span>.<br>◉ El importe del programa se abona en <strong>6 cuotas</strong> sin intereses de la siguiente forma:'
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment> 
+</Steps>
+
+{/* TABLAS DE PRECIOS */}
+<WidgetWrapper containerClass="max-w-6xl mx-auto py-8 md:py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+        {/* Card 3: Precio Normal */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-slate-400 dark:border-slate-700 overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+            <div class="bg-gray-100 dark:bg-slate-800 p-4 text-center border-b border-slate-300 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-slate-800 dark:text-white uppercase">Precio Normal</h3>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-gray-200 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">8,000 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-sm text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-xl text-slate-800 dark:text-slate-200">7,600 </span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-lg border border-slate-200 dark:border-slate-700">
+                        <div class="text-center border-b border-slate-200 dark:border-slate-700 pb-2 mb-3">
+                            <span class="text-xs font-bold text-primary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Cuotas:</span>
+                            <span class="font-bold bg-muted text-white dark:bg-slate-700 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-600">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-lg text-slate-800 dark:text-slate-200">1,333 <span class="text-xs font-normal">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* Card 2 (Centro): Ambas Becas (DESTACADA) */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-xl border border-secondary relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 transform md:scale-105 z-10">
+            <div class="absolute top-0 right-0 bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-20 uppercase tracking-wider shadow-sm">Beca 50% + 12.5%</div>
+            <div class="bg-orange-100/80 dark:bg-slate-800 p-5 text-center border-b border-orange-300 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-secondary uppercase leading-tight">Precio con<br/>Ambas becas</h3>
+                <p class="text-[10px] text-muted mt-1 uppercase tracking-wider">(Fondo Verde + FUMED)</p>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-orange-200 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-3xl text-secondary">3,500 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-orange-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-orange-100 dark:border-slate-700 text-center">
+                        <span class="text-xs font-bold text-secondary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-sm text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">3,325 </span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-orange-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-orange-100 dark:border-slate-700">
+                        <div class="text-center border-b border-orange-100 dark:border-slate-700 pb-2 mb-3">
+                            <span class="text-xs font-bold text-secondary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Cuotas:</span>
+                            <span class="font-bold text-white bg-secondary dark:bg-slate-700 px-2 py-0.5 rounded border border-orange-100 dark:border-slate-700 text-secondary">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-xl text-secondary">583 <span class="text-xs font-normal text-slate-600">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {/* Card 1: Beca Fondo Verde */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-primary relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-20 uppercase tracking-wider shadow-sm">Beca 50%</div>
+            <div class="bg-green-50 dark:bg-slate-800 p-4 text-center border-b border-green-400 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-primary uppercase leading-tight">Precio con<br/>Beca Fondo Verde</h3>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-green-300 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Costo del programa</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-2xl text-primary dark:text-slate-200">4,000 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-green-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-green-300 dark:border-slate-700 text-center">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-sm text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-xl text-slate-800 dark:text-slate-200">3,800 </span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-green-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-green-300 dark:border-slate-700">
+                        <div class="text-center border-b border-green-100 dark:border-slate-700 pb-2 mb-3">
+                            <span class="text-xs font-bold text-primary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Cuotas:</span>
+                            <span class="text-white font-bold bg-primary dark:bg-slate-700 px-2 py-0.5 rounded border border-green-300 dark:border-slate-700 text-primary">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-lg text-primary">667 <span class="text-xs font-normal text-slate-600">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+</WidgetWrapper>
+
+{/* ALERTS */}
+<WidgetWrapper containerClass="max-w-5xl mx-auto py-0 md:py-0 pb-12 md:pb-10">  
+    <Alert variant="success" title="Fraccionamiento">
+        El pago del Programa, también puede fraccionarse en <strong>12</strong> y <strong>24 cuotas</strong> con intereses.
+    </Alert>
+
+    <Alert variant="info" title="Costo de Titulación">
+        El costo de titulación es independiente al valor de la maestría, UNICEPES tramita y reconoce el grado respectivo por un pago <strong>aproximado de 1,200 dólares</strong>. Este cargo incluye:<br>
+        <strong>→ Derechos de grado</strong> (<strong>900 US$</strong>); Revisión del PTM por parte de los sinodales, Examen de Grado, Protocolización interna de título y Certificación de acta de examen.<br>
+        <strong>→ Trámites de titulación</strong> (<strong>300 US$</strong>); Expedición de Título y Certificado Total de Estudios (ambos con el sello de Apostilla de la Haya).
+    </Alert>
+    <Alert variant="warning" title="Gastos de Envío de Títulos">
+        Los gastos de envío de los títulos al país de residencia, deben ser cubiertos en su totalidad por el estudiante.
+    </Alert>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+</WidgetWrapper>
+
+
