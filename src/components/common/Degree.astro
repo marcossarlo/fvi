@@ -1,0 +1,77 @@
+---
+import { Image } from 'astro:assets';
+import logoUnicepes from '~/assets/images/logo_unicepes.webp';
+
+interface Props {
+studentName?: string;
+degreeName?: string;
+incorporationNumber?: string;
+dateLocation?: string;
+rectorName?: string;
+institutionName?: string;
+}
+
+const { 
+    studentName = "LUIS ALBERTO RAMOS PERERA",
+    degreeName = "MAESTRÍA EN MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL",
+    incorporationNumber = "MAES180410",
+    dateLocation = "Michoacán, Mich., a 20 de febrero 2026",
+    rectorName = "D. Aldo Emilio Tello Carrillo",
+    // institutionName = "UNIVERSIDAD CENTRO PANAMERICANO DE ESTUDIOS SUPERIORES"
+} = Astro.props;
+---
+
+<div class="max-w-4xl mx-auto p-2 md:p-6 mb-8 bg-white shadow-2xl">
+    <div class="diploma-container relative overflow-hidden bg-[#f0f4f4] border-[6px] md:border-[16px] border-primary p-2 md:p-4 font-serif text-slate-800 flex flex-col justify-center">
+    <!-- Fondo con textura sutil -->
+    <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
+    <div class="relative z-10 border border-primary/20 p-2 md:p-8 flex flex-col items-center text-center h-full justify-between">
+    <!-- Encabezado con Logo e Institución -->
+    <div class="flex items-center justify-center pb-4 w-full">
+        <Image
+                src={logoUnicepes}
+                alt="Logo UNICEPES"
+                class="w-44 md:w-72 h-auto"
+                loading="lazy"
+        />
+    </div>
+    <!-- Cuerpo del Diploma -->
+    <div class="space-y-1 md:space-y-4 w-full max-w-2xl">
+        <div class="space-y-0.5">
+            <p class="text-[10px] md:text-sm uppercase tracking-[0.1em] md:tracking-[0.2em] text-slate-600">Estudios con Reconocimiento de Validez Oficial</p>
+            <p class="text-[11px] md:text-sm font-bold text-slate-700 pt-3">Acuerdo de Incorporación Nº {incorporationNumber}</p>
+        </div>
+        <div class="px-1">
+            <p class="italic text-[10px] md:text-lg text-slate-600">otorga a</p>
+            <h1 class="text-sm md:text-xl font-bold text-slate-900 my-1 md:my-4 uppercase tracking-wide border-b border-slate-300 pb-1">
+                        {studentName}
+            </h1>
+        </div>
+        <div class="space-y-1 md:space-y-4">
+            <p class="italic text-[10px] md:text-lg text-slate-600">el grado de</p>
+            <h3 class="text-xs md:text-xl font-bold text-primary uppercase leading-snug">
+                    {degreeName}
+            </h3>
+        </div>
+        <div class="mt-2 md:mt-6 text-[10px] md:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto px-2">
+        <p>
+                    en atención a que terminó los estudios correspondientes a los planes y programas en vigor y aprobó el examen de grado que sustentó el 4 de agosto de 2015.
+                </p>
+        </div>
+        <!-- Fecha y Ubicación -->
+        <div class="mt-2 md:mt-6 text-[8px] md:text-sm text-slate-700 font-medium">
+        <p>{dateLocation}</p>
+        </div>
+        <!-- Firmas -->
+        <div class="mt-4 md:mt-10 flex flex-col items-center">
+        <div class="w-32 md:w-64 border-t border-slate-400 pt-2">
+        <p class="text-[7px] md:text-xs uppercase tracking-widest font-bold text-slate-500 mb-0.5">EL RECTOR</p>
+        <p class="text-[10px] md:text-lg font-serif italic text-slate-900">{rectorName}</p>
+        </div>
+        </div>
+    </div>
+    <!-- Sello en relieve (Simulado) -->
+
+    </div>
+    </div>
+</div>
