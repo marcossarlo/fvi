@@ -1,0 +1,111 @@
+---
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+
+interface AsignaturaProgramacionItem {
+    id: string;
+    title: string;
+    description: string;
+    units: string[];
+    icon: string;
+    tone: {
+    bg: string;
+    text: string;
+    glow: string;
+    };
+}
+
+interface Props {
+    items: AsignaturaProgramacionItem[];
+    classes?: {
+    container?: string;
+    panel?: string;
+    title?: string;
+    description?: string;
+    units?: string;
+    };
+}
+
+const { items = [], classes = {} } = Astro.props as Props;
+
+const {
+    container: containerClass = '',
+    panel: panelClass = '',
+    title: titleClass = '',
+    description: descriptionClass = '',
+    units: unitsClass = '',
+} = classes;
+---
+
+<div
+    class={twMerge(
+    'w-full overflow-hidden rounded-[2rem] border-2 border-solid border-slate-300/80 bg-white/95 shadow-[0_20px_60px_rgba(15,23,42,0.08)] dark:border-slate-600/70 dark:bg-pageDark/95',
+    containerClass
+    )}
+>
+    <div class="grid grid-cols-1 items-stretch divide-y divide-dashed divide-slate-300/80 dark:divide-slate-600/70 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+    {
+        items.map((item) => (
+        <article
+            class={twMerge(
+            'group relative grid h-full min-h-full grid-rows-[13.75rem_minmax(11rem,auto)_minmax(10.5rem,auto)] bg-white/90 dark:bg-pageDark/90',
+            'transition-transform duration-300 lg:hover:-translate-y-1',
+            panelClass
+            )}
+        >
+            <div class={`absolute inset-x-0 top-0 h-1 ${item.tone.bg}`} />
+            <div class="absolute inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.06]"
+            style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 1px, transparent 10px)' }}
+            />
+
+            <header class="relative flex flex-col justify-between gap-2 overflow-hidden p-5 pb-3 sm:p-6">
+                <div class="flex items-start justify-between gap-4">
+                    <div class="flex flex-col gap-1.5">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-dashed border-slate-300 bg-page/70 p-1 shadow-sm dark:border-slate-600 dark:bg-slate-950/30">
+                            <div class={twMerge('flex h-full w-full items-center justify-center rounded-full text-white shadow-md', item.tone.bg, item.tone.glow)}>
+                                <Icon name={item.icon} class="h-7 w-7" aria-hidden="true" />
+                            </div>
+                        </div>
+                        <p class={twMerge('text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-slate-400 dark:text-slate-500', item.tone.text)}>
+                            Asignatura 
+                        </p>
+                    </div>
+                    <p class={twMerge('text-5xl font-black leading-none tracking-tight text-slate-200 dark:text-slate-700', item.tone.text)}>
+                        {item.id}
+                    </p>
+                </div>
+
+                <h3 class={twMerge('max-w-[14rem] text-lg font-bold leading-tight text-slate-700 dark:text-slate-100', item.tone.text, titleClass)}>
+                    {item.title}
+                </h3>
+            </header>
+
+            <div class="relative border-t border-dashed border-slate-300/80 px-5 pb-4 pt-3 dark:border-slate-600/70 sm:px-6">
+                <p
+                    class={twMerge('flex justify-start gap-3 text-left text-sm leading-relaxed text-slate-600 dark:text-slate-300 whitespace-normal', item.tone.text, descriptionClass)}
+                >
+                    <span class="text-left">{item.description}</span>
+                </p>
+            </div>
+
+            <div class="relative border-t border-dashed border-slate-300/80 px-5 py-4 dark:border-slate-600/70 sm:px-6">
+                <p class={twMerge('text-sm font-bold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400', item.tone.text, unitsClass)}>
+                    Unidades:
+                </p>
+
+                <ul class="mt-3 space-y-2 text-left text-sm leading-snug text-slate-600 dark:text-slate-300">
+                    {item.units.map((unit) => (
+                    <li class="flex items-start gap-2">
+                        <span class={twMerge('mt-2 h-1.5 w-1.5 flex-none rounded-full', item.tone.bg)} />
+                        <span>{unit}</span>
+                    </li>
+                    ))}
+                </ul>
+
+                <div class={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${item.tone.bg} via-white/30 to-transparent dark:via-white/10`} />
+            </div>
+        </article>
+        ))
+    }
+    </div>
+</div>

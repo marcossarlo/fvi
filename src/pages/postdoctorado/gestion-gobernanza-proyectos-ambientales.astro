@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
   title: 'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
@@ -40,6 +41,84 @@ const tabs = [
   { label: '11. Inscripción', id: 'inscripcion' },
   { label: '12. Pagos', id: 'pagos' },
   { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+  {
+    id: '1',
+    title: 'El Líder Proyectista y Empresa Proyectual',
+    description:
+      'Encuadra la formación gerencial en proyectos ambientales dentro de una nueva dimensión de la empresa de producción y desarrollo, donde la capacidad de idear, desarrollar y monitorear proyectos sustentables requiere una nueva mirada de los propios componentes de la empresa proyectual.',
+    units: [
+      'El Líder Proyectista',
+      'Sistema de Toma de Decisiones',
+      'Complejidad, Proyecto Empresario y Sustentabilidad',
+      'Liderazgo y Equipo Proyectual',
+      'Coaching Gerencial o líderes proyectuales',
+      'La Empresa Proyectual o Empresa Sustentable vs Empresa',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-primary',
+      text: 'text-primary',
+      glow: 'shadow-primary/20',
+    },
+  },
+  {
+    id: '2',
+    title: 'Pedagogía del Proyecto',
+    description:
+      'Explica cómo se realiza el proyecto sustentable en su pedagogía principal, es decir, desde el cambio de actitud a las nuevas destrezas.',
+    units: [
+      'Idea / Iniciativa / Proyecto',
+      'Cambio de Actitud / Cambio de Aptitud / Destrezas',
+      'Componentes del Proceso Proyectual',
+      'Herramientas Metodológicas: Criterios de Sustentabilidad del Proyecto',
+      'Pautas de Evaluación',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-secondary',
+      text: 'text-secondary',
+      glow: 'shadow-secondary/20',
+    },
+  },
+  {
+    id: '3',
+    title: 'Modalidad Pedagógica y Didáctica de Enseñanza/Aprendizaje',
+    description:
+      'Aborda la modalidad pedagógica y didáctica de enseñanza y aprendizaje, donde el trabajo de taller constituye un ejercicio de transversalidad y transdisciplinariedad con comprobadas reacciones de entusiasmo e intensa participación entre los distintos alumnos.',
+    units: [
+      'El Proyecto como estrategia de aprendizaje o aprender por proyectos',
+      'El Trabajo de Taller',
+      'Transversalidad y Transdisciplinariedad',
+      'Educación a distancia vs semi-presencialidad',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-slate-500',
+      text: 'text-slate-500',
+      glow: 'shadow-slate-500/20',
+    },
+  },
+  {
+    id: '4',
+    title: 'Ejemplos de Buenas Prácticas y Ejercicios Proyectuales',
+    description:
+      'Presenta fichas de experiencias de buenas prácticas en la materia, en distintos lugares de América Latina, lo cual constituye un bagaje de experiencias que aumenta la garantía del aprendizaje.',
+    units: [
+      'Manual para la implementación de Agencias de Desarrollo e Incubadoras de Empresas',
+      'Proyecto Camino del Gaucho',
+      'Escuela de Talentos para Iniciativas Sustentables',
+      'Ejercicios Proyectuales / Traditional Actors y Stakeholders',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-accent',
+      text: 'text-accent',
+      glow: 'shadow-accent/20',
+    },
+  },
 ];
 ---
 
@@ -178,17 +257,15 @@ const tabs = [
         id="asignaturas"
         tagline="Asignaturas"
         title="Asignaturas de la Programación"
-        image={{
-          src: '~/assets/images/postdocs/fvi-postDoc-GGPA-Asignaturas.webp',
-          alt: 'Asignaturas del programa de Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-        }}
       >
         <Fragment slot="bg">
           <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
         </Fragment>
         <Fragment slot="subtitle">
-          Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
-          desarrollar algún aspecto que le resulte de interés.
+          Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y desarrollar algún aspecto que le resulte de interés.
+        </Fragment>
+        <Fragment slot="image">
+          <AsignaturasProgramacion items={asignaturasProgramacion} />
         </Fragment>
       </HeroSection>
 
