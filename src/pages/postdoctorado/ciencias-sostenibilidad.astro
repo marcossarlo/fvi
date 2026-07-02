@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
     title: 'Posdoctorado en Ciencias de la Sostenibilidad',
@@ -40,6 +41,69 @@ const tabs = [
   { label: '11. Inscripción', id: 'inscripcion' },
   { label: '12. Pagos', id: 'pagos' },
   { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+    {
+        id: '1',
+        title: 'Teoría de la sustentabilidad ambiental, Agenda 2030 y ODS',
+        description:
+        'Abordaremos en detalle el concepto de desarrollo sustentable, sus dimensiones y su crítica a través del concepto de sustentabilidad. Conocer los retos de la Agenda Global 2030 con los 17 Objetivos de Desarrollo Sostenible (ODS), las 169 metas en el escenario internacional y los retos y desafíos.',
+        units: [
+        'Desarrollo sustentable y/o sustentabilidad',
+        'La sustentabilidad presenta diversas dimensiones dada su complejidad',
+        'Agenda 2030 y Objetivos de Desarrollo Sostenible'
+        ],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-primary',
+        text: 'text-primary',
+        glow: 'shadow-primary/20',
+        },
+    },
+    {
+        id: '2',
+        title: 'Nuevos modelos de emprendimientos socioambientales para la Agenda 2030',
+        description: '',
+        units: [],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-secondary',
+        text: 'text-secondary',
+        glow: 'shadow-secondary/20',
+        },
+    },
+    {
+        id: '3',
+        title: 'Finanzas Ambientales e inclusivas para alcanzar los ODS',
+        description: '',
+        units: [],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-slate-500',
+        text: 'text-slate-500',
+        glow: 'shadow-slate-500/20',
+        },
+    },
+    {
+        id: '4',
+        title: 'Herramientas para la gestión de la Responsabilidad Social. ODS y Empresas B.',
+        description:
+        'Dar a conocer las principales herramientas para que pequeñas y medianas organizaciones desarrollen su responsabilidad social, y de ahí participen según su medida y escala en la construcción de un desarrollo más sostenible.',
+        units: [
+        'Códigos Éticos',
+        'Pacto Mundial de las Naciones Unidas y los ODS',
+        'Gestión de la RS en pequeñas y medianas organizaciones',
+        'Reportes de Sostenibilidad',
+        'Sostenibilidad global y el rol de pymes en Europa'
+        ],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-accent',
+        text: 'text-accent',
+        glow: 'shadow-accent/20',
+        },
+    },
 ];
 ---
 
@@ -150,22 +214,21 @@ const tabs = [
         <!-- 4. ESTRUCTURA -->
         <Estructura />
 
-        <!-- 5. ASIGNATURAS ************************************ -->
+       {/* 5. ASIGNATURAS */}
         <HeroSection
             id="asignaturas"
             tagline="Asignaturas"
             title="Asignaturas de la Programación"
-            image={{
-            src: '~/assets/images/postdocs/fvi-postdoc-CS-Asignaturas.webp',
-            alt: 'Asignaturas del programa de Posdoctorado en Sistemas de Gestión Medioambiental',
-            }}
         >
             <Fragment slot="bg">
-                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-                </Fragment>
-                <Fragment slot="subtitle">
-                Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
-                desarrollar algún aspecto que le resulte de interés.
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+            <Fragment slot="subtitle">
+            Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
+            desarrollar algún aspecto que le resulte de interés.
+            </Fragment>
+            <Fragment slot="image">
+            <AsignaturasProgramacion items={asignaturasProgramacion} />
             </Fragment>
         </HeroSection>
 

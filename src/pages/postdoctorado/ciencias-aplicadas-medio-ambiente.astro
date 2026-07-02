@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
   title: 'Posdoctorado en Ciencias Aplicadas al Medio Ambiente',
@@ -40,6 +41,82 @@ const tabs = [
   { label: '11. Inscripción', id: 'inscripcion' },
   { label: '12. Pagos', id: 'pagos' },
   { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+  {
+    id: '1',
+    title: 'Ecología, Medio Ambiente y Sostenibilidad',
+    description:
+      'Encuadra la formación gerencial en proyectos ambientales dentro de una nueva dimensión de la empresa de producción y desarrollo, donde la capacidad de idear, desarrollar y monitorear proyectos sustentables requiere una nueva mirada de los propios componentes de la empresa proyectual.',
+    units: [
+      'Fundamentos Ecológicos del Medio Ambiente',
+      'Introducción a la Economía del Medio Ambiente y los Recursos Naturales',
+      'Políticas Ambientales',
+      'Desarrollo Sostenible del Medio Ambiente',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-primary',
+      text: 'text-primary',
+      glow: 'shadow-primary/20',
+    },
+  },
+  {
+    id: '2',
+    title: 'Contaminación Ambiental: prevención, vigilancia y corrección',
+    description:
+      'Competencias para la gestión y capacidad para prevenir, estimar, evaluar y analizar el impacto de los agentes contaminantes sobre el medio, así como interpretar sus especificaciones, reglas y directrices. Un marco de estudio idóneo para la evaluación tanto cualitativa como cuantitativa de las principales fuentes, sectores y elementos a considerar en el análisis y control de la contaminación.',
+    units: [
+      'Contaminación Atmosférica',
+      'Contaminación Acústica',
+      'Contaminación de las aguas',
+      'Contaminación del suelo y las aguas subterráneas',
+      
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-secondary',
+      text: 'text-secondary',
+      glow: 'shadow-secondary/20',
+    },
+  },
+  {
+    id: '3',
+    title: 'Energías Renovables y Medio Ambiente',
+    description:
+      'Formación en las tecnologías limpias de producción de energía, así como, sus implicaciones en el desarrollo sostenible, la ingeniería aplicada al desarrollo de proyectos y las soluciones técnicas en el ámbito de las energías renovables. Gestionar actividades y planes de eficiencia energética dentro de una organización. Llevar a cabo auditorías internas usando las herramientas y sistemas de gestión energética.',
+    units: [
+      'Mercados de Energías Renovables y Producción más Limpia',
+      'Energías Renovables en la Edificación, Energía Geotérmica, Hidrógeno y Pilas de combustible',
+      'La Energía Eólica, Hidroeléctrica, Mareomotriz y Biomasa',
+      'Eficiencia Energética y Auditorías Energéticas',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-slate-500',
+      text: 'text-slate-500',
+      glow: 'shadow-slate-500/20',
+    },
+  },
+  {
+    id: '4',
+    title: 'Gestión Ambiental y Responsabilidad Social en la industria',
+    description:
+      'Conocimientos técnicos y herramientas de gestión necesarias para abordar, desde una visión multidisciplinar, cualquier proyecto empresarial o industrial con repercusión en el medio ambiente, dentro del marco de una economía social y sostenible.',
+    units: [
+      'Los cimientos del sistema ISO 9001, ISO 14001, y OHSAS 18001',
+      'Evaluación del Ciclo de Vida, Ecodiseño y ecoeficiencia en la industria',
+      'Evaluación del Ciclo de Vida, Ecodiseño y ecoeficiencia en la industria',
+      'Gestión de la Responsabilidad Social en las pequeñas y medianas empresas',
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-accent',
+      text: 'text-accent',
+      glow: 'shadow-accent/20',
+    },
+  },
 ];
 ---
 
@@ -157,10 +234,6 @@ const tabs = [
         id="asignaturas"
         tagline="Asignaturas"
         title="Asignaturas de la Programación"
-        image={{
-          src: '~/assets/images/postdocs/fvi_postDoc-CAMA-Asignatura.webp',
-          alt: 'Asignaturas del programa de Posdoctorado en Ciencias Aplicadas al Medio Ambiente',
-        }}
       >
         <Fragment slot="bg">
           <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
@@ -168,6 +241,9 @@ const tabs = [
         <Fragment slot="subtitle">
           Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
           desarrollar algún aspecto que le resulte de interés.
+        </Fragment>
+        <Fragment slot="image">
+          <AsignaturasProgramacion items={asignaturasProgramacion} />
         </Fragment>
       </HeroSection>
 

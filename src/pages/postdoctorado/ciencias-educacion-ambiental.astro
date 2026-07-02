@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
     title: 'Posdoctorado en Ciencias de la Educación Ambiental',
@@ -40,6 +41,77 @@ const tabs = [
     { label: '11. Inscripción', id: 'inscripcion' },
     { label: '12. Pagos', id: 'pagos' },
     { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+    {
+        id: '1',
+        title: 'La Educación Ambiental en el Sistema Educativo',
+        description:
+        'Proporcionar una visión general del concepto de Educación Ambiental (EA): sus definiciones, metas, principios fundamentales y objetivos a lo largo de su historia. Analizar los principales aspectos metodológicos de la EA, las estrategias de intervención y las herramientas enfocadas a la resolución de conflictos ambientales.',
+        units: [
+        'Principios Metodológicos de la Educación Ambiental',
+        'Estrategias de Intervención en Educación Ambiental',
+        'La Educación Ambiental en el curriculum escolar'
+        ],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-primary',
+        text: 'text-primary',
+        glow: 'shadow-primary/20',
+        },
+    },
+    {
+        id: '2',
+        title: 'Ecoauditoría Escolar y Agenda XXI',
+        description:
+        'Desarrollar el marco ético que envuelve a la educación ambiental y su relación con la tecnología. Analizar los proyectos de ecoauditoría escolar: sus características pedagógicas y metodológicas y ofrecer una visión de las características e importancia del Programa Agenda 21.',
+        units: [
+        'Ética ambiental, tecnología y valores ambientales',
+        'Ecoauditorías en centros escolares',
+        'Agenda XXI'
+        ],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-secondary',
+        text: 'text-secondary',
+        glow: 'shadow-secondary/20',
+        },
+    },
+    {
+        id: '3',
+        title: 'Educación Ambiental: Recursos y Equipamientos',
+        description:
+        'Proporcionar herramientas de análisis para los materiales educativos disponibles para la educación ambiental. Realizar un análisis de las características y tipologías de los Equipamientos de Educación Ambiental. Ofrecer una visión en profundidad de las aplicaciones del campo de la comunicación en la educación ambiental.',
+        units: [
+        'Recursos en educación ambiental',
+        'Equipamientos para la educación ambiental',
+        'La comunicación en la educación ambiental'
+        ],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-slate-500',
+        text: 'text-slate-500',
+        glow: 'shadow-slate-500/20',
+        },
+    },
+    {
+        id: '4',
+        title: 'Proyectos y Programas de Educación Ambiental',
+        description:
+        'Proporcionar una panorámica general sobre los fundamentos de los procesos participativos. Ofrecer una visión integradora de los programas y proyectos de EA, la base teórica para su definición y algunos ejemplos prácticos que pueden ayudar a su diseño. Analizar los procesos presentes más relevantes actualmente para la EA y profundizar en la educación para el desarrollo sostenible.',
+        units: [
+        'La participación, elemento básico en la educación ambiental',
+        'Proyectos y programas de educación ambiental',
+        'Futuro de la educación ambiental'
+        ],
+        icon: 'tabler:award',
+        tone: {
+        bg: 'bg-accent',
+        text: 'text-accent',
+        glow: 'shadow-accent/20',
+        },
+    },
 ];
 ---
 
@@ -150,15 +222,11 @@ const tabs = [
     <!-- 4. ESTRUCTURA -->
     <Estructura />
 
-    <!-- 5. ASIGNATURAS ************************************ -->
+    {/* 5. ASIGNATURAS */}
     <HeroSection
         id="asignaturas"
         tagline="Asignaturas"
         title="Asignaturas de la Programación"
-        image={{
-        src: '~/assets/images/postdocs/fvi-postdoc-CEA-Asignaturas.webp',
-        alt: 'Asignaturas del programa de Posdoctorado en Ciencias de la Educación Ambiental',
-        }}
     >
         <Fragment slot="bg">
         <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
@@ -166,6 +234,9 @@ const tabs = [
         <Fragment slot="subtitle">
         Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
         desarrollar algún aspecto que le resulte de interés.
+        </Fragment>
+        <Fragment slot="image">
+        <AsignaturasProgramacion items={asignaturasProgramacion} />
         </Fragment>
     </HeroSection>
 

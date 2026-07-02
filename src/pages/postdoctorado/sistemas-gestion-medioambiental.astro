@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
   title: 'Posdoctorado en Sistemas de Gestión Medioambiental',
@@ -40,6 +41,76 @@ const tabs = [
   { label: '11. Inscripción', id: 'inscripcion' },
   { label: '12. Pagos', id: 'pagos' },
   { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+  {
+    id: '1',
+    title: 'Introducción al SGA y Perfil del Auditor',
+    description:
+      'Explica los antecedentes de la Norma Internacional ISO 14001, el objetivo de un Sistema de Gestión Ambiental - SGA, el modelo: planear – hacer – verificar - actuar, así como el alcance del SGA. Aprenderás los conceptos de las auditorías del SGA y como debe ser el perfil de los auditores.',
+    units: [
+      'Introducción al Sistema de Gestión Ambiental',
+      'Sistemas de Gestión Ambiental – requisitos ISO 14001:2015',
+      'Conceptos de auditorías de Sistemas de Gestión Ambiental',
+      'Perfil del Auditor del SGA'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-primary',
+      text: 'text-primary',
+      glow: 'shadow-primary/20',
+    },
+  },
+  {
+    id: '2',
+    title: 'Planificación del SGA y su Auditoría',
+    description:
+      'Describe el requisito de planificación, incluyendo las acciones para abordar riesgos y oportunidades, los aspectos ambientales, metodologías para identificación y evaluación, requisitos, objetivos ambientales y su planificación. También se describen los elementos necesarios para la planificación y preparación de la auditoría del SGA.',
+    units: [
+      'Planificación de Sistemas de Gestión Ambiental',
+      'Planificación y preparación de la auditoría'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-secondary',
+      text: 'text-secondary',
+      glow: 'shadow-secondary/20',
+    },
+  },
+  {
+    id: '3',
+    title: 'Apoyo y Operación del SGA y Realización de la Auditoría',
+    description:
+      'Describe los requisitos de apoyo y operación, para explicar los recursos, la competencia, la toma de conciencia, la comunicación, la información, el planeamiento y control operacional y la preparación y respuesta ante emergencias. Además, se explican los pasos de las auditorías del SGA.',
+    units: [
+      'Apoyo: Recursos, competencia, toma de conciencia, comunicación e información',
+      'Operación: Planeamiento y control operacional',
+      'Proceso de auditoría del SGA'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-slate-500',
+      text: 'text-slate-500',
+      glow: 'shadow-slate-500/20',
+    },
+  },
+  {
+    id: '4',
+    title: 'Revisión y Mejora del SGA y Preparación del Informe de Auditoría',
+    description:
+      'Explica los requisitos para revisión y mejora del SGA, así como las herramientas de evaluación del desempeño y cumplimiento, las auditorías internas, su programa, la revisión por la dirección, las no conformidades, las acciones correctivas y la mejora continua. La metodología para la preparación de los resultados de la auditoría y la realización del informe correspondiente.',
+    units: [
+      'Revisión y mejora del Sistema de Gestión Ambiental',
+      'Elaboración del informe de auditoría'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-accent',
+      text: 'text-accent',
+      glow: 'shadow-accent/20',
+    },
+  },
 ];
 ---
 
@@ -151,15 +222,11 @@ const tabs = [
       <!-- 4. ESTRUCTURA -->
       <Estructura />
 
-      <!-- 5. ASIGNATURAS ************************************ -->
+       {/* 5. ASIGNATURAS */}
       <HeroSection
         id="asignaturas"
         tagline="Asignaturas"
         title="Asignaturas de la Programación"
-        image={{
-          src: '~/assets/images/postdocs/fvi_postDoc-SGM-Asignaturas.webp',
-          alt: 'Asignaturas del programa de Posdoctorado en Sistemas de Gestión Medioambiental',
-        }}
       >
         <Fragment slot="bg">
           <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
@@ -167,6 +234,9 @@ const tabs = [
         <Fragment slot="subtitle">
           Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
           desarrollar algún aspecto que le resulte de interés.
+        </Fragment>
+        <Fragment slot="image">
+          <AsignaturasProgramacion items={asignaturasProgramacion} />
         </Fragment>
       </HeroSection>
 

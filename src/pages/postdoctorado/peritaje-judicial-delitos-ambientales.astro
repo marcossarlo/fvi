@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
   title: 'Posdoctorado en Peritaje Judicial en materia de delitos ambientales',
@@ -40,6 +41,81 @@ const tabs = [
   { label: '11. Inscripción', id: 'inscripcion' },
   { label: '12. Pagos', id: 'pagos' },
   { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+  {
+    id: '1',
+    title: 'Conceptos básicos sobre la Praxis Pericial',
+    description:
+      'Explica el concepto del Dictamen Pericial y sus funciones, y resalta la importancia de saber incorporar en él, saberes técnicos con cierta profundidad y objetividad siguiendo, en el caso de un perito ambiental, el método científico. Esto ayudará al juez a tomar la decisión más justa valorando la prueba pericial conforme a una serie de criterios.',
+    units: [
+      'Conceptos básicos sobre la praxis del dictamen pericial',
+      'El perito',
+      'Pericial corporativa',
+      'Clases de peritos'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-primary',
+      text: 'text-primary',
+      glow: 'shadow-primary/20',
+    },
+  },
+  {
+    id: '2',
+    title: 'Elaboración del Dictamen Pericial Ambiental',
+    description:
+      'Revela que a la hora de redactar un informe pericial es primordial tener claro cuál es la función del mismo en el procedimiento judicial. Además, será de gran importancia la metodología que se emplee, la aportación de información que facilite la comprensión y que siempre deben ir apoyadas de pruebas reales que dificulten el que puedan ser rebatidos.',
+    units: [
+      'Informe pericial',
+      'Juramento o promesa',
+      'Contenidos del informe pericial',
+      'Fases del informe pericial'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-secondary',
+      text: 'text-secondary',
+      glow: 'shadow-secondary/20',
+    },
+  },
+  {
+    id: '3',
+    title: 'Praxis del Dictamen Pericial',
+    description:
+      'Aborda la segunda fase de la prueba pericial, aquella que tiene que ver con la intervención del perito en el acto del juicio. Esta parte es igual de importante que la aportación del informe pericial por lo que es fundamental ir preparados al juicio.',
+    units: [
+      'Praxis del dictamen pericial',
+      'Interrogatorio y preguntas al perito',
+      'Preparación, exposición y credibilidad',
+      'Defensa en el interrogatorio'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-slate-500',
+      text: 'text-slate-500',
+      glow: 'shadow-slate-500/20',
+    },
+  },
+  {
+    id: '4',
+    title: 'Derechos y Deberes del Perito. Responsabilidad y Sistema de tachas y recusación',
+    description:
+      'Identifica cuáles son nuestros derechos y obligaciones fundamentales como perito, las consecuencias de no cumplirlos pueden afectarnos seriamente, tanto económica como laboralmente o incluso ser acusados de algún delito penal. Otro de los temas primordiales que nos interesa conocer es cómo cobra un perito y los tipos de contrato que existen.',
+    units: [
+      'Derechos del perito',
+      'Deberes del perito',
+      'Responsabilidad del perito',
+      'Tacha y recusación del perito'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-accent',
+      text: 'text-accent',
+      glow: 'shadow-accent/20',
+    },
+  },
 ];
 ---
 
@@ -148,15 +224,11 @@ const tabs = [
       <!-- 4. ESTRUCTURA -->
       <Estructura />
 
-      <!-- 5. ASIGNATURAS ************************************ -->
+       {/* 5. ASIGNATURAS */}
       <HeroSection
         id="asignaturas"
         tagline="Asignaturas"
         title="Asignaturas de la Programación"
-        image={{
-          src: '~/assets/images/postdocs/fvi-postdoc-PJDA-Asignaturas.webp',
-          alt: 'Asignaturas del programa de Posdoctorado en Peritaje Judicial en materia de delitos ambientales',
-        }}
       >
         <Fragment slot="bg">
           <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
@@ -164,6 +236,9 @@ const tabs = [
         <Fragment slot="subtitle">
           Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
           desarrollar algún aspecto que le resulte de interés.
+        </Fragment>
+        <Fragment slot="image">
+          <AsignaturasProgramacion items={asignaturasProgramacion} />
         </Fragment>
       </HeroSection>
 

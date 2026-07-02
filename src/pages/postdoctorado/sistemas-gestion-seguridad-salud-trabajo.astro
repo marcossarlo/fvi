@@ -17,6 +17,7 @@ import InscripcionTasas from '~/components/postdoctorado/InscripcionTasas.astro'
 import Pagos from '~/components/postdoctorado/Pagos.astro';
 import Solicitudes from '~/components/postdoctorado/Solicitudes.astro';
 import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import AsignaturasProgramacion from '~/components/postdoctorado/AsignaturasProgramacion.astro';
 
 const metadata = {
   title: 'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
@@ -40,6 +41,77 @@ const tabs = [
   { label: '11. Inscripción', id: 'inscripcion' },
   { label: '12. Pagos', id: 'pagos' },
   { label: '13. Solicitudes', id: 'solicitudes' },
+];
+
+const asignaturasProgramacion = [
+  {
+    id: '1',
+    title: 'Introducción al Sistema de Gestión de la Salud y Seguridad en el Trabajo (SST) y Perfil del Auditor',
+    description:
+      'Explica los conceptos de la salud y seguridad en el trabajo, los antecedentes de la Norma Internacional ISO 45001, el objetivo de un Sistema de Gestión de la SST, el modelo: planear – hacer – verificar - actuar, así como el alcance del sistema',
+    units: [
+      'Conceptos de la salud y seguridad en el trabajo',
+      'Introducción al Sistema de Gestión de SST',
+      'Sistemas de Gestión de SST – requisitos ISO 45001:2018',
+      'Conceptos de auditorías de Sistemas de SST',
+      'Perfil del Auditor'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-primary',
+      text: 'text-primary',
+      glow: 'shadow-primary/20',
+    },
+  },
+  {
+    id: '2',
+    title: 'Planificación del Sistema de Gestión de la SST y su Auditoría',
+    description:
+      'Describe el requisito de Planificación, incluyendo las acciones para abordar riesgos y oportunidades, la identificación de peligros, la evaluación de riesgos y oportunidades para la SST y para el Sistema de Gestión, los objetivos de la SST y su planificación para lograrlos.',
+    units: [
+      'Planificación de Sistemas de Gestión de la Salud y Seguridad en el Trabajo',
+      'Planificación y preparación de la auditoría'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-secondary',
+      text: 'text-secondary',
+      glow: 'shadow-secondary/20',
+    },
+  },
+  {
+    id: '3',
+    title: 'Apoyo y Operación del Sistema de Gestión de la SST y Realización de la Auditoría',
+    description:
+      'Describe los requisitos de Apoyo y Operación, para explicar los recursos, la competencia, la comunicación, la información, el planeamiento y control operacional, eliminar peligros y reducir riesgos para la SST, las compras, los contratistas, y la preparación y respuesta ante emergencias.',
+    units: [
+      'Apoyo: Recursos, competencia, toma de Conciencia, comunicación e información documentada',
+      'Operación: Planificación y control operacional',
+      'Proceso de auditoría del Sistema de Gestión de la SST'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-slate-500',
+      text: 'text-slate-500',
+      glow: 'shadow-slate-500/20',
+    },
+  },
+  {
+    id: '4',
+    title: 'Revisión y Mejora del Sistema de Gestión de la SST y Preparación del Informe de Auditoría',
+    description:
+      'Explica los requisitos para Revisión y Mejora del Sistema de Gestión de la SST, así como las herramientas de evaluación del desempeño y cumplimiento, las auditorías internas, junto con su programa, la revisión por la dirección, las no conformidades, las acciones correctivas y la mejora continua.',
+    units: [
+      'Revisión y mejora del Sistema de Gestión de la Salud y Seguridad en el Trabajo (SST)',
+      'Elaboración del informe de auditoría'
+    ],
+    icon: 'tabler:award',
+    tone: {
+      bg: 'bg-accent',
+      text: 'text-accent',
+      glow: 'shadow-accent/20',
+    },
+  },
 ];
 ---
 
@@ -150,22 +222,21 @@ const tabs = [
         <!-- 4. ESTRUCTURA -->
         <Estructura />
 
-        <!-- 5. ASIGNATURAS ************************************ -->
+       {/* 5. ASIGNATURAS */}
         <HeroSection
             id="asignaturas"
             tagline="Asignaturas"
             title="Asignaturas de la Programación"
-            image={{
-                src: '~/assets/images/postdocs/fvi-postdoc-SGSST-Asignaturas.webp',
-                alt: 'Asignaturas del programa de Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
-            }}
-            >
+        >
             <Fragment slot="bg">
-                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
             </Fragment>
             <Fragment slot="subtitle">
-                Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
-                desarrollar algún aspecto que le resulte de interés.
+            Son asignaturas obligatorias propuestas en la programación vigente, y a la vez es vinculante con el <span class="text-primary font-semibold">Trabajo Final de Investigación</span> - <span class="text-primary font-semibold">TFI</span>, por cuanto el postDoc deberá escoger una de las asignaturas de la programación y
+            desarrollar algún aspecto que le resulte de interés.
+            </Fragment>
+            <Fragment slot="image">
+            <AsignaturasProgramacion items={asignaturasProgramacion} />
             </Fragment>
         </HeroSection>
 
