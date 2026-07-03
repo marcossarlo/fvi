@@ -1,0 +1,158 @@
+---
+import Image from '~/components/common/Image.astro';
+
+const steps = [
+    {
+        id: 1,
+        title: 'Plan de Trabajo Postdoctoral',
+        description:
+            'Consiste en la realización de un plan de actividades asignadas a los doctores dentro del programa y/o proyecto de investigación propuesto. Las tareas programadas se realizan bajo la supervisión de un director designado a tal efecto.',
+        theme: {
+            text: 'text-primary',
+            bgSolid: 'bg-primary',
+        },
+        image: '~/assets/images/postdocs/fvi-estructura-programa-01.jpg',
+        alt: 'Imagen representativa de la modalidad de proyecto de investigación ambiental del proyecto terminal de maestría.',
+    },
+    {
+        id: 2,
+        title: 'Asignaturas de la Programación',
+        description:
+            'Son asignaturas obligatorias propuestas en la programación vigente y se compone de varias áreas temáticas que fomentan la colaboración transnacional en muy diferentes campos de estudio, con enfoque en el avance de la ciencia y la investigación.',
+        theme: {
+            text: 'text-secondary',
+            bgSolid: 'bg-secondary',
+        },
+        image: '~/assets/images/postdocs/fvi-estructura-programa-02.jpg',
+        alt: 'Imagen representativa de la modalidad de proyectos verdes del proyecto terminal de maestría.',
+    },
+    {
+        id: 3,
+        title: 'Trabajo Final de Investigación -TFI',
+        description:
+            'En lo referente al TFI, los alumnos identifican una de las asignaturas de la programación y desarrollan algún aspecto que le resulte de interés y cuyo resultado debe ser la publicación de un artículo en una revista de nivel académico acorde a los requisitos exigidos en publicaciones de nivel internacional.',
+        theme: {
+            text: 'text-slate-500',
+            bgSolid: 'bg-slate-500',
+        },
+        image: '~/assets/images/postdocs/fvi-estructura-programa-03.jpg',
+        alt: 'Imagen representativa de la modalidad de buenas prácticas del proyecto terminal de maestría.',
+    },
+    {
+        id: 4,
+        title: 'Informe final avalado',
+        description:
+            'Consiste en la presentación de un informe del cumplimiento de las tareas previstas en el plan de trabajo propuesto y avalado por su Director.',
+        theme: {
+            text: 'text-accent',
+            bgSolid: 'bg-accent',
+        },
+        image: '~/assets/images/postdocs/fvi-estructura-programa-04.jpg',
+        alt: 'Imagen representativa de la modalidad de asesoría para emprendedores con riesgo social del proyecto terminal de maestría.',
+    },
+    {
+        id: 5,
+        title: 'Defensa del Trabajo Final de Investigación - TFI',
+        description:
+            'La defensa de la investigación es un acto público y consistirá en la exposición y defensa del trabajo ante un jurado seleccionado por el Comité de Posdoctorado. Los doctores presentes pueden formular cuestiones.',
+        theme: {
+            text: 'text-blue-900',
+            bgSolid: 'bg-blue-900',
+        },
+        image: '~/assets/images/postdocs/fvi-estructura-programa-05.jpg',
+        alt: 'Docente exponiendo ante un grupo de estudiantes durante una defensa académica.',
+    },
+];
+
+const mainSteps = steps.slice(0, 4);
+const finalStep = steps[4];
+---
+
+<div class="w-full mt-12 mb-16 relative z-10">
+    <div class="w-full grid grid-cols-1 min-[520px]:grid-cols-2 lg:grid-cols-4 gap-8 min-[520px]:gap-6 lg:gap-4 xl:gap-8">
+        {mainSteps.map((step, index) => (
+    <div class="flex flex-col relative group h-full">
+            <div class="flex flex-col items-center text-center space-y-4 mb-6">
+                <div class="w-20 h-20 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center p-1 transition-transform group-hover:scale-105 duration-300">
+                    <div class={`w-full h-full rounded-full ${step.theme.bgSolid} text-white flex items-center justify-center text-3xl font-bold`}>
+                        {step.id}
+                    </div>
+                </div>
+                <h4 class={`text-lg font-bold leading-snug flex items-center justify-center min-[520px]:h-20 lg:h-16 w-full ${step.theme.text} dark:brightness-125`}>
+                    {step.title}
+                </h4>
+            </div>
+
+            <div class="relative flex-grow flex flex-col border-2 border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-pageDark rounded-xl p-2 pb-2 shadow-sm transition-all duration-300 group-hover:shadow-md">
+                {index < mainSteps.length - 1 && (
+                    <div class="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-5 xl:-right-7 w-6 h-6 items-center justify-center text-gray-400 dark:text-gray-600 z-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="translate-x-1"><path d="M5 12h14"></path><path d="m13 18 6-6"></path><path d="m13 6 6 6"></path></svg>
+                    </div>
+                )}
+
+                <div class="relative p-2 flex-grow text-sm text-gray-700 dark:text-gray-300 z-10">
+                    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)', backgroundSize: '10px 10px' }}></div>
+                    <p class="relative z-10 leading-relaxed text-left">
+                        {step.description}
+                    </p>
+                </div>
+
+                <div class="relative w-full aspect-[4/3] sm:aspect-square rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800 mt-auto shadow-sm bg-gray-50 dark:bg-slate-800">
+                    <Image
+                        src={step.image}
+                        alt={step.alt}
+                        class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        width={400}
+                        height={400}
+                    />
+                    <div class={`absolute bottom-0 left-0 w-full h-2 ${step.theme.bgSolid}`}></div>
+                </div>
+            </div>
+
+            {index < mainSteps.length - 1 && (
+                <div class="min-[520px]:hidden flex items-center justify-center w-full h-8 mt-6 text-gray-400 dark:text-gray-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m18 13-6 6"></path><path d="m6 13 6 6"></path></svg>
+                </div>
+            )}
+    </div>
+        ))}
+    </div>
+
+    <div class="mt-8 lg:mt-10">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-[260px_minmax(0,1fr)] xl:grid-cols-[290px_minmax(0,1fr)] lg:gap-8">
+            <div class="flex flex-col items-center justify-center text-center space-y-4 px-4 py-2 sm:px-6 lg:px-0 lg:py-6">
+                <div class="w-20 h-20 rounded-full border-2 border-dashed border-gray-300 dark:border-gray-600 flex items-center justify-center p-1 transition-transform duration-300">
+                    <div class={`w-full h-full rounded-full ${finalStep.theme.bgSolid} text-white flex items-center justify-center text-3xl font-bold`}>
+                        {finalStep.id}
+                    </div>
+                </div>
+                <h4 class={`text-lg font-bold leading-snug flex items-center justify-center min-[520px]:h-20 lg:h-16 w-full ${finalStep.theme.text} dark:brightness-125`}>
+                    {finalStep.title}
+                </h4>
+            </div>
+
+            <div class="relative flex flex-col border-2 border-dashed border-gray-300 dark:border-gray-600 bg-white dark:bg-pageDark rounded-xl p-2 pb-2 shadow-sm transition-all duration-300 hover:shadow-md">
+                <div class="grid grid-cols-1 xl:grid-cols-[minmax(0,1.55fr)_200px] 2xl:grid-cols-[minmax(0,1.7fr)_300px] gap-4 h-full items-center">
+                    
+                    <div class="relative h-full text-sm text-gray-700 dark:text-gray-300 z-10 flex items-center">
+                        <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000)', backgroundSize: '10px 10px' }}></div>
+                        
+                        <p class="relative z-10 leading-relaxed text-left min-[520px]:text-base p-4 w-full">
+                            {finalStep.description}
+                        </p>
+                    </div>
+
+                    <div class="relative w-full aspect-square rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm bg-gray-50 dark:bg-slate-800">
+                        <Image
+                            src={finalStep.image}
+                            alt={finalStep.alt}
+                            class="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        />
+                        <div class={`absolute bottom-0 left-0 w-full h-2 ${finalStep.theme.bgSolid}`}></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
