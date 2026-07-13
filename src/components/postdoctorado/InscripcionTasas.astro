@@ -2,7 +2,7 @@
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
-import HeroSection from '~/components/widgets/HeroSection.astro';
+import Steps from '../widgets/Steps.astro';
 import Alert from '~/components/ui/Alert.astro';
 ---
 
@@ -76,175 +76,115 @@ import Alert from '~/components/ui/Alert.astro';
   </Fragment>
 </Features2>
 <!-- Tasas Académicas ******** -->
-<HeroSection title="Tasas Académicas">
-  <Fragment slot="content">
-    <div class="overflow-x-auto mt-6 w-full max-w-4xl mx-auto shadow-md rounded-lg">
-      <!-- Tasas Académicas -->
-      <table
-        class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
-      >
-        <thead class="border-none">
-          <tr class="border-none">
-            <th
-              rowspan="2"
-              class="p-3 md:p-4 align-middle text-base md:text-xl font-bold text-primary w-[40%] bg-transparent border-b-4 border-primary border-t-0 border-l-0 border-r-0"
-            >
-              Postdoctorado
-            </th>
-            <th
-              class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
-            >
-              Intensivo
-            </th>
-            <th
-              class="p-2 text-center w-[30%] bg-secondary text-white font-bold text-sm md:text-base opacity-90 border-l border-black/20 border-t-0 border-r-0 border-b-0"
-            >
-              Flexible
-            </th>
-          </tr>
-          <tr class="bg-primary text-white text-[10px] md:text-xs font-medium border-t border-slate-600">
-            <th class="p-1 border-r border-slate-600">(6 meses)</th>
-            <th class="p-1">(12 meses)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
-            <td
-              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 border-r border-black/10"
-              >Derechos de inscripción</td
-            >
-            <td
-              class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-x border-b border-gray-200 dark:border-slate-700"
-              >US$ 298</td
-            >
-            <td
-              class="p-3 md:p-4 text-center text-muted dark:text-gray-200 border-b border-gray-200 dark:border-slate-700"
-              >US$ 596</td
-            >
-          </tr>
-          <tr class="text-sm md:text-base">
-            <td
-              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 border-r border-black/10"
-              >Costo del Programa</td
-            >
-            <td
-              class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800 border-x border-gray-200 dark:border-slate-700"
-              >US$ 3198</td
-            >
-            <td class="p-3 md:p-4 text-center text-muted dark:text-gray-200 bg-gray-50 dark:bg-slate-800">US$ 3798</td
-            >
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="pt-12 text-base md:text-xl">
-      Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del
-      Postdoctorado en 6 cuotas sin intereses de la siguiente forma:
-    </p>
+  <Steps
+    title="Tasas Académicas"
+    subtitle='◉ Los derechos de inscripción para el programa de Postdoctorado (formato on-line) en su <strong>modalidad Intensiva</strong> (<strong>6 meses</strong>) son de <span class="font-bold text-primary">298 dólares</span> y en su <strong>modalidad Flexible</strong> (<strong>12 meses</strong>) son de <span class="font-bold text-primary">596 dólares</span>.<br><br>◉ El costo del programa en su <strong>modalidad Intensiva</strong> (<strong>6 meses</strong>) es de <span class="font-bold text-primary">3,198 dólares</span> y en su <strong>modalidad Flexible</strong> (<strong>12 meses</strong>) es de <span class="font-bold text-primary">3,798 dólares</span>.<br><br> ◉ Acorde a las tasas académicas y con arreglo a las condiciones de beca se podrá fraccionar el importe del Postdoctorado en 6 cuotas sin intereses de la siguiente forma:'
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment> 
+</Steps>
 
-    <!-- Alternativas de Pago -->
-    <div class="overflow-x-auto mt-6 w-full max-w-5xl mx-auto shadow-md rounded-lg">
-      <table
-        class="w-full border-collapse bg-white dark:bg-pageDark border border-slate-200 dark:border-slate-700 text-xs md:text-sm"
-      >
-        <thead class="border-none">
-          <tr class="border-none">
-            <th
-              rowspan="2"
-              class="p-3 md:p-4 align-middle text-primary font-bold text-center w-[20%] border-b-4 border-primary text-sm md:text-base border-t-0 border-l-0 border-r-0"
-            >
-              Modalidad del Postdoctorado
-            </th>
-            <th
-              colspan="2"
-              class="p-2 text-center text-white bg-primary font-bold text-sm md:text-base border-r border-slate-600"
-            >
-              Costos del programa
-            </th>
-            <th
-              class="p-2 text-center text-white bg-secondary font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
-            >
-              Alternativa 1: Al Contado
-            </th>
-            <th
-              colspan="2"
-              class="p-2 text-center text-white bg-secondary opacity-90 font-bold text-sm md:text-base border-l border-black/20 border-t-0 border-r-0 border-b-0"
-            >
-              Alternativa 2: Financiado
-            </th>
-          </tr>
-          <tr class="bg-primary opacity-90 text-white border-t border-slate-600 font-medium">
-            <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
-              >Precio Normal</th
-            >
-            <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px]"
-              >Precio con Beca 50%</th
-            >
-            <th
-              class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] bg-primary/80 leaders-tight"
-              >(Descuento del 5%)</th
-            >
-            <th class="p-1 border-r border-slate-600 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight"
-              >Número de cuotas</th
-            >
-            <th class="p-1 text-[10px] md:text-xs tracking-wider min-h-[50px] leading-tight border-none"
-              >Cuota mensual</th
-            >
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b border-gray-200 dark:border-slate-700 text-sm md:text-base">
-            <td
-              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-80 dark:bg-slate-700 text-center border-r border-black/10"
-              >Intensivo</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-              >US$ 3,198</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-              >US$ 1,599</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
-              >US$ 1,519</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
-              >6</td
-            >
-            <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 267</td>
-          </tr>
-          <tr class="text-sm md:text-base">
-            <td
-              class="p-3 md:p-4 font-semibold text-white bg-primary opacity-70 dark:bg-slate-700 text-center border-r border-black/10"
-              >Flexible</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-              >US$ 3,798</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[15%]"
-              >US$ 1,899</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[25%]"
-              >US$ 1,804</td
-            >
-            <td
-              class="p-2 text-center text-muted dark:text-gray-300 border-r border-gray-100 dark:border-slate-800 w-[12.5%]"
-              >6</td
-            >
-            <td class="p-2 text-center text-muted dark:text-gray-300 w-[12.5%]">US$ 317</td>
-          </tr>
-        </tbody>
-      </table>
+{/* TABLAS DE PRECIOS */}
+<WidgetWrapper containerClass="max-w-4xl mx-auto pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-1">       
+
+        {/* Card 2 (Centro): Intensivo (DESTACADA) */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-xl border border-secondary relative overflow-hidden transition-transform duration-300 hover:-translate-y-1 transform md:scale-105 z-10">
+            <div class="absolute top-0 right-0 bg-secondary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-20 uppercase tracking-wider shadow-sm">6 meses</div>
+            <div class="bg-orange-100/80 dark:bg-slate-800 p-5 text-center border-b border-orange-300 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-secondary uppercase leading-tight">Modalidad<br/>Intensivo</h3>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-orange-200 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Precio Normal</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-3xl text-muted">3,198 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                    <div class="text-center pb-4 border-b border-orange-200 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Precio con Beca 50%</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-3xl text-secondary">1,599 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-orange-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-orange-100 dark:border-slate-700 text-center">
+                        <span class="text-xs font-bold text-secondary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-sm text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-2xl text-slate-800 dark:text-slate-200">1,519 </span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-orange-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-orange-100 dark:border-slate-700">
+                        <div class="text-center border-b border-orange-100 dark:border-slate-700 pb-2 mb-3">
+                            <span class="text-xs font-bold text-secondary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Cuotas:</span>
+                            <span class="font-bold text-white bg-secondary dark:bg-slate-700 px-2 py-0.5 rounded border border-orange-100 dark:border-slate-700 text-secondary">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-xl text-secondary">267 <span class="text-xs font-normal text-slate-600">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {/* Card 1: Beca Fondo Verde */}
+        <div class="flex flex-col bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-primary relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg z-20 uppercase tracking-wider shadow-sm">12 meses</div>
+            <div class="bg-green-50 dark:bg-slate-800 p-4 text-center border-b border-green-400 dark:border-slate-700">
+                <h3 class="text-xl font-bold text-primary uppercase leading-tight">Modalidad<br/>Flexible</h3>
+            </div>
+            <div class="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                    <div class="text-center pb-4 border-b border-green-300 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Precio Normal</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-2xl text-muted dark:text-slate-200">3,798 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                    <div class="text-center pb-4 border-b border-green-300 dark:border-slate-700">
+                        <span class="text-sm font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wide">Precio con Beca 50%</span>
+                        <div class="mt-2">
+                            <span class="font-bold text-2xl text-primary dark:text-slate-200">1,899 </span> <span class="text-slate-600 dark:text-slate-400">dólares</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex flex-col gap-4">
+                    {/* Alt 1 */}
+                    <div class="bg-green-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-green-300 dark:border-slate-700 text-center">
+                        <span class="text-xs font-bold text-primary uppercase block mb-1">Alternativa 1: Al Contado</span>
+                        <span class="text-sm text-muted block mb-2">(Descuento del 5%)</span>
+                        <span class="font-bold text-xl text-slate-800 dark:text-slate-200">1,804 </span> <span class="text-sm text-slate-600 dark:text-slate-400">dólares</span>
+                    </div>
+                    {/* Alt 2 */}
+                    <div class="bg-green-50/50 dark:bg-slate-800/50 p-4 rounded-lg border border-green-300 dark:border-slate-700">
+                        <div class="text-center border-b border-green-100 dark:border-slate-700 pb-2 mb-3">
+                            <span class="text-xs font-bold text-primary uppercase">Alternativa 2: Financiado</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Cuotas:</span>
+                            <span class="text-white font-bold bg-primary dark:bg-slate-700 px-2 py-0.5 rounded border border-green-300 dark:border-slate-700 text-primary">6</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm py-1 mt-1">
+                            <span class="text-muted font-bold dark:text-slate-400">Mensual:</span>
+                            <span class="font-bold text-lg text-primary">317 <span class="text-xs font-normal text-slate-600">USD</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- Información adicional sobre costos -->
-    <WidgetWrapper containerClass="max-w-5xl ml-0 mr-auto mt-6 p-0 text-left items-start">
-      <Alert variant="warning" title="Importante">
+    
+    <Alert variant="warning" title="Importante" classes={{ container: 'mt-12' }}>
         <p>Existen cargos adicionales por derechos de examen (<strong>199 US$</strong>), este arancel incluye:</p>
         <ul class="list-disc ml-6 mt-2 space-y-1">
           <li>Revisión del Informe Final por parte del Director.</li>
@@ -261,11 +201,11 @@ import Alert from '~/components/ui/Alert.astro';
           <li>Precios por el trámite de legalización única o “Apostilla de La Haya”.</li>
           <li>Gastos de envío a su país de residencia.</li>
         </ul>
-      </Alert>
-    </WidgetWrapper>
-  </Fragment>
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-  </Fragment>
-</HeroSection>
-      <!-- Fin INSCRIPCION Y TASAS ACADÉMICAS ************************************ -->
+    </Alert>
+
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+    
+</WidgetWrapper>
+<!-- Fin INSCRIPCION Y TASAS ACADÉMICAS ************************************ -->

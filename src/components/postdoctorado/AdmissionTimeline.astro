@@ -1,0 +1,119 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const steps = [
+{
+    id: 1,
+    title: 'Solicitud de Inscripción',
+    description: 'Envío de solicitud y documentación complementaria.',
+    icon: 'tabler:file-description',
+},
+{
+    id: 2,
+    title: 'Comité',
+    description: 'Un comité evalúa sus antecedentes académicos y profesionales.',
+    icon: 'tabler:users',
+},
+{
+    id: 3,
+    title: 'Becas',
+    description: 'La Oficina de Becas realizará la tramitación. Es obligatorio que el alumno cumpla con las formalidades.',
+    icon: 'tabler:certificate-2',
+},
+{
+    id: 4,
+    title: 'Admisión',
+    description: 'Verificado que cumple con los requisitos para poder participar en el postdoctorado nos pondremos en contacto con usted para comunicarle su aceptación.',
+    icon: 'tabler:user-check',
+},
+{
+    id: 5,
+    title: 'Matrícula',
+    description: 'Recibirá un correo con la Formalización de matrícula y ficha de pago e información sobre las alternativas para los costos.',
+    icon: 'tabler:credit-card',
+},
+{
+    id: 6,
+    title: 'Inicio',
+    description: '24 horas antes del inicio enviaremos las claves de acceso al aula virtual y documentación adicional.',
+    icon: 'tabler:rocket',
+},
+];
+---
+
+<div class="w-full mt-6 md:mt-10 mb-10">
+<!-- Mobile & Tablet: Vertical Timeline -->
+<div class="lg:hidden relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-1 before:bg-gray-200 dark:before:bg-slate-700">
+    {steps.map((step) => (
+    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+        <!-- Number Dot -->
+        <div class={`flex items-center justify-center w-10 h-10 rounded-full border-4 border-blue-50 dark:border-pageDark ${step.id % 2 !== 0 ? 'bg-primary' : 'bg-secondary'} text-white font-bold text-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md z-10`}>
+        {step.id}
+        </div>
+        <!-- Content Card -->
+        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-page p-5 rounded-xl border border-gray-200 dark:border-slate-700 shadow-sm">
+        <div class="flex items-center gap-3 mb-2">
+            <Icon name={step.icon} class={`w-6 h-6 ${step.id % 2 !== 0 ? 'text-primary' : 'text-secondary'}`} />
+            <h4 class="font-bold text-lg text-slate-800 dark:text-white text-left">{step.title}</h4>
+        </div>
+        <p class="text-sm text-muted dark:text-slate-400 text-left">{step.description}</p>
+        </div>
+    </div>
+    ))}
+</div>
+
+<!-- Desktop: Horizontal Alternating Timeline -->
+  <div class="hidden lg:block relative py-12 px-4">
+    <div class="grid grid-cols-6 gap-2">
+      {steps.map((step) => (
+        <div class="flex flex-col items-center">
+          
+          <!-- Top Row (Odd Cards) -->
+          <div class="h-48 flex flex-col justify-end items-center w-full">
+            {step.id % 2 !== 0 && (
+              <div class="relative mb-6">
+                <div class="bg-white dark:bg-page p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-lg w-[170px] xl:w-[190px] min-h-[140px] flex flex-col items-center justify-start transition-transform hover:-translate-y-1">
+                  <Icon name={step.icon} class="w-8 h-8 mb-2 text-primary" />
+                  <h4 class="font-bold text-[15px] mb-1 leading-tight text-primary">{step.title}</h4>
+                  <p class="text-sm text-muted dark:text-slate-400 leading-snug text-center">{step.description}</p>
+                  <!-- Pointer arrow -->
+                  <div class="absolute left-1/2 -translate-x-1/2 bottom-[-8px] w-4 h-4 bg-white dark:bg-page border-b border-r border-gray-200 dark:border-slate-700 rotate-45"></div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <!-- Middle Row (Line & Dots) -->
+          <div class="relative flex items-center justify-center w-full my-4">
+            <!-- Connection line -->
+            <div class={`absolute h-1 bg-gray-200 dark:bg-slate-700 z-0 
+              ${step.id === 1 ? 'left-1/2 right-0' : step.id === 6 ? 'left-0 right-1/2' : 'left-0 right-0'}`}>
+            </div>
+            
+            <!-- The Dot -->
+            <div class={`relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full text-white font-bold text-xl md:text-2xl border-4 border-blue-50 dark:border-pageDark shadow-xl z-10 transition-transform hover:scale-110 ${step.id % 2 !== 0 ? 'bg-primary' : 'bg-secondary'}`}>
+              {step.id}
+            </div>
+          </div>
+
+          <!-- Bottom Row (Even Cards) -->
+          <div class="h-48 flex flex-col justify-start items-center w-full">
+            {step.id % 2 === 0 && (
+              <div class="relative mt-6">
+                <div class="bg-white dark:bg-page p-4 rounded-xl border border-gray-200 dark:border-slate-700 shadow-lg w-[170px] xl:w-[190px] min-h-[140px] flex flex-col items-center justify-start transition-transform hover:translate-y-1">
+                  <!-- Pointer arrow -->
+                  <div class="absolute left-1/2 -translate-x-1/2 top-[-8px] w-4 h-4 bg-white dark:bg-page border-t border-l border-gray-200 dark:border-slate-700 rotate-45"></div>
+                  
+                  <Icon name={step.icon} class="w-8 h-8 mb-2 text-secondary" />
+                  <h4 class="font-bold text-[15px] mb-1 leading-tight text-secondary">{step.title}</h4>
+                  <p class="text-sm text-muted dark:text-slate-400 leading-snug text-center">{step.description}</p>
+                </div>
+              </div>
+            )}
+          </div>
+          
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 ---
 import Features3 from '~/components/widgets/Features3.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
+import AdmissionTimeline from '~/components/postdoctorado/AdmissionTimeline.astro';
 ---
 
 <!-- 10. ¿Cómo aplicar? ******************************** -->
@@ -26,13 +27,12 @@ import HeroSection from '~/components/widgets/HeroSection.astro';
         classes={{ container: 'max-w-4xl' }}
       />
       <!-- fases del proceso de admisión -->
-      <HeroSection
+       <HeroSection
         title="Las fases del proceso de admisión"
-        image={{
-          src: '~/assets/images/postdocs/fvi-proceso-admision.webp',
-          alt: 'Las fases del proceso de admisión al posdoctorado',
-        }}
+        subtitle='El proceso para la inscripción al programa de maestría es el siguiente:'
       >
-        <Fragment slot="subtitle"> El proceso para la inscripción al programa de postdoctorado es el siguiente: </Fragment>
+        <Fragment slot="content">
+          <AdmissionTimeline />
+        </Fragment>
       </HeroSection>
       <!-- Fin ¿CÓMO APLICAR? ************************************ -->
