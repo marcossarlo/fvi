@@ -7,11 +7,8 @@ import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
-import ProjectAlternatives from '~/components/maestria/ProjectAlternatives.astro';
-import ProjectTimeline from '~/components/maestria/ProjectTimeline.astro';
-import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
+import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
 import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
-import AdmissionTimeline from '~/components/maestria/AdmissionTimeline.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
@@ -26,6 +23,7 @@ import { faculty } from '~/data/faculty';
 import Features from '~/components/widgets/Features.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Degree from '~/components/common/Degree.astro';
+import HowToApply from '~/components/maestria/HowToApply.astro';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social',
@@ -282,32 +280,7 @@ const tabs = [
       </HeroSection>
 
       {/* 5. PROYECTO PTM (commond) */}
-      <HeroSection
-        id="proyecto"
-        tagline="PTM"
-        title='Proyecto Terminal de Maestría - <span class="text-primary">PTM</span>'
-        subtitle='Durante el segundo año del programa tendrás que trabajar en un proyecto terminal que es parte obligatoria para obtener el grado de maestría. En el <strong>PTM</strong> aplicarás los conocimientos y las competencias adquiridas en las asignaturas del programa, en el contexto de la conservación, el uso sostenible del territorio y de los recursos naturales.'
-      >
-        <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-        <Fragment slot="content">
-          <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 alternativas diferentes de proyecto terminal</h3>
-          
-          <ProjectAlternatives />   
-          
-          <p class="text-base text-muted dark:text-slate-400 mt-4 mb-8 text-left">
-            El proyecto será identificado y presentado durante el tercer trimestre. Sea cual sea la tipología de trabajo por la que se opte, cada participante cuenta con el seguimiento del Director del PTM que le guía y le brinda apoyo para asegurar el desarrollo completo del proyecto durante el segundo año. El director orienta al participante, no hace el trabajo en su lugar. Su papel es guiarle en el enfoque de las preguntas de fondo y en los aspectos metodológicos.
-          </p>
-
-          <ProjectTimeline />
-
-          <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 modalidades en las que se pueden presentar el proyecto terminal de maestría</h3>
-
-          <ProjectModalities />
-
-        </Fragment>
-      </HeroSection>
+      <ProjectPTM />
 
       {/* 6. COMO SE ESTUDIA (commond) */}
       <HowToStudy />
@@ -467,17 +440,8 @@ const tabs = [
       {/* 11. BECAS (commond) */}
       <Scholarship />
 
-      {/* 12. COMO APLICAR */}
-      <HeroSection
-        id="aplicar"
-        tagline="¿Cómo aplicar?"
-        title="Las fases del proceso de admisión"
-        subtitle='El proceso para la inscripción al programa de maestría es el siguiente:'
-      >
-        <Fragment slot="content">
-          <AdmissionTimeline />
-        </Fragment>
-      </HeroSection>
+      {/* 12. COMO APLICAR (commond) */}
+      <HowToApply />
 
       {/* 13. INSCRIPCIÓN (commond) */}
       <Registration />

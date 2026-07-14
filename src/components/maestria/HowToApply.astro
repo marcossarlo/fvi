@@ -1,0 +1,15 @@
+---
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import AdmissionTimeline from '~/components/maestria/AdmissionTimeline.astro';
+---
+{/* 12. COMO APLICAR (commond) */}
+<HeroSection
+    id="aplicar"
+    tagline="¿Cómo aplicar?"
+    title="Las fases del proceso de admisión"
+    subtitle='El proceso para la inscripción al programa de maestría es el siguiente:'
+    >
+    <Fragment slot="content">
+        <AdmissionTimeline />
+    </Fragment>
+</HeroSection>

@@ -1,0 +1,33 @@
+---
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProjectAlternatives from '~/components/maestria/ProjectAlternatives.astro';
+import ProjectTimeline from '~/components/maestria/ProjectTimeline.astro';
+import ProjectModalities from '~/components/maestria/ProjectModalities.astro';
+---
+
+{/* Proyecto PTM */}
+<HeroSection
+    id="proyecto"
+    tagline="PTM"
+    title='Proyecto Terminal de Maestría - <span class="text-primary">PTM</span>'
+    subtitle='Durante el segundo año del programa tendrás que trabajar en un proyecto terminal que es parte obligatoria para obtener el grado de maestría. En el <strong>PTM</strong> aplicarás los conocimientos y las competencias adquiridas en las asignaturas del programa, en el contexto de la conservación, el uso sostenible del territorio y de los recursos naturales.'
+>
+    <Fragment slot="bg">
+        <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+    </Fragment>
+    <Fragment slot="content">
+        <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 alternativas diferentes de proyecto terminal</h3>
+
+        <ProjectAlternatives />
+
+        <p class="text-base text-muted dark:text-slate-400 mt-4 mb-8 text-left">
+        El proyecto será identificado y presentado durante el tercer trimestre. Sea cual sea la tipología de trabajo por la que se opte, cada participante cuenta con el seguimiento del Director del PTM que le guía y le brinda apoyo para asegurar el desarrollo completo del proyecto durante el segundo año. El director orienta al participante, no hace el trabajo en su lugar. Su papel es guiarle en el enfoque de las preguntas de fondo y en los aspectos metodológicos.
+        </p>
+
+        <ProjectTimeline />
+
+        <h3 class="text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-8">Hay 4 modalidades en las que se pueden presentar el proyecto terminal de maestría</h3>
+
+        <ProjectModalities />
+    </Fragment>
+</HeroSection>
