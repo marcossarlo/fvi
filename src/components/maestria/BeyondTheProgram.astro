@@ -1,0 +1,26 @@
+---
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import Features from '~/components/widgets/Features.astro';
+import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
+---
+
+{/* Pasantía Técnica Internacional (Más allá del Programa) */}
+<Features
+    title="Más allá del Programa"
+    subtitle='Como complemento al exigente currículo académico, el Instituto ofrece a los alumnos de la Maestría, varias opciones, que les permiten enriquecer su experiencia Fondo Verde desde distintas perspectivas. Los alumnos, tendrán la posibilidad de vivir experiencias académicas internacionales de corta duración. <br> Dentro de esta experiencia hay tres ciudades disponibles como <strong>Selva Central</strong>, <strong>San José</strong> o <strong>La Plata</strong>:'
+    classes={{ container: 'mb-0 pb-0' }}
+/>
+
+<HeroSection
+    tagline="Pasantía Técnica Internacional"
+    title="Inmersión de capacitación intensiva en programas de apoyo al desarrollo sostenible"
+    subtitle='La <strong>Pasantía Técnica Internacional</strong><span class="text-secondary">*</span>, es un viaje de estudios opcional, de una semana de duración, a un destino internacional. Se elabora un Plan Individual de Capacitación, acorde a los temas de interés y tiempo de permanencia. La pasantía es esencialmente teórica-práctica, los pasantes participan de los proyectos de las entidades anfitrionas y de todas las actividades de capacitación programadas por el equipo técnico local. Visitan iniciativas de proyectos e interactúan con los beneficiarios.'
+    classes={{ container: 'mt-0 pt-0' }}
+>
+    <Fragment slot="content">
+        <ProjectLocations />
+        <p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-6 w-full">
+            * Este servicio no está incluido en el coste de la maestría.
+        </p>
+    </Fragment>
+</HeroSection>

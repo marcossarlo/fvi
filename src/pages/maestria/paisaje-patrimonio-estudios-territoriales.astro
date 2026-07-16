@@ -8,7 +8,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
 import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
-import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
+import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
 import { paisajePatrimonioEstudiosTerritorialesCurriculum } from '~/data/maestria/paisaje-patrimonio-estudios-territoriales';
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
@@ -26,9 +26,9 @@ import Degree from '~/components/common/Degree.astro';
 import HowToApply from '~/components/maestria/HowToApply.astro';
 
 const metadata = {
-    title: 'Maestría en Medio Ambiente y Responsabilidad Social',
-    description: 'Estudia la Maestría online en Medio Ambiente y Responsabilidad Social. Fórmate como líder en gestión ambiental, RSC y estrategias de economía sostenible.',
-    keywords: 'maestría medio ambiente, responsabilidad social, gestión ambiental, economía sostenible, RSC, ISO 14001, proyecto terminal, becas Fondo Verde',
+    title: 'Maestría en Paisaje, Patrimonio y Estudios Territoriales',
+    description: 'Maestría online en Paisaje, Patrimonio y Estudios Territoriales (24 meses). Aprende métodos de análisis, gestión y conservación del paisaje, planificación territorial y valoración patrimonial. Con un claustro académico de alto nivel y desarrolla proyectos sostenibles para enfrentar la crisis paisajística actual',
+    keywords: 'Maestría, Paisaje, Patrimonio, Estudios Territoriales, Doctorado, Medio Ambiente, Planeación del Desarrollo, Fondo Verde, Online',
 };
 
 const facultyIds = [
@@ -81,7 +81,7 @@ const tabs = [
         },
         ]}
         image={{
-        src: '~/assets/images/maestrias/fvi-msc-paisaje-patrimonio-estudios-territoriales.webp',
+        src: '~/assets/images/maestrias/fvi-msc-paisaje-patrimonio-estudios-territoriales.jpg',
         alt: 'Imagen de la Maestría en Paisaje, Patrimonio y Estudios Territoriales',
         }}
     />
@@ -292,112 +292,97 @@ const tabs = [
             id="beneficios"
             tagline='Beneficios'
             title="¿Cómo te beneficiará este programa?"
-            subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, será capaz de:'
+            subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span>, será capaz de:'
             columns={2}
             items={[
-            {
-                title: 'Visión Integral',
-                description: 'Adquirir una visión integral de los problemas ambientales para desarrollar proyectos con herramientas de sostenibilidad.',
-                icon: 'tabler:world',
-            },
-            {
-                title: 'Normativa y Auditoría',
-                description: 'Conocer la normativa pertinente y las herramientas de Gestión, Reporting, y Auditoría de la RSC: ISO 9001, ISO 14001, OHSAS 18001, SA 8000, SGE 21.',
-                icon: 'tabler:gavel',
-            },
-            {
-                title: 'Fundamentos Socio-económicos',
-                description: 'Comprender los fundamentos socio-económicos y científicos de los problemas relacionados con la biosfera y ofrecer una solución con perspectiva interdisciplinaria, integradora y sistémica.',
-                icon: 'tabler:brain',
-            },
-            {
-                title: 'Desarrollo Sostenible',
-                description: 'Obtener los conocimientos y habilidades necesarias para contribuir a la construcción de una sociedad socio-económica y ambientalmente sostenible.',
-                icon: 'tabler:building-community',
-            },
-            {
-                title: 'Gestión Organizacional',
-                description: 'Identificar y responder a los desafíos que enfrenta una gestión ambiental integral y sistémica de organizaciones públicas, privadas o del tercer sector ya sea como parte de un proceso de desarrollo o de transformación con responsabilidad socio-ambiental.',
-                icon: 'tabler:chart-arrows-vertical',
-            },
-            {
-                title: 'Resolución de Conflictos',
-                description: 'Tomar conciencia de los conflictos socio-ambientales subyacentes a la actividad económica y proponer soluciones sistémicas e integradoras.',
-                icon: 'tabler:puzzle',
-            },
-            {
-                title: 'Responsabilidad Social (RSC)',
-                description: 'Ser conocedor de la función de la responsabilidad social corporativa en la empresa moderna, su desempeño social y ambiental, y la aplicación del ISO 26,000.',
-                icon: 'tabler:briefcase',
-            },
+                {
+                    title: 'Análisis y caracterización',
+                    description: 'Aplicar herramientas, metodologías y procedimientos para realizar estudios de análisis y caracterización del paisaje.',
+                    icon: 'tabler:chart-bar',
+                },
+                {
+                    title: 'Patrimonio y tipologías',
+                    description: 'Definir tipologías de patrimonio cultural y natural, paisajes culturales, turismo, conservación y gestión del paisaje en localidades urbanas y rurales.',
+                    icon: 'tabler:building-arch',
+                },
+                {
+                    title: 'Ordenación territorial',
+                    description: 'Realizar informes y estudios de ordenación y planificación territorial y paisajística.',
+                    icon: 'tabler:map',
+                },
+                {
+                    title: 'Elementos del territorio',
+                    description: 'Estudiar los elementos más relevantes presentes en el territorio y el paisaje para comprender y gestionarlo de manera sostenible.',
+                    icon: 'tabler:compass',
+                },
+                {
+                    title: 'Valoración del paisaje',
+                    description: 'Realizar una valoración del paisaje para interpretarlo en clave ambiental, cultural y social.',
+                    icon: 'tabler:leaf',
+                },
+                {
+                    title: 'Diagnóstico y prospectiva',
+                    description: 'Analizar información sobre paisaje, patrimonio, territorio y ciudad para elaborar diagnósticos y estudios de prospectiva.',
+                    icon: 'tabler:clipboard-list',
+                },
+                {
+                    title: 'Métodos de integración',
+                    description: 'Poner en práctica métodos de análisis, caracterización, valoración y estudios de integración del paisaje.',
+                    icon: 'tabler:layers-intersect',
+                },
+
             ]}
         />
+
         {/* Potencia tus salidas */}
         <Features3
+            tagline='Salidas Profesionales'
             title="Potencia tus Salidas Profesionales"
-            subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, prepara al alumno/a para trabajar en organizaciones tanto públicas como privadas, son profesionales que cultivan la ética en los negocios, la buena praxis y la responsabilidad corporativa. Las salidas profesionales, se centran claramente en:'
+            subtitle='Se espera que el egresado de la la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span>, pueda ser demandado tanto en empresas y organizaciones de la Administración o como en otras de índole privada, en los ámbitos del Medio Ambiente y Sostenibilidad. Las salidas profesionales, se centran claramente en:'
             columns={3}
             defaultIcon="tabler:point-filled"
             items={[
-            {
-                title: 'Organizaciones ambientales',
-                description: 'En posiciones operativas y estratégicas en organizaciones que se dedican específicamente a la investigación y conservación de los recursos naturales.',
-            },
-            {
-                title: 'Unidades de negocios',
-                description: 'En unidades de negocios ambientales de organizaciones públicas y privadas de grandes dimensiones.',
-            },
-            {
-                title: 'Comunicación de impacto',
-                description: 'Organizaciones o unidades de negocios que comunican impactos socio/ambientales a la comunidad en general.',
-            },
-            {
-                title: 'Equipos de investigación',
-                description: 'Como parte de un equipo interdisciplinario de investigación socio-económico y ambiental.',
-            },
-            {
-                title: 'Dirección o Gestión',
-                description: 'Director o Gestor del área de Medio Ambiente de empresas.',
-            },
-            {
-                title: 'Líder en Sostenibilidad',
-                description: 'Profesional Líder en la planificación, desarrollo, gestión e implementación de diferentes estrategias de Sostenibilidad, Medio Ambiente y RSC.',
-            },
-            {
-                title: 'Responsable de sistemas',
-                description: 'Responsable del sistema de gestión medioambiental en empresa.',
-            },
-            {
-                title: 'Técnico y consultoría',
-                description: 'Técnico de outsourcing ambiental y consultoría de proyectos.',
-            },
-            {
-                title: 'Implantación de sistemas',
-                description: 'Consultor en implantación de sistemas de gestión medioambiental.',
-            },
-            {
-                title: 'Educación ambiental',
-                description: 'Coordinador de equipos de educación ambiental/Director de centro de educación ambiental.',
-            },
-            {
-                title: 'Gestor ambiental',
-                description: 'Gestor ambiental de industrias y/o empresas públicas y privadas que enfrentan grandes retos socio/ambientales en su gestión.',
-            },
+                {
+                    title: 'Asesor en proyectos',
+                    description: 'Asesorar en la elaboración de proyectos de protección, ordenación y gestión del paisaje, participando en equipos pluridisciplinares.',
+                },
+                {
+                    title: 'Consultor privado',
+                    description: 'Trabajar como consultor en despachos de arquitectura, urbanismo, ingeniería, infraestructuras y paisajismo.',
+                },
+                {
+                    title: 'Jefe de diseño',
+                    description: 'Integrar equipos y consultoras en estudios de gestión cultural, patrimonial y turística.',
+                },
+                {
+                    title: 'Técnico en patrimonio cultural',
+                    description: 'Participar en equipos de planificación y gestión en el ámbito del patrimonio cultural.',
+                },
+                {
+                    title: 'Técnico en catálogos de paisaje',
+                    description: 'Gestionar y organizar Catálogos de Paisaje, Cartas de Paisaje, estudios e informes de impacto e integración paisajística.',
+                },
+                {
+                    title: 'Técnico en sistemas naturales',
+                    description: 'Evaluar el estado de sistemas naturales y procesos de cambio global.',
+                },
+                {
+                    title: 'Analista y gestor público',
+                    description: 'Desarrollar políticas de intervención y gestión en territorio y paisaje desde áreas técnicas de la administración pública.',
+                },
+                {
+                    title: 'Gestor de áreas protegidas',
+                    description: 'Gestionar áreas naturales protegidas para su conservación y sostenibilidad.',
+                },
+                {
+                    title: 'Intérprete del patrimonio',
+                    description: 'Elaborar líneas de actuación y medios interpretativos para la puesta en valor y difusión del patrimonio natural y cultural.',
+                },
             ]}
         />
-        {/* Pasantía Técnica Internacional (Más allá del Programa) */}
-        <HeroSection
-            tagline="Pasantía Técnica Internacional"
-            title="Inmersión de capacitación intensiva en programas de apoyo al desarrollo sostenible"
-            subtitle='La <strong>Pasantía Técnica Internacional</strong><span class="text-secondary">*</span>, es un viaje de estudios opcional, de una semana de duración, a un destino internacional. Se elabora un Plan Individual de Capacitación, acorde a los temas de interés y tiempo de permanencia. La pasantía es esencialmente teórica-práctica, los pasantes participan de los proyectos de las entidades anfitrionas y de todas las actividades de capacitación programadas por el equipo técnico local. Visitan iniciativas de proyectos e interactúan con los beneficiarios.'
-        >
-            <Fragment slot="content">
-            <ProjectLocations />
-            <p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-6 w-full">
-                * Este servicio no está incluido en el coste de la maestría.
-            </p>
-            </Fragment>
-        </HeroSection>
+
+        {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
+        <BeyondTheProgram />
 
         {/* 9. TITULACIÓN */}
         <HeroSection
@@ -409,18 +394,18 @@ const tabs = [
                 <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
             </Fragment>
             <Fragment slot="content">
-            <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
-            <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
+                <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
 
-            <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
-            <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180410</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
+                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180408</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
             
-            {/* Diploma */}
-            <Degree
-                degreeName="MAESTRÍA EN MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL"
-                incorporationNumber="MAES180410"
-            />
-            <p class="text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+                {/* Diploma */}
+                <Degree
+                    degreeName="MAESTRÍA EN PAISAJE, PATRIMONIO Y ESTUDIOS TERRITORIALES"
+                    incorporationNumber="MAES180408"
+                />
+                <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
             </Fragment>
         </HeroSection>
 

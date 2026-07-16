@@ -8,7 +8,7 @@ import Features2 from '~/components/widgets/Features2.astro';
 import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
 import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
-import ProjectLocations from '~/components/maestria/ProjectLocations.astro';
+import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
 import { medioAmbienteResponsabilidadSocialCurriculum } from '~/data/maestria/medio-ambiente-responsabilidad-social';
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
@@ -344,6 +344,7 @@ const tabs = [
       />
       {/* Potencia tus salidas */}
       <Features3
+        tagline='Salidas Profesionales'
         title="Potencia tus Salidas Profesionales"
         subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, prepara al alumno/a para trabajar en organizaciones tanto públicas como privadas, son profesionales que cultivan la ética en los negocios, la buena praxis y la responsabilidad corporativa. Las salidas profesionales, se centran claramente en:'
         columns={3}
@@ -395,19 +396,8 @@ const tabs = [
           },
         ]}
       />
-      {/* Pasantía Técnica Internacional (Más allá del Programa) */}
-      <HeroSection
-        tagline="Pasantía Técnica Internacional"
-        title="Inmersión de capacitación intensiva en programas de apoyo al desarrollo sostenible"
-        subtitle='La <strong>Pasantía Técnica Internacional</strong><span class="text-secondary">*</span>, es un viaje de estudios opcional, de una semana de duración, a un destino internacional. Se elabora un Plan Individual de Capacitación, acorde a los temas de interés y tiempo de permanencia. La pasantía es esencialmente teórica-práctica, los pasantes participan de los proyectos de las entidades anfitrionas y de todas las actividades de capacitación programadas por el equipo técnico local. Visitan iniciativas de proyectos e interactúan con los beneficiarios.'
-      >
-        <Fragment slot="content">
-          <ProjectLocations />
-          <p class="text-red-600 dark:text-red-400 italic text-sm text-right mt-6 w-full">
-            * Este servicio no está incluido en el coste de la maestría.
-          </p>
-        </Fragment>
-      </HeroSection>
+        {/* Más allá del Programa - Pasantía Técnica Internacional */}
+        <BeyondTheProgram />
 
       {/* 9. TITULACIÓN */}
       <HeroSection
@@ -430,7 +420,7 @@ const tabs = [
             degreeName="MAESTRÍA EN MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL"
             incorporationNumber="MAES180410"
           />
-          <p class="text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+          <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
         </Fragment>
       </HeroSection>
 
