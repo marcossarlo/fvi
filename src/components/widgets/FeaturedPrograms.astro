@@ -12,7 +12,10 @@ const {
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
-} = Astro.props;
+} = Astro.props as Props;
+
+const itemGridClasses: Record<string, string> =
+  typeof classes?.items === 'object' && classes.items !== null ? (classes.items as Record<string, string>) : {};
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
@@ -30,7 +33,7 @@ const {
     <ItemGridFeaturedPrograms
       items={items}
       columns={columns}
-      classes={classes?.items as any}
+      classes={itemGridClasses}
     />
   <!-- </div> -->
 </WidgetWrapper>
