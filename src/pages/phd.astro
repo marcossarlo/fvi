@@ -1,7 +1,7 @@
 ---
-import Content from '~/components/widgets/Content.astro';
 import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
-import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import type { ItemFeaturedProgram } from '~/types';
 
@@ -127,47 +127,36 @@ const phdPrograms: ItemFeaturedProgram[] = [
 ];
 ---
 
-<Layout metadata={metadata} showSecondaryNav={false}>
-  <HeroPrograms
+<Layout metadata={metadata}>
+  <Hero
     tagline="Oferta doctoral"
-    subtitle="Investigación especializada para formar doctores con visión ambiental, interdisciplinaria y alcance internacional."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Ver programas',
-        href: '#programas',
-        icon: 'tabler:school',
-        class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
-      },
-      {
-        variant: 'secondary',
-        text: 'Leer presentación',
-        href: '#presentacion',
-        icon: 'tabler:file-description',
-        class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
-      },
-    ]}
     image={{
       src: '~/assets/images/fvi_doctorados_home.webp',
       alt: 'Oferta doctoral de Fondo Verde Institute',
     }}
   >
     <Fragment slot="title">
-      PhD <br />
-      <span class="text-secondary dark:text-accent">Doctorados oficiales</span>
+      Doctorados
+      <span class="text-primary dark:text-accent"> oficiales</span>
     </Fragment>
-  </HeroPrograms>
+    <Fragment slot="subtitle">
+      <span class="text-primary font-semibold">Fondo Verde</span> <span class="text-secondary font-semibold">Institute</span>, se funda en el entorno de <a 
+              href="https://www.fondoverde.org" 
+              class="font-bold text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary transition-colors decoration-2 underline-offset-2" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              FONDO VERDE</a>,
+      una <strong>ONGD internacional</strong> miembro de <strong>IUCN International Union for Conservation of Nature</strong>.
+      Fondo Verde es una organización líder en el sector de formación ambiental con más de 16 años de experiencia. Esta experiencia ha permitido apostar por la innovación a través de una oferta educativa que genera un impacto positivo en el mundo.
+    </Fragment>
+  </Hero>
 
-  <Content
+  <Features3
     id="presentacion"
-    tagline="Presentación"
-    title='Oferta doctoral de <span class="text-primary">Fondo Verde</span>'
+    title="Oferta doctoral de Fondo Verde"
     subtitle="Una estructura doctoral pensada para investigadores que quieren profundizar en medio ambiente, sostenibilidad y desarrollo territorial."
-    content={`
-      <p>La oferta doctoral de <strong>Fondo Verde</strong> es altamente especializada y busca provocar un efecto global en el desarrollo y crecimiento de la comunidad o región de desempeño del investigador, a través de introducir al alumno en las diversas metodologías para el estudio del medio ambiente y la planeación del desarrollo.</p>
-      <p>El programa aporta a los investigadores en formación una cultura interdisciplinaria vinculada con un proyecto científico coherente. El título de doctor expresa una investigación cimentada en la defensa de una tesis basada en una investigación original, por tanto, el equivalente al <strong>PhD</strong> o <em>Philosophiæ Doctor</em>.</p>
-      <p>El doctorado se estructura en un periodo de formación y un periodo de investigación, articulando competencias para producir tesis, publicaciones científicas y aportes de alto nivel al conocimiento ambiental.</p>
-    `}
+    columns={3}
     items={[
       {
         title: 'Estructura del programa',
@@ -188,31 +177,9 @@ const phdPrograms: ItemFeaturedProgram[] = [
         icon: 'tabler:microscope',
       },
     ]}
-    columns={3}
-    image={{
-      src: '~/assets/images/fvi_doctorados_home.webp',
-      alt: 'Doctorados oficiales de Fondo Verde Institute',
-    }}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-    </Fragment>
-  </Content>
+  />
 
-  <section id="programas" class="relative py-20 md:py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-white to-blue-50/80 dark:from-slate-950 dark:via-page dark:to-pageDark"></div>
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-10 md:mb-14">
-        <span class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary dark:text-accent">
-          Doctorados disponibles
-        </span>
-        <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tighter text-default dark:text-white">
-          Conoce la oferta PhD publicada por Fondo Verde
-        </h2>
-        <p class="mt-4 text-base md:text-lg text-muted dark:text-slate-300 max-w-2xl">
-          Cada programa combina investigación aplicada, acompañamiento académico y una línea de especialización clara para profesionales que buscan una formación doctoral de alto nivel.
-        </p>
-      </div>
+
 
       <FeaturedPrograms
         id="programas-listado"
@@ -220,6 +187,5 @@ const phdPrograms: ItemFeaturedProgram[] = [
         columns={2}
         items={phdPrograms}
       />
-    </div>
-  </section>
+
 </Layout>
