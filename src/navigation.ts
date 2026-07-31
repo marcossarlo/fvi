@@ -132,6 +132,7 @@ export const headerData = {
     },
     {
       text: 'Maestrías',
+      href: getPermalink('/maestria'),
       links: [
         {
           text: 'Maestría en Medio Ambiente y Responsabilidad Social',
