@@ -9,7 +9,7 @@ import HeroSection from '~/components/widgets/HeroSection.astro';
 import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
 import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
 import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
-import { paisajePatrimonioEstudiosTerritorialesCurriculum } from '~/data/maestria/paisaje-patrimonio-estudios-territoriales';
+import { rehabilitacionAmbientalTerrestreCurriculum } from '~/data/maestria/rehabilitacion-ambiental-terrestre';
 
 import Scholarship from '~/components/maestria/Scholarship.astro';
 import Registration from '~/components/maestria/Registration.astro';
@@ -26,15 +26,17 @@ import Degree from '~/components/common/Degree.astro';
 import HowToApply from '~/components/maestria/HowToApply.astro';
 
 const metadata = {
-    title: 'Maestría en Paisaje, Patrimonio y Estudios Territoriales',
-    description: 'Maestría online en Paisaje, Patrimonio y Estudios Territoriales (24 meses). Aprende métodos de análisis, gestión y conservación del paisaje, planificación territorial y valoración patrimonial. Con un claustro académico de alto nivel y desarrolla proyectos sostenibles para enfrentar la crisis paisajística actual',
-    keywords: 'Maestría, Paisaje, Patrimonio, Estudios Territoriales, Doctorado, Medio Ambiente, Planeación del Desarrollo, Fondo Verde, Online',
+    title: 'Maestría en Rehabilitación Ambiental Terrestre',
+    description: 'Especialízate en restauración ecológica y rehabilitación ambiental terrestre. Diseña proyectos sostenibles y recupera ecosistemas degradados. ¡Estudia la Maestría en Rehabilitación Ambiental Terrestre',
+    keywords: 'maestría en rehabilitación ambiental, restauración ecológica, ecosistemas degradados, ciencias ambientales, conservación de la naturaleza, proyectos de rehabilitación, servicios ecosistémicos',
 };
 
 const facultyIds = [
-    'gonzalo-fuente',
-    'angela-martin',
     'susan-smith',
+    'gonzalo-fuente',
+    'alberto-jimenez',
+    'juan-silva',
+    'angela-martin',
 ];
 const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
 
@@ -61,8 +63,8 @@ const tabs = [
     {/* HeroPrograms ********************************************** */}
     <HeroPrograms
         tagline='Convocatoria Abierta 2026'
-        title='Maestría en<br /> <span class="text-primary">Paisaje, Patrimonio y Estudios Territoriales</span>'
-        subtitle='<strong>Anímate a salvar el paisaje</strong>, Anímate a salvar tu país.'
+        title='Maestría en<br /> <span class="text-primary">Rehabilitación Ambiental Terrestre</span>'
+        subtitle='Sé parte de la <strong>ciencia que recupera la naturaleza</strong>'
         actions={[
         {
             variant: 'primary',
@@ -74,15 +76,15 @@ const tabs = [
         {
             variant: 'secondary',
             text: 'Ver Folleto Académico',
-            href: 'https://drive.google.com/file/d/0B0HLluZifC0PS1BfMEwwNXpQRFk/view',
+            href: 'https://drive.google.com/file/d/0B0HLluZifC0PLVMyWVVUaFFzTDg/edit?resourcekey=0-X6ccob-vzVlG3raAcn1dwA',
             target: '_blank',
             icon: 'tabler:download',
             class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
         },
         ]}
         image={{
-        src: '~/assets/images/maestrias/fvi-msc-paisaje-patrimonio-estudios-territoriales.jpg',
-        alt: 'Imagen de la Maestría en Paisaje, Patrimonio y Estudios Territoriales',
+        src: '~/assets/images/maestrias/fvi-msc-rehabilitacion-ambiental-terrestre.jpg',
+        alt: 'Imagen de la Maestría en Rehabilitación Ambiental Terrestre',
         }}
     />
 
@@ -100,23 +102,23 @@ const tabs = [
         <Content
             id="bienvenida"
             tagline="Bienvenida"
-            title="Gonzalo de la Fuente de Val, Dr."
-            subtitle="Director de la Maestría"
+            title="Dra. Susan Smith"
+            subtitle="Directora de la Maestría"
             items={[
                 {
-                title: 'Paisajes en crisis y deterioro',
-                description: 'El paisaje atraviesa hoy una situación crítica. Paisajes valiosos deteriorados, pérdida de tramas construidas y su sustitución por configuraciones banalizadas, evidencia la desidia en su gestión.',
-                icon: 'tabler:alert-triangle',
+                title: 'Restauración Ecológica',
+                description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo.',
+                icon: 'tabler:leaf',
                 },
                 {
-                title: 'Métodos para la gestión y conservación del paisaje',
-                description: 'Es por tanto de gran interés, conocer los métodos y aproximaciones al estudio del paisaje, para dar respuesta a problemas prácticos de gestión del territorio, tanto desde la perspectiva de la valoración del paisaje como recurso para la conservación de áreas naturales, como para la planificación de los usos del territorio o incluso para restaurarzonas alteradas.',
-                icon: 'tabler:map-search',
+                title: 'Intervención mínima',
+                description: 'La intervención, tan mínima como sea posible, debe activar estos procesos que permitirán, a su debido tiempo, la reconstrucción del sistema. Por tanto, es importante incidir en su divulgación, lograr proyectos que demuestren sus ventajas bajo todo tipo de condiciones.',
+                icon: 'tabler:sparkles',
                 }
             ]}
             image={{
-                src: '~/assets/images/users/fvi-gonzalo-fuente.webp',
-                alt: 'Gonzalo de la Fuente de Val, Dr. - Director de la Maestría en Paisaje, Patrimonio y Estudios Territoriales',
+                src: '~/assets/images/users/fvi-susan-smith.webp',
+                alt: 'Susan Smith, Dra. - Directora de la Maestría en Rehabilitación Ambiental Terrestre',
             }}
             >
             <Fragment slot="bg">
@@ -129,18 +131,18 @@ const tabs = [
             id="maestria"
             tagline="La Maestría"
             title="¿Por qué hacer esta maestría?"
-            subtitle="Acostumbrados a ver paisajes degradados y banalizados como evidencia de una desidia en su gestión, emerge la necesidad de recuperar, transformar y crear paisajes de calidad como expresión indisociable de una correcta gestión y ordenación paisajística del territorio."
+            subtitle="La maestría prepara profesionales capaces de diseñar y aplicar estrategias prácticas para la recuperación de áreas afectadas por disturbios antrópicos y naturales, combinando conocimientos científicos y enfoques multidisciplinarios para proyectos de restauración ecológica efectivos y sostenibles."
             columns={2}
             items={[
             {
-                title: 'Diversidad de métodos en el estudio del paisaje',
-                description: 'La amplia variedad de aspectos que abarca el paisaje ha llevado a una multiplicidad de métodos de análisis y evaluación, con objeto de poner en valor un recurso cada vez más escaso, sin embargo no existe un modelo determinado y fijo. Es por tanto de gran interés, conocer los métodos y aproximaciones al estudio del paisaje, para dar respuesta a problemas prácticos de gestión del territorio, tanto desde la perspectiva de la valoración del paisaje como recurso para la conservación de áreas naturales, como para la planificación de los usos del territorio o incluso para restaurar zonas alteradas',
-                icon: 'tabler:layers-intersect',
+                title: 'Estrategias y formación',
+                description: 'La restauración ecológica plantea y emplea técnicas y estrategias concretas para restablecer áreas degradadas. Esta maestría ofrece un entrenamiento multidisciplinario sólido que permite a los estudiantes analizar, diseñar y ejecutar proyectos de restauración con criterios técnicos y metodológicos claros.',
+                icon: 'tabler:tools',
             },
             {
-                title: 'Oportunidades profesionales en el campo del paisaje',
-                description: 'Las expectativas laborales del egresado son altas y en diversos campos: ámbito público, sector privado, en oficinas y consultoras dedicadas a estudios de paisaje, planificación territorial, paisajismo. Según algunas estadísticas, más del 50% de los profesionales del paisaje trabajan al primer año de egreso.',
-                icon: 'tabler:briefcase',
+                title: 'Impacto y beneficios',
+                description: 'La restauración puede mitigar la pérdida de biodiversidad y recuperar servicios ecosistémicos como la mejora de la calidad del agua y el almacenamiento de carbono. Según el PNUMA, restaurar ecosistemas dañados puede generar rendimientos ambientales y financieros positivos, crear empleo, reducir la pobreza y apoyar objetivos internacionales de conservación.',
+                icon: 'tabler:leaf',
             }
             ]}
         >
@@ -151,44 +153,29 @@ const tabs = [
             isReversed
             items={[
                 {
-                    title: 'Arquitectos y especialistas en territorio',
-                    description: 'Arquitectos, urbanistas, biólogos, ecólogos e ingenieros que intervienen en procesos de desarrollo y gestión mediante proyectos en el territorio.',
-                    icon: 'tabler:building-community',
-                },
-                {
-                    title: 'Ingenieros y técnicos de proyectos',
-                    description: 'Profesionales dedicados a la redacción y ejecución de proyectos de urbanismo, transporte, energía, agricultura y forestales.',
-                    icon: 'tabler:tools',
-                },
-                {
-                    title: 'Ingenieros y arquitectos ambientales',
-                    description: 'Especialistas en la Evaluación Ambiental de Planes y Proyectos.',
+                    title: 'Titulados afines',
+                    description: 'La Maestría está dirigida preferentemente a quienes estén en posesión de un título profesional universitario en un área afín a los recursos naturales.',
+                    icon: 'tabler:school',
+                    },
+                    {
+                    title: 'Profesionales ambientales',
+                    description: 'Profesionales con o sin experiencia del área de ciencias ambientales y afines (agrónomos, biólogos, forestales, geógrafos, entre otros).',
+                    icon: 'tabler:user-check',
+                    },
+                    {
+                    title: 'Investigadores y gestores',
+                    description: 'Investigadores, docentes, profesionales, estudiantes y representantes del sector público y privado cuyo interés y trabajo se enfoque en la restauración de ecosistemas degradados.',
+                    icon: 'tabler:users',
+                    },
+                    {
+                    title: 'Profesionales en restauración',
+                    description: 'Profesionales ambientales que trabajan o tienen interés en la restauración de ecosistemas degradados como herramienta para la conservación de la naturaleza.',
                     icon: 'tabler:leaf',
-                },
-                {
-                    title: 'Empleados públicos en planificación',
-                    description: 'Responsables de la planificación y gestión del desarrollo, ordenación territorial y urbanismo.',
-                    icon: 'tabler:building-bank',
-                },
-                {
-                    title: 'Consultores en paisaje',
-                    description: 'Consultores interesados en profundizar en temas relacionados con el paisaje urbano y rural.',
-                    icon: 'tabler:search',
-                },
-                {
-                    title: 'ONG y funcionarios de turismo y cultura',
-                    description: 'Personas vinculadas con ONGs y funcionarios públicos en oficinas de turismo, cultura y ambiente a nivel nacional, departamental o municipal.',
-                    icon: 'tabler:users-group',
-                },
-                {
-                    title: 'Responsables y técnicos municipales',
-                    description: 'Responsables y técnicos municipales y regionales en planificación urbana.',
-                    icon: 'tabler:map',
-                },            
+                    },           
             ]}
             image={{
-                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-ppet.jpg',
-                alt: '¿Quiénes deben asistir a la Maestría en Paisaje, Patrimonio y Estudios Territoriales?',
+                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-rat.jpg',
+                alt: '¿Quiénes deben asistir a la Maestría en Rehabilitación Ambiental Terrestre?',
             }}
         >
             <Fragment slot="content">
@@ -201,38 +188,25 @@ const tabs = [
         <Content
             items={[
             {
-                description: 'Comprender la visión general del estudio del paisaje y conocer los principales instrumentos y principios de gestión y ordenación.',
-                icon: 'tabler:school',
+                title: 'Herramientas para proyectos',
+                description: 'Brindar al alumno las herramientas necesarias para desarrollar proyectos de rehabilitación terrestre en medios degradados, aplicando métodos y técnicas adecuados a cada situación y condición.',
+                icon: 'tabler:tools',
             },
             {
-                description: 'Analizar aspectos esenciales para la consideración del patrimonio y el paisaje cultural como recurso en el ámbito local, con participación de la comunidad y actores en diferentes campos de acción.',
-                icon: 'tabler:users',
+                title: 'Soluciones y potencial',
+                description: 'Comprender las opciones y el potencial de las soluciones de rehabilitación ambiental en entornos naturales y construidos.',
+                icon: 'tabler:eye',
             },
             {
-                description: 'Explicar la forma de inventariar, diagnosticar, planificar y gestionar el paisaje, directamente o mediante planes integrales o sectoriales.',
-                icon: 'tabler:clipboard-list',
-            },
-            {
-                description: 'Establecer claves de interpretación del patrimonio natural considerando aspectos del paradigma de la complejidad.',
+                title: 'Integración teórico-práctica',
+                description: 'Ser capaces de integrar teorías y métodos que permitan plantear, analizar y proponer proyectos de restauración ecológica de manera exitosa.',
                 icon: 'tabler:book',
-            },
-            {
-                description: 'Proveer información sobre procesos de formación y degradación del paisaje, así como métodos para prevenir, corregir y restaurar degradaciones y crear nuevos paisajes.',
-                icon: 'tabler:leaf',
-            },
-            {
-                description: 'Elaborar propuestas de conservación de los valores patrimoniales asociados a los recursos paisajísticos.',
-                icon: 'tabler:shield-check',
-            },
-            {
-                description: 'Deducir cómo se introduce el paisaje en la planificación territorial y urbanística existente.',
-                icon: 'tabler:map',
             },
 
             ]}
             image={{
             src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
-            alt: '¿Qué vas a aprender en la Maestría en Medio Ambiente y Responsabilidad Social?',
+            alt: '¿Qué vas a aprender en la Maestría en Rehabilitación Ambiental Terrestre?',
             }}
         >
             <Fragment slot="content">
@@ -249,7 +223,7 @@ const tabs = [
             title='Entidades Colaboradoras'
             image={{
                 src: '~/assets/images/maestrias/fvi-colaboran-msc-ppet.jpg',
-                alt: 'Entidades colaboradoras de la Maestría en Paisaje, Patrimonio y Estudios Territoriales',
+                alt: 'Entidades colaboradoras de la Maestría en Rehabilitación Ambiental Terrestre',
             }}
         >
             <Fragment slot="bg">
@@ -265,7 +239,7 @@ const tabs = [
             subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span> tiene una duración de <strong>seis trimestres (2 años)</strong> con un total de <strong>1,440 horas lectivas (90 créditos)</strong>. Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría</strong> - <strong>PTM</strong>; posteriormente en el sexto trimestre, el alumno deberá acreditar la opción terminal de titulación y realizar sus trámites de graduación de acuerdo a la modalidad que haya elegido.'
         >
             <Fragment slot="content">
-                <ProgramCurriculum courses={paisajePatrimonioEstudiosTerritorialesCurriculum.courses} />
+                <ProgramCurriculum courses={rehabilitacionAmbientalTerrestreCurriculum.courses} />
             </Fragment>
         </HeroSection>
 
@@ -292,45 +266,54 @@ const tabs = [
             id="beneficios"
             tagline='Beneficios'
             title="¿Cómo te beneficiará este programa?"
-            subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span>, será capaz de:'
+            subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Rehabilitación Ambiental Terrestre</span>, será capaz de:'
             columns={2}
             items={[
                 {
-                    title: 'Análisis y caracterización',
-                    description: 'Aplicar herramientas, metodologías y procedimientos para realizar estudios de análisis y caracterización del paisaje.',
-                    icon: 'tabler:chart-bar',
+                    title: 'Fundamentos ecosistémicos',
+                    description: 'Conocer los fundamentos teóricos del funcionamiento, estructura y dinámica de un ecosistema.',
+                    icon: 'tabler:layers-linked',
                 },
                 {
-                    title: 'Patrimonio y tipologías',
-                    description: 'Definir tipologías de patrimonio cultural y natural, paisajes culturales, turismo, conservación y gestión del paisaje en localidades urbanas y rurales.',
-                    icon: 'tabler:building-arch',
-                },
-                {
-                    title: 'Ordenación territorial',
-                    description: 'Realizar informes y estudios de ordenación y planificación territorial y paisajística.',
-                    icon: 'tabler:map',
-                },
-                {
-                    title: 'Elementos del territorio',
-                    description: 'Estudiar los elementos más relevantes presentes en el territorio y el paisaje para comprender y gestionarlo de manera sostenible.',
-                    icon: 'tabler:compass',
-                },
-                {
-                    title: 'Valoración del paisaje',
-                    description: 'Realizar una valoración del paisaje para interpretarlo en clave ambiental, cultural y social.',
+                    title: 'Biodiversidad e interrelaciones',
+                    description: 'Conocer y valorar la diversidad e interpretar las interrelaciones entre factores ambientales y procesos ecológicos, y su importancia para la conservación y ordenación de la biodiversidad y recursos.',
                     icon: 'tabler:leaf',
                 },
                 {
-                    title: 'Diagnóstico y prospectiva',
-                    description: 'Analizar información sobre paisaje, patrimonio, territorio y ciudad para elaborar diagnósticos y estudios de prospectiva.',
-                    icon: 'tabler:clipboard-list',
+                    title: 'Interacción humano-medio',
+                    description: 'Comprender los procesos de interacción entre el hombre y el medio que generan y mantienen los paisajes.',
+                    icon: 'tabler:users',
                 },
                 {
-                    title: 'Métodos de integración',
-                    description: 'Poner en práctica métodos de análisis, caracterización, valoración y estudios de integración del paisaje.',
-                    icon: 'tabler:layers-intersect',
+                    title: 'Suelos y conservación',
+                    description: 'Evaluar la fertilidad y la capacidad de uso de los suelos y diseñar prácticas de conservación de los mismos.',
+                    icon: 'tabler:map',
                 },
-
+                {
+                    title: 'Ingeniería ecológica',
+                    description: 'Conocer las aplicaciones de ingeniería ecológica que potencialmente se pueden aplicar en cada caso y sus limitaciones.',
+                    icon: 'tabler:tools',
+                },
+                {
+                    title: 'Técnicas y metodologías',
+                    description: 'Manejar las técnicas y metodologías de restauración aplicables a distintos niveles de organización, desde el organismo hasta el ecosistema, y en diversos ambientes.',
+                    icon: 'tabler:settings',
+                },
+                {
+                    title: 'Tecnologías ambientales',
+                    description: 'Introducir tecnologías modernas y de punta orientadas a proteger el medio ambiente.',
+                    icon: 'tabler:device-desktop',
+                },
+                {
+                    title: 'Diseño de proyectos',
+                    description: 'Diseñar proyectos de rehabilitación mediante varios métodos según el tipo de hábitat y las perturbaciones presentes.',
+                    icon: 'tabler:layout',
+                },
+                {
+                    title: 'Sensibilización y capacitación',
+                    description: 'Sensibilizar a docentes, técnicos, miembros de ONG y comunidades en el tema de la restauración ecológica.',
+                    icon: 'tabler:versions',
+                },
             ]}
         />
 
@@ -338,45 +321,49 @@ const tabs = [
         <Features3
             tagline='Salidas Profesionales'
             title="Potencia tus Salidas Profesionales"
-            subtitle='Se espera que el egresado de la la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span>, pueda ser demandado tanto en empresas y organizaciones de la Administración o como en otras de índole privada, en los ámbitos del Medio Ambiente y Sostenibilidad. Las salidas profesionales, se centran claramente en:'
+            subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Rehabilitación Ambiental Terrestre</span>, responde a una demanda social y económica que favorezca la sostenibilidad, mejore nuestra relación con el entorno, fomentando la investigación y facilitando la inserción laboral. Las salidas profesionales, se centran claramente en:'
             columns={3}
             defaultIcon="tabler:point-filled"
             items={[
                 {
-                    title: 'Asesor en proyectos',
-                    description: 'Asesorar en la elaboración de proyectos de protección, ordenación y gestión del paisaje, participando en equipos pluridisciplinares.',
+                    title: 'Ámbito privado y administración',
+                    description: 'Está cualificado y preparado para el ámbito privado de las consultorías ambientales, y las administraciones que gestionan el territorio y los sistemas naturales.',
                 },
                 {
-                    title: 'Consultor privado',
-                    description: 'Trabajar como consultor en despachos de arquitectura, urbanismo, ingeniería, infraestructuras y paisajismo.',
+                    title: 'Planificador y gestor de proyectos',
+                    description: 'Planificador y gestor de proyectos en el campo de la restauración de ecosistemas.',
                 },
                 {
-                    title: 'Jefe de diseño',
-                    description: 'Integrar equipos y consultoras en estudios de gestión cultural, patrimonial y turística.',
+                    title: 'Consultor de estudios y modelos',
+                    description: 'Consultor para la realización de estudios avanzados y modelos relacionados con el diagnóstico, conservación y gestión medioambiental.',
                 },
                 {
-                    title: 'Técnico en patrimonio cultural',
-                    description: 'Participar en equipos de planificación y gestión en el ámbito del patrimonio cultural.',
+                    title: 'Investigador en ecología y restauración',
+                    description: 'Investigador en aspectos de ecología y funcionamiento de ecosistemas, principios de restauración y rehabilitación ambiental, preparación y evaluación de proyectos y casos de estudio nacionales e internacionales.',
                 },
                 {
-                    title: 'Técnico en catálogos de paisaje',
-                    description: 'Gestionar y organizar Catálogos de Paisaje, Cartas de Paisaje, estudios e informes de impacto e integración paisajística.',
+                    title: 'Asesor institucional',
+                    description: 'Asesor de organismos que tienen como objetivo introducir la Restauración Ecológica como una nueva herramienta de gestión ambiental.',
                 },
                 {
-                    title: 'Técnico en sistemas naturales',
-                    description: 'Evaluar el estado de sistemas naturales y procesos de cambio global.',
+                    title: 'Jefe de proyectos técnicos',
+                    description: 'Jefe de proyectos técnicos de restauración que se ajustan a los criterios establecidos por la Society of Ecological Restoration.',
                 },
                 {
-                    title: 'Analista y gestor público',
-                    description: 'Desarrollar políticas de intervención y gestión en territorio y paisaje desde áreas técnicas de la administración pública.',
+                    title: 'Investigador o docente público',
+                    description: 'Investigador o profesor en organismos públicos de investigación y universidades.',
                 },
                 {
-                    title: 'Gestor de áreas protegidas',
-                    description: 'Gestionar áreas naturales protegidas para su conservación y sostenibilidad.',
+                    title: 'Personal en empresas privadas',
+                    description: 'Personal en empresas privadas que trabajan en la gestión de recursos naturales, conservación y restauración de ecosistemas.',
                 },
                 {
-                    title: 'Intérprete del patrimonio',
-                    description: 'Elaborar líneas de actuación y medios interpretativos para la puesta en valor y difusión del patrimonio natural y cultural.',
+                    title: 'Evaluador de estrategias y proyectos',
+                    description: 'Evaluador calificado de estrategias, programas, proyectos y acciones públicas o privadas, identificando, previendo, monitoreando o evaluando sus consecuencias sobre el ecosistema en distintas escalas temporales y espaciales.',
+                },
+                {
+                    title: 'Técnico de campo especializado',
+                    description: 'Técnico especializado para desarrollar estudios de campo en medios terrestres.',
                 },
             ]}
         />
@@ -398,12 +385,12 @@ const tabs = [
                 <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
 
                 <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
-                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Paisaje, Patrimonio y Estudios Territoriales</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180408</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
+                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Rehabilitación Ambiental Terrestre</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180409</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
             
                 {/* Diploma */}
                 <Degree
-                    degreeName="MAESTRÍA EN PAISAJE, PATRIMONIO Y ESTUDIOS TERRITORIALES"
-                    incorporationNumber="MAES180408"
+                    degreeName="Maestría en Rehabilitación Ambiental Terrestre"
+                    incorporationNumber="MAES180409"
                 />
                 <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
             </Fragment>
