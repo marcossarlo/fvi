@@ -2,7 +2,6 @@
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
-import CallToAction from './CallToAction.astro';
 
 interface Link {
   text?: string;
@@ -25,114 +24,129 @@ export interface Props {
 }
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const currentYear = new Date().getFullYear();
+const resolvedFootNote = footNote || `© ${currentYear} ${SITE?.name || 'Fondo Verde Institute'}. Todos los derechos reservados.`;
 ---
 
-  <!-- CallToAction Widget: Admisiones *********** -->
-  <CallToAction
-      isDark
-      actions={[
-          {
-          variant: 'primary',
-          text: 'Solicitar Información',
-          href: '/contact',
-          icon: 'tabler:mail',
-          },
-      ]}
-      >
-      <Fragment slot="title">
-          Admisiones abiertas&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">2026</span>
-      </Fragment>
+<footer class:list={[{ dark: theme === 'dark' }, 'relative w-full overflow-hidden not-prose']}>
+  <div class="relative w-full pt-1 overflow-hidden border border-white/20 bg-slate-900 text-slate-300 shadow-[0_-22px_60px_rgba(0,0,0,0.22)]">
 
-      <Fragment slot="subtitle">
-          <strong class="text-accent">Posdoctorados:</strong> inicio 4 de marzo &nbsp;·&nbsp; <strong class="text-accent">Doctorado</strong> y <strong class="text-accent">Maestrías</strong>: inicio 13 de mayo.
-      </Fragment>
+      <div class="relative mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 pt-8 sm:pt-10 lg:pt-12">
+        <div class="grid gap-8 xl:grid-cols-[1.08fr_minmax(0,1.92fr)] xl:items-start">
+          <div class="max-w-xl">
+            <a href={getHomePermalink()} class="inline-flex items-center gap-3 group">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-[0_0_0_1px_rgba(16,185,129,0.25)] transition-transform duration-300 group-hover:scale-105">
+                <Icon name="tabler:leaf" class="h-5 w-5" />
+              </div>
+              <div>
+                <div class="text-[1.6rem] sm:text-[1.7rem] font-bold leading-none text-white tracking-tight">
+                  {SITE?.name}
+                </div>               
+              </div>
+            </a>
 
-      <Fragment slot="bg">
-          <div
-          class="absolute inset-0"
-          style="background-image: url('/images/fvi_admisiones_home.webp'); background-size: cover; background-position: center; background-attachment: fixed;"
-          ></div>
-          <!-- <div class="absolute inset-0 bg-gray-50/10"></div> -->
-      </Fragment>
-  </CallToAction>
+            <p class="mt-7 max-w-md text-[0.98rem] leading-7 text-slate-300/85 sm:text-[1rem]">
+              El ecosistema académico de Fondo Verde integra formación, investigación y proyección profesional para quienes trabajan por la sostenibilidad.
+            </p>            
 
-<footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-slate-600 dark:border-slate-800 not-prose']}>
-  <div class="bg-default dark:bg-pageDark absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <!-- Titulos -->
-  <div
-    class="relative max-w-7xl mx-auto px-4 sm:px-6 text-primary dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
-  >
-    <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-      <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
-        </div>
-        <!-- Links debajo de FV Institute -->
-        <div class="text-sm text-muted flex gap-1">
-          {
-            secondaryLinks.map(({ text, href }, index) => (
-              <>
-                {index !== 0 ? ' · ' : ''}
-                <a
-                  class="text-gray-100 hover:text-accent dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-                  href={href}
-                  set:html={text}
-                />
-              </>
-            ))
-          }
-        </div>
-      </div>
-      <!-- Links principales debajo de los Títulos -->
-      {
-        links.map(({ title, links }) => (
-          <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="dark:text-gray-300 font-medium mb-2">{title}</div>
-            {links && Array.isArray(links) && links.length > 0 && (
-              <ul class="text-sm">
-                {links.map(({ text, href, ariaLabel }) => (
-                  <li class="mb-2">
+            <div class="mt-7 flex flex-wrap gap-3 text-[0.93rem] text-slate-400">
+              {
+                secondaryLinks.map(({ text, href }, index) => (
+                  <>
+                    {index !== 0 ? <span class="text-slate-600">·</span> : null}
                     <a
-                      class="text-gray-200 hover:text-accent hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                      class="transition-colors duration-150 hover:text-accent hover:underline decoration-accent/40 underline-offset-4"
                       href={href}
-                      aria-label={ariaLabel}
-                    >
-                      <Fragment set:html={text} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))
-      }
-    </div>
-    <!-- Social Links -->
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-      {
-        socialLinks?.length ? (
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
-            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-              <li>
-                <a
-                  class="text-primary dark:text-gray-400 hover:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                  aria-label={ariaLabel}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
-                  <Fragment set:html={text} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          ''
-        )
-      }
+                      set:html={text}
+                    />
+                  </>
+                ))
+              }
+            </div>
 
-      <div class="text-white text-sm mr-4 dark:text-muted">
-        <Fragment set:html={footNote} />
+            <div class="mt-7 flex items-center gap-3">
+              {
+                socialLinks?.map(({ ariaLabel, href, icon }) => (
+                  <a
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-200 hover:border-accent/35 hover:bg-accent/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-accent/40"
+                    aria-label={ariaLabel}
+                    href={href}
+                    target={href?.startsWith('http') ? '_blank' : undefined}
+                    rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    {icon && <Icon name={icon} class="h-4 w-4" />}
+                  </a>
+                ))
+              }
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-8 xl:grid-cols-5 xl:gap-6">
+            {
+              links.map(({ title, links }) => (
+                <div class="min-w-0">
+                  <div class="text-[0.66rem] uppercase tracking-[0.34em] text-accent/90">
+                    {title}
+                  </div>
+                  {links && Array.isArray(links) && links.length > 0 && (
+                    <ul class="mt-4 space-y-3 text-[0.92rem] leading-5 text-slate-300/88">
+                      {links.map(({ text, href, ariaLabel }) => (
+                        <li>
+                          <a
+                            class="transition-colors duration-150 hover:text-white hover:underline decoration-accent/40 underline-offset-4"
+                            href={href}
+                            aria-label={ariaLabel}
+                          >
+                            <Fragment set:html={text} />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="mt-10 border-t border-white/20 py-7 sm:py-8">
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
+            <div>
+              <div class="text-[1.35rem] font-semibold tracking-tight text-white">
+                Boletín del instituto
+              </div>
+              <p class="mt-2 max-w-xl text-[0.95rem] leading-6 text-slate-400">
+                Tendencias, normativas y oportunidades para profesionales del medio ambiente. Sin spam.
+              </p>
+            </div>
+
+            <form class="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch lg:justify-end" action="#" method="post">
+              <label class="sr-only" for="footer-email">Correo electrónico</label>
+              <input
+                id="footer-email"
+                name="email"
+                type="email"
+                placeholder="tu@email.com"
+                class="h-12 min-w-0 flex-1 rounded-full border border-white/20 bg-black/25 px-5 text-slate-100 placeholder:text-slate-500 outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/20"
+              />
+              <button
+                type="submit"
+                class="h-12 rounded-full bg-accent px-7 font-semibold text-white transition-transform duration-200 hover:translate-y-[-1px] hover:bg-secondary"
+              >
+                Suscribirme
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-3 border-t border-white/20 py-5 text-[0.85rem] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            {resolvedFootNote}
+          </div>
+          <div>
+            Diseñado con intención
+          </div>
+        </div>
       </div>
-    </div>
   </div>
 </footer>
