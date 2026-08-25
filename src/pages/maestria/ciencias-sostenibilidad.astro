@@ -27,16 +27,17 @@ import HowToApply from '~/components/maestria/HowToApply.astro';
 
 const metadata = {
     title: 'Maestría en Ciencias de la Sostenibilidad',
-    description: 'Especialízate en restauración ecológica y rehabilitación ambiental terrestre. Diseña proyectos sostenibles y recupera ecosistemas degradados. ¡Estudia la Maestría en Rehabilitación Ambiental Terrestre',
-    keywords: 'maestría en rehabilitación ambiental, restauración ecológica, ecosistemas degradados, ciencias ambientales, conservación de la naturaleza, proyectos de rehabilitación, servicios ecosistémicos',
+    description: 'Fórmate con la Maestría en Ciencias de la Sostenibilidad. Desarrolla proyectos de gestión ambiental y lidera el desarrollo sustentable regional y global.',
+    keywords: 'Maestría en Ciencias de la Sostenibilidad, desarrollo sostenible, gestión ambiental, sustentabilidad regional, proyectos sustentables, especialización medioambiental, posgrado en sostenibilidad, ordenación de recursos naturales',
 };
 
 const facultyIds = [
-    'susan-smith',
     'gonzalo-fuente',
+    'angel-guillemes',
     'alberto-jimenez',
-    'juan-silva',
+    'maria-teresa-perez',
     'angela-martin',
+    'erick-brenes',
 ];
 const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
 
@@ -280,49 +281,44 @@ const tabs = [
             columns={2}
             items={[
                 {
-                    title: 'Fundamentos ecosistémicos',
-                    description: 'Conocer los fundamentos teóricos del funcionamiento, estructura y dinámica de un ecosistema.',
-                    icon: 'tabler:layers-linked',
+                    title: 'Fundamentos del Desarrollo Sostenible',
+                        description: 'Comprender los principios del paradigma de la sostenibilidad y sus dimensiones ambiental, sociocultural y económica a escala regional.',
+                        icon: 'tabler:book',
                 },
                 {
-                    title: 'Biodiversidad e interrelaciones',
-                    description: 'Conocer y valorar la diversidad e interpretar las interrelaciones entre factores ambientales y procesos ecológicos, y su importancia para la conservación y ordenación de la biodiversidad y recursos.',
-                    icon: 'tabler:leaf',
+                    title: 'Planificación Regional Sustentable',
+                        description: 'Diseñar planes territoriales para comunas y regiones que integren uso del suelo, recursos y equidad dentro de criterios de desarrollo sustentable.',
+                        icon: 'tabler:map-2',
                 },
                 {
-                    title: 'Interacción humano-medio',
-                    description: 'Comprender los procesos de interacción entre el hombre y el medio que generan y mantienen los paisajes.',
-                    icon: 'tabler:users',
+                    title: 'Gestión de Proyectos Sostenibles',
+                        description: 'Diseñar, ejecutar y evaluar proyectos de gestión pública y privada aplicando indicadores y herramientas de sostenibilidad.',
+                        icon: 'tabler:layers-linked',
                 },
                 {
-                    title: 'Suelos y conservación',
-                    description: 'Evaluar la fertilidad y la capacidad de uso de los suelos y diseñar prácticas de conservación de los mismos.',
-                    icon: 'tabler:map',
+                    title: 'Negociación y Participación Social',
+                        description: 'Facilitar procesos participativos y negociaciones inclusivas entre actores sociales para conciliar desarrollo y conservación ambiental.',
+                        icon: 'tabler:heart-handshake',
                 },
                 {
-                    title: 'Ingeniería ecológica',
-                    description: 'Conocer las aplicaciones de ingeniería ecológica que potencialmente se pueden aplicar en cada caso y sus limitaciones.',
-                    icon: 'tabler:tools',
+                    title: 'Proyectos Urbanos Sustentables',
+                        description: 'Desarrollar planes urbanos que promuevan movilidad sostenible, espacios verdes, eficiencia energética y resiliencia comunitaria.',
+                        icon: 'tabler:building',
                 },
                 {
-                    title: 'Técnicas y metodologías',
-                    description: 'Manejar las técnicas y metodologías de restauración aplicables a distintos niveles de organización, desde el organismo hasta el ecosistema, y en diversos ambientes.',
-                    icon: 'tabler:settings',
+                    title: 'Asesoría para Desarrollo Urbano Viable',
+                        description: 'Brindar asesoramiento técnico y financiero a entidades municipales y provinciales para proyectos que atiendan población, entorno natural y patrimonio cultural.',
+                        icon: 'tabler:currency-dollar',
                 },
                 {
-                    title: 'Tecnologías ambientales',
-                    description: 'Introducir tecnologías modernas y de punta orientadas a proteger el medio ambiente.',
-                    icon: 'tabler:device-desktop',
+                    title: 'Innovación y Liderazgo Ético',
+                        description: 'Emprender políticas, programas y proyectos novedosos con un alto sentido ético para intervenir en ámbitos nacionales e internacionales.',
+                        icon: 'tabler:award',
                 },
                 {
-                    title: 'Diseño de proyectos',
-                    description: 'Diseñar proyectos de rehabilitación mediante varios métodos según el tipo de hábitat y las perturbaciones presentes.',
-                    icon: 'tabler:layout',
-                },
-                {
-                    title: 'Sensibilización y capacitación',
-                    description: 'Sensibilizar a docentes, técnicos, miembros de ONG y comunidades en el tema de la restauración ecológica.',
-                    icon: 'tabler:versions',
+                    title: 'Proyección e Impacto Internacional',
+                        description: 'Planear y ejecutar iniciativas con alcance nacional e internacional que generen impacto sostenible y colaboraciones multisectoriales.',
+                        icon: 'tabler:globe',
                 },
             ]}
         />
@@ -331,50 +327,42 @@ const tabs = [
         <Features3
             tagline='Salidas Profesionales'
             title="Potencia tus Salidas Profesionales"
-            subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, responde a una demanda social y económica que favorezca la sostenibilidad, mejore nuestra relación con el entorno, fomentando la investigación y facilitando la inserción laboral. Las salidas profesionales, se centran claramente en:'
+            subtitle='En términos específicos, se espera que el egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, pueda ser demandado tanto en empresas y organizaciones de la Administración o como en otras de índole privada, en los ámbitos del Medio Ambiente y Sostenibilidad. Las salidas profesionales, se centran claramente en:'
             columns={3}
             defaultIcon="tabler:point-filled"
             items={[
                 {
-                    title: 'Ámbito privado y administración',
-                    description: 'Está cualificado y preparado para el ámbito privado de las consultorías ambientales, y las administraciones que gestionan el territorio y los sistemas naturales.',
+                    title: 'Director de Conservación y Gestión de Recursos Naturales',
+                    description: 'Liderar organizaciones públicas y privadas dedicadas a la conservación y manejo de recursos, participando en la planificación y diseño de políticas públicas a nivel nacional e internacional.'
                 },
                 {
-                    title: 'Planificador y gestor de proyectos',
-                    description: 'Planificador y gestor de proyectos en el campo de la restauración de ecosistemas.',
+                    title: 'Técnico Local en Programas Sustentables',
+                    description: 'Ejecutar y operar programas y proyectos de investigación y gestión en gobiernos locales, aplicando enfoques de desarrollo sustentable y buenas prácticas operativas.'
                 },
                 {
-                    title: 'Consultor de estudios y modelos',
-                    description: 'Consultor para la realización de estudios avanzados y modelos relacionados con el diagnóstico, conservación y gestión medioambiental.',
+                    title: 'Planificador y Gestor de Proyectos Sostenibles',
+                    description: 'Diseñar, planificar y gestionar proyectos tecnológicos, científicos y de gestión que integren criterios ambientales, sociales y económicos dentro de un marco de sostenibilidad.'
                 },
                 {
-                    title: 'Investigador en ecología y restauración',
-                    description: 'Investigador en aspectos de ecología y funcionamiento de ecosistemas, principios de restauración y rehabilitación ambiental, preparación y evaluación de proyectos y casos de estudio nacionales e internacionales.',
+                    title: 'Consultor en Políticas y Evaluación de Sostenibilidad',
+                    description: 'Asesorar en la formulación, evaluación y monitoreo de políticas públicas y privadas orientadas a la sostenibilidad y la mitigación de impactos ambientales.'
                 },
                 {
-                    title: 'Asesor institucional',
-                    description: 'Asesor de organismos que tienen como objetivo introducir la Restauración Ecológica como una nueva herramienta de gestión ambiental.',
+                    title: 'Investigador en Ciencias de la Sostenibilidad',
+                    description: 'Desarrollar investigación aplicada y teórica sobre sostenibilidad, generando evidencia para la toma de decisiones y la innovación en políticas y proyectos.'
                 },
                 {
-                    title: 'Jefe de proyectos técnicos',
-                    description: 'Jefe de proyectos técnicos de restauración que se ajustan a los criterios establecidos por la Society of Ecological Restoration.',
+                    title: 'Asesor Internacional en Modelos de Desarrollo Sostenible',
+                    description: 'Brindar asesoría a organismos internacionales en la elaboración de diagnósticos y modelos de desarrollo sostenible a escala local y regional.'
                 },
                 {
-                    title: 'Investigador o docente público',
-                    description: 'Investigador o profesor en organismos públicos de investigación y universidades.',
+                    title: 'Jefe de Proyecto Multidisciplinario en Soluciones Sostenibles',
+                    description: 'Dirigir equipos interdisciplinarios en el diseño, implementación y evaluación de soluciones globales y sostenibles con rigor científico y técnico.'
                 },
                 {
-                    title: 'Personal en empresas privadas',
-                    description: 'Personal en empresas privadas que trabajan en la gestión de recursos naturales, conservación y restauración de ecosistemas.',
-                },
-                {
-                    title: 'Evaluador de estrategias y proyectos',
-                    description: 'Evaluador calificado de estrategias, programas, proyectos y acciones públicas o privadas, identificando, previendo, monitoreando o evaluando sus consecuencias sobre el ecosistema en distintas escalas temporales y espaciales.',
-                },
-                {
-                    title: 'Técnico de campo especializado',
-                    description: 'Técnico especializado para desarrollar estudios de campo en medios terrestres.',
-                },
+                    title: 'Asesor Estratégico en Desarrollo Sustentable para Empresas',
+                    description: 'Prestar servicios de consultoría para la elaboración de planes estratégicos y estudios de desarrollo sustentable orientados a la viabilidad financiera y el impacto ambiental positivo.'
+                }
             ]}
         />
 
@@ -400,7 +388,7 @@ const tabs = [
                 {/* Diploma */}
                 <Degree
                     degreeName="Maestría en Ciencias de la Sostenibilidad"
-                    incorporationNumber="MAES180409"
+                    incorporationNumber="MAES180407"
                 />
                 <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
             </Fragment>

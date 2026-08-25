@@ -1,6 +1,6 @@
 site:
   name: Fondo Verde Institute
-  site: 'https://astrowind.vercel.app'
+  site: 'https://fondoverdeinstitute.com'
   base: '/'
   trailingSlash: false
 
