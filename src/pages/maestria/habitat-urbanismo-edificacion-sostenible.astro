@@ -1,0 +1,414 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import StatsData from '~/components/maestria/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
+import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
+import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
+import { habitatUrbanismoCurriculum } from '~/data/maestria/habitat-urbanismo-edificacion-sostenible';
+
+import Scholarship from '~/components/maestria/Scholarship.astro';
+import Registration from '~/components/maestria/Registration.astro';
+import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
+import Requests from '~/components/maestria/Requests.astro';
+import HowToStudy from '~/components/maestria/HowToStudy.astro';
+import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
+import PostMaestria from '~/components/maestria/PostMaestria.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Degree from '~/components/common/Degree.astro';
+import HowToApply from '~/components/maestria/HowToApply.astro';
+
+const metadata = {
+    title: 'Maestría en Hábitat, Urbanismo y Edificación Sostenible',
+    description: 'Mejorar la resiliencia al cambio climático requiere de intervenciones en la ciudad que vayan más allá de edificaciones sostenibles y procuren acciones urbanísticas para transformar el hábitat con preceptos acordes al medio natural.',
+    keywords: 'Maestría en Hábitat, Urbanismo y Edificación Sostenible, hábitat sostenible, urbanismo, edificación sostenible, resiliencia climática, planificación urbana, gestión territorial, desarrollo sustentable',
+};
+
+const facultyIds = [
+    'loraine-giraud',
+    'gonzalo-fuente',
+    'alberto-jimenez',
+    'maria-teresa-perez',
+];
+const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+
+const tabs = [
+    { id: 'bienvenida', label: '1. Bienvenida' },
+    { id: 'maestria', label: '2. La Maestría' },
+    { id: 'colaboran', label: '3. Colaboran' },
+    { id: 'estructura', label: '4. Estructura' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+    { id: 'claustro', label: '7. Claustro' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'titulacion', label: '9. Titulación' },
+    { id: 'postmaestria', label: '10. Post Maestría' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+    { id: 'inscripcion', label: '13. Inscripción' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    {/* HeroPrograms ********************************************** */}
+    <HeroPrograms
+        tagline='Admisiones hasta el 24 de octubre de 2026'
+        title='Maestría en<br /> <span class="text-primary">Hábitat, Urbanismo y Edificación Sostenible</span>'
+        subtitle='Tú puedes ser partícipe de la construcción del <strong>hábitat con enfoque en la sostenibilidad</strong>.'
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'https://drive.google.com/file/d/10RhxqQSe_m9IA1Cz8HRnMs2iLBo0WPjd/view',
+            target: '_blank',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/maestrias/fvi-msc-ciencias-sostenibilidad.jpg',
+        alt: 'Imagen de la Maestría en Hábitat, Urbanismo y Edificación Sostenible',
+        }}
+    />
+
+    {/* DatosEstadisticas */}
+    <StatsData />
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+        
+        {/* 1. BIENVENIDA */}
+        <Content
+            id="bienvenida"
+            tagline="Bienvenida"
+            title="Loraine Giraud, Dra."
+            subtitle="Directora de la Maestría"
+            items={[
+                {
+                title: 'Bienvenida del Director de la Maestría',
+                description: 'Mejorar la resiliencia al cambio climático, requiere de intervenciones en la ciudad que vayan más allá de edificaciones sostenibles y procuren acciones urbanísticas para transformar el hábitat con preceptos acordes al medio natural. <br> <br> Nuestro interés se centra en mostrar la necesidad de crear espacios académicos con el fin de formar cuadros técnicos en la construcción de un hábitat energéticamente eficiente y con un grado de sustentabilidad creciente adaptado a nuestro modo de vida.',
+                icon: 'tabler:building-community',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/users/fvi-loraine-giraud.webp',
+                alt: 'Loraine Giraud, Dra.- Directora de la Maestría en Hábitat, Urbanismo y Edificación Sostenible',
+            }}
+            >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </Content>
+        
+        {/* 2. LA MAESTRÍA */}
+        <Features2
+            id="maestria"
+            tagline="La Maestría"
+            title="¿Por qué hacer esta maestría?"
+            subtitle="La Maestría aspira a crear en los estudiantes una conciencia y formación más sólida en materia de sostenibilidad medioambiental, desde un enfoque multidisciplinario y holístico que abarca la problemática global del planeta, los principales problemas que afectan a las ciudades y las dificultades más puntuales en materia de aprovechamiento energético en las edificaciones. Se pretende desarrollar las capacidades y destrezas en el conocimiento, el proyecto y la gestión del funcionamiento sostenible del medio construido y natural."
+            columns={2}
+            items={[
+            {
+                title: 'Liderazgo en transformación sostenible',
+                description: 'Los profesionales de este programa lideran el cambio en la industria de la construcción, formulan estrategias de transformación del hábitat con enfoque en sostenibilidad y se convierten en actores clave en proyectos urbanos, nuevas construcciones, actualización de edificaciones existentes y administración de proyectos.',
+                icon: 'tabler:trending-up',
+            },
+            {
+                title: 'Eficiencia energética y responsabilidad ambiental',
+                description: 'Valoran la eficiencia de los materiales y fomentan la eficiencia energética en las edificaciones para evitar gastos innecesarios de energía, aprovechar los recursos del entorno en el funcionamiento de sus sistemas y garantizar un impacto positivo en el medio ambiente.',
+                icon: 'tabler:leaf',
+            },
+            ]}
+        >
+        </Features2>
+        
+        {/* ¿Quiénes deben asistir? */}
+        <Content
+            isReversed
+            items={[
+                {
+                    title: 'Profesionales de arquitectura y construcción',
+                    description: 'Profesionales de arquitectura, ingeniería, medio ambiente y construcción, así como paisajistas, diseñadores urbanos, desarrolladores inmobiliarios y consultores relacionados con el desarrollo urbano, interesados en diseñar en armonía con el medio ambiente.',
+                    icon: 'tabler:building-community',
+                },
+                {
+                    title: 'Especialistas en desarrollo territorial',
+                    description: 'Arquitectos, urbanistas, biólogos, ecólogos e ingenieros que aspiran a intervenir positivamente en los procesos de desarrollo y gestión territorial mediante la formulación y dirección de proyectos.',
+                    icon: 'tabler:map-2',
+                },
+                {
+                    title: 'Profesionales del sector de la construcción',
+                    description: 'Profesionales involucrados en el sector de la construcción que desean ampliar sus conocimientos y convertirse en líderes en construcción sostenible.',
+                    icon: 'tabler:hammer',
+                },
+                {
+                    title: 'Responsables de edificios y proyectos',
+                    description: 'Técnicos y profesionales involucrados en la toma de decisiones sobre planeación, diseño y construcción, así como en la administración, operación, mantenimiento y conservación de edificios residenciales, industriales, recreativos y turísticos.',
+                    icon: 'tabler:building-cog',
+                },
+                {
+                    title: 'Responsables de la gestión pública',
+                    description: 'Empleados públicos responsables de la planificación y gestión del desarrollo, la ordenación territorial y el urbanismo.',
+                    icon: 'tabler:brand-bandcamp',
+                },
+                {
+                    title: 'Actores de la producción social del hábitat',
+                    description: 'Personas y organizaciones implicadas en la producción social del hábitat y relacionadas con la cooperación al desarrollo, incluidos técnicos y voluntarios de ONGs, asociaciones, administraciones públicas y empresas privadas.',
+                    icon: 'tabler:users-group',
+                }      
+            ]}
+            image={{
+                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-cs.jpg',
+                alt: '¿Quiénes deben asistir a la Maestría en Hábitat, Urbanismo y Edificación Sostenible?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Quiénes deben asistir?
+            </h3>
+            </Fragment>
+        </Content>
+        {/* ¿Qué vas a aprender? */}
+        <Content
+            items={[
+            {
+                title: 'Conciencia y formación en sostenibilidad',
+                description: 'Crear en los estudiantes una conciencia y formación más sólida en materia de sostenibilidad medioambiental, desde un enfoque multidisciplinario y holístico, que abarca la problemática global del planeta, los principales problemas que afectan a las ciudades y las dificultades más puntuales en materia de aprovechamiento energético en las edificaciones.',
+                icon: 'tabler:globe',
+            },
+            {
+                title: 'Alternativas constructivas y de paisaje',
+                description: 'Conocer alternativas constructivas y de paisaje para contribuir a minimizar el impacto ecológico causado por los inadecuados procesos constructivos, de gestión, planificación y de mantenimiento, en las ciudades y en las edificaciones.',
+                icon: 'tabler:tree',
+            },
+            {
+                title: 'Diseño y edificación eficiente',
+                description: 'Realizar propuestas de diseño y edificación que cumplan con los diferentes estándares orientados al manejo eficiente de recursos como el agua o la energía, el empleo de criterios bioclimáticos y el manejo de los residuos en las edificaciones.',
+                icon: 'tabler:bolt',
+            },
+            {
+                title: 'Tecnologías apropiadas de bajo coste',
+                description: 'Exponer algunas de las tecnologías de construcción e infraestructuras a bajo coste, desarrolladas y experimentadas por expertos, con la característica fundamental de ser apropiadas y apropiables, para el entorno dónde se inserta y por la población beneficiaria.',
+                icon: 'tabler:tools',
+            }
+
+            ]}
+            image={{
+            src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
+            alt: '¿Qué vas a aprender en la Maestría en Hábitat, Urbanismo y Edificación Sostenible?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Qué vas a aprender?
+            </h3>
+            </Fragment>
+        </Content>
+
+        {/* 3. COLABORAN */}
+        <HeroSection
+            id="colaboran"
+            tagline="Colaboran"
+            title='Entidades Colaboradoras'
+            image={{
+                src: '~/assets/images/maestrias/fvi-colaboran-msc-hues.jpg',
+                alt: 'Entidades colaboradoras de la Maestría en Hábitat, Urbanismo y Edificación Sostenible',
+            }}
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </HeroSection>
+
+        {/* 4. ESTRUCTURA DEL PROGRAMA */}
+        <HeroSection
+            id="estructura"
+            tagline="Estructura"
+            title='Estructura del Programa'
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Hábitat, Urbanismo y Edificación Sostenible</span> tiene una duración de <strong>seis trimestres (2 años)</strong> con un total de <strong>1,520 horas lectivas (96 créditos)</strong>. Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría</strong> - <strong>PTM</strong>; posteriormente en el sexto trimestre, debe acreditar la opción terminal de titulación y realizar sus trámites de graduación conforme a la modalidad elegida.'
+        >
+            <Fragment slot="content">
+                <ProgramCurriculum 
+                    courses={habitatUrbanismoCurriculum.courses}
+                    thesisProject={{ title: 'Proyecto Terminal de Maestría - PTM', hours: 368, credits: 24 }}
+                />
+            </Fragment>
+        </HeroSection>
+
+        {/* 5. PROYECTO PTM (commond) */}
+        <ProjectPTM />
+
+        {/* 6. COMO SE ESTUDIA (commond) */}
+        <HowToStudy />
+
+        {/* 7. CLAUSTRO */}
+        <ClaustroInfo />
+        {
+            facultyList.map((prof) => (
+            <FacultyMember {...prof}>
+                <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                </Fragment>
+            </FacultyMember>
+            ))
+        }
+
+        {/* 8. BENEFICIOS */}
+        <Features
+            id="beneficios"
+            tagline='Beneficios'
+            title="¿Cómo te beneficiará este programa?"
+            subtitle='El egresado de la <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Hábitat, Urbanismo y Edificación Sostenible</span> será capaz de:'
+            columns={2}
+            items={[
+                {
+                    title: 'Visión crítica e innovadora de ciudad y territorio',
+                    description: 'Aplicar fundamentos teóricos y metodológicos de los procesos de la ciudad, el territorio y la sustentabilidad, generando conocimientos críticos e innovadores que promuevan prácticas constructivas que generen espacios humanos, confortables y en equilibrio con la naturaleza.',
+                    icon: 'tabler:bulb',
+                },
+                {
+                    title: 'Investigación en construcción sostenible',
+                    description: 'Desarrollar investigaciones en diseño, construcción y tecnologías alternativas desde la perspectiva de la sostenibilidad ambiental.',
+                    icon: 'tabler:test-pipe',
+                },
+                {
+                    title: 'Análisis del modelo urbano sustentable',
+                    description: 'Identificar las particularidades del modelo urbano sustentable y su importancia en la proyección de desarrollos futuros resilientes.',
+                    icon: 'tabler:building-plus',
+                },
+                {
+                    title: 'Metodologías de diseño sostenible',
+                    description: 'Dominar técnicas y metodologías para sustentar alternativas de diseño de arquitectura sostenible y su relación con el entorno.',
+                    icon: 'tabler:pencil-check',
+                },
+                {
+                    title: 'Diseño bioclimático urbano',
+                    description: 'Aplicar capacidades de diseño bioclimático abordando problemas particulares de diseño ambiental a escala urbana.',
+                    icon: 'tabler:sun',
+                },
+                {
+                    title: 'Criterios bioclimáticos en edificaciones',
+                    description: 'Aplicar criterios estructurales y bioclimáticos en edificaciones que intervienen en el acondicionamiento ambiental y eficiencia energética.',
+                    icon: 'tabler:thermometer',
+                },
+                {
+                    title: 'Tecnologías de bajo costo',
+                    description: 'Conocer y aplicar nuevas tecnologías y materiales de bajo costo, apropiados para infraestructuras y construcción social del hábitat.',
+                    icon: 'tabler:tools',
+                },
+            ]}
+        />
+
+        {/* Potencia tus salidas */}
+        <Features3
+            tagline='Salidas Profesionales'
+            title="Potencia tus Salidas Profesionales"
+            subtitle='El Máster en <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Hábitat, Urbanismo y Edificación Sostenible</span> se orienta hacia puestos de trabajo en gestión territorial y conservación. Las salidas profesionales se centran claramente en:'
+            columns={3}
+            defaultIcon="tabler:point-filled"
+            items={[
+                {
+                    title: 'Gestor de proyectos de infraestructura',
+                    description: 'Planificar y ejecutar proyectos de infraestructura dentro y fuera de comunidades, con actuaciones acordes al desarrollo humano y sostenible.'
+                },
+                {
+                    title: 'Personal multidisciplinar en empresas constructoras',
+                    description: 'Participar en equipos de grandes empresas constructoras en proyectos de eficiencia energética y arquitectura sostenible, integrando nuevos materiales y tecnologías de bajo costo.'
+                },
+                {
+                    title: 'Desarrollador de proyectos sostenibles urbanos',
+                    description: 'Diseñar e implementar intervenciones sostenibles en edificación, diseño urbano e infraestructuras en ámbitos urbanos.'
+                },
+                {
+                    title: 'Ejecutor de proyectos de construcción',
+                    description: 'Ejecutar instalaciones en proyectos de construcción conforme a normativa nacional y estándares de sostenibilidad.'
+                },
+                {
+                    title: 'Investigador en Arquitectura Sostenible',
+                    description: 'Formular y desarrollar avances en Construcción Sostenible, Hábitat Sustentable y Gestión Ambiental Urbana.'
+                },
+                {
+                    title: 'Asesor científico de sustentabilidad',
+                    description: 'Asesorar en diseño, integración, análisis y evaluación de estrategias de sustentabilidad ambiental en proyectos y productos del hábitat.'
+                },
+                {
+                    title: 'Investigador en redes académicas',
+                    description: 'Participar en redes de colaboración académica y científica en su área de conocimiento especializado.'
+                },
+                {
+                    title: 'Evaluador de sostenibilidad en edificación',
+                    description: 'Evaluar y certificar la sostenibilidad global de proyectos de edificación conforme a criterios de marcas de calidad ambiental.'
+                }
+            ]}
+        />
+
+        {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
+        <BeyondTheProgram />
+
+        {/* 9. TITULACIÓN */}
+        <HeroSection
+            id="titulacion"
+            tagline="titulacion"
+            title='Evaluación y Titulación'
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+            <Fragment slot="content">
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
+                <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
+
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
+                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Hábitat, Urbanismo y Edificación Sostenible</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180410</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
+            
+                {/* Diploma */}
+                <Degree
+                    degreeName="Maestría en Hábitat, Urbanismo y Edificación Sostenible"
+                    incorporationNumber="MAES180410"
+                />
+                <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+            </Fragment>
+        </HeroSection>
+
+        {/* 10. POST MAESTRÍA (commond) */}
+        <PostMaestria />
+
+        {/* 11. BECAS (commond) */}
+        <Scholarship />
+
+        {/* 12. COMO APLICAR (commond) */}
+        <HowToApply />
+
+        {/* 13. INSCRIPCIÓN (commond) */}
+        <Registration />
+
+        {/* 14. MEDIOS DE PAGO (commond) */}
+        <PaymentMethods />
+
+        {/* 15. SOLICITUDES (commond) */}
+        <Requests />
+
+        </div>
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+</Layout>
