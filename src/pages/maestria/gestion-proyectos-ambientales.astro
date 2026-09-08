@@ -1,0 +1,405 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import StatsData from '~/components/maestria/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
+import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
+import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
+import { gestionProyectosAmbientalesCurriculum } from '~/data/maestria/gestion-proyectos-ambientales';
+
+import Scholarship from '~/components/maestria/Scholarship.astro';
+import Registration from '~/components/maestria/Registration.astro';
+import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
+import Requests from '~/components/maestria/Requests.astro';
+import HowToStudy from '~/components/maestria/HowToStudy.astro';
+import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
+import PostMaestria from '~/components/maestria/PostMaestria.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Degree from '~/components/common/Degree.astro';
+import HowToApply from '~/components/maestria/HowToApply.astro';
+
+const metadata = {
+    title: 'Maestría en Gestión de Proyectos Ambientales',
+    description: 'Fórmate para diseñar, dirigir y evaluar proyectos ambientales sostenibles en contextos urbanos y rurales, con una visión sistémica del desarrollo humano y territorial.',
+    keywords: 'Maestría en Gestión de Proyectos Ambientales, proyectos ambientales, gestión ambiental, desarrollo sostenible, planificación ambiental, evaluación ambiental, metodología PMI',
+};
+
+const facultyIds = [
+    'erick-brenes',
+    'gonzalo-fuente',
+    'angel-guillemes',
+    'maria-teresa-perez',
+    'diana-duran',
+    'loraine-giraud',
+    'yandy-rodriguez',
+];
+const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+
+const tabs = [
+    { id: 'bienvenida', label: '1. Bienvenida' },
+    { id: 'maestria', label: '2. La Maestría' },
+    { id: 'colaboran', label: '3. Colaboran' },
+    { id: 'estructura', label: '4. Estructura' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+    { id: 'claustro', label: '7. Claustro' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'titulacion', label: '9. Titulación' },
+    { id: 'postmaestria', label: '10. Post Maestría' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+    { id: 'inscripcion', label: '13. Inscripción' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    {/* HeroPrograms ********************************************** */}
+    <HeroPrograms
+        tagline='Convocatoria Abierta 2026'
+        title='Maestría en<br /> <span class="text-primary">Gestión de Proyectos Ambientales</span>'
+        subtitle='Las empresas con futuro necesitan <strong>líderes sociales ambientalmente responsables</strong>'
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'https://drive.google.com/file/d/1cU0nPhO2IoeI-sfTTDMM6UHj-cOmXdPK/view',
+            target: '_blank',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/maestrias/fvi-msc-ciencias-sostenibilidad.jpg',
+        alt: 'Imagen de la Maestría en Gestión de Proyectos Ambientales',
+        }}
+    />
+
+    {/* DatosEstadisticas */}
+    <StatsData />
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+        
+        {/* 1. BIENVENIDA */}
+        <Content
+            id="bienvenida"
+            tagline="Bienvenida"
+            title="Erick Brenes, PhD."
+            subtitle="Director de la Maestría"
+            items={[
+                {
+                title: 'Bienvenida del Director de la Maestría',
+                description: 'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales de los multi-stakeholders.<br><br>El objetivo esencial de este programa es formar profesionales en la planicación y gestión de empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
+                icon: 'tabler:building-community',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/users/fvi-erick-brenes.webp',
+                alt: 'Erick Brenes, PhD., director de la Maestría en Gestión de Proyectos Ambientales',
+            }}
+            >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </Content>
+        
+        {/* 2. LA MAESTRÍA */}
+        <Features2
+            id="maestria"
+            tagline="La Maestría"
+            title="¿Por qué hacer esta maestría?"
+            subtitle="La Maestría en Gestión de Proyectos Ambientales ofrece una formación especializada para profesionales que participan como auspiciadores, generadores, directores, planificadores, ejecutores o supervisores de proyectos ambientales."
+            columns={2}
+            items={[
+            {
+                title: 'Liderazgo para la transformación ambiental',
+                description: 'La gestión ambiental exige nuevas destrezas en técnicos, profesionales, funcionarios, responsables políticos y líderes sociales. El programa prepara para asumir el liderazgo de proyectos y estrategias ecológicas que reduzcan el impacto ambiental.',
+                icon: 'tabler:trending-up',
+            },
+            {
+                title: 'Alta demanda de especialistas',
+                description: 'Las organizaciones necesitan un enfoque y un plan ambiental para destacarse y lograr mejoras sostenibles en la empresa, el medio social y el medio natural. Por ello, la demanda de especialistas en proyectos ambientales es creciente.',
+                icon: 'tabler:briefcase',
+            },
+            ]}
+        >
+        </Features2>
+        
+        {/* ¿Quiénes deben asistir? */}
+        <Content
+            isReversed
+            items={[
+                {
+                    title: 'Titulados universitarios',
+                    description: 'Titulados de Ciencias Ambientales, Ciencias Económico-Administrativas, Ingeniería, Arquitectura, Derecho, Geografía y disciplinas similares, interesados en la sustentabilidad ambiental.',
+                    icon: 'tabler:certificate',
+                },
+                {
+                    title: 'Profesionales del área ambiental',
+                    description: 'Profesionales que requieran participar como auspiciadores, generadores, directores, planificadores, ejecutores o supervisores de proyectos ambientales.',
+                    icon: 'tabler:leaf',
+                },
+                {
+                    title: 'Titulados técnicos y funcionarios públicos',
+                    description: 'Titulados técnicos que asumen nuevos roles como gestores de la sustentabilidad ambiental y funcionarios con desempeño en desarrollo sostenible o en equipos de proyectos.',
+                    icon: 'tabler:building-community',
+                },
+                {
+                    title: 'Profesionales del desarrollo urbano',
+                    description: 'Licenciados recién egresados, docentes y profesionales con amplia experiencia interesados en el desarrollo urbano y la sustentabilidad.',
+                    icon: 'tabler:building',
+                },
+                {
+                    title: 'Perfiles interdisciplinarios',
+                    description: 'Profesionales con perspectiva interdisciplinaria de lo ambiental que acrediten competencias y experiencia relacionadas con la temática ambiental, o que deseen completar su formación en gestión ambiental.',
+                    icon: 'tabler:users-group',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-cs.jpg',
+                alt: '¿Quiénes deben asistir a la Maestría en Gestión de Proyectos Ambientales?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Quiénes deben asistir?
+            </h3>
+            </Fragment>
+        </Content>
+        {/* ¿Qué vas a aprender? */}
+        <Content
+            items={[
+            {
+                title: 'Desarrollo sostenible y proyectos ambientales',
+                description: 'Ampliar los conocimientos sobre temas prioritarios del desarrollo sostenible y la gestión de proyectos ambientales, especialmente en países en vías de desarrollo.',
+                icon: 'tabler:leaf',
+            },
+            {
+                title: 'Liderazgo y gestión del cambio',
+                description: 'Formar proyectistas capaces de gerenciar procesos de cambio y diseñar estrategias futuras con una visión sistémica de la sustentabilidad y el desarrollo humano.',
+                icon: 'tabler:trending-up',
+            },
+            {
+                title: 'Planificación y monitoreo de proyectos',
+                description: 'Identificar problemas, aplicar conceptos básicos de planificación de proyectos y establecer sistemas de monitoreo para verificar su avance y resultados.',
+                icon: 'tabler:checklist',
+            },
+            {
+                title: 'Formulación de proyectos sostenibles',
+                description: 'Formular, emprender e instrumentar proyectos sostenibles en ambientes urbanos y rurales, tanto en la microescala como en la macroescala.',
+                icon: 'tabler:world',
+            },
+            {
+                title: 'Herramientas técnico-metodológicas',
+                description: 'Conocer instrumentos operativos para seleccionar las tecnologías adecuadas y concretar proyectos ambientales viables y pertinentes.',
+                icon: 'tabler:tools',
+            },
+            {
+                title: 'Buenas prácticas de gestión',
+                description: 'Conocer las mejores prácticas para gestionar proyectos desde una perspectiva sistémica y práctica, con atención a sus resultados y a su impacto.',
+                icon: 'tabler:settings',
+            }
+
+            ]}
+            image={{
+            src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
+            alt: '¿Qué vas a aprender en la Maestría en Gestión de Proyectos Ambientales?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Qué vas a aprender?
+            </h3>
+            </Fragment>
+        </Content>
+
+        {/* 3. COLABORAN */}
+        <HeroSection
+            id="colaboran"
+            tagline="Colaboran"
+            title='Entidades Colaboradoras'
+            image={{
+                src: '~/assets/images/maestrias/fvi-colaboran-msc-hues.jpg',
+                alt: 'Entidades colaboradoras de la Maestría en Gestión de Proyectos Ambientales',
+            }}
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </HeroSection>
+
+        {/* 4. ESTRUCTURA DEL PROGRAMA */}
+        <HeroSection
+            id="estructura"
+            tagline="Estructura"
+            title='Estructura del Programa'
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Gestión de Proyectos Ambientales</span> tiene una duración de <strong>seis trimestres (2 años)</strong> y un total de <strong>1,520 horas lectivas (96 créditos)</strong>. El plan de estudios integra nueve cursos sobre sostenibilidad, gestión ambiental, planificación, evaluación y gerencia de proyectos. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría - PTM</strong>; posteriormente, en el sexto trimestre, acredita la opción terminal de titulación y realiza sus trámites de graduación según la modalidad elegida.'
+        >
+            <Fragment slot="content">
+                <ProgramCurriculum 
+                    courses={gestionProyectosAmbientalesCurriculum.courses}
+                    thesisProject={{ title: 'Proyecto Terminal de Maestría - PTM', hours: 368, credits: 24 }}
+                />
+            </Fragment>
+        </HeroSection>
+
+        {/* 5. PROYECTO PTM (commond) */}
+        <ProjectPTM />
+
+        {/* 6. COMO SE ESTUDIA (commond) */}
+        <HowToStudy />
+
+        {/* 7. CLAUSTRO */}
+        <ClaustroInfo />
+        {
+            facultyList.map((prof) => (
+            <FacultyMember {...prof}>
+                <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                </Fragment>
+            </FacultyMember>
+            ))
+        }
+
+        {/* 8. BENEFICIOS */}
+        <Features
+            id="beneficios"
+            tagline='Beneficios'
+            title="¿Cómo te beneficiará este programa?"
+            subtitle='El egresado de la <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Gestión de Proyectos Ambientales</span> será capaz de:'
+            columns={2}
+            items={[
+                {
+                    title: 'Evaluación estratégica de proyectos',
+                    description: 'Utilizar herramientas e instrumentos para evaluar y proponer proyectos de alto impacto estratégico para el desarrollo sostenible.',
+                    icon: 'tabler:chart-bar',
+                },
+                {
+                    title: 'Definición del proyecto',
+                    description: 'Definir un proyecto antes de iniciarlo mediante la identificación del problema que se pretende resolver a través de una acción de desarrollo.',
+                    icon: 'tabler:target',
+                },
+                {
+                    title: 'Diseño y evaluación de proyectos sostenibles',
+                    description: 'Formular, diseñar, ejecutar y evaluar proyectos sostenibles de desarrollo territorial que incrementen la capacidad de generar valor en el territorio.',
+                    icon: 'tabler:clipboard-check',
+                },
+                {
+                    title: 'Liderazgo de proyectos',
+                    description: 'Liderar proyectos capaces de generar valor económico y social a largo plazo.',
+                    icon: 'tabler:trending-up',
+                },
+                {
+                    title: 'Administración exitosa de proyectos',
+                    description: 'Aplicar herramientas y técnicas para administrar proyectos y organizarlos de acuerdo con el presupuesto y los plazos fijados.',
+                    icon: 'tabler:briefcase',
+                },
+                {
+                    title: 'Gestión de recursos',
+                    description: 'Asignar recursos humanos, materiales y financieros de acuerdo con las características y objetivos de cada proyecto ambiental.',
+                    icon: 'tabler:users',
+                },
+                {
+                    title: 'Financiación ambiental',
+                    description: 'Conocer los esquemas de apoyo económico de organismos nacionales e internacionales para realizar proyectos ambientales.',
+                    icon: 'tabler:cash',
+                },
+                {
+                    title: 'Gestión integral y sustentabilidad',
+                    description: 'Conocer los componentes de un proyecto ambiental, aplicar el concepto de sustentabilidad y llevar a cabo proyectos asignados de manera eficiente.',
+                    icon: 'tabler:leaf',
+                },
+            ]}
+        />
+
+        {/* Potencia tus salidas */}
+        <Features3
+            tagline='Salidas Profesionales'
+            title="Potencia tus Salidas Profesionales"
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Gestión de Proyectos Ambientales</span> prepara para desempeñarse como gerente, miembro de equipos de gestión, auspiciador, facilitador o ejecutor de proyectos ambientales. Sus principales salidas profesionales son:'
+            columns={3}
+            defaultIcon="tabler:point-filled"
+            items={[
+                { title: 'Director de programas de desarrollo sostenible', description: 'Dirigir programas de desarrollo sostenible en un área geográfica determinada.' },
+                { title: 'Gerente o director de proyectos', description: 'Dirigir proyectos promovidos por la iniciativa pública o la empresa privada.' },
+                { title: 'Técnico de proyectos ambientales', description: 'Trabajar en empresas productivas con impacto ambiental y en entidades públicas reguladoras o ejecutoras de medidas ambientales.' },
+                { title: 'Director de planeación ambiental', description: 'Dirigir la planeación en organizaciones ambientales de gran tamaño, figure o no al frente de un departamento específico.' },
+                { title: 'Asesor de pequeños productores y comunidades', description: 'Asesorar a pequeños productores, comunidades indígenas o campesinas en la organización de empresas productivas mediante cooperativas u organizaciones no gubernamentales.' },
+                { title: 'Consultor independiente', description: 'Crear y dirigir una empresa propia dedicada a la consultoría independiente.' },
+                { title: 'Consultor de proyectos territoriales', description: 'Participar en el desarrollo y puesta en marcha de proyectos territoriales.' },
+                { title: 'Director de organizaciones no gubernamentales', description: 'Dirigir organizaciones no gubernamentales enfocadas en sostenibilidad.' },
+                { title: 'Director o gestor ambiental empresarial', description: 'Dirigir o gestionar el área de Medio Ambiente de empresas.' },
+                { title: 'Coordinador de equipos multidisciplinarios', description: 'Coordinar grupos en la elaboración de estudios, investigaciones y proyectos relacionados con el desarrollo y la problemática de las ciudades.' }
+            ]}
+        />
+
+        {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
+        <BeyondTheProgram />
+
+        {/* 9. TITULACIÓN */}
+        <HeroSection
+            id="titulacion"
+            tagline="titulacion"
+            title='Evaluación y Titulación'
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+            <Fragment slot="content">
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
+                <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
+
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
+                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong>, obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Gestión de Proyectos Ambientales</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, con Reconocimiento de Validez Oficial de Estudios mediante el Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES201238</span> de la Dirección de Educación Superior de la Secretaría de Educación Pública.</p>
+            
+                {/* Diploma */}
+                <Degree
+                    degreeName="Maestría en Gestión de Proyectos Ambientales"
+                    incorporationNumber="MAES201238"
+                />
+                <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+            </Fragment>
+        </HeroSection>
+
+        {/* 10. POST MAESTRÍA (commond) */}
+        <PostMaestria />
+
+        {/* 11. BECAS (commond) */}
+        <Scholarship />
+
+        {/* 12. COMO APLICAR (commond) */}
+        <HowToApply />
+
+        {/* 13. INSCRIPCIÓN (commond) */}
+        <Registration />
+
+        {/* 14. MEDIOS DE PAGO (commond) */}
+        <PaymentMethods />
+
+        {/* 15. SOLICITUDES (commond) */}
+        <Requests />
+
+        </div>
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+</Layout>
