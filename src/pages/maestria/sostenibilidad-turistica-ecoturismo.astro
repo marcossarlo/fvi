@@ -1,0 +1,392 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import StatsData from '~/components/maestria/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
+import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
+import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
+import { sostenibilidadTuristicaEcoturismoCurriculum } from '~/data/maestria/sostenibilidad-turistica-ecoturismo';
+
+import Scholarship from '~/components/maestria/Scholarship.astro';
+import Registration from '~/components/maestria/Registration.astro';
+import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
+import Requests from '~/components/maestria/Requests.astro';
+import HowToStudy from '~/components/maestria/HowToStudy.astro';
+import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
+import PostMaestria from '~/components/maestria/PostMaestria.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Degree from '~/components/common/Degree.astro';
+import HowToApply from '~/components/maestria/HowToApply.astro';
+
+const metadata = {
+    title: 'Maestría en Sostenibilidad Turística y Ecoturismo',
+    description: 'Fórmate para gestionar empresas, productos y destinos turísticos sostenibles, impulsar el ecoturismo y promover un desarrollo responsable de las comunidades y su entorno.',
+    keywords: 'Maestría en Sostenibilidad Turística y Ecoturismo, turismo sostenible, ecoturismo, turismo responsable, gestión turística, responsabilidad social empresarial, destinos sostenibles',
+};
+
+const facultyIds = [
+    'gonzalo-fuente',
+    'maria-teresa-perez',
+    'diana-duran',
+    'susan-smith',
+];
+const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+
+const tabs = [
+    { id: 'bienvenida', label: '1. Bienvenida' },
+    { id: 'maestria', label: '2. La Maestría' },
+    { id: 'colaboran', label: '3. Colaboran' },
+    { id: 'estructura', label: '4. Estructura' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+    { id: 'claustro', label: '7. Claustro' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'titulacion', label: '9. Titulación' },
+    { id: 'postmaestria', label: '10. Post Maestría' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+    { id: 'inscripcion', label: '13. Inscripción' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    {/* HeroPrograms ********************************************** */}
+    <HeroPrograms
+        tagline='Convocatoria Abierta 2026'
+        title='Maestría en<br /> <span class="text-primary">Sostenibilidad Turística y Ecoturismo</span>'
+        subtitle='Lidera la transformación hacia un turismo <strong>responsable y sostenible.</strong>'
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'https://drive.google.com/file/d/1P36zeZ0Q20YW8oN00BApQr1nFPyviw2B/view',
+            target: '_blank',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/maestrias/fvi-msc-ciencias-sostenibilidad.jpg',
+        alt: 'Imagen de la Maestría en Sostenibilidad Turística y Ecoturismo',
+        }}
+    />
+
+    {/* DatosEstadisticas */}
+    <StatsData />
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+        
+        {/* 1. BIENVENIDA */}
+        <Content
+            id="bienvenida"
+            tagline="Bienvenida"
+            title="Gonzalo de la Fuente de Val, Dr."
+            subtitle="Director de la Maestría"
+            items={[
+                {
+                title: 'Bienvenida del Director de la Maestría',
+                description: 'El turismo es un sector que ha crecido de manera importante en los últimos años, y ha evolucionado en continua adaptación a las exigencias del presente. <br> <br> En muchas ocasiones la toma de decisiones ante estos cambios y la capacidad de liderazgo, supone un reto para los profesionales del sector. En este punto, la formación asume un papel decisivo a la hora de contar con profesionales que afronten con éxito este reto, aspirando a desarrollar directivos altamente especializados en el sector turístico.',
+                icon: 'tabler:building-community',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/users/fvi-gonzalo-fuente.webp',
+                alt: 'Gonzalo de la Fuente de Val, Dr., director de la Maestría en Sostenibilidad Turística y Ecoturismo',
+            }}
+            >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </Content>
+        
+        {/* 2. LA MAESTRÍA */}
+        <Features2
+            id="maestria"
+            tagline="La Maestría"
+            title="¿Por qué hacer esta maestría?"
+            subtitle="El turismo es uno de los sectores que más empleo genera y uno de los que mejor resiste las crisis económicas. Sin embargo, necesita profesionales preparados para liderar su evolución con criterios de sostenibilidad, responsabilidad social y respeto por las culturas y los entornos locales."
+            columns={2}
+            items={[
+            {
+                title: 'Una industria con oportunidades',
+                description: 'Una sólida formación en gestión del turismo sostenible impulsa el acceso a puestos de responsabilidad en una industria apasionante, dinámica y con una creciente demanda de profesionales especializados.',
+                icon: 'tabler:briefcase',
+            },
+            {
+                title: 'Turismo con impacto positivo',
+                description: 'El programa prepara para diseñar destinos sostenibles, aplicar códigos de conducta ambiental, proteger la biodiversidad y promover un reparto más justo de los ingresos entre las comunidades locales.',
+                icon: 'tabler:world-heart',
+            },
+            ]}
+        >
+        </Features2>
+        
+        {/* ¿Quiénes deben asistir? */}
+        <Content
+            isReversed
+            items={[
+                {
+                    title: 'Titulados de distintas disciplinas',
+                    description: 'Titulados en Turismo, Geografía, Humanidades, Administración de Empresas, Ciencias Ambientales, Periodismo y otras áreas relacionadas.',
+                    icon: 'tabler:certificate',
+                },
+                {
+                    title: 'Profesionales y empresas turísticas',
+                    description: 'Profesionales de empresas y actividades turísticas, gerentes y personas vinculadas al sector hotelero, agencias de viajes, operadores, mayoristas, guías y empresas turísticas.',
+                    icon: 'tabler:building-community',
+                },
+                {
+                    title: 'Administraciones públicas y organizaciones',
+                    description: 'Técnicos de las administraciones públicas, oficinas de turismo, cultura y ambiente, así como personas vinculadas con organizaciones no gubernamentales.',
+                    icon: 'tabler:external-link',
+                },
+                {
+                    title: 'Emprendedores y agentes locales',
+                    description: 'Empresarios y emprendedores que ofrecen productos de ocio y turismo, desean crear iniciativas responsables o buscan aplicar herramientas de responsabilidad social y buenas prácticas en su ámbito de acción.',
+                    icon: 'tabler:bulb',
+                },
+                {
+                    title: 'Personas interesadas en el turismo sostenible',
+                    description: 'Profesionales y estudiantes interesados en aplicar herramientas para la gestión sostenible de empresas y destinos turísticos, y en promover un desarrollo responsable, inclusivo y respetuoso del entorno.',
+                    icon: 'tabler:users-group',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-cs.jpg',
+                alt: '¿Quiénes deben asistir a la Maestría en Sostenibilidad Turística y Ecoturismo?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Quiénes deben asistir?
+            </h3>
+            </Fragment>
+        </Content>
+        {/* ¿Qué vas a aprender? */}
+        <Content
+            items={[
+            {
+                title: 'Administración turística avanzada',
+                description: 'Transmitir conceptos y técnicas avanzadas de administración turística para fortalecer la dirección, el liderazgo, la creatividad, la innovación y el trabajo en equipo.',
+                icon: 'tabler:chart-bar',
+            },
+            {
+                title: 'Sostenibilidad aplicada al turismo',
+                description: 'Comprender qué aporta la sostenibilidad a la actividad económica, reconocer la importancia de la planificación y aplicar estrategias de turismo sostenible.',
+                icon: 'tabler:leaf',
+            },
+            {
+                title: 'Diseño de productos y destinos',
+                description: 'Diseñar y planificar productos y destinos turísticos sostenibles, con enfoque inclusivo, dinamización económica y generación de cadenas de valor.',
+                icon: 'tabler:map-2',
+            },
+            {
+                title: 'Gestión responsable de recursos',
+                description: 'Promover el aprovechamiento equitativo y sustentable de los recursos naturales, históricos y culturales, con participación de todos los agentes del sistema turístico.',
+                icon: 'tabler:world',
+            },
+            {
+                title: 'Responsabilidad social empresarial',
+                description: 'Formular estrategias y acciones de responsabilidad social empresarial aplicadas al turismo, equilibrando la rentabilidad con la conservación ambiental y la calidad de vida local.',
+                icon: 'tabler:heart-handshake',
+            }
+
+            ]}
+            image={{
+            src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
+            alt: '¿Qué vas a aprender en la Maestría en Sostenibilidad Turística y Ecoturismo?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Qué vas a aprender?
+            </h3>
+            </Fragment>
+        </Content>
+
+        {/* 3. COLABORAN */}
+        <HeroSection
+            id="colaboran"
+            tagline="Colaboran"
+            title='Entidades Colaboradoras'
+            image={{
+                src: '~/assets/images/maestrias/fvi-colaboran-msc-hues.jpg',
+                alt: 'Entidades colaboradoras de la Maestría en Sostenibilidad Turística y Ecoturismo',
+            }}
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </HeroSection>
+
+        {/* 4. ESTRUCTURA DEL PROGRAMA */}
+        <HeroSection
+            id="estructura"
+            tagline="Estructura"
+            title='Estructura del Programa'
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Sostenibilidad Turística y Ecoturismo</span> tiene una duración de seis trimestres (2 años) con un total de <strong>1,520 horas lectivas</strong> (<strong>96 créditos</strong>). Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría - PTM</strong>; posteriormente en el sexto trimestre, el alumno deberá acreditar la opción terminal de titulación y realizar sus trámites de graduación de acuerdo a la modalidad que haya elegido.'
+        >
+            <Fragment slot="content">
+                <ProgramCurriculum 
+                    courses={sostenibilidadTuristicaEcoturismoCurriculum.courses}
+                    thesisProject={{ title: 'Proyecto Terminal de Maestría - PTM', hours: 368, credits: 24 }}
+                />
+            </Fragment>
+        </HeroSection>
+
+        {/* 5. PROYECTO PTM (commond) */}
+        <ProjectPTM />
+
+        {/* 6. COMO SE ESTUDIA (commond) */}
+        <HowToStudy />
+
+        {/* 7. CLAUSTRO */}
+        <ClaustroInfo />
+        {
+            facultyList.map((prof) => (
+            <FacultyMember {...prof}>
+                <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                </Fragment>
+            </FacultyMember>
+            ))
+        }
+
+        {/* 8. BENEFICIOS */}
+        <Features
+            id="beneficios"
+            tagline='Beneficios'
+            title="¿Cómo te beneficiará este programa?"
+            subtitle='El egresado de la <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Sostenibilidad Turística y Ecoturismo</span> será capaz de:'
+            columns={2}
+            items={[
+                {
+                    title: 'Gestión competitiva y ética',
+                    description: 'Desempeñarse con competitividad, ética, creatividad y responsabilidad en la administración y gestión de servicios turísticos.',
+                    icon: 'tabler:briefcase',
+                },
+                {
+                    title: 'Proyectos de turismo sostenible',
+                    description: 'Formular propuestas de inversión y proyectos de turismo sostenible vinculados al desarrollo rural y a la mejora de la calidad de vida en pueblos y comunidades locales.',
+                    icon: 'tabler:plant-2',
+                },
+                {
+                    title: 'Transparencia y relaciones constructivas',
+                    description: 'Implementar procesos de transparencia empresarial y relaciones constructivas con el entorno y con todos los agentes del sistema turístico.',
+                    icon: 'tabler:heart-handshake',
+                },
+                {
+                    title: 'Nuevas oportunidades locales',
+                    description: 'Identificar actividades de interés económico que generen oportunidades para las empresas y para la población local.',
+                    icon: 'tabler:bulb',
+                },
+                {
+                    title: 'Desarrollo turístico sustentable',
+                    description: 'Promover el turismo rural, ecológico, comunitario y vivencial, así como políticas participativas que respeten el entorno socioambiental.',
+                    icon: 'tabler:world',
+                },
+                {
+                    title: 'Ética y buenas prácticas',
+                    description: 'Favorecer la aplicación de principios éticos y buenas prácticas en el sector turístico empresarial.',
+                    icon: 'tabler:checklist',
+                },
+                {
+                    title: 'Conciencia y responsabilidad ambiental',
+                    description: 'Aumentar la conciencia y responsabilidad ambiental de las empresas y de la población en el ámbito local.',
+                    icon: 'tabler:leaf',
+                },
+            ]}
+        />
+
+        {/* Potencia tus salidas */}
+        <Features3
+            tagline='Salidas Profesionales'
+            title="Potencia tus Salidas Profesionales"
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Sostenibilidad Turística y Ecoturismo</span> prepara profesionales de alto nivel para dirigir y planificar actividades e instituciones turísticas, tanto públicas como privadas. Sus principales salidas profesionales son:'
+            columns={3}
+            defaultIcon="tabler:point-filled"
+            items={[
+                { title: 'Director de establecimientos turísticos', description: 'Dirigir cadenas hoteleras, hoteles y establecimientos especializados como ecolodges, alojamientos y casas rurales.' },
+                { title: 'Planificador y gestor de destinos sostenibles', description: 'Planificar y gestionar destinos, actividades en el medio natural de bajo impacto ambiental y actividades de aventura.' },
+                { title: 'Director de producto turístico', description: 'Diseñar destinos sostenibles para agencias de viaje especializadas y convencionales.' },
+                { title: 'Gerente de consultoría turística sostenible', description: 'Gestionar planes de destinos y proyectos de desarrollo en empresas de consultoría turística sostenible.' },
+                { title: 'Director de organizaciones de turismo especializado', description: 'Dirigir organizaciones y empresas de turismo educativo, de aventura, termal, rural, agroturismo y etnoturismo, entre otros.' },
+                { title: 'Asesor de organismos de fomento turístico', description: 'Asesorar a municipalidades, gobiernos regionales, organismos de fomento productivo y organizaciones gremiales de turismo.' },
+                { title: 'Gestor de productos turísticos sostenibles', description: 'Gestionar productos específicos en empresas de animación turística que fomenten la sostenibilidad.' },
+                { title: 'Técnico de desarrollo turístico en áreas protegidas', description: 'Desarrollar productos turísticos en parques y áreas protegidas con uso turístico y recreativo.' },
+                { title: 'Gerente de entidades no lucrativas de turismo', description: 'Dirigir entidades no lucrativas orientadas al desarrollo del turismo responsable.' },
+                { title: 'Director de corporaciones de ocio', description: 'Planificar y dirigir corporaciones y proyectos de ocio vinculados al turismo sostenible.' }
+            ]}
+        />
+
+        {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
+        <BeyondTheProgram />
+
+        {/* 9. TITULACIÓN */}
+        <HeroSection
+            id="titulacion"
+            tagline="titulacion"
+            title='Evaluación y Titulación'
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+            <Fragment slot="content">
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
+                <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
+
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
+                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong>, obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Sostenibilidad Turística y Ecoturismo</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, con Reconocimiento de Validez Oficial de Estudios mediante el Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180410</span> de la Dirección de Educación Superior de la Secretaría de Educación Pública.</p>
+            
+                {/* Diploma */}
+                <Degree
+                    degreeName="Maestría en Sostenibilidad Turística y Ecoturismo"
+                    incorporationNumber="MAES180410"
+                />
+                <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+            </Fragment>
+        </HeroSection>
+
+        {/* 10. POST MAESTRÍA (commond) */}
+        <PostMaestria />
+
+        {/* 11. BECAS (commond) */}
+        <Scholarship />
+
+        {/* 12. COMO APLICAR (commond) */}
+        <HowToApply />
+
+        {/* 13. INSCRIPCIÓN (commond) */}
+        <Registration />
+
+        {/* 14. MEDIOS DE PAGO (commond) */}
+        <PaymentMethods />
+
+        {/* 15. SOLICITUDES (commond) */}
+        <Requests />
+
+        </div>
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+</Layout>
