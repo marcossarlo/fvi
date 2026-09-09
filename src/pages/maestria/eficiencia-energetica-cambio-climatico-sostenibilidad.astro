@@ -1,0 +1,419 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroPrograms from '~/components/widgets/HeroPrograms.astro';
+import StatsData from '~/components/maestria/StatsData.astro';
+import ProgramTOC from '~/components/widgets/ProgramTOC.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroSection from '~/components/widgets/HeroSection.astro';
+import ProgramCurriculum from '~/components/maestria/ProgramCurriculum.astro';
+import ProjectPTM from '~/components/maestria/ProjectPTM.astro';
+import BeyondTheProgram from '~/components/maestria/BeyondTheProgram.astro';
+import { eficienciaEnergeticaCambioClimaticoSostenibilidadCurriculum } from '~/data/maestria/eficiencia-energetica-cambio-climatico-sostenibilidad';
+
+import Scholarship from '~/components/maestria/Scholarship.astro';
+import Registration from '~/components/maestria/Registration.astro';
+import PaymentMethods from '~/components/maestria/PaymentMethods.astro';
+import Requests from '~/components/maestria/Requests.astro';
+import HowToStudy from '~/components/maestria/HowToStudy.astro';
+import ClaustroInfo from '~/components/maestria/ClaustroInfo.astro';
+import PostMaestria from '~/components/maestria/PostMaestria.astro';
+import FacultyMember from '~/components/widgets/FacultyMember.astro';
+import { faculty } from '~/data/faculty';
+import Features from '~/components/widgets/Features.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Degree from '~/components/common/Degree.astro';
+import HowToApply from '~/components/maestria/HowToApply.astro';
+
+const metadata = {
+    title: 'Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad',
+    description: 'Fórmate en eficiencia energética, ecoeficiencia, ecodiseño, cambio climático y sostenibilidad para impulsar soluciones ambientales y energéticas en empresas, gobiernos y comunidades.',
+    keywords: 'Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad, eficiencia energética, cambio climático, ecoeficiencia, ecodiseño, energías renovables, sostenibilidad',
+};
+
+const facultyIds = [
+    'loraine-giraud',
+    'gonzalo-fuente',
+    'angel-guillemes',
+    'erick-brenes',
+    'alberto-jimenez',
+    'yandy-rodriguez',
+    'susan-smith',
+];
+const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+
+const tabs = [
+    { id: 'bienvenida', label: '1. Bienvenida' },
+    { id: 'maestria', label: '2. La Maestría' },
+    { id: 'colaboran', label: '3. Colaboran' },
+    { id: 'estructura', label: '4. Estructura' },
+    { id: 'proyecto', label: '5. Proyecto' },
+    { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+    { id: 'claustro', label: '7. Claustro' },
+    { id: 'beneficios', label: '8. Beneficios' },
+    { id: 'titulacion', label: '9. Titulación' },
+    { id: 'postmaestria', label: '10. Post Maestría' },
+    { id: 'becas', label: '11. Becas' },
+    { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+    { id: 'inscripcion', label: '13. Inscripción' },
+    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+    { id: 'solicitudes', label: '15. Solicitudes' },
+];
+---
+
+<Layout metadata={metadata} showSecondaryNav={false}>
+    {/* HeroPrograms ********************************************** */}
+    <HeroPrograms
+        tagline='Convocatoria Abierta 2026'
+        title='Maestría en<br /> <span class="text-primary">Eficiencia Energética, Cambio Climático y Sostenibilidad</span>'
+        subtitle='Planifica e implementa <strong>soluciones sostenibles eficientes</strong>.'
+        actions={[
+        {
+            variant: 'primary',
+            text: 'Solicita información',
+            href: '#solicitudes',
+            icon: 'tabler:mail-forward',
+            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        },
+        {
+            variant: 'secondary',
+            text: 'Ver Folleto Académico',
+            href: 'https://drive.google.com/file/d/1OadmJzcL7nNk0psZHrNmiJOaNm38dVJs/view',
+            target: '_blank',
+            icon: 'tabler:download',
+            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        },
+        ]}
+        image={{
+        src: '~/assets/images/maestrias/fvi-msc-ciencias-sostenibilidad.jpg',
+        alt: 'Imagen de la Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad',
+        }}
+    />
+
+    {/* DatosEstadisticas */}
+    <StatsData />
+
+    <div class="relative max-w-[100vw] overflow-x-hidden">
+        <!-- Desktop Sidebar & Mobile Floating Pill -->
+        <ProgramTOC tabs={tabs} />
+
+        {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+        
+        {/* 1. BIENVENIDA */}
+        <Content
+            id="bienvenida"
+            tagline="Bienvenida"
+            title="Loraine Giraud, Dra."
+            subtitle="Directora de la Maestría"
+            items={[
+                {
+                title: 'Bienvenida de la Directora de la Maestría',
+                description: 'Planificar, proyectar y dirigir proyectos globales en el campo de la tecnología energética y la sostenibilidad en el complejo marco del cambio climático. Este máster asegura de que desarrollen las habilidades para evaluar el rendimiento energético y ambiental.<br><br>El programa le brinda la oportunidad de explorar conceptos de diseño innovadores y enfoques novedosos para ayudarlo a abordar los desafíos ambientales y sociales actuales y futuros.',
+                icon: 'tabler:building-community',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/users/fvi-loraine-giraud.webp',
+                alt: 'Loraine Giraud, Dra., directora de la Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad',
+            }}
+            >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </Content>
+        
+        {/* 2. LA MAESTRÍA */}
+        <Features2
+            id="maestria"
+            tagline="La Maestría"
+            title="¿Por qué hacer esta maestría?"
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Eficiencia Energética, Cambio Climático y Sostenibilidad</span> es un título interdisciplinario que integra ecodiseño, ecoeficiencia, eficiencia energética, Green Supply Chain, sistemas de gestión medioambiental, cambio climático, negocios y sostenibilidad desde perspectivas globales, regionales y locales.'
+            columns={2}
+            items={[
+            {
+                title: 'Respuestas locales a desafíos globales',
+                description: 'Ante el cambio climático, la crisis económica y la degradación ambiental, el programa prepara para impulsar hábitos de consumo y producción sostenibles que reduzcan la explotación de recursos, las emisiones de CO2 y la pobreza mediante soluciones locales y participativas.',
+                icon: 'tabler:world',
+            },
+            {
+                title: 'Innovación para la competitividad sostenible',
+                description: 'El programa ayuda a empresas y gobiernos a incorporar el ecodiseño, la ecoeficiencia y la producción sostenible para mejorar el rendimiento financiero y ambiental, facilitar infraestructuras sostenibles y crear empleos verdes.',
+                icon: 'tabler:bulb',
+            },
+            ]}
+        >
+        </Features2>
+        
+        {/* ¿Quiénes deben asistir? */}
+        <Content
+            isReversed
+            items={[
+                {
+                    title: 'Titulados científico-técnicos',
+                    description: 'Titulados universitarios de Ciencias Ambientales, Biología, Ingenierías Industriales y Arquitectura que deseen orientar su carrera hacia las energías renovables, la eficiencia energética, la sostenibilidad y el cambio climático.',
+                    icon: 'tabler:certificate',
+                },
+                {
+                    title: 'Especialistas en energía y construcción',
+                    description: 'Personas con formación relacionada con la energía, la mecánica, la construcción, la ingeniería civil o la ingeniería arquitectónica.',
+                    icon: 'tabler:bolt',
+                },
+                {
+                    title: 'Profesionales del sector empresarial',
+                    description: 'Profesionales y personal operativo que deseen aprender y aplicar herramientas de ecoeficiencia en su empresa o actividad laboral.',
+                    icon: 'tabler:building-community',
+                },
+                {
+                    title: 'Técnicos y especialistas de gobierno',
+                    description: 'Técnicos y especialistas de organismos de gobierno relacionados con las temáticas ambiental e industrial.',
+                    icon: 'tabler:calendar-check',
+                },
+                {
+                    title: 'Profesionales de medio ambiente y energía',
+                    description: 'Profesionales que trabajen en administraciones o empresas relacionadas con el medio ambiente, la mejora de sistemas productivos y la energía.',
+                    icon: 'tabler:leaf',
+                },
+                {
+                    title: 'Formuladores de proyectos sostenibles',
+                    description: 'Personas interesadas en desarrollar competencias y adquirir herramientas para identificar y formular proyectos de eficiencia energética y ecoeficiencia para el desarrollo local, en equipos multi e interdisciplinarios.',
+                    icon: 'tabler:bulb',
+                },
+                {
+                    title: 'Entidades financieras y ONG',
+                    description: 'Especialistas de entidades financieras y organizaciones no gubernamentales que financien programas de mejora del desempeño ambiental.',
+                    icon: 'tabler:users-group',
+                },
+            ]}
+            image={{
+                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-cs.jpg',
+                alt: '¿Quiénes deben asistir a la Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Quiénes deben asistir?
+            </h3>
+            </Fragment>
+        </Content>
+        {/* ¿Qué vas a aprender? */}
+        <Content
+            items={[
+            {
+                title: 'Eficiencia energética y energías renovables',
+                description: 'Adquirir conocimientos avanzados e integrar tecnologías energéticamente eficientes y fuentes de energía renovables en las operaciones de las empresas.',
+                icon: 'tabler:bolt',
+            },
+            {
+                title: 'Proyectos sostenibles y energéticamente eficientes',
+                description: 'Comprender las complejidades de la creación de futuros sostenibles y desarrollar habilidades técnicas para crear proyectos sostenibles y energéticamente eficientes.',
+                icon: 'tabler:plant-2',
+            },
+            {
+                title: 'Cambio climático y transición energética',
+                description: 'Abordar los desafíos del cambio climático y su relación con la economía, los negocios, las políticas y la ciencia climática, así como los riesgos, costos y beneficios de la transición a una energía baja en carbono.',
+                icon: 'tabler:cloud',
+            },
+            {
+                title: 'Sostenibilidad ambiental industrial',
+                description: 'Formar especialistas capaces de identificar y valorar el impacto sobre el entorno de sus proyectos y actividades industriales.',
+                icon: 'tabler:building-factory-2',
+            },
+            {
+                title: 'Oportunidades de mejora integral',
+                description: 'Desarrollar capacidades técnicas para detectar y generar oportunidades que beneficien a las empresas en los ámbitos técnico, económico, ambiental y social.',
+                icon: 'tabler:chart-bar',
+            },
+            {
+                title: 'Estrategias de ecoeficiencia',
+                description: 'Describir estrategias de ecoeficiencia y adquirir herramientas para implantarlas en el lugar de trabajo.',
+                icon: 'tabler:settings',
+            },
+            {
+                title: 'Ecodiseño y competitividad empresarial',
+                description: 'Conocer estrategias de ecodiseño, su relación con la competitividad empresarial y los beneficios de introducir productos ecodiseñados.',
+                icon: 'tabler:recycle',
+            }
+
+            ]}
+            image={{
+            src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
+            alt: '¿Qué vas a aprender en la Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad?',
+            }}
+        >
+            <Fragment slot="content">
+            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+                ¿Qué vas a aprender?
+            </h3>
+            </Fragment>
+        </Content>
+
+        {/* 3. COLABORAN */}
+        <HeroSection
+            id="colaboran"
+            tagline="Colaboran"
+            title='Entidades Colaboradoras'
+            image={{
+                src: '~/assets/images/maestrias/fvi-colaboran-msc-hues.jpg',
+                alt: 'Entidades colaboradoras de la Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad',
+            }}
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+        </HeroSection>
+
+        {/* 4. ESTRUCTURA DEL PROGRAMA */}
+        <HeroSection
+            id="estructura"
+            tagline="Estructura"
+            title='Estructura del Programa'
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Eficiencia Energética, Cambio Climático y Sostenibilidad</span> tiene una duración de <strong>seis trimestres (2 años)</strong> y un total de <strong>1,520 horas lectivas (96 créditos)</strong>. El plan de estudios integra nueve cursos sobre sostenibilidad, sistemas de gestión medioambiental, ecoeficiencia, energía, cambio climático, responsabilidad social y proyectos sostenibles. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría - PTM</strong>; posteriormente, en el sexto trimestre, acredita la opción terminal de titulación y realiza sus trámites de graduación según la modalidad elegida.'
+        >
+            <Fragment slot="content">
+                <ProgramCurriculum 
+                    courses={eficienciaEnergeticaCambioClimaticoSostenibilidadCurriculum.courses}
+                    thesisProject={{ title: 'Proyecto Terminal de Maestría - PTM', hours: 368, credits: 24 }}
+                />
+            </Fragment>
+        </HeroSection>
+
+        {/* 5. PROYECTO PTM (commond) */}
+        <ProjectPTM />
+
+        {/* 6. COMO SE ESTUDIA (commond) */}
+        <HowToStudy />
+
+        {/* 7. CLAUSTRO */}
+        <ClaustroInfo />
+        {
+            facultyList.map((prof) => (
+            <FacultyMember {...prof}>
+                <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+                </Fragment>
+            </FacultyMember>
+            ))
+        }
+
+        {/* 8. BENEFICIOS */}
+        <Features
+            id="beneficios"
+            tagline='Beneficios'
+            title="¿Cómo te beneficiará este programa?"
+            subtitle='El egresado de la <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Eficiencia Energética, Cambio Climático y Sostenibilidad</span> será capaz de:'
+            columns={2}
+            items={[
+                {
+                    title: 'Planificación de soluciones sostenibles',
+                    description: 'Conocer y aplicar herramientas para planificar e implementar soluciones sostenibles y eficientes.',
+                    icon: 'tabler:route',
+                },
+                {
+                    title: 'Análisis crítico de la sostenibilidad',
+                    description: 'Realizar análisis críticos, evaluaciones y síntesis de procesos vinculados con la sostenibilidad, el cambio global, los materiales y los sistemas para alcanzar la ecoeficiencia.',
+                    icon: 'tabler:search',
+                },
+                {
+                    title: 'Tecnologías y energías renovables',
+                    description: 'Implementar soluciones y tecnologías energéticamente eficientes, así como fuentes de energía renovable, en la construcción y operación de edificios industriales y civiles.',
+                    icon: 'tabler:solar-panel',
+                },
+                {
+                    title: 'Gestión de la sostenibilidad ambiental',
+                    description: 'Analizar y gestionar los aspectos de la sostenibilidad ambiental para determinar la afección ambiental de productos y servicios industriales.',
+                    icon: 'tabler:leaf',
+                },
+                {
+                    title: 'Gestión de problemáticas ambientales',
+                    description: 'Aplicar conocimientos técnicos y herramientas para gestionar nuevas problemáticas y realidades ambientales.',
+                    icon: 'tabler:world',
+                },
+                {
+                    title: 'Eficiencia energética y biomasa',
+                    description: 'Adquirir conocimientos avanzados en eficiencia energética y conocimientos científicos y técnicos sobre la energía de la biomasa.',
+                    icon: 'tabler:bolt',
+                },
+                {
+                    title: 'Producción más limpia',
+                    description: 'Interpretar la producción más limpia como estrategia de gestión ambiental e identificar la aplicación potencial de la ecoeficiencia en la producción y los servicios.',
+                    icon: 'tabler:recycle',
+                },
+                {
+                    title: 'Acciones de ecoeficiencia',
+                    description: 'Proponer acciones de ecoeficiencia y producción más limpia con su correspondiente evaluación técnica, económica y ambiental.',
+                    icon: 'tabler:chart-line',
+                }                
+            ]}
+        />
+
+        {/* Potencia tus salidas */}
+        <Features3
+            tagline='Salidas Profesionales'
+            title="Potencia tus Salidas Profesionales"
+            subtitle='La <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Eficiencia Energética, Cambio Climático y Sostenibilidad</span> podrá desempeñarse como responsable de la eficiencia energética en estudios de arquitectura, urbanismo e ingeniería y en certificación energética de edificios. Sus principales salidas profesionales son:'
+            columns={3}
+            defaultIcon="tabler:point-filled"
+            items={[
+                { title: 'Responsable de eficiencia energética', description: 'Trabajar en estudios de arquitectura, urbanismo e ingeniería y en la certificación energética de edificios.' },
+                { title: 'Director de programas de energías renovables', description: 'Dirigir programas en energías renovables, eficiencia energética, sostenibilidad e I+D+i en este sector.' },
+                { title: 'Gerente de proyectos energéticos', description: 'Dirigir proyectos públicos o privados sobre soluciones de energías renovables y sostenibilidad energética.' },
+                { title: 'Técnico de proyectos ambientales', description: 'Trabajar en empresas productivas con impacto ambiental y en entidades públicas reguladoras o ejecutoras de medidas ambientales.' },
+                { title: 'Director de planeación ambiental', description: 'Dirigir la implementación de energías renovables en organizaciones ambientales dentro del marco de la sostenibilidad y el cambio climático.' },
+                { title: 'Consultor de eficiencia energética', description: 'Crear una empresa propia de consultoría independiente y certificaciones de eficiencia energética.' },
+                { title: 'Líder de soluciones energéticas', description: 'Planificar, diseñar, proyectar, gestionar y explotar soluciones energéticas en energías renovables y sostenibilidad, tanto en modelos de gestión como en instalaciones.' },
+                { title: 'Coordinador de equipos multidisciplinarios', description: 'Coordinar estudios, investigaciones y actividades de docencia en eficiencia energética.' },
+                { title: 'Director de organizaciones no gubernamentales', description: 'Dirigir organizaciones no gubernamentales enfocadas en sostenibilidad.' }
+            ]}
+        />
+
+        {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
+        <BeyondTheProgram />
+
+        {/* 9. TITULACIÓN */}
+        <HeroSection
+            id="titulacion"
+            tagline="titulacion"
+            title='Evaluación y Titulación'
+        >
+            <Fragment slot="bg">
+                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+            </Fragment>
+            <Fragment slot="content">
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
+                <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
+
+                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
+                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong>, obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold">Maestría en</span> <span class="text-secondary font-semibold">Eficiencia Energética, Cambio Climático y Sostenibilidad</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, con Reconocimiento de Validez Oficial de Estudios mediante el Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES201009</span> de la Dirección de Educación Superior de la Secretaría de Educación Pública.</p>
+            
+                {/* Diploma */}
+                <Degree
+                    degreeName="Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad"
+                    incorporationNumber="MAES201009"
+                />
+                <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+            </Fragment>
+        </HeroSection>
+
+        {/* 10. POST MAESTRÍA (commond) */}
+        <PostMaestria />
+
+        {/* 11. BECAS (commond) */}
+        <Scholarship />
+
+        {/* 12. COMO APLICAR (commond) */}
+        <HowToApply />
+
+        {/* 13. INSCRIPCIÓN (commond) */}
+        <Registration />
+
+        {/* 14. MEDIOS DE PAGO (commond) */}
+        <PaymentMethods />
+
+        {/* 15. SOLICITUDES (commond) */}
+        <Requests />
+
+        </div>
+    </div>
+    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+</Layout>
