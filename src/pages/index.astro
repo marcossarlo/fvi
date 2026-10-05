@@ -18,6 +18,10 @@ import FondoVerdeNews from '~/components/widgets/FondoVerdeNews.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import { programs } from '~/data/programs';
+import { getFeaturedPrograms } from '~/utils/programs';
+
+const featuredPrograms = getFeaturedPrograms(programs);
 
 const metadata = {
   title: 'Fondo Verde Institute — Maestrías, Doctorados y Posdoctorados en Medio Ambiente',
@@ -111,80 +115,13 @@ const metadata = {
   />
 
   <!-- FeaturedPrograms Widget ******* -->
-  <ProgramShowcase
-    tagline="Programas Destacados"
-    columns={2}
-    items={[
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Ciencias de la Sostenibilidad',
-        date: '13 de mayo de 2026',
-        description:
-          'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary',
-        },
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Rehabilitación Ambiental Terrestre',
-        date: '13 de mayo de 2026',
-        description:
-          'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary',
-        },
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
-        date: '13 de mayo de 2026',
-        description:
-          'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary',
-        },
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Gestión Ambiental',
-        date: '13 de mayo de 2026',
-        description:
-          'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary',
-        },
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
-        date: '13 de mayo de 2026',
-        description:
-          'El patrimonio cultural y natural constituye uno de los recursos más valiosos de la humanidad. Su conservación y gestión sostenible son fundamentales para el desarrollo de las sociedades...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary',
-        },
-      },
-    ]}
-  >
+  <ProgramShowcase tagline="Programas Destacados" columns={2} items={featuredPrograms}>
     <Fragment slot="bg">
       <div
         class="absolute inset-0 bg-repeat opacity-70 dark:opacity-50"
         style="background-image: url('/images/fvi_grey_background.jpg');"
       >
       </div>
-      <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div> -->
-      <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#c6e8e6,transparent)]"></div></div> -->
     </Fragment>
   </ProgramShowcase>
 

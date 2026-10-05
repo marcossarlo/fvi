@@ -3,7 +3,8 @@ import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import type { ItemFeaturedProgram } from '~/types';
+import { programs } from '~/data/programs';
+import { getProgramsByCategory } from '~/utils/programs';
 
 const metadata = {
   title: 'PhD | Doctorados oficiales en medio ambiente | Fondo Verde Institute',
@@ -13,117 +14,7 @@ const metadata = {
     'PhD, doctorados oficiales, doctorado en medio ambiente, sostenibilidad, educación ambiental, energías renovables, ecoturismo, urbanismo sostenible, Fondo Verde Institute',
 };
 
-const phdStartDate = '11 de noviembre de 2026';
-
-const phdPrograms: ItemFeaturedProgram[] = [
-  {
-    image: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
-    title: '<span class="text-primary">Doctorado en</span> Sostenibilidad',
-    date: phdStartDate,
-    description:
-      'Forma investigadores capaces de generar conocimiento innovador sobre cambio climático, gestión de recursos naturales y desarrollo sostenible.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/sostenibilidad',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-conservacion-restauracion-medio-natural.webp',
-    title: '<span class="text-primary">Doctorado en</span> Conservación y Restauración del Medio Natural',
-    date: phdStartDate,
-    description:
-      'Aborda medicina de la conservación, salud de ecosistemas y recuperación de hábitats degradados con enfoque interdisciplinario.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/conservacion-restauracion-medio-natural',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-proyectos-investigacion-medio-ambiente.webp',
-    title: '<span class="text-primary">Doctorado en</span> Proyectos: Línea de Investigación en Medio Ambiente',
-    date: phdStartDate,
-    description:
-      'Prepara profesionales para planear, formular y gestionar proyectos ambientales con impacto urbano y rural.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/proyectos-investigacion-medio-ambiente',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-administracion-negocios-sostenibles.webp',
-    title: '<span class="text-primary">Doctorado en</span> Administración de Negocios Sostenibles',
-    date: phdStartDate,
-    description: 'Diseña modelos de negocio, finanzas verdes y liderazgo ético orientados a la economía circular.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/administracion-negocios-sostenibles',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-educacion-ambiental.webp',
-    title: '<span class="text-primary">Doctorado en</span> Educación Ambiental',
-    date: phdStartDate,
-    description:
-      'Fortalece la investigación y la práctica pedagógica para impulsar cultura ambiental y participación ciudadana.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/educacion-ambiental',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp',
-    title: '<span class="text-primary">Doctorado en</span> Paisaje y Ambiente',
-    date: phdStartDate,
-    description:
-      'Estudia el paisaje como recurso territorial para conservación, planificación y restauración con mirada transdisciplinaria.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/paisaje-ambiente',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-ecoturismo-turismo-sostenible.webp',
-    title: '<span class="text-primary">Doctorado en</span> Ecoturismo y Turismo Sostenible',
-    date: phdStartDate,
-    description:
-      'Impulsa la gestión de destinos y productos turísticos responsables con enfoque local e internacional.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/ecoturismo-turismo-sostenible',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-urbanismo-arquitectura-sostenible.webp',
-    title: '<span class="text-primary">Doctorado en</span> Urbanismo y Arquitectura Sostenible',
-    date: phdStartDate,
-    description:
-      'Integra diseño, ciudad y territorio para crear entornos más eficientes, habitables y ambientalmente responsables.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/urbanismo-arquitectura-sostenible',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-energias-renovables.webp',
-    title: '<span class="text-primary">Doctorado en</span> Energías Renovables',
-    date: phdStartDate,
-    description:
-      'Desarrolla soluciones en energía solar, eólica, biomasa e hidrógeno para acelerar la transición energética.',
-    button: {
-      text: 'Ver programa',
-      href: '/phd/energias-renovables',
-      variant: 'primary',
-    },
-  },
-];
+const phdPrograms = getProgramsByCategory(programs, 'doctorado');
 ---
 
 <Layout metadata={metadata}>

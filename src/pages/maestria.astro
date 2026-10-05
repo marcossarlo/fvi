@@ -3,7 +3,8 @@ import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import type { ItemFeaturedProgram } from '~/types';
+import { programs } from '~/data/programs';
+import { getProgramsByCategory } from '~/utils/programs';
 
 const metadata = {
   title: 'Maestrías online en medio ambiente y sostenibilidad | Fondo Verde Institute',
@@ -13,106 +14,7 @@ const metadata = {
     'maestrías, maestría online, medio ambiente, sostenibilidad, gestión ambiental, territorio, energía, Fondo Verde Institute',
 };
 
-const maestriaStartDate = '11 de noviembre de 2026';
-
-const maestriaPrograms: ItemFeaturedProgram[] = [
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Ciencias de la Sostenibilidad',
-    date: maestriaStartDate,
-    description:
-      'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/ciencias-sostenibilidad',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Eficiencia Energética, Cambio Climático y Sostenibilidad',
-    date: maestriaStartDate,
-    description:
-      'Planificar, proyectar y dirigir proyectos globales en el campo de la tecnología energética y la sostenibilidad en el complejo marco del cambio climático.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/eficiencia-energetica-cambio-climatico-sostenibilidad',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Gestión de Proyectos Ambientales',
-    date: maestriaStartDate,
-    description:
-      'El manejo del espacio, así como la gestión de los recursos naturales no pueden seguir realizándose de forma espontánea y anárquica. En este contexto los proyectos ambientales en un marco de procesos de planificación para la toma de decisiones.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/gestion-proyectos-ambientales',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Hábitat, Urbanismo y Edificación Sostenible',
-    date: maestriaStartDate,
-    description:
-      'Mejorar la resiliencia al cambio climático requiere de intervenciones en la ciudad que vayan más allá de edificaciones sostenibles y procuren acciones urbanísticas para transformar el hábitat con preceptos acordes al medio natural.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/habitat-urbanismo-edificacion-sostenible',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Medio Ambiente y Responsabilidad Social',
-    date: maestriaStartDate,
-    description:
-      'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/medio-ambiente-responsabilidad-social',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios Territoriales',
-    date: maestriaStartDate,
-    description:
-      'Acostumbrados a ver paisajes degradados y banalizados como evidencia de una desidia en su gestión, emerge la necesidad de recuperar, transformar y crear paisajes de calidad como expresión indisociable de una correcta gestión y ordenación.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/paisaje-patrimonio-estudios-territoriales',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Rehabilitación Ambiental Terrestre',
-    date: maestriaStartDate,
-    description:
-      'La restauración ecológica es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/rehabilitacion-ambiental-terrestre',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '/images/programs/fvi_fondo-hero.jpg',
-    title: '<span class="text-primary">Maestría en</span> Sostenibilidad Turística y Ecoturismo',
-    date: maestriaStartDate,
-    description:
-      'El turismo es un sector que ha crecido de manera importante en los últimos años y ha evolucionado en continua adaptación a las exigencias del presente. La toma de decisiones y la capacidad de liderazgo resultan determinantes ante estos cambios.',
-    button: {
-      text: 'Ver programa',
-      href: '/maestria/sostenibilidad-turistica-ecoturismo',
-      variant: 'primary',
-    },
-  },
-];
+const maestriaPrograms = getProgramsByCategory(programs, 'maestria');
 ---
 
 <Layout metadata={metadata}>

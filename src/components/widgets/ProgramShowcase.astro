@@ -248,12 +248,12 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
   .program-card-description {
     display: -webkit-box;
     overflow: hidden;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     color: rgb(75 91 103);
-    font-size: 0.98rem;
-    line-height: 1.7;
+    font-size: 0.95rem;
+    line-height: 1.5;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
   }
 
   .program-card-link {
@@ -297,5 +297,13 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
 
   :global(.dark) .program-card-description {
     color: rgb(203 213 225);
+  }
+
+  @media (max-width: 640px) {
+    .program-card-description {
+      margin-top: 0.625rem;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
   }
 </style>

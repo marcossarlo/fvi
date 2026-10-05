@@ -3,7 +3,8 @@ import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import type { ItemFeaturedProgram } from '~/types';
+import { programs } from '~/data/programs';
+import { getProgramsByCategory } from '~/utils/programs';
 
 const metadata = {
   title: 'Postdoctorado | Programas postdoctorales en medio ambiente | Fondo Verde Institute',
@@ -13,92 +14,7 @@ const metadata = {
     'postdoctorado, postdoc, ciencias aplicadas al medio ambiente, ciencias de la sostenibilidad, educación ambiental, gobernanza ambiental, peritaje ambiental, sistemas de gestión medioambiental, Fondo Verde Institute',
 };
 
-const postdoctoradoStartDate = '2 de diciembre de 2026';
-
-const postdoctoradoPrograms: ItemFeaturedProgram[] = [
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-ciencias-aplicadas-medio-ambiente.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Ciencias Aplicadas al Medio Ambiente',
-    date: postdoctoradoStartDate,
-    description:
-      'Impulsa la producción científica sobre sustentabilidad ambiental, tecnologías limpias y transición hacia una economía sostenible.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/ciencias-aplicadas-medio-ambiente',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-ciencias-educacion-ambiental.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Ciencias de la Educación Ambiental',
-    date: postdoctoradoStartDate,
-    description:
-      'Fortalece la investigación y la práctica pedagógica para promover educación científica y cultura ambiental.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/ciencias-educacion-ambiental',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-ciencias-sostenibilidad.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Ciencias de la Sostenibilidad',
-    date: postdoctoradoStartDate,
-    description: 'Desarrolla proyectos sobre ODS, cambio climático y políticas ambientales con enfoque internacional.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/ciencias-sostenibilidad',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-gestion-gobernanza-proyectos-ambientales.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Gestión y Gobernanza de Proyectos Ambientales',
-    date: postdoctoradoStartDate,
-    description:
-      'Profundiza en liderazgo, gobernanza y gestión de proyectos para impulsar el cambio de paradigma hacia la sustentabilidad.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/gestion-gobernanza-proyectos-ambientales',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-peritaje-judicial-delitos-ambientales.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Peritaje Judicial en materia de delitos ambientales',
-    date: postdoctoradoStartDate,
-    description:
-      'Forma especialistas en pericia científica, valoración de daños y litigios ambientales con proyección iberoamericana.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/peritaje-judicial-delitos-ambientales',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-sistemas-gestion-medioambiental.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Sistemas de Gestión Medioambiental',
-    date: postdoctoradoStartDate,
-    description: 'Profundiza en auditoría ambiental, ISO 14001 y sostenibilidad corporativa aplicada a organizaciones.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/sistemas-gestion-medioambiental',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/postdocs/fvi-postdoc-sistemas-gestion-seguridad-salud-trabajo.webp',
-    title:
-      '<span class="text-primary">Postdoctorado en</span> Sistemas de Gestión de la Seguridad y Salud en el trabajo',
-    date: postdoctoradoStartDate,
-    description: 'Investiga prevención de riesgos, salud ocupacional y auditoría bajo la norma ISO 45001.',
-    button: {
-      text: 'Ver programa',
-      href: '/postdoctorado/sistemas-gestion-seguridad-salud-trabajo',
-      variant: 'primary',
-    },
-  },
-];
+const postdoctoradoPrograms = getProgramsByCategory(programs, 'postdoctorado');
 ---
 
 <Layout metadata={metadata} showSecondaryNav={false}>
