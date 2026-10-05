@@ -1,0 +1,301 @@
+---
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Image from '~/components/common/Image.astro';
+import type { FeaturedPrograms as Props } from '~/types';
+import { Icon } from 'astro-icon/components';
+import { twMerge } from 'tailwind-merge';
+
+const {
+  tagline,
+  items = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Props;
+
+const getProgramType = (title = '') => {
+  const plainTitle = title.replace(/<[^>]*>/g, '');
+  if (plainTitle.startsWith('Doctorado')) return 'Doctorado';
+  if (plainTitle.startsWith('Postdoctorado')) return 'Postdoctorado';
+  return 'Maestría';
+};
+
+const containerClass = typeof classes?.container === 'string' ? classes.container : '';
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={twMerge('max-w-7xl mx-auto', containerClass)} bg={bg}>
+  <div class="program-showcase">
+    {
+      tagline && (
+        <div class="mb-10 flex items-end justify-between gap-6">
+          <div>
+            <span class="program-kicker">
+              <span class="program-kicker-dot" />
+              Oferta académica
+            </span>
+            <h2 class="mt-4 text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl">{tagline}</h2>
+          </div>
+          <span class="hidden font-mono text-xs uppercase tracking-[0.22em] text-muted md:block">
+            Explora tu próximo paso
+          </span>
+        </div>
+      )
+    }
+
+    {
+      items.length > 0 && (
+        <div class="grid gap-8 md:grid-cols-2">
+          {items.map(({ image, title, date, description, button }, index) => (
+            <article class="program-card group" style={`--card-index: ${index};`}>
+              {button?.href ? (
+                <a
+                  href={button.href}
+                  class="program-card-media-link"
+                  aria-label={`Abrir programa: ${title?.replace(/<[^>]*>/g, '') || ''}`}
+                >
+                  <div class="program-card-media">
+                    {image && (
+                      <Image
+                        class="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-105"
+                        src={image}
+                        alt={title?.replace(/<[^>]*>/g, '') || 'Programa académico'}
+                        widths={[600, 900]}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading={index < 2 ? 'eager' : 'lazy'}
+                        decoding="async"
+                      />
+                    )}
+                    <div class="program-card-media-shade" />
+                    <div class="absolute left-4 right-4 top-4 z-10 flex items-center justify-between gap-2">
+                      <span
+                        class:list={[
+                          'flex h-9 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-full border px-2 text-[0.65rem] font-semibold uppercase tracking-[0.08em] backdrop-blur-sm sm:px-3 sm:text-xs sm:tracking-wider',
+                          {
+                            'border-emerald-400 bg-emerald-500/20 text-emerald-300':
+                              getProgramType(title) === 'Doctorado',
+                            'border-sky-400 bg-sky-500/20 text-sky-300': getProgramType(title) === 'Postdoctorado',
+                            'border-orange-400 bg-orange-500/20 text-yellow-400': getProgramType(title) === 'Maestría',
+                          },
+                        ]}
+                      >
+                        <span class="relative flex h-2.5 w-2.5 shrink-0" aria-hidden="true">
+                          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-current opacity-75" />
+                          <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-current" />
+                        </span>
+                        <span>{getProgramType(title)}</span>
+                      </span>
+                      <span class="flex h-9 min-w-0 max-w-[58%] items-center justify-center gap-2 overflow-hidden rounded-full bg-slate-900/85 px-2 text-[0.65rem] font-semibold normal-case tracking-normal text-white/95 backdrop-blur-sm sm:px-3 sm:text-xs">
+                        <Icon name="tabler:device-desktop" class="h-4 w-4 shrink-0" />
+                        <span class="truncate">Modalidad online</span>
+                      </span>
+                    </div>
+                    <div class="program-card-media-caption">
+                      <span>Formación de alto impacto</span>
+                      <Icon name="tabler:arrow-up-right" class="h-5 w-5" />
+                    </div>
+                  </div>
+                </a>
+              ) : (
+                <div class="program-card-media">
+                  {image && (
+                    <Image
+                      class="h-full w-full object-cover"
+                      src={image}
+                      alt={title?.replace(/<[^>]*>/g, '') || 'Programa académico'}
+                      widths={[600, 900]}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      loading={index < 2 ? 'eager' : 'lazy'}
+                      decoding="async"
+                    />
+                  )}
+                </div>
+              )}
+
+              <div class="program-card-body">
+                <div class="mb-5 flex flex-wrap items-center gap-x-2 gap-y-2 text-xs font-bold uppercase tracking-[0.12em] text-primary dark:text-accent">
+                  <Icon name="tabler:calendar-event" class="h-4 w-4 shrink-0" />
+                  <span class="text-muted dark:text-slate-300">Inicio:</span>
+                  <span class="rounded-full border border-secondary bg-secondary px-3 py-1 text-[0.7rem] tracking-[0.04em] text-white shadow-md shadow-secondary/30">
+                    {date || 'Fecha por confirmar'}
+                  </span>
+                </div>
+                {title && <h3 class="program-card-title" set:html={title} />}
+                {description && <p class="program-card-description">{description}</p>}
+                {button?.href && (
+                  <a
+                    href={button.href}
+                    class="program-card-link"
+                    aria-label={`${button.text || 'Ver programa'}: ${title?.replace(/<[^>]*>/g, '') || ''}`}
+                  >
+                    <span>{button.text || 'Ver programa'}</span>
+                    <span class="program-card-link-icon">
+                      <Icon name="tabler:arrow-right" class="h-5 w-5" />
+                    </span>
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      )
+    }
+  </div>
+</WidgetWrapper>
+
+<style>
+  .program-showcase {
+    --showcase-ink: rgb(20 39 52);
+    --showcase-line: rgb(20 39 52 / 0.14);
+    --showcase-paper: rgb(255 255 255 / 0.8);
+  }
+
+  .program-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgb(4 145 103);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .program-kicker-dot {
+    display: block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: rgb(241 137 48);
+    box-shadow: 0 0 0 0.25rem rgb(241 137 48 / 0.14);
+  }
+
+  .program-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--showcase-line);
+    border-radius: 1.65rem;
+    background: var(--showcase-paper);
+    box-shadow: 0 1.5rem 3.5rem rgb(20 39 52 / 0.08);
+    transition:
+      border-color 300ms ease,
+      box-shadow 300ms ease,
+      transform 300ms ease;
+  }
+
+  .program-card:hover {
+    border-color: rgb(4 145 103 / 0.48);
+    box-shadow: 0 2rem 4.5rem rgb(20 39 52 / 0.14);
+    transform: translateY(-0.35rem);
+  }
+
+  .program-card-media {
+    position: relative;
+    height: 17rem;
+    overflow: hidden;
+    margin: 0.7rem;
+    border-radius: 1.2rem;
+    background: rgb(20 39 52);
+  }
+
+  .program-card-media-link {
+    display: block;
+    color: inherit;
+  }
+
+  .program-card-media-link:focus-visible {
+    outline: 3px solid rgb(241 137 48);
+    outline-offset: 4px;
+    border-radius: 1.35rem;
+  }
+
+  .program-card-media-shade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgb(6 34 42 / 0.3) 0%, transparent 45%),
+      linear-gradient(0deg, rgb(6 34 42 / 0.86) 0%, transparent 48%);
+  }
+
+  .program-card-media-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(255 255 255 / 0.9);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .program-card-body {
+    padding: 1.1rem 1.5rem 1.5rem;
+  }
+
+  .program-card-title {
+    color: var(--showcase-ink);
+    font-size: clamp(1.45rem, 2vw, 1.8rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  .program-card-description {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-top: 1rem;
+    color: rgb(75 91 103);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .program-card-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    border-top: 1px solid var(--showcase-line);
+    padding-top: 1rem;
+    color: rgb(4 145 103);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .program-card-link-icon {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid rgb(4 145 103);
+    border-radius: 999px;
+    transition:
+      background 200ms ease,
+      color 200ms ease,
+      transform 200ms ease;
+  }
+
+  .program-card-link:hover .program-card-link-icon {
+    background: rgb(4 145 103);
+    color: white;
+    transform: translateX(0.2rem);
+  }
+
+  :global(.dark) .program-showcase {
+    --showcase-ink: rgb(241 248 246);
+    --showcase-line: rgb(148 163 184 / 0.2);
+    --showcase-paper: rgb(15 23 42 / 0.72);
+  }
+
+  :global(.dark) .program-card-description {
+    color: rgb(203 213 225);
+  }
+</style>

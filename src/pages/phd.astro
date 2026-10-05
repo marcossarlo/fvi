@@ -1,5 +1,5 @@
 ---
-import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
+import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -13,7 +13,7 @@ const metadata = {
     'PhD, doctorados oficiales, doctorado en medio ambiente, sostenibilidad, educación ambiental, energías renovables, ecoturismo, urbanismo sostenible, Fondo Verde Institute',
 };
 
-const phdStartDate = '13 de mayo de 2026';
+const phdStartDate = '11 de noviembre de 2026';
 
 const phdPrograms: ItemFeaturedProgram[] = [
   {
@@ -23,7 +23,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Forma investigadores capaces de generar conocimiento innovador sobre cambio climático, gestión de recursos naturales y desarrollo sostenible.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/sostenibilidad',
       variant: 'primary',
     },
@@ -35,7 +35,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Aborda medicina de la conservación, salud de ecosistemas y recuperación de hábitats degradados con enfoque interdisciplinario.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/conservacion-restauracion-medio-natural',
       variant: 'primary',
     },
@@ -47,7 +47,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Prepara profesionales para planear, formular y gestionar proyectos ambientales con impacto urbano y rural.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/proyectos-investigacion-medio-ambiente',
       variant: 'primary',
     },
@@ -56,10 +56,9 @@ const phdPrograms: ItemFeaturedProgram[] = [
     image: '~/assets/images/doctorados/fvi-phd-administracion-negocios-sostenibles.webp',
     title: '<span class="text-primary">Doctorado en</span> Administración de Negocios Sostenibles',
     date: phdStartDate,
-    description:
-      'Diseña modelos de negocio, finanzas verdes y liderazgo ético orientados a la economía circular.',
+    description: 'Diseña modelos de negocio, finanzas verdes y liderazgo ético orientados a la economía circular.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/administracion-negocios-sostenibles',
       variant: 'primary',
     },
@@ -71,7 +70,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Fortalece la investigación y la práctica pedagógica para impulsar cultura ambiental y participación ciudadana.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/educacion-ambiental',
       variant: 'primary',
     },
@@ -83,7 +82,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Estudia el paisaje como recurso territorial para conservación, planificación y restauración con mirada transdisciplinaria.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/paisaje-ambiente',
       variant: 'primary',
     },
@@ -95,7 +94,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Impulsa la gestión de destinos y productos turísticos responsables con enfoque local e internacional.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/ecoturismo-turismo-sostenible',
       variant: 'primary',
     },
@@ -107,7 +106,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Integra diseño, ciudad y territorio para crear entornos más eficientes, habitables y ambientalmente responsables.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/urbanismo-arquitectura-sostenible',
       variant: 'primary',
     },
@@ -119,7 +118,7 @@ const phdPrograms: ItemFeaturedProgram[] = [
     description:
       'Desarrolla soluciones en energía solar, eólica, biomasa e hidrógeno para acelerar la transición energética.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/phd/energias-renovables',
       variant: 'primary',
     },
@@ -140,15 +139,19 @@ const phdPrograms: ItemFeaturedProgram[] = [
       <span class="text-primary dark:text-accent"> oficiales</span>
     </Fragment>
     <Fragment slot="subtitle">
-      <span class="text-primary font-semibold">Fondo Verde</span> <span class="text-secondary font-semibold">Institute</span>, se funda en el entorno de <a 
-              href="https://www.fondoverde.org" 
-              class="font-bold text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary transition-colors decoration-2 underline-offset-2" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              FONDO VERDE</a>,
-      una <strong>ONGD internacional</strong> miembro de <strong>IUCN International Union for Conservation of Nature</strong>.
-      Fondo Verde es una organización líder en el sector de formación ambiental con más de 16 años de experiencia. Esta experiencia ha permitido apostar por la innovación a través de una oferta educativa que genera un impacto positivo en el mundo.
+      <span class="text-primary font-semibold">Fondo Verde</span>
+      <span class="text-secondary font-semibold">Institute</span>, se funda en el entorno de <a
+        href="https://www.fondoverde.org"
+        class="font-bold text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary transition-colors decoration-2 underline-offset-2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        FONDO VERDE</a
+      >, una <strong>ONGD internacional</strong> miembro de <strong
+        >IUCN International Union for Conservation of Nature</strong
+      >. Fondo Verde es una organización líder en el sector de formación ambiental con más de 16 años de experiencia.
+      Esta experiencia ha permitido apostar por la innovación a través de una oferta educativa que genera un impacto
+      positivo en el mundo.
     </Fragment>
   </Hero>
 
@@ -179,13 +182,5 @@ const phdPrograms: ItemFeaturedProgram[] = [
     ]}
   />
 
-
-
-      <FeaturedPrograms
-        id="programas-listado"
-        tagline="Programas PhD"
-        columns={2}
-        items={phdPrograms}
-      />
-
+  <ProgramShowcase id="programas-listado" tagline="Programas PhD" columns={2} items={phdPrograms} />
 </Layout>

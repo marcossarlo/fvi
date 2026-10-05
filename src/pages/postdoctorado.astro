@@ -1,5 +1,5 @@
 ---
-import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
+import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -13,14 +13,17 @@ const metadata = {
     'postdoctorado, postdoc, ciencias aplicadas al medio ambiente, ciencias de la sostenibilidad, educación ambiental, gobernanza ambiental, peritaje ambiental, sistemas de gestión medioambiental, Fondo Verde Institute',
 };
 
+const postdoctoradoStartDate = '2 de diciembre de 2026';
+
 const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   {
     image: '~/assets/images/postdocs/fvi-postdoc-ciencias-aplicadas-medio-ambiente.webp',
     title: '<span class="text-primary">Postdoctorado en</span> Ciencias Aplicadas al Medio Ambiente',
+    date: postdoctoradoStartDate,
     description:
       'Impulsa la producción científica sobre sustentabilidad ambiental, tecnologías limpias y transición hacia una economía sostenible.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/ciencias-aplicadas-medio-ambiente',
       variant: 'primary',
     },
@@ -28,10 +31,11 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   {
     image: '~/assets/images/postdocs/fvi-postdoc-ciencias-educacion-ambiental.webp',
     title: '<span class="text-primary">Postdoctorado en</span> Ciencias de la Educación Ambiental',
+    date: postdoctoradoStartDate,
     description:
       'Fortalece la investigación y la práctica pedagógica para promover educación científica y cultura ambiental.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/ciencias-educacion-ambiental',
       variant: 'primary',
     },
@@ -39,10 +43,10 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   {
     image: '~/assets/images/postdocs/fvi-postdoc-ciencias-sostenibilidad.webp',
     title: '<span class="text-primary">Postdoctorado en</span> Ciencias de la Sostenibilidad',
-    description:
-      'Desarrolla proyectos sobre ODS, cambio climático y políticas ambientales con enfoque internacional.',
+    date: postdoctoradoStartDate,
+    description: 'Desarrolla proyectos sobre ODS, cambio climático y políticas ambientales con enfoque internacional.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/ciencias-sostenibilidad',
       variant: 'primary',
     },
@@ -50,10 +54,11 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   {
     image: '~/assets/images/postdocs/fvi-postdoc-gestion-gobernanza-proyectos-ambientales.webp',
     title: '<span class="text-primary">Postdoctorado en</span> Gestión y Gobernanza de Proyectos Ambientales',
+    date: postdoctoradoStartDate,
     description:
       'Profundiza en liderazgo, gobernanza y gestión de proyectos para impulsar el cambio de paradigma hacia la sustentabilidad.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/gestion-gobernanza-proyectos-ambientales',
       variant: 'primary',
     },
@@ -61,10 +66,11 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   {
     image: '~/assets/images/postdocs/fvi-postdoc-peritaje-judicial-delitos-ambientales.webp',
     title: '<span class="text-primary">Postdoctorado en</span> Peritaje Judicial en materia de delitos ambientales',
+    date: postdoctoradoStartDate,
     description:
       'Forma especialistas en pericia científica, valoración de daños y litigios ambientales con proyección iberoamericana.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/peritaje-judicial-delitos-ambientales',
       variant: 'primary',
     },
@@ -72,21 +78,22 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   {
     image: '~/assets/images/postdocs/fvi-postdoc-sistemas-gestion-medioambiental.webp',
     title: '<span class="text-primary">Postdoctorado en</span> Sistemas de Gestión Medioambiental',
-    description:
-      'Profundiza en auditoría ambiental, ISO 14001 y sostenibilidad corporativa aplicada a organizaciones.',
+    date: postdoctoradoStartDate,
+    description: 'Profundiza en auditoría ambiental, ISO 14001 y sostenibilidad corporativa aplicada a organizaciones.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/sistemas-gestion-medioambiental',
       variant: 'primary',
     },
   },
   {
     image: '~/assets/images/postdocs/fvi-postdoc-sistemas-gestion-seguridad-salud-trabajo.webp',
-    title: '<span class="text-primary">Postdoctorado en</span> Sistemas de Gestión de la Seguridad y Salud en el trabajo',
-    description:
-      'Investiga prevención de riesgos, salud ocupacional y auditoría bajo la norma ISO 45001.',
+    title:
+      '<span class="text-primary">Postdoctorado en</span> Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+    date: postdoctoradoStartDate,
+    description: 'Investiga prevención de riesgos, salud ocupacional y auditoría bajo la norma ISO 45001.',
     button: {
-      text: 'Leer más',
+      text: 'Ver programa',
       href: '/postdoctorado/sistemas-gestion-seguridad-salud-trabajo',
       variant: 'primary',
     },
@@ -104,14 +111,16 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
         text: 'Ver programas',
         href: '#programas',
         icon: 'tabler:school',
-        class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        class:
+          '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
       },
       {
         variant: 'secondary',
         text: 'Leer presentación',
         href: '#presentacion',
         icon: 'tabler:file-description',
-        class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        class:
+          '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
       },
     ]}
     image={{
@@ -192,26 +201,27 @@ const postdoctoradoPrograms: ItemFeaturedProgram[] = [
   />
 
   <section id="programas" class="relative py-20 md:py-24 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-white via-white to-blue-50/80 dark:from-slate-950 dark:via-page dark:to-pageDark"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-white via-white to-blue-50/80 dark:from-slate-950 dark:via-page dark:to-pageDark"
+    >
+    </div>
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-10 md:mb-14">
-        <span class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary dark:text-accent">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary dark:text-accent"
+        >
           Postdoctorados disponibles
         </span>
         <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tighter text-default dark:text-white">
           Conoce la oferta PostDoc de Fondo Verde
         </h2>
         <p class="mt-4 text-base md:text-lg text-muted dark:text-slate-300 max-w-2xl">
-          Cada programa articula investigación avanzada, acompañamiento académico y una línea de especialización clara para doctores que buscan una formación postdoctoral de alto nivel.
+          Cada programa articula investigación avanzada, acompañamiento académico y una línea de especialización clara
+          para doctores que buscan una formación postdoctoral de alto nivel.
         </p>
       </div>
 
-      <FeaturedPrograms
-        id="programas-listado"
-        tagline="Programas PostDoc"
-        columns={2}
-        items={postdoctoradoPrograms}
-      />
+      <ProgramShowcase id="programas-listado" tagline="Programas PostDoc" columns={2} items={postdoctoradoPrograms} />
     </div>
   </section>
 </Layout>
