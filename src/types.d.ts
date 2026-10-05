@@ -226,12 +226,6 @@ export interface ItemGridInfo {
   classes?: Record<string, string>;
 }
 
-export interface ItemGridFeaturedPrograms {
-  items?: Array<ItemFeaturedProgram>;
-  columns?: number;
-  classes?: Record<string, string>;
-}
-
 export interface Collapse {
   iconUp?: string;
   iconDown?: string;
@@ -295,7 +289,7 @@ export interface FeatureInfo extends Omit<Headline, 'classes'>, Widget {
   columns?: number;
 }
 
-export interface FeaturedPrograms extends Widget {
+export interface ProgramShowcase extends Widget {
   tagline?: string;
   items?: Array<ItemFeaturedProgram>;
   columns?: number;
