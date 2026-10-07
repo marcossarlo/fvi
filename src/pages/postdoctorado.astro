@@ -1,143 +1,71 @@
 ---
 import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
-import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
 import { programs } from '~/data/programs';
 import { getProgramsByCategory } from '~/utils/programs';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
-  title: 'Postdoctorado | Programas postdoctorales en medio ambiente | Fondo Verde Institute',
-  description:
-    'Conoce la oferta de postdoctorados de Fondo Verde Institute: ciencias aplicadas al medio ambiente, sostenibilidad, educación ambiental, gobernanza, peritaje y sistemas de gestión.',
-  keywords:
-    'postdoctorado, postdoc, ciencias aplicadas al medio ambiente, ciencias de la sostenibilidad, educación ambiental, gobernanza ambiental, peritaje ambiental, sistemas de gestión medioambiental, Fondo Verde Institute',
+  title: 'Postdoctorados en Sustentabilidad Ambiental',
+  description: 'Programa para doctores en Iberoamérica. Lidera proyectos de investigación en conflictos socioambientales y publica ciencia de alto impacto global.',
+  keywords: 'postdoctorado en medio ambiente, investigación postdoctoral, sustentabilidad, doctores iberoamérica, publicación científica, Fondo Verde, postdoctorado',
 };
 
 const postdoctoradoPrograms = getProgramsByCategory(programs, 'postdoctorado');
 ---
 
-<Layout metadata={metadata} showSecondaryNav={false}>
+<Layout metadata={metadata}>
   <Hero
-    tagline="PostDoc"
-    subtitle="El Programa de Postdoctorado tiene por objetivo divulgar y fortalecer la producción de trabajos de relevancia científica en temas de sustentabilidad ambiental, dirigido a doctores de toda Iberoamérica y de cualquier disciplina."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Ver programas',
-        href: '#programas',
-        icon: 'tabler:school',
-        class:
-          '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
-      },
-      {
-        variant: 'secondary',
-        text: 'Leer presentación',
-        href: '#presentacion',
-        icon: 'tabler:file-description',
-        class:
-          '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
-      },
-    ]}
+    tagline="Presentación"
     image={{
       src: '~/assets/images/postdocs/fvi-postdoc-ciencias-aplicadas-medio-ambiente.webp',
-      alt: 'Oferta de postdoctorados de Fondo Verde Institute',
+      alt: 'Programas de Postdoctorado de Fondo Verde Institute',
     }}
   >
     <Fragment slot="title">
-      Postdoctorado <br />
-      <span class="text-secondary dark:text-accent">Programas oficiales</span>
+      Postdoctorados
+      <span class="text-primary dark:text-accent"> de investigación</span>
+    </Fragment>
+    <Fragment slot="subtitle">
+      Dirigido a doctores de toda Iberoamérica, este programa busca impulsar la producción científica de alto impacto en sustentabilidad ambiental. Desarrollarás proyectos enfocados en resolver conflictos socioambientales reales, aportando a la construcción teórica de un nuevo paradigma ecológico.<br />
+      Esta experiencia te abre nuevas perspectivas para influir en políticas públicas y privadas en Latinoamérica. Te integrarás a un ecosistema de reflexión y co-creación de conocimiento, actualizando tu perfil investigador con las temáticas ambientales más recientes del escenario científico.
     </Fragment>
   </Hero>
 
-  <Features3
-    id="presentacion"
-    title="Presentación"
-    subtitle="El postdoctorado abre nuevas perspectivas para articular estrategias de actuación en Latinoamérica, con alcance en políticas públicas y privadas, generando reflexión, co-construcción de conocimiento y propuestas concretas."
+  <Features
+    id="estructura"
+    tagline="Fases y Entregables"
+    title="Estructura del Programa"
+    subtitle="El postdoctorado tiene una duración flexible de <strong>6 a 12 meses</strong> y se desarrolla bajo la supervisión directa de un director designado. El resultado culminante de esta ruta es la <strong>publicación de un artículo científico</strong> arbitrado por dos jurados (incluyendo un par internacional)."
     columns={3}
+    classes={{
+      container: 'max-w-7xl',
+      items: {
+        panel: 'max-w-none w-full',
+      },
+    }}
     items={[
       {
-        title: 'Producción científica en sustentabilidad ambiental',
+        title: 'Planificación y Actualización',
         description:
-          'Tiene por objetivo divulgar y fortalecer la producción de trabajos de relevancia científica en temas de sustentabilidad ambiental.',
+          'La fase inicial contempla el diseño y aprobación del <strong>Plan de Trabajo Postdoctoral</strong>, complementado con el desarrollo de asignaturas estratégicas para la actualización teórica y metodológica del investigador.',
+        icon: 'tabler:route',
+      },
+      {
+        title: 'Trabajo Final de Investigación (TFI)',
+        description:
+          'Es el núcleo del programa. El investigador ejecuta su proyecto enfocado en generar respuestas concretas a la problemática ambiental elegida, redactando un artículo de alta relevancia científica.',
         icon: 'tabler:microscope',
       },
       {
-        title: 'Dirigido a doctores iberoamericanos',
+        title: 'Evaluación y Defensa',
         description:
-          'Está orientado a doctores de toda Iberoamérica y de cualquier disciplina que busquen desarrollar un proyecto de investigación para responder a conflictos ambientales locales o regionales.',
-        icon: 'tabler:users-group',
-      },
-      {
-        title: 'Nuevas perspectivas de actuación',
-        description:
-          'Complementa la formación con cuestiones ambientales actuales aparecidas recientemente en el escenario científico y fortalece bases para un nuevo paradigma del ambiente.',
-        icon: 'tabler:world-search',
+          'El proceso concluye con la presentación de un <strong>informe final avalado</strong> por el director y la <strong>defensa formal del TFI</strong>. Esta evaluación asegura el rigor necesario para su posterior divulgación global.',
+        icon: 'tabler:award',
       },
     ]}
   />
 
-  <Features3
-    id="estructura"
-    title="Estructura del Programa"
-    subtitle="El Programa de Postdoctorado tiene una duración mínima de 6 meses y máxima de 1 año, y consiste en la realización de un plan de actividades cuyo resultado debe ser la publicación de un artículo arbitrado por dos jurados, uno de ellos internacional."
-    columns={3}
-    items={[
-      {
-        title: 'Plan de Trabajo Postdoctoral',
-        description:
-          'Define el recorrido académico y científico del postdoc bajo supervisión de un director designado para tal efecto.',
-        icon: 'tabler:clipboard-list',
-      },
-      {
-        title: 'Asignaturas de la programación',
-        description:
-          'Integra contenidos actualizados para fortalecer la comprensión de los problemas ambientales y sus posibles respuestas científicas.',
-        icon: 'tabler:book-2',
-      },
-      {
-        title: 'Trabajo Final de Investigación',
-        description:
-          'El TFI articula la producción original del postdoc y se acompaña de un informe final avalado y una defensa formal.',
-        icon: 'tabler:flask',
-      },
-      {
-        title: 'Informe final avalado',
-        description:
-          'Documenta el cumplimiento de las actividades y consolida los resultados obtenidos durante el proceso postdoctoral.',
-        icon: 'tabler:file-check',
-      },
-      {
-        title: 'Defensa del TFI',
-        description:
-          'Cierra el proceso con la presentación y evaluación del trabajo final ante la instancia académica correspondiente.',
-        icon: 'tabler:certificate-2',
-      },
-    ]}
-  />
-
-  <section id="programas" class="relative py-20 md:py-24 overflow-hidden">
-    <div
-      class="absolute inset-0 bg-gradient-to-b from-white via-white to-blue-50/80 dark:from-slate-950 dark:via-page dark:to-pageDark"
-    >
-    </div>
-    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-10 md:mb-14">
-        <span
-          class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary dark:text-accent"
-        >
-          Postdoctorados disponibles
-        </span>
-        <h2 class="mt-5 text-3xl md:text-4xl font-bold tracking-tighter text-default dark:text-white">
-          Conoce la oferta PostDoc de Fondo Verde
-        </h2>
-        <p class="mt-4 text-base md:text-lg text-muted dark:text-slate-300 max-w-2xl">
-          Cada programa articula investigación avanzada, acompañamiento académico y una línea de especialización clara
-          para doctores que buscan una formación postdoctoral de alto nivel.
-        </p>
-      </div>
-
-      <ProgramShowcase id="programas-listado" tagline="Programas PostDoc" columns={2} items={postdoctoradoPrograms} />
-    </div>
-  </section>
+  <ProgramShowcase id="programas-listado" tagline="Programas de Postdoctorado" columns={2} items={postdoctoradoPrograms} />
 </Layout>
