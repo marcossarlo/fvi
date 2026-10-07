@@ -10,6 +10,12 @@ const maestriaStartDate = '11 de noviembre de 2026';
 const phdStartDate = '11 de noviembre de 2026';
 const postdoctoradoStartDate = '2 de diciembre de 2026';
 
+const programMediaCaptions: Record<ProgramCategory, string> = {
+  maestria: 'Alta Especialización',
+  doctorado: 'Investigación Científica',
+  postdoctorado: 'Vanguardia Académica',
+};
+
 const program = (
   category: ProgramCategory,
   image: string,
@@ -22,6 +28,7 @@ const program = (
   image,
   title,
   date,
+  mediaCaption: programMediaCaptions[category],
   description,
   button: {
     text: 'Ver programa',

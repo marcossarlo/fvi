@@ -46,7 +46,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
     {
       items.length > 0 && (
         <div class="grid gap-8 md:grid-cols-2">
-          {items.map(({ image, title, date, description, button }, index) => (
+          {items.map(({ image, title, date, mediaCaption = 'Vanguardia Académica', description, button }, index) => (
             <article class="program-card group" style={`--card-index: ${index};`}>
               {button?.href ? (
                 <a
@@ -91,7 +91,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
                       </span>
                     </div>
                     <div class="program-card-media-caption">
-                      <span>Formación de alto impacto</span>
+                      <span>{mediaCaption}</span>
                       <Icon name="tabler:arrow-up-right" class="h-5 w-5" />
                     </div>
                   </div>

@@ -160,6 +160,7 @@ export interface ItemFeaturedProgram {
   image?: string | ImageMetadata;
   title?: string;
   date?: string;
+  mediaCaption?: string;
   description?: string;
   button?: CallToAction;
   classes?: Record<string, string>;
