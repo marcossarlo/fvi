@@ -1,138 +1,26 @@
 ---
-import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import type { ItemFeaturedProgram } from '~/types';
+import { programs } from '~/data/programs';
+import { getProgramsByCategory } from '~/utils/programs';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
-  title: 'PhD | Doctorados oficiales en medio ambiente | Fondo Verde Institute',
-  description:
-    'Conoce la oferta de doctorados PhD de Fondo Verde Institute: sostenibilidad, energía, educación ambiental, turismo, urbanismo y más, con formación doctoral especializada en medio ambiente.',
-  keywords:
-    'PhD, doctorados oficiales, doctorado en medio ambiente, sostenibilidad, educación ambiental, energías renovables, ecoturismo, urbanismo sostenible, Fondo Verde Institute',
+  title: 'Doctorados Oficiales en Medio Ambiente',
+  description: 'Alcanza el grado de PhD con nuestros doctorados multidisciplinarios. Desarrolla investigación rigurosa y genera un impacto global en tu región.',
+  keywords: 'doctorado en medio ambiente, PhD ambiental, investigación científica, desarrollo sustentable, doctorado online, Fondo Verde, tesis doctoral',
 };
 
-const phdStartDate = '13 de mayo de 2026';
-
-const phdPrograms: ItemFeaturedProgram[] = [
-  {
-    image: '~/assets/images/doctorados/fvi-phd-sostenibilidad.webp',
-    title: '<span class="text-primary">Doctorado en</span> Sostenibilidad',
-    date: phdStartDate,
-    description:
-      'Forma investigadores capaces de generar conocimiento innovador sobre cambio climático, gestión de recursos naturales y desarrollo sostenible.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/sostenibilidad',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-conservacion-restauracion-medio-natural.webp',
-    title: '<span class="text-primary">Doctorado en</span> Conservación y Restauración del Medio Natural',
-    date: phdStartDate,
-    description:
-      'Aborda medicina de la conservación, salud de ecosistemas y recuperación de hábitats degradados con enfoque interdisciplinario.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/conservacion-restauracion-medio-natural',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-proyectos-investigacion-medio-ambiente.webp',
-    title: '<span class="text-primary">Doctorado en</span> Proyectos: Línea de Investigación en Medio Ambiente',
-    date: phdStartDate,
-    description:
-      'Prepara profesionales para planear, formular y gestionar proyectos ambientales con impacto urbano y rural.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/proyectos-investigacion-medio-ambiente',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-administracion-negocios-sostenibles.webp',
-    title: '<span class="text-primary">Doctorado en</span> Administración de Negocios Sostenibles',
-    date: phdStartDate,
-    description:
-      'Diseña modelos de negocio, finanzas verdes y liderazgo ético orientados a la economía circular.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/administracion-negocios-sostenibles',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-educacion-ambiental.webp',
-    title: '<span class="text-primary">Doctorado en</span> Educación Ambiental',
-    date: phdStartDate,
-    description:
-      'Fortalece la investigación y la práctica pedagógica para impulsar cultura ambiental y participación ciudadana.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/educacion-ambiental',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-paisaje-ambiente.webp',
-    title: '<span class="text-primary">Doctorado en</span> Paisaje y Ambiente',
-    date: phdStartDate,
-    description:
-      'Estudia el paisaje como recurso territorial para conservación, planificación y restauración con mirada transdisciplinaria.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/paisaje-ambiente',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-ecoturismo-turismo-sostenible.webp',
-    title: '<span class="text-primary">Doctorado en</span> Ecoturismo y Turismo Sostenible',
-    date: phdStartDate,
-    description:
-      'Impulsa la gestión de destinos y productos turísticos responsables con enfoque local e internacional.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/ecoturismo-turismo-sostenible',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-urbanismo-arquitectura-sostenible.webp',
-    title: '<span class="text-primary">Doctorado en</span> Urbanismo y Arquitectura Sostenible',
-    date: phdStartDate,
-    description:
-      'Integra diseño, ciudad y territorio para crear entornos más eficientes, habitables y ambientalmente responsables.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/urbanismo-arquitectura-sostenible',
-      variant: 'primary',
-    },
-  },
-  {
-    image: '~/assets/images/doctorados/fvi-phd-energias-renovables.webp',
-    title: '<span class="text-primary">Doctorado en</span> Energías Renovables',
-    date: phdStartDate,
-    description:
-      'Desarrolla soluciones en energía solar, eólica, biomasa e hidrógeno para acelerar la transición energética.',
-    button: {
-      text: 'Leer más',
-      href: '/phd/energias-renovables',
-      variant: 'primary',
-    },
-  },
-];
+const phdPrograms = getProgramsByCategory(programs, 'doctorado');
 ---
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="Oferta doctoral"
+    tagline="Presentación"
     image={{
       src: '~/assets/images/fvi_doctorados_home.webp',
-      alt: 'Oferta doctoral de Fondo Verde Institute',
+      alt: 'Programas de Doctorado de Fondo Verde Institute',
     }}
   >
     <Fragment slot="title">
@@ -140,52 +28,38 @@ const phdPrograms: ItemFeaturedProgram[] = [
       <span class="text-primary dark:text-accent"> oficiales</span>
     </Fragment>
     <Fragment slot="subtitle">
-      <span class="text-primary font-semibold">Fondo Verde</span> <span class="text-secondary font-semibold">Institute</span>, se funda en el entorno de <a 
-              href="https://www.fondoverde.org" 
-              class="font-bold text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary transition-colors decoration-2 underline-offset-2" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              FONDO VERDE</a>,
-      una <strong>ONGD internacional</strong> miembro de <strong>IUCN International Union for Conservation of Nature</strong>.
-      Fondo Verde es una organización líder en el sector de formación ambiental con más de 16 años de experiencia. Esta experiencia ha permitido apostar por la innovación a través de una oferta educativa que genera un impacto positivo en el mundo.
+      Los programas de doctorado de Fondo Verde ofrecen una especialización de alto nivel diseñada para generar un impacto directo en el desarrollo de tu comunidad o región. A través de metodologías avanzadas en estudios medioambientales y planificación del desarrollo, adquirirás las competencias clave para la investigación de excelencia.<br>
+      El programa te sumerge en una cultura científica interdisciplinaria, guiando tu formación hacia la consolidación de un proyecto riguroso y coherente. Este proceso culmina con la defensa de una tesis de investigación original, otorgándote el grado equivalente al PhD (Philosophiæ Doctor).
     </Fragment>
   </Hero>
 
-  <Features3
-    id="presentacion"
-    title="Oferta doctoral de Fondo Verde"
-    subtitle="Una estructura doctoral pensada para investigadores que quieren profundizar en medio ambiente, sostenibilidad y desarrollo territorial."
-    columns={3}
-    items={[
-      {
-        title: 'Estructura del programa',
-        description:
-          '24 meses, 8 trimestres, 1,440 horas lectivas y 90 créditos, con un periodo de formación, un periodo de investigación, proyecto de tesis doctoral y artículo científico.',
-        icon: 'tabler:calendar-time',
+  <Features
+    id="estructura"
+    tagline="Fases y Carga Lectiva"
+    title="Estructura del Programa"
+    subtitle="Nuestros <strong>doctorados</strong> son programas multidisciplinarios diseñados bajo una progresión académica rigurosa. Esta ruta articula un <strong>periodo de formación avanzada</strong>, un <strong>periodo de investigación</strong> con el desarrollo de la <strong>Tesis Doctoral</strong> y la publicación de un <strong>artículo científico</strong>. Según el programa elegido, la duración total está preestablecida en 24 o 36 meses, con una carga académica fijada en 75, 90 o 100 créditos (1,200, 1,440 o 1,600 horas lectivas). <em>Los detalles exactos se especifican en la ficha técnica de cada doctorado.</em>"
+    columns={2}
+    classes={{
+      container: 'max-w-7xl',
+      items: {
+        panel: 'max-w-none w-full',
       },
+    }}
+    items={[
       {
         title: 'Periodo de formación',
         description:
-          'Cuatro trimestres con doce cursos teóricos, orientados por un tutor académico designado por la Comisión Académica del Doctorado.',
+          'Comprende una secuencia básica de cuatro trimestres integrados por 9 a 12 cursos teóricos, estratégicamente alineados a la mención doctoral y al trabajo de investigación. Desde el momento de la admisión, la Comisión Académica asigna un Tutor experto que guiará al estudiante en la estructuración de su plan de estudios y dará seguimiento a su desarrollo.',
         icon: 'tabler:school',
       },
       {
         title: 'Periodo de investigación',
         description:
-          'Seminarios de seguimiento, tesis doctoral y publicación de un artículo científico de revisión y/o sobre la temática de la tesis.',
+          'Esta fase práctica se desarrolla mediante <strong>seminarios de investigación</strong> enfocados en la problemática ambiental elegida por el estudiante. El proceso culmina con la redacción del trabajo final de la <strong>Tesis Doctoral</strong> y la elaboración de un <strong>artículo científico</strong>, de revisión o derivado de la propia tesis, listo para su publicación.',
         icon: 'tabler:microscope',
       },
     ]}
   />
 
-
-
-      <FeaturedPrograms
-        id="programas-listado"
-        tagline="Programas PhD"
-        columns={2}
-        items={phdPrograms}
-      />
-
+  <ProgramShowcase id="programas-listado" tagline="Programas de Doctorado" columns={2} items={phdPrograms} />
 </Layout>

@@ -12,12 +12,16 @@ import HeroFVI from '~/components/widgets/HeroFVI.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import FeatureInfo from '~/components/widgets/FeatureInfo.astro';
-import FeaturedPrograms from '~/components/widgets/FeaturedPrograms.astro';
+import ProgramShowcase from '~/components/widgets/ProgramShowcase.astro';
 import Content from '~/components/widgets/Content.astro';
 import FondoVerdeNews from '~/components/widgets/FondoVerdeNews.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import { programs } from '~/data/programs';
+import { getFeaturedPrograms } from '~/utils/programs';
+
+const featuredPrograms = getFeaturedPrograms(programs);
 
 const metadata = {
   title: 'Fondo Verde Institute — Maestrías, Doctorados y Posdoctorados en Medio Ambiente',
@@ -32,7 +36,7 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
   <HeroFVI />
-  
+
   <!-- Stats Widget ****************** -->
   <Stats
     stats={[
@@ -44,12 +48,22 @@ const metadata = {
   >
     <Fragment slot="bg">
       <!-- Fondo modo claro -->
-      <div class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#c6e8e6,transparent)]"></div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
+      >
+        <div
+          class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#c6e8e6,transparent)]"
+        >
+        </div>
       </div>
       <!-- Fondo modo oscuro -->
-      <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#1e3535_1px,transparent_1px),linear-gradient(to_bottom,#1e3535_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#042f2e,transparent)]"></div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#1e3535_1px,transparent_1px),linear-gradient(to_bottom,#1e3535_1px,transparent_1px)] bg-[size:6rem_4rem]"
+      >
+        <div
+          class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#042f2e,transparent)]"
+        >
+        </div>
       </div>
     </Fragment>
   </Stats>
@@ -100,74 +114,16 @@ const metadata = {
     ]}
   />
 
-  <!-- FeaturedPrograms Widget ******* -->
-  <FeaturedPrograms
-    tagline="Programas Destacados"
-    columns={2}
-    items={[
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Ciencias de la Sostenibilidad',
-        date: '13 de mayo de 2026',
-        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Rehabilitación Ambiental Terrestre',
-        date: '13 de mayo de 2026',
-        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
-        date: '13 de mayo de 2026',
-        description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Gestión Ambiental',
-        date: '13 de mayo de 2026',
-        description: 'La restauración ecológica, es una ciencia ambiental innovadora que aplica técnicas preventivas y correctoras de la degradación del medio natural y plantea la recuperación de forma sostenible, a largo plazo...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      },
-      {
-        image: '/images/programs/fvi_fondo-hero.jpg',
-        title: '<span class="text-primary">Maestría en</span> Paisaje, Patrimonio y Estudios',
-        date: '13 de mayo de 2026',
-        description: 'El patrimonio cultural y natural constituye uno de los recursos más valiosos de la humanidad. Su conservación y gestión sostenible son fundamentales para el desarrollo de las sociedades...',
-        button: {
-          text: 'Ver programa',
-          href: '#',
-          variant: 'primary'
-        }
-      }
-    ]}
-  >
+  <!-- Program showcase widget ******* -->
+  <ProgramShowcase tagline="Programas Destacados" columns={2} items={featuredPrograms}>
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-repeat opacity-70 dark:opacity-50" style="background-image: url('/images/fvi_grey_background.jpg');"></div>
-       <!-- <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div> -->
-      <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#c6e8e6,transparent)]"></div></div> -->
+      <div
+        class="absolute inset-0 bg-repeat opacity-70 dark:opacity-50"
+        style="background-image: url('/images/fvi_grey_background.jpg');"
+      >
+      </div>
     </Fragment>
-  </FeaturedPrograms>
+  </ProgramShowcase>
 
   <!-- FeatureInfo Widget: Oportunidades de Formación ************** -->
   <FeatureInfo
@@ -181,46 +137,49 @@ const metadata = {
         iconLink: {
           href: '#',
           icon: 'tabler:chevron-right',
-          ariaLabel: 'Ver más sobre Becas'
+          ariaLabel: 'Ver más sobre Becas',
         },
         title: 'Becas Fondo Verde',
-        content: 'Fondo Verde ofrece un Programa de Becas para ciudadanos europeos y latinoamericanos, con acceso especial a sus posgrados en línea. La beca cubre el <strong>50% del costo</strong>.',
+        content:
+          'Fondo Verde ofrece un Programa de Becas para ciudadanos europeos y latinoamericanos, con acceso especial a sus posgrados en línea. La beca cubre el <strong>50% del costo</strong>.',
         buttonLink: {
           text: 'Leer Más',
           href: '#',
-          variant: 'primary'
-        }
+          variant: 'primary',
+        },
       },
       {
         image: comoSeEstudiaImage,
         iconLink: {
           href: 'https://www.fondoverdeopen.net',
           icon: 'tabler:chevron-right',
-          ariaLabel: 'Ver más sobre Maestrías'
+          ariaLabel: 'Ver más sobre Maestrías',
         },
         title: '¿Cómo se estudia?',
-        content: 'Todos nuestros programas se desarrollan a través del <strong>Campus Virtual de Fondo Verde</strong> (fondoverdeopen.net), que permite la interacción profesor-tutor y de los participantes entre sí.',
+        content:
+          'Todos nuestros programas se desarrollan a través del <strong>Campus Virtual de Fondo Verde</strong> (fondoverdeopen.net), que permite la interacción profesor-tutor y de los participantes entre sí.',
         buttonLink: {
           text: 'Leer Más',
           href: 'https://www.fondoverdeopen.net/',
-          variant: 'primary'
-        }
+          variant: 'primary',
+        },
       },
       {
         image: comoAplicarImage,
         iconLink: {
           href: '#',
           icon: 'tabler:chevron-right',
-          ariaLabel: 'Ver más sobre Doctorados'
+          ariaLabel: 'Ver más sobre Doctorados',
         },
         title: '¿Cómo Aplicar?',
-        content: 'Todo candidato para ser admitido a Fondo Verde, deberá cumplir con los reglamentos, políticas y criterios vigentes de admisión establecidos por la institución.',
+        content:
+          'Todo candidato para ser admitido a Fondo Verde, deberá cumplir con los reglamentos, políticas y criterios vigentes de admisión establecidos por la institución.',
         buttonLink: {
           text: 'Leer Más',
           href: '#',
-          variant: 'primary'
-        }
-      }
+          variant: 'primary',
+        },
+      },
     ]}
   >
     <Fragment slot="bg">
@@ -261,13 +220,19 @@ const metadata = {
   >
     <Fragment slot="bg">
       <!-- Fondo modo claro -->
-      <div class="absolute inset-0 z-[-2] dark:hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(3,145,152,0.15),rgba(255,255,255,0))]"></div>
+      <div
+        class="absolute inset-0 z-[-2] dark:hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(3,145,152,0.15),rgba(255,255,255,0))]"
+      >
+      </div>
       <!-- Fondo modo oscuro -->
-      <div class="absolute inset-0 z-[-2] hidden dark:block bg-slate-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(3,145,152,0.10),rgba(15,23,42,0))]"></div>
+      <div
+        class="absolute inset-0 z-[-2] hidden dark:block bg-slate-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(3,145,152,0.10),rgba(15,23,42,0))]"
+      >
+      </div>
     </Fragment>
   </Testimonials>
 
-    <!-- Content Widget: MAESTRÍAS **************** -->
+  <!-- Content Widget: MAESTRÍAS **************** -->
   <Content
     isReversed
     tagline="Formación de Excelencia"
@@ -295,12 +260,20 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">8</span> Maestrías Universitarias</h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-accent">8</span> Maestrías Universitarias
+      </h3>
     </Fragment>
 
     <Fragment slot="bg">
-      <div class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+      >
+      </div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"
+      >
+      </div>
     </Fragment>
   </Content>
 
@@ -324,17 +297,33 @@ const metadata = {
           'Con una duración de 24 meses (8 trimestres), el Doctorado combina cursos teóricos, seminarios de investigación, tutoría académica, proyecto de tesis y publicación de un artículo científico, sumando 1,440 horas lectivas (90 créditos).',
       },
     ]}
-
     image={{
       src: doctoradosImage,
       alt: 'Doctorados Oficiales - Fondo Verde Institute',
     }}
   >
-    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">9</span> Doctorados Oficiales</h3>
+    <Fragment slot="content"
+      ><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-accent">9</span> Doctorados Oficiales
+      </h3>
     </Fragment>
     <Fragment slot="bg">
-      <div class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-green-500 opacity-20 blur-[100px]"></div></div>
-      <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"><div class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-accent opacity-10 blur-[100px]"></div></div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+      >
+        <div
+          class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-green-500 opacity-20 blur-[100px]"
+        >
+        </div>
+      </div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"
+      >
+        <div
+          class="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-accent opacity-10 blur-[100px]"
+        >
+        </div>
+      </div>
     </Fragment>
   </Content>
 
@@ -359,25 +348,33 @@ const metadata = {
           'Con duración de 6 a 12 meses, el Postdoctorado consiste en un plan de actividades supervisado por un director y culmina con la publicación de un artículo arbitrado por jurados, uno de ellos internacional.',
       },
     ]}
-
     image={{
       src: postdocsImage,
       alt: 'Posdoctorados - Fondo Verde Institute',
     }}
   >
-    <Fragment slot="content"><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent">7</span> Posdoctorados</h3>
+    <Fragment slot="content"
+      ><h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-accent">7</span> Posdoctorados
+      </h3>
     </Fragment>
     <Fragment slot="bg">
-      <div class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-      <div class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full dark:hidden bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
+      >
+      </div>
+      <div
+        class="absolute inset-0 -z-10 h-full w-full hidden dark:block bg-slate-900 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:14px_24px]"
+      >
+      </div>
     </Fragment>
   </Content>
 
   <!-- Note Widget ******************* -->
   <Note
     icon="tabler:calendar-event"
-    title="Próximos inicios:&nbsp;"
-    description="<strong>Posdoctorados</strong> · 4 mar 2026 &nbsp;&nbsp;|&nbsp;&nbsp; <strong>Doctorados y Maestrías</strong> · 13 may 2026 &nbsp;&nbsp;—&nbsp;&nbsp; <a href='/contact' class='font-bold text-secondary hover:text-primary underline underline-offset-2'>Solicitar información</a>"
+    title="Próximos inicios: "
+    description="<strong>Posdoctorados</strong> · 4 mar 2026   |   <strong>Doctorados y Maestrías</strong> · 13 may 2026   —   <a href='/contact' class='font-bold text-secondary hover:text-primary underline underline-offset-2'>Solicitar información</a>"
   />
 
   <!-- FAQs Widget: Preguntas Frecuentes ******************* -->
