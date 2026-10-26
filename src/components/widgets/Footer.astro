@@ -1,7 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import footerLogo from '~/assets/images/logo_fvi_footer.svg';
 
 interface Link {
   text?: string;
@@ -36,17 +38,14 @@ const resolvedFootNote =
     <div class="relative mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 pt-8 sm:pt-10 lg:pt-12">
       <div class="grid gap-8 xl:grid-cols-[1.08fr_minmax(0,1.92fr)] xl:items-start">
         <div class="max-w-xl">
-          <a href={getHomePermalink()} class="inline-flex items-center gap-3 group">
-            <div
-              class="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-[0_0_0_1px_rgba(16,185,129,0.25)] transition-transform duration-300 group-hover:scale-105"
-            >
-              <Icon name="tabler:leaf" class="h-5 w-5" />
-            </div>
-            <div>
-              <div class="text-[1.6rem] sm:text-[1.7rem] font-bold leading-none text-white tracking-tight">
-                {SITE?.name}
-              </div>
-            </div>
+          <a href={getHomePermalink()} class="inline-flex items-center group">
+            <Image
+              src={footerLogo}
+              alt={SITE?.name || 'Fondo Verde Institute'}
+              title={SITE?.name}
+              width={325}
+              class="h-auto w-[325px] max-w-full object-contain transition-transform duration-300 group-hover:scale-[1.01]"
+            />
           </a>
 
           <p class="mt-7 max-w-md text-[0.98rem] leading-7 text-slate-300/85 sm:text-[1rem]">
