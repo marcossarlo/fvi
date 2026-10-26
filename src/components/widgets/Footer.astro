@@ -25,128 +25,171 @@ export interface Props {
 
 const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 const currentYear = new Date().getFullYear();
-const resolvedFootNote = footNote || `© ${currentYear} ${SITE?.name || 'Fondo Verde Institute'}. Todos los derechos reservados.`;
+const resolvedFootNote =
+  footNote || `© ${currentYear} ${SITE?.name || 'Fondo Verde Institute'}. Todos los derechos reservados.`;
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative w-full overflow-hidden not-prose']}>
-  <div class="relative w-full pt-1 overflow-hidden border border-white/20 bg-slate-900 text-slate-300 shadow-[0_-22px_60px_rgba(0,0,0,0.22)]">
-
-      <div class="relative mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 pt-8 sm:pt-10 lg:pt-12">
-        <div class="grid gap-8 xl:grid-cols-[1.08fr_minmax(0,1.92fr)] xl:items-start">
-          <div class="max-w-xl">
-            <a href={getHomePermalink()} class="inline-flex items-center gap-3 group">
-              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-[0_0_0_1px_rgba(16,185,129,0.25)] transition-transform duration-300 group-hover:scale-105">
-                <Icon name="tabler:leaf" class="h-5 w-5" />
-              </div>
-              <div>
-                <div class="text-[1.6rem] sm:text-[1.7rem] font-bold leading-none text-white tracking-tight">
-                  {SITE?.name}
-                </div>               
-              </div>
-            </a>
-
-            <p class="mt-7 max-w-md text-[0.98rem] leading-7 text-slate-300/85 sm:text-[1rem]">
-              El ecosistema académico de Fondo Verde integra formación, investigación y proyección profesional para quienes trabajan por la sostenibilidad.
-            </p>            
-
-            <div class="mt-7 flex flex-wrap gap-3 text-[0.93rem] text-slate-400">
-              {
-                secondaryLinks.map(({ text, href }, index) => (
-                  <>
-                    {index !== 0 ? <span class="text-slate-600">·</span> : null}
-                    <a
-                      class="transition-colors duration-150 hover:text-accent hover:underline decoration-accent/40 underline-offset-4"
-                      href={href}
-                      set:html={text}
-                    />
-                  </>
-                ))
-              }
+  <div
+    class="relative w-full pt-1 overflow-hidden border border-white/20 bg-slate-900 text-slate-300 shadow-[0_-22px_60px_rgba(0,0,0,0.22)]"
+  >
+    <div class="relative mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 pt-8 sm:pt-10 lg:pt-12">
+      <div class="grid gap-8 xl:grid-cols-[1.08fr_minmax(0,1.92fr)] xl:items-start">
+        <div class="max-w-xl">
+          <a href={getHomePermalink()} class="inline-flex items-center gap-3 group">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-full bg-accent text-white shadow-[0_0_0_1px_rgba(16,185,129,0.25)] transition-transform duration-300 group-hover:scale-105"
+            >
+              <Icon name="tabler:leaf" class="h-5 w-5" />
             </div>
+            <div>
+              <div class="text-[1.6rem] sm:text-[1.7rem] font-bold leading-none text-white tracking-tight">
+                {SITE?.name}
+              </div>
+            </div>
+          </a>
 
-            <div class="mt-7 flex items-center gap-3">
-              {
-                socialLinks?.map(({ ariaLabel, href, icon }) => (
+          <p class="mt-7 max-w-md text-[0.98rem] leading-7 text-slate-300/85 sm:text-[1rem]">
+            El ecosistema académico de Fondo Verde integra formación, investigación y proyección profesional para
+            quienes trabajan por la sostenibilidad.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-3 text-[0.93rem] text-slate-400">
+            {
+              secondaryLinks.map(({ text, href }, index) => (
+                <>
+                  {index !== 0 ? <span class="text-slate-600">·</span> : null}
                   <a
-                    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-200 hover:border-accent/35 hover:bg-accent/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-accent/40"
-                    aria-label={ariaLabel}
+                    class="transition-colors duration-150 hover:text-accent hover:underline decoration-accent/40 underline-offset-4"
                     href={href}
-                    target={href?.startsWith('http') ? '_blank' : undefined}
-                    rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  >
-                    {icon && <Icon name={icon} class="h-4 w-4" />}
-                  </a>
-                ))
-              }
-            </div>
+                    set:html={text}
+                  />
+                </>
+              ))
+            }
           </div>
 
-          <div class="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-8 xl:grid-cols-5 xl:gap-6">
+          <div class="mt-7 flex items-center gap-3">
             {
-              links.map(({ title, links }) => (
-                <div class="min-w-0">
-                  <div class="text-[0.66rem] uppercase tracking-[0.34em] text-accent/90">
-                    {title}
-                  </div>
-                  {links && Array.isArray(links) && links.length > 0 && (
-                    <ul class="mt-4 space-y-3 text-[0.92rem] leading-5 text-slate-300/88">
-                      {links.map(({ text, href, ariaLabel }) => (
-                        <li>
-                          <a
-                            class="transition-colors duration-150 hover:text-white hover:underline decoration-accent/40 underline-offset-4"
-                            href={href}
-                            aria-label={ariaLabel}
-                          >
-                            <Fragment set:html={text} />
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+              socialLinks?.map(({ ariaLabel, href, icon }) => (
+                <a
+                  class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-200 hover:border-accent/35 hover:bg-accent/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-accent/40"
+                  aria-label={ariaLabel}
+                  href={href}
+                  target={href?.startsWith('http') ? '_blank' : undefined}
+                  rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+                >
+                  {icon && <Icon name={icon} class="h-4 w-4" />}
+                </a>
               ))
             }
           </div>
         </div>
 
-        <div class="mt-10 border-t border-white/20 py-7 sm:py-8">
-          <div class="grid gap-8 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
-            <div>
-              <div class="text-[1.35rem] font-semibold tracking-tight text-white">
-                Boletín del instituto
+        <div class="grid grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-8 xl:grid-cols-5 xl:gap-6">
+          {
+            links.map(({ title, links }) => (
+              <div class="min-w-0">
+                <div class="text-[0.66rem] uppercase tracking-[0.34em] text-accent/90">{title}</div>
+                {links && Array.isArray(links) && links.length > 0 && (
+                  <ul class="mt-4 space-y-3 text-[0.92rem] leading-5 text-slate-300/88">
+                    {links.map(({ text, href, ariaLabel }) => (
+                      <li>
+                        <a
+                          class="transition-colors duration-150 hover:text-white hover:underline decoration-accent/40 underline-offset-4"
+                          href={href}
+                          aria-label={ariaLabel}
+                        >
+                          <Fragment set:html={text} />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
-              <p class="mt-2 max-w-xl text-[0.95rem] leading-6 text-slate-400">
-                Tendencias, normativas y oportunidades para profesionales del medio ambiente. Sin spam.
-              </p>
-            </div>
-
-            <form class="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch lg:justify-end" action="#" method="post">
-              <label class="sr-only" for="footer-email">Correo electrónico</label>
-              <input
-                id="footer-email"
-                name="email"
-                type="email"
-                placeholder="tu@email.com"
-                class="h-12 min-w-0 flex-1 rounded-full border border-white/20 bg-black/25 px-5 text-slate-100 placeholder:text-slate-500 outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/20"
-              />
-              <button
-                type="submit"
-                class="h-12 rounded-full bg-accent px-7 font-semibold text-white transition-transform duration-200 hover:translate-y-[-1px] hover:bg-secondary"
-              >
-                Suscribirme
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-3 border-t border-white/20 py-5 text-[0.85rem] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            {resolvedFootNote}
-          </div>
-          <div>
-            Diseñado con intención
-          </div>
+            ))
+          }
         </div>
       </div>
+
+      <div class="mt-10 border-t border-white/20 py-7 sm:py-8">
+        <div class="grid gap-8 lg:grid-cols-[1.1fr_minmax(0,1fr)] lg:items-center">
+          <div>
+            <div class="text-[1.35rem] font-semibold tracking-tight text-white">Boletín del instituto</div>
+            <p class="mt-2 max-w-xl text-[0.95rem] leading-6 text-slate-400">
+              Tendencias, normativas y oportunidades para profesionales del medio ambiente. Sin spam.
+            </p>
+          </div>
+
+          <form class="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch lg:justify-end" action="#" method="post">
+            <label class="sr-only" for="footer-email">Correo electrónico</label>
+            <input
+              id="footer-email"
+              name="email"
+              type="email"
+              placeholder="tu@email.com"
+              class="h-12 min-w-0 flex-1 rounded-full border border-white/20 bg-black/25 px-5 text-slate-100 placeholder:text-slate-500 outline-none transition-colors focus:border-accent/50 focus:ring-2 focus:ring-accent/20"
+            />
+            <button
+              type="submit"
+              class="h-12 rounded-full bg-accent px-7 font-semibold text-white transition-transform duration-200 hover:translate-y-[-1px] hover:bg-secondary"
+            >
+              Suscribirme
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 border-t border-white/20 py-5 text-[0.85rem] text-slate-500">
+        <div class="w-full text-center">
+          <Fragment set:html={resolvedFootNote} />
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
+
+<button
+  type="button"
+  data-back-to-top
+  aria-label="Volver arriba"
+  aria-hidden="true"
+  tabindex="-1"
+  class="pointer-events-none fixed bottom-6 right-6 z-50 inline-flex h-12 w-12 translate-y-4 items-center justify-center rounded-full bg-primary text-white opacity-0 shadow-lg shadow-primary/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-page motion-reduce:transition-none"
+>
+  <Icon name="tabler:chevron-up" class="h-5 w-5" />
+</button>
+
+<script>
+  const scrollThreshold = 300;
+
+  const initializeBackToTop = () => {
+    const backToTop = document.querySelector<HTMLElement>('[data-back-to-top]');
+    if (!backToTop || backToTop.dataset.initialized === 'true') return;
+
+    const updateBackToTopVisibility = () => {
+      const hasScrollableContent = document.documentElement.scrollHeight > window.innerHeight;
+      const shouldShow = hasScrollableContent && window.scrollY > scrollThreshold;
+
+      backToTop.classList.toggle('pointer-events-none', !shouldShow);
+      backToTop.classList.toggle('translate-y-4', !shouldShow);
+      backToTop.classList.toggle('opacity-0', !shouldShow);
+      backToTop.classList.toggle('pointer-events-auto', shouldShow);
+      backToTop.classList.toggle('translate-y-0', shouldShow);
+      backToTop.classList.toggle('opacity-100', shouldShow);
+      backToTop.setAttribute('aria-hidden', String(!shouldShow));
+      backToTop.tabIndex = shouldShow ? 0 : -1;
+    };
+
+    backToTop.dataset.initialized = 'true';
+    window.addEventListener('scroll', updateBackToTopVisibility, { passive: true });
+    window.addEventListener('resize', updateBackToTopVisibility);
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    updateBackToTopVisibility();
+  };
+
+  initializeBackToTop();
+  document.addEventListener('astro:after-swap', initializeBackToTop);
+</script>
