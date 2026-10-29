@@ -461,6 +461,17 @@
 }
 
 @media (max-width: 767px) {
+  .dark #header.expanded nav {
+    background: rgb(15 23 42 / 96%);
+    backdrop-filter: blur(16px);
+    border-color: rgb(148 163 184 / 24%);
+  }
+
+  .dark #header.expanded .mega-anchor.is-open .mega-panel {
+    background: rgb(3 6 32 / 55%);
+    border: 1px solid rgb(148 163 184 / 18%);
+  }
+
   .mega-trigger::after,
   #header nav > ul > li > a::after {
     display: none;
