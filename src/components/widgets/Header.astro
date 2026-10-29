@@ -198,7 +198,7 @@ const getMegaDescription = (text = '') => {
                         {links.map(({ text: text2, href: href2 }) => (
                           <a class:list={['mega-link', { 'is-current': href2 === currentPath }]} href={href2} aria-current={href2 === currentPath ? 'page' : undefined}>
                             <span class="mega-dot" aria-hidden="true"></span>
-                            <span><strong>{text2}</strong><small>{getMegaDescription(text2)}</small></span>
+                            <span class="mega-link-copy"><strong>{text2}</strong><small>{getMegaDescription(text2)}</small></span>
                             {href2 === currentPath && <span class="sr-only">(página actual)</span>}
                           </a>
                         ))}
