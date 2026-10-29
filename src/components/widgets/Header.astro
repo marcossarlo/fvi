@@ -218,7 +218,7 @@ const getMegaDescription = (text = '') => {
                   class:list={[
                     'px-4 py-2.5 rounded flex items-center whitespace-nowrap transition-colors',
                     {
-                      'bg-secondary text-white dark:bg-secondary dark:text-white': href === currentPath,
+                      'is-active': href === currentPath,
                       'bg-default text-white dark:bg-pageDark dark:text-white': href !== currentPath,
                     },
                   ]}
