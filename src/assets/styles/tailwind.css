@@ -464,6 +464,32 @@
     opacity: 1;
   }
 
+  .mega-anchor {
+    border-bottom: 1px solid rgb(100 116 139 / 20%);
+  }
+
+  .mega-trigger {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 0;
+    padding: 1rem 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .mega-trigger.is-active {
+    border-radius: 0.65rem;
+    background: var(--aw-color-primary);
+    color: white;
+  }
+
+  .mega-anchor.is-open > .mega-trigger {
+    color: var(--aw-color-primary);
+  }
+
+  .mega-anchor.is-open > .mega-trigger.is-active {
+    color: white;
+  }
+
   .mega-anchor.is-open .mega-panel {
     display: grid;
   }

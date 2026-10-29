@@ -299,6 +299,7 @@ const getMegaDescription = (text = '') => {
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', (event) => {
         event.preventDefault();
+        event.stopPropagation();
         const anchor = trigger.closest<HTMLElement>('.mega-anchor');
         const isOpen = anchor?.classList.contains('is-open') ?? false;
         closeMenus();
@@ -332,6 +333,14 @@ const getMegaDescription = (text = '') => {
         if (!anchor.contains(event.relatedTarget as Node)) scheduleClose();
       });
     });
+
+    if (!window.matchMedia('(min-width: 768px)').matches) {
+      const activeAnchor = anchors.find((anchor) => anchor.querySelector('.mega-trigger.is-active'));
+      if (activeAnchor) {
+        activeAnchor.classList.add('is-open');
+        activeAnchor.querySelector<HTMLButtonElement>('[data-mega-trigger]')?.setAttribute('aria-expanded', 'true');
+      }
+    }
 
     header.querySelector('[data-mega-overlay]')?.addEventListener('click', closeMenus);
     document.addEventListener('keydown', (event) => {
