@@ -183,7 +183,41 @@
   color: var(--aw-color-text-heading);
 }
 
-.mega-trigger[aria-expanded='true'] .iconify {
+.mega-trigger.is-active {
+  background: var(--aw-color-primary);
+  color: #dff5ef;
+}
+
+.mega-trigger.is-active:hover,
+.mega-trigger.is-active:focus-visible {
+  background: var(--aw-color-primary);
+  color: white;
+}
+
+.mega-trigger:not(.is-active):hover,
+.mega-trigger:not(.is-active):focus-visible,
+#header nav > ul > li > a:not(.is-active):hover,
+#header nav > ul > li > a:not(.is-active):focus-visible {
+  background: #dbf0ef !important;
+  color: var(--aw-color-primary) !important;
+}
+
+.dark .mega-trigger:not(.is-active):hover,
+.dark .mega-trigger:not(.is-active):focus-visible,
+.dark #header nav > ul > li > a:not(.is-active):hover,
+.dark #header nav > ul > li > a:not(.is-active):focus-visible {
+  background: rgb(41 141 108 / 16%) !important;
+  color: rgb(145 224 190) !important;
+}
+
+.mega-chevron {
+  display: inline-block;
+  transition: transform 300ms ease;
+}
+
+.mega-trigger:hover .mega-chevron,
+.mega-trigger:focus-visible .mega-chevron,
+.mega-trigger[aria-expanded='true'] .mega-chevron {
   transform: rotate(180deg);
 }
 
