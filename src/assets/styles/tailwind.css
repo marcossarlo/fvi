@@ -93,6 +93,336 @@
   animation: dropdownFadeIn 0.2s ease forwards;
 }
 
+/* Institutional mega navigation */
+.mega-overlay {
+  position: fixed;
+  z-index: 30;
+  inset: 5rem 0 0;
+  background: rgb(3 6 32 / 22%);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+#header:has(.mega-anchor:hover) .mega-overlay,
+#header:has(.mega-panel:focus-within) .mega-overlay,
+#header.mega-open .mega-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mega-panel {
+  position: fixed;
+  z-index: 50;
+  top: 6.75rem;
+  left: 50%;
+  display: grid;
+  grid-template-columns: minmax(190px, 0.8fr) minmax(390px, 1.65fr) minmax(220px, 0.9fr);
+  gap: 2rem;
+  width: min(1200px, calc(100vw - 2rem));
+  padding: 2.25rem;
+  border: 1px solid rgb(148 163 184 / 22%);
+  border-radius: 1rem;
+  background: #e9edec;
+  box-shadow: 0 24px 70px rgb(3 6 32 / 20%);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -10px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.dark .mega-panel {
+  background: #0f172a;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 42%);
+}
+
+.mega-anchor:hover .mega-panel,
+.mega-anchor:focus-within .mega-panel,
+.mega-anchor.is-open .mega-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.mega-anchor::after {
+  position: absolute;
+  top: 100%;
+  right: -1rem;
+  left: -1rem;
+  height: 1.25rem;
+  content: '';
+}
+
+.mega-panel:hover {
+  pointer-events: auto;
+}
+
+.mega-trigger.is-active {
+  color: var(--aw-color-primary);
+  background: rgb(41 141 108 / 12%);
+}
+
+.mega-trigger[aria-expanded='true'] .iconify {
+  transform: rotate(180deg);
+}
+
+.mega-intro {
+  display: flex;
+  min-height: 260px;
+  flex-direction: column;
+  border-right: 1px solid rgb(100 116 139 / 20%);
+  padding-right: 2rem;
+}
+
+.mega-kicker {
+  margin-bottom: 1.15rem;
+  color: var(--aw-color-primary);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mega-intro h2 {
+  max-width: 13ch;
+  color: var(--aw-color-text-heading);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.14;
+}
+
+.mega-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  color: var(--aw-color-accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mega-all-link .iconify {
+  width: 1rem;
+}
+
+.mega-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 0.35rem 1.5rem;
+}
+
+.mega-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.5rem 1fr;
+  gap: 0.75rem;
+  padding: 0.8rem 0.25rem;
+  border-radius: 0.5rem;
+  color: var(--aw-color-text-heading);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.mega-link:hover,
+.mega-link:focus-visible,
+.mega-link.is-current {
+  background: rgb(41 141 108 / 10%);
+  color: var(--aw-color-primary);
+}
+
+.mega-dot {
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-top: 0.42rem;
+  border: 1px solid var(--aw-color-primary);
+  border-radius: 999px;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.mega-link:hover .mega-dot,
+.mega-link:focus-visible .mega-dot,
+.mega-link.is-current .mega-dot {
+  background: var(--aw-color-accent);
+  transform: scale(1.35);
+}
+
+.mega-link strong,
+.mega-link small {
+  display: block;
+}
+
+.mega-link strong {
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.mega-link small {
+  margin-top: 0.28rem;
+  color: var(--aw-color-text-muted);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.mega-feature {
+  position: relative;
+  min-height: 260px;
+  overflow: hidden;
+  border-radius: 1rem;
+  color: white;
+  isolation: isolate;
+}
+
+.mega-feature img,
+.mega-feature-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mega-feature img {
+  z-index: -2;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.mega-feature:hover img {
+  transform: scale(1.04);
+}
+
+.mega-feature-shade {
+  z-index: -1;
+  background: linear-gradient(180deg, rgb(3 6 32 / 8%), rgb(3 6 32 / 84%));
+}
+
+.mega-feature-copy {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+}
+
+.mega-feature-copy small {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.mega-feature-copy small i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: #d64221;
+}
+
+.mega-feature-copy strong {
+  max-width: 17ch;
+  margin-top: 0.65rem;
+  font-size: 1.2rem;
+  line-height: 1.15;
+}
+
+.mega-feature-arrow {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-top: 1rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 18%);
+}
+
+.mega-feature-arrow .iconify {
+  width: 1.1rem;
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  .mega-panel {
+    grid-template-columns: minmax(170px, 0.75fr) minmax(350px, 1.5fr);
+    padding: 1.5rem;
+  }
+
+  .mega-feature {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #header:has(.mega-anchor:hover) .mega-overlay,
+  #header:has(.mega-panel:focus-within) .mega-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mega-panel,
+  .mega-anchor:hover .mega-panel,
+  .mega-anchor:focus-within .mega-panel {
+    position: static;
+    display: none;
+    width: auto;
+    margin: 0.35rem 0 0.5rem;
+    padding: 1rem;
+    transform: none;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    border-radius: 0.75rem;
+    box-shadow: none;
+    opacity: 1;
+  }
+
+  .mega-anchor.is-open .mega-panel {
+    display: grid;
+  }
+
+  .mega-intro {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(100 116 139 / 20%);
+    padding: 0 0 1rem;
+  }
+
+  .mega-intro h2 {
+    max-width: 30ch;
+    font-size: 1.25rem;
+  }
+
+  .mega-all-link {
+    margin-top: 1rem;
+  }
+
+  .mega-links {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .mega-link {
+    padding: 0.7rem 0.25rem;
+  }
+
+  .mega-feature {
+    display: block;
+    min-height: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mega-overlay,
+  .mega-panel,
+  .mega-link,
+  .mega-dot,
+  .mega-feature img {
+    transition: none;
+  }
+}
+
 @keyframes dropdownFadeIn {
   from {
     opacity: 0;

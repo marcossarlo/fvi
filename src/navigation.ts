@@ -172,23 +172,23 @@ export const headerData = {
       text: 'Blog',
       links: [
         {
-          text: 'Blog List',
+          text: 'Actualidad del Instituto',
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
+          text: 'Investigación',
           href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
         },
         {
-          text: 'Article (with MDX)',
+          text: 'Opinión y análisis',
           href: getPermalink('markdown-elements-demo-post', 'post'),
         },
         {
-          text: 'Category Page',
+          text: 'Recursos para aprender',
           href: getPermalink('tutorials', 'category'),
         },
         {
-          text: 'Tag Page',
+          text: 'Contacto',
           href: getPermalink('astro', 'tag'),
         },
       ],
