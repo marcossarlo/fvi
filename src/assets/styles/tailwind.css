@@ -120,7 +120,8 @@
   display: grid;
   grid-template-columns: minmax(190px, 0.8fr) minmax(390px, 1.65fr) minmax(220px, 0.9fr);
   gap: 2rem;
-  width: min(1200px, calc(100vw - 2rem));
+  width: calc(100vw - 2rem);
+  max-width: 1500px;
   padding: 2.25rem;
   border: 1px solid rgb(148 163 184 / 22%);
   border-radius: 1rem;
@@ -137,8 +138,6 @@
   box-shadow: 0 24px 70px rgb(0 0 0 / 42%);
 }
 
-.mega-anchor:hover .mega-panel,
-.mega-anchor:focus-within .mega-panel,
 .mega-anchor.is-open .mega-panel {
   opacity: 1;
   pointer-events: auto;
@@ -152,10 +151,6 @@
   left: -1rem;
   height: 1.25rem;
   content: '';
-}
-
-.mega-panel:hover {
-  pointer-events: auto;
 }
 
 .mega-trigger.is-active {
@@ -363,8 +358,7 @@
   }
 
   .mega-panel,
-  .mega-anchor:hover .mega-panel,
-  .mega-anchor:focus-within .mega-panel {
+  .mega-anchor.is-open .mega-panel {
     position: static;
     display: none;
     width: auto;
