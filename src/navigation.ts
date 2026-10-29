@@ -198,7 +198,14 @@ export const headerData = {
       href: '#',
     },
   ],
-  actions: [{ text: 'Descargar', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [
+    {
+      text: 'Descargar',
+      href: 'https://github.com/arthelokyo/astrowind',
+      target: '_blank',
+      variant: 'primary' as const,
+    },
+  ],
 };
 
 export const footerData = {
