@@ -46,6 +46,7 @@ export interface Props {
   showToggleTheme?: boolean;
   showRssFeed?: boolean;
   showSecondaryNav?: boolean;
+  isProgram?: boolean;
   position?: string;
 }
 
@@ -59,6 +60,7 @@ const {
   showToggleTheme = false,
   showRssFeed = false,
   showSecondaryNav = true,
+  isProgram = false,
   position = 'center',
 } = Astro.props;
 
@@ -128,6 +130,7 @@ const getMegaDescription = (text = '') => {
   ]}
   {...isSticky ? { 'data-aw-sticky-header': true } : {}}
   data-mega-secondary={showSecondaryNav ? 'true' : 'false'}
+  {...isProgram ? { 'data-program-header': true } : {}}
   {...id ? { id } : {}}
 >
   <div class="absolute inset-0"></div>

@@ -54,9 +54,20 @@
   @apply backdrop-blur-xl bg-white/80;
 }
 
+#header[data-program-header]:not(.scroll) > div:first-child {
+  background: rgb(255 255 255 / 90%);
+  border-bottom-color: rgb(255 255 255 / 25%);
+}
+
 .dark #header[data-aw-sticky-header] > div:first-child,
 #header[data-aw-sticky-header].dark > div:first-child {
   @apply backdrop-blur-xl bg-[#030620cc];
+}
+
+.dark #header[data-program-header]:not(.scroll) > div:first-child,
+#header[data-program-header].dark:not(.scroll) > div:first-child {
+  background: rgb(3 6 32 / 60%);
+  border-bottom-color: rgb(255 255 255 / 18%);
 }
 
 #header.scroll > div:first-child {
