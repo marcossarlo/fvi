@@ -94,6 +94,10 @@
 }
 
 /* Institutional mega navigation */
+#header[data-aw-sticky-header] {
+  z-index: 100;
+}
+
 .mega-overlay {
   position: fixed;
   z-index: 30;
