@@ -147,7 +147,7 @@ const { tabs = [] } = Astro.props;
     const mobileCurrent = document.getElementById('mobile-toc-current');
     const desktopSidebar = document.getElementById('desktop-sidebar');
     const mobileBottomSheet = document.getElementById('mobile-bottom-sheet');
-    const presentationSection = document.getElementById('presentacion');
+    const presentationSection = document.getElementById('presentacion') || sections[0];
     const requestsSection = document.getElementById('solicitudes');
     
     // Toggle mobile menu logic
@@ -220,7 +220,7 @@ const { tabs = [] } = Astro.props;
     const checkScrollPosition = () => {
       if (!presentationSection) return;
 
-      const visibilityBoundary = window.innerHeight * 0.8;
+      const visibilityBoundary = window.innerHeight * 0.2;
       const presentationTop = presentationSection.getBoundingClientRect().top;
       const requestsTop = requestsSection?.getBoundingClientRect().top;
       const isWithinProgram =
