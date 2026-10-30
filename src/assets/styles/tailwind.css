@@ -55,8 +55,27 @@
 }
 
 #header[data-program-header]:not(.scroll) > div:first-child {
-  background: rgb(255 255 255 / 90%);
-  border-bottom-color: rgb(255 255 255 / 25%);
+  background: rgb(3 6 32 / 60%);
+  border-bottom-color: rgb(255 255 255 / 18%);
+}
+
+#header[data-program-header]:not(.scroll) .logo-light {
+  display: none;
+}
+
+#header[data-program-header]:not(.scroll) .logo-dark {
+  display: block;
+}
+
+#header[data-program-header]:not(.scroll) nav .mega-trigger,
+#header[data-program-header]:not(.scroll) nav > ul > li > a,
+#header[data-program-header]:not(.scroll) .text-muted,
+#header[data-program-header]:not(.scroll) .text-default {
+  color: rgb(255 255 255) !important;
+}
+
+#header[data-program-header]:not(.scroll) [data-aw-toggle-menu] span:not(.sr-only) {
+  background-color: rgb(255 255 255);
 }
 
 .dark #header[data-aw-sticky-header] > div:first-child,

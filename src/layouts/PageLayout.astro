@@ -14,7 +14,7 @@ export interface Props {
 }
 
 const { metadata, showSecondaryNav = true } = Astro.props;
-const isProgramPage = /^\/(?:maestria|phd|postdoctorado)\//.test(Astro.url.pathname);
+const isProgramPage = /^\/(?:maestria|phd|postdoctorado|diplomados?)(?:\/|$)/.test(Astro.url.pathname);
 ---
 
 <Layout metadata={metadata}>
