@@ -220,12 +220,13 @@ const { tabs = [] } = Astro.props;
     const checkScrollPosition = () => {
       if (!presentationSection) return;
 
-      const visibilityBoundary = window.innerHeight * 0.2;
+      const appearanceBoundary = window.innerHeight * 0.2;
+      const disappearanceBoundary = window.innerHeight * 0.6;
       const presentationTop = presentationSection.getBoundingClientRect().top;
       const requestsTop = requestsSection?.getBoundingClientRect().top;
       const isWithinProgram =
-        presentationTop <= visibilityBoundary &&
-        (requestsTop === undefined || requestsTop > visibilityBoundary);
+        presentationTop <= appearanceBoundary &&
+        (requestsTop === undefined || requestsTop > disappearanceBoundary);
 
       if (isWithinProgram) {
         revealTOC();
