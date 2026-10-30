@@ -165,6 +165,10 @@ export const headerData = {
       ],
     },
     {
+      text: 'Diplomados',
+      href: getPermalink('/diplomados'),
+    },
+    {
       text: 'Proyectos',
       href: getPermalink('/proyectos'),
       links: [
@@ -182,10 +186,10 @@ export const headerData = {
         },
       ],
     },
-    {
-      text: 'Widgets',
-      href: '#',
-    },
+    // {
+    //   text: 'Widgets',
+    //   href: '#',
+    // },
   ],
   actions: [
     {

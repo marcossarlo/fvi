@@ -15,7 +15,6 @@ import maestriaImage from '~/assets/images/fvi_maestrias_home.webp';
 import phdImage from '~/assets/images/fvi_doctorados_home.webp';
 import postdocImage from '~/assets/images/fvi_postdocs_home.webp';
 import instituteImage from '~/assets/images/fvi-conocenos.webp';
-import blogImage from '~/assets/images/fvi-nuestro-adn.webp';
 
 interface Link {
   text?: string;
@@ -95,6 +94,13 @@ const megaContent: Record<string, MegaContent> = {
     featureTitle: 'Maestría en Ciencias de la Sostenibilidad',
     image: maestriaImage,
   },
+  Diplomados: {
+    label: 'Diplomados',
+    description: 'Formación especializada para ampliar tus conocimientos y fortalecer tu perfil profesional.',
+    featureLabel: 'Formación especializada',
+    featureTitle: 'Explora nuestros diplomados',
+    image: maestriaImage,
+  },
   Proyectos: {
     label: 'Proyectos',
     description: 'Iniciativas que convierten el conocimiento en soluciones sostenibles.',
@@ -172,7 +178,7 @@ const getMegaDescription = (text = '') => {
             
             return (
             <li class:list={[{ dropdown: links?.length, 'mega-anchor': mega }, 'relative']}>
-              {links?.length ? (
+              {links?.length || mega ? (
                 <>
                   <button
                     type="button"
@@ -197,23 +203,27 @@ const getMegaDescription = (text = '') => {
                         <h2>{mega.description}</h2>
                         {href && <a class="mega-all-link" href={href}>Ver toda la sección <Icon name="tabler:arrow-up-right" /></a>}
                       </div>
-                      <div class="mega-links" aria-label={`Enlaces de ${text}`}>
-                        {links.map(({ text: text2, href: href2 }) => (
-                          <a class:list={['mega-link', { 'is-current': href2 === currentPath }]} href={href2} aria-current={href2 === currentPath ? 'page' : undefined}>
-                            <span class="mega-dot" aria-hidden="true"></span>
-                            <span class="mega-link-copy"><strong>{text2}</strong><small>{getMegaDescription(text2)}</small></span>
-                            {href2 === currentPath && <span class="sr-only">(página actual)</span>}
-                          </a>
-                        ))}
-                      </div>
-                      <a class="mega-feature" href={href || links[0]?.href}>
+                      {links?.length ? (
+                        <div class="mega-links" aria-label={`Enlaces de ${text}`}>
+                          {links.map(({ text: text2, href: href2 }) => (
+                            <a class:list={['mega-link', { 'is-current': href2 === currentPath }]} href={href2} aria-current={href2 === currentPath ? 'page' : undefined}>
+                              <span class="mega-dot" aria-hidden="true"></span>
+                              <span class="mega-link-copy"><strong>{text2}</strong><small>{getMegaDescription(text2)}</small></span>
+                              {href2 === currentPath && <span class="sr-only">(página actual)</span>}
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <div class="mega-links" aria-hidden="true"></div>
+                      )}
+                      <a class="mega-feature" href={href || links?.[0]?.href}>
                         <Image src={mega.image} alt="" />
                         <span class="mega-feature-shade"></span>
                         <span class="mega-feature-copy"><small><i></i>{mega.featureLabel}</small><strong>{mega.featureTitle}</strong><span class="mega-feature-arrow"><Icon name="tabler:arrow-up-right" /></span></span>
                       </a>
                     </div>
                   ) : (
-                    <ul class="dropdown-menu">{links.map(({ text: text2, href: href2 }) => <li><a href={href2}>{text2}</a></li>)}</ul>
+                    <ul class="dropdown-menu">{links?.map(({ text: text2, href: href2 }) => <li><a href={href2}>{text2}</a></li>)}</ul>
                   )}
                 </>
               ) : (
