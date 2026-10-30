@@ -1,20 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
 import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
+import MegaMenu from '~/components/widgets/MegaMenu.astro';
 import SecondaryNav from '~/components/widgets/SecondaryNav.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
-import { trimSlash, getAsset } from '~/utils/permalinks';
+import { getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
-import maestriaImage from '~/assets/images/fvi_maestrias_home.webp';
-import phdImage from '~/assets/images/fvi_doctorados_home.webp';
-import postdocImage from '~/assets/images/fvi_postdocs_home.webp';
-import instituteImage from '~/assets/images/fvi-conocenos.webp';
 
 interface Link {
   text?: string;
@@ -25,14 +20,6 @@ interface Link {
 
 interface MenuLink extends Link {
   links?: Array<MenuLink>;
-}
-
-interface MegaContent {
-  label: string;
-  description: string;
-  featureLabel: string;
-  featureTitle: string;
-  image: ImageMetadata;
 }
 
 export interface Props {
@@ -62,71 +49,6 @@ const {
   isProgram = false,
   position = 'center',
 } = Astro.props;
-
-const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
-
-const megaContent: Record<string, MegaContent> = {
-  'El Instituto': {
-    label: 'El Instituto',
-    description: 'Una comunidad académica que investiga, enseña y actúa frente a los desafíos ambientales.',
-    featureLabel: 'Instituto',
-    featureTitle: 'Conoce nuestra mirada sobre la sostenibilidad',
-    image: instituteImage,
-  },
-  PostDoc: {
-    label: 'PostDoc',
-    description: 'Investigación avanzada para profesionales que convierten conocimiento en transformación.',
-    featureLabel: 'Investigación',
-    featureTitle: 'Una siguiente etapa para tu trayectoria',
-    image: postdocImage,
-  },
-  PhD: {
-    label: 'PhD',
-    description: 'Programas doctorales para quienes investigan el cambio y sus posibilidades.',
-    featureLabel: 'Doctorados',
-    featureTitle: 'Investigar con perspectiva de futuro',
-    image: phdImage,
-  },
-  Maestrías: {
-    label: 'Maestrías',
-    description: 'Formación de posgrado para transformar organizaciones y territorios.',
-    featureLabel: 'Convocatoria 2026',
-    featureTitle: 'Maestría en Ciencias de la Sostenibilidad',
-    image: maestriaImage,
-  },
-  Diplomados: {
-    label: 'Diplomados',
-    description: 'Formación especializada para ampliar tus conocimientos y fortalecer tu perfil profesional.',
-    featureLabel: 'Formación especializada',
-    featureTitle: 'Explora nuestros diplomados',
-    image: maestriaImage,
-  },
-  Proyectos: {
-    label: 'Proyectos',
-    description: 'Iniciativas que convierten el conocimiento en soluciones sostenibles.',
-    featureLabel: 'Impacto',
-    featureTitle: 'Conoce nuestros proyectos en América',
-    image: instituteImage,
-  },
-};
-
-const getMegaDescription = (text = '') => {
-  const descriptions: Record<string, string> = {
-    Conócenos: 'Nuestra historia, propósito y comunidad.',
-    'Nuestro Director': 'Liderazgo y visión institucional.',
-    'Consejo Académico Internacional': 'Una red global de conocimiento.',
-    'Comité de Dirección': 'Gobernanza para una acción rigurosa.',
-    'Profesorado e Investigación': 'Personas e ideas que mueven el cambio.',
-    'Acreditación y Reconocimiento': 'La confianza que respalda nuestro trabajo.',
-    'Fondo Verde y su acción social': 'Conocimiento al servicio de la sociedad.',
-    'Actualidad del Instituto': 'Noticias, eventos y vida académica.',
-    Investigación: 'Hallazgos y proyectos sobre sostenibilidad.',
-    'Opinión y análisis': 'Perspectivas para entender el cambio.',
-    'Recursos para aprender': 'Materiales para seguir explorando.',
-    Contacto: 'Conversemos sobre tus ideas y proyectos.',
-  };
-  return descriptions[text] || 'Explora esta línea de formación e investigación.';
-};
 ---
 
 <header
@@ -162,91 +84,7 @@ const getMegaDescription = (text = '') => {
         <ToggleMenu />
       </div>
     </div>
-    <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 md:relative md:left-8 overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-visible md:justify-self-center mt-12 md:mt-0"
-      aria-label="Main navigation"
-    >
-      <ul
-        class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-base md:text-[0.9375rem] tracking-[0.01rem] font-medium md:justify-center md:gap-1"
-      >
-        {
-          links.map(({ text, href, links }) => {
-            // Verificar si algún enlace hijo está activo
-            const isChildActive = links?.some((link) => link.href === currentPath);
-            const mega = text ? megaContent[text] : undefined;
-            const panelId = `mega-${text?.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-            
-            return (
-            <li class:list={[{ dropdown: links?.length, 'mega-anchor': mega }, 'relative']}>
-              {links?.length || mega ? (
-                <>
-                  <button
-                    type="button"
-                    class:list={[
-                      'mega-trigger px-4 md:px-3 py-2 rounded flex items-center whitespace-nowrap transition-colors group',
-                      {
-                        'is-active': isChildActive || href === currentPath,
-                        'text-default dark:text-white': !isChildActive && href !== currentPath,
-                      },
-                    ]}
-                    aria-expanded="false"
-                    aria-controls={panelId}
-                    data-mega-trigger
-                  >
-                    {text}{' '}
-                    <Icon name="tabler:chevron-down" class="mega-chevron w-3.5 h-3.5 ml-1" />
-                  </button>
-                  {mega ? (
-                    <div id={panelId} class="mega-panel" data-mega-panel>
-                      <div class="mega-intro">
-                        <span class="mega-kicker">{mega.label}</span>
-                        <h2>{mega.description}</h2>
-                        {href && <a class="mega-all-link" href={href}>Ver toda la sección <Icon name="tabler:arrow-up-right" /></a>}
-                      </div>
-                      {links?.length ? (
-                        <div class="mega-links" aria-label={`Enlaces de ${text}`}>
-                          {links.map(({ text: text2, href: href2 }) => (
-                            <a class:list={['mega-link', { 'is-current': href2 === currentPath }]} href={href2} aria-current={href2 === currentPath ? 'page' : undefined}>
-                              <span class="mega-dot" aria-hidden="true"></span>
-                              <span class="mega-link-copy"><strong>{text2}</strong><small>{getMegaDescription(text2)}</small></span>
-                              {href2 === currentPath && <span class="sr-only">(página actual)</span>}
-                            </a>
-                          ))}
-                        </div>
-                      ) : (
-                        <div class="mega-links" aria-hidden="true"></div>
-                      )}
-                      <a class="mega-feature" href={href || links?.[0]?.href}>
-                        <Image src={mega.image} alt="" />
-                        <span class="mega-feature-shade"></span>
-                        <span class="mega-feature-copy"><small><i></i>{mega.featureLabel}</small><strong>{mega.featureTitle}</strong><span class="mega-feature-arrow"><Icon name="tabler:arrow-up-right" /></span></span>
-                      </a>
-                    </div>
-                  ) : (
-                    <ul class="dropdown-menu">{links?.map(({ text: text2, href: href2 }) => <li><a href={href2}>{text2}</a></li>)}</ul>
-                  )}
-                </>
-              ) : (
-                <a
-                  class:list={[
-                    'px-4 md:px-3 py-2.5 rounded flex items-center whitespace-nowrap transition-colors',
-                    {
-                      'is-active': href === currentPath,
-                      'nav-widget-link': text === 'Widgets',
-                      'text-default dark:text-white': href !== currentPath && text !== 'Widgets',
-                    },
-                  ]}
-                  href={href}
-                >
-                  {text}
-                </a>
-              )}
-            </li>
-          );
-          })
-        }
-      </ul>
-    </nav>
+    <MegaMenu links={links} />
     <div
       class:list={[
         { 'ml-auto rtl:ml-0 rtl:mr-auto': position === 'left' },
@@ -283,89 +121,7 @@ const getMegaDescription = (text = '') => {
     </div>
   </div>
   <div class="mega-overlay" data-mega-overlay aria-hidden="true"></div>
-  
+
   {/* BARRA SECUNDARIA */}
   {showSecondaryNav && <SecondaryNav isFullWidth={isFullWidth} />}
 </header>
-
-<script>
-  const initMegaMenu = () => {
-    const header = document.querySelector<HTMLElement>('#header');
-    if (!header || header.dataset.megaReady) return;
-    header.dataset.megaReady = 'true';
-
-    const triggers = Array.from(header.querySelectorAll<HTMLButtonElement>('[data-mega-trigger]'));
-    const anchors = Array.from(header.querySelectorAll<HTMLElement>('.mega-anchor'));
-    let closeTimer: number | undefined;
-
-    const closeMenus = () => {
-      if (closeTimer) window.clearTimeout(closeTimer);
-      anchors.forEach((anchor) => anchor.classList.remove('is-open'));
-      triggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'));
-      header.classList.remove('mega-open');
-    };
-
-    const scheduleClose = () => {
-      if (closeTimer) window.clearTimeout(closeTimer);
-      closeTimer = window.setTimeout(closeMenus, 350);
-    };
-
-    triggers.forEach((trigger) => {
-      trigger.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        const anchor = trigger.closest<HTMLElement>('.mega-anchor');
-        const isOpen = anchor?.classList.contains('is-open') ?? false;
-        closeMenus();
-        if (anchor && !isOpen) {
-          anchor.classList.add('is-open');
-          trigger.setAttribute('aria-expanded', 'true');
-          header.classList.add('mega-open');
-        }
-      });
-    });
-
-    anchors.forEach((anchor) => {
-      const trigger = anchor.querySelector<HTMLButtonElement>('[data-mega-trigger]');
-      if (!trigger) return;
-      const openFromPointerOrFocus = () => {
-        if (window.matchMedia('(min-width: 768px)').matches) {
-          closeMenus();
-          anchor.classList.add('is-open');
-          trigger.setAttribute('aria-expanded', 'true');
-          header.classList.add('mega-open');
-        }
-      };
-      anchor.addEventListener('mouseenter', openFromPointerOrFocus);
-      anchor.addEventListener('focusin', openFromPointerOrFocus);
-      anchor.addEventListener('mouseleave', scheduleClose);
-      anchor.querySelector('[data-mega-panel]')?.addEventListener('mouseenter', () => {
-        if (closeTimer) window.clearTimeout(closeTimer);
-      });
-      anchor.querySelector('[data-mega-panel]')?.addEventListener('mouseleave', scheduleClose);
-      anchor.addEventListener('focusout', (event) => {
-        if (!anchor.contains(event.relatedTarget as Node)) scheduleClose();
-      });
-    });
-
-    if (!window.matchMedia('(min-width: 768px)').matches) {
-      const activeAnchor = anchors.find((anchor) => anchor.querySelector('.mega-trigger.is-active'));
-      if (activeAnchor) {
-        activeAnchor.classList.add('is-open');
-        activeAnchor.querySelector<HTMLButtonElement>('[data-mega-trigger]')?.setAttribute('aria-expanded', 'true');
-      }
-    }
-
-    header.querySelector('[data-mega-overlay]')?.addEventListener('click', closeMenus);
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') closeMenus();
-    });
-    document.addEventListener('click', (event) => {
-      if (!header.contains(event.target as Node)) closeMenus();
-    });
-    header.querySelectorAll('.mega-panel a').forEach((link) => link.addEventListener('click', closeMenus));
-  };
-
-  initMegaMenu();
-  document.addEventListener('astro:after-swap', initMegaMenu);
-</script>
