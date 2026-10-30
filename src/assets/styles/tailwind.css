@@ -55,8 +55,8 @@
 }
 
 #header[data-program-header]:not(.scroll) > div:first-child {
-  background: rgb(3 6 32 / 60%);
-  border-bottom-color: rgb(255 255 255 / 18%);
+  background: rgb(3 6 32 / 35%);
+  border-bottom: 2px solid rgb(0 0 0 / 25%);
 }
 
 #header[data-program-header]:not(.scroll) .logo-light {
@@ -78,6 +78,14 @@
   background-color: rgb(255 255 255);
 }
 
+#header[data-program-header]:not(.dark):not(.scroll) [data-aw-toggle-color-scheme]:hover,
+#header[data-program-header]:not(.dark):not(.scroll) [data-aw-toggle-color-scheme]:focus-visible,
+#header[data-program-header]:not(.dark):not(.scroll) a[aria-label='RSS Feed']:hover,
+#header[data-program-header]:not(.dark):not(.scroll) a[aria-label='RSS Feed']:focus-visible {
+  background-color: rgb(255 255 255 / 10%);
+  color: rgb(255 255 255);
+}
+
 .dark #header[data-aw-sticky-header] > div:first-child,
 #header[data-aw-sticky-header].dark > div:first-child {
   @apply backdrop-blur-xl bg-[#030620cc];
@@ -85,8 +93,8 @@
 
 .dark #header[data-program-header]:not(.scroll) > div:first-child,
 #header[data-program-header].dark:not(.scroll) > div:first-child {
-  background: rgb(3 6 32 / 60%);
-  border-bottom-color: rgb(255 255 255 / 18%);
+  background: rgb(3 6 32 / 45%);
+  border-bottom: 1px solid rgb(0 0 0 / 45%);
 }
 
 #header.scroll > div:first-child {
@@ -503,7 +511,41 @@
 }
 
 @media (max-width: 767px) {
-  .dark #header.expanded nav {
+  #header[data-program-header]:not(.dark):not(.scroll) > div:first-child {
+    background: rgb(255 255 255 / 80%);
+    border-bottom-color: rgb(229 231 235 / 80%);
+  }
+
+  #header[data-program-header]:not(.dark):not(.scroll) .logo-light {
+    display: block;
+  }
+
+  #header[data-program-header]:not(.dark):not(.scroll) .logo-dark {
+    display: none;
+  }
+
+  #header[data-program-header]:not(.dark):not(.scroll) nav .mega-trigger,
+  #header[data-program-header]:not(.dark):not(.scroll) nav > ul > li > a,
+  #header[data-program-header]:not(.dark):not(.scroll) .text-muted,
+  #header[data-program-header]:not(.dark):not(.scroll) .text-default {
+    color: var(--aw-color-text-heading) !important;
+  }
+
+  #header[data-program-header]:not(.dark):not(.scroll) [data-aw-toggle-menu] span:not(.sr-only) {
+    background-color: rgb(0 0 0);
+  }
+
+  #header[data-program-header]:not(.dark):not(.scroll).expanded nav {
+    background: rgb(255 255 255 / 96%);
+    border-color: rgb(229 231 235 / 80%);
+  }
+
+  .dark #header[data-program-header]:not(.scroll) > div:first-child {
+    background: rgb(3 6 32 / 60%);
+    border-bottom-color: rgb(0 0 0 / 45%);
+  }
+
+  .dark #header[data-program-header]:not(.scroll).expanded nav {
     background: rgb(15 23 42 / 96%);
     backdrop-filter: blur(16px);
     border-color: rgb(148 163 184 / 24%);
