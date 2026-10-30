@@ -9,10 +9,6 @@ export const secondaryNavData = {
     { text: 'FAQs', href: getPermalink('/faqs') },
     { text: 'Contactos', href: getPermalink('/contactos') },
   ],
-  rightLinks: [
-    { text: 'Login', href: getPermalink('/login') },
-    { text: 'Registro', href: getPermalink('/registro') },
-  ],
 };
 
 export const headerData = {
