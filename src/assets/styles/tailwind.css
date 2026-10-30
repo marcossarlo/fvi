@@ -143,11 +143,11 @@
   position: fixed;
   z-index: 50;
   top: 4.75rem;
-  left: 50%;
+  left: 0;
   display: grid;
   grid-template-columns: minmax(190px, 0.8fr) minmax(390px, 1.65fr) minmax(220px, 0.9fr);
   gap: 2rem;
-  width: 100vw;
+  width: 100%;
   max-width: none;
   padding: 2.25rem;
   border: 1px solid rgb(148 163 184 / 22%);
@@ -156,16 +156,16 @@
   box-shadow: 0 24px 70px rgb(3 6 32 / 20%);
   opacity: 0;
   pointer-events: none;
-  transform: translate(-50%, -10px);
+  transform: translateY(-10px);
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
 #header[data-mega-secondary='true'] .mega-panel {
-  top: 7.35rem;
+  top: 7.1rem;
 }
 
 #header[data-mega-secondary='true'] .mega-overlay {
-  top: 7rem;
+  top: 6.6rem;
 }
 
 #header[data-mega-secondary='true'] > div:last-child {
@@ -181,7 +181,7 @@
 .mega-anchor.is-open .mega-panel {
   opacity: 1;
   pointer-events: auto;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
 
 .mega-anchor::after {
@@ -466,11 +466,11 @@
 
 @media (max-width: 1023px) and (min-width: 768px) {
   #header[data-mega-secondary='true'] .mega-panel {
-    top: 6.85rem;
+    top: 6.95rem;
   }
 
   #header[data-mega-secondary='true'] .mega-overlay {
-    top: 6.5rem;
+    top: 6.6rem;
   }
 
   .mega-panel {
