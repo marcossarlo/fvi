@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset } from './utils/permalinks';
 
 // Barra secundaria debajo del navbar principal
 export const secondaryNavData = {
@@ -165,27 +165,20 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      text: 'Proyectos',
+      href: getPermalink('/proyectos'),
       links: [
         {
-          text: 'Actualidad del Instituto',
-          href: getBlogPermalink(),
+          text: 'Proyectos en América',
+          href: getPermalink('/proyectos/america'),
         },
         {
-          text: 'Investigación',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'Proyectos en Asia',
+          href: getPermalink('/proyectos/asia'),
         },
         {
-          text: 'Opinión y análisis',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Recursos para aprender',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Contacto',
-          href: getPermalink('astro', 'tag'),
+          text: 'Proyectos en Europa',
+          href: getPermalink('/proyectos/europa'),
         },
       ],
     },
