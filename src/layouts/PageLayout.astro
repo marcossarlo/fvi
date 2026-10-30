@@ -14,6 +14,8 @@ export interface Props {
 }
 
 const { metadata, showSecondaryNav = true } = Astro.props;
+const isProgramPage = /^\/(?:maestria|phd|postdoctorado|diplomados?)(?:\/|$)/.test(Astro.url.pathname);
+const isProgramSectionPage = /^\/(?:maestria|phd|postdoctorado|diplomados?)\/?$/.test(Astro.url.pathname);
 ---
 
 <Layout metadata={metadata}>
@@ -21,7 +23,14 @@ const { metadata, showSecondaryNav = true } = Astro.props;
     <!-- <Announcement /> -->
   </slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed showToggleTheme showSecondaryNav={showSecondaryNav} />
+    <Header
+      {...headerData}
+      isSticky
+      isProgram={isProgramPage && !isProgramSectionPage}
+      showRssFeed
+      showToggleTheme
+      showSecondaryNav={showSecondaryNav}
+    />
   </slot>
   <main>
     <slot />

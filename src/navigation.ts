@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset } from './utils/permalinks';
 
 // Barra secundaria debajo del navbar principal
 export const secondaryNavData = {
@@ -8,10 +8,6 @@ export const secondaryNavData = {
     { text: 'Empleo', href: getPermalink('/empleo') },
     { text: 'FAQs', href: getPermalink('/faqs') },
     { text: 'Contactos', href: getPermalink('/contactos') },
-  ],
-  rightLinks: [
-    { text: 'Login', href: getPermalink('/login') },
-    { text: 'Registro', href: getPermalink('/registro') },
   ],
 };
 
@@ -169,36 +165,40 @@ export const headerData = {
       ],
     },
     {
-      text: 'Blog',
+      text: 'Diplomados',
+      href: getPermalink('/diplomados'),
+    },
+    {
+      text: 'Proyectos',
+      href: getPermalink('/proyectos'),
       links: [
         {
-          text: 'Blog List',
-          href: getBlogPermalink(),
+          text: 'Proyectos en América',
+          href: getPermalink('/proyectos/america'),
         },
         {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'Proyectos en Asia',
+          href: getPermalink('/proyectos/asia'),
         },
         {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: 'Proyectos en Europa',
+          href: getPermalink('/proyectos/europa'),
         },
       ],
     },
+    // {
+    //   text: 'Widgets',
+    //   href: '#',
+    // },
+  ],
+  actions: [
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Descargar',
+      href: 'https://github.com/arthelokyo/astrowind',
+      target: '_blank',
+      variant: 'primary' as const,
     },
   ],
-  actions: [{ text: 'Descargar', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
 };
 
 export const footerData = {

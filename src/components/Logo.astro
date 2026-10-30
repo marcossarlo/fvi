@@ -2,6 +2,7 @@
 import { SITE } from 'astrowind:config';
 import { Image } from 'astro:assets';
 import logoImage from '~/assets/images/logo_fvi.svg';
+import logoDarkImage from '~/assets/images/logo_fvi_dark.svg';
 ---
 
 <div class="self-center ml-2 rtl:ml-0 rtl:mr-2 flex items-center gap-2">
@@ -11,8 +12,16 @@ import logoImage from '~/assets/images/logo_fvi.svg';
     title={SITE?.name}
     width={210}
     height={52}
-    class="h-[52px] w-[210px] object-contain"
-/>
+    class="logo-light h-[52px] w-[210px] object-contain"
+  />
+  <Image
+    src={logoDarkImage}
+    alt={SITE?.name || 'Logo'}
+    title={SITE?.name}
+    width={210}
+    height={52}
+    class="logo-dark h-[52px] w-[210px] object-contain"
+  />
   <!-- <span class="text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
     {SITE?.name}
   </span> -->
