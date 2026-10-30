@@ -147,6 +147,8 @@ const { tabs = [] } = Astro.props;
     const mobileCurrent = document.getElementById('mobile-toc-current');
     const desktopSidebar = document.getElementById('desktop-sidebar');
     const mobileBottomSheet = document.getElementById('mobile-bottom-sheet');
+    const presentationSection = document.getElementById('presentacion');
+    const requestsSection = document.getElementById('solicitudes');
     
     // Toggle mobile menu logic
     let isMenuOpen = false;
@@ -214,15 +216,18 @@ const { tabs = [] } = Astro.props;
       }
     };
 
-    // Global scroll listener to reveal TOC only when scrolled past Hero
+    // Keep the TOC visible only between the presentation and requests sections.
     const checkScrollPosition = () => {
-      const firstSection = sections[0];
-      if (!firstSection) return;
-      
-      // If we've scrolled down enough that the first section or hero is passed
-      const rect = firstSection.getBoundingClientRect();
-      // When the top of the first section gets within 80% of window height (meaning user scrolled down to it)
-      if (rect.top < window.innerHeight * 0.8) {
+      if (!presentationSection) return;
+
+      const visibilityBoundary = window.innerHeight * 0.8;
+      const presentationTop = presentationSection.getBoundingClientRect().top;
+      const requestsTop = requestsSection?.getBoundingClientRect().top;
+      const isWithinProgram =
+        presentationTop <= visibilityBoundary &&
+        (requestsTop === undefined || requestsTop > visibilityBoundary);
+
+      if (isWithinProgram) {
         revealTOC();
       } else {
         hideTOC();
