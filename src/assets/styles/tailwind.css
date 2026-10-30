@@ -245,14 +245,25 @@
 }
 
 .nav-widget-link {
-  background: rgb(81, 180, 147);
+  background: rgb(213, 227, 223);
   color: white;
   font-weight: 600;
 }
 
 .nav-widget-link:hover,
 .nav-widget-link:focus-visible {
-  background: rgb(58 161 126);
+  background: rgb(195, 219, 212);
+  color: white;
+}
+
+.dark .nav-widget-link {
+  background: rgb(73, 76, 76);
+  color: white;
+}
+
+.dark .nav-widget-link:hover,
+.dark .nav-widget-link:focus-visible {
+  background: rgb(62, 66, 66);
   color: white;
 }
 
