@@ -59,6 +59,22 @@
   border-bottom: 2px solid rgb(0 0 0 / 25%);
 }
 
+html:not(.dark) #header[data-program-header] > div:first-child {
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+html:not(.dark) #header[data-program-header] nav .mega-trigger,
+html:not(.dark) #header[data-program-header] nav > ul > li > a,
+html:not(.dark) #header[data-program-header] [data-aw-toggle-color-scheme],
+html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
+  transition:
+    color 280ms ease,
+    background-color 280ms ease;
+}
+
 #header[data-program-header]:not(.scroll) .logo-light {
   display: none;
 }
