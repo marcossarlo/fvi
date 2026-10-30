@@ -508,6 +508,63 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
+  #header .header-main {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  #header .header-brand {
+    flex: 0 0 auto;
+  }
+
+  #header .header-brand .logo-light,
+  #header .header-brand .logo-dark {
+    width: 10.5rem;
+    height: 2.75rem;
+  }
+
+  #header .header-main > nav {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+    left: 0;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  #header .header-main > nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  #header .header-main > nav > ul {
+    flex: 0 0 auto;
+    gap: 0;
+  }
+
+  #header .header-main > nav .mega-trigger,
+  #header .header-main > nav > ul > li > a {
+    padding-right: 0.55rem;
+    padding-left: 0.55rem;
+    font-size: 0.875rem;
+  }
+
+  #header .header-actions {
+    flex: 0 0 auto;
+  }
+
+  #header .header-actions > div > span {
+    margin-left: 0.35rem;
+    margin-right: 0;
+  }
+
+  #header .header-actions .btn {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
   #header[data-mega-secondary='true'] .mega-panel {
     top: 6.95rem;
   }
@@ -522,6 +579,17 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
   }
 
   .mega-feature {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+  #header .header-brand .logo-light,
+  #header .header-brand .logo-dark {
+    width: 8.5rem;
+  }
+
+  #header .header-actions > div > span {
     display: none;
   }
 }
