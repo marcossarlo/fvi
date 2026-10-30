@@ -149,6 +149,7 @@ const { tabs = [] } = Astro.props;
     const mobileBottomSheet = document.getElementById('mobile-bottom-sheet');
     const presentationSection = document.getElementById('presentacion') || sections[0];
     const requestsSection = document.getElementById('solicitudes');
+    const programContent = document.querySelector('[data-program-content]') as HTMLElement | null;
     
     // Toggle mobile menu logic
     let isMenuOpen = false;
@@ -192,9 +193,23 @@ const { tabs = [] } = Astro.props;
 
     let hasScrolledToFirstSection = false;
 
+    const setContentOffset = (isVisible: boolean) => {
+      if (!programContent) return;
+
+      const desktopOffset =
+        isVisible && window.innerWidth >= 1024
+          ? window.innerWidth >= 1536
+            ? '18rem'
+            : '16rem'
+          : '0px';
+
+      programContent.style.setProperty('margin-left', desktopOffset, 'important');
+    };
+
     const revealTOC = () => {
       if (hasScrolledToFirstSection) return;
       hasScrolledToFirstSection = true;
+      setContentOffset(true);
       
       if (desktopSidebar) {
         desktopSidebar.classList.remove('opacity-0', '-translate-x-full');
@@ -205,8 +220,8 @@ const { tabs = [] } = Astro.props;
     };
 
     const hideTOC = () => {
-      if (!hasScrolledToFirstSection) return;
       hasScrolledToFirstSection = false;
+      setContentOffset(false);
       
       if (desktopSidebar) {
         desktopSidebar.classList.add('opacity-0', '-translate-x-full');
@@ -215,6 +230,9 @@ const { tabs = [] } = Astro.props;
         mobileBottomSheet.classList.add('opacity-0', 'translate-y-full');
       }
     };
+
+    setContentOffset(false);
+    window.addEventListener('resize', () => setContentOffset(hasScrolledToFirstSection));
 
     // Keep the TOC visible only between the presentation and requests sections.
     const checkScrollPosition = () => {
