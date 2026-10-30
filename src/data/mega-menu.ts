@@ -66,6 +66,47 @@ const descriptions: Record<string, string> = {
   'Profesorado e Investigación': 'Personas e ideas que mueven el cambio.',
   'Acreditación y Reconocimiento': 'La confianza que respalda nuestro trabajo.',
   'Fondo Verde y su acción social': 'Conocimiento al servicio de la sociedad.',
+  'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales':
+    'Liderazgo estratégico para transformar proyectos ambientales.',
+  'Postdoctorado en Ciencias Aplicadas al Medio Ambiente':
+    'Investigación aplicada para resolver desafíos ambientales concretos.',
+  'Postdoctorado en Sistemas de Gestión Medioambiental':
+    'Diseño y mejora de sistemas para una gestión ambiental eficaz.',
+  'Postdoctorado en Peritaje Judicial en materia de delitos ambientales':
+    'Análisis especializado para la investigación de delitos ambientales.',
+  'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo':
+    'Prevención y gestión integral de riesgos en entornos laborales.',
+  'Postdoctorado en Ciencias de la Sostenibilidad': 'Investigación avanzada para impulsar soluciones sostenibles.',
+  'Postdoctorado en Ciencias de la Educación Ambiental':
+    'Innovación educativa para formar agentes de cambio ambiental.',
+  'Doctorado en Sostenibilidad': 'Investigación doctoral sobre los grandes retos de la sostenibilidad.',
+  'Doctorado en Conservación y Restauración del Medio Natural':
+    'Ciencia y gestión para proteger y recuperar los ecosistemas.',
+  'Doctorado en Proyectos: Línea de Investigación en Medio Ambiente':
+    'Investigación rigurosa para diseñar soluciones ambientales de impacto.',
+  'Doctorado en Administración de Negocios Sostenibles': 'Liderazgo empresarial orientado al desarrollo sostenible.',
+  'Doctorado en Educación Ambiental': 'Investigación educativa para transformar la relación con el ambiente.',
+  'Doctorado en Paisaje y Ambiente': 'Análisis del territorio para construir paisajes sostenibles.',
+  'Doctorado en Ecoturismo y Turismo Sostenible':
+    'Investigación para un turismo responsable y respetuoso del territorio.',
+  'Doctorado en Urbanismo y Arquitectura Sostenible': 'Diseño de ciudades y espacios preparados para el futuro.',
+  'Doctorado en Energías Renovables': 'Investigación para acelerar la transición hacia energías limpias.',
+  'Maestría en Medio Ambiente y Responsabilidad Social':
+    'Gestión ambiental y compromiso social para organizaciones responsables.',
+  'Maestría en Paisaje, Patrimonio y Estudios Territoriales':
+    'Comprensión del territorio, su patrimonio y sus transformaciones.',
+  'Maestría en Rehabilitación Ambiental Terrestre': 'Herramientas para recuperar espacios naturales y productivos.',
+  'Maestría en Ciencias de la Sostenibilidad': 'Formación interdisciplinaria para liderar el cambio sostenible.',
+  'Maestría en Hábitat, Urbanismo y Edificación Sostenible':
+    'Soluciones para construir entornos habitables y sostenibles.',
+  'Maestría en Sostenibilidad Turística y Ecoturismo': 'Turismo de bajo impacto con beneficios para las comunidades.',
+  'Maestría en Gestión de Proyectos Ambientales':
+    'Planificación y ejecución de proyectos para el desarrollo sostenible.',
+  'Maestría en Eficiencia Energética, Cambio Climático y Sostenibilidad':
+    'Estrategias para reducir impactos y responder al cambio climático.',
+  'Proyectos en América': 'Iniciativas sostenibles con impacto en América.',
+  'Proyectos en Asia': 'Soluciones ambientales desarrolladas en Asia.',
+  'Proyectos en Europa': 'Proyectos europeos que conectan innovación y sostenibilidad.',
   'Actualidad del Instituto': 'Noticias, eventos y vida académica.',
   Investigación: 'Hallazgos y proyectos sobre sostenibilidad.',
   'Opinión y análisis': 'Perspectivas para entender el cambio.',
