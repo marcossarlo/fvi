@@ -531,12 +531,7 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
     margin-left: 0.25rem;
     left: 0;
     justify-content: flex-start;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  #header .header-main > nav::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
   }
 
   #header .header-main > nav > ul {
@@ -552,10 +547,15 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
   }
 
   #header .header-actions {
+    display: flex;
     flex: 0 0 auto;
   }
 
-  #header .header-actions > div > span {
+  #header .header-utility-links {
+    display: none;
+  }
+
+  #header .header-download {
     margin-left: 0.35rem;
     margin-right: 0;
   }
@@ -588,8 +588,10 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
   #header .header-brand .logo-dark {
     width: 8.5rem;
   }
+}
 
-  #header .header-actions > div > span {
+@media (max-width: 864px) and (min-width: 768px) {
+  #header .header-download {
     display: none;
   }
 }
