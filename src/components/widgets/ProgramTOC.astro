@@ -34,7 +34,7 @@ const { tabs = [] } = Astro.props;
       <nav aria-label="Secciones del programa" class="flex-grow">
         <ul class="space-y-1 relative" id="desktop-toc-list">
           <!-- The progressive line -->
-          <div class="absolute left-[11px] top-4 bottom-4 w-px bg-white/20 dark:bg-slate-300 pointer-events-none"></div>
+          <div id="desktop-toc-line" class="absolute left-3 top-4 bottom-4 w-px bg-white/20 dark:bg-slate-300 pointer-events-none"></div>
           
           {tabs.map((tab, index) => (
             <li class="relative z-10 group">
@@ -68,7 +68,7 @@ const { tabs = [] } = Astro.props;
   </aside>
   <div id="desktop-sidebar-tooltip" class="pointer-events-none fixed z-[60] hidden text-xs font-medium text-[#343434] dark:text-white">
     <span id="desktop-sidebar-tooltip-index" class="absolute -top-5 left-0 font-mono font-normal text-white"></span>
-    <span id="desktop-sidebar-tooltip-label" class="absolute left-6 top-1 whitespace-nowrap text-sm font-medium text-[#343434] dark:text-xs dark:font-normal dark:text-white"></span>
+    <span id="desktop-sidebar-tooltip-label" class="absolute left-6 top-1 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-xs font-normal text-white shadow-md"></span>
   </div>
 
   <!-- MOBILE: Floating Bottom Sheet approac -->
@@ -160,6 +160,7 @@ const { tabs = [] } = Astro.props;
     const desktopSidebarToggleIcon = document.getElementById('desktop-sidebar-toggle-icon');
     const desktopSidebarTitle = document.getElementById('desktop-sidebar-title');
     const desktopSidebarCta = document.getElementById('desktop-sidebar-cta');
+    const desktopTocLine = document.getElementById('desktop-toc-line');
     const tocLabels = document.querySelectorAll('.toc-label');
     const tocIndexes = document.querySelectorAll('.toc-index');
     const sidebarTooltip = document.getElementById('desktop-sidebar-tooltip');
@@ -193,6 +194,9 @@ const { tabs = [] } = Astro.props;
         link.classList.toggle('justify-center', collapsed);
         link.querySelector('.toc-indicator')?.classList.toggle('mr-3', !collapsed);
       });
+      desktopTocLine?.classList.toggle('left-3', !collapsed);
+      desktopTocLine?.classList.toggle('left-1/2', collapsed);
+      desktopTocLine?.classList.toggle('-translate-x-1/2', collapsed);
       desktopSidebarToggle.setAttribute('aria-expanded', String(!collapsed));
       desktopSidebarToggle.setAttribute(
         'aria-label',
