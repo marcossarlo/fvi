@@ -44,7 +44,6 @@ const tabs = [
     { id: 'inscripcion', label: '12. Inscripción' },
     { id: 'pagos', label: '13. Pagos' },
     { id: 'medios-de-pago', label: '14. Medios de Pago' },
-    { id: 'solicitudes', label: '15. Solicitudes' },
 ];
 ---
 
@@ -90,7 +89,7 @@ const tabs = [
         <ProgramTOC tabs={tabs} />
 
         <!-- Main Content Wrapper that creates space for the Desktop Sidebar -->
-        <div class="lg:ml-64 2xl:ml-[18rem] pb-24 lg:pb-0 transition-all duration-300">
+        <div data-program-content class="pb-24 lg:pb-0 transition-[margin-left] duration-500 ease-in-out">
             <!-- 1. PRESENTACIÓN *********************************** -->
             <Content
                 id="presentacion"
