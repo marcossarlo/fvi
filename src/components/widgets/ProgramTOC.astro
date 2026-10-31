@@ -59,9 +59,13 @@ const { tabs = [] } = Astro.props;
         </ul>
       </nav>
       
-      <div class="mt-8 pt-6 border-t border-white/20">
-        <a id="desktop-sidebar-cta" href="#solicitudes" class="w-full flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg text-teal-600 bg-white hover:bg-slate-50 shadow-md shadow-black/10 transition-all active:scale-95">
-          Solicita información
+      <div class="mt-8 pt-6 border-t border-white/20 flex justify-center">
+        <a id="desktop-sidebar-cta" href="#solicitudes" aria-label="Solicitar información" class="group/cta w-full flex h-9 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-teal-600 bg-white hover:bg-slate-50 shadow-md shadow-black/10 transition-all active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-300">
+          <svg id="desktop-sidebar-cta-icon" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5 shrink-0" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 7l9 6l9-6"></path>
+            <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"></path>
+          </svg>
+          <span id="desktop-sidebar-cta-label">Solicitar información</span>
         </a>
       </div>
     </div>
@@ -160,6 +164,8 @@ const { tabs = [] } = Astro.props;
     const desktopSidebarToggleIcon = document.getElementById('desktop-sidebar-toggle-icon');
     const desktopSidebarTitle = document.getElementById('desktop-sidebar-title');
     const desktopSidebarCta = document.getElementById('desktop-sidebar-cta');
+    const desktopSidebarCtaIcon = document.getElementById('desktop-sidebar-cta-icon');
+    const desktopSidebarCtaLabel = document.getElementById('desktop-sidebar-cta-label');
     const desktopTocLine = document.getElementById('desktop-toc-line');
     const tocLabels = document.querySelectorAll('.toc-label');
     const tocIndexes = document.querySelectorAll('.toc-index');
@@ -185,7 +191,21 @@ const { tabs = [] } = Astro.props;
       desktopSidebarInner.classList.toggle('p-3', collapsed);
       desktopSidebarInner.classList.toggle('p-6', !collapsed);
       desktopSidebarTitle?.classList.toggle('hidden', collapsed);
-      desktopSidebarCta?.classList.toggle('hidden', collapsed);
+      desktopSidebarCta?.classList.toggle('w-9', collapsed);
+      desktopSidebarCta?.classList.toggle('w-full', !collapsed);
+      desktopSidebarCta?.classList.toggle('rounded-md', collapsed);
+      desktopSidebarCta?.classList.toggle('rounded-lg', !collapsed);
+      desktopSidebarCta?.classList.toggle('border', collapsed);
+      desktopSidebarCta?.classList.toggle('border-teal-400', collapsed);
+      desktopSidebarCta?.classList.toggle('bg-teal-400', collapsed);
+      desktopSidebarCta?.classList.toggle('text-white', collapsed);
+      desktopSidebarCta?.classList.toggle('hover:bg-teal-300', collapsed);
+      desktopSidebarCta?.classList.toggle('hover:border-teal-300', collapsed);
+      desktopSidebarCta?.classList.toggle('hover:scale-110', collapsed);
+      desktopSidebarCta?.classList.toggle('px-0', collapsed);
+      desktopSidebarCta?.classList.toggle('gap-2', !collapsed);
+      desktopSidebarCtaIcon?.classList.toggle('hidden', !collapsed);
+      desktopSidebarCtaLabel?.classList.toggle('hidden', collapsed);
       tocLabels.forEach(label => label.classList.toggle('hidden', collapsed));
       tocIndexes.forEach(index => {
         index.classList.toggle('hidden', collapsed);
