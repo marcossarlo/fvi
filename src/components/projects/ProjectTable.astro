@@ -3,9 +3,10 @@ import type { AmericaProject } from '~/data/proyectos-america';
 
 interface Props {
   projects: AmericaProject[];
+  region: string;
 }
 
-const { projects } = Astro.props;
+const { projects, region } = Astro.props;
 const programs = [...new Set(projects.map(({ program }) => program))].sort((a, b) => a.localeCompare(b));
 ---
 
@@ -14,7 +15,7 @@ const programs = [...new Set(projects.map(({ program }) => program))].sort((a, b
     <div class="mb-8 max-w-3xl">
       <p class="text-sm font-bold uppercase tracking-wider text-secondary">Registro de proyectos</p>
       <h2 class="mt-3 text-3xl font-bold tracking-tight text-default dark:text-white md:text-4xl">
-        Proyectos de investigación en América
+        Proyectos de investigación en {region}
       </h2>
       <p class="mt-4 text-lg text-muted dark:text-slate-300">
         Explora los proyectos por nombre, programa o ubicación. El listado se muestra en páginas para facilitar su
@@ -60,7 +61,7 @@ const programs = [...new Set(projects.map(({ program }) => program))].sort((a, b
     >
       <div class="overflow-x-auto">
         <table class="min-w-[1100px] w-full border-collapse text-left text-sm" aria-describedby="project-results">
-          <caption class="sr-only">Registro de proyectos de investigación de Fondo Verde en América</caption>
+          <caption class="sr-only">Registro de proyectos de investigación de Fondo Verde en {region}</caption>
           <thead class="bg-accent text-xs uppercase tracking-wider text-white">
             <tr>
               <th scope="col" class="px-5 py-4">Nombre y apellidos</th>
