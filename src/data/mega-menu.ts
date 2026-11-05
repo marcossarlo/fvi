@@ -8,6 +8,7 @@ import instituteImage from '~/assets/images/fvi-conocenos.webp';
 export interface MegaContent {
   label: string;
   description: string;
+  allLinkLabel: string;
   featureLabel: string;
   featureTitle: string;
   image: ImageMetadata;
@@ -17,6 +18,7 @@ export const megaContent: Record<string, MegaContent> = {
   'El Instituto': {
     label: 'El Instituto',
     description: 'Una comunidad académica que investiga, enseña y actúa frente a los desafíos ambientales.',
+    allLinkLabel: 'Conocer el Instituto',
     featureLabel: 'Instituto',
     featureTitle: 'Conoce nuestra mirada sobre la sostenibilidad',
     image: instituteImage,
@@ -24,6 +26,7 @@ export const megaContent: Record<string, MegaContent> = {
   PostDoc: {
     label: 'PostDoc',
     description: 'Investigación avanzada para profesionales que convierten conocimiento en transformación.',
+    allLinkLabel: 'Ver todos los Postdoctorados',
     featureLabel: 'Convocatoria 2026',
     featureTitle: 'Conoce nuestros Programas de Postdoctorado',
     image: postdocImage,
@@ -31,6 +34,7 @@ export const megaContent: Record<string, MegaContent> = {
   PhD: {
     label: 'PhD',
     description: 'Programas doctorales para quienes investigan el cambio y sus posibilidades.',
+    allLinkLabel: 'Ver todos los Doctorados',
     featureLabel: 'Convocatoria 2026',
     featureTitle: 'Conoce nuestros Programas doctorales',
     image: phdImage,
@@ -38,6 +42,7 @@ export const megaContent: Record<string, MegaContent> = {
   Maestrías: {
     label: 'Maestrías',
     description: 'Formación de posgrado para transformar organizaciones y territorios.',
+    allLinkLabel: 'Ver todas las Maestrías',
     featureLabel: 'Convocatoria 2026',
     featureTitle: 'Conoce nuestros Programas de Maestrías',
     image: maestriaImage,
@@ -45,6 +50,7 @@ export const megaContent: Record<string, MegaContent> = {
   Diplomados: {
     label: 'Diplomados',
     description: 'Formación especializada para ampliar tus conocimientos y fortalecer tu perfil profesional.',
+    allLinkLabel: 'Ver todos los Diplomados',
     featureLabel: 'Formación especializada',
     featureTitle: 'Explora nuestros diplomados',
     image: maestriaImage,
@@ -52,6 +58,7 @@ export const megaContent: Record<string, MegaContent> = {
   Proyectos: {
     label: 'Proyectos',
     description: 'Iniciativas que convierten el conocimiento en soluciones sostenibles.',
+    allLinkLabel: 'Ver todos los Proyectos',
     featureLabel: 'Impacto',
     featureTitle: 'Conoce los proyectos de Fondo Verde Institute',
     image: instituteImage,

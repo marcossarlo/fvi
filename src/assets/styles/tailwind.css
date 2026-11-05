@@ -352,9 +352,23 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
   align-items: center;
   gap: 0.45rem;
   margin-top: auto;
-  color: var(--aw-color-secondary);
+  width: fit-content;
+  padding: 0.7rem 0.9rem;
+  border-radius: 0.5rem;
+  background: var(--aw-color-accent);
+  color: rgb(255 255 255);
   font-size: 1rem;
   font-weight: 600;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.mega-all-link:hover,
+.mega-all-link:focus-visible {
+  background: var(--aw-color-primary);
+  color: rgb(255 255 255);
+  transform: translateY(-1px);
 }
 
 .mega-all-link .iconify {
@@ -686,7 +700,24 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
   }
 
   .mega-intro {
+    display: flex;
+    min-height: auto;
+    border-right: 0;
+    padding: 0 0 0.75rem;
+  }
+
+  .mega-intro h2,
+  .mega-kicker {
     display: none;
+  }
+
+  .mega-all-link {
+    width: 100%;
+    margin-top: 0;
+    padding: 0.75rem 0.65rem;
+    border-radius: 0.5rem;
+    background: var(--aw-color-accent);
+    color: rgb(255 255 255);
   }
 
   .mega-feature {
@@ -707,7 +738,6 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
     gap: 1rem;
     padding: 0.75rem 0.65rem;
   }
-
 }
 
 @media (prefers-reduced-motion: reduce) {

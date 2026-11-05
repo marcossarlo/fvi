@@ -61,7 +61,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
                       <h2>{mega.description}</h2>
                       {href && (
                         <a class="mega-all-link" href={href}>
-                          Ver toda la sección <Icon name="tabler:arrow-up-right" />
+                          {mega.allLinkLabel} <Icon name="tabler:arrow-up-right" />
                         </a>
                       )}
                     </div>
