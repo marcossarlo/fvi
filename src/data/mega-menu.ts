@@ -1,8 +1,9 @@
 import type { ImageMetadata } from 'astro';
 
-import maestriaImage from '~/assets/images/fvi_maestrias_home.webp';
-import phdImage from '~/assets/images/fvi_doctorados_home.webp';
-import postdocImage from '~/assets/images/fvi_postdocs_home.webp';
+import maestriaImage from '~/assets/images/fvi_maestrias_list.jpg';
+import phdImage from '~/assets/images/fvi_doctorados_list.jpg';
+import postdocImage from '~/assets/images/fvi_postdocs_list.jpg';
+import diplomadoImage from '~/assets/images/fvi_diplomados_list.jpg';
 import instituteImage from '~/assets/images/fvi-conocenos.webp';
 
 export interface MegaContent {
@@ -53,7 +54,7 @@ export const megaContent: Record<string, MegaContent> = {
     allLinkLabel: 'Ver todos los Diplomados',
     featureLabel: 'Formación especializada',
     featureTitle: 'Explora nuestros diplomados',
-    image: maestriaImage,
+    image: diplomadoImage,
   },
   Proyectos: {
     label: 'Proyectos',
