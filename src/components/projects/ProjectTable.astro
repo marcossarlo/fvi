@@ -105,70 +105,72 @@ const programs = [...new Set(projects.map(({ program }) => program))].sort((a, b
 </section>
 
 <script>
-  const searchInput = document.querySelector<HTMLInputElement>('#project-search');
-  const programSelect = document.querySelector<HTMLSelectElement>('#project-program');
-  const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('[data-project-row]'));
-  const results = document.querySelector<HTMLElement>('#project-results');
-  const pagination = document.querySelector<HTMLElement>('#project-pagination');
-  const pageSize = 10;
-  let currentPage = 1;
+  document.addEventListener('astro:page-load', () => {
+    const searchInput = document.querySelector<HTMLInputElement>('#project-search');
+    const programSelect = document.querySelector<HTMLSelectElement>('#project-program');
+    const rows = Array.from(document.querySelectorAll<HTMLTableRowElement>('[data-project-row]'));
+    const results = document.querySelector<HTMLElement>('#project-results');
+    const pagination = document.querySelector<HTMLElement>('#project-pagination');
+    const pageSize = 10;
+    let currentPage = 1;
 
-  const getFilteredRows = () => {
-    const query = searchInput?.value.trim().toLocaleLowerCase() || '';
-    const program = programSelect?.value || '';
+    const getFilteredRows = () => {
+      const query = searchInput?.value.trim().toLocaleLowerCase() || '';
+      const program = programSelect?.value || '';
 
-    return rows.filter((row) => {
-      const matchesQuery = !query || row.dataset.search?.includes(query);
-      const matchesProgram = !program || row.dataset.program === program;
-      return matchesQuery && matchesProgram;
-    });
-  };
+      return rows.filter((row) => {
+        const matchesQuery = !query || row.dataset.search?.includes(query);
+        const matchesProgram = !program || row.dataset.program === program;
+        return matchesQuery && matchesProgram;
+      });
+    };
 
-  const render = () => {
-    const filteredRows = getFilteredRows();
-    const pageCount = Math.max(1, Math.ceil(filteredRows.length / pageSize));
-    currentPage = Math.min(currentPage, pageCount);
-    const firstRow = (currentPage - 1) * pageSize;
-    const visibleRows = new Set(filteredRows.slice(firstRow, firstRow + pageSize));
+    const render = () => {
+      const filteredRows = getFilteredRows();
+      const pageCount = Math.max(1, Math.ceil(filteredRows.length / pageSize));
+      currentPage = Math.min(currentPage, pageCount);
+      const firstRow = (currentPage - 1) * pageSize;
+      const visibleRows = new Set(filteredRows.slice(firstRow, firstRow + pageSize));
 
-    rows.forEach((row) => {
-      row.hidden = !visibleRows.has(row);
-    });
+      rows.forEach((row) => {
+        row.hidden = !visibleRows.has(row);
+      });
 
-    if (results) {
-      results.textContent = filteredRows.length
-        ? `Mostrando ${firstRow + 1}-${Math.min(firstRow + pageSize, filteredRows.length)} de ${filteredRows.length} proyectos`
-        : 'No se encontraron proyectos con esos criterios.';
-    }
-
-    if (pagination) {
-      pagination.replaceChildren();
-      for (let page = 1; page <= pageCount; page += 1) {
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.textContent = String(page);
-        button.setAttribute('aria-label', `Ir a la página ${page}`);
-        button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
-        button.className =
-          page === currentPage
-            ? 'rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-white'
-            : 'rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-default hover:border-primary hover:text-primary dark:border-slate-600 dark:text-white';
-        button.addEventListener('click', () => {
-          currentPage = page;
-          render();
-        });
-        pagination.append(button);
+      if (results) {
+        results.textContent = filteredRows.length
+          ? `Mostrando ${firstRow + 1}-${Math.min(firstRow + pageSize, filteredRows.length)} de ${filteredRows.length} proyectos`
+          : 'No se encontraron proyectos con esos criterios.';
       }
-    }
-  };
 
-  searchInput?.addEventListener('input', () => {
-    currentPage = 1;
+      if (pagination) {
+        pagination.replaceChildren();
+        for (let page = 1; page <= pageCount; page += 1) {
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.textContent = String(page);
+          button.setAttribute('aria-label', `Ir a la página ${page}`);
+          button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
+          button.className =
+            page === currentPage
+              ? 'rounded-lg bg-primary px-3 py-2 text-sm font-semibold text-white'
+              : 'rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-default hover:border-primary hover:text-primary dark:border-slate-600 dark:text-white';
+          button.addEventListener('click', () => {
+            currentPage = page;
+            render();
+          });
+          pagination.append(button);
+        }
+      }
+    };
+
+    searchInput?.addEventListener('input', () => {
+      currentPage = 1;
+      render();
+    });
+    programSelect?.addEventListener('change', () => {
+      currentPage = 1;
+      render();
+    });
     render();
   });
-  programSelect?.addEventListener('change', () => {
-    currentPage = 1;
-    render();
-  });
-  render();
 </script>
