@@ -1,8 +1,9 @@
 ---
-import AcademicRequests from '~/components/phd/Requests.astro';
+import AcademicRequestForm from '~/components/common/AcademicRequestForm.astro';
+import CorporateSolutions from '~/components/common/CorporateSolutions.astro';
 
 export interface Props {
-  program?: string;
+  program: string;
 }
 
 const { program } = Astro.props;
@@ -19,4 +20,5 @@ const programs = [
 ];
 ---
 
-<AcademicRequests program={program} programs={programs} programLabel="Maestría" />
+<AcademicRequestForm program={program} programs={programs} programLabel="Maestría" formPrefix="master" />
+<CorporateSolutions />

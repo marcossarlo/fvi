@@ -1,29 +1,36 @@
 ---
 import { Icon } from 'astro-icon/components';
-import CorporateSolutions from '~/components/common/CorporateSolutions.astro';
 import Image from '~/components/common/Image.astro';
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 export interface Props {
   program: string;
+  programs: string[];
+  programLabel: string;
+  formPrefix: string;
+  recipientEmail?: string;
+  whatsappNumber?: string;
+  endpoint?: string;
 }
 
-const { program } = Astro.props;
+const {
+  program,
+  programs,
+  programLabel,
+  formPrefix,
+  recipientEmail = 'yessenia.quispe@fondoverde.org',
+  whatsappNumber = '51935544232',
+  endpoint,
+} = Astro.props;
 
-const programs = [
-  'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
-  'Posdoctorado en Ciencias Aplicadas al Medio Ambiente',
-  'Posdoctorado en Sistemas de Gestión Medioambiental',
-  'Posdoctorado en Peritaje Judicial en materia de delitos ambientales',
-  'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
-  'Posdoctorado en Ciencias de la Sostenibilidad',
-  'Posdoctorado en Ciencias de la Educación Ambiental',
-];
+const selectedProgram = programs.includes(program) ? program : programs[0];
+const whatsappId = `${formPrefix}-whatsapp`;
+const programSelectId = `${formPrefix}-program-interest`;
 
 const createWhatsAppUrl = (programName: string) => {
   const message = `Hola, Yessenia. Me gustaría recibir información sobre ${programName}, especialmente sobre requisitos de admisión, duración y opciones de pago. Gracias.`;
-  return `https://wa.me/51935544232?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 };
 ---
 
@@ -69,8 +76,8 @@ const createWhatsAppUrl = (programName: string) => {
 
       <div class="mt-5 grid gap-3">
         <a
-          id="postdoc-whatsapp"
-          href={createWhatsAppUrl(program)}
+          id={whatsappId}
+          href={createWhatsAppUrl(selectedProgram)}
           target="_blank"
           rel="noopener noreferrer"
           class="group flex min-h-16 items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-3 text-emerald-900 transition-colors duration-300 hover:border-emerald-300 hover:bg-emerald-100 active:scale-[0.99] dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100 dark:hover:bg-emerald-950/70"
@@ -90,7 +97,7 @@ const createWhatsAppUrl = (programName: string) => {
         </a>
 
         <a
-          href="mailto:yessenia.quispe@fondoverde.org"
+          href={`mailto:${recipientEmail}`}
           class="flex min-h-16 items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-slate-700 transition-colors duration-300 hover:border-teal-300 hover:bg-teal-50/50 active:scale-[0.99] dark:border-slate-700 dark:bg-pageDark dark:text-slate-200 dark:hover:border-teal-800 dark:hover:bg-slate-800"
         >
           <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-500 text-white">
@@ -100,7 +107,7 @@ const createWhatsAppUrl = (programName: string) => {
             <span class="block text-[0.68rem] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
               Correo electrónico
             </span>
-            <span class="mt-0.5 block truncate text-sm font-semibold">yessenia.quispe@fondoverde.org</span>
+            <span class="mt-0.5 block truncate text-sm font-semibold">{recipientEmail}</span>
           </span>
           <Icon name="tabler:copy" class="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
         </a>
@@ -116,18 +123,18 @@ const createWhatsAppUrl = (programName: string) => {
           class="mt-0.5 h-4 w-4 shrink-0 text-teal-600 dark:text-teal-400"
           aria-hidden="true"
         />
-        <label for="program-interest" class="min-w-0 flex-1 leading-relaxed">
+        <label for={programSelectId} class="min-w-0 flex-1 leading-relaxed">
           Solicitando información para:
           <select
-            id="program-interest"
+            id={programSelectId}
             name="program"
             required
             class="mt-1 block w-full cursor-pointer border-0 bg-transparent p-0 pr-7 text-sm font-bold text-teal-800 outline-none focus:ring-0 dark:text-teal-300"
-            aria-label="Programa de postdoctorado de interés"
+            aria-label={`Programa de ${programLabel} de interés`}
           >
             {
               programs.map((programOption) => (
-                <option value={programOption} selected={program === programOption}>
+                <option value={programOption} selected={selectedProgram === programOption}>
                   {programOption}
                 </option>
               ))
@@ -136,16 +143,23 @@ const createWhatsAppUrl = (programName: string) => {
         </label>
       </div>
 
-      <form class="space-y-4">
+      <form
+        class="space-y-4"
+        action={endpoint}
+        method={endpoint ? 'post' : undefined}
+        data-academic-request-form
+        data-academic-prefix={formPrefix}
+        data-whatsapp-number={whatsappNumber}
+      >
         <div>
           <label
-            for="postdoc-name"
+            for={`${formPrefix}-name`}
             class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
           >
             Nombre y apellidos <span class="text-rose-600" aria-hidden="true">*</span>
           </label>
           <input
-            id="postdoc-name"
+            id={`${formPrefix}-name`}
             name="name"
             type="text"
             autocomplete="name"
@@ -158,13 +172,13 @@ const createWhatsAppUrl = (programName: string) => {
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label
-              for="postdoc-email"
+              for={`${formPrefix}-email`}
               class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
             >
               Correo electrónico <span class="text-rose-600" aria-hidden="true">*</span>
             </label>
             <input
-              id="postdoc-email"
+              id={`${formPrefix}-email`}
               name="email"
               type="email"
               autocomplete="email"
@@ -175,13 +189,13 @@ const createWhatsAppUrl = (programName: string) => {
           </div>
           <div>
             <label
-              for="postdoc-objective"
+              for={`${formPrefix}-objective`}
               class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
             >
               Motivo de la consulta <span class="text-rose-600" aria-hidden="true">*</span>
             </label>
             <select
-              id="postdoc-objective"
+              id={`${formPrefix}-objective`}
               name="objective"
               required
               class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
@@ -198,13 +212,13 @@ const createWhatsAppUrl = (programName: string) => {
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label
-              for="postdoc-country"
+              for={`${formPrefix}-country`}
               class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
             >
               País de residencia
             </label>
             <select
-              id="postdoc-country"
+              id={`${formPrefix}-country`}
               name="country"
               class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
             >
@@ -238,13 +252,13 @@ const createWhatsAppUrl = (programName: string) => {
           </div>
           <div>
             <label
-              for="postdoc-phone"
+              for={`${formPrefix}-phone`}
               class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
             >
               WhatsApp / teléfono <span class="text-rose-600" aria-hidden="true">*</span>
             </label>
             <input
-              id="postdoc-phone"
+              id={`${formPrefix}-phone`}
               name="phone"
               type="tel"
               autocomplete="tel"
@@ -257,13 +271,13 @@ const createWhatsAppUrl = (programName: string) => {
 
         <div>
           <label
-            for="postdoc-message"
+            for={`${formPrefix}-message`}
             class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
           >
             Mensaje o consulta específica <span class="font-normal text-slate-400">(opcional)</span>
           </label>
           <textarea
-            id="postdoc-message"
+            id={`${formPrefix}-message`}
             name="message"
             rows="3"
             placeholder="Escribe aquí si tienes dudas sobre requisitos de titulación, métodos de pago o fechas..."
@@ -272,11 +286,11 @@ const createWhatsAppUrl = (programName: string) => {
         </div>
 
         <label
-          for="postdoc-privacy"
+          for={`${formPrefix}-privacy`}
           class="flex cursor-pointer items-start gap-2.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400"
         >
           <input
-            id="postdoc-privacy"
+            id={`${formPrefix}-privacy`}
             name="privacy"
             type="checkbox"
             required
@@ -289,7 +303,7 @@ const createWhatsAppUrl = (programName: string) => {
         </label>
 
         <button
-          type="button"
+          type={endpoint ? 'submit' : 'button'}
           class="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 px-5 py-3.5 text-sm font-bold text-white shadow-[0_10px_18px_-12px_rgba(13,148,136,0.7)] transition duration-300 hover:bg-teal-700 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:bg-teal-500 dark:hover:bg-teal-400"
         >
           Enviar solicitud de información
@@ -304,15 +318,20 @@ const createWhatsAppUrl = (programName: string) => {
   </Fragment>
 
   <script>
-    const programSelect = document.querySelector<HTMLSelectElement>('#program-interest');
-    const whatsappLink = document.querySelector<HTMLAnchorElement>('#postdoc-whatsapp');
+    document.querySelectorAll<HTMLFormElement>('[data-academic-request-form]').forEach((form) => {
+      const prefix = form.dataset.academicPrefix;
+      if (!prefix) return;
 
-    if (programSelect && whatsappLink) {
-      programSelect.addEventListener('change', () => {
-        const message = `Hola, Yessenia. Me gustaría recibir información sobre ${programSelect.value}, especialmente sobre requisitos de admisión, duración y opciones de pago. Gracias.`;
-        whatsappLink.href = `https://wa.me/51935544232?text=${encodeURIComponent(message)}`;
-      });
-    }
+      const programSelect = document.querySelector<HTMLSelectElement>(`#${prefix}-program-interest`);
+      const whatsappLink = document.querySelector<HTMLAnchorElement>(`#${prefix}-whatsapp`);
+      const whatsappNumber = form.dataset.whatsappNumber;
+
+      if (programSelect && whatsappLink) {
+        programSelect.addEventListener('change', () => {
+          const message = `Hola, Yessenia. Me gustaría recibir información sobre ${programSelect.value}, especialmente sobre requisitos de admisión, duración y opciones de pago. Gracias.`;
+          whatsappLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        });
+      }
+    });
   </script>
 </WidgetWrapper>
-<CorporateSolutions />
