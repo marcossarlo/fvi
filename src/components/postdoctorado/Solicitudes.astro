@@ -1,91 +1,325 @@
 ---
+import { Icon } from 'astro-icon/components';
+import Image from '~/components/common/Image.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Content from '~/components/widgets/Content.astro';
-import Form from '~/components/ui/Form.astro';
-import Headline from '~/components/ui/Headline.astro';
-import Alert from '~/components/ui/Alert.astro';
+
+export interface Props {
+  program: string;
+}
+
+const { program } = Astro.props;
+
+const programs = [
+  'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+  'Posdoctorado en Ciencias Aplicadas al Medio Ambiente',
+  'Posdoctorado en Sistemas de Gestión Medioambiental',
+  'Posdoctorado en Peritaje Judicial en materia de delitos ambientales',
+  'Postdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+  'Posdoctorado en Ciencias de la Sostenibilidad',
+  'Posdoctorado en Ciencias de la Educación Ambiental',
+];
 ---
 
-<!-- 13. Solicitudes *********************************** -->
-      <Content
-        id="solicitudes"
-        tagline="Únete al programa"
-        title="Solicitudes"
-        columns={1}
-        subtitle="Comienza tu proceso de admisión o solicita más información."
-        items={[
-          {
-            icon: 'tabler:phone-call',
-            title: '+51 935 544 232',
-          },
-          {
-            icon: 'tabler:mail',
-            title: 'yessenia.quispe@fondoverde.org',
-          },
-          {
-            icon: 'tabler:mail',
-            title: 'postdoc@fondoverde.org',
-          },
-        ]}
-        image={{
-          src: '~/assets/images/users/fvi-yessenia-quispe.webp',
-          alt: 'Yessenia Quispe Aquino - Responsable de Admisiones',
-        }}
+<WidgetWrapper id="solicitudes" containerClass="max-w-7xl mx-auto px-4 py-10 sm:px-6 md:py-16">
+  <div
+    class="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-[0_24px_70px_-45px_rgba(15,23,42,0.28)] dark:border-slate-700 dark:bg-pageDark"
+  >
+    <header class="px-6 pb-8 pt-8 text-center sm:px-10 sm:pt-10">
+      <span
+        class="inline-flex items-center rounded-full border border-teal-200 bg-teal-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-teal-700 dark:border-teal-800 dark:bg-teal-950/50 dark:text-teal-300"
       >
-        <Fragment slot="content">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Solicitudes e Información</h3>
-          <p class="mb-6">
-            Si desea inscribirse en alguno de los programas online de Fondo Verde o simplemente obtener más información
-            sobre nuestros programas y procesos de admisión, puede contactar al área de Posgrado:
+        Proceso de admisión
+      </span>
+      <h2 class="mt-4 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+        ¿Tienes dudas o quieres matricularte?
+      </h2>
+      <p class="mx-auto mt-2 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+        Solicita asesoría personalizada o inicia tu proceso de admisión directamente con nuestra área de Posgrado.
+      </p>
+    </header>
+
+    <div
+      class="grid grid-cols-1 gap-6 px-5 pb-5 sm:px-8 sm:pb-8 lg:grid-cols-[minmax(280px,0.8fr)_minmax(0,1.2fr)] lg:gap-8"
+    >
+      <aside
+        class="flex min-w-0 flex-col rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-700 dark:bg-slate-900/50 sm:p-7"
+      >
+        <div class="flex items-center gap-4">
+          <div class="relative h-[76px] w-[76px] shrink-0">
+            <Image
+              src="~/assets/images/users/fvi-yessenia-quispe.webp"
+              alt="Yessenia Quispe Aquino, responsable de admisiones"
+              width={76}
+              height={76}
+              class="h-full w-full rounded-2xl border-2 border-teal-500 object-cover"
+            />
+            <span
+              class="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-[3px] border-slate-50 bg-emerald-500 dark:border-slate-900"
+              aria-label="Disponible para consultas"></span>
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-lg font-bold leading-tight text-slate-900 dark:text-white">Yessenia Quispe Aquino</h3>
+            <p class="mt-1 text-xs font-bold uppercase tracking-wide text-teal-700 dark:text-teal-300">
+              Responsable de admisiones
+            </p>
+            <p class="mt-1.5 flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
+              <Icon name="tabler:circle-check-filled" class="h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
+              Atención personalizada de Posgrado
+            </p>
+          </div>
+        </div>
+
+        <blockquote
+          class="mt-6 rounded-xl border border-slate-200 bg-white px-4 py-4 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-pageDark dark:text-slate-200"
+        >
+          “Te acompaño paso a paso en tu postulación, evaluación de perfil y proceso de matriculación.”
+        </blockquote>
+
+        <div class="mt-5 grid gap-3">
+          <a
+            href="https://wa.me/51935544232"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex min-h-16 items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-3 text-emerald-900 transition-colors duration-300 hover:border-emerald-300 hover:bg-emerald-100 active:scale-[0.99] dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100 dark:hover:bg-emerald-950/70"
+          >
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500 text-white">
+              <Icon name="tabler:brand-whatsapp" class="h-6 w-6" aria-hidden="true" />
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-[0.68rem] font-bold uppercase tracking-wider">WhatsApp directo</span>
+              <span class="mt-0.5 block text-sm font-bold">+51 935 544 232</span>
+            </span>
+            <Icon
+              name="tabler:arrow-right"
+              class="h-5 w-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </a>
+
+          <a
+            href="mailto:yessenia.quispe@fondoverde.org"
+            class="flex min-h-16 items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-slate-700 transition-colors duration-300 hover:border-teal-300 hover:bg-teal-50/50 active:scale-[0.99] dark:border-slate-700 dark:bg-pageDark dark:text-slate-200 dark:hover:border-teal-800 dark:hover:bg-slate-800"
+          >
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-500 text-white">
+              <Icon name="tabler:mail" class="h-5 w-5" aria-hidden="true" />
+            </span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-[0.68rem] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                Correo electrónico
+              </span>
+              <span class="mt-0.5 block truncate text-sm font-semibold">yessenia.quispe@fondoverde.org</span>
+            </span>
+            <Icon name="tabler:copy" class="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
+          </a>
+        </div>
+
+        <div
+          class="mt-auto flex items-start gap-2 border-t border-slate-200 pt-4 text-xs leading-relaxed text-slate-500 dark:border-slate-700 dark:text-slate-400 sm:mt-8"
+        >
+          <Icon
+            name="tabler:clock"
+            class="mt-0.5 h-4 w-4 shrink-0 text-teal-600 dark:text-teal-400"
+            aria-hidden="true"
+          />
+          <p>
+            <span class="font-semibold">Respuesta estimada: 24 h.</span><br />
+            Lun. a vie., 8:00–18:00 (GMT-5)
           </p>
-          <h4 class="text-xl sm:text-2xl font-bold tracking-tight dark:text-white mb-2">Yessenia Quispe Aquino</h4>
-          <p class="font-semibold text-secondary">Responsable de Admisiones y Matrícula</p>
-        </Fragment>
-        <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-      </Content>
-      <!-- Formulario y Mensajes -->
-      <WidgetWrapper containerClass="max-w-7xl mx-auto py-12 md:py-16 lg:py-20">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-          <!-- Columna 1: Formulario (3/5 - 60%) -->
-          <div class="lg:w-3/5">
-            <div
-              class="flex flex-col max-w-full mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-pageDark shadow p-4 sm:p-6 lg:p-8 w-full h-full"
+        </div>
+      </aside>
+
+      <div class="min-w-0 py-1 lg:py-0">
+        <div
+          class="mb-5 flex items-start gap-2.5 rounded-xl border border-teal-200 bg-teal-50/70 px-4 py-3 text-sm text-slate-700 dark:border-teal-900 dark:bg-teal-950/30 dark:text-slate-200"
+        >
+          <Icon
+            name="tabler:info-circle-filled"
+            class="mt-0.5 h-4 w-4 shrink-0 text-teal-600 dark:text-teal-400"
+            aria-hidden="true"
+          />
+          <label for="program-interest" class="min-w-0 flex-1 leading-relaxed">
+            Solicitando información para:
+            <select
+              id="program-interest"
+              name="program"
+              required
+              class="mt-1 block w-full cursor-pointer border-0 bg-transparent p-0 pr-7 text-sm font-bold text-teal-800 outline-none focus:ring-0 dark:text-teal-300"
+              aria-label="Programa de postdoctorado de interés"
             >
-              <Headline
-                title="Formulario de Contacto"
-                subtitle="Déjanos un mensaje y te responderemos a la brevedad."
-                classes={{ container: 'text-left mb-6', title: 'text-2xl font-bold', subtitle: 'text-muted' }}
+              {
+                programs.map((programOption) => (
+                  <option value={programOption} selected={program === programOption}>
+                    {programOption}
+                  </option>
+                ))
+              }
+            </select>
+          </label>
+        </div>
+
+        <form class="space-y-4">
+          <div>
+            <label
+              for="postdoc-name"
+              class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+            >
+              Nombre y apellidos <span class="text-rose-600" aria-hidden="true">*</span>
+            </label>
+            <input
+              id="postdoc-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              placeholder="Ej. Carlos Mendoza Ramos"
+              required
+              class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label
+                for="postdoc-email"
+                class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+              >
+                Correo electrónico <span class="text-rose-600" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="postdoc-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="carlos@ejemplo.com"
+                required
+                class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500"
               />
-              <Form
-                inputs={[
-                  { type: 'text', name: 'name', label: 'Nombre' },
-                  { type: 'email', name: 'email', label: 'Correo electrónico' },
-                ]}
-                textarea={{ label: 'Mensaje' }}
-                disclaimer={{ label: 'Al enviarnos este formulario, aceptas nuestra política de privacidad.' }}
-                button="Enviar mensaje"
+            </div>
+            <div>
+              <label
+                for="postdoc-phone"
+                class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+              >
+                WhatsApp / teléfono <span class="text-rose-600" aria-hidden="true">*</span>
+              </label>
+              <input
+                id="postdoc-phone"
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+51 987 654 321"
+                required
+                class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500"
               />
             </div>
           </div>
 
-          <!-- Columna 2: Alertas (2/5 - 40%) -->
-          <div class="lg:w-2/5 flex flex-col gap-6">
-            <Alert variant="info" title="Acuerdo de Asociación" icon="tabler:heart-handshake">
-              Si su organización está interesada en nuestros programas de capacitación ambiental y desea implementarlo en su
-              compañía a través de un Acuerdo de Asociación (Partnership Agreement) con Fondo Verde. Si deseas información
-              diríjase a: info@fondoverde.org
-            </Alert>
-
-            <Alert variant="success" title="Licencias de cursos" icon="tabler:certificate">
-              Consulta las condiciones para la compra y la venta de derechos de licencias de cursos para clientes
-              institucionales. Puede comunicarse a: info@fondoverde.org
-            </Alert>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label
+                for="postdoc-country"
+                class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+              >
+                País de residencia
+              </label>
+              <select
+                id="postdoc-country"
+                name="country"
+                class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+              >
+                <optgroup label="América del Norte">
+                  <option value="México">México</option>
+                </optgroup>
+                <optgroup label="Centroamérica">
+                  <option value="Costa Rica">Costa Rica</option>
+                  <option value="El Salvador">El Salvador</option>
+                  <option value="Honduras">Honduras</option>
+                  <option value="Panamá">Panamá</option>
+                </optgroup>
+                <optgroup label="Caribe">
+                  <option value="República Dominicana">República Dominicana</option>
+                </optgroup>
+                <optgroup label="América del Sur">
+                  <option value="Argentina">Argentina</option>
+                  <option value="Bolivia">Bolivia</option>
+                  <option value="Chile">Chile</option>
+                  <option value="Colombia">Colombia</option>
+                  <option value="Ecuador">Ecuador</option>
+                  <option value="Paraguay">Paraguay</option>
+                  <option value="Perú" selected>Perú</option>
+                  <option value="Venezuela">Venezuela</option>
+                </optgroup>
+                <optgroup label="Europa">
+                  <option value="España">España</option>
+                </optgroup>
+                <option value="Otro país">Otro país</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="postdoc-objective"
+                class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+              >
+                ¿Cuál es tu objetivo principal?
+              </label>
+              <select
+                id="postdoc-objective"
+                name="objective"
+                class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+              >
+                <option value="plan-estudios-costos">Solicitar plan de estudios y costos</option>
+                <option value="requisitos">Conocer requisitos de admisión</option>
+                <option value="fechas">Consultar fechas de inicio</option>
+                <option value="asesoria">Solicitar asesoría personalizada</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <Fragment slot="bg">
-          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-        </Fragment>
-      </WidgetWrapper>
-      <!-- Fin SOLICITUDES ************************************ -->
+
+          <div>
+            <label
+              for="postdoc-message"
+              class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+            >
+              Mensaje o consulta específica <span class="font-normal text-slate-400">(opcional)</span>
+            </label>
+            <textarea
+              id="postdoc-message"
+              name="message"
+              rows="3"
+              placeholder="Escribe aquí si tienes dudas sobre requisitos de titulación, métodos de pago o fechas..."
+              class="w-full resize-y rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500"
+            ></textarea>
+          </div>
+
+          <label
+            for="postdoc-privacy"
+            class="flex cursor-pointer items-start gap-2.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400"
+          >
+            <input
+              id="postdoc-privacy"
+              name="privacy"
+              type="checkbox"
+              required
+              class="mt-0.5 h-4 w-4 shrink-0 rounded border-slate-300 text-teal-600 focus:ring-teal-500"
+            />
+            <span
+              >Acepto la política de privacidad para el tratamiento de mis datos de contacto con fines académicos de
+              Fondo Verde.</span
+            >
+          </label>
+
+          <button
+            type="button"
+            class="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 px-5 py-3.5 text-sm font-bold text-white shadow-[0_10px_18px_-12px_rgba(13,148,136,0.7)] transition duration-300 hover:bg-teal-700 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 dark:bg-teal-500 dark:hover:bg-teal-400"
+          >
+            Enviar solicitud de información
+            <Icon name="tabler:arrow-right" class="h-5 w-5" aria-hidden="true" />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+  </Fragment>
+</WidgetWrapper>
