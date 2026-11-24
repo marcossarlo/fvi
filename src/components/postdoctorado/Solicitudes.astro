@@ -19,9 +19,14 @@ const programs = [
   'Posdoctorado en Ciencias de la Sostenibilidad',
   'Posdoctorado en Ciencias de la Educación Ambiental',
 ];
+
+const createWhatsAppUrl = (programName: string) => {
+  const message = `Hola, Yessenia. Me gustaría recibir información sobre ${programName}, especialmente sobre requisitos de admisión, duración y opciones de pago. Gracias.`;
+  return `https://wa.me/51935544232?text=${encodeURIComponent(message)}`;
+};
 ---
 
-<WidgetWrapper id="solicitudes" containerClass="max-w-7xl mx-auto px-4 py-10 sm:px-6 md:py-16">
+<WidgetWrapper id="solicitudes" containerClass="max-w-7xl mx-auto px-4 py-10 sm:px-6 md:py-16 md:pb-32">
   <Headline
     tagline="Solicitudes"
     title="¿Tienes dudas o quieres matricularte?"
@@ -34,17 +39,20 @@ const programs = [
       class="flex min-w-0 flex-col rounded-2xl border border-slate-200 bg-slate-50/80 p-5 dark:border-slate-700 dark:bg-slate-900/50 sm:p-7"
     >
       <div class="flex flex-col items-center text-center">
-        <div class="relative h-28 w-28 shrink-0">
+        <div class="relative h-32 w-32 shrink-0">
           <Image
             src="~/assets/images/users/fvi-yessenia-quispe.webp"
             alt="Yessenia Quispe Aquino, responsable de admisiones"
-            width={112}
-            height={112}
+            width={128}
+            height={128}
             class="h-full w-full rounded-2xl border-2 border-teal-500 object-cover"
           />
-          <span
-            class="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-[3px] border-slate-50 bg-emerald-500 dark:border-slate-900"
-            aria-label="Disponible para consultas"></span>
+          <span class="absolute -bottom-1 -right-1 flex h-5 w-5" aria-hidden="true">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+            <span
+              class="relative inline-flex h-5 w-5 rounded-full border-[3px] border-slate-50 bg-emerald-500 dark:border-slate-900"
+            ></span>
+          </span>
         </div>
         <h3 class="mt-4 text-lg font-bold leading-tight text-slate-900 dark:text-white">Yessenia Quispe Aquino</h3>
         <p class="mt-1 text-xs font-bold uppercase tracking-wide text-teal-700 dark:text-teal-300">
@@ -58,14 +66,10 @@ const programs = [
         “Te acompaño paso a paso en tu postulación, evaluación de perfil y proceso de matriculación.”
       </blockquote>
 
-      <p class="mt-3 flex items-center justify-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
-        <Icon name="tabler:circle-check-filled" class="h-4 w-4 shrink-0 text-emerald-500" aria-hidden="true" />
-        Atención personalizada de Posgrado
-      </p>
-
       <div class="mt-5 grid gap-3">
         <a
-          href="https://wa.me/51935544232"
+          id="postdoc-whatsapp"
+          href={createWhatsAppUrl(program)}
           target="_blank"
           rel="noopener noreferrer"
           class="group flex min-h-16 items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-3 text-emerald-900 transition-colors duration-300 hover:border-emerald-300 hover:bg-emerald-100 active:scale-[0.99] dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-100 dark:hover:bg-emerald-950/70"
@@ -99,16 +103,6 @@ const programs = [
           </span>
           <Icon name="tabler:copy" class="h-4 w-4 shrink-0 text-slate-400" aria-hidden="true" />
         </a>
-      </div>
-
-      <div
-        class="mt-auto flex items-start gap-2 border-t border-slate-200 pt-4 text-xs leading-relaxed text-slate-500 dark:border-slate-700 dark:text-slate-400 sm:mt-8"
-      >
-        <Icon name="tabler:clock" class="mt-0.5 h-4 w-4 shrink-0 text-teal-600 dark:text-teal-400" aria-hidden="true" />
-        <p>
-          <span class="font-semibold">Respuesta estimada: 24 h.</span><br />
-          Lun. a vie., 8:00–18:00 (GMT-5)
-        </p>
       </div>
     </aside>
 
@@ -306,4 +300,16 @@ const programs = [
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
   </Fragment>
+
+  <script>
+    const programSelect = document.querySelector<HTMLSelectElement>('#program-interest');
+    const whatsappLink = document.querySelector<HTMLAnchorElement>('#postdoc-whatsapp');
+
+    if (programSelect && whatsappLink) {
+      programSelect.addEventListener('change', () => {
+        const message = `Hola, Yessenia. Me gustaría recibir información sobre ${programSelect.value}, especialmente sobre requisitos de admisión, duración y opciones de pago. Gracias.`;
+        whatsappLink.href = `https://wa.me/51935544232?text=${encodeURIComponent(message)}`;
+      });
+    }
+  </script>
 </WidgetWrapper>
