@@ -1,0 +1,35 @@
+---
+import Features2 from '~/components/widgets/Features2.astro';
+---
+
+<Features2
+  tagline="Soluciones para Empresas e Instituciones"
+  title="Convenios Corporativos y Licencias B2B"
+  columns={2}
+  items={[
+    {
+      title: 'Acuerdo de Asociación (Partnership)',
+      description:
+        'Si tu organización desea implementar nuestros programas de capacitación ambiental a medida para su personal.',
+      icon: 'tabler:building-community',
+      callToAction: {
+        text: 'Solicitar alianza empresarial',
+        href: '/contacto',
+        variant: 'link',
+        icon: 'tabler:arrow-right',
+      },
+    },
+    {
+      title: 'Licencias de Cursos para Instituciones',
+      description:
+        'Condiciones de compra y cesión de derechos de contenidos académicos para universidades y entes educativos.',
+      icon: 'tabler:license',
+      callToAction: {
+        text: 'Consultar catálogo de licencias',
+        href: '/contacto',
+        variant: 'link',
+        icon: 'tabler:arrow-right',
+      },
+    },
+  ]}
+/>
