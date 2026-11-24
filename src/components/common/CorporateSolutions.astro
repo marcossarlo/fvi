@@ -1,36 +1,37 @@
 ---
-import Features2 from '~/components/widgets/Features2.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Headline from '~/components/ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import Alert from '~/components/ui/Alert.astro';
 ---
 
-<Features2
-  tagline="Soluciones para Empresas e Instituciones"
-  title="Convenios Corporativos y Licencias B2B"
-  columns={2}
-  classes={{ container: 'pb-0 md:pb-16' }}
-  items={[
-    {
-      title: 'Acuerdo de Asociación (Partnership)',
-      description:
-        'Si tu organización desea implementar nuestros programas de capacitación ambiental a medida para su personal.',
-      icon: 'tabler:building-community',
-      callToAction: {
-        text: 'Solicitar alianza empresarial',
-        href: '/contacto',
-        variant: 'primary',
-        icon: 'tabler:arrow-right',
-      },
-    },
-    {
-      title: 'Licencias de Cursos para Instituciones',
-      description:
-        'Condiciones de compra y cesión de derechos de contenidos académicos para universidades y entes educativos.',
-      icon: 'tabler:license',
-      callToAction: {
-        text: 'Consultar catálogo de licencias',
-        href: '/contacto',
-        variant: 'primary',
-        icon: 'tabler:arrow-right',
-      },
-    },
-  ]}
-/>
+<WidgetWrapper containerClass="max-w-7xl mx-auto pb-0 md:pb-16">
+  <Headline
+    title="Convenios Corporativos y Licencias B2B"
+    tagline="Soluciones para Empresas e Instituciones"
+  />
+
+  <div class="grid gap-6 sm:grid-cols-2">
+    
+      <Alert variant="success" title="Acuerdo de Asociación (Partnership)">
+        Si tu organización desea implementar nuestros programas de capacitación ambiental a medida para su personal.<br /><br />
+        <Button
+          text="Consultar asociaciones"
+          href="/contacto"
+          variant="primary"
+          icon="tabler:arrow-right"
+        />
+      </Alert>
+    
+      <Alert variant="info" title="Licencias de Cursos para Instituciones">
+        Condiciones de compra y cesión de derechos de contenidos académicos para universidades y entes educativos.<br /><br />
+        <Button
+          text="Consultar licencias"
+          href="/contacto"
+          variant="secondary"
+          icon="tabler:arrow-right"
+        />
+      </Alert> 
+    
+  </div>
+</WidgetWrapper>
