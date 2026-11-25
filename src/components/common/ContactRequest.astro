@@ -12,21 +12,21 @@ export interface Props {
 const { initialArea = 'general', endpoint } = Astro.props;
 
 const areas = [
-  { value: 'general', label: 'Consultas generales', email: 'info@fondoverde.org' },
-  { value: 'alianza', label: 'Alianzas empresariales', email: 'info@fondoverde.org' },
-  { value: 'licencias', label: 'Licencias institucionales', email: 'info@fondoverde.org' },
-  { value: 'becas', label: 'Becas', email: 'scholarships@fondoverde.org' },
-  { value: 'doctorado', label: 'Doctorados', email: 'doctorados@fondoverde.org' },
-  { value: 'maestria', label: 'Maestrías', email: 'info@fondoverde.org' },
-  { value: 'postdoctorado', label: 'Posdoctorados', email: 'postdoc@fondoverde.org' },
+  { value: 'general', label: 'Consultas generales' },
+  { value: 'alianza', label: 'Alianzas empresariales' },
+  { value: 'licencias', label: 'Licencias institucionales' },
+  { value: 'becas', label: 'Becas' },
+  { value: 'doctorado', label: 'Doctorados' },
+  { value: 'maestria', label: 'Maestrías' },
+  { value: 'postdoctorado', label: 'Posdoctorados' },
 ];
 
 const selectedArea = areas.some((area) => area.value === initialArea) ? initialArea : 'general';
-const selectedRecipient = areas.find((area) => area.value === selectedArea)?.email ?? areas[0].email;
 ---
 
 <WidgetWrapper id="formulario-contacto" containerClass="max-w-7xl mx-auto px-4 py-10 sm:px-6 md:py-16">
   <Headline
+    tagline="Contacto"
     title="Envía tu consulta"
     subtitle="Selecciona el área correspondiente para que podamos dirigirte con el equipo adecuado."
     classes={{ container: 'max-w-3xl mb-8 md:mb-10' }}
@@ -106,7 +106,7 @@ const selectedRecipient = areas.find((area) => area.value === selectedArea)?.ema
     <div
       class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-pageDark sm:p-7"
     >
-      <form class="space-y-4" action={endpoint} method="post" data-contact-form data-endpoint={Boolean(endpoint)}>
+      <form class="space-y-4" action={endpoint} method={endpoint ? 'post' : undefined}>
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label
@@ -162,7 +162,7 @@ const selectedRecipient = areas.find((area) => area.value === selectedArea)?.ema
             >
               {
                 areas.map((area) => (
-                  <option value={area.value} data-recipient={area.email} selected={selectedArea === area.value}>
+                  <option value={area.value} selected={selectedArea === area.value}>
                     {area.label}
                   </option>
                 ))
@@ -224,28 +224,12 @@ const selectedRecipient = areas.find((area) => area.value === selectedArea)?.ema
         </label>
 
         <button
-          type="submit"
+          type={endpoint ? 'submit' : 'button'}
           class="flex w-full items-center justify-center gap-2 rounded-xl bg-teal-600 px-5 py-3.5 text-sm font-bold text-white shadow-[0_10px_18px_-12px_rgba(13,148,136,0.7)] transition hover:bg-teal-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2"
         >
-          {endpoint ? 'Enviar consulta' : 'Preparar correo'}
+          Enviar consulta
           <Icon name="tabler:arrow-right" class="h-5 w-5" />
         </button>
-        {
-          !endpoint && (
-            <p class="text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-              Se abrirá tu aplicación de correo con el mensaje preparado. Si no se abre, escríbenos a
-              <a
-                class="font-semibold text-teal-700 underline dark:text-teal-300"
-                href={`mailto:${selectedRecipient}`}
-                data-contact-fallback
-              >
-                {selectedRecipient}
-              </a>
-              .
-            </p>
-          )
-        }
-        <p class="sr-only" role="status" aria-live="polite" data-contact-status></p>
       </form>
     </div>
   </div>
@@ -261,54 +245,6 @@ const selectedRecipient = areas.find((area) => area.value === selectedArea)?.ema
       const area = asunto === 'licencias' ? 'licencias' : asunto === 'alianzas' ? 'alianza' : null;
 
       if (area) areaSelect.value = area;
-
-      const updateFallbackEmail = () => {
-        const recipient = areaSelect.selectedOptions[0]?.dataset.recipient;
-        const fallbackLink = document.querySelector<HTMLAnchorElement>('[data-contact-fallback]');
-
-        if (recipient && fallbackLink) {
-          fallbackLink.href = `mailto:${recipient}`;
-          fallbackLink.textContent = recipient;
-        }
-      };
-
-      updateFallbackEmail();
-      areaSelect.addEventListener('change', updateFallbackEmail);
     }
-
-    document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach((form) => {
-      if (form.dataset.endpoint === 'true') return;
-
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const formData = new FormData(form);
-        const areaSelect = form.querySelector<HTMLSelectElement>('#contact-area');
-        const selectedOption = areaSelect?.selectedOptions[0];
-        const recipient = selectedOption?.dataset.recipient;
-        const status = form.querySelector<HTMLElement>('[data-contact-status]');
-
-        if (!status) return;
-        if (!recipient || !selectedOption) {
-          status.textContent = 'No se encontró un correo para el área seleccionada. Escríbenos a info@fondoverde.org.';
-          return;
-        }
-
-        const subject = `Consulta desde Fondo Verde Institute: ${selectedOption.textContent?.trim() ?? 'Contacto'}`;
-        const body = [
-          `Nombre: ${formData.get('name') ?? ''}`,
-          `Correo: ${formData.get('email') ?? ''}`,
-          `Teléfono: ${formData.get('phone') ?? 'No indicado'}`,
-          `Área: ${selectedOption.textContent?.trim() ?? ''}`,
-          '',
-          'Mensaje:',
-          `${formData.get('message') ?? ''}`,
-        ].join('\n');
-
-        status.textContent =
-          'Se abrirá tu aplicación de correo. Revisa el borrador y envíalo para completar la consulta.';
-        window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      });
-    });
   </script>
 </WidgetWrapper>
