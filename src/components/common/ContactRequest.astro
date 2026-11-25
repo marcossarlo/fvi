@@ -5,11 +5,10 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 export interface Props {
-  initialArea?: string;
   endpoint?: string;
 }
 
-const { initialArea = 'general', endpoint } = Astro.props;
+const { endpoint } = Astro.props;
 
 const areas = [
   { value: 'general', label: 'Consultas generales' },
@@ -20,15 +19,13 @@ const areas = [
   { value: 'maestria', label: 'Maestrías' },
   { value: 'postdoctorado', label: 'Posdoctorados' },
 ];
-
-const selectedArea = areas.some((area) => area.value === initialArea) ? initialArea : 'general';
 ---
 
 <WidgetWrapper id="formulario-contacto" containerClass="max-w-7xl mx-auto px-4 py-10 sm:px-6 md:py-16">
   <Headline
     tagline="Contacto"
     title="Envía tu consulta"
-    subtitle="Selecciona el área correspondiente para que podamos dirigirte con el equipo adecuado."
+    subtitle="Cuéntanos qué tipo de consulta tienes para orientarte con el equipo adecuado."
     classes={{ container: 'max-w-3xl mb-8 md:mb-10' }}
   />
 
@@ -107,25 +104,26 @@ const selectedArea = areas.some((area) => area.value === initialArea) ? initialA
       class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-pageDark sm:p-7"
     >
       <form class="space-y-4" action={endpoint} method={endpoint ? 'post' : undefined}>
+        <div>
+          <label
+            for="contact-name"
+            class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+          >
+            Nombre y apellidos <span class="text-rose-600">*</span>
+          </label>
+          <input
+            id="contact-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+            maxlength="100"
+            placeholder="Ej. María Pérez"
+            class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+          />
+        </div>
+
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <div>
-            <label
-              for="contact-name"
-              class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
-            >
-              Nombre y apellidos <span class="text-rose-600">*</span>
-            </label>
-            <input
-              id="contact-name"
-              name="name"
-              type="text"
-              autocomplete="name"
-              required
-              maxlength="100"
-              placeholder="Ej. María Pérez"
-              class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
-            />
-          </div>
           <div>
             <label
               for="contact-email"
@@ -144,29 +142,63 @@ const selectedArea = areas.some((area) => area.value === initialArea) ? initialA
               class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
             />
           </div>
+          <div>
+            <label
+              for="contact-objective"
+              class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
+            >
+              Motivo de la consulta <span class="text-rose-600">*</span>
+            </label>
+            <select
+              id="contact-objective"
+              name="area"
+              required
+              class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+            >
+              {areas.map((area) => <option value={area.value}>{area.label}</option>)}
+            </select>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <label
-              for="contact-area"
+              for="contact-country"
               class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
             >
-              Área de consulta <span class="text-rose-600">*</span>
+              País de residencia
             </label>
             <select
-              id="contact-area"
-              name="area"
-              required
+              id="contact-country"
+              name="country"
               class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
             >
-              {
-                areas.map((area) => (
-                  <option value={area.value} selected={selectedArea === area.value}>
-                    {area.label}
-                  </option>
-                ))
-              }
+              <optgroup label="América del Norte">
+                <option value="México">México</option>
+              </optgroup>
+              <optgroup label="Centroamérica">
+                <option value="Costa Rica">Costa Rica</option>
+                <option value="El Salvador">El Salvador</option>
+                <option value="Honduras">Honduras</option>
+                <option value="Panamá">Panamá</option>
+              </optgroup>
+              <optgroup label="Caribe">
+                <option value="República Dominicana">República Dominicana</option>
+              </optgroup>
+              <optgroup label="América del Sur">
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Perú" selected>Perú</option>
+                <option value="Venezuela">Venezuela</option>
+              </optgroup>
+              <optgroup label="Europa">
+                <option value="España">España</option>
+              </optgroup>
+              <option value="Otro país">Otro país</option>
             </select>
           </div>
           <div>
@@ -174,13 +206,14 @@ const selectedArea = areas.some((area) => area.value === initialArea) ? initialA
               for="contact-phone"
               class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
             >
-              WhatsApp / teléfono
+              WhatsApp / teléfono <span class="text-rose-600">*</span>
             </label>
             <input
               id="contact-phone"
               name="phone"
               type="tel"
               autocomplete="tel"
+              required
               maxlength="40"
               placeholder="+51 987 654 321"
               class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
@@ -193,13 +226,11 @@ const selectedArea = areas.some((area) => area.value === initialArea) ? initialA
             for="contact-message"
             class="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-700 dark:text-slate-200"
           >
-            Mensaje <span class="text-rose-600">*</span>
+            Mensaje o consulta específica <span class="font-normal text-slate-400">(opcional)</span>
           </label>
           <textarea
             id="contact-message"
             name="message"
-            required
-            minlength="10"
             maxlength="3000"
             rows="5"
             placeholder="Cuéntanos cómo podemos ayudarte..."
@@ -239,12 +270,13 @@ const selectedArea = areas.some((area) => area.value === initialArea) ? initialA
   </Fragment>
 
   <script>
-    const areaSelect = document.querySelector<HTMLSelectElement>('#contact-area');
-    if (areaSelect) {
+    const topicSelect = document.querySelector<HTMLSelectElement>('#contact-objective');
+    if (topicSelect) {
       const asunto = new URLSearchParams(window.location.search).get('asunto');
-      const area = asunto === 'licencias' ? 'licencias' : asunto === 'alianzas' ? 'alianza' : null;
+      const topic = asunto === 'alianzas' ? 'alianza' : asunto;
+      const availableTopics = ['general', 'alianza', 'licencias', 'becas', 'doctorado', 'maestria', 'postdoctorado'];
 
-      if (area) areaSelect.value = area;
+      if (topic && availableTopics.includes(topic)) topicSelect.value = topic;
     }
   </script>
 </WidgetWrapper>
