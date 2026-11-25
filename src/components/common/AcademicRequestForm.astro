@@ -223,31 +223,31 @@ const createWhatsAppUrl = (programName: string) => {
               class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white"
             >
               <optgroup label="América del Norte">
-                <option value="México">México</option>
+                <option value="México" data-calling-code="+52">México (+52)</option>
               </optgroup>
               <optgroup label="Centroamérica">
-                <option value="Costa Rica">Costa Rica</option>
-                <option value="El Salvador">El Salvador</option>
-                <option value="Honduras">Honduras</option>
-                <option value="Panamá">Panamá</option>
+                <option value="Costa Rica" data-calling-code="+506">Costa Rica (+506)</option>
+                <option value="El Salvador" data-calling-code="+503">El Salvador (+503)</option>
+                <option value="Honduras" data-calling-code="+504">Honduras (+504)</option>
+                <option value="Panamá" data-calling-code="+507">Panamá (+507)</option>
               </optgroup>
               <optgroup label="Caribe">
-                <option value="República Dominicana">República Dominicana</option>
+                <option value="República Dominicana" data-calling-code="+1"> República Dominicana (+1) </option>
               </optgroup>
               <optgroup label="América del Sur">
-                <option value="Argentina">Argentina</option>
-                <option value="Bolivia">Bolivia</option>
-                <option value="Chile">Chile</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Ecuador">Ecuador</option>
-                <option value="Paraguay">Paraguay</option>
-                <option value="Perú" selected>Perú</option>
-                <option value="Venezuela">Venezuela</option>
+                <option value="Argentina" data-calling-code="+54">Argentina (+54)</option>
+                <option value="Bolivia" data-calling-code="+591">Bolivia (+591)</option>
+                <option value="Chile" data-calling-code="+56">Chile (+56)</option>
+                <option value="Colombia" data-calling-code="+57">Colombia (+57)</option>
+                <option value="Ecuador" data-calling-code="+593">Ecuador (+593)</option>
+                <option value="Paraguay" data-calling-code="+595">Paraguay (+595)</option>
+                <option value="Perú" data-calling-code="+51" selected>Perú (+51)</option>
+                <option value="Venezuela" data-calling-code="+58">Venezuela (+58)</option>
               </optgroup>
               <optgroup label="Europa">
-                <option value="España">España</option>
+                <option value="España" data-calling-code="+34">España (+34)</option>
               </optgroup>
-              <option value="Otro país">Otro país</option>
+              <option value="Otro país" data-calling-code="">Otro país</option>
             </select>
           </div>
           <div>
@@ -257,15 +257,33 @@ const createWhatsAppUrl = (programName: string) => {
             >
               WhatsApp / teléfono <span class="text-rose-600" aria-hidden="true">*</span>
             </label>
-            <input
-              id={`${formPrefix}-phone`}
-              name="phone"
-              type="tel"
-              autocomplete="tel"
-              placeholder="+51 987 654 321"
-              required
-              class="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-500"
-            />
+            <div
+              class="flex w-full overflow-hidden rounded-xl border border-slate-300 bg-slate-50 transition focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-900"
+            >
+              <input
+                id={`${formPrefix}-country-code`}
+                name="phone_country_code"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel-country-code"
+                aria-label="Código telefónico internacional"
+                required
+                maxlength="5"
+                value="+51"
+                class="w-20 shrink-0 border-0 border-r border-slate-300 bg-transparent px-4 py-3 text-sm font-semibold text-slate-700 outline-none focus:ring-0 dark:border-slate-600 dark:text-slate-200"
+              />
+              <input
+                id={`${formPrefix}-phone`}
+                name="phone"
+                type="tel"
+                inputmode="tel"
+                autocomplete="tel-national"
+                aria-label="Número de teléfono"
+                placeholder="987 654 321"
+                required
+                class="min-w-0 flex-1 border-0 bg-transparent px-4 py-3 text-sm text-slate-900 outline-none focus:ring-0 dark:text-white dark:placeholder:text-slate-500"
+              />
+            </div>
           </div>
         </div>
 
@@ -324,7 +342,17 @@ const createWhatsAppUrl = (programName: string) => {
 
       const programSelect = document.querySelector<HTMLSelectElement>(`#${prefix}-program-interest`);
       const whatsappLink = document.querySelector<HTMLAnchorElement>(`#${prefix}-whatsapp`);
+      const countrySelect = form.querySelector<HTMLSelectElement>(`#${prefix}-country`);
+      const countryCodeInput = form.querySelector<HTMLInputElement>(`#${prefix}-country-code`);
+      const phoneInput = form.querySelector<HTMLInputElement>(`#${prefix}-phone`);
       const whatsappNumber = form.dataset.whatsappNumber;
+
+      if (countrySelect && countryCodeInput && phoneInput) {
+        countrySelect.addEventListener('change', () => {
+          countryCodeInput.value = countrySelect.selectedOptions[0]?.dataset.callingCode ?? '';
+          phoneInput.focus();
+        });
+      }
 
       if (programSelect && whatsappLink) {
         programSelect.addEventListener('change', () => {
