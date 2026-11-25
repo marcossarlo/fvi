@@ -26,392 +26,435 @@ import Degree from '~/components/common/Degree.astro';
 import HowToApply from '~/components/maestria/HowToApply.astro';
 
 const metadata = {
-    title: 'Maestría en Ciencias de la Sostenibilidad',
-    description: 'Fórmate con la Maestría en Ciencias de la Sostenibilidad. Desarrolla proyectos de gestión ambiental y lidera el desarrollo sustentable regional y global.',
-    keywords: 'Maestría en Ciencias de la Sostenibilidad, desarrollo sostenible, gestión ambiental, sustentabilidad regional, proyectos sustentables, especialización medioambiental, posgrado en sostenibilidad, ordenación de recursos naturales',
+  title: 'Maestría en Ciencias de la Sostenibilidad',
+  description:
+    'Fórmate con la Maestría en Ciencias de la Sostenibilidad. Desarrolla proyectos de gestión ambiental y lidera el desarrollo sustentable regional y global.',
+  keywords:
+    'Maestría en Ciencias de la Sostenibilidad, desarrollo sostenible, gestión ambiental, sustentabilidad regional, proyectos sustentables, especialización medioambiental, posgrado en sostenibilidad, ordenación de recursos naturales',
 };
 
 const facultyIds = [
-    'gonzalo-fuente',
-    'angel-guillemes',
-    'alberto-jimenez',
-    'maria-teresa-perez',
-    'angela-martin',
-    'erick-brenes',
+  'gonzalo-fuente',
+  'angel-guillemes',
+  'alberto-jimenez',
+  'maria-teresa-perez',
+  'angela-martin',
+  'erick-brenes',
 ];
-const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+const facultyList = facultyIds.map((id) => faculty[id]).filter(Boolean);
 
 const tabs = [
-    { id: 'bienvenida', label: '1. Bienvenida' },
-    { id: 'maestria', label: '2. La Maestría' },
-    { id: 'colaboran', label: '3. Colaboran' },
-    { id: 'estructura', label: '4. Estructura' },
-    { id: 'proyecto', label: '5. Proyecto' },
-    { id: 'estudio', label: '6. ¿Cómo se estudia?' },
-    { id: 'claustro', label: '7. Claustro' },
-    { id: 'beneficios', label: '8. Beneficios' },
-    { id: 'titulacion', label: '9. Titulación' },
-    { id: 'postmaestria', label: '10. Post Maestría' },
-    { id: 'becas', label: '11. Becas' },
-    { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
-    { id: 'inscripcion', label: '13. Inscripción' },
-    { id: 'medios-de-pago', label: '14. Medios de Pago' },
+  { id: 'bienvenida', label: '1. Bienvenida' },
+  { id: 'maestria', label: '2. La Maestría' },
+  { id: 'colaboran', label: '3. Colaboran' },
+  { id: 'estructura', label: '4. Estructura' },
+  { id: 'proyecto', label: '5. Proyecto' },
+  { id: 'estudio', label: '6. ¿Cómo se estudia?' },
+  { id: 'claustro', label: '7. Claustro' },
+  { id: 'beneficios', label: '8. Beneficios' },
+  { id: 'titulacion', label: '9. Titulación' },
+  { id: 'postmaestria', label: '10. Post Maestría' },
+  { id: 'becas', label: '11. Becas' },
+  { id: 'aplicar', label: '12. ¿Cómo aplicar?' },
+  { id: 'inscripcion', label: '13. Inscripción' },
+  { id: 'medios-de-pago', label: '14. Medios de Pago' },
 ];
 ---
 
 <Layout metadata={metadata} showSecondaryNav={false}>
-    {/* HeroPrograms ********************************************** */}
-    <HeroPrograms
-        tagline='Convocatoria Abierta 2026'
-        title='Maestría en<br /> <span class="text-primary">Ciencias de la Sostenibilidad</span>'
-        subtitle='La <strong>Revolución Verde</strong>, ya está en marcha. <strong>Únete</strong>'
-        actions={[
-        {
-            variant: 'primary',
-            text: 'Solicita información',
-            href: '#solicitudes',
-            icon: 'tabler:mail-forward',
-            class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
-        },
-        {
-            variant: 'secondary',
-            text: 'Ver Folleto Académico',
-            href: 'https://drive.google.com/file/d/0B0HLluZifC0PcnRsM182RWxQc3M/view',
-            target: '_blank',
-            icon: 'tabler:download',
-            class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
-        },
+  {/* HeroPrograms ********************************************** */}
+  <HeroPrograms
+    tagline="Convocatoria Abierta 2026"
+    title='Maestría en<br /> <span class="text-primary">Ciencias de la Sostenibilidad</span>'
+    subtitle="La <strong>Revolución Verde</strong>, ya está en marcha. <strong>Únete</strong>"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Solicita información',
+        href: '#solicitudes',
+        icon: 'tabler:mail-forward',
+        class:
+          '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+      },
+      {
+        variant: 'secondary',
+        text: 'Ver Folleto Académico',
+        href: 'https://drive.google.com/file/d/0B0HLluZifC0PcnRsM182RWxQc3M/view',
+        target: '_blank',
+        icon: 'tabler:download',
+        class:
+          '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/maestrias/fvi-msc-ciencias-sostenibilidad.jpg',
+      alt: 'Imagen de la Maestría en Ciencias de la Sostenibilidad',
+    }}
+  />
+
+  {/* DatosEstadisticas */}
+  <StatsData />
+
+  <div class="relative max-w-[100vw] overflow-x-hidden">
+    <!-- Desktop Sidebar & Mobile Floating Pill -->
+    <ProgramTOC tabs={tabs} />
+
+    {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
+    <div data-program-content class="pb-24 lg:pb-0 transition-[margin-left] duration-500 ease-in-out">
+      {/* 1. BIENVENIDA */}
+      <Content
+        id="bienvenida"
+        tagline="Bienvenida"
+        title="Alberto Jiménez Madrid, PhD"
+        subtitle="Director de la Maestría"
+        items={[
+          {
+            title: 'Bienvenida del Director de la Maestría',
+            description:
+              'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir. <br> <br>Contamos con los conocimientos y la tecnología precisos para abordar estos retos. Pero para ello se requiere una "<strong>revolución verde permanente</strong>", potenciando el ingenio humano para hacer perdurable el sistema global.',
+            icon: 'tabler:leaf',
+          },
         ]}
         image={{
-        src: '~/assets/images/maestrias/fvi-msc-ciencias-sostenibilidad.jpg',
-        alt: 'Imagen de la Maestría en Ciencias de la Sostenibilidad',
+          src: '~/assets/images/users/fvi-alberto-jimenez.webp',
+          alt: 'Alberto Jiménez Madrid, PhD - Director de la Maestría en Ciencias de la Sostenibilidad',
         }}
-    />
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </Content>
 
-    {/* DatosEstadisticas */}
-    <StatsData />
+      {/* 2. LA MAESTRÍA */}
+      <Features2
+        id="maestria"
+        tagline="La Maestría"
+        title="¿Por qué hacer esta maestría?"
+        subtitle="El desarrollo sostenible reconoce que el crecimiento debe ser inclusivo y al mismo tiempo ambientalmente racional para poder reducir la pobreza y generar prosperidad, tanto para quienes viven en el planeta en el presente como para las futuras generaciones."
+        columns={2}
+        items={[
+          {
+            title: 'Objetivos de sostenibilidad',
+            description:
+              'Mejorar la ordenación sostenible de los recursos naturales; aumentar el acceso a sistemas de transporte, energía y agrícolas de bajas emisiones con enfoque climático; y reducir la vulnerabilidad frente a crisis vinculadas a fenómenos climáticos.',
+            icon: 'tabler:target',
+          },
+          {
+            title: 'Formación y empleabilidad',
+            description:
+              'El máster formará agentes del cambio con enfoques teóricos sobre desarrollo regional y sustentabilidad para apoyar la toma de decisiones en planificación; los profesionales en desarrollo sostenible son altamente demandados por el sector público y privado a nivel nacional e internacional.',
+            icon: 'tabler:briefcase',
+          },
+        ]}
+      />
 
-    <div class="relative max-w-[100vw] overflow-x-hidden">
-        <!-- Desktop Sidebar & Mobile Floating Pill -->
-        <ProgramTOC tabs={tabs} />
+      {/* ¿Quiénes deben asistir? */}
+      <Content
+        isReversed
+        items={[
+          {
+            title: 'Titulados afines',
+            description:
+              'Dirigida preferentemente a quienes posean una titulación (Licenciatura, Ingeniería, Arquitectura, Geografía, Ciencias Naturales, Ambientales o Formales) que acredite competencias y experiencia en gestión ambiental y desarrollo; también pueden postular profesionales de otras disciplinas interesados en la formación.',
+            icon: 'tabler:certificate',
+          },
+          {
+            title: 'Especialización en medio ambiente',
+            description:
+              'Pensada para personas que desean completar su formación con un programa de especialización en medio ambiente que las capacite para ejercer como profesionales en la gestión de actividades relacionadas con la conservación y el uso sostenible de los recursos.',
+            icon: 'tabler:book',
+          },
+          {
+            title: 'Profesionales del territorio',
+            description:
+              'Orientada a quienes desarrollan su labor en sectores vinculados al territorio (urbanismo, turismo, etc.) y buscan una formación especializada en medio ambiente para integrar criterios ambientales en sus actividades.',
+            icon: 'tabler:map',
+          },
+          {
+            title: 'Instituciones y empresas',
+            description:
+              'Adecuada para personas interesadas en trabajar en instituciones o empresas dedicadas al diseño, aplicación, gestión y evaluación de proyectos de desarrollo sostenible, en el ámbito público o privado.',
+            icon: 'tabler:briefcase',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-cs.jpg',
+          alt: '¿Quiénes deben asistir a la Maestría en Ciencias de la Sostenibilidad?',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">¿Quiénes deben asistir?</h3>
+        </Fragment>
+      </Content>
+      {/* ¿Qué vas a aprender? */}
+      <Content
+        items={[
+          {
+            title: 'Proporcionar los conocimientos',
+            description: 'Teóricos-metodológicos en torno a la sustentabilidad del desarrollo regional.',
+            icon: 'tabler:book',
+          },
+          {
+            title: 'Estudiar la relación entre sociedad y territorio',
+            description:
+              'Basados en un análisis de sus componentes biofísicos, socioeconómicos, culturales y políticos con el fin de poder entregar propuestas y soluciones que se adapten a las especificidades locales y regionales.',
+            icon: 'tabler:map',
+          },
+          {
+            title: 'Proporcionar herramientas teóricas',
+            description:
+              'Metodológicas e instrumentales para elaborar, implementar, sistematizar y evaluar proyectos sustentables, así como la gestión de este proceso.',
+            icon: 'tabler:tools',
+          },
+          {
+            title: 'Proponer soluciones a los problemas',
+            description:
+              'Del desarrollo sustentable (humano, social, ambiental, de infraestructura, institucional), a través del análisis y evaluación con proyección internacional.',
+            icon: 'tabler:bulb',
+          },
+          {
+            title: 'Incorporar la visión y acción',
+            description:
+              'De los diferentes actores del desarrollo en el proceso de planeación y gestión y promover la colaboración de las diferentes disciplinas en la solución de problemas que enfrenta el desarrollo y la conservación del ambiente.',
+            icon: 'tabler:users',
+          },
+          {
+            title: 'Fomentar en los alumnos',
+            description:
+              'La capacidad de investigación, análisis e incluso de participación en los procesos de planeación regional con un enfoque de sustentabilidad.',
+            icon: 'tabler:background',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
+          alt: '¿Qué vas a aprender en la Maestría en Ciencias de la Sostenibilidad?',
+        }}
+      >
+        <Fragment slot="content">
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">¿Qué vas a aprender?</h3>
+        </Fragment>
+      </Content>
 
-        {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
-        <div data-program-content class="pb-24 lg:pb-0 transition-[margin-left] duration-500 ease-in-out">
-        
-        {/* 1. BIENVENIDA */}
-        <Content
-            id="bienvenida"
-            tagline="Bienvenida"
-            title="Alberto Jiménez Madrid, PhD"
-            subtitle="Director de la Maestría"
-            items={[
-                {
-                title: 'Bienvenida del Director de la Maestría',
-                description: 'El Desarrollo Sostenible es el paradigma de desarrollo que la región visualiza como el modelo a buscar. Es el gran reto que se plantea a la humanidad de entender y asumir un proceso de cambio y transición para alcanzar nuevas formas de producir. <br> <br>Contamos con los conocimientos y la tecnología precisos para abordar estos retos. Pero para ello se requiere una "<strong>revolución verde permanente</strong>", potenciando el ingenio humano para hacer perdurable el sistema global.',
-                icon: 'tabler:leaf',
-                },
-            ]}
-            image={{
-                src: '~/assets/images/users/fvi-alberto-jimenez.webp',
-                alt: 'Alberto Jiménez Madrid, PhD - Director de la Maestría en Ciencias de la Sostenibilidad',
-            }}
+      {/* 3. COLABORAN */}
+      <HeroSection
+        id="colaboran"
+        tagline="Colaboran"
+        title="Entidades Colaboradoras"
+        image={{
+          src: '~/assets/images/maestrias/fvi-colaboran-msc-ppet.jpg',
+          alt: 'Entidades colaboradoras de la Maestría en Ciencias de la Sostenibilidad',
+        }}
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+      </HeroSection>
+
+      {/* 4. ESTRUCTURA DEL PROGRAMA */}
+      <HeroSection
+        id="estructura"
+        tagline="Estructura"
+        title="Estructura del Programa"
+        subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span> tiene una duración de <strong>seis trimestres (2 años)</strong> con un total de <strong>1,440 horas lectivas (90 créditos)</strong>. Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría</strong> - <strong>PTM</strong>; posteriormente en el sexto trimestre, el alumno deberá acreditar la opción terminal de titulación y realizar sus trámites de graduación de acuerdo a la modalidad que haya elegido.'
+      >
+        <Fragment slot="content">
+          <ProgramCurriculum courses={cienciasSostenibilidadCurriculum.courses} />
+        </Fragment>
+      </HeroSection>
+
+      {/* 5. PROYECTO PTM (commond) */}
+      <ProjectPTM />
+
+      {/* 6. COMO SE ESTUDIA (commond) */}
+      <HowToStudy />
+
+      {/* 7. CLAUSTRO */}
+      <ClaustroInfo />
+      {
+        facultyList.map((prof) => (
+          <FacultyMember {...prof}>
+            <Fragment slot="bg">
+              <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
+            </Fragment>
+          </FacultyMember>
+        ))
+      }
+
+      {/* 8. BENEFICIOS */}
+      <Features
+        id="beneficios"
+        tagline="Beneficios"
+        title="¿Cómo te beneficiará este programa?"
+        subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, será capaz de:'
+        columns={2}
+        items={[
+          {
+            title: 'Fundamentos del Desarrollo Sostenible',
+            description:
+              'Comprender los principios del paradigma de la sostenibilidad y sus dimensiones ambiental, sociocultural y económica a escala regional.',
+            icon: 'tabler:book',
+          },
+          {
+            title: 'Planificación Regional Sustentable',
+            description:
+              'Diseñar planes territoriales para comunas y regiones que integren uso del suelo, recursos y equidad dentro de criterios de desarrollo sustentable.',
+            icon: 'tabler:map-2',
+          },
+          {
+            title: 'Gestión de Proyectos Sostenibles',
+            description:
+              'Diseñar, ejecutar y evaluar proyectos de gestión pública y privada aplicando indicadores y herramientas de sostenibilidad.',
+            icon: 'tabler:layers-linked',
+          },
+          {
+            title: 'Negociación y Participación Social',
+            description:
+              'Facilitar procesos participativos y negociaciones inclusivas entre actores sociales para conciliar desarrollo y conservación ambiental.',
+            icon: 'tabler:heart-handshake',
+          },
+          {
+            title: 'Proyectos Urbanos Sustentables',
+            description:
+              'Desarrollar planes urbanos que promuevan movilidad sostenible, espacios verdes, eficiencia energética y resiliencia comunitaria.',
+            icon: 'tabler:building',
+          },
+          {
+            title: 'Asesoría para Desarrollo Urbano Viable',
+            description:
+              'Brindar asesoramiento técnico y financiero a entidades municipales y provinciales para proyectos que atiendan población, entorno natural y patrimonio cultural.',
+            icon: 'tabler:currency-dollar',
+          },
+          {
+            title: 'Innovación y Liderazgo Ético',
+            description:
+              'Emprender políticas, programas y proyectos novedosos con un alto sentido ético para intervenir en ámbitos nacionales e internacionales.',
+            icon: 'tabler:award',
+          },
+          {
+            title: 'Proyección e Impacto Internacional',
+            description:
+              'Planear y ejecutar iniciativas con alcance nacional e internacional que generen impacto sostenible y colaboraciones multisectoriales.',
+            icon: 'tabler:globe',
+          },
+        ]}
+      />
+
+      {/* Potencia tus salidas */}
+      <Features3
+        tagline="Salidas Profesionales"
+        title="Potencia tus Salidas Profesionales"
+        subtitle='En términos específicos, se espera que el egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, pueda ser demandado tanto en empresas y organizaciones de la Administración o como en otras de índole privada, en los ámbitos del Medio Ambiente y Sostenibilidad. Las salidas profesionales, se centran claramente en:'
+        columns={3}
+        defaultIcon="tabler:point-filled"
+        items={[
+          {
+            title: 'Director de Conservación y Gestión de Recursos Naturales',
+            description:
+              'Liderar organizaciones públicas y privadas dedicadas a la conservación y manejo de recursos, participando en la planificación y diseño de políticas públicas a nivel nacional e internacional.',
+          },
+          {
+            title: 'Técnico Local en Programas Sustentables',
+            description:
+              'Ejecutar y operar programas y proyectos de investigación y gestión en gobiernos locales, aplicando enfoques de desarrollo sustentable y buenas prácticas operativas.',
+          },
+          {
+            title: 'Planificador y Gestor de Proyectos Sostenibles',
+            description:
+              'Diseñar, planificar y gestionar proyectos tecnológicos, científicos y de gestión que integren criterios ambientales, sociales y económicos dentro de un marco de sostenibilidad.',
+          },
+          {
+            title: 'Consultor en Políticas y Evaluación de Sostenibilidad',
+            description:
+              'Asesorar en la formulación, evaluación y monitoreo de políticas públicas y privadas orientadas a la sostenibilidad y la mitigación de impactos ambientales.',
+          },
+          {
+            title: 'Investigador en Ciencias de la Sostenibilidad',
+            description:
+              'Desarrollar investigación aplicada y teórica sobre sostenibilidad, generando evidencia para la toma de decisiones y la innovación en políticas y proyectos.',
+          },
+          {
+            title: 'Asesor Internacional en Modelos de Desarrollo Sostenible',
+            description:
+              'Brindar asesoría a organismos internacionales en la elaboración de diagnósticos y modelos de desarrollo sostenible a escala local y regional.',
+          },
+          {
+            title: 'Jefe de Proyecto Multidisciplinario en Soluciones Sostenibles',
+            description:
+              'Dirigir equipos interdisciplinarios en el diseño, implementación y evaluación de soluciones globales y sostenibles con rigor científico y técnico.',
+          },
+          {
+            title: 'Asesor Estratégico en Desarrollo Sustentable para Empresas',
+            description:
+              'Prestar servicios de consultoría para la elaboración de planes estratégicos y estudios de desarrollo sustentable orientados a la viabilidad financiera y el impacto ambiental positivo.',
+          },
+        ]}
+      />
+
+      {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
+      <BeyondTheProgram />
+
+      {/* 9. TITULACIÓN */}
+      <HeroSection id="titulacion" tagline="titulacion" title="Evaluación y Titulación">
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
+        <Fragment slot="content">
+          <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">
+            Evaluación
+          </h3>
+          <p class="text-left">
+            La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en
+            foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar
+            individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong
+              >presentado y defendido ante un tribunal</strong
+            >.
+          </p>
+
+          <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">
+            Titulación
+          </h3>
+          <p class="text-left mt-6 mb-8">
+            Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong
+              >Proyecto Terminal de Maestría</strong
+            > obtendrán el grado de maestría.<br /><br />Título de <span class="text-primary font-semibold">
+              Maestría en</span
             >
-            <Fragment slot="bg">
-                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-            </Fragment>
-        </Content>
-        
-        {/* 2. LA MAESTRÍA */}
-        <Features2
-            id="maestria"
-            tagline="La Maestría"
-            title="¿Por qué hacer esta maestría?"
-            subtitle="El desarrollo sostenible reconoce que el crecimiento debe ser inclusivo y al mismo tiempo ambientalmente racional para poder reducir la pobreza y generar prosperidad, tanto para quienes viven en el planeta en el presente como para las futuras generaciones."
-            columns={2}
-            items={[
-            {
-                title: 'Objetivos de sostenibilidad',
-                description: 'Mejorar la ordenación sostenible de los recursos naturales; aumentar el acceso a sistemas de transporte, energía y agrícolas de bajas emisiones con enfoque climático; y reducir la vulnerabilidad frente a crisis vinculadas a fenómenos climáticos.',
-                icon: 'tabler:target',
-            },
-            {
-                title: 'Formación y empleabilidad',
-                description: 'El máster formará agentes del cambio con enfoques teóricos sobre desarrollo regional y sustentabilidad para apoyar la toma de decisiones en planificación; los profesionales en desarrollo sostenible son altamente demandados por el sector público y privado a nivel nacional e internacional.',
-                icon: 'tabler:briefcase',
-            },
-            ]}
-        >
-        </Features2>
-        
-        {/* ¿Quiénes deben asistir? */}
-        <Content
-            isReversed
-            items={[
-                {
-                    title: 'Titulados afines',
-                    description: 'Dirigida preferentemente a quienes posean una titulación (Licenciatura, Ingeniería, Arquitectura, Geografía, Ciencias Naturales, Ambientales o Formales) que acredite competencias y experiencia en gestión ambiental y desarrollo; también pueden postular profesionales de otras disciplinas interesados en la formación.',
-                    icon: 'tabler:certificate',
-                },
-                {
-                    title: 'Especialización en medio ambiente',
-                    description: 'Pensada para personas que desean completar su formación con un programa de especialización en medio ambiente que las capacite para ejercer como profesionales en la gestión de actividades relacionadas con la conservación y el uso sostenible de los recursos.',
-                    icon: 'tabler:book',
-                },
-                {
-                    title: 'Profesionales del territorio',
-                    description: 'Orientada a quienes desarrollan su labor en sectores vinculados al territorio (urbanismo, turismo, etc.) y buscan una formación especializada en medio ambiente para integrar criterios ambientales en sus actividades.',
-                    icon: 'tabler:map',
-                },
-                {
-                    title: 'Instituciones y empresas',
-                    description: 'Adecuada para personas interesadas en trabajar en instituciones o empresas dedicadas al diseño, aplicación, gestión y evaluación de proyectos de desarrollo sostenible, en el ámbito público o privado.',
-                    icon: 'tabler:briefcase',
-                }      
-            ]}
-            image={{
-                src: '~/assets/images/maestrias/fvi-quienes-deben-asistir-msc-cs.jpg',
-                alt: '¿Quiénes deben asistir a la Maestría en Ciencias de la Sostenibilidad?',
-            }}
-        >
-            <Fragment slot="content">
-            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-                ¿Quiénes deben asistir?
-            </h3>
-            </Fragment>
-        </Content>
-        {/* ¿Qué vas a aprender? */}
-        <Content
-            items={[
-            {
-                title: 'Proporcionar los conocimientos',
-                description: 'Teóricos-metodológicos en torno a la sustentabilidad del desarrollo regional.',
-                icon: 'tabler:book',
-            },
-            {
-                title: 'Estudiar la relación entre sociedad y territorio',
-                description: 'Basados en un análisis de sus componentes biofísicos, socioeconómicos, culturales y políticos con el fin de poder entregar propuestas y soluciones que se adapten a las especificidades locales y regionales.',
-                icon: 'tabler:map',
-            },
-            {
-                title: 'Proporcionar herramientas teóricas',
-                description: 'Metodológicas e instrumentales para elaborar, implementar, sistematizar y evaluar proyectos sustentables, así como la gestión de este proceso.',
-                icon: 'tabler:tools',
-            },
-            {
-                title: 'Proponer soluciones a los problemas',
-                description: 'Del desarrollo sustentable (humano, social, ambiental, de infraestructura, institucional), a través del análisis y evaluación con proyección internacional.',
-                icon: 'tabler:bulb',
-            },
-            {
-                title: 'Incorporar la visión y acción',
-                description: 'De los diferentes actores del desarrollo en el proceso de planeación y gestión y promover la colaboración de las diferentes disciplinas en la solución de problemas que enfrenta el desarrollo y la conservación del ambiente.',
-                icon: 'tabler:users',
-            },
-            {
-                title: 'Fomentar en los alumnos',
-                description: 'La capacidad de investigación, análisis e incluso de participación en los procesos de planeación regional con un enfoque de sustentabilidad.',
-                icon: 'tabler:background',
-            }
+            <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, expedido por la <strong
+              >Universidad Centro Panamericano de Estudios Superiores</strong
+            >, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span
+              class="text-primary font-semibold">N° MAES180409</span
+            >, Dirección de Educación Superior - Secretaría de Educación Pública.
+          </p>
 
-            ]}
-            image={{
-            src: '~/assets/images/maestrias/fvi-que-vas-aprender-msc-mars.webp',
-            alt: '¿Qué vas a aprender en la Maestría en Ciencias de la Sostenibilidad?',
-            }}
-        >
-            <Fragment slot="content">
-            <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-                ¿Qué vas a aprender?
-            </h3>
-            </Fragment>
-        </Content>
+          {/* Diploma */}
+          <Degree degreeName="Maestría en Ciencias de la Sostenibilidad" incorporationNumber="MAES180407" />
+          <p class="text-sm text-left mt-6 mb-8">
+            <span class="italic"
+              >Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no
+              tenga problemas a la hora de presentar los títulos en un país fuera de México</span
+            >.
+          </p>
+        </Fragment>
+      </HeroSection>
 
-        {/* 3. COLABORAN */}
-        <HeroSection
-            id="colaboran"
-            tagline="Colaboran"
-            title='Entidades Colaboradoras'
-            image={{
-                src: '~/assets/images/maestrias/fvi-colaboran-msc-ppet.jpg',
-                alt: 'Entidades colaboradoras de la Maestría en Ciencias de la Sostenibilidad',
-            }}
-        >
-            <Fragment slot="bg">
-                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-            </Fragment>
-        </HeroSection>
+      {/* 10. POST MAESTRÍA (commond) */}
+      <PostMaestria />
 
-        {/* 4. ESTRUCTURA DEL PROGRAMA */}
-        <HeroSection
-            id="estructura"
-            tagline="Estructura"
-            title='Estructura del Programa'
-            subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span> tiene una duración de <strong>seis trimestres (2 años)</strong> con un total de <strong>1,440 horas lectivas (90 créditos)</strong>. Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría</strong> - <strong>PTM</strong>; posteriormente en el sexto trimestre, el alumno deberá acreditar la opción terminal de titulación y realizar sus trámites de graduación de acuerdo a la modalidad que haya elegido.'
-        >
-            <Fragment slot="content">
-                <ProgramCurriculum courses={cienciasSostenibilidadCurriculum.courses} />
-            </Fragment>
-        </HeroSection>
+      {/* 11. BECAS (commond) */}
+      <Scholarship />
 
-        {/* 5. PROYECTO PTM (commond) */}
-        <ProjectPTM />
+      {/* 12. COMO APLICAR (commond) */}
+      <HowToApply />
 
-        {/* 6. COMO SE ESTUDIA (commond) */}
-        <HowToStudy />
+      {/* 13. INSCRIPCIÓN (commond) */}
+      <Registration />
 
-        {/* 7. CLAUSTRO */}
-        <ClaustroInfo />
-        {
-            facultyList.map((prof) => (
-            <FacultyMember {...prof}>
-                <Fragment slot="bg">
-                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark" />
-                </Fragment>
-            </FacultyMember>
-            ))
-        }
+      {/* 14. MEDIOS DE PAGO (commond) */}
+      <PaymentMethods />
 
-        {/* 8. BENEFICIOS */}
-        <Features
-            id="beneficios"
-            tagline='Beneficios'
-            title="¿Cómo te beneficiará este programa?"
-            subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, será capaz de:'
-            columns={2}
-            items={[
-                {
-                    title: 'Fundamentos del Desarrollo Sostenible',
-                        description: 'Comprender los principios del paradigma de la sostenibilidad y sus dimensiones ambiental, sociocultural y económica a escala regional.',
-                        icon: 'tabler:book',
-                },
-                {
-                    title: 'Planificación Regional Sustentable',
-                        description: 'Diseñar planes territoriales para comunas y regiones que integren uso del suelo, recursos y equidad dentro de criterios de desarrollo sustentable.',
-                        icon: 'tabler:map-2',
-                },
-                {
-                    title: 'Gestión de Proyectos Sostenibles',
-                        description: 'Diseñar, ejecutar y evaluar proyectos de gestión pública y privada aplicando indicadores y herramientas de sostenibilidad.',
-                        icon: 'tabler:layers-linked',
-                },
-                {
-                    title: 'Negociación y Participación Social',
-                        description: 'Facilitar procesos participativos y negociaciones inclusivas entre actores sociales para conciliar desarrollo y conservación ambiental.',
-                        icon: 'tabler:heart-handshake',
-                },
-                {
-                    title: 'Proyectos Urbanos Sustentables',
-                        description: 'Desarrollar planes urbanos que promuevan movilidad sostenible, espacios verdes, eficiencia energética y resiliencia comunitaria.',
-                        icon: 'tabler:building',
-                },
-                {
-                    title: 'Asesoría para Desarrollo Urbano Viable',
-                        description: 'Brindar asesoramiento técnico y financiero a entidades municipales y provinciales para proyectos que atiendan población, entorno natural y patrimonio cultural.',
-                        icon: 'tabler:currency-dollar',
-                },
-                {
-                    title: 'Innovación y Liderazgo Ético',
-                        description: 'Emprender políticas, programas y proyectos novedosos con un alto sentido ético para intervenir en ámbitos nacionales e internacionales.',
-                        icon: 'tabler:award',
-                },
-                {
-                    title: 'Proyección e Impacto Internacional',
-                        description: 'Planear y ejecutar iniciativas con alcance nacional e internacional que generen impacto sostenible y colaboraciones multisectoriales.',
-                        icon: 'tabler:globe',
-                },
-            ]}
-        />
-
-        {/* Potencia tus salidas */}
-        <Features3
-            tagline='Salidas Profesionales'
-            title="Potencia tus Salidas Profesionales"
-            subtitle='En términos específicos, se espera que el egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, pueda ser demandado tanto en empresas y organizaciones de la Administración o como en otras de índole privada, en los ámbitos del Medio Ambiente y Sostenibilidad. Las salidas profesionales, se centran claramente en:'
-            columns={3}
-            defaultIcon="tabler:point-filled"
-            items={[
-                {
-                    title: 'Director de Conservación y Gestión de Recursos Naturales',
-                    description: 'Liderar organizaciones públicas y privadas dedicadas a la conservación y manejo de recursos, participando en la planificación y diseño de políticas públicas a nivel nacional e internacional.'
-                },
-                {
-                    title: 'Técnico Local en Programas Sustentables',
-                    description: 'Ejecutar y operar programas y proyectos de investigación y gestión en gobiernos locales, aplicando enfoques de desarrollo sustentable y buenas prácticas operativas.'
-                },
-                {
-                    title: 'Planificador y Gestor de Proyectos Sostenibles',
-                    description: 'Diseñar, planificar y gestionar proyectos tecnológicos, científicos y de gestión que integren criterios ambientales, sociales y económicos dentro de un marco de sostenibilidad.'
-                },
-                {
-                    title: 'Consultor en Políticas y Evaluación de Sostenibilidad',
-                    description: 'Asesorar en la formulación, evaluación y monitoreo de políticas públicas y privadas orientadas a la sostenibilidad y la mitigación de impactos ambientales.'
-                },
-                {
-                    title: 'Investigador en Ciencias de la Sostenibilidad',
-                    description: 'Desarrollar investigación aplicada y teórica sobre sostenibilidad, generando evidencia para la toma de decisiones y la innovación en políticas y proyectos.'
-                },
-                {
-                    title: 'Asesor Internacional en Modelos de Desarrollo Sostenible',
-                    description: 'Brindar asesoría a organismos internacionales en la elaboración de diagnósticos y modelos de desarrollo sostenible a escala local y regional.'
-                },
-                {
-                    title: 'Jefe de Proyecto Multidisciplinario en Soluciones Sostenibles',
-                    description: 'Dirigir equipos interdisciplinarios en el diseño, implementación y evaluación de soluciones globales y sostenibles con rigor científico y técnico.'
-                },
-                {
-                    title: 'Asesor Estratégico en Desarrollo Sustentable para Empresas',
-                    description: 'Prestar servicios de consultoría para la elaboración de planes estratégicos y estudios de desarrollo sustentable orientados a la viabilidad financiera y el impacto ambiental positivo.'
-                }
-            ]}
-        />
-
-        {/* Más allá del Programa - Pasantía Técnica Internacional (commond) */}
-        <BeyondTheProgram />
-
-        {/* 9. TITULACIÓN */}
-        <HeroSection
-            id="titulacion"
-            tagline="titulacion"
-            title='Evaluación y Titulación'
-        >
-            <Fragment slot="bg">
-                <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-            </Fragment>
-            <Fragment slot="content">
-                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
-                <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
-
-                <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
-                <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Ciencias de la Sostenibilidad</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180409</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
-            
-                {/* Diploma */}
-                <Degree
-                    degreeName="Maestría en Ciencias de la Sostenibilidad"
-                    incorporationNumber="MAES180407"
-                />
-                <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
-            </Fragment>
-        </HeroSection>
-
-        {/* 10. POST MAESTRÍA (commond) */}
-        <PostMaestria />
-
-        {/* 11. BECAS (commond) */}
-        <Scholarship />
-
-        {/* 12. COMO APLICAR (commond) */}
-        <HowToApply />
-
-        {/* 13. INSCRIPCIÓN (commond) */}
-        <Registration />
-
-        {/* 14. MEDIOS DE PAGO (commond) */}
-        <PaymentMethods />
-
-        {/* 15. SOLICITUDES (commond) */}
-        <Requests />
-
-        </div>
+      {/* 15. SOLICITUDES (commond) */}
+      <Requests program={metadata.title} />
     </div>
-    <!-- END Desktop Sidebar & Mobile Floating Pill -->
+  </div>
+  <!-- END Desktop Sidebar & Mobile Floating Pill -->
 </Layout>

@@ -1,0 +1,23 @@
+---
+import AcademicRequestForm from '~/components/common/AcademicRequestForm.astro';
+import CorporateSolutions from '~/components/common/CorporateSolutions.astro';
+
+export interface Props {
+  program: string;
+}
+
+const { program } = Astro.props;
+
+const programs = [
+  'Posdoctorado en Gestión y Gobernanza de Proyectos Ambientales',
+  'Posdoctorado en Ciencias Aplicadas al Medio Ambiente',
+  'Posdoctorado en Sistemas de Gestión Medioambiental',
+  'Posdoctorado en Peritaje Judicial en materia de delitos ambientales',
+  'Posdoctorado en Sistemas de Gestión de la Seguridad y Salud en el trabajo',
+  'Posdoctorado en Ciencias de la Sostenibilidad',
+  'Posdoctorado en Ciencias de la Educación Ambiental',
+];
+---
+
+<AcademicRequestForm program={program} programs={programs} programLabel="Posdoctorado" formPrefix="postdoc" />
+<CorporateSolutions />

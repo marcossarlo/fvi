@@ -267,7 +267,14 @@ const getTabLabel = (label: string) => label.replace(/^\d+\.\s*/, '');
     let isMenuOpen = false;
     let isSidebarCollapsed = false;
     let hasScrolledToFirstSection = false;
+    let isNavigatingToRequests = false;
+    let requestNavigationTimer: number | undefined;
+    let requestCorrectionTimer: number | undefined;
     const cleanups: Cleanup[] = [];
+    cleanups.push(() => {
+      if (requestNavigationTimer !== undefined) window.clearTimeout(requestNavigationTimer);
+      if (requestCorrectionTimer !== undefined) window.clearTimeout(requestCorrectionTimer);
+    });
     const listen = <K extends keyof WindowEventMap>(
       target: Window | HTMLElement | HTMLAnchorElement | HTMLButtonElement,
       event: K,
@@ -393,6 +400,13 @@ const getTabLabel = (label: string) => label.replace(/^\d+\.\s*/, '');
     const checkScrollPosition = () => {
       if (!presentationSection) return;
 
+      if (isNavigatingToRequests) {
+        const requestsTop = requestsSection?.getBoundingClientRect().top;
+        if (requestsTop === undefined || requestsTop > window.innerHeight * 0.8) return;
+        hideTOC();
+        return;
+      }
+
       const presentationTop = presentationSection.getBoundingClientRect().top;
       const requestsTop = requestsSection?.getBoundingClientRect().top;
       const isWithinProgram =
@@ -420,6 +434,53 @@ const getTabLabel = (label: string) => label.replace(/^\d+\.\s*/, '');
       });
     }
 
+    if (desktopSidebarCta && requestsSection) {
+      listen(desktopSidebarCta, 'click', (event) => {
+        event.preventDefault();
+
+        const target = requestsSection.querySelector<HTMLElement>('h2') ?? requestsSection;
+        window.history.pushState(null, '', desktopSidebarCta.hash);
+
+        const scrollToTarget = () => {
+          const stickyHeader = document.querySelector<HTMLElement>('#header[data-aw-sticky-header]');
+          const offset = (stickyHeader?.getBoundingClientRect().height ?? 0) + 12;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: targetTop, behavior: 'smooth' });
+          checkScrollPosition();
+        };
+
+        const hasContentOffset = programContent && getComputedStyle(programContent).marginLeft !== '0px';
+        isNavigatingToRequests = true;
+        hideTOC();
+
+        if (!programContent || !hasContentOffset) {
+          scrollToTarget();
+          return;
+        }
+
+        let isFinished = false;
+        const finishNavigation = () => {
+          if (isFinished) return;
+          isFinished = true;
+          if (requestNavigationTimer !== undefined) window.clearTimeout(requestNavigationTimer);
+          programContent.removeEventListener('transitionend', handleTransitionEnd);
+          scrollToTarget();
+        };
+        const handleTransitionEnd = (transitionEvent: TransitionEvent) => {
+          if (transitionEvent.target === programContent && transitionEvent.propertyName === 'margin-left') {
+            finishNavigation();
+          }
+        };
+
+        programContent.addEventListener('transitionend', handleTransitionEnd);
+        requestNavigationTimer = window.setTimeout(finishNavigation, 600);
+        cleanups.push(() => {
+          if (requestNavigationTimer !== undefined) window.clearTimeout(requestNavigationTimer);
+          programContent.removeEventListener('transitionend', handleTransitionEnd);
+        });
+      });
+    }
+
     tocLinks.forEach((link, index) => {
       listen(link, 'mouseenter', () => showSidebarTooltip(link, index));
       listen(link, 'mouseleave', () => sidebarTooltip?.classList.add('hidden'));
@@ -437,6 +498,29 @@ const getTabLabel = (label: string) => label.replace(/^\d+\.\s*/, '');
 
     listen(window, 'resize', setContentOffset);
     listen(window, 'scroll', checkScrollPosition, { passive: true });
+    listen(window, 'scrollend', () => {
+      if (!isNavigatingToRequests) return;
+
+      const requestsTop = requestsSection?.getBoundingClientRect().top;
+      if (requestsTop === undefined || requestsTop > window.innerHeight * 0.8) {
+        isNavigatingToRequests = false;
+        checkScrollPosition();
+        return;
+      }
+
+      requestCorrectionTimer = window.setTimeout(() => {
+        const target = requestsSection?.querySelector<HTMLElement>('h2') ?? requestsSection;
+        if (target) {
+          const stickyHeader = document.querySelector<HTMLElement>('#header[data-aw-sticky-header]');
+          const offset = (stickyHeader?.getBoundingClientRect().height ?? 0) + 12;
+          const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: targetTop, behavior: 'instant' });
+        }
+        isNavigatingToRequests = false;
+        requestCorrectionTimer = undefined;
+        checkScrollPosition();
+      }, 100);
+    });
 
     setContentOffset();
     checkScrollPosition();

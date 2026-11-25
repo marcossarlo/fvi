@@ -27,18 +27,14 @@ import HowToApply from '~/components/maestria/HowToApply.astro';
 
 const metadata = {
   title: 'Maestría en Medio Ambiente y Responsabilidad Social',
-  description: 'Estudia la Maestría online en Medio Ambiente y Responsabilidad Social. Fórmate como líder en gestión ambiental, RSC y estrategias de economía sostenible.',
-  keywords: 'maestría medio ambiente, responsabilidad social, gestión ambiental, economía sostenible, RSC, ISO 14001, proyecto terminal, becas Fondo Verde',
+  description:
+    'Estudia la Maestría online en Medio Ambiente y Responsabilidad Social. Fórmate como líder en gestión ambiental, RSC y estrategias de economía sostenible.',
+  keywords:
+    'maestría medio ambiente, responsabilidad social, gestión ambiental, economía sostenible, RSC, ISO 14001, proyecto terminal, becas Fondo Verde',
 };
 
-const facultyIds = [
-  'angel-guillemes',
-  'alberto-jimenez',
-  'erick-brenes',
-  'maria-teresa-perez',
-  'yordanis-puerta'
-];
-const facultyList = facultyIds.map(id => faculty[id]).filter(Boolean);
+const facultyIds = ['angel-guillemes', 'alberto-jimenez', 'erick-brenes', 'maria-teresa-perez', 'yordanis-puerta'];
+const facultyList = facultyIds.map((id) => faculty[id]).filter(Boolean);
 
 const tabs = [
   { id: 'bienvenida', label: '1. Bienvenida' },
@@ -61,24 +57,26 @@ const tabs = [
 <Layout metadata={metadata} showSecondaryNav={false}>
   {/* HeroPrograms ********************************************** */}
   <HeroPrograms
-    tagline='Convocatoria Abierta 2026'
+    tagline="Convocatoria Abierta 2026"
     title='Maestría en<br /> <span class="text-primary">Medio Ambiente y Responsabilidad Social</span>'
-    subtitle='Las empresas con futuro necesitan <strong>líderes sociales ambientalmente responsables</strong>.'
+    subtitle="Las empresas con futuro necesitan <strong>líderes sociales ambientalmente responsables</strong>."
     actions={[
       {
-          variant: 'primary',
-          text: 'Solicita información',
-          href: '#solicitudes',
-          icon: 'tabler:mail-forward',
-          class: '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
+        variant: 'primary',
+        text: 'Solicita información',
+        href: '#solicitudes',
+        icon: 'tabler:mail-forward',
+        class:
+          '!bg-primary !border-primary !text-white hover:!bg-secondary hover:!border-secondary transition-colors duration-300',
       },
       {
-          variant: 'secondary',
-          text: 'Ver Folleto Académico',
-          href: 'https://drive.google.com/file/d/0B0HLluZifC0PaVk4alRYMFM2N3M/view',
-          target: '_blank',
-          icon: 'tabler:download',
-          class: '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
+        variant: 'secondary',
+        text: 'Ver Folleto Académico',
+        href: 'https://drive.google.com/file/d/0B0HLluZifC0PaVk4alRYMFM2N3M/view',
+        target: '_blank',
+        icon: 'tabler:download',
+        class:
+          '!bg-transparent !text-white !border-[1px] !border-solid !border-white/50 hover:!bg-white/10 hover:!text-white hover:!border-white transition-all duration-300',
       },
     ]}
     image={{
@@ -96,30 +94,30 @@ const tabs = [
 
     {/* Main Content Wrapper that creates space for the Desktop Sidebar */}
     <div data-program-content class="pb-24 lg:pb-0 transition-[margin-left] duration-500 ease-in-out">
-      
       {/* 1. BIENVENIDA */}
       <Content
-          id="bienvenida"
-          tagline="Bienvenida"
-          title="Erick Brenes, PhD"
-          subtitle="Director de la Maestría"
-          items={[
-            {
-              title: 'Bienvenida del Director de la Maestría',
-              description: 'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales de los multi-stakeholders.<br><br>El objetivo esencial de este programa es formar profesionales en la planificación y gestión de empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
-              icon: 'tabler:leaf',
-            }
-          ]}
-          image={{
-            src: '~/assets/images/users/fvi-erick-brenes.webp',
-            alt: 'Erick Brenes, PhD - Director de la Maestría en Medio Ambiente y Responsabilidad Social',
-          }}
-        >
-          <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
-          </Fragment>
+        id="bienvenida"
+        tagline="Bienvenida"
+        title="Erick Brenes, PhD"
+        subtitle="Director de la Maestría"
+        items={[
+          {
+            title: 'Bienvenida del Director de la Maestría',
+            description:
+              'La empresa del siglo XXI exige políticas ambientales sostenibles, además de una responsabilidad social corporativa rigurosa, que satisfaga las necesidades económicas y sociales de los multi-stakeholders.<br><br>El objetivo esencial de este programa es formar profesionales en la planificación y gestión de empresas socialmente responsables incorporando el componente ambiental de forma integral y sistémica en cualquier organización industrial.',
+            icon: 'tabler:leaf',
+          },
+        ]}
+        image={{
+          src: '~/assets/images/users/fvi-erick-brenes.webp',
+          alt: 'Erick Brenes, PhD - Director de la Maestría en Medio Ambiente y Responsabilidad Social',
+        }}
+      >
+        <Fragment slot="bg">
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>
       </Content>
-      
+
       {/* 2. LA MAESTRÍA */}
       <Features2
         id="maestria"
@@ -130,18 +128,19 @@ const tabs = [
         items={[
           {
             title: 'Paradigma de Crecimiento Inclusivo',
-            description: 'Nuestra civilización enfrenta una crisis económica, social y ambiental que exige respuestas integrales y sistémicas. Este nuevo paradigma requiere que las organizaciones privadas, públicas y del tercer sector impulsen un crecimiento inclusivo, capaz de armonizar el desarrollo económico, la inclusión social y la protección del medio ambiente.',
+            description:
+              'Nuestra civilización enfrenta una crisis económica, social y ambiental que exige respuestas integrales y sistémicas. Este nuevo paradigma requiere que las organizaciones privadas, públicas y del tercer sector impulsen un crecimiento inclusivo, capaz de armonizar el desarrollo económico, la inclusión social y la protección del medio ambiente.',
             icon: 'tabler:scale',
           },
           {
             title: 'Liderazgo estratégico empresarial',
-            description: 'La empresa del siglo XXI necesita políticas ambientales sostenibles y una responsabilidad social corporativa rigurosa que responda a las necesidades económicas y sociales de sus grupos de interés. Esta formación te prepara para desempeñar un papel clave en la estrategia de cualquier organización y ampliar tus oportunidades profesionales.',
+            description:
+              'La empresa del siglo XXI necesita políticas ambientales sostenibles y una responsabilidad social corporativa rigurosa que responda a las necesidades económicas y sociales de sus grupos de interés. Esta formación te prepara para desempeñar un papel clave en la estrategia de cualquier organización y ampliar tus oportunidades profesionales.',
             icon: 'tabler:briefcase',
-          }
+          },
         ]}
-      >
-      </Features2>
-      
+      />
+
       {/* ¿Quiénes deben asistir? */}
       <Content
         isReversed
@@ -177,9 +176,7 @@ const tabs = [
         }}
       >
         <Fragment slot="content">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            ¿Quiénes deben asistir?
-          </h3>
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">¿Quiénes deben asistir?</h3>
         </Fragment>
       </Content>
       {/* ¿Qué vas a aprender? */}
@@ -240,9 +237,7 @@ const tabs = [
         }}
       >
         <Fragment slot="content">
-          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-            ¿Qué vas a aprender?
-          </h3>
+          <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">¿Qué vas a aprender?</h3>
         </Fragment>
       </Content>
 
@@ -250,14 +245,14 @@ const tabs = [
       <HeroSection
         id="colaboran"
         tagline="Colaboran"
-        title='Entidades Colaboradoras'
+        title="Entidades Colaboradoras"
         image={{
-            src: '~/assets/images/maestrias/fvi-colaboran-msc-mars.webp',
-            alt: 'Entidades colaboradoras de la Maestría en Medio Ambiente y Responsabilidad Social',
+          src: '~/assets/images/maestrias/fvi-colaboran-msc-mars.webp',
+          alt: 'Entidades colaboradoras de la Maestría en Medio Ambiente y Responsabilidad Social',
         }}
       >
         <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
         </Fragment>
       </HeroSection>
 
@@ -265,7 +260,7 @@ const tabs = [
       <HeroSection
         id="estructura"
         tagline="Estructura"
-        title='Estructura del Programa'
+        title="Estructura del Programa"
         subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span> tiene una duración de <strong>seis trimestres (2 años)</strong> con un total de <strong>1,440 horas lectivas (90 créditos)</strong>. Su plan de estudios está compuesto de una secuencia básica de tres trimestres donde se imparten nueve cursos diseñados para dar una sólida formación en las áreas centrales del programa. Durante el cuarto y quinto trimestre, el alumno desarrolla su <strong>Proyecto Terminal de Maestría</strong> - <strong>PTM</strong>; posteriormente en el sexto trimestre, el alumno deberá acreditar la opción terminal de titulación y realizar sus trámites de graduación de acuerdo a la modalidad que haya elegido.'
       >
         <Fragment slot="content">
@@ -294,46 +289,52 @@ const tabs = [
       {/* 8. BENEFICIOS */}
       <Features
         id="beneficios"
-        tagline='Beneficios'
+        tagline="Beneficios"
         title="¿Cómo te beneficiará este programa?"
         subtitle='El egresado de la <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, será capaz de:'
         columns={2}
         items={[
           {
             title: 'Visión Integral',
-            description: 'Adquirir una visión integral de los problemas ambientales para desarrollar proyectos con herramientas de sostenibilidad.',
+            description:
+              'Adquirir una visión integral de los problemas ambientales para desarrollar proyectos con herramientas de sostenibilidad.',
             icon: 'tabler:world',
           },
           {
             title: 'Normativa y Auditoría',
-            description: 'Conocer la normativa pertinente y las herramientas de Gestión, Reporting, y Auditoría de la RSC: ISO 9001, ISO 14001, OHSAS 18001, SA 8000, SGE 21.',
+            description:
+              'Conocer la normativa pertinente y las herramientas de Gestión, Reporting, y Auditoría de la RSC: ISO 9001, ISO 14001, OHSAS 18001, SA 8000, SGE 21.',
             icon: 'tabler:gavel',
           },
           {
             title: 'Fundamentos Socio-económicos',
-            description: 'Comprender los fundamentos socio-económicos y científicos de los problemas relacionados con la biosfera y ofrecer una solución con perspectiva interdisciplinaria, integradora y sistémica.',
+            description:
+              'Comprender los fundamentos socio-económicos y científicos de los problemas relacionados con la biosfera y ofrecer una solución con perspectiva interdisciplinaria, integradora y sistémica.',
             icon: 'tabler:brain',
           },
           {
             title: 'Desarrollo Sostenible',
-            description: 'Obtener los conocimientos y habilidades necesarias para contribuir a la construcción de una sociedad socio-económica y ambientalmente sostenible.',
+            description:
+              'Obtener los conocimientos y habilidades necesarias para contribuir a la construcción de una sociedad socio-económica y ambientalmente sostenible.',
             icon: 'tabler:building-community',
           },
           {
             title: 'Gestión Organizacional',
-            description: 'Identificar y responder a los desafíos que enfrenta una gestión ambiental integral y sistémica de organizaciones públicas, privadas o del tercer sector ya sea como parte de un proceso de desarrollo o de transformación con responsabilidad socio-ambiental.',
+            description:
+              'Identificar y responder a los desafíos que enfrenta una gestión ambiental integral y sistémica de organizaciones públicas, privadas o del tercer sector ya sea como parte de un proceso de desarrollo o de transformación con responsabilidad socio-ambiental.',
             icon: 'tabler:chart-arrows-vertical',
           },
           {
             title: 'Resolución de Conflictos',
-            description: 'Tomar conciencia de los conflictos socio-ambientales subyacentes a la actividad económica y proponer soluciones sistémicas e integradoras.',
+            description:
+              'Tomar conciencia de los conflictos socio-ambientales subyacentes a la actividad económica y proponer soluciones sistémicas e integradoras.',
             icon: 'tabler:puzzle',
-          }
+          },
         ]}
       />
       {/* Potencia tus salidas */}
       <Features3
-        tagline='Salidas Profesionales'
+        tagline="Salidas Profesionales"
         title="Potencia tus Salidas Profesionales"
         subtitle='La <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, prepara al alumno/a para trabajar en organizaciones tanto públicas como privadas, son profesionales que cultivan la ética en los negocios, la buena praxis y la responsabilidad corporativa. Las salidas profesionales, se centran claramente en:'
         columns={3}
@@ -341,15 +342,18 @@ const tabs = [
         items={[
           {
             title: 'Organizaciones ambientales',
-            description: 'En posiciones operativas y estratégicas en organizaciones que se dedican específicamente a la investigación y conservación de los recursos naturales.',
+            description:
+              'En posiciones operativas y estratégicas en organizaciones que se dedican específicamente a la investigación y conservación de los recursos naturales.',
           },
           {
             title: 'Unidades de negocios',
-            description: 'En unidades de negocios ambientales de organizaciones públicas y privadas de grandes dimensiones.',
+            description:
+              'En unidades de negocios ambientales de organizaciones públicas y privadas de grandes dimensiones.',
           },
           {
             title: 'Comunicación de impacto',
-            description: 'Organizaciones o unidades de negocios que comunican impactos socio/ambientales a la comunidad en general.',
+            description:
+              'Organizaciones o unidades de negocios que comunican impactos socio/ambientales a la comunidad en general.',
           },
           {
             title: 'Equipos de investigación',
@@ -361,7 +365,8 @@ const tabs = [
           },
           {
             title: 'Líder en Sostenibilidad',
-            description: 'Profesional Líder en la planificación, desarrollo, gestión e implementación de diferentes estrategias de Sostenibilidad, Medio Ambiente y RSC.',
+            description:
+              'Profesional Líder en la planificación, desarrollo, gestión e implementación de diferentes estrategias de Sostenibilidad, Medio Ambiente y RSC.',
           },
           {
             title: 'Responsable de sistemas',
@@ -381,35 +386,55 @@ const tabs = [
           },
           {
             title: 'Gestor ambiental',
-            description: 'Gestor ambiental de industrias y/o empresas públicas y privadas que enfrentan grandes retos socio/ambientales en su gestión.',
+            description:
+              'Gestor ambiental de industrias y/o empresas públicas y privadas que enfrentan grandes retos socio/ambientales en su gestión.',
           },
         ]}
       />
-        {/* Más allá del Programa - Pasantía Técnica Internacional */}
-        <BeyondTheProgram />
+      {/* Más allá del Programa - Pasantía Técnica Internacional */}
+      <BeyondTheProgram />
 
       {/* 9. TITULACIÓN */}
-      <HeroSection
-        id="titulacion"
-        tagline="titulacion"
-        title='Evaluación y Titulación'
-      >
+      <HeroSection id="titulacion" tagline="titulacion" title="Evaluación y Titulación">
         <Fragment slot="bg">
-            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+          <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
         </Fragment>
         <Fragment slot="content">
-          <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">Evaluación</h3>
-          <p class="text-left">La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong>presentado y defendido ante un tribunal</strong>.</p>
+          <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mb-4">
+            Evaluación
+          </h3>
+          <p class="text-left">
+            La evaluación es continua durante todo el período lectivo e incluye, según corresponda, participación en
+            foros, trabajos escritos y cuestionarios por módulo. Además, cada participante debe desarrollar
+            individualmente un <strong>Proyecto Terminal de Maestría</strong>, tutorizado por un experto y <strong
+              >presentado y defendido ante un tribunal</strong
+            >.
+          </p>
 
-          <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">Titulación</h3>
-          <p class="text-left mt-6 mb-8">Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong>Proyecto Terminal de Maestría</strong> obtendrán el grado de maestría.<br><br>Título de <span class="text-primary font-semibold"> Maestría en</span> <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, expedido por la <strong>Universidad Centro Panamericano de Estudios Superiores</strong>, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span class="text-primary font-semibold">N° MAES180410</span>, Dirección de Educación Superior - Secretaría de Educación Pública.</p>
-          
+          <h3 class="text-left text-xl font-bold tracking-tight text-primary dark:text-accent sm:text-2xl mt-6 mb-4">
+            Titulación
+          </h3>
+          <p class="text-left mt-6 mb-8">
+            Los participantes que hayan superado con éxito todas las materias y contenidos básicos, así como el <strong
+              >Proyecto Terminal de Maestría</strong
+            > obtendrán el grado de maestría.<br /><br />Título de <span class="text-primary font-semibold">
+              Maestría en</span
+            >
+            <span class="text-secondary font-semibold">Medio Ambiente y Responsabilidad Social</span>, expedido por la <strong
+              >Universidad Centro Panamericano de Estudios Superiores</strong
+            >, Estudios con Reconocimiento de Validez Oficial - Acuerdo de Incorporación <span
+              class="text-primary font-semibold">N° MAES180410</span
+            >, Dirección de Educación Superior - Secretaría de Educación Pública.
+          </p>
+
           {/* Diploma */}
-          <Degree
-            degreeName="MAESTRÍA EN MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL"
-            incorporationNumber="MAES180410"
-          />
-          <p class="text-sm text-left mt-6 mb-8"><span class="italic">Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no tenga problemas a la hora de presentar los títulos en un país fuera de México</span>.</p>
+          <Degree degreeName="MAESTRÍA EN MEDIO AMBIENTE Y RESPONSABILIDAD SOCIAL" incorporationNumber="MAES180410" />
+          <p class="text-sm text-left mt-6 mb-8">
+            <span class="italic"
+              >Desde México se realiza el proceso de apostillado por la Haya y la legitimación de firmas para que no
+              tenga problemas a la hora de presentar los títulos en un país fuera de México</span
+            >.
+          </p>
         </Fragment>
       </HeroSection>
 
@@ -429,8 +454,7 @@ const tabs = [
       <PaymentMethods />
 
       {/* 15. SOLICITUDES (commond) */}
-      <Requests />
-
+      <Requests program={metadata.title} />
     </div>
   </div>
   <!-- END Desktop Sidebar & Mobile Floating Pill -->
