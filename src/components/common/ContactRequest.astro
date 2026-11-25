@@ -299,10 +299,12 @@ const areas = [
 
     const countrySelect = document.querySelector<HTMLSelectElement>('#contact-country');
     const countryCodeInput = document.querySelector<HTMLInputElement>('#contact-country-code');
+    const phoneInput = document.querySelector<HTMLInputElement>('#contact-phone');
 
     if (countrySelect && countryCodeInput) {
       countrySelect.addEventListener('change', () => {
         countryCodeInput.value = countrySelect.selectedOptions[0]?.dataset.callingCode ?? '';
+        phoneInput?.focus();
       });
     }
   </script>
