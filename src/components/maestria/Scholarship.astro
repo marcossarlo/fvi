@@ -3,6 +3,8 @@ import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Alert from '~/components/ui/Alert.astro';
+import SocialLinks from '~/components/postdoctorado/SocialLinks.astro';
+
 ---
 
 {/* 11. BECAS (Común) */}
@@ -26,13 +28,13 @@ import Alert from '~/components/ui/Alert.astro';
         {
             title: 'Beca Fondo Verde – 50% de cobertura',
             description:
-                '<span class="font-bold text-primary">Fondo Verde</span>, ha establecido un <strong>Programa de Becas</strong> que permitirá que ciudadanos europeos y latinoamericanos puedan acceder en forma especial a nuestros posgrados impartidos en línea. La beca <strong>cubre el 50% del coste del programa</strong>. <br> <a href="https://fondoverdeinstitute.com/docs/Solicitud-de-Beca-FV.doc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 font-bold mt-2"> » Descargue Solicitud de Beca Fondo Verde </a>',
+                '<span class="font-bold text-primary">Fondo Verde</span>, ha establecido un <strong>Programa de Becas</strong> que permitirá que ciudadanos europeos y latinoamericanos puedan acceder en forma especial a nuestros posgrados impartidos en línea. La beca <strong>cubre el 50% del coste del programa</strong>. <br> » <a href="/docs/Solicitud-de-Beca-FV.doc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 font-bold mt-2"> Descargue Solicitud de Beca Fondo Verde </a>',
             icon: 'tabler:certificate',
         },
         {
             title: 'Beca FUMED – 12.5% adicional',
             description:
-                'Mediante convenio firmado entre <span class="font-bold text-primary">Fondo Verde</span> y la <span class="font-bold text-primary">Fundación Mexicana de Educación a Distancia - FUMED</span>, se concede una <strong>beca adicional del 12.5%</strong> sobre el coste del programa con beca a todos aquellos alumnos que soliciten, se les conceda y adquieran el compromiso de elaborar el <strong>Proyecto Terminal de Maestría</strong> – <strong>PTM</strong>, entregando copia del proyecto a la Fundación, autorizándole a promoverlo y difundirlo si lo cree conveniente. <br> <a href="https://fondoverdeinstitute.com/docs/Solicitud-de-Beca-FUMED.doc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 font-bold mt-2"> » Descargue Solicitud de Beca de la Fundación Mexicana de Educación a Distancia </a>',
+                'Mediante convenio firmado entre <span class="font-bold text-primary">Fondo Verde</span> y la <span class="font-bold text-primary">Fundación Mexicana de Educación a Distancia - FUMED</span>, se concede una <strong>beca adicional del 12.5%</strong> sobre el coste del programa con beca a todos aquellos alumnos que soliciten, se les conceda y adquieran el compromiso de elaborar el <strong>Proyecto Terminal de Maestría</strong> – <strong>PTM</strong>, entregando copia del proyecto a la Fundación, autorizándole a promoverlo y difundirlo si lo cree conveniente. <br>» <a href="/docs/Solicitud-de-Beca-FUMED.doc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 font-bold mt-2"> Descargue Solicitud de Beca de la Fundación Mexicana de Educación a Distancia </a>',
             icon: 'tabler:award',
         },
     ]}
@@ -55,17 +57,16 @@ import Alert from '~/components/ui/Alert.astro';
              icon: 'tabler:mail',
         },
         {
-            title: 'Seguir a Fondo Verde en Facebook y X (Twitter):',
-            description:
-              '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><a href="https://www.facebook.com/fondoverde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 mr-4"> facebook.com/fondoverde </a></li> <li> <a href="https://x.com/fondoverde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2"> x.com/fondoverde </a></li></ul>',
+            title: 'Únete a la comunidad académica de Fondo Verde',
+            description: SocialLinks,
             icon: 'tabler:social',
-        },
+          },
         {
-            title: 'Difundir la Maestría en LinkedIn',
+            title: 'Comparte la oportunidad educativa',
             description:
-                'Realiza una publicación en tu perfil de <strong>LinkedIn</strong> compartiendo la maestría de tu interés y etiqueta a <span class="text-primary">@Fondo Verde Internacional</span>.',
+              'Publica en tu perfil la maestría de tu interés explicando brevemente cómo contribuirá a tu desarrollo profesional o al desarrollo sostenible de tu comunidad, y etiqueta a <span class="text-primary">Fondo Verde</span>. ',
             icon: 'tabler:share',
-        },
+          }
     ]}
 
       >
