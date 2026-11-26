@@ -3,6 +3,8 @@ import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Alert from '~/components/ui/Alert.astro';
+import SocialLinks from '~/components/postdoctorado/SocialLinks.astro';
+
 ---
 
 {/* 11. BECAS (Común) */}
@@ -55,17 +57,16 @@ import Alert from '~/components/ui/Alert.astro';
              icon: 'tabler:mail',
         },
         {
-            title: 'Seguir a Fondo Verde en Facebook y X (Twitter):',
-            description:
-              '<ul class="list-disc ml-6 mt-2 space-y-1 text-muted"><li><a href="https://www.facebook.com/fondoverde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2 mr-4"> facebook.com/fondoverde </a></li> <li> <a href="https://x.com/fondoverde" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-primary hover:text-secondary underline underline-offset-2"> x.com/fondoverde </a></li></ul>',
+            title: 'Únete a la comunidad académica de Fondo Verde',
+            description: SocialLinks,
             icon: 'tabler:social',
-        },
+          },
         {
-            title: 'Difundir la Maestría en LinkedIn',
+            title: 'Comparte la oportunidad educativa',
             description:
-                'Realiza una publicación en tu perfil de <strong>LinkedIn</strong> compartiendo la maestría de tu interés y etiqueta a <span class="text-primary">@Fondo Verde Internacional</span>.',
+              'Publica en tu perfil la maestría de tu interés explicando brevemente cómo contribuirá a tu desarrollo profesional o al desarrollo sostenible de tu comunidad, y etiqueta a <span class="text-primary">Fondo Verde</span>. ',
             icon: 'tabler:share',
-        },
+          }
     ]}
 
       >

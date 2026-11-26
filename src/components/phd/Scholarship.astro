@@ -3,6 +3,7 @@ import Steps from '~/components/widgets/Steps.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Alert from '~/components/ui/Alert.astro';
+import SocialLinks from '~/components/postdoctorado/SocialLinks.astro';
 ---
 
 <!-- 11. BECAS -->
@@ -59,3 +60,26 @@ import Alert from '~/components/ui/Alert.astro';
         <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
     </Fragment>
 </WidgetWrapper>
+
+<Steps
+    title="Únete a la comunidad académica de Fondo Verde"
+    subtitle="Sigue al menos uno de nuestros canales oficiales para mantenerte informado sobre becas, eventos, investigaciones y oportunidades de formación:"
+    items={[
+        {
+            title: 'Comunidad académica de Fondo Verde',
+            description: SocialLinks,
+            icon: 'tabler:social',
+          },
+        {
+            title: 'Comparte la oportunidad educativa',
+            description:
+              'Publica en tu perfil la maestría de tu interés explicando brevemente cómo contribuirá a tu desarrollo profesional o al desarrollo sostenible de tu comunidad, y etiqueta a <span class="text-primary">Fondo Verde</span>. ',
+            icon: 'tabler:share',
+          }
+    ]}
+    classes={{ container: 'pt-0 mt-0' }}
+    >
+        <Fragment slot="bg">
+            <div class="absolute inset-0 bg-blue-50 dark:bg-pageDark"></div>
+        </Fragment>                
+</Steps>
