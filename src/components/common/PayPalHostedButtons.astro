@@ -1,0 +1,126 @@
+---
+export interface Props {
+  buttons: Array<{
+    title: string;
+    hostedButtonId?: string;
+  }>;
+  columns?: 1 | 2 | 3;
+}
+
+const { buttons, columns = 2 } = Astro.props;
+
+const columnClasses = {
+  1: '',
+  2: 'md:grid-cols-2',
+  3: 'md:grid-cols-3',
+};
+---
+
+<div class:list={['grid gap-6 my-8', columnClasses[columns]]}>
+  {
+    buttons.map(({ title, hostedButtonId }, index) => (
+      <div class="bg-white dark:bg-pageDark p-5 rounded-lg border border-gray-300 dark:border-slate-700 shadow-sm">
+        <p class="font-bold text-primary mb-3 uppercase tracking-wider text-xs border-b border-gray-200 pb-2">
+          {title}
+        </p>
+        {hostedButtonId ? (
+          <>
+            <div
+              id={`paypal-container-${hostedButtonId}-${index}`}
+              data-paypal-hosted-button
+              data-paypal-hosted-button-id={hostedButtonId}
+            />
+            <p class="text-sm text-red-700 dark:text-red-300" data-paypal-error role="alert" hidden>
+              No se pudo cargar el botón de PayPal. Inténtalo de nuevo más tarde.
+            </p>
+          </>
+        ) : (
+          <p class="text-sm text-muted italic">El botón de pago para esta modalidad estará disponible próximamente.</p>
+        )}
+      </div>
+    ))
+  }
+</div>
+
+<script>
+  declare global {
+    interface Window {
+      paypal?: {
+        HostedButtons: (options: { hostedButtonId: string }) => {
+          render: (selector: string) => Promise<void>;
+        };
+      };
+      paypalSdkPromise?: Promise<void>;
+    }
+  }
+
+  const sdkUrl =
+    'https://www.paypal.com/sdk/js?client-id=BAA-lEbrvmoou1HBFzc8QgjB-WX4bmW3RXqa82BeYkKELUnQhFrKZ1c7xsxBW3ZG18PDlU5pSXHDWG66FQ&components=hosted-buttons&disable-funding=venmo&currency=USD';
+
+  const loadPayPalSdk = async () => {
+    if (window.paypal) return;
+
+    if (!window.paypalSdkPromise) {
+      window.paypalSdkPromise = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = sdkUrl;
+        script.async = true;
+        script.addEventListener('load', () => resolve(), { once: true });
+        script.addEventListener(
+          'error',
+          () => {
+            window.paypalSdkPromise = undefined;
+            reject(new Error('No se pudo cargar el SDK de PayPal.'));
+          },
+          { once: true }
+        );
+        document.head.append(script);
+      });
+    }
+
+    await window.paypalSdkPromise;
+    if (!window.paypal) throw new Error('El SDK de PayPal no está disponible.');
+  };
+
+  const renderHostedButtons = async () => {
+    const containers = Array.from(document.querySelectorAll<HTMLElement>('[data-paypal-hosted-button]')).filter(
+      (container) => container.dataset.paypalStatus !== 'rendered' && container.dataset.paypalStatus !== 'loading'
+    );
+
+    if (containers.length === 0) return;
+    containers.forEach((container) => {
+      container.dataset.paypalStatus = 'loading';
+    });
+
+    try {
+      await loadPayPalSdk();
+    } catch (error) {
+      console.error('Error al cargar el SDK de PayPal:', error);
+      containers.forEach((container) => {
+        container.dataset.paypalStatus = 'error';
+        const errorMessage = container.nextElementSibling;
+        if (errorMessage instanceof HTMLElement) errorMessage.hidden = false;
+      });
+      return;
+    }
+
+    for (const container of containers) {
+      try {
+        const hostedButtonId = container.dataset.paypalHostedButtonId;
+        if (!hostedButtonId || !window.paypal) {
+          throw new Error('Falta el identificador de un botón Hosted de PayPal.');
+        }
+
+        await window.paypal.HostedButtons({ hostedButtonId }).render(`#${container.id}`);
+        container.dataset.paypalStatus = 'rendered';
+      } catch (error) {
+        console.error('Error al inicializar un botón de PayPal:', error);
+        container.dataset.paypalStatus = 'error';
+        const errorMessage = container.nextElementSibling;
+        if (errorMessage instanceof HTMLElement) errorMessage.hidden = false;
+      }
+    }
+  };
+
+  document.addEventListener('astro:page-load', renderHostedButtons);
+</script>

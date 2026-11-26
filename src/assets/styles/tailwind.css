@@ -358,6 +358,61 @@ html:not(.dark) #header[data-program-header] a[aria-label='RSS Feed'] {
   color: white;
 }
 
+/* PayPal Hosted Buttons adds a global .hidden rule that can override responsive display utilities. */
+@media (min-width: 640px) {
+  .hidden.sm\:flex {
+    display: flex !important;
+  }
+  .hidden.sm\:grid {
+    display: grid !important;
+  }
+  .hidden.sm\:inline {
+    display: inline !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hidden.md\:block {
+    display: block !important;
+  }
+  .hidden.md\:flex {
+    display: flex !important;
+  }
+  .hidden.md\:grid {
+    display: grid !important;
+  }
+  .hidden.md\:inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden.lg\:block {
+    display: block !important;
+  }
+  .hidden.lg\:flex {
+    display: flex !important;
+  }
+  .hidden.lg\:grid {
+    display: grid !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hidden.xl\:block {
+    display: block !important;
+  }
+  .hidden.xl\:grid {
+    display: grid !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hidden.\32xl\:grid {
+    display: grid !important;
+  }
+}
+
 .mega-chevron {
   display: inline-block;
   transition: transform 300ms ease;
